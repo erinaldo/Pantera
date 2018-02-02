@@ -1,0 +1,227 @@
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.Shared.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Entidades.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Negocios.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Npgsql.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Datos.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\FlashControlV71.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\stdole.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\ShockwaveFlashObjects.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Entidades.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Negocios.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Npgsql.xml
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.xml
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Datos.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmArticulo.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmArticuloAnadir.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMenu.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPerfil.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPerfilAnadir.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPersona.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPersonaAnadir.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmRegistroLlamadas.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmRegistroPresupuesto.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmRegistroPresupuestoAnadir.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUbigeoBuscar.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUsuario.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUsuarioAnadir.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReporte.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.exe.config
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.exe.manifest
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.application
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.exe
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.TrustInfo.xml
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.exe.manifest
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.application
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.exe
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.exe.config
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.exe
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.Shared.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Entidades.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Negocios.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Npgsql.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Datos.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\FlashControlV71.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\stdole.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\ShockwaveFlashObjects.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Entidades.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Negocios.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Npgsql.xml
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.xml
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\bin\Debug\Datos.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.ResolveComReference.cache
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmArticulo.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmArticuloAnadir.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMarca.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMenu.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmModelo.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmModeloAnadir.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPerfil.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPerfilAnadir.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPersona.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPersonaAnadir.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmReporteDiarioPresupuesto.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmReporteMovimiento.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmReportePresupuesto.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmRegistroPresupuesto.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmRegistroPresupuestoAnadir.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUbigeoBuscar.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUsuario.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUsuarioAnadir.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMarcaAnadir.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReporte.resources
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.exe
+D:\Empresa\Rufigas\CRM\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.exe.config
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.ResolveComReference.cache
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.exe
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.exe
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.pdb
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Entidades.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Negocios.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Npgsql.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Datos.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\FlashControlV71.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\stdole.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Negocios.pdb
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Npgsql.xml
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\bin\Debug\Datos.pdb
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmArticulo.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmArticuloAnadir.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMarca.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMenu.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmModelo.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmModeloAnadir.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPerfil.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPerfilAnadir.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPersona.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPersonaAnadir.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmReporteDiarioPresupuesto.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmReporteMovimiento.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmReportePresupuesto.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmRegistroPresupuesto.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmRegistroPresupuestoAnadir.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUbigeoBuscar.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUsuario.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUsuarioAnadir.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMarcaAnadir.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReporte.resources
+C:\Users\Desarrollo\Documents\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.exe.config
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.ResolveComReference.cache
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.exe
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.exe
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.pdb
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Entidades.dll
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Negocios.dll
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Npgsql.dll
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Datos.dll
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Negocios.pdb
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Npgsql.xml
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\bin\Debug\Datos.pdb
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmArticulo.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmArticuloAnadir.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMarca.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMenu.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmModelo.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmModeloAnadir.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPerfil.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPerfilAnadir.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPersona.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPersonaAnadir.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmReporteDiarioPresupuesto.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmReporteMovimiento.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmReportePresupuesto.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmRegistroPresupuesto.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmRegistroPresupuestoAnadir.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUbigeoBuscar.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUsuario.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUsuarioAnadir.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMarcaAnadir.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReporte.resources
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache

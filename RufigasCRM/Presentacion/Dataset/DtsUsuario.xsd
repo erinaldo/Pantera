@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DtsUsuario" targetNamespace="http://tempuri.org/DtsUsuario.xsd" xmlns:mstns="http://tempuri.org/DtsUsuario.xsd" xmlns="http://tempuri.org/DtsUsuario.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DtsUsuario" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DtsUsuario" msprop:Generator_UserDSName="DtsUsuario">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TUsuario" msprop:Generator_TableClassName="TUsuarioDataTable" msprop:Generator_TableVarName="tableTUsuario" msprop:Generator_RowChangedName="TUsuarioRowChanged" msprop:Generator_TablePropName="TUsuario" msprop:Generator_RowDeletingName="TUsuarioRowDeleting" msprop:Generator_RowChangingName="TUsuarioRowChanging" msprop:Generator_RowEvHandlerName="TUsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="TUsuarioRowDeleted" msprop:Generator_RowClassName="TUsuarioRow" msprop:Generator_UserTableName="TUsuario" msprop:Generator_RowEvArgName="TUsuarioRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idusuario" msprop:Generator_ColumnVarNameInTable="columnidusuario" msprop:Generator_ColumnPropNameInRow="idusuario" msprop:Generator_ColumnPropNameInTable="idusuarioColumn" msprop:Generator_UserColumnName="idusuario" type="xs:long" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TArticuloReporte" msprop:Generator_TableClassName="TArticuloReporteDataTable" msprop:Generator_TableVarName="tableTArticuloReporte" msprop:Generator_TablePropName="TArticuloReporte" msprop:Generator_RowDeletingName="TArticuloReporteRowDeleting" msprop:Generator_RowChangingName="TArticuloReporteRowChanging" msprop:Generator_RowEvHandlerName="TArticuloReporteRowChangeEventHandler" msprop:Generator_RowDeletedName="TArticuloReporteRowDeleted" msprop:Generator_UserTableName="TArticuloReporte" msprop:Generator_RowChangedName="TArticuloReporteRowChanged" msprop:Generator_RowEvArgName="TArticuloReporteRowChangeEvent" msprop:Generator_RowClassName="TArticuloReporteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigoarticulo" msprop:Generator_ColumnVarNameInTable="columncodigoarticulo" msprop:Generator_ColumnPropNameInRow="codigoarticulo" msprop:Generator_ColumnPropNameInTable="codigoarticuloColumn" msprop:Generator_UserColumnName="codigoarticulo" type="xs:string" minOccurs="0" />
+              <xs:element name="nombrearticulo" msprop:Generator_ColumnVarNameInTable="columnnombrearticulo" msprop:Generator_ColumnPropNameInRow="nombrearticulo" msprop:Generator_ColumnPropNameInTable="nombrearticuloColumn" msprop:Generator_UserColumnName="nombrearticulo" type="xs:string" minOccurs="0" />
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

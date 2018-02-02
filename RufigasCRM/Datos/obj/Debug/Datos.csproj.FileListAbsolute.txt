@@ -1,0 +1,48 @@
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Datos\bin\Debug\Datos.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Datos\bin\Debug\Datos.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Datos\bin\Debug\Entidades.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Datos\bin\Debug\Newtonsoft.Json.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Datos\bin\Debug\Npgsql.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Datos\bin\Debug\Entidades.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Datos\bin\Debug\Newtonsoft.Json.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Datos\bin\Debug\Newtonsoft.Json.xml
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Datos\bin\Debug\Npgsql.xml
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Datos\obj\Debug\Datos.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\Datos\obj\Debug\Datos.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\Datos\bin\Debug\Datos.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Datos\bin\Debug\Datos.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\Datos\bin\Debug\Entidades.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Datos\bin\Debug\Newtonsoft.Json.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Datos\bin\Debug\Npgsql.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Datos\bin\Debug\Entidades.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\Datos\bin\Debug\Newtonsoft.Json.pdb
+D:\Empresa\Rufigas\CRM\RufigasCRM\Datos\bin\Debug\Newtonsoft.Json.xml
+D:\Empresa\Rufigas\CRM\RufigasCRM\Datos\bin\Debug\Npgsql.xml
+D:\Empresa\Rufigas\CRM\RufigasCRM\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+D:\Empresa\Rufigas\CRM\RufigasCRM\Datos\obj\Debug\Datos.dll
+D:\Empresa\Rufigas\CRM\RufigasCRM\Datos\obj\Debug\Datos.pdb
+C:\Users\Desarrollo\Documents\RufigasCRM\Datos\bin\Debug\Datos.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Datos\bin\Debug\Datos.pdb
+C:\Users\Desarrollo\Documents\RufigasCRM\Datos\bin\Debug\Entidades.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Datos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Datos\bin\Debug\Npgsql.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Datos\bin\Debug\Entidades.pdb
+C:\Users\Desarrollo\Documents\RufigasCRM\Datos\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Desarrollo\Documents\RufigasCRM\Datos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Desarrollo\Documents\RufigasCRM\Datos\bin\Debug\Npgsql.xml
+C:\Users\Desarrollo\Documents\RufigasCRM\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\Desarrollo\Documents\RufigasCRM\Datos\obj\Debug\Datos.dll
+C:\Users\Desarrollo\Documents\RufigasCRM\Datos\obj\Debug\Datos.pdb
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Datos\bin\Debug\Datos.dll
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Datos\bin\Debug\Datos.pdb
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Datos\bin\Debug\Entidades.dll
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Datos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Datos\bin\Debug\Npgsql.dll
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Datos\bin\Debug\Entidades.pdb
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Datos\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Datos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Datos\bin\Debug\Npgsql.xml
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Datos\obj\Debug\Datos.dll
+C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Datos\obj\Debug\Datos.pdb

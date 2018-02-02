@@ -1,0 +1,22 @@
+Intentando recopilar información sobre la dependencia para el paquete 'Npgsql.3.2.4.1' respecto al proyecto 'Presentacion\Presentacion', con el destino '.NETFramework,Version=v4.5'
+La recopilación de información de dependencia tardó 2.18 sec
+Intentando resolver las dependencias para el paquete 'Npgsql.3.2.4.1' con DependencyBehavior 'Lowest'
+La resolución de información de dependencia tardó 0 ms
+Resolviendo acciones para instalar el paquete 'Npgsql.3.2.4.1'
+Se resolvieron las acciones para instalar el paquete 'Npgsql.3.2.4.1'
+Recuperando paquete 'Npgsql 3.2.4.1' de 'nuget.org'.
+Recuperando paquete 'System.Threading.Tasks.Extensions 4.3.0' de 'nuget.org'.
+  GET https://api.nuget.org/packages/npgsql.3.2.4.1.nupkg
+  OK https://api.nuget.org/packages/npgsql.3.2.4.1.nupkg 51ms
+Instalando Npgsql 3.2.4.1.
+Agregando el paquete 'System.Threading.Tasks.Extensions.4.3.0' a la carpeta 'D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\packages'
+El paquete 'System.Threading.Tasks.Extensions.4.3.0' se agregó a la carpeta 'D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\packages'
+El paquete 'System.Threading.Tasks.Extensions.4.3.0' se agregó a 'packages.config'
+'System.Threading.Tasks.Extensions 4.3.0' se instaló correctamente en Presentacion
+Agregando el paquete 'Npgsql.3.2.4.1' a la carpeta 'D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\packages'
+El paquete 'Npgsql.3.2.4.1' se agregó a la carpeta 'D:\Empresa\Rufigas\CRM\RufigasCRM\RufigasCRM\packages'
+El paquete 'Npgsql.3.2.4.1' se agregó a 'packages.config'
+'Npgsql 3.2.4.1' se instaló correctamente en Presentacion
+La ejecución de acciones de NuGet tardó 14.4 sec
+========== Finalizado ==========
+Tiempo transcurrido: 00:00:28.9708544
