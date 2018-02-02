@@ -225,3 +225,7 @@ C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacio
 C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
 C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReporte.resources
 C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.exe.config
+C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.ResolveComReference.cache
+C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.exe
+C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
