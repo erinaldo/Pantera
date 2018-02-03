@@ -56,18 +56,22 @@
             this.txtFecha = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGrabar
             // 
-            this.btnGrabar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnGrabar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(60)))), ((int)(((byte)(97)))));
             this.btnGrabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrabar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGrabar.Location = new System.Drawing.Point(224, 326);
+            this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnGrabar.Location = new System.Drawing.Point(226, 22);
             this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(75, 23);
+            this.btnGrabar.Size = new System.Drawing.Size(75, 30);
             this.btnGrabar.TabIndex = 1;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
@@ -75,13 +79,16 @@
             // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(60)))), ((int)(((byte)(97)))));
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Location = new System.Drawing.Point(465, 326);
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(442, 22);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(75, 30);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "&Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox1
@@ -110,7 +117,8 @@
             this.groupBox1.Controls.Add(this.Nombre);
             this.groupBox1.Controls.Add(this.txtFecha);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.AliceBlue;
             this.groupBox1.Location = new System.Drawing.Point(12, 61);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(532, 235);
@@ -121,6 +129,7 @@
             // 
             // maskedTextBox1
             // 
+            this.maskedTextBox1.BackColor = System.Drawing.Color.AliceBlue;
             this.maskedTextBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.Location = new System.Drawing.Point(318, 196);
             this.maskedTextBox1.Mask = "00,000.00";
@@ -140,6 +149,7 @@
             // 
             // cboModelo
             // 
+            this.cboModelo.BackColor = System.Drawing.Color.AliceBlue;
             this.cboModelo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboModelo.FormattingEnabled = true;
             this.cboModelo.Location = new System.Drawing.Point(229, 62);
@@ -150,6 +160,7 @@
             // 
             // cboCalibre
             // 
+            this.cboCalibre.BackColor = System.Drawing.Color.AliceBlue;
             this.cboCalibre.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCalibre.FormattingEnabled = true;
             this.cboCalibre.Location = new System.Drawing.Point(64, 62);
@@ -191,6 +202,7 @@
             // 
             // cboMarca
             // 
+            this.cboMarca.BackColor = System.Drawing.Color.AliceBlue;
             this.cboMarca.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(396, 19);
@@ -213,6 +225,7 @@
             // 
             this.cboSituacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboSituacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboSituacion.BackColor = System.Drawing.Color.AliceBlue;
             this.cboSituacion.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSituacion.FormattingEnabled = true;
             this.cboSituacion.Location = new System.Drawing.Point(81, 196);
@@ -235,6 +248,7 @@
             // 
             this.cboMedida.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboMedida.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboMedida.BackColor = System.Drawing.Color.AliceBlue;
             this.cboMedida.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMedida.FormattingEnabled = true;
             this.cboMedida.Location = new System.Drawing.Point(81, 159);
@@ -245,6 +259,7 @@
             // 
             // txtPrecio
             // 
+            this.txtPrecio.BackColor = System.Drawing.Color.AliceBlue;
             this.txtPrecio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPrecio.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio.Location = new System.Drawing.Point(318, 162);
@@ -279,6 +294,7 @@
             // 
             this.cboCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboCategoria.BackColor = System.Drawing.Color.AliceBlue;
             this.cboCategoria.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategoria.FormattingEnabled = true;
             this.cboCategoria.Location = new System.Drawing.Point(64, 20);
@@ -302,6 +318,7 @@
             // 
             this.cboTipo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboTipo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboTipo.BackColor = System.Drawing.Color.AliceBlue;
             this.cboTipo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Location = new System.Drawing.Point(229, 19);
@@ -313,7 +330,7 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.BackColor = System.Drawing.Color.White;
+            this.txtCodigo.BackColor = System.Drawing.Color.AliceBlue;
             this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.txtCodigo.Location = new System.Drawing.Point(396, 62);
@@ -334,6 +351,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.Color.AliceBlue;
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(81, 120);
@@ -354,6 +372,7 @@
             // 
             // txtFecha
             // 
+            this.txtFecha.BackColor = System.Drawing.Color.AliceBlue;
             this.txtFecha.Enabled = false;
             this.txtFecha.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFecha.Location = new System.Drawing.Point(447, 162);
@@ -376,29 +395,48 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.AliceBlue;
             this.label8.Location = new System.Drawing.Point(10, 20);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(273, 25);
+            this.label8.Size = new System.Drawing.Size(158, 23);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Mantenimiento de Productos";
+            this.label8.Text = "Nuevo Producto";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnGrabar);
+            this.groupBox2.Controls.Add(this.btnSalir);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(12, 302);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(532, 76);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Opciones";
             // 
             // frmArticuloAnadir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(556, 368);
+            this.ClientSize = new System.Drawing.Size(556, 392);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnGrabar);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmArticuloAnadir";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.frmArticuloAnadir_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,5 +471,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

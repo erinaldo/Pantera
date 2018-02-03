@@ -126,5 +126,10 @@ namespace Presentacion
         {
             this.Dispose();
         }
+
+        private void dgvArticulo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
