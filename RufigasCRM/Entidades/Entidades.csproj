@@ -58,6 +58,7 @@
     <Compile Include="persona.cs" />
     <Compile Include="presupuesto.cs" />
     <Compile Include="presupuestodetalle.cs" />
+    <Compile Include="producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="puntoventa.cs" />
     <Compile Include="puntoventasesion.cs" />

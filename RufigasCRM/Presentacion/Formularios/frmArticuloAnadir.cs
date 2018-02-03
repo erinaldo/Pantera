@@ -91,16 +91,23 @@ namespace Presentacion
         {
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
-
+            //Seleccion Categoria
             cboTipo.DataSource = maestrodetalleNE.buscarPorCodigoMaestro("TIPOARTICU");
             cboTipo.ValueMember = "codigoitem";
             cboTipo.DisplayMember = "nombreitem";
+            //Seleccion tipo
             cboCategoria.DataSource = maestrodetalleNE.buscarPorCodigoMaestro("CATEARTICU");
             cboCategoria.ValueMember = "codigoitem";
-            cboCategoria.DisplayMember = "nombreitem";
-            cboMedida.DataSource = maestrodetalleNE.buscarPorCodigoMaestro("UNIDMEDIDA");
-            cboMedida.ValueMember = "codigoitem";
-            cboMedida.DisplayMember = "nombreitem";
+            cboCategoria.DisplayMember = "nombreitem";            
+            //Seleccion Marca
+            cboSituacion.DataSource = maestrodetalleNE.buscarPorCodigoMaestro("SITUARTICU");
+            cboSituacion.ValueMember = "codigoitem";
+            cboSituacion.DisplayMember = "nombreitem";
+            //Seleccion Calibre
+            cboSituacion.DataSource = maestrodetalleNE.buscarPorCodigoMaestro("SITUARTICU");
+            cboSituacion.ValueMember = "codigoitem";
+            cboSituacion.DisplayMember = "nombreitem";
+            //Seleccion Modelo
             cboSituacion.DataSource = maestrodetalleNE.buscarPorCodigoMaestro("SITUARTICU");
             cboSituacion.ValueMember = "codigoitem";
             cboSituacion.DisplayMember = "nombreitem";
@@ -191,6 +198,16 @@ namespace Presentacion
             {
                 txtCodigo.Text = articuloNE.articuloObtenerNumero((string)cboTipo.SelectedValue, (string)cboCategoria.SelectedValue);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
