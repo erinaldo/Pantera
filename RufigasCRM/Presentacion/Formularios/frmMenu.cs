@@ -28,7 +28,7 @@ namespace Presentacion
             this.cargaListaImagenes();
             this.cargaMenu();
         }
-        
+
         private void cargaListaImagenes()
         {
             ResourceSet images = Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentCulture, true, true);
@@ -36,7 +36,7 @@ namespace Presentacion
             {
                 if (entry.Value is Bitmap && entry.Key.ToString().Substring(1, 3) == "16x")
                 {
-                    this.imageList.Images.Add(entry.Key.ToString().Substring(1,entry.Key.ToString().Length-1),(Bitmap)entry.Value);
+                    this.imageList.Images.Add(entry.Key.ToString().Substring(1, entry.Key.ToString().Length - 1), (Bitmap)entry.Value);
                 }
             }
         }
@@ -133,16 +133,16 @@ namespace Presentacion
                     frm.MdiParent = this.MdiParent;
                     frm.Show();
                 }
-                else MessageBox.Show("Usted no tiene acceso a este módulo"+ Convert.ToInt32(nodo.Name));
-                
+                else MessageBox.Show("Usted no tiene acceso a este módulo" + Convert.ToInt32(nodo.Name));
+
                 //frm.Location = new Point(301, 0);
             }
-            
+
         }
 
         private void treMenu_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-                this.abreElementoMenu();
+            this.abreElementoMenu();
         }
 
         private void treMenu_KeyDown(object sender, KeyEventArgs e)
@@ -151,7 +151,7 @@ namespace Presentacion
             {
                 this.abreElementoMenu();
             }
-     
+
         }
         protected override void WndProc(ref Message message)
         {

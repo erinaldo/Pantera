@@ -5,14 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using Datos;
-
 namespace Negocios
 {
-    public abstract class productoNE
+    public abstract class clienteNE
     {
-        public static int productoInsertar(producto productoObjeto)
+        public static List<cliente> clienteListar()
         {
-            return productoDL.productoInsertar(productoObjeto);
+            return clienteDL.clienteListar();
         }
     }
 }

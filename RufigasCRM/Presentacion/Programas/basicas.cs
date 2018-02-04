@@ -33,21 +33,24 @@ namespace Presentacion
                 switch (vBoton)
                 {
                     case "A":  // Permiso para añadir
-                        if (sesion.usuariosesion.idperfil < 2)
+                        if (sesion.SessionGlobal.p_inidperfil != 1)
                         {
                             vEvalua = false;
                             throw new Exception("No cuenta con los permisos para añadir");
                         }
                         break;
                     case "M":  // Permiso para modificar
-                        if (sesion.usuariosesion.idperfil < 2)
+                        if (sesion.SessionGlobal.p_inidperfil != 1)
                         {
                             vEvalua = false;
                             throw new Exception("No cuenta con los permisos para modificar");
                         }
                         break;
                     case "N":  // Permiso para anular
-                        if (sesion.usuariosesion.idperfil < 3)
+                        if (sesion.SessionGlobal.p_inidperfil != 1
+                            
+                            
+                            )
                         {
                             vEvalua = false;
                             throw new Exception("No cuenta con los permisos para anular");

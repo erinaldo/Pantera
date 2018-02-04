@@ -54,3 +54,17 @@ C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Negocios\bi
 C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
 C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Negocios\obj\Debug\Negocios.dll
 C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Negocios\obj\Debug\Negocios.pdb
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\bin\Debug\Negocios.dll
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\bin\Debug\Negocios.pdb
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\bin\Debug\Datos.dll
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\bin\Debug\Entidades.dll
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\bin\Debug\Npgsql.dll
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\bin\Debug\Datos.pdb
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\bin\Debug\Entidades.pdb
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\bin\Debug\Npgsql.xml
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\obj\Debug\Negocios.dll
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Negocios\obj\Debug\Negocios.pdb

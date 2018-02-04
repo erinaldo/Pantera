@@ -130,7 +130,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.BackColor = System.Drawing.Color.AliceBlue;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.Location = new System.Drawing.Point(318, 196);
             this.maskedTextBox1.Mask = "00,000.00";
             this.maskedTextBox1.Name = "maskedTextBox1";
@@ -150,22 +150,22 @@
             // cboModelo
             // 
             this.cboModelo.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboModelo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboModelo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboModelo.FormattingEnabled = true;
             this.cboModelo.Location = new System.Drawing.Point(229, 62);
             this.cboModelo.Name = "cboModelo";
-            this.cboModelo.Size = new System.Drawing.Size(106, 21);
+            this.cboModelo.Size = new System.Drawing.Size(106, 25);
             this.cboModelo.TabIndex = 21;
             this.cboModelo.Text = "-- Elegir --";
             // 
             // cboCalibre
             // 
             this.cboCalibre.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboCalibre.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCalibre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCalibre.FormattingEnabled = true;
             this.cboCalibre.Location = new System.Drawing.Point(64, 62);
             this.cboCalibre.Name = "cboCalibre";
-            this.cboCalibre.Size = new System.Drawing.Size(111, 21);
+            this.cboCalibre.Size = new System.Drawing.Size(111, 25);
             this.cboCalibre.TabIndex = 20;
             this.cboCalibre.Text = "-- Elegir --";
             this.cboCalibre.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
@@ -203,11 +203,11 @@
             // cboMarca
             // 
             this.cboMarca.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboMarca.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMarca.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(396, 19);
             this.cboMarca.Name = "cboMarca";
-            this.cboMarca.Size = new System.Drawing.Size(121, 21);
+            this.cboMarca.Size = new System.Drawing.Size(121, 25);
             this.cboMarca.TabIndex = 16;
             this.cboMarca.Text = "-- Elegir --";
             // 
@@ -226,11 +226,11 @@
             this.cboSituacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboSituacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSituacion.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboSituacion.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSituacion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSituacion.FormattingEnabled = true;
             this.cboSituacion.Location = new System.Drawing.Point(81, 196);
             this.cboSituacion.Name = "cboSituacion";
-            this.cboSituacion.Size = new System.Drawing.Size(136, 21);
+            this.cboSituacion.Size = new System.Drawing.Size(136, 25);
             this.cboSituacion.TabIndex = 13;
             this.cboSituacion.Text = "-- Elegir --";
             // 
@@ -249,11 +249,11 @@
             this.cboMedida.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboMedida.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboMedida.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboMedida.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMedida.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMedida.FormattingEnabled = true;
             this.cboMedida.Location = new System.Drawing.Point(81, 159);
             this.cboMedida.Name = "cboMedida";
-            this.cboMedida.Size = new System.Drawing.Size(136, 21);
+            this.cboMedida.Size = new System.Drawing.Size(136, 25);
             this.cboMedida.TabIndex = 9;
             this.cboMedida.Text = "-- Elegir --";
             // 
@@ -261,7 +261,7 @@
             // 
             this.txtPrecio.BackColor = System.Drawing.Color.AliceBlue;
             this.txtPrecio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPrecio.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio.Location = new System.Drawing.Point(318, 162);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(64, 22);
@@ -295,11 +295,11 @@
             this.cboCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboCategoria.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboCategoria.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategoria.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategoria.FormattingEnabled = true;
             this.cboCategoria.Location = new System.Drawing.Point(64, 20);
             this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(125, 21);
+            this.cboCategoria.Size = new System.Drawing.Size(125, 25);
             this.cboCategoria.TabIndex = 1;
             this.cboCategoria.Text = "-- Elegir --";
             this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.cboCategoria_SelectedIndexChanged);
@@ -319,11 +319,11 @@
             this.cboTipo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboTipo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTipo.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboTipo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Location = new System.Drawing.Point(229, 19);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(104, 21);
+            this.cboTipo.Size = new System.Drawing.Size(104, 25);
             this.cboTipo.TabIndex = 3;
             this.cboTipo.Text = "-- Elegir --";
             this.cboTipo.SelectedIndexChanged += new System.EventHandler(this.cboTipo_SelectedIndexChanged);
@@ -332,7 +332,7 @@
             // 
             this.txtCodigo.BackColor = System.Drawing.Color.AliceBlue;
             this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.txtCodigo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(396, 62);
             this.txtCodigo.MaxLength = 15;
             this.txtCodigo.Name = "txtCodigo";
@@ -353,7 +353,7 @@
             // 
             this.txtNombre.BackColor = System.Drawing.Color.AliceBlue;
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(81, 120);
             this.txtNombre.MaxLength = 80;
             this.txtNombre.Name = "txtNombre";
@@ -374,7 +374,7 @@
             // 
             this.txtFecha.BackColor = System.Drawing.Color.AliceBlue;
             this.txtFecha.Enabled = false;
-            this.txtFecha.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFecha.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFecha.Location = new System.Drawing.Point(447, 162);
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
@@ -421,7 +421,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(63)))), ((int)(((byte)(80)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(556, 392);

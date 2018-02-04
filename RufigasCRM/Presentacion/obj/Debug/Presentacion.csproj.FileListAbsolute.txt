@@ -225,3 +225,49 @@ C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacio
 C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
 C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReporte.resources
 C:\Users\Desarrollo\Documents\Visual Studio 2015\Projects\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.exe.config
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.ResolveComReference.cache
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmArticulo.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmArticuloAnadir.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMarca.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMenu.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmModelo.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmModeloAnadir.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPerfil.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPerfilAnadir.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPersona.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPersonaAnadir.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmReporteDiarioPresupuesto.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmReporteMovimiento.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmReportePresupuesto.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmRegistroPresupuesto.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmRegistroPresupuestoAnadir.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUbigeoBuscar.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUsuario.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmUsuarioAnadir.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmMarcaAnadir.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReporte.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.exe
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Rufigas CRM.pdb
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Entidades.dll
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Negocios.dll
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Npgsql.dll
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Datos.dll
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Negocios.pdb
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Npgsql.xml
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\bin\Debug\Datos.pdb
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.exe
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmManClienteAnadir.resources
+C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmManClientePrincipal.resources
