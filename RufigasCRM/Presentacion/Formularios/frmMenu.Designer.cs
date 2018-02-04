@@ -40,9 +40,9 @@
             this.treMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.treMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.treMenu.BackColor = System.Drawing.Color.White;
             this.treMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.treMenu.ForeColor = System.Drawing.Color.Lavender;
+            this.treMenu.ForeColor = System.Drawing.Color.Black;
             this.treMenu.ImageIndex = 0;
             this.treMenu.ImageList = this.imageList;
             this.treMenu.ItemHeight = 22;
@@ -63,7 +63,7 @@
             // 
             // txtCriterio
             // 
-            this.txtCriterio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.txtCriterio.BackColor = System.Drawing.Color.White;
             this.txtCriterio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCriterio.Location = new System.Drawing.Point(12, 599);
             this.txtCriterio.Name = "txtCriterio";
@@ -75,7 +75,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Lavender;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(37, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(211, 23);
@@ -86,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(316, 634);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCriterio);
