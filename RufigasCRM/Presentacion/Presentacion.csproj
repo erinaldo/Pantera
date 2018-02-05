@@ -115,6 +115,12 @@
     <Compile Include="Formularios\frmConsCobranzaDocuVentaPrincipal.Designer.cs">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmManListaPrecioPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManListaPrecioPrincipal.Designer.cs">
+      <DependentUpon>frmManListaPrecioPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmManListaPreciosPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,60 @@
     <Compile Include="Formularios\frmManStockMinimoPrincipal.Designer.cs">
       <DependentUpon>frmManStockMinimoPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmManTipoPersonaVentaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManTipoPersonaVentaPrincipal.Designer.cs">
+      <DependentUpon>frmManTipoPersonaVentaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcCancelacionCuentasPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcCancelacionCuentasPrincipal.Designer.cs">
+      <DependentUpon>frmProcCancelacionCuentasPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcFacturacionPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcFacturacionPrincipal.Designer.cs">
+      <DependentUpon>frmProcFacturacionPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcKardexProductoPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcKardexProductoPrincipal.Designer.cs">
+      <DependentUpon>frmProcKardexProductoPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcNotaCrediOtroPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcNotaCrediOtroPrincipal.Designer.cs">
+      <DependentUpon>frmProcNotaCrediOtroPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcNotaCrediDevPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcNotaCrediDevPrincipal.Designer.cs">
+      <DependentUpon>frmProcNotaCrediDevPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcNotaDebitoPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcNotaDebitoPrincipal.Designer.cs">
+      <DependentUpon>frmProcNotaDebitoPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcSaldoProductoPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcSaldoProductoPrincipal.Designer.cs">
+      <DependentUpon>frmProcSaldoProductoPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcSalidaProductosPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcSalidaProductosPrincipal.Designer.cs">
+      <DependentUpon>frmProcSalidaProductosPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmSecuAutenticacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,11 +277,11 @@
     <Compile Include="Formularios\frmImprNotaVentaReciboPagoPrincipal.Designer.cs">
       <DependentUpon>frmImprNotaVentaReciboPagoPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmProSeriesPrincipal.cs">
+    <Compile Include="Formularios\frmProcSeriesPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmProSeriesPrincipal.Designer.cs">
-      <DependentUpon>frmProSeriesPrincipal.cs</DependentUpon>
+    <Compile Include="Formularios\frmProcSeriesPrincipal.Designer.cs">
+      <DependentUpon>frmProcSeriesPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmMarca.cs">
       <SubType>Form</SubType>
@@ -390,6 +450,9 @@
     <Compile Include="Reportes\FrmReporte.designer.cs">
       <DependentUpon>FrmReporte.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\frmConsCobranzaDocuVentaPrincipal.resx">
+      <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManProductoPrincipal.resx">
       <DependentUpon>frmManProductoPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -616,6 +679,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settings-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\locked-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\server-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garbage-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perspective.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

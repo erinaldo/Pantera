@@ -34,19 +34,19 @@ namespace Presentacion
                 case "A":
                     {
                         tmpProducto = new producto();
-                        //tmpProducto.p_inidproducto = (int);
-                        tmpProducto.chcodigoproducto = txtCodigo.Text;
-                        tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
-                        tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue; 
-                        tmpProducto.p_inunidadmedidaproducto = (int)cboMedida.SelectedValue;
-                        tmpProducto.chfechacreacion = txtFecha.Text;
-                        tmpProducto.estado = true;
-                        tmpProducto.tmhoracreacion = txtFecha.Text;
-                        tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
-                        tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
-                        tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
-                        tmpProducto.chcodigoproductoantes = txtNombre.Text;
-                        tmpProducto.chdescripcionproducto = txtNombre.Text;
+                        ////tmpProducto.p_inidproducto = (int);
+                        //tmpProducto.chcodigoproducto = txtCodigo.Text;
+                        //tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
+                        //tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue; 
+                        //tmpProducto.p_inunidadmedidaproducto = (int)cboMedida.SelectedValue;
+                        //tmpProducto.chfechacreacion = txtFecha.Text;
+                        //tmpProducto.estado = true;
+                        //tmpProducto.tmhoracreacion = txtFecha.Text;
+                        //tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
+                        //tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
+                        //tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
+                        //tmpProducto.chcodigoproductoantes = txtNombre.Text;
+                        //tmpProducto.chdescripcionproducto = txtNombre.Text;
                         varIdArticulo = productoNE.productoInsertar(tmpProducto);
                         if (varIdArticulo <= 0)
                         {
@@ -158,29 +158,28 @@ namespace Presentacion
 
             if (this.vBoton =="A")
             {
-                label8.Text = "Añadir Producto";
+                //label8.Text = "Añadir Producto";
                 txtFecha.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
                // int index = cboMedida.FindString("UNIDADES");
                // cboMedida.SelectedIndex = 0;
-                txtPrecio.Text = "0";
+                //txtPrecio.Text = "0";
             }
             else 
                 if (this.vBoton == "M")
                 {
                     this.Text = "MODIFICAR ARTÍCULO";
-                //txtCodigo.Text = tmpArticulo.codigoarticulo;
-                //txtNombre.Text = tmpArticulo.nombrearticulo;
-                //cboTipo.SelectedValue = tmpArticulo.idtipoarticulo;
-                //cboCategoria.SelectedValue = tmpArticulo.idcatearticulo;
-                //cboMedida.SelectedValue = tmpArticulo.idmediarticulo;
-                //txtPrecio.Text = tmpArticulo.precio.ToString();
-                //cboSituacion.SelectedValue = tmpArticulo.idsituarticulo;
-                //txtFecha.Text = tmpArticulo.fechacreacion;
+
+                //txtCodigo.Text = tmpProducto.chcodigoproducto;
+                //txtNombre.Text = tmpProducto.chdescripcionproducto;
+                //cboTipo.SelectedText = tmpProducto.chdescripcionproducto;
+                //cboCategoria.SelectedValue = tmpProducto.p_inidfamiliaproducto;
+                //cboMedida.SelectedValue = tmpProducto.p_inunidadmedidaproducto;
+                //txtFecha.Text = tmpProducto.chfechacreacion;
             }
             else
                    if(this.vBoton == "V")
                     {
-                label8.Text = "VER ARTÍCULO";
+                //label8.Text = "VER ARTÍCULO";
                         //txtCodigo.Text = tmpArticulo.codigoarticulo;
                         //txtNombre.Text = tmpArticulo.nombrearticulo;
                         //cboTipo.SelectedValue = tmpArticulo.idtipoarticulo;
@@ -249,13 +248,13 @@ namespace Presentacion
                 e.Handled = true;
         }
 
-        private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ((cboCategoria.ValueMember != "") && (cboTipo.ValueMember != ""))
-            {
-                txtCodigo.Text = articuloNE.articuloObtenerNumero((int)cboTipo.SelectedValue, (int)cboCategoria.SelectedValue);
-            }
-        }
+        //private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if ((Int32.Parse(cboCategoria.ValueMember) != 0) && (Int32.Parse(cboTipo.ValueMember) != 0))
+        //    {
+        //        txtCodigo.Text = articuloNE.articuloObtenerNumero((int)cboTipo.SelectedValue, (int)cboCategoria.SelectedValue);
+        //    }
+        //}
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {

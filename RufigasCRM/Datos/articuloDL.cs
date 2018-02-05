@@ -51,15 +51,15 @@ namespace Datos
                 return listado;
             }
         }
-        public static string obtenerNumero(int idtipoarticulo, int idcatearticulo)
-        {
-            {
-                return conexion.executeScalarStr("fn_articulo_obtener_numero",
-                CommandType.StoredProcedure,
-                new parametro("in_idtipoarticulo", idtipoarticulo),
-                new parametro("in_idcatearticulo", idcatearticulo));
-            }
-        }
+        //public static string obtenerNumero(int idtipoarticulo, int idcatearticulo)
+        //{
+        //    {
+        //        return conexion.executeScalarStr("fn_articulo_obtener_numero",
+        //        CommandType.StoredProcedure,
+        //        new parametro("in_idtipoarticulo", idtipoarticulo),
+        //        new parametro("in_idcatearticulo", idcatearticulo));
+        //    }
+        //}
         public static int articuloInsertar(articulo articulo)
         {
             return 0;

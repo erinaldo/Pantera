@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentacion.Formularios
+namespace Presentacion
 {
-    public partial class frmProcNotaDebitoDevPrincipal : Form
+    public partial class frmProcNotaCrediDevPrincipal : Form
     {
-        public frmProcNotaDebitoDevPrincipal()
+        public frmProcNotaCrediDevPrincipal()
         {
             InitializeComponent();
         }

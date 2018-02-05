@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class frmArticulo : Form
+    public partial class frmManProductoPrincipal : Form
     {
         private string vBoton = "A";
-        public frmArticulo()
+        public frmManProductoPrincipal()
         {
             InitializeComponent();
         }
@@ -64,7 +64,7 @@ namespace Presentacion
             cargarData(0);
             foreach (DataGridViewRow Row in dgvArticulo.Rows)
             {
-                int valor = (int)Row.Cells["IDARTICULO"].Value;
+                int valor = (int)Row.Cells["IDPRODUCTO"].Value;
                 if (valor == dato)
                 {
                     int puntero = (int)Row.Index;
@@ -108,7 +108,7 @@ namespace Presentacion
             frmArticuloAnadir f = new frmArticuloAnadir(vBoton);
             f.pasado += new frmArticuloAnadir.pasar(ejecutar);
             f.tmpProducto = new producto();
-            //f.tmpArticulo.idarticulo = (int)dgvArticulo.CurrentRow.Cells["IDARTICULO"].Value;
+            f.tmpProducto.chdescripcionproducto= (String)dgvArticulo.CurrentRow.Cells["TIPOARTICULO"].Value;
             //f.tmpArticulo.codigoarticulo = (string)dgvArticulo.CurrentRow.Cells["CODIGOARTICULO"].Value;
             //f.tmpArticulo.nombrearticulo = (string)(dgvArticulo.CurrentRow.Cells["NOMBREARTICULO"].Value);
             //f.tmpArticulo.idtipoarticulo = (string)(dgvArticulo.CurrentRow.Cells["IDTIPOARTICULO"].Value);

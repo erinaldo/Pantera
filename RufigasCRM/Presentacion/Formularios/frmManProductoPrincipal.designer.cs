@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class frmArticulo
+    partial class frmManProductoPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,50 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManProductoPrincipal));
             this.button1 = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAnadir = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvArticulo = new System.Windows.Forms.DataGridView();
-            this.ESTADOARTICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMEDIARTICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCATEARTICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CATEARTICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDTIPOARTICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIPOARTICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBREARTICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CODIGOARTICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDARTICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvgArticulo = new System.Windows.Forms.DataGridView();
+            this.IDPRODCUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDFAMILIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFAMILIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCALIBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCALIBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMODELO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMODELO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODPRODANTES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDUSUARIOINSER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUSUARIOINSERT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDUSUARIODELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUSUARIODELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUPRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(417, 22);
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(446, 21);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 28);
+            this.button1.Size = new System.Drawing.Size(120, 30);
             this.button1.TabIndex = 13;
-            this.button1.Text = "Imprimir";
+            this.button1.Text = "&Imprimir";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Visible = false;
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Silver;
+            this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(324, 22);
+            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(665, 21);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 28);
+            this.btnSalir.Size = new System.Drawing.Size(74, 30);
             this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -79,11 +96,12 @@
             // 
             // btnVer
             // 
-            this.btnVer.BackColor = System.Drawing.Color.Silver;
-            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVer.Location = new System.Drawing.Point(230, 22);
+            this.btnVer.BackColor = System.Drawing.SystemColors.Window;
+            this.btnVer.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Location = new System.Drawing.Point(283, 21);
+            this.btnVer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(75, 28);
+            this.btnVer.Size = new System.Drawing.Size(60, 30);
             this.btnVer.TabIndex = 10;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
@@ -91,11 +109,12 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.Silver;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Location = new System.Drawing.Point(130, 22);
+            this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(172, 21);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 28);
+            this.btnModificar.Size = new System.Drawing.Size(105, 30);
             this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -103,15 +122,23 @@
             // 
             // btnAnadir
             // 
-            this.btnAnadir.BackColor = System.Drawing.Color.Silver;
-            this.btnAnadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnadir.Location = new System.Drawing.Point(31, 22);
+            this.btnAnadir.BackColor = System.Drawing.SystemColors.Window;
+            this.btnAnadir.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnadir.ImageList = this.imageList1;
+            this.btnAnadir.Location = new System.Drawing.Point(86, 21);
+            this.btnAnadir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(75, 28);
+            this.btnAnadir.Size = new System.Drawing.Size(80, 30);
             this.btnAnadir.TabIndex = 8;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "add-1.png");
             // 
             // groupBox1
             // 
@@ -122,151 +149,249 @@
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(15, 426);
+            this.groupBox1.Location = new System.Drawing.Point(12, 388);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(534, 66);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(759, 63);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
             // 
-            // dgvArticulo
+            // dvgArticulo
             // 
-            this.dgvArticulo.AllowUserToAddRows = false;
-            this.dgvArticulo.AllowUserToDeleteRows = false;
-            this.dgvArticulo.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DarkBlue;
-            this.dgvArticulo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvArticulo.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDARTICULO,
-            this.CODIGOARTICULO,
-            this.NOMBREARTICULO,
-            this.TIPOARTICULO,
-            this.IDTIPOARTICULO,
-            this.CATEARTICULO,
-            this.IDCATEARTICULO,
-            this.IDMEDIARTICULO,
-            this.ESTADOARTICULO});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvArticulo.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvArticulo.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvArticulo.Location = new System.Drawing.Point(15, 22);
-            this.dgvArticulo.MultiSelect = false;
-            this.dgvArticulo.Name = "dgvArticulo";
-            this.dgvArticulo.ReadOnly = true;
-            this.dgvArticulo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvArticulo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulo.Size = new System.Drawing.Size(534, 398);
-            this.dgvArticulo.TabIndex = 12;
-            this.dgvArticulo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulo_CellContentClick);
+            this.dvgArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgArticulo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDPRODCUTO,
+            this.CODPRODUCTO,
+            this.IDTIPO,
+            this.CHTIPO,
+            this.IDMARCA,
+            this.CHMARCA,
+            this.IDMEDIDA,
+            this.CHMEDIDA,
+            this.CHFECHA,
+            this.ESTADO,
+            this.IDFAMILIA,
+            this.CHFAMILIA,
+            this.IDCALIBRE,
+            this.CHCALIBRE,
+            this.IDMODELO,
+            this.CHMODELO,
+            this.CHCODPRODANTES,
+            this.CHDESCRIPCION,
+            this.IDUSUARIOINSER,
+            this.CHUSUARIOINSERT,
+            this.IDUSUARIODELETE,
+            this.CHUSUARIODELETE,
+            this.NUPRECIO,
+            this.IDSITUACION,
+            this.CHSITUACION});
+            this.dvgArticulo.Location = new System.Drawing.Point(12, 12);
+            this.dvgArticulo.Name = "dvgArticulo";
+            this.dvgArticulo.Size = new System.Drawing.Size(759, 369);
+            this.dvgArticulo.TabIndex = 15;
             // 
-            // ESTADOARTICULO
+            // IDPRODCUTO
             // 
-            this.ESTADOARTICULO.DataPropertyName = "estado";
-            this.ESTADOARTICULO.HeaderText = "ESTADOARTICULO";
-            this.ESTADOARTICULO.Name = "ESTADOARTICULO";
-            this.ESTADOARTICULO.ReadOnly = true;
-            this.ESTADOARTICULO.Visible = false;
+            this.IDPRODCUTO.DataPropertyName = "p_inidproducto";
+            this.IDPRODCUTO.HeaderText = "IDPRODUCTO";
+            this.IDPRODCUTO.Name = "IDPRODCUTO";
+            this.IDPRODCUTO.ReadOnly = true;
+            this.IDPRODCUTO.Visible = false;
             // 
-            // IDMEDIARTICULO
+            // CODPRODUCTO
             // 
-            this.IDMEDIARTICULO.DataPropertyName = "p_inidunidadmedidaproducto";
-            this.IDMEDIARTICULO.HeaderText = "MEDIDA";
-            this.IDMEDIARTICULO.Name = "IDMEDIARTICULO";
-            this.IDMEDIARTICULO.ReadOnly = true;
+            this.CODPRODUCTO.DataPropertyName = "chcodigoproducto";
+            this.CODPRODUCTO.HeaderText = "CODIGO";
+            this.CODPRODUCTO.Name = "CODPRODUCTO";
             // 
-            // IDCATEARTICULO
+            // IDTIPO
             // 
-            this.IDCATEARTICULO.DataPropertyName = "p_inidfamiliaproducto";
-            this.IDCATEARTICULO.HeaderText = "CATEGORIA";
-            this.IDCATEARTICULO.Name = "IDCATEARTICULO";
-            this.IDCATEARTICULO.ReadOnly = true;
+            this.IDTIPO.DataPropertyName = "p_inidtipoproducto";
+            this.IDTIPO.HeaderText = "IDTIPO";
+            this.IDTIPO.Name = "IDTIPO";
+            this.IDTIPO.Visible = false;
             // 
-            // CATEARTICULO
+            // CHTIPO
             // 
-            this.CATEARTICULO.DataPropertyName = "p_inidmodelo";
-            this.CATEARTICULO.HeaderText = "MODELO";
-            this.CATEARTICULO.Name = "CATEARTICULO";
-            this.CATEARTICULO.ReadOnly = true;
+            this.CHTIPO.DataPropertyName = "chtipoproducto";
+            this.CHTIPO.HeaderText = "TIPO";
+            this.CHTIPO.Name = "CHTIPO";
             // 
-            // IDTIPOARTICULO
+            // IDMARCA
             // 
-            this.IDTIPOARTICULO.DataPropertyName = "p_inidcalibre";
-            this.IDTIPOARTICULO.HeaderText = "CALIBRE";
-            this.IDTIPOARTICULO.Name = "IDTIPOARTICULO";
-            this.IDTIPOARTICULO.ReadOnly = true;
+            this.IDMARCA.DataPropertyName = "p_inidmarca";
+            this.IDMARCA.HeaderText = "IDMARCA";
+            this.IDMARCA.Name = "IDMARCA";
+            this.IDMARCA.ReadOnly = true;
+            this.IDMARCA.Visible = false;
             // 
-            // TIPOARTICULO
+            // CHMARCA
             // 
-            this.TIPOARTICULO.DataPropertyName = "p_inidmarca";
-            this.TIPOARTICULO.HeaderText = "MARCA";
-            this.TIPOARTICULO.Name = "TIPOARTICULO";
-            this.TIPOARTICULO.ReadOnly = true;
+            this.CHMARCA.DataPropertyName = "chmarca";
+            this.CHMARCA.HeaderText = "MARCA";
+            this.CHMARCA.Name = "CHMARCA";
             // 
-            // NOMBREARTICULO
+            // IDMEDIDA
             // 
-            this.NOMBREARTICULO.DataPropertyName = "p_inidtipoproducto";
-            this.NOMBREARTICULO.HeaderText = "TIPO";
-            this.NOMBREARTICULO.Name = "NOMBREARTICULO";
-            this.NOMBREARTICULO.ReadOnly = true;
+            this.IDMEDIDA.DataPropertyName = "p_inidunidadmedidaproducto";
+            this.IDMEDIDA.HeaderText = "IDMEDIDA";
+            this.IDMEDIDA.Name = "IDMEDIDA";
+            this.IDMEDIDA.ReadOnly = true;
+            this.IDMEDIDA.Visible = false;
             // 
-            // CODIGOARTICULO
+            // CHMEDIDA
             // 
-            this.CODIGOARTICULO.DataPropertyName = "chcodigoproducto";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.CODIGOARTICULO.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CODIGOARTICULO.HeaderText = "CODIGO";
-            this.CODIGOARTICULO.Name = "CODIGOARTICULO";
-            this.CODIGOARTICULO.ReadOnly = true;
+            this.CHMEDIDA.DataPropertyName = "chunidadmedidaproducto";
+            this.CHMEDIDA.HeaderText = "MEDIDA";
+            this.CHMEDIDA.Name = "CHMEDIDA";
             // 
-            // IDARTICULO
+            // CHFECHA
             // 
-            this.IDARTICULO.DataPropertyName = "p_inidproducto";
-            this.IDARTICULO.HeaderText = "IDARTICULO";
-            this.IDARTICULO.Name = "IDARTICULO";
-            this.IDARTICULO.ReadOnly = true;
-            this.IDARTICULO.Visible = false;
+            this.CHFECHA.DataPropertyName = "chfechacreacion";
+            this.CHFECHA.HeaderText = "FECHA";
+            this.CHFECHA.Name = "CHFECHA";
+            this.CHFECHA.ReadOnly = true;
+            this.CHFECHA.Visible = false;
             // 
-            // frmArticulo
+            // ESTADO
+            // 
+            this.ESTADO.DataPropertyName = "estado";
+            this.ESTADO.HeaderText = "ESTADO";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
+            this.ESTADO.Visible = false;
+            // 
+            // IDFAMILIA
+            // 
+            this.IDFAMILIA.DataPropertyName = "p_inidfamiliaproducto";
+            this.IDFAMILIA.HeaderText = "IDFAMILIA";
+            this.IDFAMILIA.Name = "IDFAMILIA";
+            // 
+            // CHFAMILIA
+            // 
+            this.CHFAMILIA.DataPropertyName = "chfamiliaproducto";
+            this.CHFAMILIA.HeaderText = "FAMILIA";
+            this.CHFAMILIA.Name = "CHFAMILIA";
+            // 
+            // IDCALIBRE
+            // 
+            this.IDCALIBRE.DataPropertyName = "p_inidcalibre";
+            this.IDCALIBRE.HeaderText = "IDCALIBRE";
+            this.IDCALIBRE.Name = "IDCALIBRE";
+            this.IDCALIBRE.ReadOnly = true;
+            this.IDCALIBRE.Visible = false;
+            // 
+            // CHCALIBRE
+            // 
+            this.CHCALIBRE.DataPropertyName = "chcalibre";
+            this.CHCALIBRE.HeaderText = "CHCALIBRE";
+            this.CHCALIBRE.Name = "CHCALIBRE";
+            // 
+            // IDMODELO
+            // 
+            this.IDMODELO.DataPropertyName = "p_inidmodelo";
+            this.IDMODELO.HeaderText = "IDMODELO";
+            this.IDMODELO.Name = "IDMODELO";
+            this.IDMODELO.ReadOnly = true;
+            this.IDMODELO.Visible = false;
+            // 
+            // CHMODELO
+            // 
+            this.CHMODELO.DataPropertyName = "chdmodelo";
+            this.CHMODELO.HeaderText = "MODELO";
+            this.CHMODELO.Name = "CHMODELO";
+            // 
+            // CHCODPRODANTES
+            // 
+            this.CHCODPRODANTES.DataPropertyName = "chcodigoproductoantes";
+            this.CHCODPRODANTES.HeaderText = "CODIGO ANTERIOR";
+            this.CHCODPRODANTES.Name = "CHCODPRODANTES";
+            this.CHCODPRODANTES.ReadOnly = true;
+            this.CHCODPRODANTES.Visible = false;
+            // 
+            // CHDESCRIPCION
+            // 
+            this.CHDESCRIPCION.DataPropertyName = "chdescripcionproducto";
+            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
+            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
+            this.CHDESCRIPCION.ReadOnly = true;
+            this.CHDESCRIPCION.Visible = false;
+            // 
+            // IDUSUARIOINSER
+            // 
+            this.IDUSUARIOINSER.DataPropertyName = "p_inidusuarioinsert";
+            this.IDUSUARIOINSER.HeaderText = "IDUSUARIOINTER";
+            this.IDUSUARIOINSER.Name = "IDUSUARIOINSER";
+            this.IDUSUARIOINSER.ReadOnly = true;
+            this.IDUSUARIOINSER.Visible = false;
+            // 
+            // CHUSUARIOINSERT
+            // 
+            this.CHUSUARIOINSERT.DataPropertyName = "chusuarioinsert";
+            this.CHUSUARIOINSERT.HeaderText = "CHUSUARIOINSERT";
+            this.CHUSUARIOINSERT.Name = "CHUSUARIOINSERT";
+            this.CHUSUARIOINSERT.ReadOnly = true;
+            this.CHUSUARIOINSERT.Visible = false;
+            // 
+            // IDUSUARIODELETE
+            // 
+            this.IDUSUARIODELETE.DataPropertyName = "p_inidusuariodelete";
+            this.IDUSUARIODELETE.HeaderText = "IDUSUARIODELETE";
+            this.IDUSUARIODELETE.Name = "IDUSUARIODELETE";
+            this.IDUSUARIODELETE.ReadOnly = true;
+            this.IDUSUARIODELETE.Visible = false;
+            // 
+            // CHUSUARIODELETE
+            // 
+            this.CHUSUARIODELETE.DataPropertyName = "chusuariodelete";
+            this.CHUSUARIODELETE.HeaderText = "CHUSUARIODELETE";
+            this.CHUSUARIODELETE.Name = "CHUSUARIODELETE";
+            this.CHUSUARIODELETE.ReadOnly = true;
+            this.CHUSUARIODELETE.Visible = false;
+            // 
+            // NUPRECIO
+            // 
+            this.NUPRECIO.DataPropertyName = "nuprecio";
+            this.NUPRECIO.HeaderText = "PRECIO";
+            this.NUPRECIO.Name = "NUPRECIO";
+            // 
+            // IDSITUACION
+            // 
+            this.IDSITUACION.DataPropertyName = "p_inidsituacion";
+            this.IDSITUACION.HeaderText = "IDSIATUACION";
+            this.IDSITUACION.Name = "IDSITUACION";
+            this.IDSITUACION.ReadOnly = true;
+            this.IDSITUACION.Visible = false;
+            // 
+            // CHSITUACION
+            // 
+            this.CHSITUACION.DataPropertyName = "chsituacion";
+            this.CHSITUACION.HeaderText = "SITUACION";
+            this.CHSITUACION.Name = "CHSITUACION";
+            // 
+            // frmManProductoPrincipal
             // 
             this.AcceptButton = this.btnAnadir;
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(563, 508);
-            this.Controls.Add(this.dgvArticulo);
+            this.ClientSize = new System.Drawing.Size(783, 467);
+            this.Controls.Add(this.dvgArticulo);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "frmArticulo";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "frmManProductoPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "MANTENIMIENTO DE ARTICULOS";
+            this.Text = "MANTENIMIENTO DE PRODUCTOS";
             this.Load += new System.EventHandler(this.frmArticulo_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgArticulo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,5 +414,32 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDCATEARTICULO;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDMEDIARTICULO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADOARTICULO;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.DataGridView dvgArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODCUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODPRODUCTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDTIPO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHTIPO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDMARCA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHMARCA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDMEDIDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHMEDIDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHFECHA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDFAMILIA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHFAMILIA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCALIBRE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCALIBRE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDMODELO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHMODELO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCODPRODANTES;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHDESCRIPCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDUSUARIOINSER;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHUSUARIOINSERT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDUSUARIODELETE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHUSUARIODELETE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NUPRECIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDSITUACION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHSITUACION;
     }
 }

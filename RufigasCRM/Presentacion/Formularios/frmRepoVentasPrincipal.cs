@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentacion.Formularios
+namespace Presentacion
 {
     public partial class frmRepoVentasPrincipal : Form
     {

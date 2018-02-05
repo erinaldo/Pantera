@@ -1,6 +1,6 @@
-﻿namespace Presentacion.Formularios
+﻿namespace Presentacion
 {
-    partial class frmProcNotaDebitoDevPrincipal
+    partial class frmProcNotaCrediDevPrincipal
     {
         /// <summary>
         /// Required designer variable.

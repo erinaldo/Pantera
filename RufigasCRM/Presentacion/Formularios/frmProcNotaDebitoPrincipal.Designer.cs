@@ -1,4 +1,4 @@
-﻿namespace Presentacion.Formularios
+﻿namespace Presentacion
 {
     partial class frmProcNotaDebitoPrincipal
     {
