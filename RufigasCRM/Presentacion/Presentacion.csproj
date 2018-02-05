@@ -109,23 +109,77 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DtsUsuario.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmArticulo.cs">
+    <Compile Include="Formularios\frmConsCobranzaDocuVentaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmArticulo.designer.cs">
-      <DependentUpon>frmArticulo.cs</DependentUpon>
+    <Compile Include="Formularios\frmConsCobranzaDocuVentaPrincipal.Designer.cs">
+      <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmArticuloAnadir.cs">
+    <Compile Include="Formularios\frmManListaPreciosPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmArticuloAnadir.designer.cs">
-      <DependentUpon>frmArticuloAnadir.cs</DependentUpon>
+    <Compile Include="Formularios\frmManListaPreciosPrincipal.Designer.cs">
+      <DependentUpon>frmManListaPreciosPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmLogin.cs">
+    <Compile Include="Formularios\frmManProductoPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmLogin.designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="Formularios\frmManProductoPrincipal.designer.cs">
+      <DependentUpon>frmManProductoPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmManProductoAnadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManProductoAnadir.designer.cs">
+      <DependentUpon>frmManProductoAnadir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmConsCuentasCobrarPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConsCuentasCobrarPrincipal.Designer.cs">
+      <DependentUpon>frmConsCuentasCobrarPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmConsEstadoCuentaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConsEstadoCuentaPrincipal.Designer.cs">
+      <DependentUpon>frmConsEstadoCuentaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmConsVentasPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConsVentasPrincipal.Designer.cs">
+      <DependentUpon>frmConsVentasPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmImprFacturaBoletaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmImprFacturaBoletaPrincipal.Designer.cs">
+      <DependentUpon>frmImprFacturaBoletaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmImprNotaDebDevoNotaDebOtrosPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmImprNotaDebDevoNotaDebOtrosPrincipal.Designer.cs">
+      <DependentUpon>frmImprNotaDebDevoNotaDebOtrosPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmImprStickerCodificaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmImprStickerCodificaPrincipal.Designer.cs">
+      <DependentUpon>frmImprStickerCodificaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmManStockMinimoPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManStockMinimoPrincipal.Designer.cs">
+      <DependentUpon>frmManStockMinimoPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmSecuAutenticacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmSecuAutenticacion.designer.cs">
+      <DependentUpon>frmSecuAutenticacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmManClienteAnadir.cs">
       <SubType>Form</SubType>
@@ -150,6 +204,24 @@
     </Compile>
     <Compile Include="Formularios\frmManProveedoresPrincipal.Designer.cs">
       <DependentUpon>frmManProveedoresPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmImprNotaCreditoGRemisionPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmImprNotaCreditoGRemisionPrincipal.Designer.cs">
+      <DependentUpon>frmImprNotaCreditoGRemisionPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmImprNotaVentaReciboPagoPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmImprNotaVentaReciboPagoPrincipal.Designer.cs">
+      <DependentUpon>frmImprNotaVentaReciboPagoPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProSeriesPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProSeriesPrincipal.Designer.cs">
+      <DependentUpon>frmProSeriesPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmMarca.cs">
       <SubType>Form</SubType>
@@ -205,6 +277,30 @@
     <Compile Include="Formularios\frmPrincipal.designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmRepoCierreMensualPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepoCierreMensualPrincipal.Designer.cs">
+      <DependentUpon>frmRepoCierreMensualPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepoCobranzaDiaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepoCobranzaDiaria.Designer.cs">
+      <DependentUpon>frmRepoCobranzaDiaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepoCuentasCobrarPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepoCuentasCobrarPrincipal.Designer.cs">
+      <DependentUpon>frmRepoCuentasCobrarPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepoReposicionStockPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepoReposicionStockPrincipal.Designer.cs">
+      <DependentUpon>frmRepoReposicionStockPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmReporteDiarioPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +330,24 @@
     </Compile>
     <Compile Include="Formularios\frmRegistroPresupuestoAnadir.designer.cs">
       <DependentUpon>frmRegistroPresupuestoAnadir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepoVentasPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepoVentasPrincipal.Designer.cs">
+      <DependentUpon>frmRepoVentasPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmSecuUsuariosPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmSecuUsuariosPrincipal.Designer.cs">
+      <DependentUpon>frmSecuUsuariosPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmTipoPersonaVentaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmTipoPersonaVentaPrincipal.Designer.cs">
+      <DependentUpon>frmTipoPersonaVentaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmUbigeoBuscar.cs">
       <SubType>Form</SubType>
@@ -276,14 +390,14 @@
     <Compile Include="Reportes\FrmReporte.designer.cs">
       <DependentUpon>FrmReporte.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Formularios\frmArticulo.resx">
-      <DependentUpon>frmArticulo.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmManProductoPrincipal.resx">
+      <DependentUpon>frmManProductoPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmArticuloAnadir.resx">
-      <DependentUpon>frmArticuloAnadir.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmManProductoAnadir.resx">
+      <DependentUpon>frmManProductoAnadir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmSecuAutenticacion.resx">
+      <DependentUpon>frmSecuAutenticacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManClienteAnadir.resx">
       <DependentUpon>frmManClienteAnadir.cs</DependentUpon>
