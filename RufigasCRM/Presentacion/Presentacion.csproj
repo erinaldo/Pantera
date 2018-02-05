@@ -139,6 +139,18 @@
     <Compile Include="Formularios\frmManClientePrincipal.Designer.cs">
       <DependentUpon>frmManClientePrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmManProveedoresAnadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManProveedoresAnadir.Designer.cs">
+      <DependentUpon>frmManProveedoresAnadir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmManProveedoresPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManProveedoresPrincipal.Designer.cs">
+      <DependentUpon>frmManProveedoresPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +290,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManClientePrincipal.resx">
       <DependentUpon>frmManClientePrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManProveedoresAnadir.resx">
+      <DependentUpon>frmManProveedoresAnadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManProveedoresPrincipal.resx">
+      <DependentUpon>frmManProveedoresPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
@@ -475,6 +493,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

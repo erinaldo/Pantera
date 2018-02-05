@@ -83,6 +83,26 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _16xFolder {
+            get {
+                object obj = ResourceManager.GetObject("_16xFolder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _16xIcono {
+            get {
+                object obj = ResourceManager.GetObject("_16xIcono", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _16xParametros {
             get {
                 object obj = ResourceManager.GetObject("_16xParametros", resourceCulture);
@@ -117,6 +137,16 @@ namespace Presentacion.Properties {
             get {
                 object obj = ResourceManager.GetObject("_16xPersonas1", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _Menu {
+            get {
+                object obj = ResourceManager.GetObject("_Menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

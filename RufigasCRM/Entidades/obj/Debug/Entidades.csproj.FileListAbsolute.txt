@@ -36,3 +36,10 @@ C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Entidades\obj\Debug\Entidade
 C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Entidades\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Entidades\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Entidades\bin\Debug\Entidades.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Entidades\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Entidades\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Entidades\obj\Debug\Entidades.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Entidades\obj\Debug\Entidades.pdb

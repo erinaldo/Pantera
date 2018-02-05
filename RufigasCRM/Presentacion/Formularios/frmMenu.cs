@@ -36,7 +36,7 @@ namespace Presentacion
             {
                 if (entry.Value is Bitmap && entry.Key.ToString().Substring(1, 3) == "16x")
                 {
-                    this.imageList.Images.Add(entry.Key.ToString().Substring(1, entry.Key.ToString().Length - 1), (Bitmap)entry.Value);
+                    this.imageList1.Images.Add(entry.Key.ToString().Substring(1, entry.Key.ToString().Length - 1), (Bitmap)entry.Value);
                 }
             }
         }
