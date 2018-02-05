@@ -271,4 +271,3 @@ C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Rufig
 C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
 C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmManClienteAnadir.resources
 C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.frmManClientePrincipal.resources
-C:\Users\Junior\Documents\GitHub\Pantera\RufigasCRM\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
