@@ -43,6 +43,7 @@
     <Compile Include="acesoNE.cs" />
     <Compile Include="almacenNE.cs" />
     <Compile Include="articuloNE.cs" />
+    <Compile Include="clienteNE.cs" />
     <Compile Include="empresaNE.cs" />
     <Compile Include="impresoraNE.cs" />
     <Compile Include="maestrodetalleNE.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="perfilNE.cs" />
     <Compile Include="personaNE.cs" />
     <Compile Include="presupuestoNE.cs" />
+    <Compile Include="productoNE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="puntoventaNE.cs" />
     <Compile Include="reniecNE.cs" />

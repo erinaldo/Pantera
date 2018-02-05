@@ -23,7 +23,7 @@ namespace Negocios
         {
             return articuloDL.articuloInsertar(articulo);
         }
-        public static string articuloObtenerNumero(string idtipoarticulo,string idcatearticulo)
+        public static string articuloObtenerNumero(int idtipoarticulo,int idcatearticulo)
         {
             return articuloDL.obtenerNumero(idtipoarticulo,idcatearticulo);
         }

@@ -15,9 +15,10 @@ namespace Presentacion
 {
     public partial class frmArticuloAnadir : Form
     {
-        internal articulo tmpArticulo;
+        internal producto  tmpProducto;
         public delegate void pasar(int varreg);
         public event pasar pasado;
+         
         public frmArticuloAnadir(string vBoton)
         {
             InitializeComponent();
@@ -26,121 +27,171 @@ namespace Presentacion
         string vBoton;
         private void btnGrabar_Click(object sender, EventArgs e)
         {
+            
             int varIdArticulo;
             switch (this.vBoton)
             {
                 case "A":
-                    tmpArticulo = new articulo();
-                    tmpArticulo.codigoarticulo = txtCodigo.Text;
-                    tmpArticulo.nombrearticulo = txtNombre.Text;
-                    tmpArticulo.idtipoarticulo= (string)cboTipo.SelectedValue;
-                    tmpArticulo.idcatearticulo = (string)cboCategoria.SelectedValue;
-                    tmpArticulo.idmediarticulo = ((string)cboMedida.SelectedValue==null) ? "" : (string)cboMedida.SelectedValue;
-                    tmpArticulo.fechacreacion = txtFecha.Text;
-                    if (txtPrecio.Text == "")
                     {
-                        tmpArticulo.precio = 0;
+                        tmpProducto = new producto();
+                        //tmpProducto.p_inidproducto = (int);
+                        tmpProducto.chcodigoproducto = txtCodigo.Text;
+                        tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
+                        tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue; 
+                        tmpProducto.p_inunidadmedidaproducto = (int)cboMedida.SelectedValue;
+                        tmpProducto.chfechacreacion = txtFecha.Text;
+                        tmpProducto.estado = true;
+                        tmpProducto.tmhoracreacion = txtFecha.Text;
+                        tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
+                        tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
+                        tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
+                        tmpProducto.chcodigoproductoantes = txtNombre.Text;
+                        tmpProducto.chdescripcionproducto = txtNombre.Text;
+                        varIdArticulo = productoNE.productoInsertar(tmpProducto);
+                        if (varIdArticulo <= 0)
+                        {
+                            MessageBox.Show("Registro errado, validar");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Código generado", varIdArticulo.ToString());
+                            pasado(varIdArticulo);
+                        }
                     }
-                    else
-                    {
-                        tmpArticulo.precio = Convert.ToDecimal(txtPrecio.Text);
-                    }
-                    tmpArticulo.idusuario = sesion.usuariosesion.idusuario;
-                    tmpArticulo.idsituarticulo = (string)cboSituacion.SelectedValue;
-                    tmpArticulo.estadoarticulo = true;
-                    varIdArticulo = articuloNE.articuloInsertar(tmpArticulo);
-                    if (varIdArticulo <= 0)
-                    {
-                        MessageBox.Show("Registro errado, validar");
-                    }
-                    else
-                    {
-                        //MessageBox.Show("Código generado", varIdArticulo.ToString());
-                        pasado(varIdArticulo);
-                    }
-                        break;
+                    break;
                 case "M":
-                    tmpArticulo.codigoarticulo = txtCodigo.Text;
-                    tmpArticulo.nombrearticulo = txtNombre.Text;
-                    tmpArticulo.idtipoarticulo = (string)cboTipo.SelectedValue;
-                    tmpArticulo.idcatearticulo = (string)cboCategoria.SelectedValue;
-                    tmpArticulo.idmediarticulo = ((string)cboMedida.SelectedValue == null) ? "" : (string)cboMedida.SelectedValue;
-                    tmpArticulo.fechacreacion = txtFecha.Text;
-                    tmpArticulo.precio = Convert.ToDecimal(txtPrecio.Text);
-                    tmpArticulo.idusuario = sesion.usuariosesion.idusuario;
-                    tmpArticulo.idsituarticulo = (string)cboSituacion.SelectedValue;
-                    tmpArticulo.estadoarticulo = true;
-                    varIdArticulo = articuloNE.articuloActualizar(tmpArticulo);
-                    if (varIdArticulo <= 0)
                     {
-                        MessageBox.Show("Registro con error por actualizado, validar");
-                    }
-                    else
-                    {
-                       // MessageBox.Show("Registro actualizado");
-                        pasado(varIdArticulo);
-                    }
-                        break;
+
+                    }break;
                 default:
                     break;
             }
+            //int varIdArticulo ;
+            //switch (this.vBoton)
+            //{
+            //    case "A":
+            //        //tmpProducto = new producto();
+            //        //tmpProducto.chcodigoproducto = txtCodigo.Text;
+            //        //tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
+            //        //tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
+            //        //tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
+            //        //tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
+            //        //tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
+            //        //tmpProducto.chdescripcionproducto = txtNombre.Text;
+            //        //tmpProducto.p_inunidadmedidaproducto =  (int)cboMedida.SelectedValue;
+            //        //tmpProducto.chfechacreacion = txtFecha.Text;
+
+            //       // varIdArticulo = productoNE.productoInsertar(tmpProducto);
+            //        if (varIdArticulo <= 0)
+            //        {
+            //            MessageBox.Show("a"+ tmpProducto.chcodigoproducto.ToString());
+            //            MessageBox.Show("Registro errado, validar");
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Código generado", varIdArticulo.ToString());
+            //            pasado(varIdArticulo);
+            //        }
+            //        break;
+            //    //case "M":
+            //    //    //tmpArticulo.codigoarticulo = txtCodigo.Text;
+            //    //    //tmpArticulo.nombrearticulo = txtNombre.Text;
+            //    //    //tmpArticulo.idtipoarticulo = (string)cboTipo.SelectedValue;
+            //    //    //tmpArticulo.idcatearticulo = (string)cboCategoria.SelectedValue;
+            //    //    //tmpArticulo.idmediarticulo = ((string)cboMedida.SelectedValue == null) ? "" : (string)cboMedida.SelectedValue;
+            //    //    //tmpArticulo.fechacreacion = txtFecha.Text;
+            //    //    //tmpArticulo.precio = Convert.ToDecimal(txtPrecio.Text);
+            //    //    //tmpArticulo.idusuario = sesion.usuariosesion.idusuario;
+            //    //    //tmpArticulo.idsituarticulo = (string)cboSituacion.SelectedValue;
+            //    //    //tmpArticulo.estadoarticulo = true;
+            //    //    //varIdArticulo = articuloNE.articuloActualizar(tmpArticulo);
+            //    //    //if (varIdArticulo <= 0)
+            //    //    //{
+            //    //    //    MessageBox.Show("Registro con error por actualizado, validar");
+            //    //    //}
+            //    //    //else
+            //    //    //{
+            //    //    //    MessageBox.Show("Registro actualizado");
+            //    //    //    pasado(varIdArticulo);
+            //    //    //}
+            //    //    break;
+            //    default:
+            //        break;
+            //}
             this.Dispose();
         }
+
+     
 
         private void frmArticuloAnadir_Load(object sender, EventArgs e)
         {
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
-
-            cboTipo.DataSource = maestrodetalleNE.buscarPorCodigoMaestro("TIPOARTICU");
-            cboTipo.ValueMember = "codigoitem";
-            cboTipo.DisplayMember = "nombreitem";
-            cboCategoria.DataSource = maestrodetalleNE.buscarPorCodigoMaestro("CATEARTICU");
-            cboCategoria.ValueMember = "codigoitem";
+            //Seleccion Categoria
+            cboCategoria.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(1);
+            cboCategoria.ValueMember = "idmaestrodetalle";
             cboCategoria.DisplayMember = "nombreitem";
-            cboMedida.DataSource = maestrodetalleNE.buscarPorCodigoMaestro("UNIDMEDIDA");
-            cboMedida.ValueMember = "codigoitem";
+            //Seleccion tipo
+            cboTipo.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(2);
+            cboTipo.ValueMember = "idmaestrodetalle";
+            cboTipo.DisplayMember = "nombreitem";            
+            //Seleccion Marca
+            cboMarca.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(3);
+            cboMarca.ValueMember = "idmaestrodetalle";
+            cboMarca.DisplayMember = "nombreitem";
+            //Seleccion Calibre
+            cboCalibre.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(4);
+            cboCalibre.ValueMember = "idmaestrodetalle";
+            cboCalibre.DisplayMember = "nombreitem";
+            //Seleccion Modelo
+            cboModelo.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(5);
+            cboModelo.ValueMember = "idmaestrodetalle";
+            cboModelo.DisplayMember = "nombreitem";
+            //Seleccion Unidad Medida
+            cboMedida.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(6);
+            cboMedida.ValueMember = "idmaestrodetalle";
             cboMedida.DisplayMember = "nombreitem";
-            cboSituacion.DataSource = maestrodetalleNE.buscarPorCodigoMaestro("SITUARTICU");
-            cboSituacion.ValueMember = "codigoitem";
+            //Situacion Producto
+            cboSituacion.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(7);
+            cboSituacion.ValueMember = "idmaestrodetalle";
             cboSituacion.DisplayMember = "nombreitem";
 
             if (this.vBoton =="A")
             {
-                this.Text = "AÑADIR ARTÍCULO";
+                label8.Text = "Añadir Producto";
                 txtFecha.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-                int index = cboMedida.FindString("UNIDADES");
-                cboMedida.SelectedIndex = index;
+               // int index = cboMedida.FindString("UNIDADES");
+               // cboMedida.SelectedIndex = 0;
                 txtPrecio.Text = "0";
             }
             else 
                 if (this.vBoton == "M")
                 {
                     this.Text = "MODIFICAR ARTÍCULO";
-                    txtCodigo.Text = tmpArticulo.codigoarticulo;
-                    txtNombre.Text = tmpArticulo.nombrearticulo;
-                    cboTipo.SelectedValue = tmpArticulo.idtipoarticulo;
-                    cboCategoria.SelectedValue = tmpArticulo.idcatearticulo;
-                    cboMedida.SelectedValue = tmpArticulo.idmediarticulo;
-                    txtPrecio.Text = tmpArticulo.precio.ToString();
-                    cboSituacion.SelectedValue = tmpArticulo.idsituarticulo;
-                    txtFecha.Text = tmpArticulo.fechacreacion;
-                }
-                else
+                //txtCodigo.Text = tmpArticulo.codigoarticulo;
+                //txtNombre.Text = tmpArticulo.nombrearticulo;
+                //cboTipo.SelectedValue = tmpArticulo.idtipoarticulo;
+                //cboCategoria.SelectedValue = tmpArticulo.idcatearticulo;
+                //cboMedida.SelectedValue = tmpArticulo.idmediarticulo;
+                //txtPrecio.Text = tmpArticulo.precio.ToString();
+                //cboSituacion.SelectedValue = tmpArticulo.idsituarticulo;
+                //txtFecha.Text = tmpArticulo.fechacreacion;
+            }
+            else
                    if(this.vBoton == "V")
                     {
-                        this.Text = "VER ARTÍCULO";
-                        txtCodigo.Text = tmpArticulo.codigoarticulo;
-                        txtNombre.Text = tmpArticulo.nombrearticulo;
-                        cboTipo.SelectedValue = tmpArticulo.idtipoarticulo;
-                        cboCategoria.SelectedValue = tmpArticulo.idcatearticulo;
-                        cboMedida.SelectedValue = tmpArticulo.idmediarticulo;
-                        txtPrecio.Text = tmpArticulo.precio.ToString();
-                        cboSituacion.SelectedValue = tmpArticulo.idsituarticulo;
-                        txtFecha.Text = tmpArticulo.fechacreacion;
+                label8.Text = "VER ARTÍCULO";
+                        //txtCodigo.Text = tmpArticulo.codigoarticulo;
+                        //txtNombre.Text = tmpArticulo.nombrearticulo;
+                        //cboTipo.SelectedValue = tmpArticulo.idtipoarticulo;
+                        //cboCategoria.SelectedValue = tmpArticulo.idcatearticulo;
+                        //cboMedida.SelectedValue = tmpArticulo.idmediarticulo;
+                        //txtPrecio.Text = tmpArticulo.precio.ToString();
+                        //cboSituacion.SelectedValue = tmpArticulo.idsituarticulo;
+                        //txtFecha.Text = tmpArticulo.fechacreacion;
                         btnGrabar.Enabled = false;
                     }
-                }
+         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -149,11 +200,14 @@ namespace Presentacion
 
         private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboCategoria.Text != "ARTICULOS")
+            if (cboCategoria.Text == "Productos")
             {
-                cboMedida.Enabled = false;
-                txtPrecio.Enabled = false;
-                cboMedida.SelectedIndex = -1;
+                
+                //cboSituacion.Enabled = false;
+                //txtPrecio.Enabled = false;
+                //cboMedida.SelectedIndex = -1;
+
+
                 //if (cboCategoria.Text != "FAMILIAS")
                 //{
                 //    cboTipo.Enabled = false;
@@ -165,15 +219,25 @@ namespace Presentacion
             }
             else
             {
-                cboMedida.Enabled = true;
-                txtPrecio.Enabled = true;
-                int index = cboMedida.FindString("UNIDADES");
-                cboMedida.SelectedIndex = index;
+                if (cboCategoria.Text == "Acesorios")
+                {
+                   // cboMarca.Enabled = false;
+                   // cboSituacion.Enabled = false;
+
+                }
+                else
+                {
+
+                }
+                //cboMedida.Enabled = true;
+                //txtPrecio.Enabled = true;
+                //int index = cboMedida.FindString("UNIDADES");
+                //cboMedida.SelectedIndex = index;
             }
-            if (((string)cboTipo.ValueMember != "") && ((string)cboCategoria.ValueMember != ""))
-            {
-                txtCodigo.Text = articuloNE.articuloObtenerNumero((string)cboTipo.SelectedValue, (string)cboCategoria.SelectedValue);
-            }
+            //if (((string)cboTipo.ValueMember != "") && ((string)cboCategoria.ValueMember != ""))
+            //{
+            //    txtCodigo.Text = articuloNE.articuloObtenerNumero((string)cboTipo.SelectedValue, (string)cboCategoria.SelectedValue);
+            //}
         }
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
@@ -189,8 +253,18 @@ namespace Presentacion
         {
             if ((cboCategoria.ValueMember != "") && (cboTipo.ValueMember != ""))
             {
-                txtCodigo.Text = articuloNE.articuloObtenerNumero((string)cboTipo.SelectedValue, (string)cboCategoria.SelectedValue);
+                txtCodigo.Text = articuloNE.articuloObtenerNumero((int)cboTipo.SelectedValue, (int)cboCategoria.SelectedValue);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

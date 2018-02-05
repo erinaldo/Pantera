@@ -37,10 +37,15 @@ namespace Presentacion
                     f.pasado += new frmArticuloAnadir.pasar(ejecutar);
                     f.ShowDialog();
                 }
+                else
+                {
+                    MessageBox.Show("Error de Aceso");
+                }
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sisaaatema", MessageBoxButtons.OK);
             }
         }
         private void frmArticulo_Load(object sender, EventArgs e)
@@ -102,17 +107,17 @@ namespace Presentacion
             }
             frmArticuloAnadir f = new frmArticuloAnadir(vBoton);
             f.pasado += new frmArticuloAnadir.pasar(ejecutar);
-            f.tmpArticulo = new articulo();
-            f.tmpArticulo.idarticulo = (int)dgvArticulo.CurrentRow.Cells["IDARTICULO"].Value;
-            f.tmpArticulo.codigoarticulo = (string)dgvArticulo.CurrentRow.Cells["CODIGOARTICULO"].Value;
-            f.tmpArticulo.nombrearticulo = (string)(dgvArticulo.CurrentRow.Cells["NOMBREARTICULO"].Value);
-            f.tmpArticulo.idtipoarticulo = (string)(dgvArticulo.CurrentRow.Cells["IDTIPOARTICULO"].Value);
-            f.tmpArticulo.idcatearticulo = (string)(dgvArticulo.CurrentRow.Cells["IDCATEARTICULO"].Value);
-            f.tmpArticulo.idmediarticulo = (string)(dgvArticulo.CurrentRow.Cells["IDMEDIARTICULO"].Value);
-            f.tmpArticulo.fechacreacion = (string)(dgvArticulo.CurrentRow.Cells["FECHACREACION"].Value);
-            f.tmpArticulo.precio = (decimal)(dgvArticulo.CurrentRow.Cells["PRECIO"].Value);
-            f.tmpArticulo.idsituarticulo = (string)(dgvArticulo.CurrentRow.Cells["IDSITUARTICULO"].Value);
-            f.tmpArticulo.estadoarticulo = (bool)(dgvArticulo.CurrentRow.Cells["ESTADOARTICULO"].Value);
+            f.tmpProducto = new producto();
+            //f.tmpArticulo.idarticulo = (int)dgvArticulo.CurrentRow.Cells["IDARTICULO"].Value;
+            //f.tmpArticulo.codigoarticulo = (string)dgvArticulo.CurrentRow.Cells["CODIGOARTICULO"].Value;
+            //f.tmpArticulo.nombrearticulo = (string)(dgvArticulo.CurrentRow.Cells["NOMBREARTICULO"].Value);
+            //f.tmpArticulo.idtipoarticulo = (string)(dgvArticulo.CurrentRow.Cells["IDTIPOARTICULO"].Value);
+            //f.tmpArticulo.idcatearticulo = (string)(dgvArticulo.CurrentRow.Cells["IDCATEARTICULO"].Value);
+            //f.tmpArticulo.idmediarticulo = (string)(dgvArticulo.CurrentRow.Cells["IDMEDIARTICULO"].Value);
+            //f.tmpArticulo.fechacreacion = (string)(dgvArticulo.CurrentRow.Cells["FECHACREACION"].Value);
+            //f.tmpArticulo.precio = (decimal)(dgvArticulo.CurrentRow.Cells["PRECIO"].Value);
+            //f.tmpArticulo.idsituarticulo = (string)(dgvArticulo.CurrentRow.Cells["IDSITUARTICULO"].Value);
+            //f.tmpArticulo.estadoarticulo = (bool)(dgvArticulo.CurrentRow.Cells["ESTADOARTICULO"].Value);
             f.ShowDialog();
         }
 
@@ -125,6 +130,11 @@ namespace Presentacion
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void dgvArticulo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

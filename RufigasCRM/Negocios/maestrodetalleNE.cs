@@ -10,7 +10,7 @@ namespace Negocios
 {
     public abstract class maestrodetalleNE
     {
-        public static List<maestrodetalle> buscarPorCodigoMaestro(string codigomaestro)
+        public static List<maestrodetalle> buscarPorCodigoMaestro(int codigomaestro)
         {
             return maestrodetalleDL.buscarPorCodigoMaestro(codigomaestro);
         }

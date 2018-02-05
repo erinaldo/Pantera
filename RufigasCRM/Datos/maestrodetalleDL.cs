@@ -10,7 +10,7 @@ namespace Datos
 {
     public abstract class maestrodetalleDL
     {
-        public static List<maestrodetalle> buscarPorCodigoMaestro(string codigomaestro)
+        public static List<maestrodetalle> buscarPorCodigoMaestro(int codigomaestro)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_maestrodetalle_buscar_por_codigomaestro", CommandType.StoredProcedure, new parametro("in_codigomaestro", codigomaestro)))
             {
