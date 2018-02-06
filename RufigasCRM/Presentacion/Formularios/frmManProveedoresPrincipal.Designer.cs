@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,35 +41,38 @@
             this.CHDIRECION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHRUBRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHTELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 402);
+            this.groupBox1.Location = new System.Drawing.Point(113, 402);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(759, 53);
+            this.groupBox1.Size = new System.Drawing.Size(505, 53);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Opciones";
             // 
-            // button4
+            // btnSalir
             // 
-            this.button4.Location = new System.Drawing.Point(531, 20);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "&Visualizar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Location = new System.Drawing.Point(417, 20);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(393, 20);
+            this.button3.Location = new System.Drawing.Point(320, 20);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 2;
@@ -78,7 +81,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(229, 20);
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Location = new System.Drawing.Point(111, 20);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -87,7 +91,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(67, 20);
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.Location = new System.Drawing.Point(11, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -153,11 +158,21 @@
             this.CHTELEFONO.HeaderText = "TELÉFONO";
             this.CHTELEFONO.Name = "CHTELEFONO";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(206, 20);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "&Ver";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // frmManProveedoresPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(783, 467);
             this.Controls.Add(this.dgvProveedores);
             this.Controls.Add(this.groupBox1);
@@ -174,7 +189,7 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
@@ -186,5 +201,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHDIRECION;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHRUBRO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHTELEFONO;
+        private System.Windows.Forms.Button button5;
     }
 }

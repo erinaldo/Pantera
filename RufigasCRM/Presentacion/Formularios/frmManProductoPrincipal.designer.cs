@@ -37,7 +37,7 @@
             this.btnAnadir = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dvgArticulo = new System.Windows.Forms.DataGridView();
+            this.dvgProducto = new System.Windows.Forms.DataGridView();
             this.IDPRODCUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,31 +64,30 @@
             this.IDSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgArticulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Window;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(446, 21);
+            this.button1.Location = new System.Drawing.Point(313, 21);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 30);
+            this.button1.Size = new System.Drawing.Size(89, 30);
             this.button1.TabIndex = 13;
             this.button1.Text = "&Imprimir";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(665, 21);
+            this.btnSalir.Location = new System.Drawing.Point(424, 21);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(74, 30);
+            this.btnSalir.Size = new System.Drawing.Size(89, 30);
             this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -98,10 +97,10 @@
             // 
             this.btnVer.BackColor = System.Drawing.SystemColors.Window;
             this.btnVer.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(283, 21);
+            this.btnVer.Location = new System.Drawing.Point(211, 21);
             this.btnVer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(60, 30);
+            this.btnVer.Size = new System.Drawing.Size(89, 30);
             this.btnVer.TabIndex = 10;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
@@ -111,10 +110,10 @@
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(172, 21);
+            this.btnModificar.Location = new System.Drawing.Point(112, 21);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(105, 30);
+            this.btnModificar.Size = new System.Drawing.Size(89, 30);
             this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -125,10 +124,10 @@
             this.btnAnadir.BackColor = System.Drawing.SystemColors.Window;
             this.btnAnadir.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnadir.ImageList = this.imageList1;
-            this.btnAnadir.Location = new System.Drawing.Point(86, 21);
+            this.btnAnadir.Location = new System.Drawing.Point(10, 21);
             this.btnAnadir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(80, 30);
+            this.btnAnadir.Size = new System.Drawing.Size(89, 30);
             this.btnAnadir.TabIndex = 8;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
@@ -149,19 +148,18 @@
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(12, 388);
+            this.groupBox1.Location = new System.Drawing.Point(115, 419);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(759, 63);
+            this.groupBox1.Size = new System.Drawing.Size(526, 63);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Opciones";
             // 
-            // dvgArticulo
+            // dvgProducto
             // 
-            this.dvgArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgArticulo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dvgProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDPRODCUTO,
             this.CODPRODUCTO,
             this.IDTIPO,
@@ -187,10 +185,10 @@
             this.NUPRECIO,
             this.IDSITUACION,
             this.CHSITUACION});
-            this.dvgArticulo.Location = new System.Drawing.Point(12, 12);
-            this.dvgArticulo.Name = "dvgArticulo";
-            this.dvgArticulo.Size = new System.Drawing.Size(759, 369);
-            this.dvgArticulo.TabIndex = 15;
+            this.dvgProducto.Location = new System.Drawing.Point(12, 12);
+            this.dvgProducto.Name = "dvgProducto";
+            this.dvgProducto.Size = new System.Drawing.Size(759, 402);
+            this.dvgProducto.TabIndex = 15;
             // 
             // IDPRODCUTO
             // 
@@ -268,6 +266,7 @@
             this.IDFAMILIA.DataPropertyName = "p_inidfamiliaproducto";
             this.IDFAMILIA.HeaderText = "IDFAMILIA";
             this.IDFAMILIA.Name = "IDFAMILIA";
+            this.IDFAMILIA.Visible = false;
             // 
             // CHFAMILIA
             // 
@@ -356,6 +355,7 @@
             this.NUPRECIO.DataPropertyName = "nuprecio";
             this.NUPRECIO.HeaderText = "PRECIO";
             this.NUPRECIO.Name = "NUPRECIO";
+            this.NUPRECIO.Visible = false;
             // 
             // IDSITUACION
             // 
@@ -379,8 +379,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(783, 467);
-            this.Controls.Add(this.dvgArticulo);
+            this.ClientSize = new System.Drawing.Size(783, 494);
+            this.Controls.Add(this.dvgProducto);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -389,9 +389,9 @@
             this.Name = "frmManProductoPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MANTENIMIENTO DE PRODUCTOS";
-            this.Load += new System.EventHandler(this.frmArticulo_Load);
+            this.Load += new System.EventHandler(this.frmManProductoPrincipal_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dvgArticulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgProducto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -415,7 +415,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDMEDIARTICULO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADOARTICULO;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.DataGridView dvgArticulo;
+        private System.Windows.Forms.DataGridView dvgProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODCUTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODPRODUCTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDTIPO;

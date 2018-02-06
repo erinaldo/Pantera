@@ -27,14 +27,14 @@ namespace Presentacion
                 vBoton = "A";
                 if (basicas.validarAcceso(vBoton))
                 {
-                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmArticuloAnadir);
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProductoAnadir);
                     if (frm != null)
                     {
                         frm.BringToFront();
                         return;
                     }
-                    frmArticuloAnadir f = new frmArticuloAnadir(vBoton);
-                    f.pasado += new frmArticuloAnadir.pasar(ejecutar);
+                    frmManProductoAnadir f = new frmManProductoAnadir(vBoton);
+                    f.pasado += new frmManProductoAnadir.pasar(ejecutar);
                     f.ShowDialog();
                 }
                 else
@@ -48,7 +48,7 @@ namespace Presentacion
                 MessageBox.Show(ex.Message.ToString(), "Mensaje de Sisaaatema", MessageBoxButtons.OK);
             }
         }
-        private void frmArticulo_Load(object sender, EventArgs e)
+        private void frmManProductoPrincipal_Load(object sender, EventArgs e)
         {
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
@@ -56,20 +56,20 @@ namespace Presentacion
         }
         public void cargarData(int registro)
         {
-            List<articulo> listado = articuloNE.articuloListar();
-            dgvArticulo.DataSource = listado;
+            List<producto> listado = productoNE.productoListar();
+            dvgProducto.DataSource = listado;
         }
         public void ejecutar(int dato)
         {
             cargarData(0);
-            foreach (DataGridViewRow Row in dgvArticulo.Rows)
+            foreach (DataGridViewRow Row in dvgProducto.Rows)
             {
                 int valor = (int)Row.Cells["IDPRODUCTO"].Value;
                 if (valor == dato)
                 {
                     int puntero = (int)Row.Index;
                     //                    dgvPersona.CurrentCell = dgvPersona.Rows[puntero].Cells["IDPERSONA"];
-                    dgvArticulo.CurrentCell = dgvArticulo.Rows[puntero].Cells[1];
+                    dvgProducto.CurrentCell = dvgProducto.Rows[puntero].Cells[1];
                     return;
                 }
             }
@@ -94,30 +94,31 @@ namespace Presentacion
 
         private void cargarFormularioAnadir()
         {
-            if (dgvArticulo.RowCount == 0)
+            if (dvgProducto.RowCount == 0)
             {
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmArticuloAnadir);
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProductoAnadir);
             if (frm != null)
             {
                 frm.BringToFront();
                 return;
             }
-            frmArticuloAnadir f = new frmArticuloAnadir(vBoton);
-            f.pasado += new frmArticuloAnadir.pasar(ejecutar);
+            frmManProductoAnadir f = new frmManProductoAnadir(vBoton);
+            f.pasado += new frmManProductoAnadir.pasar(ejecutar);
             f.tmpProducto = new producto();
-            f.tmpProducto.chdescripcionproducto= (String)dgvArticulo.CurrentRow.Cells["TIPOARTICULO"].Value;
-            //f.tmpArticulo.codigoarticulo = (string)dgvArticulo.CurrentRow.Cells["CODIGOARTICULO"].Value;
-            //f.tmpArticulo.nombrearticulo = (string)(dgvArticulo.CurrentRow.Cells["NOMBREARTICULO"].Value);
-            //f.tmpArticulo.idtipoarticulo = (string)(dgvArticulo.CurrentRow.Cells["IDTIPOARTICULO"].Value);
-            //f.tmpArticulo.idcatearticulo = (string)(dgvArticulo.CurrentRow.Cells["IDCATEARTICULO"].Value);
-            //f.tmpArticulo.idmediarticulo = (string)(dgvArticulo.CurrentRow.Cells["IDMEDIARTICULO"].Value);
-            //f.tmpArticulo.fechacreacion = (string)(dgvArticulo.CurrentRow.Cells["FECHACREACION"].Value);
-            //f.tmpArticulo.precio = (decimal)(dgvArticulo.CurrentRow.Cells["PRECIO"].Value);
-            //f.tmpArticulo.idsituarticulo = (string)(dgvArticulo.CurrentRow.Cells["IDSITUARTICULO"].Value);
-            //f.tmpArticulo.estadoarticulo = (bool)(dgvArticulo.CurrentRow.Cells["ESTADOARTICULO"].Value);
+            f.tmpProducto.chdescripcionproducto= (string)dvgProducto.CurrentRow.Cells["CHDESCRIPCION"].Value;
+            f.tmpProducto.p_inidcalibre = (int)dvgProducto.CurrentRow.Cells["IDCALIBRE"].Value;
+            f.tmpProducto.p_inidfamiliaproducto = (int)(dvgProducto.CurrentRow.Cells["IDFAMILIA"].Value);
+            f.tmpProducto.p_inidmarca = (int)(dvgProducto.CurrentRow.Cells["IDMARCA"].Value);
+            f.tmpProducto.p_inidmodelo = (int)(dvgProducto.CurrentRow.Cells["IDMODELO"].Value);
+            f.tmpProducto.p_inidunidadmedidaproducto = (int)(dvgProducto.CurrentRow.Cells["IDMEDIDA"].Value);
+            f.tmpProducto.p_inidcalibre = (int)(dvgProducto.CurrentRow.Cells["IDCALIBRE"].Value);
+            f.tmpProducto.p_inidsituacion = (int)(dvgProducto.CurrentRow.Cells["IDSITUACION"].Value);
+            f.tmpProducto.p_inidtipoproducto = (int)(dvgProducto.CurrentRow.Cells["IDTIPO"].Value);
+            f.tmpProducto.chcodigoproducto = (string)(dvgProducto.CurrentRow.Cells["CODPRODUCTO"].Value);
+
             f.ShowDialog();
         }
 

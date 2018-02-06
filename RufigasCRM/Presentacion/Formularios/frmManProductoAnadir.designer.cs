@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class frmArticuloAnadir
+    partial class frmManProductoAnadir
     {
         /// <summary>
         /// Required designer variable.
@@ -63,7 +63,7 @@
             this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.ForeColor = System.Drawing.Color.Black;
-            this.btnGrabar.Location = new System.Drawing.Point(229, 22);
+            this.btnGrabar.Location = new System.Drawing.Point(11, 22);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 30);
             this.btnGrabar.TabIndex = 1;
@@ -77,7 +77,7 @@
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(447, 22);
+            this.btnSalir.Location = new System.Drawing.Point(92, 22);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
             this.btnSalir.TabIndex = 2;
@@ -115,7 +115,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Producto";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cboModelo
             // 
@@ -138,7 +137,6 @@
             this.cboCalibre.Size = new System.Drawing.Size(111, 25);
             this.cboCalibre.TabIndex = 20;
             this.cboCalibre.Text = "-- Elegir --";
-            this.cboCalibre.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -273,7 +271,6 @@
             this.cboTipo.Size = new System.Drawing.Size(104, 25);
             this.cboTipo.TabIndex = 3;
             this.cboTipo.Text = "-- Elegir --";
-           // this.cboTipo.SelectedIndexChanged += new System.EventHandler(this.cboTipo_SelectedIndexChanged);
             // 
             // txtCodigo
             // 
@@ -346,14 +343,13 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(12, 242);
+            this.groupBox2.Location = new System.Drawing.Point(189, 242);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(532, 69);
+            this.groupBox2.Size = new System.Drawing.Size(180, 69);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Opciones";
             // 
-            // frmArticuloAnadir
+            // frmManProductoAnadir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -365,11 +361,11 @@
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "frmArticuloAnadir";
+            this.Name = "frmManProductoAnadir";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR PRODUCTO";
-            this.Load += new System.EventHandler(this.frmArticuloAnadir_Load);
+            this.Load += new System.EventHandler(this.frmManProductoAnadir_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

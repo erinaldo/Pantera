@@ -7,7 +7,7 @@ using Entidades;
 using System.Data;
 namespace Datos
 {
-    public class productoDL
+    public abstract class productoDL
     {
         public static List<producto> productoListar()
         {
@@ -39,7 +39,7 @@ namespace Datos
                     registro.chusuarioinsert = Convert.ToString(datareader["chusuarioinsert"]).Trim();
                     registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
                     registro.chusuariodelete = Convert.ToString(datareader["chusuariodelete"]).Trim();
-                    registro.nuprecio = Convert.ToSingle(datareader["nuprecio"]);
+                   
                     registro.p_inidsituacion = Convert.ToInt32(datareader["p_inidsituacion"]);
                     registro.chsituacion = Convert.ToString(datareader["chsituacion"]).Trim();
                     listado.Add(registro);

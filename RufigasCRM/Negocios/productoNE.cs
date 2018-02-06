@@ -10,7 +10,7 @@ namespace Negocios
 {
     public abstract class productoNE
     {
-        public static List<producto> articuloListar()
+        public static List<producto> productoListar()
         {
             return productoDL.productoListar();
         }

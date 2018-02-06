@@ -41,3 +41,7 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Entidades\bin\Debug\Enti
 C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Entidades\obj\Debug\Entidades.dll
 C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Desarrollo\Documents\GitHub\Pantera\RufigasCRM\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Entidades\bin\Debug\Entidades.dll
+C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Entidades\bin\Debug\Entidades.pdb
+C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Entidades\obj\Debug\Entidades.dll
+C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Entidades\obj\Debug\Entidades.pdb
