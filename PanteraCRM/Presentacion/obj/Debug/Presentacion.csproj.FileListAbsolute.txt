@@ -384,3 +384,54 @@ C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Pres
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.exe
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Rufigas CRM.exe.config
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csproj.ResolveComReference.cache
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Rufigas CRM.exe
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Rufigas CRM.pdb
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Entidades.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Negocios.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Npgsql.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Datos.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Negocios.pdb
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Npgsql.xml
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Datos.pdb
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmBusquedaProductoGeneral.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmConsCobranzaDocuVentaPrincipal.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManProductoPrincipal.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManProductoAnadir.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSeriesAnadir.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSeriesPrincipal.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManClienteAnadir.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManClientePrincipal.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManProveedoresAnadir.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManProveedoresPrincipal.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmMarca.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmMenu.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmModelo.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmModeloAnadir.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmPerfil.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmPerfilAnadir.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmPersona.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmPersonaAnadir.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmReporteDiarioPresupuesto.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmReporteMovimiento.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmReportePresupuesto.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmRegistroPresupuesto.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmRegistroPresupuestoAnadir.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmUbigeoBuscar.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmUsuario.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmUsuarioAnadir.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmMarcaAnadir.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReporte.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.exe
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.PrincipalOpcional.resources

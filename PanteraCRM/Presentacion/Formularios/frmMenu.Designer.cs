@@ -53,8 +53,9 @@
             this.treMenu.Name = "treMenu";
             this.treMenu.SelectedImageIndex = 0;
             this.treMenu.ShowLines = false;
-            this.treMenu.Size = new System.Drawing.Size(321, 571);
+            this.treMenu.Size = new System.Drawing.Size(259, 571);
             this.treMenu.TabIndex = 0;
+            this.treMenu.TabStop = false;
             this.treMenu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treMenu_KeyDown);
             this.treMenu.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.treMenu_MouseDoubleClick);
             // 
@@ -70,9 +71,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(45, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 23);
+            this.label1.Size = new System.Drawing.Size(173, 23);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Menú del Sistema - Pantera";
+            this.label1.Text = "Menú del Sistema";
             // 
             // txtCriterio
             // 
@@ -97,7 +98,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(316, 634);
+            this.ClientSize = new System.Drawing.Size(252, 634);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.treMenu);

@@ -18,5 +18,12 @@ namespace Negocios
         {
             return productoDL.productoInsertar(productoObjeto);
         }
+        //BUSQUEDA DE PRODUCTO GENERAL
+        public static List<productobuscado> productobuscadoListar(string parametro)
+        {
+            return productoDL.productobuscadoListar(parametro);
+        }
+        
+
     }
 }

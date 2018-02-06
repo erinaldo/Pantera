@@ -60,10 +60,12 @@
     <Compile Include="presupuesto.cs" />
     <Compile Include="presupuestodetalle.cs" />
     <Compile Include="producto.cs" />
+    <Compile Include="productobuscado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="proveedor.cs" />
     <Compile Include="puntoventa.cs" />
     <Compile Include="puntoventasesion.cs" />
+    <Compile Include="serie.cs" />
     <Compile Include="sesionglobal.cs" />
     <Compile Include="ubigeo.cs" />
     <Compile Include="usuario.cs" />

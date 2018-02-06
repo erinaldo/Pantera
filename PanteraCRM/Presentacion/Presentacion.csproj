@@ -109,6 +109,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DtsUsuario.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmBusquedaProductoGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmBusquedaProductoGeneral.Designer.cs">
+      <DependentUpon>frmBusquedaProductoGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmConsCobranzaDocuVentaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,12 @@
     </Compile>
     <Compile Include="Formularios\frmProcSalidaProductosPrincipal.Designer.cs">
       <DependentUpon>frmProcSalidaProductosPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcSeriesAnadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcSeriesAnadir.Designer.cs">
+      <DependentUpon>frmProcSeriesAnadir.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmSecuAutenticacion.cs">
       <SubType>Form</SubType>
@@ -433,6 +445,12 @@
     <Compile Include="Formularios\frmMarcaAnadir.Designer.cs">
       <DependentUpon>frmMarcaAnadir.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\PrincipalOpcional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PrincipalOpcional.Designer.cs">
+      <DependentUpon>PrincipalOpcional.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Programas\basicas.cs" />
     <Compile Include="Programas\sesion.cs" />
@@ -450,6 +468,9 @@
     <Compile Include="Reportes\FrmReporte.designer.cs">
       <DependentUpon>FrmReporte.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\frmBusquedaProductoGeneral.resx">
+      <DependentUpon>frmBusquedaProductoGeneral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsCobranzaDocuVentaPrincipal.resx">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -458,6 +479,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManProductoAnadir.resx">
       <DependentUpon>frmManProductoAnadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcSeriesAnadir.resx">
+      <DependentUpon>frmProcSeriesAnadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcSeriesPrincipal.resx">
+      <DependentUpon>frmProcSeriesPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmSecuAutenticacion.resx">
       <DependentUpon>frmSecuAutenticacion.cs</DependentUpon>
@@ -527,6 +554,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMarcaAnadir.resx">
       <DependentUpon>frmMarcaAnadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PrincipalOpcional.resx">
+      <DependentUpon>PrincipalOpcional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -730,6 +760,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO PANTERA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondopantera.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

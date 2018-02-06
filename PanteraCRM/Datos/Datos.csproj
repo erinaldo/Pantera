@@ -68,6 +68,7 @@
     <Compile Include="proveedorDL.cs" />
     <Compile Include="puntoventaDL.cs" />
     <Compile Include="reniecDL.cs" />
+    <Compile Include="serieDL.cs" />
     <Compile Include="ubigeoDL.cs" />
     <Compile Include="usuarioDL.cs" />
     <Compile Include="usuariomenuDL.cs" />

@@ -50,7 +50,7 @@ namespace Presentacion
             }
             this.treMenu.Nodes.Clear();
             this.cargaEstructura(estructuraMenu, null);
-            this.treMenu.ExpandAll();
+            
         }
 
         private List<menu> buscaNodos(List<menu> estructura, string criterio)

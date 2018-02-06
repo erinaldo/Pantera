@@ -59,6 +59,7 @@
     <Compile Include="proveedorNE.cs" />
     <Compile Include="puntoventaNE.cs" />
     <Compile Include="reniecNE.cs" />
+    <Compile Include="serieNE.cs" />
     <Compile Include="ubigeoNE.cs" />
     <Compile Include="usuariomenuNE.cs" />
     <Compile Include="usuarioNE.cs" />

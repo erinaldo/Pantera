@@ -47,6 +47,27 @@ namespace Datos
                 return listado;
             }
         }
+        public static List<productobuscado> productobuscadoListar(string parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_producto_buscar_codigo_o_nombre", CommandType.StoredProcedure,
+                new parametro("in_parametro", parametro)))
+            {
+                List<productobuscado> listado = new List<productobuscado>();
+                while (datareader.Read())
+                {
+                    productobuscado registro = new productobuscado();
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
+                    registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]).Trim();
+                    registro.chnombrecompuesto = Convert.ToString(datareader["chnombrecompuesto"]).Trim();
+                    registro.p_inidunidadmedidaproducto = Convert.ToInt32(datareader["p_inidunidadmedidaproducto"]);
+                    registro.chunidadmedidaproducto = Convert.ToString(datareader["chunidadmedidaproducto"]).Trim();
+                    registro.p_inidsituacion = Convert.ToInt32(datareader["p_inidsituacion"]);
+                    registro.chsituacion = Convert.ToString(datareader["chsituacion"]).Trim();
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
         public static int productoInsertar(producto productoObjeto)
         {
             return conexion.executeScalar("fn_articulo_insertar",
