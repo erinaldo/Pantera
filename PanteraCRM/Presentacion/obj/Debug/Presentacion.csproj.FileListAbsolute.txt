@@ -385,7 +385,6 @@ C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Pres
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.exe
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Rufigas CRM.exe.config
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csproj.ResolveComReference.cache
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Rufigas CRM.exe
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Rufigas CRM.pdb
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Entidades.dll
@@ -400,6 +399,7 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\N
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Datos.pdb
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csproj.ResolveComReference.cache
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmBusquedaProductoGeneral.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmConsCobranzaDocuVentaPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManProductoPrincipal.resources
@@ -429,9 +429,9 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\P
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmUsuario.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmUsuarioAnadir.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmMarcaAnadir.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.PrincipalOpcional.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReporte.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.exe
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.PrincipalOpcional.resources

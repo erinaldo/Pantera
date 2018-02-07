@@ -136,6 +136,9 @@ namespace Presentacion
                 else MessageBox.Show("Usted no tiene acceso a este módulo" + Convert.ToInt32(nodo.Name));
 
                 //frm.Location = new Point(301, 0);
+            }else
+            {
+                MessageBox.Show("Error" + Convert.ToInt32(nodo.Name));
             }
 
         }

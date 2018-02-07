@@ -40,26 +40,26 @@
             this.dvgProducto = new System.Windows.Forms.DataGridView();
             this.IDPRODCUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFAMILIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHMARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCALIBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMODELO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDFAMILIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHFAMILIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCALIBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCALIBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMODELO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMODELO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCODPRODANTES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDFAMILIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMODELO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCALIBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDUSUARIOINSER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHUSUARIOINSERT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDUSUARIODELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHUSUARIODELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NUPRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -155,26 +155,26 @@
             this.dvgProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDPRODCUTO,
             this.CODPRODUCTO,
-            this.IDTIPO,
-            this.CHTIPO,
-            this.IDMARCA,
+            this.CHFAMILIA,
             this.CHMARCA,
-            this.IDMEDIDA,
-            this.CHMEDIDA,
+            this.CHTIPO,
+            this.CHCALIBRE,
+            this.CHMODELO,
             this.CHFECHA,
             this.ESTADO,
-            this.IDFAMILIA,
-            this.CHFAMILIA,
-            this.IDCALIBRE,
-            this.CHCALIBRE,
-            this.IDMODELO,
-            this.CHMODELO,
+            this.CHMEDIDA,
             this.CHCODPRODANTES,
+            this.IDFAMILIA,
             this.CHDESCRIPCION,
+            this.IDMODELO,
+            this.IDCALIBRE,
+            this.IDMEDIDA,
+            this.IDTIPO,
             this.IDUSUARIOINSER,
             this.CHUSUARIOINSERT,
             this.IDUSUARIODELETE,
             this.CHUSUARIODELETE,
+            this.IDMARCA,
             this.NUPRECIO,
             this.IDSITUACION,
             this.CHSITUACION});
@@ -198,26 +198,11 @@
             this.CODPRODUCTO.HeaderText = "CODIGO";
             this.CODPRODUCTO.Name = "CODPRODUCTO";
             // 
-            // IDTIPO
+            // CHFAMILIA
             // 
-            this.IDTIPO.DataPropertyName = "p_inidtipoproducto";
-            this.IDTIPO.HeaderText = "IDTIPO";
-            this.IDTIPO.Name = "IDTIPO";
-            this.IDTIPO.Visible = false;
-            // 
-            // CHTIPO
-            // 
-            this.CHTIPO.DataPropertyName = "chtipoproducto";
-            this.CHTIPO.HeaderText = "TIPO";
-            this.CHTIPO.Name = "CHTIPO";
-            // 
-            // IDMARCA
-            // 
-            this.IDMARCA.DataPropertyName = "p_inidmarca";
-            this.IDMARCA.HeaderText = "IDMARCA";
-            this.IDMARCA.Name = "IDMARCA";
-            this.IDMARCA.ReadOnly = true;
-            this.IDMARCA.Visible = false;
+            this.CHFAMILIA.DataPropertyName = "chfamiliaproducto";
+            this.CHFAMILIA.HeaderText = "CATEGORIA";
+            this.CHFAMILIA.Name = "CHFAMILIA";
             // 
             // CHMARCA
             // 
@@ -225,19 +210,23 @@
             this.CHMARCA.HeaderText = "MARCA";
             this.CHMARCA.Name = "CHMARCA";
             // 
-            // IDMEDIDA
+            // CHTIPO
             // 
-            this.IDMEDIDA.DataPropertyName = "p_inidunidadmedidaproducto";
-            this.IDMEDIDA.HeaderText = "IDMEDIDA";
-            this.IDMEDIDA.Name = "IDMEDIDA";
-            this.IDMEDIDA.ReadOnly = true;
-            this.IDMEDIDA.Visible = false;
+            this.CHTIPO.DataPropertyName = "chtipoproducto";
+            this.CHTIPO.HeaderText = "TIPO";
+            this.CHTIPO.Name = "CHTIPO";
             // 
-            // CHMEDIDA
+            // CHCALIBRE
             // 
-            this.CHMEDIDA.DataPropertyName = "chunidadmedidaproducto";
-            this.CHMEDIDA.HeaderText = "MEDIDA";
-            this.CHMEDIDA.Name = "CHMEDIDA";
+            this.CHCALIBRE.DataPropertyName = "chcalibre";
+            this.CHCALIBRE.HeaderText = "CALIBRE";
+            this.CHCALIBRE.Name = "CHCALIBRE";
+            // 
+            // CHMODELO
+            // 
+            this.CHMODELO.DataPropertyName = "chdmodelo";
+            this.CHMODELO.HeaderText = "MODELO";
+            this.CHMODELO.Name = "CHMODELO";
             // 
             // CHFECHA
             // 
@@ -255,46 +244,11 @@
             this.ESTADO.ReadOnly = true;
             this.ESTADO.Visible = false;
             // 
-            // IDFAMILIA
+            // CHMEDIDA
             // 
-            this.IDFAMILIA.DataPropertyName = "p_inidfamiliaproducto";
-            this.IDFAMILIA.HeaderText = "IDFAMILIA";
-            this.IDFAMILIA.Name = "IDFAMILIA";
-            this.IDFAMILIA.Visible = false;
-            // 
-            // CHFAMILIA
-            // 
-            this.CHFAMILIA.DataPropertyName = "chfamiliaproducto";
-            this.CHFAMILIA.HeaderText = "FAMILIA";
-            this.CHFAMILIA.Name = "CHFAMILIA";
-            // 
-            // IDCALIBRE
-            // 
-            this.IDCALIBRE.DataPropertyName = "p_inidcalibre";
-            this.IDCALIBRE.HeaderText = "IDCALIBRE";
-            this.IDCALIBRE.Name = "IDCALIBRE";
-            this.IDCALIBRE.ReadOnly = true;
-            this.IDCALIBRE.Visible = false;
-            // 
-            // CHCALIBRE
-            // 
-            this.CHCALIBRE.DataPropertyName = "chcalibre";
-            this.CHCALIBRE.HeaderText = "CHCALIBRE";
-            this.CHCALIBRE.Name = "CHCALIBRE";
-            // 
-            // IDMODELO
-            // 
-            this.IDMODELO.DataPropertyName = "p_inidmodelo";
-            this.IDMODELO.HeaderText = "IDMODELO";
-            this.IDMODELO.Name = "IDMODELO";
-            this.IDMODELO.ReadOnly = true;
-            this.IDMODELO.Visible = false;
-            // 
-            // CHMODELO
-            // 
-            this.CHMODELO.DataPropertyName = "chdmodelo";
-            this.CHMODELO.HeaderText = "MODELO";
-            this.CHMODELO.Name = "CHMODELO";
+            this.CHMEDIDA.DataPropertyName = "chunidadmedidaproducto";
+            this.CHMEDIDA.HeaderText = "MEDIDA";
+            this.CHMEDIDA.Name = "CHMEDIDA";
             // 
             // CHCODPRODANTES
             // 
@@ -304,6 +258,13 @@
             this.CHCODPRODANTES.ReadOnly = true;
             this.CHCODPRODANTES.Visible = false;
             // 
+            // IDFAMILIA
+            // 
+            this.IDFAMILIA.DataPropertyName = "p_inidfamiliaproducto";
+            this.IDFAMILIA.HeaderText = "IDFAMILIA";
+            this.IDFAMILIA.Name = "IDFAMILIA";
+            this.IDFAMILIA.Visible = false;
+            // 
             // CHDESCRIPCION
             // 
             this.CHDESCRIPCION.DataPropertyName = "chdescripcionproducto";
@@ -311,6 +272,37 @@
             this.CHDESCRIPCION.Name = "CHDESCRIPCION";
             this.CHDESCRIPCION.ReadOnly = true;
             this.CHDESCRIPCION.Visible = false;
+            // 
+            // IDMODELO
+            // 
+            this.IDMODELO.DataPropertyName = "p_inidmodelo";
+            this.IDMODELO.HeaderText = "IDMODELO";
+            this.IDMODELO.Name = "IDMODELO";
+            this.IDMODELO.ReadOnly = true;
+            this.IDMODELO.Visible = false;
+            // 
+            // IDCALIBRE
+            // 
+            this.IDCALIBRE.DataPropertyName = "p_inidcalibre";
+            this.IDCALIBRE.HeaderText = "IDCALIBRE";
+            this.IDCALIBRE.Name = "IDCALIBRE";
+            this.IDCALIBRE.ReadOnly = true;
+            this.IDCALIBRE.Visible = false;
+            // 
+            // IDMEDIDA
+            // 
+            this.IDMEDIDA.DataPropertyName = "p_inidunidadmedidaproducto";
+            this.IDMEDIDA.HeaderText = "IDMEDIDA";
+            this.IDMEDIDA.Name = "IDMEDIDA";
+            this.IDMEDIDA.ReadOnly = true;
+            this.IDMEDIDA.Visible = false;
+            // 
+            // IDTIPO
+            // 
+            this.IDTIPO.DataPropertyName = "p_inidtipoproducto";
+            this.IDTIPO.HeaderText = "IDTIPO";
+            this.IDTIPO.Name = "IDTIPO";
+            this.IDTIPO.Visible = false;
             // 
             // IDUSUARIOINSER
             // 
@@ -343,6 +335,14 @@
             this.CHUSUARIODELETE.Name = "CHUSUARIODELETE";
             this.CHUSUARIODELETE.ReadOnly = true;
             this.CHUSUARIODELETE.Visible = false;
+            // 
+            // IDMARCA
+            // 
+            this.IDMARCA.DataPropertyName = "p_inidmarca";
+            this.IDMARCA.HeaderText = "IDMARCA";
+            this.IDMARCA.Name = "IDMARCA";
+            this.IDMARCA.ReadOnly = true;
+            this.IDMARCA.Visible = false;
             // 
             // NUPRECIO
             // 
@@ -401,26 +401,26 @@
         private System.Windows.Forms.DataGridView dvgProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODCUTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODPRODUCTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDTIPO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHTIPO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDMARCA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHFAMILIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHMARCA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDMEDIDA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHMEDIDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHTIPO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCALIBRE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHMODELO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHFECHA;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDFAMILIA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHFAMILIA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDCALIBRE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHCALIBRE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDMODELO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHMODELO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHMEDIDA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHCODPRODANTES;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDFAMILIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHDESCRIPCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDMODELO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCALIBRE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDMEDIDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDTIPO;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDUSUARIOINSER;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHUSUARIOINSERT;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDUSUARIODELETE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHUSUARIODELETE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDMARCA;
         private System.Windows.Forms.DataGridViewTextBoxColumn NUPRECIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDSITUACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSITUACION;

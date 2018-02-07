@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtcodprod = new System.Windows.Forms.TextBox();
             this.grbAgregadoSerie = new System.Windows.Forms.GroupBox();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ckbSerie = new System.Windows.Forms.CheckBox();
             this.txtidcodigo = new System.Windows.Forms.TextBox();
-            this.txtCantidad = new System.Windows.Forms.MaskedTextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.grbAgregadoSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaIngreso)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -66,14 +66,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo";
             // 
-            // textBox1
+            // txtcodprod
             // 
-            this.textBox1.CausesValidation = false;
-            this.textBox1.Location = new System.Drawing.Point(108, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            this.txtcodprod.CausesValidation = false;
+            this.txtcodprod.Location = new System.Drawing.Point(108, 12);
+            this.txtcodprod.Name = "txtcodprod";
+            this.txtcodprod.Size = new System.Drawing.Size(100, 20);
+            this.txtcodprod.TabIndex = 1;
+            this.txtcodprod.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // grbAgregadoSerie
             // 
@@ -163,9 +163,14 @@
             // 
             // txtNombreconpuesto
             // 
-            this.txtNombreconpuesto.Enabled = false;
+            this.txtNombreconpuesto.BackColor = System.Drawing.Color.Ivory;
+            this.txtNombreconpuesto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombreconpuesto.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtNombreconpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreconpuesto.ForeColor = System.Drawing.Color.Blue;
             this.txtNombreconpuesto.Location = new System.Drawing.Point(108, 42);
             this.txtNombreconpuesto.Name = "txtNombreconpuesto";
+            this.txtNombreconpuesto.ReadOnly = true;
             this.txtNombreconpuesto.Size = new System.Drawing.Size(464, 20);
             this.txtNombreconpuesto.TabIndex = 4;
             // 
@@ -271,7 +276,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(241, 15);
+            this.label3.Location = new System.Drawing.Point(265, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 7;
@@ -299,13 +304,13 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(302, 8);
-            this.txtCantidad.Mask = "99999";
+            this.txtCantidad.Enabled = false;
+            this.txtCantidad.Location = new System.Drawing.Point(320, 11);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(46, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(60, 20);
             this.txtCantidad.TabIndex = 11;
-            this.txtCantidad.ValidatingType = typeof(int);
-            this.txtCantidad.LostFocus += new System.EventHandler(this.txtCantidad_TextChanged);
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
+            this.txtCantidad.Leave += new System.EventHandler(this.txtCantidad_Leave);
             // 
             // frmProcSeriesAnadir
             // 
@@ -323,7 +328,7 @@
             this.Controls.Add(this.txtNombreconpuesto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.grbAgregadoSerie);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtcodprod);
             this.Controls.Add(this.label1);
             this.Name = "frmProcSeriesAnadir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -339,7 +344,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtcodprod;
         private System.Windows.Forms.GroupBox grbAgregadoSerie;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombreconpuesto;
@@ -362,6 +367,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSERIE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHOBS;
         private System.Windows.Forms.TextBox txtidcodigo;
-        private System.Windows.Forms.MaskedTextBox txtCantidad;
+        private System.Windows.Forms.TextBox txtCantidad;
     }
 }

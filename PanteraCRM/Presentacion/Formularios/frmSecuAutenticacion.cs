@@ -80,6 +80,6 @@ namespace Presentacion
             BeginInvoke((Action)delegate { SetTextBoxSelectAll((TextBox)sender); });
         }
 
-       
+      
     }
 }

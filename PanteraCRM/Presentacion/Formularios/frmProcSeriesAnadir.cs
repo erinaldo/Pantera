@@ -13,10 +13,7 @@ using Negocios;
 namespace Presentacion
 {
     public partial class frmProcSeriesAnadir : Form
-    {
-        internal productobuscado tmpProducto;
-        public delegate void pasar(int varreg);
-        public event pasar pasado;
+    {       
         public frmProcSeriesAnadir(string vBoton)
         {
             InitializeComponent();
@@ -30,10 +27,13 @@ namespace Presentacion
             DialogResult res =   f.ShowDialog();
             if (res == DialogResult.OK)
             {
-                textBox1.Text = f.chcodigoproducto;
+                txtcodprod.Text = f.chcodigoproducto;
                 txtNombreconpuesto.Text = f.nombrecompuesto;
                 txtidcodigo.Text = ""+f.p_inidproducto;
                 txtCantidad.Enabled = true;
+                txtCantidad.Text = ""+1;
+                txtCantidad.Focus();
+                dgvListaIngreso.Rows.Clear();
                 txtSerie.Text = "";
                 txtObs.Text = "";
                 if (f.p_inidsituacionproducto > 1)
@@ -67,54 +67,42 @@ namespace Presentacion
         
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            int p_inidproducto;
-            int cantidad;
-            int contador;
-            string chproducto;
-            string chnombrecompuesto;
-            string chserie;
-            string chobs;
-            
-            contador = dgvListaIngreso.Rows.Count;
-            if (txtCantidad.Text.Length > 0 && Int32.Parse(txtCantidad.Text) > 0)
-            {
-                cantidad = Int32.Parse(txtCantidad.Text);
-                if (contador <= cantidad)
+            bool valCantidad = txtCantidad.Text.Length > 0 && int.Parse(txtCantidad.Text) > 0;
+            bool valListasize = int.Parse(txtCantidad.Text) > dgvListaIngreso.RowCount  ;
+            bool valserie = txtSerie.Text.Length > 0;
+            bool valExisBd = validarExistencia(txtSerie.Text);
+            bool valExisList = validarExistenciaMemoria(txtSerie.Text);
+            if (valCantidad)
+            {               
+                if (valListasize)
                 {
-                    if(txtSerie.Text.Length > 0)
+                    if (valserie)
                     {
-                        if (!validarExistencia(txtSerie.Text))
+                        if (!valExisBd && !valExisList)
                         {
-                            if (!validarExistenciaMemoria(txtSerie.Text))
-                            {
-                                p_inidproducto = Int32.Parse(txtidcodigo.Text);
-                                chproducto = txtidcodigo.Text;
-                                chnombrecompuesto = txtNombreconpuesto.Text;
-                                chserie = txtSerie.Text;
-                                chobs = txtObs.Text;
-                                dgvListaIngreso.Rows.Add(p_inidproducto, chproducto, chnombrecompuesto, chserie, chobs);
-                                txtSerie.Text = "";
-                                txtObs.Text = "";
-                            }
-                            else
-                            {
-                                MessageBox.Show("La Serie Ingresada Ya Existe", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                                return;
-                            }
-                            
-                        }else
+                            int p_inidproducto = int.Parse(txtidcodigo.Text);
+                            string chproducto = txtidcodigo.Text;
+                            string chnombrecompuesto = txtNombreconpuesto.Text;
+                            string chserie = txtSerie.Text;
+                            string chobs = txtObs.Text;
+                            dgvListaIngreso.Rows.Add(p_inidproducto, chproducto, chnombrecompuesto, chserie, chobs);
+                            txtSerie.Text = "";
+                            txtObs.Text = "";
+                            txtSerie.Focus();
+                        }
+                        else
                         {
-                            MessageBox.Show("La Serie Ingresada Ya Existe", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                            MessageBox.Show("La Serie Ingresada ya Existe", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                             return;
                         }
-                        
+
                     }
                     else
                     {
                         MessageBox.Show("Ingreso de Serie Obligatorio");
                         return;
                     }
-                    
+
                 }
                 else
                 {
@@ -125,56 +113,26 @@ namespace Presentacion
             else
             {
                 MessageBox.Show("La cantidad Invalida");
+                txtCantidad.Focus();
                 return;
             }
-           
-            
+
+
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-            if (dgvListaIngreso.RowCount == 0)
+            if (dgvListaIngreso.RowCount == 0 && dgvListaIngreso.Rows.Count == 0)
             {
-                MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                return;
-            }else
-            {
-                if (dgvListaIngreso.Rows.Count == 0)
-                {
-                    MessageBox.Show("Lista Vacia", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                    return;
-                }
-                else
-                {
-                   dgvListaIngreso.Rows.Remove(dgvListaIngreso.CurrentRow);
-                    
-                }
-            }
-            
-                       
-        }
-
-        private void txtCantidad_TextChanged(object sender, EventArgs e)
-        {
-            if (txtCantidad.Text.Length > 0 && Int32.Parse(txtCantidad.Text) > 0)
-            {
-                if (dgvListaIngreso.Rows.Count > Int32.Parse(txtCantidad.Text))
-                {
-                    dgvListaIngreso.Rows.Clear();
-                    return;
-                }
-            }else
-            {
-                MessageBox.Show("Cantidad Invalida");
+                MessageBox.Show("No hay registros", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            
-        }
+            dgvListaIngreso.Rows.Remove(dgvListaIngreso.CurrentRow);
+        }       
+        
         private bool validarExistencia(string cosigoserie)
-        {          
-
-            return serieNE.verificarExistencia(cosigoserie);
-           
+        {     
+            return serieNE.verificarExistencia(cosigoserie);           
         }
         private bool validarExistenciaMemoria(string cosigoserie)
         {
@@ -187,6 +145,38 @@ namespace Presentacion
                     }
                 }
             return flat;
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //VALIDAR SOLOR NUMEROS Y BORRADO
+            if (!char.IsDigit(e.KeyChar) &&  !(8== Convert.ToInt32(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+            // VALIDAR CON UN SOLO PUNTO DECIMAL
+            //if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
+            //{
+            //    e.Handled = true;
+            //}
+            //if (e.KeyChar == '.'  && (sender as TextBox).Text.IndexOf('.') > -1)
+            //{
+            //    e.Handled = true;
+            //}
+
+
+        }
+
+        private void txtCantidad_Leave(object sender, EventArgs e)
+        {
+            if (int.Parse(txtCantidad.Text) > 0 && txtCantidad.Text.Length > 0)
+            {
+                if (dgvListaIngreso.Rows.Count > int.Parse(txtCantidad.Text))
+                {
+                    dgvListaIngreso.Rows.Clear();
+                    return;
+                }
+            }
         }
     }
 }

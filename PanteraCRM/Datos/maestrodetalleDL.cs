@@ -28,5 +28,37 @@ namespace Datos
                 return listado;
             }
         }
+        public static List<categoria> ListarCategorias()
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_categorias_listar", CommandType.StoredProcedure))
+            {
+                List<categoria> listado = new List<categoria>();
+                while (datareader.Read())
+                {
+                    categoria catelist = new categoria();
+                    catelist.p_inidcategoria = Convert.ToInt32(datareader["p_inidcategoria"]);
+                    catelist.chcategoria = Convert.ToString(datareader["chcategoria"]).Trim();
+                    listado.Add(catelist);
+                }
+                return listado;
+            }
+        }
+        public static List<tipo> buscarTipoPorCategoria(string codigomaestro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_TipoListarPorCategoriaN", CommandType.StoredProcedure, new parametro("in_p_inidcategoria", codigomaestro)))
+            {
+                List<tipo> listado = new List<tipo>();
+                while (datareader.Read())
+                {
+                    tipo registro = new tipo();
+                    registro.p_inidtipo = Convert.ToInt32(datareader["p_inidtipo"]);
+                    registro.chtipo = Convert.ToString(datareader["chtipo"]).Trim();
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+        
+
     }
 }

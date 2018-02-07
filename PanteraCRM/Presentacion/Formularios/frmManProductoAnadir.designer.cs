@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManProductoAnadir));
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.cboModelo = new System.Windows.Forms.ComboBox();
             this.cboCalibre = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -42,7 +44,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.cboMedida = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -61,13 +62,17 @@
             this.btnGrabar.BackColor = System.Drawing.Color.White;
             this.btnGrabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnGrabar.ForeColor = System.Drawing.Color.Black;
+            this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
+            this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGrabar.Location = new System.Drawing.Point(11, 22);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 30);
             this.btnGrabar.TabIndex = 1;
             this.btnGrabar.Text = "&Grabar";
+            this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
@@ -75,18 +80,23 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.Location = new System.Drawing.Point(92, 22);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "&Salir";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboCategoria);
             this.groupBox1.Controls.Add(this.cboModelo);
             this.groupBox1.Controls.Add(this.cboCalibre);
             this.groupBox1.Controls.Add(this.label7);
@@ -98,7 +108,6 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.cboMedida);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.cboCategoria);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cboTipo);
             this.groupBox1.Controls.Add(this.txtCodigo);
@@ -107,7 +116,7 @@
             this.groupBox1.Controls.Add(this.Nombre);
             this.groupBox1.Controls.Add(this.txtFecha);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -116,27 +125,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Producto";
             // 
+            // cboCategoria
+            // 
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(69, 27);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(125, 21);
+            this.cboCategoria.TabIndex = 22;
+            this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.cboCategoria_SelectedIndexChanged);
+            // 
             // cboModelo
             // 
-            this.cboModelo.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboModelo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboModelo.BackColor = System.Drawing.Color.White;
+            this.cboModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboModelo.FormattingEnabled = true;
             this.cboModelo.Location = new System.Drawing.Point(234, 68);
             this.cboModelo.Name = "cboModelo";
-            this.cboModelo.Size = new System.Drawing.Size(106, 25);
+            this.cboModelo.Size = new System.Drawing.Size(106, 21);
             this.cboModelo.TabIndex = 21;
             this.cboModelo.Text = "-- Elegir --";
+            this.cboModelo.SelectedIndexChanged += new System.EventHandler(this.cboModelo_SelectedIndexChanged);
             // 
             // cboCalibre
             // 
-            this.cboCalibre.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboCalibre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCalibre.BackColor = System.Drawing.Color.White;
+            this.cboCalibre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboCalibre.FormattingEnabled = true;
             this.cboCalibre.Location = new System.Drawing.Point(69, 68);
             this.cboCalibre.Name = "cboCalibre";
-            this.cboCalibre.Size = new System.Drawing.Size(111, 25);
+            this.cboCalibre.Size = new System.Drawing.Size(111, 21);
             this.cboCalibre.TabIndex = 20;
             this.cboCalibre.Text = "-- Elegir --";
+            this.cboCalibre.SelectedIndexChanged += new System.EventHandler(this.cboCalibre_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -170,14 +190,15 @@
             // 
             // cboMarca
             // 
-            this.cboMarca.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboMarca.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMarca.BackColor = System.Drawing.Color.White;
+            this.cboMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(401, 25);
             this.cboMarca.Name = "cboMarca";
-            this.cboMarca.Size = new System.Drawing.Size(121, 25);
+            this.cboMarca.Size = new System.Drawing.Size(121, 21);
             this.cboMarca.TabIndex = 16;
             this.cboMarca.Text = "-- Elegir --";
+            this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -193,12 +214,12 @@
             // 
             this.cboSituacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboSituacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboSituacion.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboSituacion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSituacion.BackColor = System.Drawing.Color.White;
+            this.cboSituacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboSituacion.FormattingEnabled = true;
             this.cboSituacion.Location = new System.Drawing.Point(69, 182);
             this.cboSituacion.Name = "cboSituacion";
-            this.cboSituacion.Size = new System.Drawing.Size(136, 25);
+            this.cboSituacion.Size = new System.Drawing.Size(136, 21);
             this.cboSituacion.TabIndex = 13;
             this.cboSituacion.Text = "-- Elegir --";
             // 
@@ -216,12 +237,12 @@
             // 
             this.cboMedida.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboMedida.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboMedida.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboMedida.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMedida.BackColor = System.Drawing.Color.White;
+            this.cboMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboMedida.FormattingEnabled = true;
             this.cboMedida.Location = new System.Drawing.Point(69, 145);
             this.cboMedida.Name = "cboMedida";
-            this.cboMedida.Size = new System.Drawing.Size(136, 25);
+            this.cboMedida.Size = new System.Drawing.Size(136, 21);
             this.cboMedida.TabIndex = 9;
             this.cboMedida.Text = "-- Elegir --";
             // 
@@ -234,20 +255,6 @@
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Categoria";
-            // 
-            // cboCategoria
-            // 
-            this.cboCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cboCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboCategoria.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboCategoria.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(69, 26);
-            this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(125, 25);
-            this.cboCategoria.TabIndex = 1;
-            this.cboCategoria.Text = "-- Elegir --";
-            this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.cboCategoria_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -263,25 +270,28 @@
             // 
             this.cboTipo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboTipo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboTipo.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboTipo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipo.BackColor = System.Drawing.Color.White;
+            this.cboTipo.Enabled = false;
+            this.cboTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Location = new System.Drawing.Point(234, 25);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(104, 25);
+            this.cboTipo.Size = new System.Drawing.Size(104, 21);
             this.cboTipo.TabIndex = 3;
             this.cboTipo.Text = "-- Elegir --";
+            this.cboTipo.SelectedIndexChanged += new System.EventHandler(this.cboTipo_SelectedIndexChanged);
             // 
             // txtCodigo
             // 
-            this.txtCodigo.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtCodigo.BackColor = System.Drawing.Color.White;
             this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtCodigo.Location = new System.Drawing.Point(401, 68);
             this.txtCodigo.MaxLength = 15;
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(121, 22);
+            this.txtCodigo.Size = new System.Drawing.Size(121, 20);
             this.txtCodigo.TabIndex = 5;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label2
             // 
@@ -295,13 +305,13 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtNombre.BackColor = System.Drawing.Color.White;
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtNombre.Location = new System.Drawing.Point(86, 109);
             this.txtNombre.MaxLength = 80;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(436, 22);
+            this.txtNombre.Size = new System.Drawing.Size(436, 20);
             this.txtNombre.TabIndex = 7;
             // 
             // Nombre
@@ -316,13 +326,13 @@
             // 
             // txtFecha
             // 
-            this.txtFecha.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtFecha.BackColor = System.Drawing.Color.White;
             this.txtFecha.Enabled = false;
-            this.txtFecha.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtFecha.Location = new System.Drawing.Point(438, 168);
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(84, 22);
+            this.txtFecha.Size = new System.Drawing.Size(84, 20);
             this.txtFecha.TabIndex = 15;
             this.txtFecha.ValidatingType = typeof(System.DateTime);
             // 
@@ -388,7 +398,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cboMedida;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.ComboBox cboCalibre;
@@ -398,5 +407,6 @@
         private System.Windows.Forms.ComboBox cboMarca;
         private System.Windows.Forms.ComboBox cboModelo;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox cboCategoria;
     }
 }

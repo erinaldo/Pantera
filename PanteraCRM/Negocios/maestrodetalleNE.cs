@@ -14,5 +14,14 @@ namespace Negocios
         {
             return maestrodetalleDL.buscarPorCodigoMaestro(codigomaestro);
         }
+        public static List<categoria> ListarCategorias()
+        {
+            return maestrodetalleDL.ListarCategorias();
+        }
+        public static List<tipo> buscarTipoPorCategoria(string codigomaestro)
+        {
+            return maestrodetalleDL.buscarTipoPorCategoria(codigomaestro);
+        }
+
     }
 }
