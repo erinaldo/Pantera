@@ -108,6 +108,7 @@ namespace Presentacion
             frmManProductoAnadir f = new frmManProductoAnadir(vBoton);
             f.pasado += new frmManProductoAnadir.pasar(ejecutar);
             f.tmpProducto = new producto();
+            f.tmpProducto.p_inidproducto = (int)dvgProducto.CurrentRow.Cells["IDPRODUCTO"].Value;
             f.tmpProducto.chdescripcionproducto= (string)dvgProducto.CurrentRow.Cells["CHDESCRIPCION"].Value;
             f.tmpProducto.p_inidcalibre = (int)dvgProducto.CurrentRow.Cells["IDCALIBRE"].Value;
             f.tmpProducto.p_inidfamiliaproducto = (int)(dvgProducto.CurrentRow.Cells["IDFAMILIA"].Value);
@@ -118,6 +119,7 @@ namespace Presentacion
             f.tmpProducto.p_inidsituacion = (int)(dvgProducto.CurrentRow.Cells["IDSITUACION"].Value);
             f.tmpProducto.p_inidtipoproducto = (int)(dvgProducto.CurrentRow.Cells["IDTIPO"].Value);
             f.tmpProducto.chcodigoproducto = (string)(dvgProducto.CurrentRow.Cells["CODPRODUCTO"].Value);
+            f.tmpProducto.chfechacreacion = (string)(dvgProducto.CurrentRow.Cells["CHFECHA"].Value);
 
             f.ShowDialog();
         }

@@ -52,6 +52,8 @@
             this.ckbSerie = new System.Windows.Forms.CheckBox();
             this.txtidcodigo = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.mskFecha = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.grbAgregadoSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaIngreso)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -73,7 +75,8 @@
             this.txtcodprod.Name = "txtcodprod";
             this.txtcodprod.Size = new System.Drawing.Size(100, 20);
             this.txtcodprod.TabIndex = 1;
-            this.txtcodprod.Click += new System.EventHandler(this.textBox1_Click);
+            this.txtcodprod.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtcodprod_MouseClick);
+            this.txtcodprod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodprod_KeyPress);
             // 
             // grbAgregadoSerie
             // 
@@ -258,6 +261,7 @@
             this.btnGrabar.TabIndex = 1;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnSalir
             // 
@@ -312,6 +316,25 @@
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             this.txtCantidad.Leave += new System.EventHandler(this.txtCantidad_Leave);
             // 
+            // mskFecha
+            // 
+            this.mskFecha.Enabled = false;
+            this.mskFecha.Location = new System.Drawing.Point(481, 437);
+            this.mskFecha.Mask = "00/00/0000";
+            this.mskFecha.Name = "mskFecha";
+            this.mskFecha.Size = new System.Drawing.Size(91, 20);
+            this.mskFecha.TabIndex = 12;
+            this.mskFecha.ValidatingType = typeof(System.DateTime);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(479, 422);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Fecha de Registro";
+            // 
             // frmProcSeriesAnadir
             // 
             this.AcceptButton = this.btnGrabar;
@@ -319,6 +342,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(584, 465);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.mskFecha);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtidcodigo);
             this.Controls.Add(this.ckbSerie);
@@ -333,6 +358,7 @@
             this.Name = "frmProcSeriesAnadir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Añadir Cantidad de Productos y Series";
+            this.Load += new System.EventHandler(this.frmProcSeriesAnadir_Load);
             this.grbAgregadoSerie.ResumeLayout(false);
             this.grbAgregadoSerie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaIngreso)).EndInit();
@@ -368,5 +394,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHOBS;
         private System.Windows.Forms.TextBox txtidcodigo;
         private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.MaskedTextBox mskFecha;
+        private System.Windows.Forms.Label label6;
     }
 }

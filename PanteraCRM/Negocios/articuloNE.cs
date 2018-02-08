@@ -27,7 +27,7 @@ namespace Negocios
         //{
         //    return articuloDL.obtenerNumero(idtipoarticulo,idcatearticulo);
         //}
-        public static int articuloActualizar(articulo articulo)
+        public static int articuloActualizar(producto articulo)
         {
             return articuloDL.articuloActualizar(articulo);
         }

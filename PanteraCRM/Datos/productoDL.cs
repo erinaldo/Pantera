@@ -9,6 +9,7 @@ namespace Datos
 {
     public abstract class productoDL
     {
+        // LISTAR PRODUCTOS
         public static List<producto> productoListar()
         {
             using (IDataReader datareader = conexion.executeOperation("fn_producto_listar", CommandType.StoredProcedure))
@@ -47,6 +48,7 @@ namespace Datos
                 return listado;
             }
         }
+        //PRODUCTO BUSCADO LISTAR
         public static List<productobuscado> productobuscadoListar(string parametro)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_producto_buscar_codigo_o_nombre", CommandType.StoredProcedure,
@@ -68,37 +70,52 @@ namespace Datos
                 return listado;
             }
         }
-        public static int productoInsertar(producto productoObjeto)
+        //INGRESAR PRODUCTOS
+        public static int productoInsertar(producto producto)
         {
-            return conexion.executeScalar("fn_articulo_insertar",
+            return conexion.executeScalar ("fn_ProductoIngresar",
             CommandType.StoredProcedure,
+              new parametro("in_chcodigoproducto", producto.chcodigoproducto),
+            new parametro("in_p_inidtipoproducto", producto.p_inidtipoproducto),
+            new parametro("in_p_inidmarca", producto.p_inidmarca),
+            new parametro("in_p_inidunidadmedidaproducto", producto.p_inidunidadmedidaproducto),
+            new parametro("in_chfechacreacion", producto.chfechacreacion),
+            new parametro("in_estado", producto.estado),
+            new parametro("in_p_inidfamiliaproducto", producto.p_inidfamiliaproducto),
+            new parametro("in_p_inidcalibre", producto.p_inidcalibre),
+            new parametro("in_p_inidmodelo", producto.p_inidmodelo),
+            new parametro("in_chcodigoproductoantes", producto.chcodigoproductoantes),
+            new parametro("in_chdescripcionproducto", producto.chdescripcionproducto),
+            new parametro("in_p_inidusuarioinsert", producto.p_inidusuarioinsert),
+            new parametro("in_p_inidusuariodelete", producto.p_inidusuariodelete),
+            new parametro("in_nuprecio", producto.nuprecio),
+            new parametro("in_p_inidsituacion", producto.p_inidsituacion));
 
-            new parametro("in_p_inidproducto", productoObjeto.p_inidproducto),
-            new parametro("in_chcodigoproducto", productoObjeto.chcodigoproducto),
-            new parametro("in_p_inidtipoproducto", productoObjeto.p_inidtipoproducto),
-            new parametro("in_chtipoproducto", productoObjeto.chtipoproducto),
-            new parametro("in_p_inidmarca", productoObjeto.p_inidmarca),
-            new parametro("in_chmarca", productoObjeto.chmarca),
-            new parametro("in_p_inidunidadmedidaproducto", productoObjeto.p_inidunidadmedidaproducto),
-            new parametro("in_chunidadmedidaproducto", productoObjeto.chunidadmedidaproducto),
-            new parametro("in_chfechacreacion", productoObjeto.chfechacreacion),
-            new parametro("in_estado", productoObjeto.estado),
-            new parametro("in_p_inidfamiliaproducto", productoObjeto.p_inidfamiliaproducto),
-            new parametro("in_chfamiliaproducto", productoObjeto.chfamiliaproducto),
-            new parametro("in_p_inidcalibre", productoObjeto.p_inidcalibre),
-            new parametro("in_chcalibre", productoObjeto.chcalibre),
-            new parametro("in_p_inidmodelo", productoObjeto.p_inidmodelo),
-            new parametro("in_chdmodelo", productoObjeto.chdmodelo),
-            new parametro("in_chcodigoproductoantes", productoObjeto.chcodigoproductoantes),
-            new parametro("in_chdescripcionproducto", productoObjeto.chdescripcionproducto),
-            new parametro("in_p_inidusuarioinsert", productoObjeto.p_inidusuarioinsert),
-            new parametro("in_chusuarioinsert", productoObjeto.chusuarioinsert),
-            new parametro("in_p_inidusuariodelete", productoObjeto.p_inidusuariodelete),
-            new parametro("in_chusuariodelete", productoObjeto.chusuariodelete),
-            new parametro("in_nuprecio", productoObjeto.nuprecio),
-            new parametro("in_p_inidsituacion", productoObjeto.p_inidsituacion),
-            new parametro("in_chsituacion", productoObjeto.chsituacion));
-
+        }
+        //MODIFICAR PRODUCTOS
+        public static int ProductoActualizar(producto producto)
+        {
+            {
+                return conexion.executeScalar("fn_ProductosActualizar",
+            CommandType.StoredProcedure,
+            new parametro("in_chcodigoproducto", producto.chcodigoproducto),
+            new parametro("in_p_inidtipoproducto", producto.p_inidtipoproducto),
+            new parametro("in_p_inidmarca", producto.p_inidmarca),
+            new parametro("in_p_inidunidadmedidaproducto", producto.p_inidunidadmedidaproducto),
+            new parametro("in_chfechacreacion", producto.chfechacreacion),
+            new parametro("in_estado", producto.estado),
+            new parametro("in_p_inidfamiliaproducto", producto.p_inidfamiliaproducto),
+            new parametro("in_p_inidcalibre", producto.p_inidcalibre),
+            new parametro("in_p_inidmodelo", producto.p_inidmodelo),
+            new parametro("in_chcodigoproductoantes", producto.chcodigoproductoantes),
+            new parametro("in_chdescripcionproducto", producto.chdescripcionproducto),
+            new parametro("in_p_inidusuarioinsert", producto.p_inidusuarioinsert),
+            new parametro("in_p_inidusuariodelete", producto.p_inidusuariodelete),
+            new parametro("in_nuprecio", producto.nuprecio),
+            new parametro("in_p_inidsituacion", producto.p_inidsituacion),
+            new parametro("in_p_inidproducto", producto.p_inidproducto)
+            );
+            }
         }
     }
 }

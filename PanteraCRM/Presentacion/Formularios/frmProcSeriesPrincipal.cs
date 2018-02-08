@@ -30,7 +30,7 @@ namespace Presentacion
                 frm.BringToFront();
                 return;
             }
-            string vboton = "N";
+            string vboton = "A";
             frmProcSeriesAnadir f = new frmProcSeriesAnadir(vboton);
             f.Show();
         }

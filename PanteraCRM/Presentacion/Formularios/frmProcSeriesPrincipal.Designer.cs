@@ -45,7 +45,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(647, 306);
+            this.dataGridView1.Size = new System.Drawing.Size(646, 306);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox1
@@ -72,7 +72,7 @@
             this.btnAnadir.Location = new System.Drawing.Point(10, 21);
             this.btnAnadir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(89, 30);
+            this.btnAnadir.Size = new System.Drawing.Size(88, 30);
             this.btnAnadir.TabIndex = 8;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
@@ -82,10 +82,10 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Window;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(313, 21);
+            this.button1.Location = new System.Drawing.Point(314, 21);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 30);
+            this.button1.Size = new System.Drawing.Size(88, 30);
             this.button1.TabIndex = 13;
             this.button1.Text = "&Imprimir";
             this.button1.UseVisualStyleBackColor = false;
@@ -97,7 +97,7 @@
             this.btnModificar.Location = new System.Drawing.Point(112, 21);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(89, 30);
+            this.btnModificar.Size = new System.Drawing.Size(88, 30);
             this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -106,10 +106,10 @@
             // 
             this.btnVer.BackColor = System.Drawing.SystemColors.Window;
             this.btnVer.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(211, 21);
+            this.btnVer.Location = new System.Drawing.Point(212, 21);
             this.btnVer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(89, 30);
+            this.btnVer.Size = new System.Drawing.Size(88, 30);
             this.btnVer.TabIndex = 10;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
@@ -122,7 +122,7 @@
             this.btnSalir.Location = new System.Drawing.Point(424, 21);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(89, 30);
+            this.btnSalir.Size = new System.Drawing.Size(88, 30);
             this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -136,9 +136,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(671, 401);
+            this.ClientSize = new System.Drawing.Size(670, 401);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmProcSeriesPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

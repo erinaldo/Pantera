@@ -38,7 +38,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dvgProducto = new System.Windows.Forms.DataGridView();
-            this.IDPRODCUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHFAMILIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHMARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,7 +143,7 @@
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(99, 340);
+            this.groupBox1.Location = new System.Drawing.Point(99, 342);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(451, 51);
             this.groupBox1.TabIndex = 14;
@@ -153,7 +153,7 @@
             // 
             this.dvgProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDPRODCUTO,
+            this.IDPRODUCTO,
             this.CODPRODUCTO,
             this.CHFAMILIA,
             this.CHMARCA,
@@ -184,13 +184,13 @@
             this.dvgProducto.Size = new System.Drawing.Size(651, 327);
             this.dvgProducto.TabIndex = 15;
             // 
-            // IDPRODCUTO
+            // IDPRODUCTO
             // 
-            this.IDPRODCUTO.DataPropertyName = "p_inidproducto";
-            this.IDPRODCUTO.HeaderText = "IDPRODUCTO";
-            this.IDPRODCUTO.Name = "IDPRODCUTO";
-            this.IDPRODCUTO.ReadOnly = true;
-            this.IDPRODCUTO.Visible = false;
+            this.IDPRODUCTO.DataPropertyName = "p_inidproducto";
+            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
+            this.IDPRODUCTO.Name = "IDPRODUCTO";
+            this.IDPRODUCTO.ReadOnly = true;
+            this.IDPRODUCTO.Visible = false;
             // 
             // CODPRODUCTO
             // 
@@ -385,6 +385,7 @@
             this.Load += new System.EventHandler(this.frmManProductoPrincipal_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgProducto)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -399,7 +400,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DataGridView dvgProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODCUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODUCTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODPRODUCTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHFAMILIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHMARCA;

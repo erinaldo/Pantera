@@ -13,38 +13,17 @@ using Negocios;
 namespace Presentacion
 {
     public partial class frmProcSeriesAnadir : Form
-    {       
+    {
+        internal serie tmpSerie;
+        public delegate void pasar(int varreg);
+        public event pasar pasado;
         public frmProcSeriesAnadir(string vBoton)
         {
             InitializeComponent();
             this.vBoton = vBoton;
         }
         string vBoton;
-        private void textBox1_Click(object sender, EventArgs e)
-        {
-            
-            frmBusquedaProductoGeneral f = new frmBusquedaProductoGeneral();
-            DialogResult res =   f.ShowDialog();
-            if (res == DialogResult.OK)
-            {
-                txtcodprod.Text = f.chcodigoproducto;
-                txtNombreconpuesto.Text = f.nombrecompuesto;
-                txtidcodigo.Text = ""+f.p_inidproducto;
-                txtCantidad.Enabled = true;
-                txtCantidad.Text = ""+1;
-                txtCantidad.Focus();
-                dgvListaIngreso.Rows.Clear();
-                txtSerie.Text = "";
-                txtObs.Text = "";
-                if (f.p_inidsituacionproducto > 1)
-                {
-                    ckbSerie.Checked = true;
-                    grbAgregadoSerie.Enabled = true;
-                }
-
-            }
-            
-        }
+       
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -177,6 +156,202 @@ namespace Presentacion
                     return;
                 }
             }
+        }
+
+        
+
+        private void txtcodprod_MouseClick(object sender, MouseEventArgs e)
+        {
+            frmBusquedaProductoGeneral f = new frmBusquedaProductoGeneral();
+            DialogResult res = f.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                txtcodprod.Text = "";
+                txtcodprod.Text = f.chcodigoproducto;
+                txtNombreconpuesto.Text = f.nombrecompuesto;
+                txtidcodigo.Text = "" + f.p_inidproducto;
+                txtCantidad.Enabled = true;
+                txtCantidad.Text = "" + 1;
+                txtCantidad.Focus();
+                dgvListaIngreso.Rows.Clear();
+                txtSerie.Text = "";
+                txtObs.Text = "";
+                if (f.p_inidsituacionproducto > 1)
+                {
+                    ckbSerie.Checked = true;
+                    grbAgregadoSerie.Enabled = true;
+                }
+
+            }
+        }
+
+        private void txtcodprod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            frmBusquedaProductoGeneral f = new frmBusquedaProductoGeneral();
+            DialogResult res = f.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                txtcodprod.Text = f.chcodigoproducto;
+                txtNombreconpuesto.Text = f.nombrecompuesto;
+                txtidcodigo.Text = "" + f.p_inidproducto;
+                txtCantidad.Enabled = true;
+                txtCantidad.Text = "" + 1;
+                txtCantidad.Focus();
+                dgvListaIngreso.Rows.Clear();
+                txtSerie.Text = "";
+                txtObs.Text = "";
+                if (f.p_inidsituacionproducto > 1)
+                {
+                    ckbSerie.Checked = true;
+                    grbAgregadoSerie.Enabled = true;
+                }
+
+            }
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            // IDEA: PARA GARANTIZAR EL INGRESO SE TENDRIA QUE GUARDAR EN UN ARREGLO Y LUEGO VALIDAR SU EXISTENCIA TOTAL.
+            int varIdArticulo;
+            switch (this.vBoton)
+            {
+                case "A":
+                    //ATRIBUTOS PARA INGRESAR PRODUCTO
+                    // CONFIRMACION
+                    bool flat3 = ValidarCampos();                    
+                    if (flat3)
+                    {
+                        //VALIDACION
+                        bool flat4 = ConfirmacionRegistro();
+                        if (flat4)
+                        {
+                            //INGRESO
+                            bool flat = true;
+                            //IngresoRegistros();
+                            for (int i = 0; i < dgvListaIngreso.RowCount; i++)
+                            {
+                                tmpSerie = new serie();
+                                tmpSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells[3].Value.ToString();
+                                tmpSerie.estado = true;
+                                tmpSerie.p_inidproducto = int.Parse(txtidcodigo.Text);
+                                tmpSerie.chadicional = dgvListaIngreso.Rows[i].Cells[4].Value.ToString();
+                                tmpSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+                                tmpSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                                tmpSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
+                                int varIdArticulos = serieNE.seriesIngresar(tmpSerie);
+                                if (varIdArticulos <= 0)
+                                {
+                                    flat = false;
+                                    //tmpSerie.p_inidserie = i;
+                                    // SE acumula el registro
+                                    //registo.Add(tmpSerie);
+                                }
+
+                            }
+                            if (flat)
+                            {
+                                MessageBox.Show("Las Series se Ingresaron al Sistema");
+                                dgvListaIngreso.Rows.Clear();
+                                txtCantidad.Text = ""+1;
+                                txtcodprod.Text = "";
+                                txtidcodigo.Text = "";
+                                txtcodprod.Focus();
+                                
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error de Ingreso, Series Pendientes de Ingreso");
+                                return;
+                            }
+                           
+                         }
+                    }else
+                    {
+                        MessageBox.Show("Campos incorrectos verificar");
+                        return;
+                    }                                   
+                   
+                    break;
+                case "M":
+                    tmpSerie = new serie();
+                    varIdArticulo = serieNE.seriesIngresar(tmpSerie);
+                    if (varIdArticulo <= 0)
+                    {
+                        MessageBox.Show("Registro con error por actualizado, validar");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registro actualizado");
+                        pasado(varIdArticulo);
+                    }
+                    break;
+                default:
+                    break;
+            }
+            //this.Dispose();  
+        }
+        private  bool IngresoRegistros()
+        {
+            List<serie> registo= new List<serie>();
+            bool flat2 = false;
+            for (int i = 0; i < dgvListaIngreso.RowCount; i++)
+            {
+                tmpSerie = new serie();
+                tmpSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells[3].Value.ToString();
+                tmpSerie.estado = true;
+                tmpSerie.p_inidproducto = int.Parse(txtidcodigo.Text);
+                tmpSerie.chadicional = dgvListaIngreso.Rows[i].Cells[4].Value.ToString();
+               int  varIdArticulo = serieNE.seriesIngresar(tmpSerie);
+                if (varIdArticulo > 0)
+                {
+                    tmpSerie.p_inidserie = i;
+                    // SE acumula el registro
+                    registo.Add(tmpSerie);
+                }
+
+            }
+            if (registo == null)
+            {
+                flat2 = false;
+            }else
+            {
+                foreach (serie aPart in registo)
+                {
+                    int a = aPart.p_inidserie;
+                    dgvListaIngreso.CurrentCell = dgvListaIngreso.Rows[a].Cells[a];
+                    dgvListaIngreso.Rows.Remove(dgvListaIngreso.CurrentRow);
+                }
+                if (dgvListaIngreso.RowCount > 0)
+                {
+                    flat2 = false;
+                }else
+                {
+                    flat2 = true;
+                }
+            }               
+            return flat2;
+        }
+        private bool ValidarCampos()
+        {
+
+            return true;
+        }
+        private bool ConfirmacionRegistro()
+        {
+            bool flat55 = false;
+            if (MessageBox.Show("¿Esta Seguro de Grabar las series?", "Mensaje de Confirmación",
+         MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+         == DialogResult.Yes)
+            {
+                flat55 = true;
+            }
+            return flat55;
+        }
+
+        private void frmProcSeriesAnadir_Load(object sender, EventArgs e)
+        {
+
+            mskFecha.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
         }
     }
 }

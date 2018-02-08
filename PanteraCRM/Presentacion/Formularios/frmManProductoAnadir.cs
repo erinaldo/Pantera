@@ -28,97 +28,70 @@ namespace Presentacion
        
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            
             int varIdArticulo;
             switch (this.vBoton)
             {
                 case "A":
+                    tmpProducto = new producto();
+                    //ATRIBUTOS PARA INGRESAR PRODUCTO
+                    //tmpProducto.p_inidproducto = 0; AUTO-GENERADO  
+                    tmpProducto.chcodigoproducto = txtCodigo.Text;
+                    tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
+                    tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
+                    tmpProducto.p_inidunidadmedidaproducto = (int)cboMedida.SelectedValue;
+                    tmpProducto.chfechacreacion = txtFecha.Text;
+                    tmpProducto.estado = true;
+                    tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
+                    tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
+                    tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
+                    tmpProducto.chcodigoproductoantes = "";
+                    tmpProducto.chdescripcionproducto = txtNombre.Text;
+                    tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                    tmpProducto.p_inidusuariodelete = 0;
+                    tmpProducto.nuprecio = 0;
+                    tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
+                    varIdArticulo = productoNE.productoInsertar(tmpProducto);
+                    if (varIdArticulo <= 0)
                     {
-                        tmpProducto = new producto();
-                        ////tmpProducto.p_inidproducto = (int);
-                        //tmpProducto.chcodigoproducto = txtCodigo.Text;
-                        //tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
-                        //tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue; 
-                        //tmpProducto.p_inunidadmedidaproducto = (int)cboMedida.SelectedValue;
-                        //tmpProducto.chfechacreacion = txtFecha.Text;
-                        //tmpProducto.estado = true;
-                        //tmpProducto.tmhoracreacion = txtFecha.Text;
-                        //tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
-                        //tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
-                        //tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
-                        //tmpProducto.chcodigoproductoantes = txtNombre.Text;
-                        //tmpProducto.chdescripcionproducto = txtNombre.Text;
-                        varIdArticulo = productoNE.productoInsertar(tmpProducto);
-                        if (varIdArticulo <= 0)
-                        {
-                            MessageBox.Show("Registro errado, validar");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Código generado", varIdArticulo.ToString());
-                            pasado(varIdArticulo);
-                        }
+                        MessageBox.Show("Registro errado, validar");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Código generado", varIdArticulo.ToString());
+                        pasado(varIdArticulo);
                     }
                     break;
                 case "M":
+                    tmpProducto.p_inidproducto = int.Parse(txtidproducto.Text);
+                    tmpProducto.chcodigoproducto = txtCodigo.Text;
+                    tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
+                    tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
+                    tmpProducto.p_inidunidadmedidaproducto = (int)cboMedida.SelectedValue;
+                    tmpProducto.chfechacreacion = txtFecha.Text;
+                    tmpProducto.estado = true;
+                    tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
+                    tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
+                    tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
+                    tmpProducto.chcodigoproductoantes = "";
+                    tmpProducto.chdescripcionproducto = txtNombre.Text;
+                    tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                    tmpProducto.p_inidusuariodelete = 0;
+                    tmpProducto.nuprecio = 0;
+                    tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
+                    varIdArticulo = productoNE.ProductoActualizar(tmpProducto);
+                    if (varIdArticulo <= 0)
                     {
-
-                    }break;
+                        MessageBox.Show("Registro con error por actualizado, validar");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registro actualizado");
+                        pasado(varIdArticulo);
+                    }
+                    break;
                 default:
                     break;
-            }
-            //int varIdArticulo ;
-            //switch (this.vBoton)
-            //{
-            //    case "A":
-            //        //tmpProducto = new producto();
-            //        //tmpProducto.chcodigoproducto = txtCodigo.Text;
-            //        //tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
-            //        //tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
-            //        //tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
-            //        //tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
-            //        //tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
-            //        //tmpProducto.chdescripcionproducto = txtNombre.Text;
-            //        //tmpProducto.p_inunidadmedidaproducto =  (int)cboMedida.SelectedValue;
-            //        //tmpProducto.chfechacreacion = txtFecha.Text;
-
-            //       // varIdArticulo = productoNE.productoInsertar(tmpProducto);
-            //        if (varIdArticulo <= 0)
-            //        {
-            //            MessageBox.Show("a"+ tmpProducto.chcodigoproducto.ToString());
-            //            MessageBox.Show("Registro errado, validar");
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Código generado", varIdArticulo.ToString());
-            //            pasado(varIdArticulo);
-            //        }
-            //        break;
-            //    //case "M":
-            //    //    //tmpArticulo.codigoarticulo = txtCodigo.Text;
-            //    //    //tmpArticulo.nombrearticulo = txtNombre.Text;
-            //    //    //tmpArticulo.idtipoarticulo = (string)cboTipo.SelectedValue;
-            //    //    //tmpArticulo.idcatearticulo = (string)cboCategoria.SelectedValue;
-            //    //    //tmpArticulo.idmediarticulo = ((string)cboMedida.SelectedValue == null) ? "" : (string)cboMedida.SelectedValue;
-            //    //    //tmpArticulo.fechacreacion = txtFecha.Text;
-            //    //    //tmpArticulo.precio = Convert.ToDecimal(txtPrecio.Text);
-            //    //    //tmpArticulo.idusuario = sesion.usuariosesion.idusuario;
-            //    //    //tmpArticulo.idsituarticulo = (string)cboSituacion.SelectedValue;
-            //    //    //tmpArticulo.estadoarticulo = true;
-            //    //    //varIdArticulo = articuloNE.articuloActualizar(tmpArticulo);
-            //    //    //if (varIdArticulo <= 0)
-            //    //    //{
-            //    //    //    MessageBox.Show("Registro con error por actualizado, validar");
-            //    //    //}
-            //    //    //else
-            //    //    //{
-            //    //    //    MessageBox.Show("Registro actualizado");
-            //    //    //    pasado(varIdArticulo);
-            //    //    //}
-            //    //    break;
-            //    default:
-            //        break;
-            //}
+            }          
             this.Dispose();
         }
 
@@ -175,6 +148,7 @@ namespace Presentacion
                 if (this.vBoton == "M")
             {
                 this.Text = "MODIFICAR PRODUCTO";
+                txtidproducto.Text = tmpProducto.p_inidproducto.ToString();
                 txtCodigo.Text = tmpProducto.chcodigoproducto;
                 txtNombre.Text = tmpProducto.chdescripcionproducto;
                 cboCategoria.SelectedValue = tmpProducto.p_inidfamiliaproducto;
@@ -184,8 +158,7 @@ namespace Presentacion
                 cboModelo.SelectedValue = tmpProducto.p_inidmodelo;
                 cboMedida.SelectedValue = tmpProducto.p_inidunidadmedidaproducto;
                 cboSituacion.SelectedValue = tmpProducto.p_inidsituacion;
-
-                txtFecha.Text = tmpProducto.chfechacreacion;
+                txtFecha.Text = "01012018";
             }
             else
                    if (this.vBoton == "V")

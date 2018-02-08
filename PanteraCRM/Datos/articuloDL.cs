@@ -76,22 +76,28 @@ namespace Datos
             //new parametro("in_idsituarticulo", articulo.idsituarticulo),
             ////new parametro("in_estadoarticulo", articulo.estadoarticulo));
         }
-        public static int articuloActualizar(articulo articulo)
+        public static int articuloActualizar(producto producto)
         {
-            return 0;
-            //return conexion.executeScalar("fn_articulo_actualizar",
-            //CommandType.StoredProcedure,
-            //new parametro("in_idarticulo", articulo.idarticulo),
-            //new parametro("in_codigoarticulo", articulo.codigoarticulo),
-            //new parametro("in_nombrearticulo", articulo.nombrearticulo),
-            //new parametro("in_idtipoarticulo", articulo.idtipoarticulo),
-            //new parametro("in_idcatearticulo", articulo.idcatearticulo),
-            //new parametro("in_idmediarticulo", articulo.idmediarticulo),
-            //new parametro("in_fechacreacion", articulo.fechacreacion),
-            //new parametro("in_precio", articulo.precio),
-            //new parametro("in_idusuario", articulo.idusuario),
-            //new parametro("in_idsituarticulo", articulo.idsituarticulo),
-            //new parametro("in_estadoarticulo", articulo.estadoarticulo));
+            //return 0;
+            return conexion.executeScalar("fn_producto_insertar",
+            CommandType.StoredProcedure,
+            new parametro("in_chcodigoproducto", producto.chcodigoproducto),
+            new parametro("in_p_inidtipoproducto", producto.p_inidtipoproducto),
+            new parametro("in_p_inidmarca", producto.p_inidmarca),
+            new parametro("in_p_inidunidadmedidaproducto", producto.p_inidunidadmedidaproducto),
+            new parametro("in_chfechacreacion", producto.chfechacreacion),
+            new parametro("in_estado", producto.estado),
+            new parametro("in_p_inidfamiliaproducto", producto.p_inidfamiliaproducto),
+            new parametro("in_p_inidcalibre", producto.p_inidcalibre),
+            new parametro("in_p_inidmodelo", producto.p_inidmodelo),
+            new parametro("in_chcodigoproductoantes", producto.chcodigoproductoantes),
+            new parametro("in_chdescripcionproducto", producto.chdescripcionproducto),
+            new parametro("in_p_inidusuarioinsert", producto.p_inidusuarioinsert),
+            new parametro("in_p_inidusuariodelete", producto.p_inidusuariodelete),
+            new parametro("in_nuprecio", producto.nuprecio),
+            new parametro("in_p_inidsituacion", producto.p_inidsituacion));
+
+            
         }
         private static articulo convertirRegistro(IDataReader datareader)
         {

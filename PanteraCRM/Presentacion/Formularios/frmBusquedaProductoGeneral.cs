@@ -13,7 +13,7 @@ namespace Presentacion
 {
     public partial class frmBusquedaProductoGeneral : Form
     {
-        private string vBoton = "X";
+        
         public int p_inidproducto;
         public string chcodigoproducto;
         public string nombrecompuesto;

@@ -14,6 +14,12 @@ namespace Negocios
         {
             return productoDL.productoListar();
         }
+        //ACTUALIZAR PRODUCTO
+        public static int ProductoActualizar(producto productoObjeto)
+        {
+            return productoDL.ProductoActualizar(productoObjeto);
+        }
+        //INGRESO DE PRODUCTOS
         public static int productoInsertar(producto productoObjeto)
         {
             return productoDL.productoInsertar(productoObjeto);

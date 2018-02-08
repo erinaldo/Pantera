@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManProductoAnadir));
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,6 +52,7 @@
             this.txtFecha = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtidproducto = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -62,14 +62,13 @@
             this.btnGrabar.BackColor = System.Drawing.Color.White;
             this.btnGrabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnGrabar.ForeColor = System.Drawing.Color.Black;
-            this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
+            this.btnGrabar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnGrabar.Image = global::Presentacion.Properties.Resources._check;
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGrabar.Location = new System.Drawing.Point(11, 22);
+            this.btnGrabar.Location = new System.Drawing.Point(16, 22);
             this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(75, 30);
+            this.btnGrabar.Size = new System.Drawing.Size(70, 33);
             this.btnGrabar.TabIndex = 1;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -80,14 +79,13 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSalir.Image = global::Presentacion.Properties.Resources._error;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(92, 22);
+            this.btnSalir.Location = new System.Drawing.Point(97, 22);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 30);
+            this.btnSalir.Size = new System.Drawing.Size(64, 33);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -359,14 +357,25 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
+            // txtidproducto
+            // 
+            this.txtidproducto.AutoSize = true;
+            this.txtidproducto.Location = new System.Drawing.Point(30, 270);
+            this.txtidproducto.Name = "txtidproducto";
+            this.txtidproducto.Size = new System.Drawing.Size(0, 13);
+            this.txtidproducto.TabIndex = 5;
+            this.txtidproducto.Visible = false;
+            // 
             // frmManProductoAnadir
             // 
+            this.AcceptButton = this.btnGrabar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(554, 323);
+            this.Controls.Add(this.txtidproducto);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.Black;
@@ -380,6 +389,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -408,5 +418,6 @@
         private System.Windows.Forms.ComboBox cboModelo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.Label txtidproducto;
     }
 }
