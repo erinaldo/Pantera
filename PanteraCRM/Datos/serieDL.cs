@@ -47,5 +47,39 @@ namespace Datos
             );
 
         }
+        public static List<seriebuscada> serieListar()
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_series_litar", CommandType.StoredProcedure))
+            {
+                List<seriebuscada> listado = new List<seriebuscada>();
+                while (datareader.Read())
+                {
+                    seriebuscada registro = new seriebuscada();
+                    registro.p_inidserie = Convert.ToInt32(datareader["p_inidserie"]);
+                    registro.chserie = Convert.ToString(datareader["chserie"]).Trim();
+                    registro.chnombreproductocompuesto = Convert.ToString(datareader["chnombreproductocompuesto"]).Trim();
+                    registro.chobservacion = Convert.ToString(datareader["chobservacion"]).Trim();
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+        public static List<seriebuscada> serieBuscar(string parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_series_busqueda", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
+            {
+                List<seriebuscada> listado = new List<seriebuscada>();
+                while (datareader.Read())
+                {
+                    seriebuscada registro = new seriebuscada();
+                    registro.p_inidserie = Convert.ToInt32(datareader["p_inidserie"]);
+                    registro.chserie = Convert.ToString(datareader["chserie"]).Trim();
+                    registro.chnombreproductocompuesto = Convert.ToString(datareader["chnombreproductocompuesto"]).Trim();
+                    registro.chobservacion = Convert.ToString(datareader["chobservacion"]).Trim();
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
     }
 }

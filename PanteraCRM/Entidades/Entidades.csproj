@@ -67,6 +67,7 @@
     <Compile Include="puntoventa.cs" />
     <Compile Include="puntoventasesion.cs" />
     <Compile Include="serie.cs" />
+    <Compile Include="seriebuscada.cs" />
     <Compile Include="sesionglobal.cs" />
     <Compile Include="tipo.cs" />
     <Compile Include="ubigeo.cs" />

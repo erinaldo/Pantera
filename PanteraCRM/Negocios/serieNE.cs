@@ -17,5 +17,13 @@ namespace Negocios
         {
             return serieDL.seriesIngresar(serie);
         }
+        public static List<seriebuscada> serieListar()
+        {
+            return serieDL.serieListar();
+        }
+        public static List<seriebuscada> serieBuscar(string parametro)
+        {
+            return serieDL.serieBuscar(parametro);
+        }
     }
 }

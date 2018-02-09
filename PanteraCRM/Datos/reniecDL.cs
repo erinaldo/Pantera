@@ -46,5 +46,6 @@ namespace Datos
             registro.sexo = Convert.ToString(datareader["sexo"]);
             return registro;
         }
+       
     }
 }

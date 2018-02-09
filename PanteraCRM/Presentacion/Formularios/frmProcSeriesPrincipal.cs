@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
+using Negocios;
 
 namespace Presentacion
 {
@@ -35,6 +37,36 @@ namespace Presentacion
             f.Show();
         }
 
-       
+        private void frmProcSeriesPrincipal_Load(object sender, EventArgs e)
+        {
+            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
+            cargarData(0);
+        }
+        public void cargarData(int registro)
+        {
+            List<seriebuscada> listado = serieNE.serieListar();
+            dgvSeries.DataSource = listado;
+        }
+        public void ejecutar(int dato)
+        {
+            cargarData(0);
+            foreach (DataGridViewRow Row in dgvSeries.Rows)
+            {
+                int valor = (int)Row.Cells["IDSERIE"].Value;
+                if (valor == dato)
+                {
+                    int puntero = (int)Row.Index;
+                    //                    dgvPersona.CurrentCell = dgvPersona.Rows[puntero].Cells["IDPERSONA"];
+                    dgvSeries.CurrentCell = dgvSeries.Rows[puntero].Cells[1];
+                    return;
+                }
+            }
+        }
+
+        private void textBusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
