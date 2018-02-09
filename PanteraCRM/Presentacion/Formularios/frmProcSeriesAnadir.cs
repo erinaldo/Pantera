@@ -255,12 +255,7 @@ namespace Presentacion
 
                             sesion.valedetalles = valedetallessss;
                             //MessageBox.Show("Las Series se Ingresaron al Sistema");
-                            dgvListaIngreso.Rows.Clear();
-                             
-                                
-                            
-                           
-                           
+                            dgvListaIngreso.Rows.Clear();                           
                          }
                     }else
                     {

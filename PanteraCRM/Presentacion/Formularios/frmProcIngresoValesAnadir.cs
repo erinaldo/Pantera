@@ -28,7 +28,7 @@ namespace Presentacion
         {
             this.Dispose();
         }
-
+        decimal suma = 0;
         private void frmProcIngresoValesAnadir_Load(object sender, EventArgs e)
         {
             txtejercicio.Text = "2018";
@@ -47,7 +47,7 @@ namespace Presentacion
             cboTipoMov.ValueMember = "idmaestrodetalle";
             cboTipoMov.DisplayMember = "nombreitem";
             mskfechareg.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-            txtTotal.Text = "0.00";
+            txtTotal.Text = ""+suma;
 
         }
 
@@ -70,12 +70,15 @@ namespace Presentacion
                 if (obj != null)
                 {
                     dgvListaValeDetalle.Rows.Add(
-                     obj.chcodigoproducto,
+                     obj.chcodigoproducto, obj.chcodigoproducto,
                      obj.nucantidad,
                      obj.chcodigoserie,
                      obj.chnombrecompuesto,
                      obj.nucosto,
                      obj.nutotal);
+                    suma =suma + obj.nutotal;
+                    txtTotal.Text = "" + suma;
+
                 }
                 else
                 {
