@@ -74,6 +74,8 @@
     <Compile Include="usuario.cs" />
     <Compile Include="usuariomenu.cs" />
     <Compile Include="usuariosesion.cs" />
+    <Compile Include="valecabecera.cs" />
+    <Compile Include="valedetalle.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -65,6 +65,8 @@ namespace Datos
                     registro.chunidadmedidaproducto = Convert.ToString(datareader["chunidadmedidaproducto"]).Trim();
                     registro.p_inidsituacion = Convert.ToInt32(datareader["p_inidsituacion"]);
                     registro.chsituacion = Convert.ToString(datareader["chsituacion"]).Trim();
+                    registro.nuprecio = Convert.ToDecimal(datareader["nuprecio"]);
+                    registro.req_serie = Convert.ToBoolean(datareader["req_serie"]);
                     listado.Add(registro);
                 }
                 return listado;
@@ -89,7 +91,8 @@ namespace Datos
             new parametro("in_p_inidusuarioinsert", producto.p_inidusuarioinsert),
             new parametro("in_p_inidusuariodelete", producto.p_inidusuariodelete),
             new parametro("in_nuprecio", producto.nuprecio),
-            new parametro("in_p_inidsituacion", producto.p_inidsituacion));
+            new parametro("in_p_inidsituacion", producto.p_inidsituacion),
+            new parametro("in_req_serie", producto.req_serie));
 
         }
         //MODIFICAR PRODUCTOS
@@ -113,7 +116,8 @@ namespace Datos
             new parametro("in_p_inidusuariodelete", producto.p_inidusuariodelete),
             new parametro("in_nuprecio", producto.nuprecio),
             new parametro("in_p_inidsituacion", producto.p_inidsituacion),
-            new parametro("in_p_inidproducto", producto.p_inidproducto)
+            new parametro("in_p_inidproducto", producto.p_inidproducto),
+            new parametro("in_req_serie", producto.req_serie)
             );
             }
         }

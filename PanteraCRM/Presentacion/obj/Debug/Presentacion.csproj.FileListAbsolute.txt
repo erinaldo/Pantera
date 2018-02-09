@@ -485,3 +485,5 @@ C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Newto
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Datos.pdb
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.exe
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
+C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcValesIngresoPrincipal.resources
+C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcIngresoValesAnadir.resources

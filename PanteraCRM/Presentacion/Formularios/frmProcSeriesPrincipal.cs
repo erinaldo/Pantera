@@ -26,6 +26,7 @@ namespace Presentacion
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
+
             Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSeriesAnadir);
             if (frm != null)
             {
@@ -34,7 +35,8 @@ namespace Presentacion
             }
             string vboton = "A";
             frmProcSeriesAnadir f = new frmProcSeriesAnadir(vboton);
-            f.Show();
+            f.pasado += new frmProcSeriesAnadir.pasar(ejecutar);
+            f.ShowDialog();
         }
 
         private void frmProcSeriesPrincipal_Load(object sender, EventArgs e)

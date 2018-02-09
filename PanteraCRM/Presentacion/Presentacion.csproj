@@ -205,6 +205,12 @@
     <Compile Include="Formularios\frmProcFacturacionPrincipal.Designer.cs">
       <DependentUpon>frmProcFacturacionPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmProcIngresoValesAnadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcIngresoValesAnadir.Designer.cs">
+      <DependentUpon>frmProcIngresoValesAnadir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmProcKardexProductoPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,12 @@
     </Compile>
     <Compile Include="Formularios\frmProcSeriesAnadir.Designer.cs">
       <DependentUpon>frmProcSeriesAnadir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcValesIngresoPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcValesIngresoPrincipal.Designer.cs">
+      <DependentUpon>frmProcValesIngresoPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmSecuAutenticacion.cs">
       <SubType>Form</SubType>
@@ -480,11 +492,17 @@
     <EmbeddedResource Include="Formularios\frmManProductoAnadir.resx">
       <DependentUpon>frmManProductoAnadir.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcIngresoValesAnadir.resx">
+      <DependentUpon>frmProcIngresoValesAnadir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcSeriesAnadir.resx">
       <DependentUpon>frmProcSeriesAnadir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcSeriesPrincipal.resx">
       <DependentUpon>frmProcSeriesPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcValesIngresoPrincipal.resx">
+      <DependentUpon>frmProcValesIngresoPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmSecuAutenticacion.resx">
       <DependentUpon>frmSecuAutenticacion.cs</DependentUpon>

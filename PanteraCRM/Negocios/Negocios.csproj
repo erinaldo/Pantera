@@ -63,6 +63,7 @@
     <Compile Include="ubigeoNE.cs" />
     <Compile Include="usuariomenuNE.cs" />
     <Compile Include="usuarioNE.cs" />
+    <Compile Include="valeNE.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

@@ -29,18 +29,16 @@
         private void InitializeComponent()
         {
             this.dgvSeries = new System.Windows.Forms.DataGridView();
+            this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBusqueda = new System.Windows.Forms.TextBox();
-            this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeries)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,11 +53,43 @@
             this.CHPRODUCTO,
             this.CHSERIE,
             this.CHOBS});
-            this.dgvSeries.Location = new System.Drawing.Point(12, 32);
+            this.dgvSeries.Location = new System.Drawing.Point(12, 12);
             this.dgvSeries.Name = "dgvSeries";
             this.dgvSeries.ReadOnly = true;
-            this.dgvSeries.Size = new System.Drawing.Size(646, 286);
+            this.dgvSeries.Size = new System.Drawing.Size(646, 306);
             this.dgvSeries.TabIndex = 0;
+            // 
+            // IDSERIE
+            // 
+            this.IDSERIE.DataPropertyName = "p_inidserie";
+            this.IDSERIE.HeaderText = "IDSERIE";
+            this.IDSERIE.Name = "IDSERIE";
+            this.IDSERIE.ReadOnly = true;
+            this.IDSERIE.Visible = false;
+            // 
+            // CHPRODUCTO
+            // 
+            this.CHPRODUCTO.DataPropertyName = "chnombreproductocompuesto";
+            this.CHPRODUCTO.HeaderText = "PRODUCTO";
+            this.CHPRODUCTO.Name = "CHPRODUCTO";
+            this.CHPRODUCTO.ReadOnly = true;
+            this.CHPRODUCTO.Width = 93;
+            // 
+            // CHSERIE
+            // 
+            this.CHSERIE.DataPropertyName = "chserie";
+            this.CHSERIE.HeaderText = "SERIE";
+            this.CHSERIE.Name = "CHSERIE";
+            this.CHSERIE.ReadOnly = true;
+            this.CHSERIE.Width = 64;
+            // 
+            // CHOBS
+            // 
+            this.CHOBS.DataPropertyName = "chobservacion";
+            this.CHOBS.HeaderText = "OBSERVACION";
+            this.CHOBS.Name = "CHOBS";
+            this.CHOBS.ReadOnly = true;
+            this.CHOBS.Width = 109;
             // 
             // groupBox1
             // 
@@ -141,55 +171,6 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Busqueda de Serie";
-            // 
-            // textBusqueda
-            // 
-            this.textBusqueda.Location = new System.Drawing.Point(115, 6);
-            this.textBusqueda.Name = "textBusqueda";
-            this.textBusqueda.Size = new System.Drawing.Size(145, 20);
-            this.textBusqueda.TabIndex = 17;
-            this.textBusqueda.TextChanged += new System.EventHandler(this.textBusqueda_TextChanged);
-            // 
-            // IDSERIE
-            // 
-            this.IDSERIE.DataPropertyName = "p_inidserie";
-            this.IDSERIE.HeaderText = "IDSERIE";
-            this.IDSERIE.Name = "IDSERIE";
-            this.IDSERIE.ReadOnly = true;
-            this.IDSERIE.Visible = false;
-            // 
-            // CHPRODUCTO
-            // 
-            this.CHPRODUCTO.DataPropertyName = "chnombreproductocompuesto";
-            this.CHPRODUCTO.HeaderText = "PRODUCTO";
-            this.CHPRODUCTO.Name = "CHPRODUCTO";
-            this.CHPRODUCTO.ReadOnly = true;
-            this.CHPRODUCTO.Width = 93;
-            // 
-            // CHSERIE
-            // 
-            this.CHSERIE.DataPropertyName = "chserie";
-            this.CHSERIE.HeaderText = "SERIE";
-            this.CHSERIE.Name = "CHSERIE";
-            this.CHSERIE.ReadOnly = true;
-            this.CHSERIE.Width = 64;
-            // 
-            // CHOBS
-            // 
-            this.CHOBS.DataPropertyName = "chobservacion";
-            this.CHOBS.HeaderText = "OBSERVACION";
-            this.CHOBS.Name = "CHOBS";
-            this.CHOBS.ReadOnly = true;
-            this.CHOBS.Width = 109;
-            // 
             // frmProcSeriesPrincipal
             // 
             this.AcceptButton = this.btnAnadir;
@@ -199,8 +180,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(670, 401);
-            this.Controls.Add(this.textBusqueda);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvSeries);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -212,7 +191,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeries)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -225,8 +203,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBusqueda;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDSERIE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHPRODUCTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSERIE;

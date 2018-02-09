@@ -47,6 +47,7 @@ namespace Datos
             );
 
         }
+        
         public static List<seriebuscada> serieListar()
         {
             using (IDataReader datareader = conexion.executeOperation("fn_series_litar", CommandType.StoredProcedure))

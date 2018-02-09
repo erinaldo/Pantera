@@ -15,6 +15,8 @@ namespace Entidades
         public string chunidadmedidaproducto { get; set; }
         public int p_inidsituacion { get; set; }
         public string chsituacion { get; set; }
+        public decimal nuprecio { get; set; }
+        public bool req_serie { get; set; }
         public productobuscado()
         {
             this.p_inidproducto = 0;
@@ -24,6 +26,8 @@ namespace Entidades
             this.chunidadmedidaproducto = string.Empty;
             this.p_inidsituacion = 0;
             this.chsituacion = string.Empty;
+            this.nuprecio = 0;
+            this.req_serie = false;
         }
 
     }

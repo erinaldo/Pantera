@@ -127,9 +127,12 @@ namespace Presentacion
             {
                 string formula = "Presentacion." + nodo.Tag.ToString().Trim();
                 Form frm = (Form)(Assembly.GetExecutingAssembly().CreateInstance(formula));
+
                 //int item = Convert.ToInt32(nodo.Name);
                 if (perfildetalleNE.validarModulo(sesion.SessionGlobal.p_inidperfil, Convert.ToInt32(nodo.Name)) == 1)
                 {
+                    
+
                     frm.MdiParent = this.MdiParent;
                     frm.Show();
                 }

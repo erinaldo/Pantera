@@ -39,6 +39,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dvgProducto = new System.Windows.Forms.DataGridView();
             this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCHECK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHFAMILIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHMARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,10 +71,10 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Window;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(268, 17);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 24);
+            this.button1.Size = new System.Drawing.Size(73, 35);
             this.button1.TabIndex = 13;
             this.button1.Text = "&Imprimir";
             this.button1.UseVisualStyleBackColor = false;
@@ -82,10 +83,10 @@
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Location = new System.Drawing.Point(363, 17);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(76, 24);
+            this.btnSalir.Size = new System.Drawing.Size(73, 35);
             this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -94,10 +95,10 @@
             // btnVer
             // 
             this.btnVer.BackColor = System.Drawing.SystemColors.Window;
-            this.btnVer.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.Location = new System.Drawing.Point(181, 17);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(76, 24);
+            this.btnVer.Size = new System.Drawing.Size(73, 35);
             this.btnVer.TabIndex = 10;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
@@ -106,10 +107,10 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.Location = new System.Drawing.Point(96, 17);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(76, 24);
+            this.btnModificar.Size = new System.Drawing.Size(73, 35);
             this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -118,11 +119,11 @@
             // btnAnadir
             // 
             this.btnAnadir.BackColor = System.Drawing.SystemColors.Window;
-            this.btnAnadir.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnadir.ImageList = this.imageList1;
             this.btnAnadir.Location = new System.Drawing.Point(9, 17);
             this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(76, 24);
+            this.btnAnadir.Size = new System.Drawing.Size(73, 35);
             this.btnAnadir.TabIndex = 8;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
@@ -143,17 +144,21 @@
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(99, 342);
+            this.groupBox1.Location = new System.Drawing.Point(107, 327);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(451, 51);
+            this.groupBox1.Size = new System.Drawing.Size(451, 66);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
             // dvgProducto
             // 
-            this.dvgProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgProducto.AllowUserToAddRows = false;
+            this.dvgProducto.AllowUserToDeleteRows = false;
+            this.dvgProducto.BackgroundColor = System.Drawing.Color.White;
+            this.dvgProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dvgProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDPRODUCTO,
+            this.IDCHECK,
             this.CODPRODUCTO,
             this.CHFAMILIA,
             this.CHMARCA,
@@ -178,10 +183,12 @@
             this.NUPRECIO,
             this.IDSITUACION,
             this.CHSITUACION});
-            this.dvgProducto.Location = new System.Drawing.Point(10, 10);
+            this.dvgProducto.Location = new System.Drawing.Point(12, 10);
             this.dvgProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dvgProducto.Name = "dvgProducto";
-            this.dvgProducto.Size = new System.Drawing.Size(651, 327);
+            this.dvgProducto.ReadOnly = true;
+            this.dvgProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dvgProducto.Size = new System.Drawing.Size(647, 312);
             this.dvgProducto.TabIndex = 15;
             // 
             // IDPRODUCTO
@@ -192,41 +199,61 @@
             this.IDPRODUCTO.ReadOnly = true;
             this.IDPRODUCTO.Visible = false;
             // 
+            // IDCHECK
+            // 
+            this.IDCHECK.DataPropertyName = "req_serie";
+            this.IDCHECK.HeaderText = "IDCHECK";
+            this.IDCHECK.Name = "IDCHECK";
+            this.IDCHECK.ReadOnly = true;
+            this.IDCHECK.Visible = false;
+            // 
             // CODPRODUCTO
             // 
             this.CODPRODUCTO.DataPropertyName = "chcodigoproducto";
             this.CODPRODUCTO.HeaderText = "CODIGO";
             this.CODPRODUCTO.Name = "CODPRODUCTO";
+            this.CODPRODUCTO.ReadOnly = true;
+            this.CODPRODUCTO.Width = 60;
             // 
             // CHFAMILIA
             // 
             this.CHFAMILIA.DataPropertyName = "chfamiliaproducto";
             this.CHFAMILIA.HeaderText = "CATEGORIA";
             this.CHFAMILIA.Name = "CHFAMILIA";
+            this.CHFAMILIA.ReadOnly = true;
+            this.CHFAMILIA.Width = 90;
             // 
             // CHMARCA
             // 
             this.CHMARCA.DataPropertyName = "chmarca";
             this.CHMARCA.HeaderText = "MARCA";
             this.CHMARCA.Name = "CHMARCA";
+            this.CHMARCA.ReadOnly = true;
+            this.CHMARCA.Width = 110;
             // 
             // CHTIPO
             // 
             this.CHTIPO.DataPropertyName = "chtipoproducto";
             this.CHTIPO.HeaderText = "TIPO";
             this.CHTIPO.Name = "CHTIPO";
+            this.CHTIPO.ReadOnly = true;
+            this.CHTIPO.Width = 110;
             // 
             // CHCALIBRE
             // 
             this.CHCALIBRE.DataPropertyName = "chcalibre";
             this.CHCALIBRE.HeaderText = "CALIBRE";
             this.CHCALIBRE.Name = "CHCALIBRE";
+            this.CHCALIBRE.ReadOnly = true;
+            this.CHCALIBRE.Width = 110;
             // 
             // CHMODELO
             // 
             this.CHMODELO.DataPropertyName = "chdmodelo";
             this.CHMODELO.HeaderText = "MODELO";
             this.CHMODELO.Name = "CHMODELO";
+            this.CHMODELO.ReadOnly = true;
+            this.CHMODELO.Width = 150;
             // 
             // CHFECHA
             // 
@@ -249,6 +276,7 @@
             this.CHMEDIDA.DataPropertyName = "chunidadmedidaproducto";
             this.CHMEDIDA.HeaderText = "MEDIDA";
             this.CHMEDIDA.Name = "CHMEDIDA";
+            this.CHMEDIDA.ReadOnly = true;
             // 
             // CHCODPRODANTES
             // 
@@ -263,6 +291,7 @@
             this.IDFAMILIA.DataPropertyName = "p_inidfamiliaproducto";
             this.IDFAMILIA.HeaderText = "IDFAMILIA";
             this.IDFAMILIA.Name = "IDFAMILIA";
+            this.IDFAMILIA.ReadOnly = true;
             this.IDFAMILIA.Visible = false;
             // 
             // CHDESCRIPCION
@@ -302,6 +331,7 @@
             this.IDTIPO.DataPropertyName = "p_inidtipoproducto";
             this.IDTIPO.HeaderText = "IDTIPO";
             this.IDTIPO.Name = "IDTIPO";
+            this.IDTIPO.ReadOnly = true;
             this.IDTIPO.Visible = false;
             // 
             // IDUSUARIOINSER
@@ -349,6 +379,7 @@
             this.NUPRECIO.DataPropertyName = "nuprecio";
             this.NUPRECIO.HeaderText = "PRECIO";
             this.NUPRECIO.Name = "NUPRECIO";
+            this.NUPRECIO.ReadOnly = true;
             this.NUPRECIO.Visible = false;
             // 
             // IDSITUACION
@@ -364,6 +395,7 @@
             this.CHSITUACION.DataPropertyName = "chsituacion";
             this.CHSITUACION.HeaderText = "SITUACION";
             this.CHSITUACION.Name = "CHSITUACION";
+            this.CHSITUACION.ReadOnly = true;
             // 
             // frmManProductoPrincipal
             // 
@@ -385,7 +417,6 @@
             this.Load += new System.EventHandler(this.frmManProductoPrincipal_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgProducto)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -401,6 +432,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DataGridView dvgProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODUCTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCHECK;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODPRODUCTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHFAMILIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHMARCA;

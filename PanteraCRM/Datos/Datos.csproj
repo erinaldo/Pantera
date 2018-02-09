@@ -72,6 +72,7 @@
     <Compile Include="ubigeoDL.cs" />
     <Compile Include="usuarioDL.cs" />
     <Compile Include="usuariomenuDL.cs" />
+    <Compile Include="valesDL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

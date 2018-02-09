@@ -28,71 +28,7 @@ namespace Presentacion
        
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            int varIdArticulo;
-            switch (this.vBoton)
-            {
-                case "A":
-                    tmpProducto = new producto();
-                    //ATRIBUTOS PARA INGRESAR PRODUCTO
-                    //tmpProducto.p_inidproducto = 0; AUTO-GENERADO  
-                    tmpProducto.chcodigoproducto = txtCodigo.Text;
-                    tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
-                    tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
-                    tmpProducto.p_inidunidadmedidaproducto = (int)cboMedida.SelectedValue;
-                    tmpProducto.chfechacreacion = txtFecha.Text;
-                    tmpProducto.estado = true;
-                    tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
-                    tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
-                    tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
-                    tmpProducto.chcodigoproductoantes = "";
-                    tmpProducto.chdescripcionproducto = txtNombre.Text;
-                    tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                    tmpProducto.p_inidusuariodelete = 0;
-                    tmpProducto.nuprecio = 0;
-                    tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
-                    varIdArticulo = productoNE.productoInsertar(tmpProducto);
-                    if (varIdArticulo <= 0)
-                    {
-                        MessageBox.Show("Registro errado, validar");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Código generado", varIdArticulo.ToString());
-                        pasado(varIdArticulo);
-                    }
-                    break;
-                case "M":
-                    tmpProducto.p_inidproducto = int.Parse(txtidproducto.Text);
-                    tmpProducto.chcodigoproducto = txtCodigo.Text;
-                    tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
-                    tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
-                    tmpProducto.p_inidunidadmedidaproducto = (int)cboMedida.SelectedValue;
-                    tmpProducto.chfechacreacion = txtFecha.Text;
-                    tmpProducto.estado = true;
-                    tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
-                    tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
-                    tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
-                    tmpProducto.chcodigoproductoantes = "";
-                    tmpProducto.chdescripcionproducto = txtNombre.Text;
-                    tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                    tmpProducto.p_inidusuariodelete = 0;
-                    tmpProducto.nuprecio = 0;
-                    tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
-                    varIdArticulo = productoNE.ProductoActualizar(tmpProducto);
-                    if (varIdArticulo <= 0)
-                    {
-                        MessageBox.Show("Registro con error por actualizado, validar");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Registro actualizado");
-                        pasado(varIdArticulo);
-                    }
-                    break;
-                default:
-                    break;
-            }          
-            this.Dispose();
+           
         }
 
      
@@ -158,6 +94,12 @@ namespace Presentacion
                 cboModelo.SelectedValue = tmpProducto.p_inidmodelo;
                 cboMedida.SelectedValue = tmpProducto.p_inidunidadmedidaproducto;
                 cboSituacion.SelectedValue = tmpProducto.p_inidsituacion;
+                if (tmpProducto.req_serie)
+                {
+                    ckbSerie.Checked = true;
+                }
+                
+                
                 txtFecha.Text = "01012018";
             }
             else
@@ -173,9 +115,11 @@ namespace Presentacion
                 cboModelo.SelectedValue = tmpProducto.p_inidmodelo;
                 cboMedida.SelectedValue = tmpProducto.p_inidunidadmedidaproducto;
                 cboSituacion.SelectedValue = tmpProducto.p_inidsituacion;
-
                 txtFecha.Text = tmpProducto.chfechacreacion;
-
+                if (tmpProducto.req_serie)
+                {
+                    ckbSerie.Checked = true;
+                }
                 btnGrabar.Enabled = false;
             }
         }
@@ -302,6 +246,81 @@ namespace Presentacion
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        private void btnGrabar_Click_1(object sender, EventArgs e)
+        {
+            int varIdArticulo;
+            switch (this.vBoton)
+            {
+                case "A":
+                    tmpProducto = new producto();
+                    //ATRIBUTOS PARA INGRESAR PRODUCTO
+                    //tmpProducto.p_inidproducto = 0; AUTO-GENERADO  
+                    tmpProducto.chcodigoproducto = txtCodigo.Text;
+                    tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
+                    tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
+                    tmpProducto.p_inidunidadmedidaproducto = (int)cboMedida.SelectedValue;
+                    tmpProducto.chfechacreacion = txtFecha.Text;
+                    tmpProducto.estado = true;
+                    tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
+                    tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
+                    tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
+                    tmpProducto.chcodigoproductoantes = "";
+                    tmpProducto.chdescripcionproducto = txtNombre.Text;
+                    tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                    tmpProducto.p_inidusuariodelete = 0;
+                    tmpProducto.nuprecio = 0;
+                    tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
+                    tmpProducto.req_serie = ckbSerie.Checked;
+                    varIdArticulo = productoNE.productoInsertar(tmpProducto);
+                    if (varIdArticulo <= 0)
+                    {
+                        MessageBox.Show("Registro errado, validar");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Código generado", varIdArticulo.ToString());
+                        pasado(varIdArticulo);
+                    }
+                    break;
+                case "M":
+                    tmpProducto.p_inidproducto = int.Parse(txtidproducto.Text);
+                    tmpProducto.chcodigoproducto = txtCodigo.Text;
+                    tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
+                    tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
+                    tmpProducto.p_inidunidadmedidaproducto = (int)cboMedida.SelectedValue;
+                    tmpProducto.chfechacreacion = txtFecha.Text;
+                    tmpProducto.estado = true;
+                    tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
+                    tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
+                    tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
+                    tmpProducto.chcodigoproductoantes = "";
+                    tmpProducto.chdescripcionproducto = txtNombre.Text;
+                    tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                    tmpProducto.p_inidusuariodelete = 0;
+                    tmpProducto.nuprecio = 0;
+                    tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
+                    varIdArticulo = productoNE.ProductoActualizar(tmpProducto);
+                    if (varIdArticulo <= 0)
+                    {
+                        MessageBox.Show("Registro con error por actualizado, validar");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registro actualizado");
+                        pasado(varIdArticulo);
+                    }
+                    break;
+                default:
+                    break;
+            }
+            this.Dispose();
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
 
 

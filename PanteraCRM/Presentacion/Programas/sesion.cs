@@ -15,5 +15,7 @@ namespace Presentacion
         public static puntoventasesion puntoventasesion { get; set; }
         public static string impresoraticket { get; set; }
         public static sessionglobal SessionGlobal { get; set; }
+        public static List<serie> listaserie { get; set; }
+        public static valedetalle valedetalles { get; set; }
     }
 }

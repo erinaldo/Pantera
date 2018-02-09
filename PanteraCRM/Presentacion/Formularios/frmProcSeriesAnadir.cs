@@ -14,6 +14,7 @@ namespace Presentacion
 {
     public partial class frmProcSeriesAnadir : Form
     {
+        
         internal serie tmpSerie;
         public delegate void pasar(int varreg);
         public event pasar pasado;
@@ -30,19 +31,7 @@ namespace Presentacion
             this.Dispose();
         }
 
-        private void ckbSerie_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckbSerie.Checked == true)
-            {
-                grbAgregadoSerie.Enabled= true;
-                dgvListaIngreso.Enabled = true;
-            }
-            if (ckbSerie.Checked == false)
-            {
-                grbAgregadoSerie.Enabled = false;
-                dgvListaIngreso.Enabled = false;
-            }
-        }
+        
         
         private void btnAnadir_Click(object sender, EventArgs e)
         {
@@ -129,10 +118,13 @@ namespace Presentacion
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             //VALIDAR SOLOR NUMEROS Y BORRADO
-            if (!char.IsDigit(e.KeyChar) &&  !(8== Convert.ToInt32(e.KeyChar)))
+            if (!char.IsDigit(e.KeyChar) &&  !(8== Convert.ToInt32(e.KeyChar)) )
             {
                 e.Handled = true;
+                
             }
+            decimal vadsr = decimal.Parse(txtprecio.Text) * int.Parse(txtCantidad.Text);
+            txtsubtotal.Text = "" + vadsr;
             // VALIDAR CON UN SOLO PUNTO DECIMAL
             //if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
             //{
@@ -170,15 +162,19 @@ namespace Presentacion
                 txtcodprod.Text = f.chcodigoproducto;
                 txtNombreconpuesto.Text = f.nombrecompuesto;
                 txtidcodigo.Text = "" + f.p_inidproducto;
+                txtMedida.Text = f.chmedida;
                 txtCantidad.Enabled = true;
                 txtCantidad.Text = "" + 1;
                 txtCantidad.Focus();
                 dgvListaIngreso.Rows.Clear();
                 txtSerie.Text = "";
                 txtObs.Text = "";
+                txtprecio.Text = "" + Decimal.Round(f.nuprecio,2);
+                
+                
                 if (f.p_inidsituacionproducto > 1)
                 {
-                    ckbSerie.Checked = true;
+                    //ckbSerie.Checked = true;
                     grbAgregadoSerie.Enabled = true;
                 }
 
@@ -191,18 +187,22 @@ namespace Presentacion
             DialogResult res = f.ShowDialog();
             if (res == DialogResult.OK)
             {
+
+                txtcodprod.Text = "";
                 txtcodprod.Text = f.chcodigoproducto;
                 txtNombreconpuesto.Text = f.nombrecompuesto;
                 txtidcodigo.Text = "" + f.p_inidproducto;
+                txtMedida.Text = f.chmedida;
                 txtCantidad.Enabled = true;
                 txtCantidad.Text = "" + 1;
                 txtCantidad.Focus();
                 dgvListaIngreso.Rows.Clear();
                 txtSerie.Text = "";
                 txtObs.Text = "";
-                if (f.p_inidsituacionproducto > 1)
+                txtprecio.Text = "" + Decimal.Round(f.nuprecio, 2);
+                if (f.req_seriesss)
                 {
-                    ckbSerie.Checked = true;
+                    //ckbSerie.Checked = true;
                     grbAgregadoSerie.Enabled = true;
                 }
 
@@ -228,8 +228,10 @@ namespace Presentacion
                             //INGRESO
                             bool flat = true;
                             //IngresoRegistros();
+                            List<serie> obsej =  new List<serie>();
                             for (int i = 0; i < dgvListaIngreso.RowCount; i++)
                             {
+                               
                                 tmpSerie = new serie();
                                 tmpSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells[3].Value.ToString();
                                 tmpSerie.estado = true;
@@ -238,31 +240,26 @@ namespace Presentacion
                                 tmpSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
                                 tmpSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
                                 tmpSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
-                                int varIdArticulos = serieNE.seriesIngresar(tmpSerie);
-                                if (varIdArticulos <= 0)
-                                {
-                                    flat = false;
-                                    //tmpSerie.p_inidserie = i;
-                                    // SE acumula el registro
-                                    //registo.Add(tmpSerie);
-                                }
+                                obsej.Add(tmpSerie);
 
                             }
-                            if (flat)
-                            {
-                                MessageBox.Show("Las Series se Ingresaron al Sistema");
-                                dgvListaIngreso.Rows.Clear();
-                                txtCantidad.Text = ""+1;
-                                txtcodprod.Text = "";
-                                txtidcodigo.Text = "";
-                                txtcodprod.Focus();
+                            sesion.listaserie = obsej;
+                            valedetalle valedetallessss = new valedetalle();
+                            valedetallessss.chnombrecompuesto = txtNombreconpuesto.Text;
+                            valedetallessss.chcodigoproducto = txtcodprod.Text;
+                            valedetallessss.chcodigoserie = txtMedida.Text;
+                            valedetallessss.p_inidproducto = int.Parse(txtidcodigo.Text);
+                            valedetallessss.nucantidad = int.Parse(txtCantidad.Text);
+                            valedetallessss.nucosto = decimal.Parse(txtprecio.Text);
+                            valedetallessss.nutotal = decimal.Parse(txtsubtotal.Text);
+
+                            sesion.valedetalles = valedetallessss;
+                            //MessageBox.Show("Las Series se Ingresaron al Sistema");
+                            dgvListaIngreso.Rows.Clear();
+                             
                                 
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error de Ingreso, Series Pendientes de Ingreso");
-                                return;
-                            }
+                            
+                           
                            
                          }
                     }else
@@ -288,7 +285,7 @@ namespace Presentacion
                 default:
                     break;
             }
-            //this.Dispose();  
+            this.Dispose();  
         }
         private  bool IngresoRegistros()
         {
@@ -350,7 +347,8 @@ namespace Presentacion
 
         private void frmProcSeriesAnadir_Load(object sender, EventArgs e)
         {
-
+            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
             mskFecha.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
         }
     }

@@ -120,6 +120,7 @@ namespace Presentacion
             f.tmpProducto.p_inidtipoproducto = (int)(dvgProducto.CurrentRow.Cells["IDTIPO"].Value);
             f.tmpProducto.chcodigoproducto = (string)(dvgProducto.CurrentRow.Cells["CODPRODUCTO"].Value);
             f.tmpProducto.chfechacreacion = (string)(dvgProducto.CurrentRow.Cells["CHFECHA"].Value);
+            f.tmpProducto.req_serie = (bool)(dvgProducto.CurrentRow.Cells["IDCHECK"].Value);
 
             f.ShowDialog();
         }

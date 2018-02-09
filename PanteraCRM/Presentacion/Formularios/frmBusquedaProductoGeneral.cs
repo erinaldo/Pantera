@@ -19,6 +19,9 @@ namespace Presentacion
         public string nombrecompuesto;
         public int p_inidsituacionproducto;
         public string chsituacionproducto;
+        public string chmedida;
+        public decimal nuprecio;
+        public bool req_seriesss;
         public frmBusquedaProductoGeneral()
         {
             InitializeComponent();
@@ -27,19 +30,19 @@ namespace Presentacion
         public void cargarData(int registro,string parametro)
         {
             List<productobuscado> listado = productoNE.productobuscadoListar(parametro);
-            dgvProductosBuscados.DataSource = listado;
+            dgvBusqueda.DataSource = listado;
         }
         public void ejecutar(int dato)
         {
             cargarData(0,"");
-            foreach (DataGridViewRow Row in dgvProductosBuscados.Rows)
+            foreach (DataGridViewRow Row in dgvBusqueda.Rows)
             {
                 int valor = (int)Row.Cells["IDPRODUCTO"].Value;
                 if (valor == dato)
                 {
                     int puntero = (int)Row.Index;
                     //                    dgvPersona.CurrentCell = dgvPersona.Rows[puntero].Cells["IDPERSONA"];
-                    dgvProductosBuscados.CurrentCell = dgvProductosBuscados.Rows[puntero].Cells[1];
+                    dgvBusqueda.CurrentCell = dgvBusqueda.Rows[puntero].Cells[1];
                     return;
                 }
             }
@@ -68,17 +71,20 @@ namespace Presentacion
         }
         private void cargarFormularioAnadir()
         {
-            if (dgvProductosBuscados.RowCount == 0)
+            if (dgvBusqueda.RowCount == 0)
             {
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
            
-            p_inidproducto= (int)dgvProductosBuscados.CurrentRow.Cells["IDPRODUCTO"].Value;
-            chcodigoproducto= (string)dgvProductosBuscados.CurrentRow.Cells["CHCODIGO"].Value;
-            nombrecompuesto = (string)(dgvProductosBuscados.CurrentRow.Cells["CHPRODUCTO"].Value);
-            p_inidsituacionproducto = (int)dgvProductosBuscados.CurrentRow.Cells["IDSITUACION"].Value;
-            chsituacionproducto = (string)(dgvProductosBuscados.CurrentRow.Cells["CHSITUACION"].Value);
+            p_inidproducto= (int)dgvBusqueda.CurrentRow.Cells["IDPRODUCTO"].Value;
+            chcodigoproducto= (string)dgvBusqueda.CurrentRow.Cells["CHCODIGO"].Value;
+            nombrecompuesto = (string)(dgvBusqueda.CurrentRow.Cells["CHPRODUCTO"].Value);
+            p_inidsituacionproducto = (int)dgvBusqueda.CurrentRow.Cells["IDSITUACION"].Value;
+            chsituacionproducto = (string)(dgvBusqueda.CurrentRow.Cells["CHSITUACION"].Value);
+            chmedida = (string)(dgvBusqueda.CurrentRow.Cells["CHMEDIDAS"].Value);
+            nuprecio = (decimal)(dgvBusqueda.CurrentRow.Cells["CHPRECIOS"].Value);
+            req_seriesss = (bool)(dgvBusqueda.CurrentRow.Cells["BOSERIE"].Value);
 
         }
     }
