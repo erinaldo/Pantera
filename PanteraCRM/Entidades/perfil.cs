@@ -8,6 +8,7 @@ namespace Entidades
 {
     public class perfil
     {
+        
         public int idperfil { get; set; }
         public string descripcion { get; set; }
         public string comentarioperfil { get; set; }

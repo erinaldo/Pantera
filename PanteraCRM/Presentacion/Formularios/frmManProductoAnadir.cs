@@ -94,10 +94,8 @@ namespace Presentacion
                 cboModelo.SelectedValue = tmpProducto.p_inidmodelo;
                 cboMedida.SelectedValue = tmpProducto.p_inidunidadmedidaproducto;
                 cboSituacion.SelectedValue = tmpProducto.p_inidsituacion;
-                if (tmpProducto.req_serie)
-                {
-                    ckbSerie.Checked = true;
-                }
+                ckbSerie.Checked = true;
+                
                 
                 
                 txtFecha.Text = "01012018";
@@ -116,10 +114,7 @@ namespace Presentacion
                 cboMedida.SelectedValue = tmpProducto.p_inidunidadmedidaproducto;
                 cboSituacion.SelectedValue = tmpProducto.p_inidsituacion;
                 txtFecha.Text = tmpProducto.chfechacreacion;
-                if (tmpProducto.req_serie)
-                {
-                    ckbSerie.Checked = true;
-                }
+                ckbSerie.Checked = true;
                 btnGrabar.Enabled = false;
             }
         }
@@ -272,7 +267,7 @@ namespace Presentacion
                     tmpProducto.p_inidusuariodelete = 0;
                     tmpProducto.nuprecio = 0;
                     tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
-                    tmpProducto.req_serie = ckbSerie.Checked;
+                    tmpProducto.req_serie = ckbSerie.Checked; 
                     varIdArticulo = productoNE.productoInsertar(tmpProducto);
                     if (varIdArticulo <= 0)
                     {
@@ -300,6 +295,7 @@ namespace Presentacion
                     tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
                     tmpProducto.p_inidusuariodelete = 0;
                     tmpProducto.nuprecio = 0;
+                    tmpProducto.req_serie = ckbSerie.Checked;
                     tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
                     varIdArticulo = productoNE.ProductoActualizar(tmpProducto);
                     if (varIdArticulo <= 0)

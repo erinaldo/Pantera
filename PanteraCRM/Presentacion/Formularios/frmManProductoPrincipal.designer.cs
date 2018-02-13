@@ -205,7 +205,6 @@
             this.IDCHECK.HeaderText = "IDCHECK";
             this.IDCHECK.Name = "IDCHECK";
             this.IDCHECK.ReadOnly = true;
-            this.IDCHECK.Visible = false;
             // 
             // CODPRODUCTO
             // 

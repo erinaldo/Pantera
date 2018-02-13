@@ -205,11 +205,11 @@
     <Compile Include="Formularios\frmProcFacturacionPrincipal.Designer.cs">
       <DependentUpon>frmProcFacturacionPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmProcIngresoValesAnadir.cs">
+    <Compile Include="Formularios\frmProcValesIngresoAnadirVale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmProcIngresoValesAnadir.Designer.cs">
-      <DependentUpon>frmProcIngresoValesAnadir.cs</DependentUpon>
+    <Compile Include="Formularios\frmProcValesIngresoAnadirVale.Designer.cs">
+      <DependentUpon>frmProcValesIngresoAnadirVale.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmProcKardexProductoPrincipal.cs">
       <SubType>Form</SubType>
@@ -247,11 +247,11 @@
     <Compile Include="Formularios\frmProcSalidaProductosPrincipal.Designer.cs">
       <DependentUpon>frmProcSalidaProductosPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmProcSeriesAnadir.cs">
+    <Compile Include="Formularios\frmProcValesIngresoAnadirSerie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmProcSeriesAnadir.Designer.cs">
-      <DependentUpon>frmProcSeriesAnadir.cs</DependentUpon>
+    <Compile Include="Formularios\frmProcValesIngresoAnadirSerie.Designer.cs">
+      <DependentUpon>frmProcValesIngresoAnadirSerie.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmProcValesIngresoPrincipal.cs">
       <SubType>Form</SubType>
@@ -492,11 +492,11 @@
     <EmbeddedResource Include="Formularios\frmManProductoAnadir.resx">
       <DependentUpon>frmManProductoAnadir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmProcIngresoValesAnadir.resx">
-      <DependentUpon>frmProcIngresoValesAnadir.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmProcValesIngresoAnadirVale.resx">
+      <DependentUpon>frmProcValesIngresoAnadirVale.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmProcSeriesAnadir.resx">
-      <DependentUpon>frmProcSeriesAnadir.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmProcValesIngresoAnadirSerie.resx">
+      <DependentUpon>frmProcValesIngresoAnadirSerie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcSeriesPrincipal.resx">
       <DependentUpon>frmProcSeriesPrincipal.cs</DependentUpon>

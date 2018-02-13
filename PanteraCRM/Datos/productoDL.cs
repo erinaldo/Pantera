@@ -27,7 +27,7 @@ namespace Datos
                     registro.p_inidunidadmedidaproducto = Convert.ToInt32(datareader["p_inidunidadmedidaproducto"]);
                     registro.chunidadmedidaproducto = Convert.ToString(datareader["chunidadmedidaproducto"]).Trim();
                     registro.chfechacreacion = Convert.ToString(datareader["chfechacreacion"]).Trim();
-                    registro.estado = Convert.ToBoolean(datareader["estado"]) ;
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
                     registro.p_inidfamiliaproducto = Convert.ToInt32(datareader["p_inidfamiliaproducto"]);
                     registro.chfamiliaproducto = Convert.ToString(datareader["chfamiliaproducto"]).Trim();
                     registro.p_inidcalibre = Convert.ToInt32(datareader["p_inidcalibre"]);
@@ -40,8 +40,8 @@ namespace Datos
                     registro.chusuarioinsert = Convert.ToString(datareader["chusuarioinsert"]).Trim();
                     registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
                     registro.chusuariodelete = Convert.ToString(datareader["chusuariodelete"]).Trim();
-                   
                     registro.p_inidsituacion = Convert.ToInt32(datareader["p_inidsituacion"]);
+                    registro.req_serie = Convert.ToBoolean (datareader["o_req_serie"]);
                     registro.chsituacion = Convert.ToString(datareader["chsituacion"]).Trim();
                     listado.Add(registro);
                 }

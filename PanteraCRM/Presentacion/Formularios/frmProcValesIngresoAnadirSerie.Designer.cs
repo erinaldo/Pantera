@@ -28,18 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtcodprod = new System.Windows.Forms.TextBox();
             this.grbAgregadoSerie = new System.Windows.Forms.GroupBox();
+            this.txtfecfabri = new System.Windows.Forms.Label();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAnadir = new System.Windows.Forms.Button();
+            this.dgvListaIngreso = new System.Windows.Forms.DataGridView();
+            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.txtNombreconpuesto = new System.Windows.Forms.TextBox();
-            this.dgvListaIngreso = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -49,18 +55,12 @@
             this.mskFecha = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtMedida = new System.Windows.Forms.TextBox();
-            this.txtprecio = new System.Windows.Forms.TextBox();
-            this.txtsubtotal = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtfecfabri = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtsubtotal = new System.Windows.Forms.TextBox();
+            this.txtprecio = new System.Windows.Forms.TextBox();
+            this.txtMedida = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.grbAgregadoSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaIngreso)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -88,7 +88,7 @@
             // 
             // grbAgregadoSerie
             // 
-            this.grbAgregadoSerie.Controls.Add(this.maskedTextBox1);
+            this.grbAgregadoSerie.Controls.Add(this.textBox1);
             this.grbAgregadoSerie.Controls.Add(this.txtfecfabri);
             this.grbAgregadoSerie.Controls.Add(this.btnQuitar);
             this.grbAgregadoSerie.Controls.Add(this.label5);
@@ -97,12 +97,20 @@
             this.grbAgregadoSerie.Controls.Add(this.dgvListaIngreso);
             this.grbAgregadoSerie.Controls.Add(this.txtObs);
             this.grbAgregadoSerie.Controls.Add(this.txtSerie);
-            this.grbAgregadoSerie.Enabled = false;
-            this.grbAgregadoSerie.Location = new System.Drawing.Point(13, 114);
+            this.grbAgregadoSerie.Location = new System.Drawing.Point(13, 91);
             this.grbAgregadoSerie.Name = "grbAgregadoSerie";
-            this.grbAgregadoSerie.Size = new System.Drawing.Size(560, 387);
+            this.grbAgregadoSerie.Size = new System.Drawing.Size(560, 410);
             this.grbAgregadoSerie.TabIndex = 2;
             this.grbAgregadoSerie.TabStop = false;
+            // 
+            // txtfecfabri
+            // 
+            this.txtfecfabri.AutoSize = true;
+            this.txtfecfabri.Location = new System.Drawing.Point(287, 21);
+            this.txtfecfabri.Name = "txtfecfabri";
+            this.txtfecfabri.Size = new System.Drawing.Size(40, 13);
+            this.txtfecfabri.TabIndex = 7;
+            this.txtfecfabri.Text = "Codigo";
             // 
             // btnQuitar
             // 
@@ -152,6 +160,71 @@
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
+            // dgvListaIngreso
+            // 
+            this.dgvListaIngreso.AllowUserToAddRows = false;
+            this.dgvListaIngreso.AllowUserToDeleteRows = false;
+            this.dgvListaIngreso.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvListaIngreso.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dgvListaIngreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvListaIngreso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDPRODUCTO,
+            this.CHCODIGO,
+            this.CHPRODUCTO,
+            this.CHSERIE,
+            this.CHOBS});
+            this.dgvListaIngreso.Enabled = false;
+            this.dgvListaIngreso.Location = new System.Drawing.Point(6, 78);
+            this.dgvListaIngreso.Name = "dgvListaIngreso";
+            this.dgvListaIngreso.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaIngreso.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListaIngreso.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvListaIngreso.Size = new System.Drawing.Size(548, 303);
+            this.dgvListaIngreso.TabIndex = 5;
+            // 
+            // IDPRODUCTO
+            // 
+            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
+            this.IDPRODUCTO.Name = "IDPRODUCTO";
+            this.IDPRODUCTO.ReadOnly = true;
+            this.IDPRODUCTO.Visible = false;
+            this.IDPRODUCTO.Width = 104;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 70;
+            // 
+            // CHPRODUCTO
+            // 
+            this.CHPRODUCTO.HeaderText = "PRODUCTO";
+            this.CHPRODUCTO.Name = "CHPRODUCTO";
+            this.CHPRODUCTO.ReadOnly = true;
+            this.CHPRODUCTO.Width = 300;
+            // 
+            // CHSERIE
+            // 
+            this.CHSERIE.HeaderText = "SERIE";
+            this.CHSERIE.Name = "CHSERIE";
+            this.CHSERIE.ReadOnly = true;
+            this.CHSERIE.Width = 70;
+            // 
+            // CHOBS
+            // 
+            this.CHOBS.HeaderText = "OBSERVACION";
+            this.CHOBS.Name = "CHOBS";
+            this.CHOBS.ReadOnly = true;
+            this.CHOBS.Width = 300;
+            // 
             // txtObs
             // 
             this.txtObs.Location = new System.Drawing.Point(79, 45);
@@ -178,35 +251,6 @@
             this.txtNombreconpuesto.ReadOnly = true;
             this.txtNombreconpuesto.Size = new System.Drawing.Size(376, 20);
             this.txtNombreconpuesto.TabIndex = 4;
-            // 
-            // dgvListaIngreso
-            // 
-            this.dgvListaIngreso.AllowUserToAddRows = false;
-            this.dgvListaIngreso.AllowUserToDeleteRows = false;
-            this.dgvListaIngreso.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvListaIngreso.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.dgvListaIngreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvListaIngreso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDPRODUCTO,
-            this.CHCODIGO,
-            this.CHPRODUCTO,
-            this.CHSERIE,
-            this.CHOBS});
-            this.dgvListaIngreso.Enabled = false;
-            this.dgvListaIngreso.Location = new System.Drawing.Point(6, 78);
-            this.dgvListaIngreso.Name = "dgvListaIngreso";
-            this.dgvListaIngreso.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaIngreso.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvListaIngreso.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvListaIngreso.Size = new System.Drawing.Size(548, 303);
-            this.dgvListaIngreso.TabIndex = 5;
             // 
             // groupBox2
             // 
@@ -270,7 +314,6 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Enabled = false;
             this.txtCantidad.Location = new System.Drawing.Point(63, 46);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(38, 20);
@@ -313,9 +356,46 @@
             this.groupBox1.Controls.Add(this.txtcodprod);
             this.groupBox1.Location = new System.Drawing.Point(12, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(560, 107);
+            this.groupBox1.Size = new System.Drawing.Size(560, 84);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(186, 49);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Costo Unitario";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(389, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Sub-Total";
+            // 
+            // txtsubtotal
+            // 
+            this.txtsubtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtsubtotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(250)))));
+            this.txtsubtotal.Location = new System.Drawing.Point(448, 46);
+            this.txtsubtotal.Name = "txtsubtotal";
+            this.txtsubtotal.ReadOnly = true;
+            this.txtsubtotal.Size = new System.Drawing.Size(106, 20);
+            this.txtsubtotal.TabIndex = 14;
+            // 
+            // txtprecio
+            // 
+            this.txtprecio.BackColor = System.Drawing.Color.White;
+            this.txtprecio.ForeColor = System.Drawing.Color.Black;
+            this.txtprecio.Location = new System.Drawing.Point(265, 46);
+            this.txtprecio.Name = "txtprecio";
+            this.txtprecio.Size = new System.Drawing.Size(100, 20);
+            this.txtprecio.TabIndex = 13;
             // 
             // txtMedida
             // 
@@ -327,95 +407,12 @@
             this.txtMedida.Size = new System.Drawing.Size(62, 20);
             this.txtMedida.TabIndex = 12;
             // 
-            // txtprecio
+            // textBox1
             // 
-            this.txtprecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtprecio.ForeColor = System.Drawing.Color.Blue;
-            this.txtprecio.Location = new System.Drawing.Point(454, 46);
-            this.txtprecio.Name = "txtprecio";
-            this.txtprecio.Size = new System.Drawing.Size(100, 20);
-            this.txtprecio.TabIndex = 13;
-            // 
-            // txtsubtotal
-            // 
-            this.txtsubtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtsubtotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(250)))));
-            this.txtsubtotal.Location = new System.Drawing.Point(63, 77);
-            this.txtsubtotal.Name = "txtsubtotal";
-            this.txtsubtotal.Size = new System.Drawing.Size(106, 20);
-            this.txtsubtotal.TabIndex = 14;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Sub-Total";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(375, 49);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Costo Unitario";
-            // 
-            // txtfecfabri
-            // 
-            this.txtfecfabri.AutoSize = true;
-            this.txtfecfabri.Location = new System.Drawing.Point(242, 21);
-            this.txtfecfabri.Name = "txtfecfabri";
-            this.txtfecfabri.Size = new System.Drawing.Size(86, 13);
-            this.txtfecfabri.TabIndex = 7;
-            this.txtfecfabri.Text = "Fec. Fabricación";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(334, 19);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(99, 20);
-            this.maskedTextBox1.TabIndex = 8;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
-            // IDPRODUCTO
-            // 
-            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
-            this.IDPRODUCTO.Name = "IDPRODUCTO";
-            this.IDPRODUCTO.ReadOnly = true;
-            this.IDPRODUCTO.Visible = false;
-            this.IDPRODUCTO.Width = 104;
-            // 
-            // CHCODIGO
-            // 
-            this.CHCODIGO.HeaderText = "CODIGO";
-            this.CHCODIGO.Name = "CHCODIGO";
-            this.CHCODIGO.ReadOnly = true;
-            this.CHCODIGO.Width = 70;
-            // 
-            // CHPRODUCTO
-            // 
-            this.CHPRODUCTO.HeaderText = "PRODUCTO";
-            this.CHPRODUCTO.Name = "CHPRODUCTO";
-            this.CHPRODUCTO.ReadOnly = true;
-            this.CHPRODUCTO.Width = 300;
-            // 
-            // CHSERIE
-            // 
-            this.CHSERIE.HeaderText = "SERIE";
-            this.CHSERIE.Name = "CHSERIE";
-            this.CHSERIE.ReadOnly = true;
-            this.CHSERIE.Width = 70;
-            // 
-            // CHOBS
-            // 
-            this.CHOBS.HeaderText = "OBSERVACION";
-            this.CHOBS.Name = "CHOBS";
-            this.CHOBS.ReadOnly = true;
-            this.CHOBS.Width = 300;
+            this.textBox1.Location = new System.Drawing.Point(333, 18);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 8;
             // 
             // frmProcSeriesAnadir
             // 
@@ -475,11 +472,11 @@
         private System.Windows.Forms.TextBox txtsubtotal;
         private System.Windows.Forms.TextBox txtprecio;
         private System.Windows.Forms.TextBox txtMedida;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODUCTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHPRODUCTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSERIE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHOBS;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
