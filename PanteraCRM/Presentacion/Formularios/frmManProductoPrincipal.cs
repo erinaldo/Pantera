@@ -39,13 +39,13 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Error de Aceso");
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sisaaatema", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
             }
         }
         private void frmManProductoPrincipal_Load(object sender, EventArgs e)

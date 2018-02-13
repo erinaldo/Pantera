@@ -41,7 +41,10 @@ namespace Presentacion
             cboCategoria.DataSource = maestrodetalleNE.ListarCategorias();
             cboCategoria.ValueMember = "p_inidcategoria";
             cboCategoria.DisplayMember = "chcategoria";
-            cboTipo.Enabled = false;
+            //cboTipo.Enabled = false;
+            //cboCategoria.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(1);
+            //cboCategoria.ValueMember = "idmaestrodetalle";
+            //cboCategoria.DisplayMember = "nombreitem";
             //Seleccion tipo
             //cboTipo.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(2);
             //cboTipo.ValueMember = "idmaestrodetalle";
@@ -71,14 +74,16 @@ namespace Presentacion
             {
                 //label8.Text = "Añadir Producto";
                 txtFecha.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-                int index = cboCategoria.FindString("NUEVA CATEGORIA");
-                cboCategoria.SelectedIndex = index;
-                int index1 = cboMarca.FindString("NUEVA MARCA");
+                int index = cboCategoria.FindString("--NUEVA CATEGORIA--");
+                cboCategoria.SelectedIndex = index;                
+                int index1 = cboMarca.FindString("--NUEVA MARCA--");
                 cboMarca.SelectedIndex = index1;
-                int index2 = cboCalibre.FindString("NUEVO CALIBRE");
+                int index2 = cboCalibre.FindString("--NUEVO CALIBRE--");
                 cboCalibre.SelectedIndex = index2;
-                int index3 = cboModelo.FindString("NUEVO MODELO");
+                int index3 = cboModelo.FindString("--NUEVO MODELO--");
                 cboModelo.SelectedIndex = index3;
+                int index4 = cboTipo.FindString("--NUEVO TIPO--");
+                cboTipo.SelectedIndex = index4;
             }
             else
                 if (this.vBoton == "M")
@@ -94,11 +99,9 @@ namespace Presentacion
                 cboModelo.SelectedValue = tmpProducto.p_inidmodelo;
                 cboMedida.SelectedValue = tmpProducto.p_inidunidadmedidaproducto;
                 cboSituacion.SelectedValue = tmpProducto.p_inidsituacion;
-                ckbSerie.Checked = true;
-                
-                
-                
-                txtFecha.Text = "01012018";
+                ckbSerie.Checked = tmpProducto.req_serie;
+                txtFecha.Text = tmpProducto.chfechacreacion;
+                txtFecha.ReadOnly = true;
             }
             else
                    if (this.vBoton == "V")
@@ -112,9 +115,16 @@ namespace Presentacion
                 cboCalibre.SelectedValue = tmpProducto.p_inidcalibre;
                 cboModelo.SelectedValue = tmpProducto.p_inidmodelo;
                 cboMedida.SelectedValue = tmpProducto.p_inidunidadmedidaproducto;
-                cboSituacion.SelectedValue = tmpProducto.p_inidsituacion;
+                cboSituacion.SelectedValue = tmpProducto.p_inidsituacion;               
                 txtFecha.Text = tmpProducto.chfechacreacion;
-                ckbSerie.Checked = true;
+                ckbSerie.Checked = tmpProducto.req_serie;
+                txtCodigo.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+                txtCodigo.ForeColor = Color.Blue;
+                txtCodigo.ReadOnly = true;
+                txtNombre.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+                txtNombre.ForeColor = Color.Blue;
+                txtNombre.ReadOnly = true;
+
                 btnGrabar.Enabled = false;
             }
         }
@@ -134,56 +144,80 @@ namespace Presentacion
             else
                 e.Handled = true;
         }
-        bool flat = false;
-        int flat2 = 0;
+        bool flatcboCategoria = false;
+        int flatcboCategoria2 = 0;
         private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
-            //this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
+            //if (cboCategoria.Text == "--NUEVA CATEGORIA--")
+            //{
+            //    if (flatcboCategoria)
+            //    {
+            //        //cboMarca.Enabled = false;
+            //        //cboMarca.Text = "----";
+            //        MessageBox.Show("Nueva Categoria En Mantenimiento", "Mensaje de Sistema", MessageBoxButtons.OK);
+            //    }
+            //    // cboTipo.Enabled = true;
+            //    //cboTipo.Text = "--Elegir--";
+            //    flatcboCategoria = true;
+            //}
+            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
             string tipocategoria = cboCategoria.Text;
-            if (tipocategoria == "NUEVA CATEGORIA")
+            if (tipocategoria == "--NUEVA CATEGORIA--")
             {
-                if (flat)
+                if (flatcboCategoria)
                 {
-                    cboTipo.Enabled = false;
-                    cboTipo.Text = "----";
-                    MessageBox.Show("En Mantenimiento");
+                    //cboTipo.Enabled = false;
+                    //cboTipo.Text = "--ELEGIR--";
+                    MessageBox.Show("Nueva Categoria En Mantenimiento", "Mensaje de Sistema", MessageBoxButtons.OK);
                 }
                 // cboTipo.Enabled = true;
                 //cboTipo.Text = "--Elegir--";
-                flat = true;
+                flatcboCategoria = true;
             }
             else
             {
-                flat2 = 0;
-                cboTipo.Enabled = true;
+                flatcboCategoria2 = 0;
+                //cboTipo.Enabled = true;
                 //Llenado datos tipo
                 cboTipo.DataSource = maestrodetalleNE.buscarTipoPorCategoria(tipocategoria);
                 cboTipo.ValueMember = "p_inidtipo";
                 cboTipo.DisplayMember = "chtipo";
-                int index = cboTipo.FindString("NUEVO "+tipocategoria);
+                int index = cboTipo.FindString("--NUEVO " + tipocategoria+"--");
                 cboTipo.SelectedIndex = index;
                 //int index = cboCategoria.FindString("NUEVA CATGORIA");
                 //cboCategoria.SelectedIndex = 0;
-                
+
 
             }
 
         }
-       
+        bool flatcbotipo = false;
         private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //if (cboTipo.Text == "--NUEVO TIPO--")
+            //{
+            //    if (flatcbotipo)
+            //    {
+            //        //cboMarca.Enabled = false;
+            //        //cboMarca.Text = "----";
+            //        MessageBox.Show("Nuevo Tipo En Mantenimiento", "Mensaje de Sistema", MessageBoxButtons.OK);
+            //    }
+            //    // cboTipo.Enabled = true;
+            //    //cboTipo.Text = "--Elegir--";
+            //    flatcbotipo = true;
+            //}
             string tipo = cboCategoria.Text;
-            int cantidad = cboCategoria.Items.Count-1;
-            if (cboTipo.Text == "NUEVO "+ tipo )
+            int cantidad = cboCategoria.Items.Count - 1;
+            if (cboTipo.Text == "--NUEVO " + tipo+"--")
             {
-                if (flat2 != 0)
+                if (flatcboCategoria2 != 0)
                 {
                     //cboTipo.Enabled = false;
-                    cboTipo.Text = "----";
-                    MessageBox.Show("En Mantenimiento");
+                   // cboTipo.Text = "----";
+                    MessageBox.Show("Nuevo Tipo En Mantenimiento", "Mensaje de Sistema", MessageBoxButtons.OK);
                 }
-                flat2++;
+                flatcboCategoria2 ++;
 
             }
 
@@ -191,13 +225,13 @@ namespace Presentacion
         bool flatmarca = false;
         private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboMarca.Text == "NUEVO MARCA")
+            if (cboMarca.Text == "--NUEVA MARCA--")
             {
                 if (flatmarca)
                 {
                     //cboMarca.Enabled = false;
                     //cboMarca.Text = "----";
-                    MessageBox.Show("En Mantenimiento");
+                    MessageBox.Show("Nueva Marca En Mantenimiento", "Mensaje de Sistema", MessageBoxButtons.OK);
                 }
                 // cboTipo.Enabled = true;
                 //cboTipo.Text = "--Elegir--";
@@ -207,13 +241,13 @@ namespace Presentacion
         bool flatcalibre = false;
         private void cboCalibre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboCalibre.Text == "NUEVO CALIBRE")
+            if (cboCalibre.Text == "--NUEVO CALIBRE--")
             {
                 if (flatcalibre)
                 {
-                   // cboCalibre.Enabled = false;
+                    // cboCalibre.Enabled = false;
                     //cboCalibre.Text = "----";
-                    MessageBox.Show("En Mantenimiento");
+                    MessageBox.Show("Nuevo Calibre En Mantenimiento", "Mensaje de Sistema", MessageBoxButtons.OK);
                 }
                 // cboTipo.Enabled = true;
                 //cboTipo.Text = "--Elegir--";
@@ -224,13 +258,13 @@ namespace Presentacion
         bool flatmodelo = false;
         private void cboModelo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboModelo.Text == "NUEVO MODELO")
+            if (cboModelo.Text == "--NUEVO MODELO--")
             {
                 if (flatmodelo)
                 {
                     //cboModelo.Enabled = false;
                     //cboModelo.Text = "----";
-                    MessageBox.Show("En Mantenimiento");
+                    MessageBox.Show("Nuevo Modelo En Mantenimiento", "Mensaje de Sistema", MessageBoxButtons.OK);
                 }
                 // cboTipo.Enabled = true;
                 //cboTipo.Text = "--Elegir--";
@@ -249,35 +283,43 @@ namespace Presentacion
             switch (this.vBoton)
             {
                 case "A":
-                    tmpProducto = new producto();
-                    //ATRIBUTOS PARA INGRESAR PRODUCTO
-                    //tmpProducto.p_inidproducto = 0; AUTO-GENERADO  
-                    tmpProducto.chcodigoproducto = txtCodigo.Text;
-                    tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
-                    tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
-                    tmpProducto.p_inidunidadmedidaproducto = (int)cboMedida.SelectedValue;
-                    tmpProducto.chfechacreacion = txtFecha.Text;
-                    tmpProducto.estado = true;
-                    tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
-                    tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
-                    tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
-                    tmpProducto.chcodigoproductoantes = "";
-                    tmpProducto.chdescripcionproducto = txtNombre.Text;
-                    tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                    tmpProducto.p_inidusuariodelete = 0;
-                    tmpProducto.nuprecio = 0;
-                    tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
-                    tmpProducto.req_serie = ckbSerie.Checked; 
-                    varIdArticulo = productoNE.productoInsertar(tmpProducto);
-                    if (varIdArticulo <= 0)
+                    if(validarCampos())
                     {
-                        MessageBox.Show("Registro errado, validar");
-                    }
-                    else
+                        tmpProducto = new producto();
+                        //ATRIBUTOS PARA INGRESAR PRODUCTO
+                        //tmpProducto.p_inidproducto = 0; AUTO-GENERADO  
+                        tmpProducto.chcodigoproducto = txtCodigo.Text;
+                        tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
+                        tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
+                        tmpProducto.p_inidunidadmedidaproducto = (int)cboMedida.SelectedValue;
+                        tmpProducto.chfechacreacion = txtFecha.Text;
+                        tmpProducto.estado = true;
+                        tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
+                        tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
+                        tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
+                        tmpProducto.chcodigoproductoantes = "";
+                        tmpProducto.chdescripcionproducto = txtNombre.Text;
+                        tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                        tmpProducto.p_inidusuariodelete = 0;
+                        tmpProducto.nuprecio = 0;
+                        tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
+                        tmpProducto.req_serie = ckbSerie.Checked;
+                        varIdArticulo = productoNE.productoInsertar(tmpProducto);
+                        if (varIdArticulo <= 0)
+                        {
+                            MessageBox.Show("Error en el Registro", "Mensaje de Sistema", MessageBoxButtons.OK);
+                            return;
+                        }
+                        else
+                        {
+                            // MessageBox.Show("Registro Ingresado", "Mensaje de Sistema", MessageBoxButtons.OK);
+                            pasado(varIdArticulo);
+                        }
+                    }else
                     {
-                        MessageBox.Show("Código generado", varIdArticulo.ToString());
-                        pasado(varIdArticulo);
-                    }
+                        return;
+                    }                   
+
                     break;
                 case "M":
                     tmpProducto.p_inidproducto = int.Parse(txtidproducto.Text);
@@ -300,11 +342,12 @@ namespace Presentacion
                     varIdArticulo = productoNE.ProductoActualizar(tmpProducto);
                     if (varIdArticulo <= 0)
                     {
-                        MessageBox.Show("Registro con error por actualizado, validar");
+                        MessageBox.Show("Error en la Modificación", "Mensaje de Sistema", MessageBoxButtons.OK);
+                        //MessageBox.Show("Registro con error por actualizado, validar");
                     }
                     else
                     {
-                        MessageBox.Show("Registro actualizado");
+                        MessageBox.Show("Registro Modificado", "Mensaje de Sistema", MessageBoxButtons.OK);
                         pasado(varIdArticulo);
                     }
                     break;
@@ -318,7 +361,67 @@ namespace Presentacion
         {
             this.Dispose();
         }
+        private bool validarCampos()
+        {
+            bool flatvalidacampo = false;
+            if (txtCodigo.Text.Length > 0)
+            {
+                if (cboCategoria.Text != "--NUEVA CATEGORIA--")
+                {
+                    if (cboTipo.Text != "--NUEVO "+ cboCategoria.Text+"--")
+                    {
+                        if (cboMarca.Text != "--NUEVA MARCA--")
+                        {
+                            if (cboCalibre.Text != "--NUEVO CALIBRE--")
+                            {
+                                if (cboModelo.Text != "--NUEVO MODELO--")
+                                {
+                                    if (cboMedida.Text != "--ELEGIR--")
+                                    {
+                                        flatvalidacampo = true;
 
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Seleccione una Medida Válida", "Mensaje de Sistema", MessageBoxButtons.OK);
+                                        cboMedida.Focus();
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Seleccione un Modelo Válido", "Mensaje de Sistema", MessageBoxButtons.OK);
+                                    cboModelo.Focus();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Seleccione un Calibre Válido", "Mensaje de Sistema", MessageBoxButtons.OK);
+                                cboCalibre.Focus();
+                            }
+                        }else
+                        {
+                            MessageBox.Show("Seleccione una Marca Válida", "Mensaje de Sistema", MessageBoxButtons.OK);
+                            cboMarca.Focus();
+                        }
+
+                    }else
+                    {
+                        MessageBox.Show("Seleccione una Tipo Válido", "Mensaje de Sistema", MessageBoxButtons.OK);
+                        cboTipo.Focus();
+                    }
+
+                }else
+                {
+                    MessageBox.Show("Seleccione una Categoría Válida", "Mensaje de Sistema", MessageBoxButtons.OK);
+                    cboCategoria.Focus();
+                }
+            }else
+            {
+                MessageBox.Show("El Codigo no Puede estar Vacio", "Mensaje de Sistema", MessageBoxButtons.OK);
+                txtCodigo.Focus();
+            }
+            return flatvalidacampo;
+        }
 
 
         //private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)

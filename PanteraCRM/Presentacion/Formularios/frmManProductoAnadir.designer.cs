@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManProductoAnadir));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ckbSerie = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -112,36 +113,36 @@
             // 
             // cboCategoria
             // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.FormattingEnabled = true;
             this.cboCategoria.Location = new System.Drawing.Point(80, 28);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(173, 21);
             this.cboCategoria.TabIndex = 22;
-            this.cboCategoria.Text = "--ELEGIR--";
             this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.cboCategoria_SelectedIndexChanged);
             // 
             // cboModelo
             // 
             this.cboModelo.BackColor = System.Drawing.Color.White;
+            this.cboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboModelo.FormattingEnabled = true;
             this.cboModelo.Location = new System.Drawing.Point(80, 102);
             this.cboModelo.Name = "cboModelo";
             this.cboModelo.Size = new System.Drawing.Size(173, 21);
             this.cboModelo.TabIndex = 21;
-            this.cboModelo.Text = "-- ELEGIR --";
             this.cboModelo.SelectedIndexChanged += new System.EventHandler(this.cboModelo_SelectedIndexChanged);
             // 
             // cboCalibre
             // 
             this.cboCalibre.BackColor = System.Drawing.Color.White;
+            this.cboCalibre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCalibre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboCalibre.FormattingEnabled = true;
             this.cboCalibre.Location = new System.Drawing.Point(80, 65);
             this.cboCalibre.Name = "cboCalibre";
             this.cboCalibre.Size = new System.Drawing.Size(173, 21);
             this.cboCalibre.TabIndex = 20;
-            this.cboCalibre.Text = "-- ELEGIR --";
             this.cboCalibre.SelectedIndexChanged += new System.EventHandler(this.cboCalibre_SelectedIndexChanged);
             // 
             // label7
@@ -177,13 +178,13 @@
             // cboMarca
             // 
             this.cboMarca.BackColor = System.Drawing.Color.White;
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(331, 65);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(185, 21);
             this.cboMarca.TabIndex = 16;
-            this.cboMarca.Text = "-- ELEGIR--";
             this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
             // 
             // label13
@@ -201,13 +202,13 @@
             this.cboSituacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboSituacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSituacion.BackColor = System.Drawing.Color.White;
+            this.cboSituacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSituacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboSituacion.FormattingEnabled = true;
             this.cboSituacion.Location = new System.Drawing.Point(80, 216);
             this.cboSituacion.Name = "cboSituacion";
             this.cboSituacion.Size = new System.Drawing.Size(171, 21);
             this.cboSituacion.TabIndex = 13;
-            this.cboSituacion.Text = "-- ELEGIR--";
             // 
             // label12
             // 
@@ -224,13 +225,13 @@
             this.cboMedida.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboMedida.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboMedida.BackColor = System.Drawing.Color.White;
+            this.cboMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboMedida.FormattingEnabled = true;
             this.cboMedida.Location = new System.Drawing.Point(80, 177);
             this.cboMedida.Name = "cboMedida";
             this.cboMedida.Size = new System.Drawing.Size(173, 21);
             this.cboMedida.TabIndex = 9;
-            this.cboMedida.Text = "-- ELEGIR--";
             // 
             // label6
             // 
@@ -257,14 +258,13 @@
             this.cboTipo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboTipo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTipo.BackColor = System.Drawing.Color.White;
-            this.cboTipo.Enabled = false;
+            this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Location = new System.Drawing.Point(331, 28);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(185, 21);
             this.cboTipo.TabIndex = 3;
-            this.cboTipo.Text = "-- ELEGIR--";
             this.cboTipo.SelectedIndexChanged += new System.EventHandler(this.cboTipo_SelectedIndexChanged);
             // 
             // txtCodigo
@@ -395,6 +395,7 @@
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmManProductoAnadir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR PRODUCTO";

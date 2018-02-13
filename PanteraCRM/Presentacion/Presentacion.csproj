@@ -109,6 +109,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DtsUsuario.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmBusquedaProductoFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmBusquedaProductoFacturacion.Designer.cs">
+      <DependentUpon>frmBusquedaProductoFacturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmBusquedaProductoGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,17 +127,23 @@
     <Compile Include="Formularios\frmConsCobranzaDocuVentaPrincipal.Designer.cs">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmManListaPrecioCabecera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManListaPrecioCabecera.Designer.cs">
+      <DependentUpon>frmManListaPrecioCabecera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmManListaPrecioDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManListaPrecioDetalle.Designer.cs">
+      <DependentUpon>frmManListaPrecioDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmManListaPrecioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmManListaPrecioPrincipal.Designer.cs">
       <DependentUpon>frmManListaPrecioPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmManListaPreciosPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmManListaPreciosPrincipal.Designer.cs">
-      <DependentUpon>frmManListaPreciosPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmManProductoPrincipal.cs">
       <SubType>Form</SubType>
@@ -199,11 +211,41 @@
     <Compile Include="Formularios\frmProcCancelacionCuentasPrincipal.Designer.cs">
       <DependentUpon>frmProcCancelacionCuentasPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmProcFacturacionAnadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcFacturacionAnadir.Designer.cs">
+      <DependentUpon>frmProcFacturacionAnadir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcFacturacionDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcFacturacionDetalle.Designer.cs">
+      <DependentUpon>frmProcFacturacionDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmProcFacturacionPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmProcFacturacionPrincipal.Designer.cs">
       <DependentUpon>frmProcFacturacionPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcPedidosPedidosCabecera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcPedidosPedidosCabecera.Designer.cs">
+      <DependentUpon>frmProcPedidosPedidosCabecera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcPedidosPedidosDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcPedidosPedidosDetalle.Designer.cs">
+      <DependentUpon>frmProcPedidosPedidosDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcPedidosPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcPedidosPrincipal.Designer.cs">
+      <DependentUpon>frmProcPedidosPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmProcValesIngresoAnadirVale.cs">
       <SubType>Form</SubType>
@@ -480,17 +522,47 @@
     <Compile Include="Reportes\FrmReporte.designer.cs">
       <DependentUpon>FrmReporte.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\frmBusquedaProductoFacturacion.resx">
+      <DependentUpon>frmBusquedaProductoFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmBusquedaProductoGeneral.resx">
       <DependentUpon>frmBusquedaProductoGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsCobranzaDocuVentaPrincipal.resx">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManListaPrecioCabecera.resx">
+      <DependentUpon>frmManListaPrecioCabecera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManListaPrecioDetalle.resx">
+      <DependentUpon>frmManListaPrecioDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManListaPrecioPrincipal.resx">
+      <DependentUpon>frmManListaPrecioPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManProductoPrincipal.resx">
       <DependentUpon>frmManProductoPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManProductoAnadir.resx">
       <DependentUpon>frmManProductoAnadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcFacturacionAnadir.resx">
+      <DependentUpon>frmProcFacturacionAnadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcFacturacionDetalle.resx">
+      <DependentUpon>frmProcFacturacionDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcFacturacionPrincipal.resx">
+      <DependentUpon>frmProcFacturacionPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcPedidosPedidosCabecera.resx">
+      <DependentUpon>frmProcPedidosPedidosCabecera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcPedidosPedidosDetalle.resx">
+      <DependentUpon>frmProcPedidosPedidosDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcPedidosPrincipal.resx">
+      <DependentUpon>frmProcPedidosPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcValesIngresoAnadirVale.resx">
       <DependentUpon>frmProcValesIngresoAnadirVale.cs</DependentUpon>

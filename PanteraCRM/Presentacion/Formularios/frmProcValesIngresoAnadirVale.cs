@@ -39,7 +39,7 @@ namespace Presentacion
             string correlativo="00000000"+ vale;
             int cfin = correlativo.Length-1;
             int cini = correlativo.Length - 8;
-            txtNroVale.Text = "" + correlativo.Substring(cini, cfin); ;
+            txtNroVale.Text = "" + correlativo.Substring(cini, cfin); 
             cboMoneda.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(13);
             cboMoneda.ValueMember = "idmaestrodetalle";
             cboMoneda.DisplayMember = "nombreitem";

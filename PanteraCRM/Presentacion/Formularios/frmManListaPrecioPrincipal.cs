@@ -16,5 +16,24 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+        
+
+        private void frmManListaPrecioPrincipal_Load(object sender, EventArgs e)
+        {
+            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnAnadir_Click(object sender, EventArgs e)
+        {
+            frmManListaPrecioCabecera fff = new frmManListaPrecioCabecera();
+            fff.ShowDialog();
+        }
     }
 }
