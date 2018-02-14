@@ -50,5 +50,15 @@ namespace Negocios
         {
             return productoDL.productoPrecioInsertar(productoObjeto);
         }
+        public static List<productoparaventa> ListaProductosVentaParametro(int parametro)
+        {
+            return productoDL.ListaProductosVentaParametro(parametro);
+        }
+        public static List<productoparaventa> ProductosVentaParametro(string parametro)
+        {
+            return productoDL.ProductosVentaParametro(parametro);
+        }
+
+        
     }
 }

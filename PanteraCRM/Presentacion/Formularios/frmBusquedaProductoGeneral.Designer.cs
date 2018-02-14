@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBusquedaProductoGeneral));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSeleccion = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvBusqueda = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BOSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,22 +47,24 @@
             this.CHPRECIOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 13);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Busqueda por Codigo o Nombre";
+            this.label1.Text = "Busqueda";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 25);
+            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox1.Location = new System.Drawing.Point(67, 13);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(448, 20);
+            this.textBox1.Size = new System.Drawing.Size(501, 20);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -71,7 +75,7 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(153, 223);
+            this.groupBox2.Location = new System.Drawing.Point(220, 229);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(180, 55);
             this.groupBox2.TabIndex = 5;
@@ -122,11 +126,21 @@
             this.CHMEDIDAS,
             this.CHSITUACION,
             this.CHPRECIOS});
-            this.dgvBusqueda.Location = new System.Drawing.Point(12, 51);
+            this.dgvBusqueda.Location = new System.Drawing.Point(12, 50);
             this.dgvBusqueda.Name = "dgvBusqueda";
             this.dgvBusqueda.ReadOnly = true;
-            this.dgvBusqueda.Size = new System.Drawing.Size(448, 172);
+            this.dgvBusqueda.Size = new System.Drawing.Size(574, 173);
             this.dgvBusqueda.TabIndex = 6;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(574, 42);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
             // 
             // IDPRODUCTO
             // 
@@ -158,7 +172,7 @@
             this.CHPRODUCTO.HeaderText = "PRODUCTO";
             this.CHPRODUCTO.Name = "CHPRODUCTO";
             this.CHPRODUCTO.ReadOnly = true;
-            this.CHPRODUCTO.Width = 300;
+            this.CHPRODUCTO.Width = 400;
             // 
             // IDMEDIDA
             // 
@@ -182,7 +196,7 @@
             this.CHMEDIDAS.HeaderText = "MEDIDA";
             this.CHMEDIDAS.Name = "CHMEDIDAS";
             this.CHMEDIDAS.ReadOnly = true;
-            this.CHMEDIDAS.Width = 40;
+            this.CHMEDIDAS.Width = 70;
             // 
             // CHSITUACION
             // 
@@ -190,6 +204,7 @@
             this.CHSITUACION.HeaderText = "SITUACION";
             this.CHSITUACION.Name = "CHSITUACION";
             this.CHSITUACION.ReadOnly = true;
+            this.CHSITUACION.Visible = false;
             this.CHSITUACION.Width = 60;
             // 
             // CHPRECIOS
@@ -198,6 +213,7 @@
             this.CHPRECIOS.HeaderText = "PRECIO";
             this.CHPRECIOS.Name = "CHPRECIOS";
             this.CHPRECIOS.ReadOnly = true;
+            this.CHPRECIOS.Visible = false;
             // 
             // frmBusquedaProductoGeneral
             // 
@@ -206,18 +222,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(472, 290);
+            this.ClientSize = new System.Drawing.Size(599, 290);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvBusqueda);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBusquedaProductoGeneral";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BUSQUEDA DE PRODUCTO";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -238,5 +256,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHMEDIDAS;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSITUACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHPRECIOS;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

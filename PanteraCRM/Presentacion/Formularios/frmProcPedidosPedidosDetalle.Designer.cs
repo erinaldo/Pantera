@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcPedidosPedidosDetalle));
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -49,7 +50,18 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.dgvListaProdSeries = new System.Windows.Forms.DataGridView();
+            this.REQSERIE = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHPRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckbSerie = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdSeries)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,9 +81,11 @@
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 30;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtCodigo_MouseDoubleClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ckbSerie);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -151,6 +165,7 @@
             this.txtImporte.ReadOnly = true;
             this.txtImporte.Size = new System.Drawing.Size(100, 20);
             this.txtImporte.TabIndex = 41;
+            this.txtImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPrecioVenta
             // 
@@ -162,6 +177,7 @@
             this.txtPrecioVenta.ReadOnly = true;
             this.txtPrecioVenta.Size = new System.Drawing.Size(63, 20);
             this.txtPrecioVenta.TabIndex = 40;
+            this.txtPrecioVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtMedida
             // 
@@ -181,6 +197,9 @@
             this.txtCant.Name = "txtCant";
             this.txtCant.Size = new System.Drawing.Size(39, 20);
             this.txtCant.TabIndex = 38;
+            this.txtCant.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCant.TextChanged += new System.EventHandler(this.txtCant_TextChanged);
+            this.txtCant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCant_KeyPress);
             // 
             // txtDesc2
             // 
@@ -188,6 +207,9 @@
             this.txtDesc2.Name = "txtDesc2";
             this.txtDesc2.Size = new System.Drawing.Size(100, 20);
             this.txtDesc2.TabIndex = 37;
+            this.txtDesc2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDesc2.TextChanged += new System.EventHandler(this.txtDesc2_TextChanged);
+            this.txtDesc2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesc2_KeyPress);
             // 
             // txtDesc1
             // 
@@ -195,6 +217,9 @@
             this.txtDesc1.Name = "txtDesc1";
             this.txtDesc1.Size = new System.Drawing.Size(100, 20);
             this.txtDesc1.TabIndex = 36;
+            this.txtDesc1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDesc1.TextChanged += new System.EventHandler(this.txtDesc1_TextChanged);
+            this.txtDesc1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesc1_KeyPress);
             // 
             // txtStock
             // 
@@ -206,6 +231,7 @@
             this.txtStock.ReadOnly = true;
             this.txtStock.Size = new System.Drawing.Size(100, 20);
             this.txtStock.TabIndex = 35;
+            this.txtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPreUnit
             // 
@@ -217,6 +243,7 @@
             this.txtPreUnit.ReadOnly = true;
             this.txtPreUnit.Size = new System.Drawing.Size(100, 20);
             this.txtPreUnit.TabIndex = 34;
+            this.txtPreUnit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -251,24 +278,116 @@
             // btnGrabar
             // 
             this.btnGrabar.BackColor = System.Drawing.Color.White;
-            this.btnGrabar.Location = new System.Drawing.Point(269, 197);
+            this.btnGrabar.Location = new System.Drawing.Point(253, 475);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 32);
             this.btnGrabar.TabIndex = 32;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Location = new System.Drawing.Point(350, 197);
+            this.btnSalir.Location = new System.Drawing.Point(334, 475);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 32);
             this.btnSalir.TabIndex = 33;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // dgvListaProdSeries
+            // 
+            this.dgvListaProdSeries.AllowUserToAddRows = false;
+            this.dgvListaProdSeries.AllowUserToDeleteRows = false;
+            this.dgvListaProdSeries.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListaProdSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaProdSeries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.REQSERIE,
+            this.IDPRODUCTO,
+            this.CHCODIGO,
+            this.CHDESCRIPCION,
+            this.CHMEDIDA,
+            this.CHPRECIO,
+            this.CHSERIE,
+            this.IDSERIE});
+            this.dgvListaProdSeries.Location = new System.Drawing.Point(12, 182);
+            this.dgvListaProdSeries.Name = "dgvListaProdSeries";
+            this.dgvListaProdSeries.Size = new System.Drawing.Size(639, 287);
+            this.dgvListaProdSeries.TabIndex = 34;
+            // 
+            // REQSERIE
+            // 
+            this.REQSERIE.DataPropertyName = "req_serie";
+            this.REQSERIE.HeaderText = "ITEM";
+            this.REQSERIE.Name = "REQSERIE";
+            this.REQSERIE.Width = 40;
+            // 
+            // IDPRODUCTO
+            // 
+            this.IDPRODUCTO.DataPropertyName = "p_inidproducto";
+            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
+            this.IDPRODUCTO.Name = "IDPRODUCTO";
+            this.IDPRODUCTO.Visible = false;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.DataPropertyName = "chcodigoproducto";
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 60;
+            // 
+            // CHDESCRIPCION
+            // 
+            this.CHDESCRIPCION.DataPropertyName = "chnombrecompuesto";
+            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
+            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
+            this.CHDESCRIPCION.ReadOnly = true;
+            this.CHDESCRIPCION.Width = 350;
+            // 
+            // CHMEDIDA
+            // 
+            this.CHMEDIDA.DataPropertyName = "chunidadmedidaproducto";
+            this.CHMEDIDA.HeaderText = "MEDIDA";
+            this.CHMEDIDA.Name = "CHMEDIDA";
+            this.CHMEDIDA.ReadOnly = true;
+            this.CHMEDIDA.Width = 60;
+            // 
+            // CHPRECIO
+            // 
+            this.CHPRECIO.DataPropertyName = "nuprecio";
+            this.CHPRECIO.HeaderText = "PRECIO";
+            this.CHPRECIO.Name = "CHPRECIO";
+            this.CHPRECIO.ReadOnly = true;
+            this.CHPRECIO.Visible = false;
+            // 
+            // CHSERIE
+            // 
+            this.CHSERIE.DataPropertyName = "chserie";
+            this.CHSERIE.HeaderText = "SERIE";
+            this.CHSERIE.Name = "CHSERIE";
+            this.CHSERIE.ReadOnly = true;
+            this.CHSERIE.Width = 90;
+            // 
+            // IDSERIE
+            // 
+            this.IDSERIE.DataPropertyName = "p_inidserie";
+            this.IDSERIE.HeaderText = "IDSERIE";
+            this.IDSERIE.Name = "IDSERIE";
+            this.IDSERIE.Visible = false;
+            // 
+            // ckbSerie
+            // 
+            this.ckbSerie.AutoSize = true;
+            this.ckbSerie.Location = new System.Drawing.Point(338, 51);
+            this.ckbSerie.Name = "ckbSerie";
+            this.ckbSerie.Size = new System.Drawing.Size(15, 14);
+            this.ckbSerie.TabIndex = 47;
+            this.ckbSerie.UseVisualStyleBackColor = true;
+            this.ckbSerie.Visible = false;
             // 
             // frmProcPedidosPedidosDetalle
             // 
@@ -277,18 +396,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(663, 252);
+            this.ClientSize = new System.Drawing.Size(663, 519);
+            this.Controls.Add(this.dgvListaProdSeries);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProcPedidosPedidosDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR DETALLE";
             this.Load += new System.EventHandler(this.frmProcPedidosPedidosDetalle_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdSeries)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,5 +437,15 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridView dgvListaProdSeries;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn REQSERIE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODUCTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHDESCRIPCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHMEDIDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHPRECIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHSERIE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDSERIE;
+        private System.Windows.Forms.CheckBox ckbSerie;
     }
 }

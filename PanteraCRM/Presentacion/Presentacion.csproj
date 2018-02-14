@@ -211,24 +211,6 @@
     <Compile Include="Formularios\frmProcCancelacionCuentasPrincipal.Designer.cs">
       <DependentUpon>frmProcCancelacionCuentasPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmProcFacturacionAnadir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmProcFacturacionAnadir.Designer.cs">
-      <DependentUpon>frmProcFacturacionAnadir.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmProcFacturacionDetalle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmProcFacturacionDetalle.Designer.cs">
-      <DependentUpon>frmProcFacturacionDetalle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmProcFacturacionPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmProcFacturacionPrincipal.Designer.cs">
-      <DependentUpon>frmProcFacturacionPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\frmProcPedidosPedidosCabecera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -545,15 +527,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManProductoAnadir.resx">
       <DependentUpon>frmManProductoAnadir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmProcFacturacionAnadir.resx">
-      <DependentUpon>frmProcFacturacionAnadir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmProcFacturacionDetalle.resx">
-      <DependentUpon>frmProcFacturacionDetalle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmProcFacturacionPrincipal.resx">
-      <DependentUpon>frmProcFacturacionPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcPedidosPedidosCabecera.resx">
       <DependentUpon>frmProcPedidosPedidosCabecera.cs</DependentUpon>
