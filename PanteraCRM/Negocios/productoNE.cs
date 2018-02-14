@@ -14,6 +14,10 @@ namespace Negocios
         {
             return productoDL.productoListar();
         }
+        public static List<producto> productoListarBusqueda(string parametro)
+        {
+            return productoDL.productoListarBusqueda(parametro);
+        }
         //ACTUALIZAR PRODUCTO
         public static int ProductoActualizar(producto productoObjeto)
         {
@@ -29,7 +33,22 @@ namespace Negocios
         {
             return productoDL.productobuscadoListar(parametro);
         }
-        
-
+        public static List<productobuscado> productobuscadoListaPrecios(string parametro)
+        {
+            return productoDL.productobuscadoListaPrecio(parametro);
+        }
+        public static List<productobuscado> ListaPreciosLista()
+        {
+            return productoDL.ListaPreciosLista();
+        }
+        public static List<productobuscado> ListaPreciosListaParametro(string parametro)
+        {
+            return productoDL.ListaPreciosListaParametro(parametro);
+        }
+        //INSERTAR PRECIO A PRODUCTO
+        public static int productoPrecioInsertar(productobuscado productoObjeto)
+        {
+            return productoDL.productoPrecioInsertar(productoObjeto);
+        }
     }
 }

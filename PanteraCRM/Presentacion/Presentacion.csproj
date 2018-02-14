@@ -109,6 +109,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DtsUsuario.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmBusProductoPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmBusProductoPrincipal.Designer.cs">
+      <DependentUpon>frmBusProductoPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmBusquedaProductoFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,17 +133,11 @@
     <Compile Include="Formularios\frmConsCobranzaDocuVentaPrincipal.Designer.cs">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmManListaPrecioCabecera.cs">
+    <Compile Include="Formularios\frmManListaPrecioAnadir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmManListaPrecioCabecera.Designer.cs">
-      <DependentUpon>frmManListaPrecioCabecera.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmManListaPrecioDetalle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmManListaPrecioDetalle.Designer.cs">
-      <DependentUpon>frmManListaPrecioDetalle.cs</DependentUpon>
+    <Compile Include="Formularios\frmManListaPrecioAnadir.Designer.cs">
+      <DependentUpon>frmManListaPrecioAnadir.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmManListaPrecioPrincipal.cs">
       <SubType>Form</SubType>
@@ -522,6 +522,9 @@
     <Compile Include="Reportes\FrmReporte.designer.cs">
       <DependentUpon>FrmReporte.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\frmBusProductoPrincipal.resx">
+      <DependentUpon>frmBusProductoPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmBusquedaProductoFacturacion.resx">
       <DependentUpon>frmBusquedaProductoFacturacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -531,11 +534,8 @@
     <EmbeddedResource Include="Formularios\frmConsCobranzaDocuVentaPrincipal.resx">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmManListaPrecioCabecera.resx">
-      <DependentUpon>frmManListaPrecioCabecera.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmManListaPrecioDetalle.resx">
-      <DependentUpon>frmManListaPrecioDetalle.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmManListaPrecioAnadir.resx">
+      <DependentUpon>frmManListaPrecioAnadir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManListaPrecioPrincipal.resx">
       <DependentUpon>frmManListaPrecioPrincipal.cs</DependentUpon>

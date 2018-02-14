@@ -7,22 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
+using Negocios;
 
 namespace Presentacion
 {
     public partial class frmManListaPrecioPrincipal : Form
     {
+        private string vBoton = "A";
         public frmManListaPrecioPrincipal()
         {
             InitializeComponent();
-        }
-
-        
-
-        private void frmManListaPrecioPrincipal_Load(object sender, EventArgs e)
-        {
-            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
-            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -30,10 +25,132 @@ namespace Presentacion
             this.Dispose();
         }
 
-        private void btnAnadir_Click(object sender, EventArgs e)
+        private void btAnadir_Click(object sender, EventArgs e)
         {
-            frmManListaPrecioCabecera fff = new frmManListaPrecioCabecera();
-            fff.ShowDialog();
+            try
+            {
+                vBoton = "A";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManListaPrecioAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmManListaPrecioAnadir f = new frmManListaPrecioAnadir(vBoton);
+                    f.pasado += new frmManListaPrecioAnadir.pasar(ejecutar);
+                    f.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+            
+        }
+
+        private void frmManListaPrecioPrincipal_Load(object sender, EventArgs e)
+        {
+            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
+            cargarData(0,"");
+        }
+        public void cargarData(int registro,string parametro)
+        {
+            if (parametro == "")
+            {
+                List<productobuscado> listado = productoNE.ListaPreciosLista();
+                dgvListaPrecios.DataSource = listado;
+            }else
+            {
+                List<productobuscado> listado = productoNE.ListaPreciosListaParametro(parametro);
+                dgvListaPrecios.DataSource = listado;
+            }
+            
+        }
+        public void ejecutar(int dato)
+        {
+            cargarData(0,"");
+            foreach (DataGridViewRow Row in dgvListaPrecios.Rows)
+            {
+                int valor = (int)Row.Cells["IDPRODUCTO"].Value;
+                if (valor == dato)
+                {
+                    int puntero = (int)Row.Index;
+                    //                    dgvPersona.CurrentCell = dgvPersona.Rows[puntero].Cells["IDPERSONA"];
+                    dgvListaPrecios.CurrentCell = dgvListaPrecios.Rows[puntero].Cells[1];
+                    return;
+                }
+            }
+        }
+       
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                vBoton = "M";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    cargarFormularioAnadir();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void cargarFormularioAnadir()
+        {
+            if (dgvListaPrecios.RowCount == 0)
+            {
+                MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManListaPrecioAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            frmManListaPrecioAnadir f = new frmManListaPrecioAnadir(vBoton);
+            f.pasado += new frmManListaPrecioAnadir.pasar(ejecutar);
+            f.tmpProducto = new productobuscado();
+            f.tmpProducto.p_inidproducto = (int)dgvListaPrecios.CurrentRow.Cells["IDPRODUCTO"].Value;
+            f.tmpProducto.chnombrecompuesto = (string)dgvListaPrecios.CurrentRow.Cells["CHDESCRIPCION"].Value;
+            f.tmpProducto.nuprecio = (decimal)dgvListaPrecios.CurrentRow.Cells["CHPRECIO"].Value;
+            f.tmpProducto.chcodigoproducto = (string)(dgvListaPrecios.CurrentRow.Cells["CHCODIGO"].Value);
+            f.ShowDialog();
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                vBoton = "V";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    cargarFormularioAnadir();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+
+
+        private void txtParametro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string parametro = txtParametro.Text;
+            cargarData(0, parametro);
+
         }
     }
 }

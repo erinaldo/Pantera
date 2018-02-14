@@ -52,16 +52,24 @@ namespace Presentacion
         {
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
-            cargarData(0);
+            cargarData(0,"");
         }
-        public void cargarData(int registro)
+        public void cargarData(int registro,string parametro)
         {
-            List<producto> listado = productoNE.productoListar();
-            dvgProducto.DataSource = listado;
+            if (parametro == "")
+            {
+                List<producto> listado = productoNE.productoListar();
+                dvgProducto.DataSource = listado;
+            }else
+            {
+                List<producto> listado = productoNE.productoListarBusqueda(parametro);
+                dvgProducto.DataSource = listado;
+            }
+            
         }
         public void ejecutar(int dato)
         {
-            cargarData(0);
+            cargarData(0,"");
             foreach (DataGridViewRow Row in dvgProducto.Rows)
             {
                 int valor = (int)Row.Cells["IDPRODUCTO"].Value;
@@ -139,6 +147,12 @@ namespace Presentacion
         private void dgvArticulo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtParametro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string parametro = txtParametro.Text;
+            cargarData(0, parametro);
         }
     }
 }

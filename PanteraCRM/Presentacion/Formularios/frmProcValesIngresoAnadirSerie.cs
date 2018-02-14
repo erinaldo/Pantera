@@ -117,6 +117,7 @@ namespace Presentacion
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             //VALIDAR SOLOR NUMEROS Y BORRADO
             if (!char.IsDigit(e.KeyChar) &&  !(8== Convert.ToInt32(e.KeyChar)) )
             {

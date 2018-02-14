@@ -64,8 +64,12 @@
             this.NUPRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtParametro = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgProducto)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -144,7 +148,7 @@
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(107, 327);
+            this.groupBox1.Location = new System.Drawing.Point(106, 400);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(451, 66);
             this.groupBox1.TabIndex = 14;
@@ -183,12 +187,12 @@
             this.NUPRECIO,
             this.IDSITUACION,
             this.CHSITUACION});
-            this.dvgProducto.Location = new System.Drawing.Point(12, 10);
+            this.dvgProducto.Location = new System.Drawing.Point(12, 49);
             this.dvgProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dvgProducto.Name = "dvgProducto";
             this.dvgProducto.ReadOnly = true;
             this.dvgProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dvgProducto.Size = new System.Drawing.Size(647, 312);
+            this.dvgProducto.Size = new System.Drawing.Size(647, 346);
             this.dvgProducto.TabIndex = 15;
             // 
             // IDPRODUCTO
@@ -397,6 +401,34 @@
             this.CHSITUACION.Name = "CHSITUACION";
             this.CHSITUACION.ReadOnly = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtParametro);
+            this.groupBox2.Location = new System.Drawing.Point(12, 1);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(647, 43);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            // 
+            // txtParametro
+            // 
+            this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtParametro.Location = new System.Drawing.Point(67, 15);
+            this.txtParametro.Name = "txtParametro";
+            this.txtParametro.Size = new System.Drawing.Size(574, 20);
+            this.txtParametro.TabIndex = 0;
+            this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Busqueda";
+            // 
             // frmManProductoPrincipal
             // 
             this.AcceptButton = this.btnAnadir;
@@ -405,7 +437,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(671, 401);
+            this.ClientSize = new System.Drawing.Size(671, 478);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dvgProducto);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -417,6 +450,8 @@
             this.Load += new System.EventHandler(this.frmManProductoPrincipal_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgProducto)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -457,5 +492,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NUPRECIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDSITUACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSITUACION;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtParametro;
     }
 }
