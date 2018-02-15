@@ -44,7 +44,10 @@
     <Compile Include="almacenNE.cs" />
     <Compile Include="articuloNE.cs" />
     <Compile Include="clienteNE.cs" />
+    <Compile Include="condicionpagoNE.cs" />
+    <Compile Include="conductorNE.cs" />
     <Compile Include="empresaNE.cs" />
+    <Compile Include="generarCodigoNE.cs" />
     <Compile Include="impresoraNE.cs" />
     <Compile Include="maestrodetalleNE.cs" />
     <Compile Include="marcaNE.cs" />
@@ -60,10 +63,14 @@
     <Compile Include="puntoventaNE.cs" />
     <Compile Include="reniecNE.cs" />
     <Compile Include="serieNE.cs" />
+    <Compile Include="tipocambioNE.cs" />
+    <Compile Include="tipodocumentoNE.cs" />
+    <Compile Include="transportistaNE.cs" />
     <Compile Include="ubigeoNE.cs" />
     <Compile Include="usuariomenuNE.cs" />
     <Compile Include="usuarioNE.cs" />
     <Compile Include="valeNE.cs" />
+    <Compile Include="vehiculoNE.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

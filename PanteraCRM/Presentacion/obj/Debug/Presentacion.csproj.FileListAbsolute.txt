@@ -496,3 +496,5 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\P
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManListaPrecioPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManListaPrecioAnadir.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Formularios.frmBusProductoPrincipal.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmTipoDeCambio.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Formularios.frmBusClientePrincipal.resources

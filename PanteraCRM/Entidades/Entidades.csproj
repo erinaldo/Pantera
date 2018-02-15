@@ -49,6 +49,9 @@
     <Compile Include="articulopresupuesto.cs" />
     <Compile Include="categoria.cs" />
     <Compile Include="cliente.cs" />
+    <Compile Include="clientebusqueda.cs" />
+    <Compile Include="condicionpago.cs" />
+    <Compile Include="conductor.cs" />
     <Compile Include="empresa.cs" />
     <Compile Include="empresasesion.cs" />
     <Compile Include="maestrodetalle.cs" />
@@ -72,12 +75,16 @@
     <Compile Include="seriebuscada.cs" />
     <Compile Include="sesionglobal.cs" />
     <Compile Include="tipo.cs" />
+    <Compile Include="tipocambio.cs" />
+    <Compile Include="tipodocumento.cs" />
+    <Compile Include="transportista.cs" />
     <Compile Include="ubigeo.cs" />
     <Compile Include="usuario.cs" />
     <Compile Include="usuariomenu.cs" />
     <Compile Include="usuariosesion.cs" />
     <Compile Include="valecabecera.cs" />
     <Compile Include="valedetalle.cs" />
+    <Compile Include="vehiculo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

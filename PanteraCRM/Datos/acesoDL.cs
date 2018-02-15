@@ -24,10 +24,13 @@ namespace Datos
         {
             sessionglobal registro = new sessionglobal();
             registro.p_inidusuario = Convert.ToInt32(datareader["p_inidusuario"]);
-            registro.p_inidpersona = Convert.ToInt32(datareader["p_inidusuario"]);
+            registro.p_inidpersona = Convert.ToInt32(datareader["p_inidpersona"]);
+            registro.p_inidalmacen = Convert.ToInt32(datareader["p_inidalmacen"]);
+            registro.chalamacen = Convert.ToString(datareader["chnombrealmacen"]).Trim();
             registro.p_inidpuntoventa = Convert.ToInt32(datareader["p_inidpuntoventa"]);
+            registro.chpuntoventa = Convert.ToString(datareader["chnombrepuntoventa"]).Trim();
             registro.p_inidperfil = Convert.ToInt32(datareader["p_inidperfil"]);
-            registro.chnombrepersona = Convert.ToString(datareader["chnombres"]);
+            registro.chnombrepersona = Convert.ToString(datareader["chnombres"]).Trim();
             registro.chusuario = Convert.ToString(datareader["chusuario"]);
             registro.estado = Convert.ToBoolean(datareader["estado"]);
             return registro;

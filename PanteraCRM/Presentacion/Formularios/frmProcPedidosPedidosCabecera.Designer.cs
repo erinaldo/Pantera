@@ -30,48 +30,48 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcPedidosPedidosCabecera));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNroPedido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtFechaActual = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboTipoDocu = new System.Windows.Forms.ComboBox();
+            this.cboTraslado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtTipoCambio = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtNombreAlmacen = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cboCondVenta = new System.Windows.Forms.ComboBox();
+            this.txtNombreVendedor = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCodigoCliente = new System.Windows.Forms.TextBox();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
+            this.txtRucCliente = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtPtoLlegada = new System.Windows.Forms.TextBox();
+            this.txtPtoPartida = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtObs = new System.Windows.Forms.TextBox();
+            this.txtfechaInicio = new System.Windows.Forms.MaskedTextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cboVehiculo = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboNombreConductor = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtNombreTrans = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtRucTrans = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -105,16 +105,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pedido N°";
             // 
-            // textBox1
+            // txtNroPedido
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Blue;
-            this.textBox1.Location = new System.Drawing.Point(184, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(78, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNroPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtNroPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroPedido.ForeColor = System.Drawing.Color.Blue;
+            this.txtNroPedido.Location = new System.Drawing.Point(184, 13);
+            this.txtNroPedido.Name = "txtNroPedido";
+            this.txtNroPedido.ReadOnly = true;
+            this.txtNroPedido.Size = new System.Drawing.Size(109, 20);
+            this.txtNroPedido.TabIndex = 1;
+            this.txtNroPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -125,17 +126,17 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Fecha";
             // 
-            // maskedTextBox1
+            // txtFechaActual
             // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.Blue;
-            this.maskedTextBox1.Location = new System.Drawing.Point(358, 13);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(93, 20);
-            this.maskedTextBox1.TabIndex = 3;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.txtFechaActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtFechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaActual.ForeColor = System.Drawing.Color.Blue;
+            this.txtFechaActual.Location = new System.Drawing.Point(358, 13);
+            this.txtFechaActual.Mask = "00/00/0000";
+            this.txtFechaActual.Name = "txtFechaActual";
+            this.txtFechaActual.Size = new System.Drawing.Size(93, 20);
+            this.txtFechaActual.TabIndex = 3;
+            this.txtFechaActual.ValidatingType = typeof(System.DateTime);
             // 
             // label3
             // 
@@ -146,21 +147,23 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Doc.";
             // 
-            // comboBox1
+            // cboTipoDocu
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(37, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(70, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cboTipoDocu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoDocu.FormattingEnabled = true;
+            this.cboTipoDocu.Location = new System.Drawing.Point(37, 13);
+            this.cboTipoDocu.Name = "cboTipoDocu";
+            this.cboTipoDocu.Size = new System.Drawing.Size(70, 21);
+            this.cboTipoDocu.TabIndex = 5;
             // 
-            // comboBox2
+            // cboTraslado
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(559, 13);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(209, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cboTraslado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTraslado.FormattingEnabled = true;
+            this.cboTraslado.Location = new System.Drawing.Point(559, 13);
+            this.cboTraslado.Name = "cboTraslado";
+            this.cboTraslado.Size = new System.Drawing.Size(209, 21);
+            this.cboTraslado.TabIndex = 6;
             // 
             // label4
             // 
@@ -173,49 +176,49 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.txtTipoCambio);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txtNombreAlmacen);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.txtDesc);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.cboCondVenta);
+            this.groupBox1.Controls.Add(this.txtNombreVendedor);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtCodigoCliente);
+            this.groupBox1.Controls.Add(this.txtNombreCliente);
+            this.groupBox1.Controls.Add(this.txtRucCliente);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNroPedido);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.txtFechaActual);
+            this.groupBox1.Controls.Add(this.cboTraslado);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cboTipoDocu);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(783, 135);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
-            // textBox9
+            // txtTipoCambio
             // 
-            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.Color.Blue;
-            this.textBox9.Location = new System.Drawing.Point(441, 101);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(86, 20);
-            this.textBox9.TabIndex = 25;
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTipoCambio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtTipoCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoCambio.ForeColor = System.Drawing.Color.Blue;
+            this.txtTipoCambio.Location = new System.Drawing.Point(441, 101);
+            this.txtTipoCambio.Name = "txtTipoCambio";
+            this.txtTipoCambio.ReadOnly = true;
+            this.txtTipoCambio.Size = new System.Drawing.Size(86, 20);
+            this.txtTipoCambio.TabIndex = 25;
+            this.txtTipoCambio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label13
             // 
@@ -226,17 +229,17 @@
             this.label13.TabIndex = 24;
             this.label13.Text = "Tipo Cambio";
             // 
-            // textBox8
+            // txtNombreAlmacen
             // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.Color.Blue;
-            this.textBox8.Location = new System.Drawing.Point(66, 101);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(207, 20);
-            this.textBox8.TabIndex = 23;
+            this.txtNombreAlmacen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtNombreAlmacen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNombreAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreAlmacen.ForeColor = System.Drawing.Color.Blue;
+            this.txtNombreAlmacen.Location = new System.Drawing.Point(66, 101);
+            this.txtNombreAlmacen.Name = "txtNombreAlmacen";
+            this.txtNombreAlmacen.ReadOnly = true;
+            this.txtNombreAlmacen.Size = new System.Drawing.Size(207, 20);
+            this.txtNombreAlmacen.TabIndex = 23;
             // 
             // label12
             // 
@@ -247,17 +250,17 @@
             this.label12.TabIndex = 22;
             this.label12.Text = "Almancen";
             // 
-            // textBox7
+            // txtDesc
             // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.Blue;
-            this.textBox7.Location = new System.Drawing.Point(694, 101);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(74, 20);
-            this.textBox7.TabIndex = 21;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDesc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.ForeColor = System.Drawing.Color.Blue;
+            this.txtDesc.Location = new System.Drawing.Point(694, 101);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.ReadOnly = true;
+            this.txtDesc.Size = new System.Drawing.Size(74, 20);
+            this.txtDesc.TabIndex = 21;
+            this.txtDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
@@ -268,28 +271,30 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "Desc.";
             // 
-            // comboBox3
+            // cboCondVenta
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(607, 72);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(162, 21);
-            this.comboBox3.TabIndex = 19;
+            this.cboCondVenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCondVenta.FormattingEnabled = true;
+            this.cboCondVenta.Location = new System.Drawing.Point(607, 72);
+            this.cboCondVenta.Name = "cboCondVenta";
+            this.cboCondVenta.Size = new System.Drawing.Size(162, 21);
+            this.cboCondVenta.TabIndex = 19;
             // 
-            // textBox6
+            // txtNombreVendedor
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.Blue;
-            this.textBox6.Location = new System.Drawing.Point(235, 73);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(290, 20);
-            this.textBox6.TabIndex = 18;
+            this.txtNombreVendedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtNombreVendedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNombreVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreVendedor.ForeColor = System.Drawing.Color.Blue;
+            this.txtNombreVendedor.Location = new System.Drawing.Point(235, 73);
+            this.txtNombreVendedor.Name = "txtNombreVendedor";
+            this.txtNombreVendedor.ReadOnly = true;
+            this.txtNombreVendedor.Size = new System.Drawing.Size(290, 20);
+            this.txtNombreVendedor.TabIndex = 18;
             // 
             // textBox5
             // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(51, 73);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(103, 20);
@@ -322,34 +327,37 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Cond. Venta";
             // 
-            // textBox4
+            // txtCodigoCliente
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.Blue;
-            this.textBox4.Location = new System.Drawing.Point(679, 40);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(90, 20);
-            this.textBox4.TabIndex = 13;
+            this.txtCodigoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoCliente.ForeColor = System.Drawing.Color.Blue;
+            this.txtCodigoCliente.Location = new System.Drawing.Point(679, 40);
+            this.txtCodigoCliente.Name = "txtCodigoCliente";
+            this.txtCodigoCliente.Size = new System.Drawing.Size(90, 20);
+            this.txtCodigoCliente.TabIndex = 13;
             // 
-            // textBox3
+            // txtNombreCliente
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Blue;
-            this.textBox3.Location = new System.Drawing.Point(224, 40);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(403, 20);
-            this.textBox3.TabIndex = 12;
+            this.txtNombreCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtNombreCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCliente.ForeColor = System.Drawing.Color.Blue;
+            this.txtNombreCliente.Location = new System.Drawing.Point(224, 40);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.ReadOnly = true;
+            this.txtNombreCliente.Size = new System.Drawing.Size(403, 20);
+            this.txtNombreCliente.TabIndex = 12;
             // 
-            // textBox2
+            // txtRucCliente
             // 
-            this.textBox2.Location = new System.Drawing.Point(51, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(103, 20);
-            this.textBox2.TabIndex = 11;
+            this.txtRucCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRucCliente.Location = new System.Drawing.Point(51, 40);
+            this.txtRucCliente.Name = "txtRucCliente";
+            this.txtRucCliente.Size = new System.Drawing.Size(103, 20);
+            this.txtRucCliente.TabIndex = 11;
+            this.txtRucCliente.TextChanged += new System.EventHandler(this.txtRucCliente_TextChanged);
+            this.txtRucCliente.DoubleClick += new System.EventHandler(this.txtRucCliente_DoubleClick);
             // 
             // label7
             // 
@@ -381,20 +389,20 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.textBox14);
-            this.groupBox2.Controls.Add(this.textBox13);
+            this.groupBox2.Controls.Add(this.txtPtoLlegada);
+            this.groupBox2.Controls.Add(this.txtPtoPartida);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.textBox12);
-            this.groupBox2.Controls.Add(this.maskedTextBox2);
+            this.groupBox2.Controls.Add(this.txtObs);
+            this.groupBox2.Controls.Add(this.txtfechaInicio);
             this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.comboBox5);
+            this.groupBox2.Controls.Add(this.cboVehiculo);
             this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.comboBox4);
+            this.groupBox2.Controls.Add(this.cboNombreConductor);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.textBox11);
+            this.groupBox2.Controls.Add(this.txtNombreTrans);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.textBox10);
+            this.groupBox2.Controls.Add(this.txtRucTrans);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Location = new System.Drawing.Point(12, 153);
             this.groupBox2.Name = "groupBox2";
@@ -412,21 +420,21 @@
             this.label21.TabIndex = 24;
             this.label21.Text = "Pto. Llegada";
             // 
-            // textBox14
+            // txtPtoLlegada
             // 
-            this.textBox14.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox14.Location = new System.Drawing.Point(453, 83);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(315, 20);
-            this.textBox14.TabIndex = 23;
+            this.txtPtoLlegada.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPtoLlegada.Location = new System.Drawing.Point(453, 83);
+            this.txtPtoLlegada.Name = "txtPtoLlegada";
+            this.txtPtoLlegada.Size = new System.Drawing.Size(315, 20);
+            this.txtPtoLlegada.TabIndex = 23;
             // 
-            // textBox13
+            // txtPtoPartida
             // 
-            this.textBox13.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox13.Location = new System.Drawing.Point(75, 83);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(304, 20);
-            this.textBox13.TabIndex = 22;
+            this.txtPtoPartida.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPtoPartida.Location = new System.Drawing.Point(75, 83);
+            this.txtPtoPartida.Name = "txtPtoPartida";
+            this.txtPtoPartida.Size = new System.Drawing.Size(304, 20);
+            this.txtPtoPartida.TabIndex = 22;
             // 
             // label20
             // 
@@ -446,39 +454,40 @@
             this.label19.TabIndex = 20;
             this.label19.Text = "Observación";
             // 
-            // textBox12
+            // txtObs
             // 
-            this.textBox12.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox12.Location = new System.Drawing.Point(559, 51);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(209, 20);
-            this.textBox12.TabIndex = 19;
+            this.txtObs.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtObs.Location = new System.Drawing.Point(559, 51);
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(209, 20);
+            this.txtObs.TabIndex = 19;
             // 
-            // maskedTextBox2
+            // txtfechaInicio
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(319, 51);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(92, 20);
-            this.maskedTextBox2.TabIndex = 18;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.txtfechaInicio.Location = new System.Drawing.Point(341, 51);
+            this.txtfechaInicio.Mask = "00/00/0000";
+            this.txtfechaInicio.Name = "txtfechaInicio";
+            this.txtfechaInicio.Size = new System.Drawing.Size(92, 20);
+            this.txtfechaInicio.TabIndex = 18;
+            this.txtfechaInicio.ValidatingType = typeof(System.DateTime);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(221, 54);
+            this.label18.Location = new System.Drawing.Point(243, 54);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(92, 13);
             this.label18.TabIndex = 17;
             this.label18.Text = "Fecha Inicio Tras.";
             // 
-            // comboBox5
+            // cboVehiculo
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(51, 51);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(100, 21);
-            this.comboBox5.TabIndex = 16;
+            this.cboVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboVehiculo.FormattingEnabled = true;
+            this.cboVehiculo.Location = new System.Drawing.Point(51, 51);
+            this.cboVehiculo.Name = "cboVehiculo";
+            this.cboVehiculo.Size = new System.Drawing.Size(100, 21);
+            this.cboVehiculo.TabIndex = 16;
             // 
             // label17
             // 
@@ -489,13 +498,14 @@
             this.label17.TabIndex = 15;
             this.label17.Text = "Vehiculo";
             // 
-            // comboBox4
+            // cboNombreConductor
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(559, 18);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(210, 21);
-            this.comboBox4.TabIndex = 14;
+            this.cboNombreConductor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNombreConductor.FormattingEnabled = true;
+            this.cboNombreConductor.Location = new System.Drawing.Point(559, 18);
+            this.cboNombreConductor.Name = "cboNombreConductor";
+            this.cboNombreConductor.Size = new System.Drawing.Size(210, 21);
+            this.cboNombreConductor.TabIndex = 14;
             // 
             // label16
             // 
@@ -506,17 +516,17 @@
             this.label16.TabIndex = 13;
             this.label16.Text = "Conductor";
             // 
-            // textBox11
+            // txtNombreTrans
             // 
-            this.textBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox11.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.ForeColor = System.Drawing.Color.Blue;
-            this.textBox11.Location = new System.Drawing.Point(207, 19);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(284, 20);
-            this.textBox11.TabIndex = 12;
+            this.txtNombreTrans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtNombreTrans.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNombreTrans.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreTrans.ForeColor = System.Drawing.Color.Blue;
+            this.txtNombreTrans.Location = new System.Drawing.Point(207, 19);
+            this.txtNombreTrans.Name = "txtNombreTrans";
+            this.txtNombreTrans.ReadOnly = true;
+            this.txtNombreTrans.Size = new System.Drawing.Size(284, 20);
+            this.txtNombreTrans.TabIndex = 12;
             // 
             // label15
             // 
@@ -527,12 +537,13 @@
             this.label15.TabIndex = 11;
             this.label15.Text = "Nombre";
             // 
-            // textBox10
+            // txtRucTrans
             // 
-            this.textBox10.Location = new System.Drawing.Point(51, 19);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 10;
+            this.txtRucTrans.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRucTrans.Location = new System.Drawing.Point(51, 19);
+            this.txtRucTrans.Name = "txtRucTrans";
+            this.txtRucTrans.Size = new System.Drawing.Size(100, 20);
+            this.txtRucTrans.TabIndex = 10;
             // 
             // label14
             // 
@@ -572,7 +583,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Location = new System.Drawing.Point(692, 177);
+            this.btnSalir.Location = new System.Drawing.Point(685, 177);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 32);
             this.btnSalir.TabIndex = 31;
@@ -582,7 +593,7 @@
             // btnGrabar
             // 
             this.btnGrabar.BackColor = System.Drawing.Color.White;
-            this.btnGrabar.Location = new System.Drawing.Point(611, 177);
+            this.btnGrabar.Location = new System.Drawing.Point(604, 177);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 32);
             this.btnGrabar.TabIndex = 30;
@@ -592,7 +603,7 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(171, 177);
+            this.btnEliminar.Location = new System.Drawing.Point(180, 177);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 32);
             this.btnEliminar.TabIndex = 29;
@@ -602,7 +613,7 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(90, 177);
+            this.btnModificar.Location = new System.Drawing.Point(99, 177);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 32);
             this.btnModificar.TabIndex = 28;
@@ -612,7 +623,7 @@
             // btnAnadir
             // 
             this.btnAnadir.BackColor = System.Drawing.Color.White;
-            this.btnAnadir.Location = new System.Drawing.Point(9, 177);
+            this.btnAnadir.Location = new System.Drawing.Point(18, 177);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(75, 32);
             this.btnAnadir.TabIndex = 27;
@@ -771,49 +782,49 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNroPedido;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtFechaActual;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboTipoDocu;
+        private System.Windows.Forms.ComboBox cboTraslado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCodigoCliente;
+        private System.Windows.Forms.TextBox txtNombreCliente;
+        private System.Windows.Forms.TextBox txtRucCliente;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtTipoCambio;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtNombreAlmacen;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox cboCondVenta;
+        private System.Windows.Forms.TextBox txtNombreVendedor;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtPtoLlegada;
+        private System.Windows.Forms.TextBox txtPtoPartida;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.TextBox txtObs;
+        private System.Windows.Forms.MaskedTextBox txtfechaInicio;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cboVehiculo;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboNombreConductor;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtNombreTrans;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtRucTrans;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label26;

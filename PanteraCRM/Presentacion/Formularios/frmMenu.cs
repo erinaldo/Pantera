@@ -27,6 +27,7 @@ namespace Presentacion
         {
             this.cargaListaImagenes();
             this.cargaMenu();
+            this.ObtenerTipoCambio();
         }
 
         private void cargaListaImagenes()
@@ -171,6 +172,21 @@ namespace Presentacion
                     break;
             }
             base.WndProc(ref message);
+        }
+        public void ObtenerTipoCambio()
+        {
+            //comprobar si existe tipo de cambio para hoy
+            string fecha= DateTime.Now.ToShortDateString().PadLeft(10, '0');
+            int flat = generarCodigoNE.ObtenerTipoCambio(fecha);
+            if (flat == 0)
+            {
+                frmTipoDeCambio f = new frmTipoDeCambio();
+                 f.ShowDialog();
+               
+            }
+
+            
+            // mostrar la ventana si hace falta
         }
     }
 }

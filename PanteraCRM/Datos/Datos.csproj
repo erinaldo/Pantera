@@ -52,8 +52,11 @@
     <Compile Include="almacenDL.cs" />
     <Compile Include="articuloDL.cs" />
     <Compile Include="clienteDL.cs" />
+    <Compile Include="condicionpagoDL.cs" />
+    <Compile Include="conductorDL.cs" />
     <Compile Include="conexion.cs" />
     <Compile Include="empresaDL.cs" />
+    <Compile Include="generarCodigoDL.cs" />
     <Compile Include="impresoraDL.cs" />
     <Compile Include="maestrodetalleDL.cs" />
     <Compile Include="marcaDL.cs" />
@@ -69,10 +72,14 @@
     <Compile Include="puntoventaDL.cs" />
     <Compile Include="reniecDL.cs" />
     <Compile Include="serieDL.cs" />
+    <Compile Include="tipocambioDL.cs" />
+    <Compile Include="tipodocumentoDL.cs" />
+    <Compile Include="transportistaDL.cs" />
     <Compile Include="ubigeoDL.cs" />
     <Compile Include="usuarioDL.cs" />
     <Compile Include="usuariomenuDL.cs" />
     <Compile Include="valesDL.cs" />
+    <Compile Include="vechiculoDL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

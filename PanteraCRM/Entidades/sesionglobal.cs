@@ -9,6 +9,9 @@ namespace Entidades
     public class sessionglobal
     {
         public int p_inidpuntoventa { get; set; }
+        public string chpuntoventa { get; set; }
+        public int p_inidalmacen { get; set; }
+        public string chalamacen { get; set; }
         public int p_inidusuario { get; set; }
         public string chnombrepersona { get; set; }
         public string chusuario { get; set; }
@@ -18,6 +21,9 @@ namespace Entidades
         public sessionglobal()
         {
             this.p_inidpuntoventa = 0;
+            this.chpuntoventa = string.Empty;
+            this.p_inidalmacen = 0;
+            this.chalamacen = string.Empty;
             this.p_inidusuario = 0;
             this.chnombrepersona = string.Empty;
             this.chusuario = string.Empty;
