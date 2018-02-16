@@ -14,14 +14,14 @@ namespace Presentacion
     public partial class frmProcPedidosPedidosDetalle : Form
     {
         public pedidodetalle tmbpedidodetalle;
+        public pedidodetalle tmppedidodetalle;
         public List<pedidodetalle> tmplistadovalidar;
+        public List<pedidodetalle> tmplistado;
+        public bool reqserie ;
         public frmProcPedidosPedidosDetalle()
         {
             InitializeComponent();
         }
-
-       
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -63,17 +63,13 @@ namespace Presentacion
                         {
                             if (obj.p_inidproducto == a.p_inidproducto)
                             {
-                                val = val + obj.nucantidad;
-                                txtStock.Text = (a.nustockactual - val).ToString();
-                            }else
-                            {
-                                txtStock.Text = "AA";
-
-                            }
+                                val = val + obj.nucantidad;                                
+                            }                            
                         }
+                        txtStock.Text = (a.nustockactual - val).ToString();
                         txtDescripcion.Text = a.chnombrecompuesto;
                         txtIdproducto.Text = a.p_inidproducto.ToString();
-                        txtImporte.Text = "0.020";
+                        txtImporte.Text = "0.000";
                         txtPreUnit.Text = a.nuprecio.ToString();
                         txtMedida.Text = a.chunidadmedidaproducto;
                         cargarData(0, a.p_inidproducto);
@@ -333,15 +329,120 @@ namespace Presentacion
             else
                 e.Handled = true;
         }
-
+   
         private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            
+            if (Validar())
+            {
+                btnValidar.PerformClick();
+
+            }else
+            {
+                return;
+            }
+
+            this.Dispose();
+        }
+
+        
+        public bool Validar()
+        {
+            bool flatvalidar = false;
+            int cantidad = 0;
+            if (txtCant.Text.Length > 0)
+            {
+                cantidad = int.Parse(txtCant.Text);
+
+            }
+            
+            if (decimal.Parse(txtPreUnit.Text) > 0)
+            {
+                if (cantidad > 0)
+                {
+                    
+                    if (dgvListaProdSeries.RowCount > 0)
+                    {
+                        int variante = 0;
+                        for (int i = 0; i < dgvListaProdSeries.RowCount; i++)
+                        {
+                            if (bool.Parse(dgvListaProdSeries.Rows[i].Cells["REQSERIE"].Value.ToString()))
+                            {
+                                variante++;
+                            }
+                        }
+                        if (cantidad == variante)
+                        {
+
+                            flatvalidar = true;
+                            btnValidar.Enabled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("La CANTIDAD debe ser igual a los ITEMS Seleccionados", "MENSAJE DE SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            //txtCant.BackColor = Color.Red;
+                            txtCant.Focus();
+                            
+                        }
+                    }else
+                    {
+                        flatvalidar = true;
+                        btnValidar.Enabled = true;
+                    }
+                    
+                }
+                else
+                {
+                    //MessageBox.Show("The calculations are complete", "My Application",MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    // MessageBox.Show("La cantidad no es valida", "MENSAJE DE SISTEMA");
+                    MessageBox.Show("La cantidad no es valida", "MENSAJE DE SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //txtCant.BackColor = Color.Red;
+                    txtCant.Focus();
+                }
+            }else
+            {
+                MessageBox.Show("Ingrese un Codigo Válido", "MENSAJE DE SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                //MessageBox.Show("Ingrese un Codigo Válido", "MENSAJE DE SISTEMA");
+                //txtCodigo.BackColor = Color.Red;
+                txtCodigo.Focus();
+            }
+
+            return flatvalidar;
+
+        }
+
+        private void btnValidar_Click(object sender, EventArgs e)
         {
             if (ckbSerie.Checked)
             {
-                //EL PRODUCTO REQUIERE DE SERIES
-
-            } else
+                reqserie = ckbSerie.Checked;
+                tmplistado = new List<pedidodetalle>();
+                for (int i = 0; i < dgvListaProdSeries.RowCount; i++)                {
+                    
+                    //
+                    // MessageBox.Show("Ingrese un Codigo Válido" + dgvListaProdSeries.Rows[i].Cells["REQSERIE"].Value.ToString(), "MENSAJE DE SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    if (bool.Parse(dgvListaProdSeries.Rows[i].Cells["REQSERIE"].Value.ToString()))
+                    {
+                        tmppedidodetalle = new pedidodetalle();
+                        tmppedidodetalle.p_inidproducto = int.Parse(txtIdproducto.Text);
+                        tmppedidodetalle.chcodigoproducto = txtCodigo.Text;
+                        tmppedidodetalle.chnombrecompuesto = txtDescripcion.Text;
+                        tmppedidodetalle.nustock = int.Parse(txtStock.Text);
+                        tmppedidodetalle.nuprecioproducto = decimal.Parse(txtPreUnit.Text);
+                        tmppedidodetalle.nuprecioventa = decimal.Parse(txtPrecioVenta.Text);
+                        tmppedidodetalle.nuporcentajedesc1 = decimal.Parse(txtDesc1.Text);
+                        tmppedidodetalle.nuporcentajedesc2 = decimal.Parse(txtDesc2.Text);
+                        tmppedidodetalle.nuimportesubtotal = decimal.Parse(txtImporte.Text);
+                        tmppedidodetalle.nucantidad = decimal.Parse(txtCant.Text);
+                        tmppedidodetalle.p_inidserie = int.Parse(dgvListaProdSeries.Rows[i].Cells["IDSERIE"].Value.ToString());
+                        tmppedidodetalle.chserie = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
+                        tmplistado.Add(tmppedidodetalle);
+                    }
+                }
+            }
+            else
             {
+                reqserie = ckbSerie.Checked;
                 //EL PRODUCTO NO REQUIERE DE SERIES
                 tmbpedidodetalle = new pedidodetalle();
                 tmbpedidodetalle.p_inidproducto = int.Parse(txtIdproducto.Text);
@@ -355,9 +456,10 @@ namespace Presentacion
                 tmbpedidodetalle.nuimportesubtotal = decimal.Parse(txtImporte.Text);
                 tmbpedidodetalle.nucantidad = decimal.Parse(txtCant.Text);
 
+
+
             }
-            this.Dispose();
+
         }
-        public void CalcularVariables() { }
     }
 }

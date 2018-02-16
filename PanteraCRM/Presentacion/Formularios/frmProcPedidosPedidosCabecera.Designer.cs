@@ -619,6 +619,7 @@
             this.btnGrabar.TabIndex = 30;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnEliminar
             // 

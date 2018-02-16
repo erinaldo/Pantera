@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIdproducto = new System.Windows.Forms.TextBox();
             this.ckbSerie = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,7 +61,7 @@
             this.CHPRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtIdproducto = new System.Windows.Forms.TextBox();
+            this.btnValidar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdSeries)).BeginInit();
             this.SuspendLayout();
@@ -112,9 +113,18 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
+            // txtIdproducto
+            // 
+            this.txtIdproducto.Location = new System.Drawing.Point(307, 85);
+            this.txtIdproducto.Name = "txtIdproducto";
+            this.txtIdproducto.Size = new System.Drawing.Size(100, 20);
+            this.txtIdproducto.TabIndex = 48;
+            this.txtIdproducto.Visible = false;
+            // 
             // ckbSerie
             // 
             this.ckbSerie.AutoSize = true;
+            this.ckbSerie.ForeColor = System.Drawing.Color.White;
             this.ckbSerie.Location = new System.Drawing.Point(338, 51);
             this.ckbSerie.Name = "ckbSerie";
             this.ckbSerie.Size = new System.Drawing.Size(15, 14);
@@ -290,7 +300,6 @@
             // btnGrabar
             // 
             this.btnGrabar.BackColor = System.Drawing.Color.White;
-            this.btnGrabar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnGrabar.Location = new System.Drawing.Point(253, 475);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 32);
@@ -350,7 +359,6 @@
             this.CHCODIGO.DataPropertyName = "chcodigoproducto";
             this.CHCODIGO.HeaderText = "CODIGO";
             this.CHCODIGO.Name = "CHCODIGO";
-            this.CHCODIGO.ReadOnly = true;
             this.CHCODIGO.Width = 60;
             // 
             // CHDESCRIPCION
@@ -358,7 +366,6 @@
             this.CHDESCRIPCION.DataPropertyName = "chnombrecompuesto";
             this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
             this.CHDESCRIPCION.Name = "CHDESCRIPCION";
-            this.CHDESCRIPCION.ReadOnly = true;
             this.CHDESCRIPCION.Width = 350;
             // 
             // CHMEDIDA
@@ -366,7 +373,6 @@
             this.CHMEDIDA.DataPropertyName = "chunidadmedidaproducto";
             this.CHMEDIDA.HeaderText = "MEDIDA";
             this.CHMEDIDA.Name = "CHMEDIDA";
-            this.CHMEDIDA.ReadOnly = true;
             this.CHMEDIDA.Width = 60;
             // 
             // CHPRECIO
@@ -374,7 +380,6 @@
             this.CHPRECIO.DataPropertyName = "nuprecio";
             this.CHPRECIO.HeaderText = "PRECIO";
             this.CHPRECIO.Name = "CHPRECIO";
-            this.CHPRECIO.ReadOnly = true;
             this.CHPRECIO.Visible = false;
             // 
             // CHSERIE
@@ -382,7 +387,6 @@
             this.CHSERIE.DataPropertyName = "chserie";
             this.CHSERIE.HeaderText = "SERIE";
             this.CHSERIE.Name = "CHSERIE";
-            this.CHSERIE.ReadOnly = true;
             this.CHSERIE.Width = 90;
             // 
             // IDSERIE
@@ -392,13 +396,18 @@
             this.IDSERIE.Name = "IDSERIE";
             this.IDSERIE.Visible = false;
             // 
-            // txtIdproducto
+            // btnValidar
             // 
-            this.txtIdproducto.Location = new System.Drawing.Point(307, 85);
-            this.txtIdproducto.Name = "txtIdproducto";
-            this.txtIdproducto.Size = new System.Drawing.Size(100, 20);
-            this.txtIdproducto.TabIndex = 48;
-            this.txtIdproducto.Visible = false;
+            this.btnValidar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnValidar.Enabled = false;
+            this.btnValidar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValidar.ForeColor = System.Drawing.Color.White;
+            this.btnValidar.Location = new System.Drawing.Point(12, 480);
+            this.btnValidar.Name = "btnValidar";
+            this.btnValidar.Size = new System.Drawing.Size(75, 23);
+            this.btnValidar.TabIndex = 35;
+            this.btnValidar.UseVisualStyleBackColor = true;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
             // frmProcPedidosPedidosDetalle
             // 
@@ -408,6 +417,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(663, 519);
+            this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.dgvListaProdSeries);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGrabar);
@@ -459,5 +469,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDSERIE;
         private System.Windows.Forms.CheckBox ckbSerie;
         private System.Windows.Forms.TextBox txtIdproducto;
+        private System.Windows.Forms.Button btnValidar;
     }
 }

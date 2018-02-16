@@ -53,6 +53,7 @@
     <Compile Include="marcaNE.cs" />
     <Compile Include="menuNE.cs" />
     <Compile Include="modeloNE.cs" />
+    <Compile Include="pedidoNE.cs" />
     <Compile Include="perfildetalleNE.cs" />
     <Compile Include="perfilNE.cs" />
     <Compile Include="personaNE.cs" />

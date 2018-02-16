@@ -62,6 +62,7 @@
     <Compile Include="marcaDL.cs" />
     <Compile Include="modeloDL.cs" />
     <Compile Include="parametro.cs" />
+    <Compile Include="pedidoDL.cs" />
     <Compile Include="perfildetalleDL.cs" />
     <Compile Include="perfilDL.cs" />
     <Compile Include="personaDL.cs" />

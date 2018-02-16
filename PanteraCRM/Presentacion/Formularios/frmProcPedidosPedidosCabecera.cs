@@ -13,6 +13,7 @@ namespace Presentacion
 {
     public partial class frmProcPedidosPedidosCabecera : Form
     {
+        List<pedidodetalle> tmbpedidodetalle;
         public frmProcPedidosPedidosCabecera()
         {
             InitializeComponent();
@@ -36,8 +37,8 @@ namespace Presentacion
                 for (int i = 0; i < dgvListaPedidoDetalle.RowCount; i++)
                 {
                     pedidodetalle registros = new pedidodetalle();
-                    registros.p_inidproducto = int.Parse(dgvListaPedidoDetalle.Rows[i].Cells[3].Value.ToString());
-                    registros.nucantidad = decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells[5].Value.ToString());
+                    registros.p_inidproducto = int.Parse(dgvListaPedidoDetalle.Rows[i].Cells["IDPRODUCTO"].Value.ToString());
+                    registros.nucantidad = decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUCANTIDAD"].Value.ToString());
                     listado.Add(registros);
                 }
             }
@@ -47,21 +48,46 @@ namespace Presentacion
             if (res == DialogResult.OK)
             {
                 val++;
-                string nombrecompuesto = f.tmbpedidodetalle.chnombrecompuesto;
-                string codigo = f.tmbpedidodetalle.chcodigoproducto;
-                int idproducto = f.tmbpedidodetalle.p_inidproducto;
-                decimal cantidad = f.tmbpedidodetalle.nucantidad;
-                decimal stock = f.tmbpedidodetalle.nustock;
-                decimal precio = f.tmbpedidodetalle.nuprecioventa;
-                decimal desc1 = f.tmbpedidodetalle.nuporcentajedesc1;
-                decimal desc2 = f.tmbpedidodetalle.nuporcentajedesc2;
-                decimal importe = f.tmbpedidodetalle.nuimportesubtotal;
-                string sval = "000" + val;
-                int pini = sval.Length - 3;
-                int pfin = sval.Length - 1;
-                //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");
-                dgvListaPedidoDetalle.Rows.Add("1", "2", sval.Substring(pini, pfin), idproducto, codigo, cantidad, stock, nombrecompuesto, "-", precio, desc1, desc2, "", importe, "15", "16");
-                //f.tmbpedidodetalle.chnombrecompuesto;
+                tmbpedidodetalle = f.tmplistado;
+                if (f.reqserie)
+                {
+                    foreach (pedidodetalle obj in tmbpedidodetalle)
+                    {
+                        string nombrecompuesto = obj.chnombrecompuesto;
+                        string codigo = obj.chcodigoproducto;
+                        int idproducto = obj.p_inidproducto;
+                        decimal cantidad = obj.nucantidad;
+                        decimal stock = obj.nustock;
+                        decimal precio =obj.nuprecioventa;
+                        decimal desc1 = obj.nuporcentajedesc1;
+                        decimal desc2 = obj.nuporcentajedesc2;
+                        decimal importe = obj.nuimportesubtotal;
+                        string sval = "000" + val;
+                        int pini = sval.Length - 3;
+                        int pfin = sval.Length - 1;
+                        dgvListaPedidoDetalle.Rows.Add("1", "2", sval.Substring(pini, pfin), idproducto, codigo, "1", stock, nombrecompuesto, obj.chserie, precio, desc1, desc2, "", importe, "15", "16");
+                    }
+                    //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");
+                }
+                else
+                {
+                    string nombrecompuesto = f.tmbpedidodetalle.chnombrecompuesto;
+                    string codigo = f.tmbpedidodetalle.chcodigoproducto;
+                    int idproducto = f.tmbpedidodetalle.p_inidproducto;
+                    decimal cantidad = f.tmbpedidodetalle.nucantidad;
+                    decimal stock = f.tmbpedidodetalle.nustock;
+                    decimal precio = f.tmbpedidodetalle.nuprecioventa;
+                    decimal desc1 = f.tmbpedidodetalle.nuporcentajedesc1;
+                    decimal desc2 = f.tmbpedidodetalle.nuporcentajedesc2;
+                    decimal importe = f.tmbpedidodetalle.nuimportesubtotal;
+                    string sval = "000" + val;
+                    int pini = sval.Length - 3;
+                    int pfin = sval.Length - 1;
+                    //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");
+                    dgvListaPedidoDetalle.Rows.Add("1", "2", sval.Substring(pini, pfin), idproducto, codigo, cantidad, stock, nombrecompuesto, "-", precio, desc1, desc2, "", importe, "15", "16");
+                    //f.tmbpedidodetalle.chnombrecompuesto;
+                }
+
             }
             
         }
@@ -167,6 +193,21 @@ namespace Presentacion
                     txtPtoLlegada.Text = f.chdireccion;
                 }
             }
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Esta seguro de Registrar el pedido", "MENSAJE DE SISTEMA", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Registros Grabados", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("Cancelo la Grabacion ", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            this.Dispose();
         }
     }
 }
