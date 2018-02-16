@@ -13,6 +13,8 @@ namespace Presentacion
 {
     public partial class frmProcPedidosPedidosDetalle : Form
     {
+        public pedidodetalle tmbpedidodetalle;
+        public List<pedidodetalle> tmplistadovalidar;
         public frmProcPedidosPedidosDetalle()
         {
             InitializeComponent();
@@ -54,18 +56,48 @@ namespace Presentacion
             {
                 foreach (productoparaventa a in obprodventa)
                 {
-                    txtDescripcion.Text = a.chnombrecompuesto;
-                    txtImporte.Text = "0.00";
-                    txtPreUnit.Text = a.nuprecio.ToString();
-                    txtStock.Text = a.nustockactual.ToString(); ;
-                    cargarData(0, a.p_inidproducto);
-                    ckbSerie.Checked = a.req_serie;
+                    if (tmplistadovalidar != null)
+                    {
+                        decimal val = 0;
+                        foreach (pedidodetalle obj in tmplistadovalidar)
+                        {
+                            if (obj.p_inidproducto == a.p_inidproducto)
+                            {
+                                val = val + obj.nucantidad;
+                                txtStock.Text = (a.nustockactual - val).ToString();
+                            }else
+                            {
+                                txtStock.Text = "AA";
+
+                            }
+                        }
+                        txtDescripcion.Text = a.chnombrecompuesto;
+                        txtIdproducto.Text = a.p_inidproducto.ToString();
+                        txtImporte.Text = "0.020";
+                        txtPreUnit.Text = a.nuprecio.ToString();
+                        txtMedida.Text = a.chunidadmedidaproducto;
+                        cargarData(0, a.p_inidproducto);
+                        ckbSerie.Checked = a.req_serie;
+                    }
+                    else
+                    {
+                        txtDescripcion.Text = a.chnombrecompuesto;
+                        txtIdproducto.Text = a.p_inidproducto.ToString();
+                        txtImporte.Text = "0.00";
+                        txtPreUnit.Text = a.nuprecio.ToString();
+                        txtStock.Text = a.nustockactual.ToString(); ;
+                        txtMedida.Text = a.chunidadmedidaproducto;
+                        cargarData(0, a.p_inidproducto);
+                        ckbSerie.Checked = a.req_serie;
+                    }
+                    
                 }
             }else
             {
                 txtDescripcion.Text = "";
             }
         }
+       
         public void cargarData(int registro, int parametro)
         {
            
@@ -308,11 +340,24 @@ namespace Presentacion
             {
                 //EL PRODUCTO REQUIERE DE SERIES
 
-            }else
+            } else
             {
                 //EL PRODUCTO NO REQUIERE DE SERIES
+                tmbpedidodetalle = new pedidodetalle();
+                tmbpedidodetalle.p_inidproducto = int.Parse(txtIdproducto.Text);
+                tmbpedidodetalle.chcodigoproducto = txtCodigo.Text;
+                tmbpedidodetalle.chnombrecompuesto = txtDescripcion.Text;
+                tmbpedidodetalle.nustock = int.Parse(txtStock.Text);
+                tmbpedidodetalle.nuprecioproducto = decimal.Parse(txtPreUnit.Text);
+                tmbpedidodetalle.nuprecioventa = decimal.Parse(txtPrecioVenta.Text);
+                tmbpedidodetalle.nuporcentajedesc1 = decimal.Parse(txtDesc1.Text);
+                tmbpedidodetalle.nuporcentajedesc2 = decimal.Parse(txtDesc2.Text);
+                tmbpedidodetalle.nuimportesubtotal = decimal.Parse(txtImporte.Text);
+                tmbpedidodetalle.nucantidad = decimal.Parse(txtCant.Text);
 
             }
+            this.Dispose();
         }
+        public void CalcularVariables() { }
     }
 }

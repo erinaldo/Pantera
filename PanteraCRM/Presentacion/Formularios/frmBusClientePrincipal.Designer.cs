@@ -1,4 +1,4 @@
-﻿namespace Presentacion.Formularios
+﻿namespace Presentacion
 {
     partial class frmBusClientePrincipal
     {
@@ -32,19 +32,29 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBusClientePrincipal));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListaclientes = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtParametroBusqueda = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.IDCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTIPOCODU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHNRODOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDIRECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTIPOCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaclientes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvListaclientes
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListaclientes.AllowUserToAddRows = false;
+            this.dgvListaclientes.AllowUserToDeleteRows = false;
+            this.dgvListaclientes.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -52,8 +62,17 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaclientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvListaclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaclientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDCLIENTE,
+            this.CHCODIGO,
+            this.CHDESCRIPCION,
+            this.CHTIPOCODU,
+            this.CHNRODOCU,
+            this.CHDIRECCION,
+            this.CHTIPOCLIENTE,
+            this.CHTELEFONO});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -61,9 +80,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 54);
-            this.dataGridView1.Name = "dataGridView1";
+            this.dgvListaclientes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListaclientes.Location = new System.Drawing.Point(12, 54);
+            this.dgvListaclientes.Name = "dgvListaclientes";
+            this.dgvListaclientes.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -71,13 +91,13 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(610, 224);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvListaclientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvListaclientes.Size = new System.Drawing.Size(610, 224);
+            this.dgvListaclientes.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtParametroBusqueda);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
@@ -85,10 +105,28 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // txtParametroBusqueda
+            // 
+            this.txtParametroBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtParametroBusqueda.Location = new System.Drawing.Point(67, 16);
+            this.txtParametroBusqueda.Name = "txtParametroBusqueda";
+            this.txtParametroBusqueda.Size = new System.Drawing.Size(537, 20);
+            this.txtParametroBusqueda.TabIndex = 1;
+            this.txtParametroBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Busqueda";
+            // 
             // btnGrabar
             // 
             this.btnGrabar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnGrabar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnGrabar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Location = new System.Drawing.Point(239, 322);
             this.btnGrabar.Name = "btnGrabar";
@@ -96,6 +134,7 @@
             this.btnGrabar.TabIndex = 14;
             this.btnGrabar.Text = "&Seleccionar";
             this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnSalir
             // 
@@ -107,23 +146,71 @@
             this.btnSalir.TabIndex = 15;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // label1
+            // IDCLIENTE
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Busqueda";
+            this.IDCLIENTE.DataPropertyName = "p_inidcodigoclie";
+            this.IDCLIENTE.HeaderText = "IDCLIENTE";
+            this.IDCLIENTE.Name = "IDCLIENTE";
+            this.IDCLIENTE.ReadOnly = true;
+            this.IDCLIENTE.Visible = false;
             // 
-            // textBox1
+            // CHCODIGO
             // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Location = new System.Drawing.Point(67, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(537, 20);
-            this.textBox1.TabIndex = 1;
+            this.CHCODIGO.DataPropertyName = "chcodigocliente";
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 70;
+            // 
+            // CHDESCRIPCION
+            // 
+            this.CHDESCRIPCION.DataPropertyName = "razon";
+            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
+            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
+            this.CHDESCRIPCION.ReadOnly = true;
+            this.CHDESCRIPCION.Width = 300;
+            // 
+            // CHTIPOCODU
+            // 
+            this.CHTIPOCODU.DataPropertyName = "tipodocu";
+            this.CHTIPOCODU.HeaderText = "TIPO";
+            this.CHTIPOCODU.Name = "CHTIPOCODU";
+            this.CHTIPOCODU.ReadOnly = true;
+            this.CHTIPOCODU.Visible = false;
+            // 
+            // CHNRODOCU
+            // 
+            this.CHNRODOCU.DataPropertyName = "nrodocumento";
+            this.CHNRODOCU.HeaderText = "RUC o DNI";
+            this.CHNRODOCU.Name = "CHNRODOCU";
+            this.CHNRODOCU.ReadOnly = true;
+            this.CHNRODOCU.Width = 110;
+            // 
+            // CHDIRECCION
+            // 
+            this.CHDIRECCION.DataPropertyName = "chdireccion";
+            this.CHDIRECCION.HeaderText = "DIRECCION";
+            this.CHDIRECCION.Name = "CHDIRECCION";
+            this.CHDIRECCION.ReadOnly = true;
+            this.CHDIRECCION.Visible = false;
+            // 
+            // CHTIPOCLIENTE
+            // 
+            this.CHTIPOCLIENTE.DataPropertyName = "tipoclie";
+            this.CHTIPOCLIENTE.HeaderText = "TIPO CLIENTE";
+            this.CHTIPOCLIENTE.Name = "CHTIPOCLIENTE";
+            this.CHTIPOCLIENTE.ReadOnly = true;
+            this.CHTIPOCLIENTE.Width = 110;
+            // 
+            // CHTELEFONO
+            // 
+            this.CHTELEFONO.DataPropertyName = "telefono";
+            this.CHTELEFONO.HeaderText = "TELEFONO";
+            this.CHTELEFONO.Name = "CHTELEFONO";
+            this.CHTELEFONO.ReadOnly = true;
+            this.CHTELEFONO.Visible = false;
             // 
             // frmBusClientePrincipal
             // 
@@ -136,12 +223,13 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvListaclientes);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBusClientePrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BUSQUEDA DE CLIENTES";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaclientes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -150,11 +238,19 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListaclientes;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtParametroBusqueda;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHDESCRIPCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHTIPOCODU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHNRODOCU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHDIRECCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHTIPOCLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHTELEFONO;
     }
 }

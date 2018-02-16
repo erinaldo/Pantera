@@ -27,9 +27,43 @@ namespace Presentacion
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
+            int val = 0;
+            List<pedidodetalle> listado = null;
+            
+            if (dgvListaPedidoDetalle.RowCount > 0)
+            {
+                listado =new List<pedidodetalle>();
+                for (int i = 0; i < dgvListaPedidoDetalle.RowCount; i++)
+                {
+                    pedidodetalle registros = new pedidodetalle();
+                    registros.p_inidproducto = int.Parse(dgvListaPedidoDetalle.Rows[i].Cells[3].Value.ToString());
+                    registros.nucantidad = decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells[5].Value.ToString());
+                    listado.Add(registros);
+                }
+            }
             frmProcPedidosPedidosDetalle f = new frmProcPedidosPedidosDetalle();
-            //f.pasado += new frmProcFacturacionAnadir.pasar(ejecutar);
-            f.ShowDialog();
+            f.tmplistadovalidar = listado;
+            DialogResult res = f.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                val++;
+                string nombrecompuesto = f.tmbpedidodetalle.chnombrecompuesto;
+                string codigo = f.tmbpedidodetalle.chcodigoproducto;
+                int idproducto = f.tmbpedidodetalle.p_inidproducto;
+                decimal cantidad = f.tmbpedidodetalle.nucantidad;
+                decimal stock = f.tmbpedidodetalle.nustock;
+                decimal precio = f.tmbpedidodetalle.nuprecioventa;
+                decimal desc1 = f.tmbpedidodetalle.nuporcentajedesc1;
+                decimal desc2 = f.tmbpedidodetalle.nuporcentajedesc2;
+                decimal importe = f.tmbpedidodetalle.nuimportesubtotal;
+                string sval = "000" + val;
+                int pini = sval.Length - 3;
+                int pfin = sval.Length - 1;
+                //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");
+                dgvListaPedidoDetalle.Rows.Add("1", "2", sval.Substring(pini, pfin), idproducto, codigo, cantidad, stock, nombrecompuesto, "-", precio, desc1, desc2, "", importe, "15", "16");
+                //f.tmbpedidodetalle.chnombrecompuesto;
+            }
+            
         }
 
         private void frmProcPedidosPedidosCabecera_Load(object sender, EventArgs e)
@@ -106,12 +140,33 @@ namespace Presentacion
 
         private void txtRucCliente_TextChanged(object sender, EventArgs e)
         {
-
+            string parametro = txtRucCliente.Text;
+            Busquedacliente(parametro);
         }
 
         private void txtRucCliente_DoubleClick(object sender, EventArgs e)
         {
-
+            frmBusClientePrincipal f = new frmBusClientePrincipal();
+            DialogResult res = f.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                string parametro= f.tmpcliente.nrodocumento;
+                Busquedacliente(parametro);
+            }            
+        }
+        public void Busquedacliente(string parametro)
+        {
+            List<clientebusqueda> listado = clienteNE.ClienteBusquedaParametro(parametro);
+            if (listado != null)
+            {
+                foreach (clientebusqueda f in listado)
+                {
+                    txtRucCliente.Text = f.nrodocumento;
+                    txtNombreCliente.Text = f.razon;
+                    txtCodigoCliente.Text = f.chcodigocliente;
+                    txtPtoLlegada.Text = f.chdireccion;
+                }
+            }
         }
     }
 }

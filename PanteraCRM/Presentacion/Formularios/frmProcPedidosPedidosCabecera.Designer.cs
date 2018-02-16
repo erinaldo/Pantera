@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcPedidosPedidosCabecera));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNroPedido = new System.Windows.Forms.TextBox();
@@ -89,11 +93,27 @@
             this.txtValVenta = new System.Windows.Forms.TextBox();
             this.txtDesctot = new System.Windows.Forms.TextBox();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListaPedidoDetalle = new System.Windows.Forms.DataGridView();
+            this.IDPEDIDODETALLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPEDIDOCABECERA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUCANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUSTOCK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHPRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESC1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESC2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUPRECIOVENTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUIMPORTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaPedidoDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -571,7 +591,7 @@
             this.groupBox3.Controls.Add(this.txtValVenta);
             this.groupBox3.Controls.Add(this.txtDesctot);
             this.groupBox3.Controls.Add(this.txtSubtotal);
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.dgvListaPedidoDetalle);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.groupBox3.Location = new System.Drawing.Point(13, 280);
             this.groupBox3.Name = "groupBox3";
@@ -741,14 +761,154 @@
             this.txtSubtotal.TabIndex = 17;
             this.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // dataGridView1
+            // dgvListaPedidoDetalle
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 9);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(759, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvListaPedidoDetalle.AllowUserToAddRows = false;
+            this.dgvListaPedidoDetalle.AllowUserToDeleteRows = false;
+            this.dgvListaPedidoDetalle.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListaPedidoDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaPedidoDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDPEDIDODETALLE,
+            this.IDPEDIDOCABECERA,
+            this.CHITEM,
+            this.IDPRODUCTO,
+            this.CHCODIGO,
+            this.NUCANTIDAD,
+            this.NUSTOCK,
+            this.CHDESCRIPCION,
+            this.CHSERIE,
+            this.CHPRECIO,
+            this.DESC1,
+            this.DESC2,
+            this.NUPRECIOVENTA,
+            this.NUIMPORTE,
+            this.ESTADO,
+            this.IDSERIE});
+            this.dgvListaPedidoDetalle.Location = new System.Drawing.Point(9, 19);
+            this.dgvListaPedidoDetalle.Name = "dgvListaPedidoDetalle";
+            this.dgvListaPedidoDetalle.ReadOnly = true;
+            this.dgvListaPedidoDetalle.Size = new System.Drawing.Size(759, 150);
+            this.dgvListaPedidoDetalle.TabIndex = 0;
+            // 
+            // IDPEDIDODETALLE
+            // 
+            this.IDPEDIDODETALLE.HeaderText = "IDPEDIDODETALLE";
+            this.IDPEDIDODETALLE.Name = "IDPEDIDODETALLE";
+            this.IDPEDIDODETALLE.ReadOnly = true;
+            this.IDPEDIDODETALLE.Visible = false;
+            // 
+            // IDPEDIDOCABECERA
+            // 
+            this.IDPEDIDOCABECERA.HeaderText = "IDPEDIDOCABECERA";
+            this.IDPEDIDOCABECERA.Name = "IDPEDIDOCABECERA";
+            this.IDPEDIDOCABECERA.ReadOnly = true;
+            this.IDPEDIDOCABECERA.Visible = false;
+            // 
+            // CHITEM
+            // 
+            this.CHITEM.HeaderText = "LIN";
+            this.CHITEM.Name = "CHITEM";
+            this.CHITEM.ReadOnly = true;
+            this.CHITEM.Width = 30;
+            // 
+            // IDPRODUCTO
+            // 
+            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
+            this.IDPRODUCTO.Name = "IDPRODUCTO";
+            this.IDPRODUCTO.ReadOnly = true;
+            this.IDPRODUCTO.Visible = false;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 60;
+            // 
+            // NUCANTIDAD
+            // 
+            this.NUCANTIDAD.HeaderText = "CANTIDAD";
+            this.NUCANTIDAD.Name = "NUCANTIDAD";
+            this.NUCANTIDAD.ReadOnly = true;
+            this.NUCANTIDAD.Width = 70;
+            // 
+            // NUSTOCK
+            // 
+            this.NUSTOCK.HeaderText = "STOCK";
+            this.NUSTOCK.Name = "NUSTOCK";
+            this.NUSTOCK.ReadOnly = true;
+            this.NUSTOCK.Visible = false;
+            this.NUSTOCK.Width = 60;
+            // 
+            // CHDESCRIPCION
+            // 
+            this.CHDESCRIPCION.HeaderText = "DESCIPCION";
+            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
+            this.CHDESCRIPCION.ReadOnly = true;
+            this.CHDESCRIPCION.Width = 270;
+            // 
+            // CHSERIE
+            // 
+            this.CHSERIE.HeaderText = "SERIE";
+            this.CHSERIE.Name = "CHSERIE";
+            this.CHSERIE.ReadOnly = true;
+            // 
+            // CHPRECIO
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.CHPRECIO.DefaultCellStyle = dataGridViewCellStyle1;
+            this.CHPRECIO.HeaderText = "PRECIO";
+            this.CHPRECIO.Name = "CHPRECIO";
+            this.CHPRECIO.ReadOnly = true;
+            this.CHPRECIO.Width = 50;
+            // 
+            // DESC1
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.DESC1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DESC1.HeaderText = "DSCTO%";
+            this.DESC1.Name = "DESC1";
+            this.DESC1.ReadOnly = true;
+            this.DESC1.Width = 60;
+            // 
+            // DESC2
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.DESC2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DESC2.HeaderText = "DSCTO%";
+            this.DESC2.Name = "DESC2";
+            this.DESC2.ReadOnly = true;
+            this.DESC2.Width = 60;
+            // 
+            // NUPRECIOVENTA
+            // 
+            this.NUPRECIOVENTA.HeaderText = "NUPRECIOVENTA";
+            this.NUPRECIOVENTA.Name = "NUPRECIOVENTA";
+            this.NUPRECIOVENTA.ReadOnly = true;
+            this.NUPRECIOVENTA.Visible = false;
+            // 
+            // NUIMPORTE
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.NUIMPORTE.DefaultCellStyle = dataGridViewCellStyle4;
+            this.NUIMPORTE.HeaderText = "IMPORTE";
+            this.NUIMPORTE.Name = "NUIMPORTE";
+            this.NUIMPORTE.ReadOnly = true;
+            this.NUIMPORTE.Width = 60;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.HeaderText = "ESTADO";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
+            this.ESTADO.Visible = false;
+            // 
+            // IDSERIE
+            // 
+            this.IDSERIE.HeaderText = "IDSERIE";
+            this.IDSERIE.Name = "IDSERIE";
+            this.IDSERIE.ReadOnly = true;
+            this.IDSERIE.Visible = false;
             // 
             // frmProcPedidosPedidosCabecera
             // 
@@ -774,7 +934,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaPedidoDetalle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -826,7 +986,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtRucTrans;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListaPedidoDetalle;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
@@ -842,5 +1002,21 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAnadir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPEDIDODETALLE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPEDIDOCABECERA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHITEM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODUCTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NUCANTIDAD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NUSTOCK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHDESCRIPCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHSERIE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHPRECIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESC1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESC2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NUPRECIOVENTA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NUIMPORTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDSERIE;
     }
 }

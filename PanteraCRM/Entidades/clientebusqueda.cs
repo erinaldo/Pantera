@@ -8,21 +8,25 @@ namespace Entidades
 {
     public class clientebusqueda
     {
-        public int p_inidcliente { get; set; }
+        public int p_inidcodigoclie { get; set; }
         public string chcodigocliente { get; set; }
-        public string chnombrecliente { get; set; }
-        public string chtipodocumento { get; set; }
-        public string chnumerodocumento { get; set; }
-        public string chdirecionfiscal { get; set; }
+        public string razon { get; set; }
+        public string tipodocu { get; set; }
+        public string nrodocumento { get; set; }
+        public string chdireccion { get; set; }
+        public string tipoclie { get; set; }
+        public string telefono { get; set; }
         public clientebusqueda()
         {
-            this.p_inidcliente = 0;
+            this.p_inidcodigoclie = 0;
             this.chcodigocliente = string.Empty;
-            this.chnombrecliente = string.Empty;
-            this.chtipodocumento = string.Empty;
-            this.chnumerodocumento = string.Empty;
-            this.chdirecionfiscal = string.Empty;
+            this.razon = string.Empty;
+            this.tipodocu = string.Empty;
+            this.nrodocumento = string.Empty;
+            this.chdireccion = string.Empty;
+            this.tipoclie = string.Empty;
+            this.telefono = string.Empty;
 
-    }
+        }
     }
 }

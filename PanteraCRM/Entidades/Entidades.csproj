@@ -58,6 +58,7 @@
     <Compile Include="marca.cs" />
     <Compile Include="menu.cs" />
     <Compile Include="modelo.cs" />
+    <Compile Include="pedidodetalle.cs" />
     <Compile Include="perfil.cs" />
     <Compile Include="perfildetalle.cs" />
     <Compile Include="persona.cs" />

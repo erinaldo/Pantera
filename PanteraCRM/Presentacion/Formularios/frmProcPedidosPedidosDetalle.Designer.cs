@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ckbSerie = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,7 +60,7 @@
             this.CHPRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ckbSerie = new System.Windows.Forms.CheckBox();
+            this.txtIdproducto = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdSeries)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtIdproducto);
             this.groupBox1.Controls.Add(this.ckbSerie);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -109,6 +111,16 @@
             this.groupBox1.Size = new System.Drawing.Size(639, 164);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
+            // 
+            // ckbSerie
+            // 
+            this.ckbSerie.AutoSize = true;
+            this.ckbSerie.Location = new System.Drawing.Point(338, 51);
+            this.ckbSerie.Name = "ckbSerie";
+            this.ckbSerie.Size = new System.Drawing.Size(15, 14);
+            this.ckbSerie.TabIndex = 47;
+            this.ckbSerie.UseVisualStyleBackColor = true;
+            this.ckbSerie.Visible = false;
             // 
             // label8
             // 
@@ -278,6 +290,7 @@
             // btnGrabar
             // 
             this.btnGrabar.BackColor = System.Drawing.Color.White;
+            this.btnGrabar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnGrabar.Location = new System.Drawing.Point(253, 475);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 32);
@@ -379,15 +392,13 @@
             this.IDSERIE.Name = "IDSERIE";
             this.IDSERIE.Visible = false;
             // 
-            // ckbSerie
+            // txtIdproducto
             // 
-            this.ckbSerie.AutoSize = true;
-            this.ckbSerie.Location = new System.Drawing.Point(338, 51);
-            this.ckbSerie.Name = "ckbSerie";
-            this.ckbSerie.Size = new System.Drawing.Size(15, 14);
-            this.ckbSerie.TabIndex = 47;
-            this.ckbSerie.UseVisualStyleBackColor = true;
-            this.ckbSerie.Visible = false;
+            this.txtIdproducto.Location = new System.Drawing.Point(307, 85);
+            this.txtIdproducto.Name = "txtIdproducto";
+            this.txtIdproducto.Size = new System.Drawing.Size(100, 20);
+            this.txtIdproducto.TabIndex = 48;
+            this.txtIdproducto.Visible = false;
             // 
             // frmProcPedidosPedidosDetalle
             // 
@@ -447,5 +458,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSERIE;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDSERIE;
         private System.Windows.Forms.CheckBox ckbSerie;
+        private System.Windows.Forms.TextBox txtIdproducto;
     }
 }

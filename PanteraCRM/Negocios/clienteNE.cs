@@ -13,5 +13,13 @@ namespace Negocios
         {
             return clienteDL.clienteListar();
         }
+        public static List<clientebusqueda> ClienteListarParametro(string parametro)
+        {
+            return clienteDL.ClienteListarParametro(parametro);
+        }
+        public static List<clientebusqueda> ClienteBusquedaParametro(string parametro)
+        {
+            return clienteDL.ClienteBusquedaParametro(parametro);
+        }
     }
 }
