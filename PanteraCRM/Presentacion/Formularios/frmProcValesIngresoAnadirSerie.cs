@@ -35,14 +35,12 @@ namespace Presentacion
         
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            bool valCantidad = txtCantidad.Text.Length > 0 && int.Parse(txtCantidad.Text) > 0;
-            bool valListasize = int.Parse(txtCantidad.Text) > dgvListaIngreso.RowCount  ;
             bool valserie = txtSerie.Text.Length > 0;
             bool valExisBd = validarExistencia(txtSerie.Text);
             bool valExisList = validarExistenciaMemoria(txtSerie.Text);
-            if (valCantidad)
+            if (validarCantidad())
             {               
-                if (valListasize)
+                if (validarCantidadfilas())
                 {
                     if (valserie)
                     {
@@ -56,6 +54,7 @@ namespace Presentacion
                             dgvListaIngreso.Rows.Add(p_inidproducto, chproducto, chnombrecompuesto, chserie, chobs);
                             txtSerie.Text = "";
                             txtObs.Text = "";
+                            txtCodigoSerie.Text = "";
                             txtSerie.Focus();
                         }
                         else
@@ -67,20 +66,20 @@ namespace Presentacion
                     }
                     else
                     {
-                        MessageBox.Show("Ingreso de Serie Obligatorio");
+                        MessageBox.Show("Ingreso de Serie Obligatorio", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                         return;
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Lista de Producto Completada");
+                    MessageBox.Show("Lista está Completada", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                     return;
                 }
             }
             else
             {
-                MessageBox.Show("La cantidad Invalida");
+                MessageBox.Show("La cantidad es Invalida", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 txtCantidad.Focus();
                 return;
             }
@@ -137,7 +136,7 @@ namespace Presentacion
             {
                 precio = decimal.Parse(txtprecio.Text);
             }
-            txtsubtotal.Text =decimal.Round( precio * cantidad).ToString();
+            txtsubtotal.Text =decimal.Round( precio * cantidad,2).ToString();
         }
 
       
@@ -150,64 +149,70 @@ namespace Presentacion
                 case "A":
                     //ATRIBUTOS PARA INGRESAR PRODUCTO
                     // CONFIRMACION
-                    bool flat3 = ValidarCampos();                    
-                    if (flat3)
+                    if (validarParaingreso())
                     {
-                        //VALIDACION
-                        bool flat4 = ConfirmacionRegistro();
-                        if (flat4)
-                        {
-                            //INGRESO
-                            bool flat = true;
-                            //IngresoRegistros();
-                            List<serie> obsej =  new List<serie>();
-                            for (int i = 0; i < dgvListaIngreso.RowCount; i++)
-                            {
-                               
-                                tmpSerie = new serie();
-                                tmpSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells[3].Value.ToString();
-                                tmpSerie.estado = true;
-                                tmpSerie.p_inidproducto = int.Parse(txtidcodigo.Text);
-                                tmpSerie.chadicional = dgvListaIngreso.Rows[i].Cells[4].Value.ToString();
-                                tmpSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-                                tmpSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                                tmpSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
-                                obsej.Add(tmpSerie);
 
-                            }
-                            sesion.listaserie = obsej;
-                            valedetalle valedetallessss = new valedetalle();
-                            valedetallessss.chnombrecompuesto = txtNombreconpuesto.Text;
-                            valedetallessss.chcodigoproducto = txtcodprod.Text;
-                            valedetallessss.chcodigoserie = txtMedida.Text;
-                            valedetallessss.p_inidproducto = int.Parse(txtidcodigo.Text);
-                            valedetallessss.nucantidad = int.Parse(txtCantidad.Text);
-                            valedetallessss.nucosto = decimal.Parse(txtprecio.Text);
-                            valedetallessss.nutotal = decimal.Parse(txtsubtotal.Text);
-
-                            sesion.valedetalles = valedetallessss;
-                            //MessageBox.Show("Las Series se Ingresaron al Sistema");
-                            dgvListaIngreso.Rows.Clear();                           
-                         }
                     }else
                     {
-                        MessageBox.Show("Campos incorrectos verificar");
                         return;
-                    }                                   
-                   
+                    }
+                    //bool flat3 = ValidarCampos();                    
+                    //if (flat3)
+                    //{
+                    //    //VALIDACION
+                    //    bool flat4 = ConfirmacionRegistro();
+                    //    if (flat4)
+                    //    {
+                    //        //INGRESO
+                    //        bool flat = true;
+                    //        //IngresoRegistros();
+                    //        List<serie> obsej =  new List<serie>();
+                    //        for (int i = 0; i < dgvListaIngreso.RowCount; i++)
+                    //        {
+
+                    //            tmpSerie = new serie();
+                    //            tmpSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells[3].Value.ToString();
+                    //            tmpSerie.estado = true;
+                    //            tmpSerie.p_inidproducto = int.Parse(txtidcodigo.Text);
+                    //            tmpSerie.chadicional = dgvListaIngreso.Rows[i].Cells[4].Value.ToString();
+                    //            tmpSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+                    //            tmpSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                    //            tmpSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
+                    //            obsej.Add(tmpSerie);
+
+                    //        }
+                    //        sesion.listaserie = obsej;
+                    //        valedetalle valedetallessss = new valedetalle();
+                    //        valedetallessss.chnombrecompuesto = txtNombreconpuesto.Text;
+                    //        valedetallessss.chcodigoproducto = txtcodprod.Text;
+                    //        valedetallessss.chcodigoserie = txtMedida.Text;
+                    //        valedetallessss.p_inidproducto = int.Parse(txtidcodigo.Text);
+                    //        valedetallessss.nucantidad = int.Parse(txtCantidad.Text);
+                    //        valedetallessss.nucosto = decimal.Parse(txtprecio.Text);
+                    //        valedetallessss.nutotal = decimal.Parse(txtsubtotal.Text);
+
+                    //        sesion.valedetalles = valedetallessss;
+                    //        //MessageBox.Show("Las Series se Ingresaron al Sistema");
+                    //        dgvListaIngreso.Rows.Clear();                           
+                    //     }
+                    //}else
+                    //{
+                    //    MessageBox.Show("Campos incorrectos verificar");
+                    //    return;
+                    //}             
                     break;
                 case "M":
-                    tmpSerie = new serie();
-                    varIdArticulo = serieNE.seriesIngresar(tmpSerie);
-                    if (varIdArticulo <= 0)
-                    {
-                        MessageBox.Show("Registro con error por actualizado, validar");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Registro actualizado");
-                        pasado(varIdArticulo);
-                    }
+                    //tmpSerie = new serie();
+                    //varIdArticulo = serieNE.seriesIngresar(tmpSerie);
+                    //if (varIdArticulo <= 0)
+                    //{
+                    //    MessageBox.Show("Registro con error por actualizado, validar");
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Registro actualizado");
+                    //    pasado(varIdArticulo);
+                    //}
                     break;
                 default:
                     break;
@@ -262,14 +267,13 @@ namespace Presentacion
         }
         private bool ConfirmacionRegistro()
         {
-            bool flat55 = false;
-            if (MessageBox.Show("¿Esta Seguro de Grabar las series?", "Mensaje de Confirmación",
-         MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-         == DialogResult.Yes)
+            bool flat = false;
+            DialogResult result = MessageBox.Show("¿Esta Seguro de Grabar las series?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                flat55 = true;
+                flat = true;
             }
-            return flat55;
+            return flat;
         }
 
         private void frmProcSeriesAnadir_Load(object sender, EventArgs e)
@@ -378,6 +382,7 @@ namespace Presentacion
         {
 
             calcular();
+            LimpiarFilasporCambio();
         }
 
         private void txtprecio_TextChanged(object sender, EventArgs e)
@@ -385,14 +390,80 @@ namespace Presentacion
 
             calcular();
         }
-        public void validarCantidad()
+        public  bool validarCantidadfilas()
         {
+            bool flat = false;
             int cantidad = 0;
             if (txtCantidad.Text.Length >0)
             {
                 cantidad = int.Parse(txtCantidad.Text);
             }
+            if (cantidad > dgvListaIngreso.RowCount)
+            {
+                flat = true;
+            }
             
+            return flat;
+        }
+        public void LimpiarFilasporCambio()
+        {
+            int cantidad = 0;
+            if (txtCantidad.Text.Length > 0)
+            {
+                cantidad = int.Parse(txtCantidad.Text);
+            }
+            if (cantidad < dgvListaIngreso.RowCount)
+            {
+                dgvListaIngreso.Rows.Clear();
+            }
+            
+        }
+        public bool validarCantidad()
+        {
+            bool flat = false;
+            int cantidad = 0;
+            if (txtCantidad.Text.Length > 0)
+            {
+                cantidad = int.Parse(txtCantidad.Text);
+                if (cantidad > 0)
+                {
+                    flat = true;
+                }
+            }           
+
+            return flat;
+        }
+        public bool validarParaingreso()
+        {
+            bool flat = false;
+            int cantidad = 0;
+            decimal precio = 0;
+            if (txtCantidad.Text.Length > 0)
+            {
+                cantidad = int.Parse(txtCantidad.Text);
+            }
+            if (txtprecio.Text.Length >0)
+            {
+                precio= decimal.Parse( txtprecio.Text);
+            }
+            int lista = dgvListaIngreso.RowCount;
+            if (grbAgregadoSerie.Enabled == true)
+            {
+                if (cantidad == lista)
+                {
+                    flat = true;
+                }
+                else
+                {
+                    MessageBox.Show("Lista de series incompleta", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                    flat = false;
+                }
+            }else
+            {
+                flat = true;
+            }
+            
+            return flat;
         }
     }
 }
