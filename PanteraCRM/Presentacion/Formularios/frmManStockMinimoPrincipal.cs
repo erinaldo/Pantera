@@ -37,58 +37,79 @@ namespace Presentacion
         {
             if (parametro == "")
             {
-                List<productobuscado> listado = productoNE.ListaPreciosLista();
-                dgvListaProdStock.DataSource = listado;
+                List<productobuscado> listado = productoNE.ListaStockminimoLista();
+                dgvListaSotck.DataSource = listado;
             }
             else
             {
-                List<productobuscado> listado = productoNE.ListaPreciosListaParametro(parametro);
-                dgvListaProdStock.DataSource = listado;
+                List<productobuscado> listado = productoNE.ListaStockMinimoParametro(parametro);
+                dgvListaSotck.DataSource = listado;
             }
 
         }
         public void ejecutar(int dato)
         {
             cargarData(0, "");
-            foreach (DataGridViewRow Row in dgvListaProdStock.Rows)
+            foreach (DataGridViewRow Row in dgvListaSotck.Rows)
             {
                 int valor = (int)Row.Cells["IDPRODUCTO"].Value;
                 if (valor == dato)
                 {
                     int puntero = (int)Row.Index;
                     //                    dgvPersona.CurrentCell = dgvPersona.Rows[puntero].Cells["IDPERSONA"];
-                    dgvListaProdStock.CurrentCell = dgvListaProdStock.Rows[puntero].Cells[1];
+                    dgvListaSotck.CurrentCell = dgvListaSotck.Rows[puntero].Cells[1];
                     return;
                 }
             }
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
+
             try
             {
-                vBoton = "A";
-                if (basicas.validarAcceso(vBoton))
-                {
-                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManStockMinimoPrincipal);
-                    if (frm != null)
-                    {
-                        frm.BringToFront();
-                        return;
-                    }
-                    frmManTipoPersonaVentaAnadir f = new frmManTipoPersonaVentaAnadir();
-                    //f.pasado += new frmManTipoPersonaVentaAnadir.pasar(ejecutar);
-                    f.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
-                }
+                vBoton = "M";
+                cargarFormularioAnadir();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
             }
+        }
+
+        private void txtParametro_TextChanged(object sender, EventArgs e)
+        {
+            string parametro = txtParametro.Text;
+            cargarData(0, parametro);
+        }
+        private void cargarFormularioAnadir()
+        {
+            if (dgvListaSotck.RowCount == 0)
+            {
+                MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManStockMinimoAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            frmManStockMinimoAnadir f = new frmManStockMinimoAnadir(vBoton);
+            f.pasado += new frmManStockMinimoAnadir.pasar(ejecutar);
+            f.tmpsaldoalmacen = new saldoalmacen();
+            f.tmpsaldoalmacen.p_inidproducto = (int)dgvListaSotck.CurrentRow.Cells["IDPRODUCTO"].Value;
+            f.tmpsaldoalmacen.chcodigo = (string)dgvListaSotck.CurrentRow.Cells["CHCODIGO"].Value; 
+            f.tmpsaldoalmacen.chnombrecompuesto = (string)dgvListaSotck.CurrentRow.Cells["CHDESCRIPCION"].Value;
+            f.tmpsaldoalmacen.nustockminima= (decimal)dgvListaSotck.CurrentRow.Cells["CHSTOCK"].Value;
+
+            f.ShowDialog();
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            vBoton = "V";
+            cargarFormularioAnadir();
         }
     }
 }

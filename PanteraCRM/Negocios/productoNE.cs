@@ -28,12 +28,20 @@ namespace Negocios
         {
             return productoDL.productoInsertar(productoObjeto);
         }
+        public static int stockminimoingresar(saldoalmacen productoObjeto)
+        {
+            return productoDL.stockminimoingresar(productoObjeto);
+        }
         public static int productoInsertarSaldoalamcen(saldoalmacen productoObjeto)
         {
             return productoDL.productoInsertarSaldoalamcen(productoObjeto);
         }
         //BUSQUEDA DE PRODUCTO GENERAL
         public static List<productobuscado> productobuscadoListar(string parametro)
+        {
+            return productoDL.productobuscadoListar(parametro);
+        }
+        public static List<productobuscado> productobuscadoListarParametro(string parametro)
         {
             return productoDL.productobuscadoListar(parametro);
         }
@@ -45,9 +53,17 @@ namespace Negocios
         {
             return productoDL.ListaPreciosLista();
         }
+        public static List<productobuscado> ListaStockminimoLista()
+        {
+            return productoDL.ListaStockminimoLista();
+        }
         public static List<productobuscado> ListaPreciosListaParametro(string parametro)
         {
             return productoDL.ListaPreciosListaParametro(parametro);
+        }
+        public static List<productobuscado> ListaStockMinimoParametro(string parametro)
+        {
+            return productoDL.ListaStockMinimoParametro(parametro);
         }
         //INSERTAR PRECIO A PRODUCTO
         public static int productoPrecioInsertar(productobuscado productoObjeto)

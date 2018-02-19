@@ -124,19 +124,20 @@ namespace Presentacion
                 e.Handled = true;
                 
             }
-            decimal vadsr = decimal.Parse(txtprecio.Text) * int.Parse(txtCantidad.Text);
-            txtsubtotal.Text = "" + vadsr;
-            // VALIDAR CON UN SOLO PUNTO DECIMAL
-            //if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
-            //{
-            //    e.Handled = true;
-            //}
-            //if (e.KeyChar == '.'  && (sender as TextBox).Text.IndexOf('.') > -1)
-            //{
-            //    e.Handled = true;
-            //}
-
-
+        }
+        public void calcular()
+        {
+            int cantidad = 0;
+            if (txtCantidad.Text.Length >0)
+            {
+                cantidad =int.Parse(txtCantidad.Text);
+            }
+            decimal precio = 0;
+            if (txtprecio.Text.Length > 0)
+            {
+                precio = decimal.Parse(txtprecio.Text);
+            }
+            txtsubtotal.Text =decimal.Round( precio * cantidad).ToString();
         }
 
         private void txtCantidad_Leave(object sender, EventArgs e)
@@ -153,63 +154,9 @@ namespace Presentacion
 
         
 
-        private void txtcodprod_MouseClick(object sender, MouseEventArgs e)
-        {
-            frmBusquedaProductoGeneral f = new frmBusquedaProductoGeneral();
-            DialogResult res = f.ShowDialog();
-            if (res == DialogResult.OK)
-            {
-                txtcodprod.Text = "";
-                txtcodprod.Text = f.chcodigoproducto;
-                txtNombreconpuesto.Text = f.nombrecompuesto;
-                txtidcodigo.Text = "" + f.p_inidproducto;
-                txtMedida.Text = f.chmedida;
-                txtCantidad.Enabled = true;
-                txtCantidad.Text = "" + 1;
-                txtCantidad.Focus();
-                dgvListaIngreso.Rows.Clear();
-                txtSerie.Text = "";
-                txtObs.Text = "";
-                txtprecio.Text = "" + Decimal.Round(f.nuprecio,2);
-                
-                
-                if (f.p_inidsituacionproducto > 1)
-                {
-                    //ckbSerie.Checked = true;
-                    grbAgregadoSerie.Enabled = true;
-                }
+        
 
-            }
-        }
-
-        private void txtcodprod_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            frmBusquedaProductoGeneral f = new frmBusquedaProductoGeneral();
-            DialogResult res = f.ShowDialog();
-            if (res == DialogResult.OK)
-            {
-
-                txtcodprod.Text = "";
-                txtcodprod.Text = f.chcodigoproducto;
-                txtNombreconpuesto.Text = f.nombrecompuesto;
-                txtidcodigo.Text = "" + f.p_inidproducto;
-                txtMedida.Text = f.chmedida;
-                txtCantidad.Enabled = true;
-                txtCantidad.Text = "" + 1;
-                txtCantidad.Focus();
-                dgvListaIngreso.Rows.Clear();
-                txtSerie.Text = "";
-                txtObs.Text = "";
-                txtprecio.Text = "" + Decimal.Round(f.nuprecio, 2);
-                if (f.req_seriesss)
-                {
-                    //ckbSerie.Checked = true;
-                    grbAgregadoSerie.Enabled = true;
-                }
-
-            }
-        }
-
+      
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             // IDEA: PARA GARANTIZAR EL INGRESO SE TENDRIA QUE GUARDAR EN UN ARREGLO Y LUEGO VALIDAR SU EXISTENCIA TOTAL.
@@ -346,6 +293,113 @@ namespace Presentacion
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
             mskFecha.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+            txtcodprod.Focus();
+            txtNombreconpuesto.Text = "";
+            txtMedida.Text = "";
+            txtidcodigo.Text = "";
+            txtCantidad.Text = "0";
+            txtSerie.Text = "";
+            txtCodigoSerie.Text = "";
+            txtObs.Text = "";
+            txtprecio.Text = "0.00";
+        }
+
+        private void txtcodprod_TextChanged(object sender, EventArgs e)
+        {
+            string parametro = txtcodprod.Text;
+            buscaProducto(parametro);
+        }
+
+        private void txtcodprod_DoubleClick(object sender, EventArgs e)
+        {
+            frmBusquedaProductoGeneral f = new frmBusquedaProductoGeneral();
+            DialogResult res = f.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                
+                txtcodprod.Text = f.chcodigoproducto;
+
+            }
+        }
+        public void buscaProducto(string parametro)
+        {
+            List<productoparaventa> obprodventa = new List<productoparaventa>();
+            obprodventa = productoNE.ProductosVentaParametro(parametro);
+            if (obprodventa.Count > 0)
+            {
+                foreach (productoparaventa a in obprodventa)
+                {
+                    txtNombreconpuesto.Text = a.chnombrecompuesto;
+                    txtMedida.Text = a.chunidadmedidaproducto;
+                    txtidcodigo.Text = "" + a.p_inidproducto;
+                    txtCantidad.Enabled = true;
+                    txtCantidad.Text = "0";
+                    txtCantidad.Focus();
+                    txtSerie.Text = "";
+                    txtCodigoSerie.Text = "";
+                    txtObs.Text = "";
+                    txtprecio.Text = "00.00";
+                    if (a.req_serie)
+                    {
+                        //ckbSerie.Checked = true;
+                        grbAgregadoSerie.Enabled = true;
+                    }
+
+                }
+                dgvListaIngreso.Rows.Clear();
+            }
+            else
+            {
+                txtNombreconpuesto.Text = "";
+                txtMedida.Text = "";
+                txtidcodigo.Text = "";
+                txtCantidad.Text = "0" ;
+                txtSerie.Text = "";
+                txtCodigoSerie.Text = "";
+                txtObs.Text = "";
+                txtprecio.Text = "00.00";
+            }
+        }
+
+        private void txtprecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+                return;
+            }
+            bool IsDec = false;
+            int nroDec = 0;
+
+            for (int i = 0; i < txtprecio.Text.Length; i++)
+            {
+                if (txtprecio.Text[i] == '.')
+                    IsDec = true;
+
+                if (IsDec && nroDec++ >= 2)
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+                e.Handled = false;
+            else if (e.KeyChar == 46)
+                e.Handled = (IsDec) ? true : false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+            calcular();
+        }
+
+        private void txtprecio_TextChanged(object sender, EventArgs e)
+        {
+
+            calcular();
         }
     }
 }

@@ -173,9 +173,19 @@ namespace Datos
             );
             }
         }
+        public static int stockminimoingresar(saldoalmacen registros)
+        {
+            {
+                return conexion.executeScalar("fn_saldoalmacen_stockminimo",
+            CommandType.StoredProcedure,
+            new parametro("in_p_inidproducto", registros.p_inidproducto),
+            new parametro("in_nustockminima", registros.nustockminima)
+            );
+            }
+        }
         //BUSCAR PRODUCTO PARA AGREGAR PRECIO
-        
-         public static List<productobuscado> productobuscadoListaPrecio(string parametro)
+
+        public static List<productobuscado> productobuscadoListaPrecio(string parametro)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_producto_Lista_Precio", CommandType.StoredProcedure,
                 new parametro("in_parametro", parametro)))
@@ -188,6 +198,25 @@ namespace Datos
                     registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]).Trim();
                     registro.chnombrecompuesto = Convert.ToString(datareader["chnombrecompuesto"]).Trim();
                     registro.chunidadmedidaproducto = Convert.ToString(datareader["chunidadmedidaproducto"]).Trim();
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+        
+            public static List<productobuscado> ListaStockminimoLista()
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_stockminimo_listar", CommandType.StoredProcedure))
+            {
+                List<productobuscado> listado = new List<productobuscado>();
+                while (datareader.Read())
+                {
+                    productobuscado registro = new productobuscado();
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
+                    registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]).Trim();
+                    registro.chnombrecompuesto = Convert.ToString(datareader["chnombrecompuesto"]).Trim();
+                    registro.chunidadmedidaproducto = Convert.ToString(datareader["chunidadmedidaproducto"]).Trim();
+                    registro.nuprecio = decimal.Round(Convert.ToDecimal(datareader["nuprecio"]), 2);
                     listado.Add(registro);
                 }
                 return listado;
@@ -281,6 +310,25 @@ namespace Datos
                 return listado;
             }
         }
+        public static List<productobuscado> ListaStockMinimoParametro(string parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_stockminimo_listar_parametro", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
+            {
+                List<productobuscado> listado = new List<productobuscado>();
+                while (datareader.Read())
+                {
+                    productobuscado registro = new productobuscado();
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
+                    registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]).Trim();
+                    registro.chnombrecompuesto = Convert.ToString(datareader["chnombrecompuesto"]).Trim();
+                    registro.chunidadmedidaproducto = Convert.ToString(datareader["chunidadmedidaproducto"]).Trim();
+                    registro.nuprecio = decimal.Round(Convert.ToDecimal(datareader["nuprecio"]), 2);
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
         
+
     }
 }

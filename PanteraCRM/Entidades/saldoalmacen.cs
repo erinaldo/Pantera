@@ -15,6 +15,8 @@ namespace Entidades
         public bool estado { get; set; }
         public int p_inidalmacen { get; set; }
         public int p_inidproducto { get; set; }
+        public string chnombrecompuesto { get; set; }
+        public string chcodigo { get; set; }
         public saldoalmacen()
         {
             this.p_inidsaldoalmancen = 0;
@@ -24,6 +26,8 @@ namespace Entidades
             this.estado = false;
             this.p_inidalmacen = 0;
             this.p_inidproducto = 0;
+            this.chcodigo = string.Empty;
+            this.chnombrecompuesto = string.Empty ;
         }
     }
 }
