@@ -151,8 +151,36 @@ namespace Presentacion
                     // CONFIRMACION
                     if (validarParaingreso())
                     {
+                        List<serie> obsej = new List<serie>();
+                        for (int i = 0; i < dgvListaIngreso.RowCount; i++)
+                        {
 
-                    }else
+                            tmpSerie = new serie();
+                            tmpSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells[3].Value.ToString();
+                            tmpSerie.estado = true;
+                            tmpSerie.p_inidproducto = int.Parse(txtidcodigo.Text);
+                            tmpSerie.chadicional = dgvListaIngreso.Rows[i].Cells[4].Value.ToString();
+                            tmpSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+                            tmpSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                            tmpSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
+                            obsej.Add(tmpSerie);
+
+                        }
+                        sesion.listaserie = obsej;
+                        valedetalle valedetallessss = new valedetalle();
+                        valedetallessss.chnombrecompuesto = txtNombreconpuesto.Text;
+                        valedetallessss.chcodigoproducto = txtcodprod.Text;
+                        valedetallessss.chcodigoserie = txtMedida.Text;
+                        valedetallessss.p_inidproducto = int.Parse(txtidcodigo.Text);
+                        valedetallessss.nucantidad = int.Parse(txtCantidad.Text);
+                        valedetallessss.nucosto = decimal.Parse(txtprecio.Text);
+                        valedetallessss.nutotal = decimal.Parse(txtsubtotal.Text);
+
+                        sesion.valedetalles = valedetallessss;
+                        //MessageBox.Show("Las Series se Ingresaron al Sistema");
+                        dgvListaIngreso.Rows.Clear();
+                    }
+                    else
                     {
                         return;
                     }
@@ -327,11 +355,8 @@ namespace Presentacion
                     txtCodigoSerie.Text = "";
                     txtObs.Text = "";
                     txtprecio.Text = "00.00";
-                    if (a.req_serie)
-                    {
-                        //ckbSerie.Checked = true;
-                        grbAgregadoSerie.Enabled = true;
-                    }
+                    grbAgregadoSerie.Enabled = a.req_serie;
+                    
 
                 }
                 dgvListaIngreso.Rows.Clear();
@@ -451,7 +476,16 @@ namespace Presentacion
             {
                 if (cantidad == lista)
                 {
-                    flat = true;
+                    if(txtidcodigo.Text.Length > 0)
+                    {
+
+                        flat = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Producto no Seleccionado", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        flat = false;
+                    }
                 }
                 else
                 {

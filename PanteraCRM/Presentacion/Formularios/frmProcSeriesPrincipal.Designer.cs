@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcSeriesPrincipal));
             this.dgvSeries = new System.Windows.Forms.DataGridView();
             this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -184,6 +185,7 @@
             this.Controls.Add(this.dgvSeries);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProcSeriesPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INGRESO DE PRODUCTOS Y SERIES";

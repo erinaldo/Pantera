@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcValesIngresoPrincipal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -69,7 +70,7 @@
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(68, 403);
+            this.groupBox1.Location = new System.Drawing.Point(80, 343);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(451, 66);
             this.groupBox1.TabIndex = 15;
@@ -80,7 +81,7 @@
             this.btnAnadir.BackColor = System.Drawing.SystemColors.Window;
             this.btnAnadir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnadir.Location = new System.Drawing.Point(9, 17);
+            this.btnAnadir.Location = new System.Drawing.Point(9, 19);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(73, 35);
             this.btnAnadir.TabIndex = 8;
@@ -93,7 +94,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.Window;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(268, 17);
+            this.button1.Location = new System.Drawing.Point(268, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(73, 35);
             this.button1.TabIndex = 13;
@@ -105,7 +106,7 @@
             this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
             this.btnModificar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(96, 17);
+            this.btnModificar.Location = new System.Drawing.Point(96, 19);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(73, 35);
             this.btnModificar.TabIndex = 9;
@@ -117,7 +118,7 @@
             this.btnVer.BackColor = System.Drawing.SystemColors.Window;
             this.btnVer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(181, 17);
+            this.btnVer.Location = new System.Drawing.Point(181, 19);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(73, 35);
             this.btnVer.TabIndex = 10;
@@ -129,7 +130,7 @@
             this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(363, 17);
+            this.btnSalir.Location = new System.Drawing.Point(363, 19);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(73, 35);
             this.btnSalir.TabIndex = 11;
@@ -168,7 +169,7 @@
             this.dgvVales.Location = new System.Drawing.Point(12, 12);
             this.dgvVales.Name = "dgvVales";
             this.dgvVales.ReadOnly = true;
-            this.dgvVales.Size = new System.Drawing.Size(577, 385);
+            this.dgvVales.Size = new System.Drawing.Size(609, 325);
             this.dgvVales.TabIndex = 16;
             // 
             // IDVALEC
@@ -346,10 +347,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(601, 481);
+            this.ClientSize = new System.Drawing.Size(633, 421);
             this.Controls.Add(this.dgvVales);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProcValesIngresoPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "INGRESO DE VALES";

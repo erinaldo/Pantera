@@ -17,5 +17,6 @@ namespace Presentacion
         public static sessionglobal SessionGlobal { get; set; }
         public static List<serie> listaserie { get; set; }
         public static valedetalle valedetalles { get; set; }
+        public static movimientoproductoaccion movprodaccion { get; set; }
     }
 }

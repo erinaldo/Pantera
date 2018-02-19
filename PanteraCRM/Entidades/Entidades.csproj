@@ -60,6 +60,7 @@
     <Compile Include="Mempresa.cs" />
     <Compile Include="menu.cs" />
     <Compile Include="modelo.cs" />
+    <Compile Include="movimientoproductoaccion.cs" />
     <Compile Include="Mpersona.cs" />
     <Compile Include="pedidocabecera.cs" />
     <Compile Include="pedidodetalle.cs" />
