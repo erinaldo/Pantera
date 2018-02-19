@@ -140,22 +140,6 @@ namespace Presentacion
             txtsubtotal.Text =decimal.Round( precio * cantidad).ToString();
         }
 
-        private void txtCantidad_Leave(object sender, EventArgs e)
-        {
-            if (int.Parse(txtCantidad.Text) > 0 && txtCantidad.Text.Length > 0)
-            {
-                if (dgvListaIngreso.Rows.Count > int.Parse(txtCantidad.Text))
-                {
-                    dgvListaIngreso.Rows.Clear();
-                    return;
-                }
-            }
-        }
-
-        
-
-        
-
       
         private void btnGrabar_Click(object sender, EventArgs e)
         {
@@ -400,6 +384,15 @@ namespace Presentacion
         {
 
             calcular();
+        }
+        public void validarCantidad()
+        {
+            int cantidad = 0;
+            if (txtCantidad.Text.Length >0)
+            {
+                cantidad = int.Parse(txtCantidad.Text);
+            }
+            
         }
     }
 }

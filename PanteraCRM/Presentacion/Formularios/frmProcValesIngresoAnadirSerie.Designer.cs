@@ -332,7 +332,6 @@
             this.txtCantidad.TabIndex = 11;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
-            this.txtCantidad.Leave += new System.EventHandler(this.txtCantidad_Leave);
             // 
             // mskFecha
             // 
