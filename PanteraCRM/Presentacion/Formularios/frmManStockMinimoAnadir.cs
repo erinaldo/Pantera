@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class frmManProveedoresAnadir : Form
+    public partial class frmManStockMinimoAnadir : Form
     {
-        public frmManProveedoresAnadir()
+        public frmManStockMinimoAnadir()
         {
             InitializeComponent();
         }
@@ -20,6 +20,11 @@ namespace Presentacion
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

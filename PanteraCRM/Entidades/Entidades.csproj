@@ -56,8 +56,11 @@
     <Compile Include="empresasesion.cs" />
     <Compile Include="maestrodetalle.cs" />
     <Compile Include="marca.cs" />
+    <Compile Include="Mcliente.cs" />
+    <Compile Include="Mempresa.cs" />
     <Compile Include="menu.cs" />
     <Compile Include="modelo.cs" />
+    <Compile Include="Mpersona.cs" />
     <Compile Include="pedidocabecera.cs" />
     <Compile Include="pedidodetalle.cs" />
     <Compile Include="perfil.cs" />
@@ -73,6 +76,7 @@
     <Compile Include="proveedor.cs" />
     <Compile Include="puntoventa.cs" />
     <Compile Include="puntoventasesion.cs" />
+    <Compile Include="saldoalmacen.cs" />
     <Compile Include="serie.cs" />
     <Compile Include="seriebuscada.cs" />
     <Compile Include="sesionglobal.cs" />

@@ -123,18 +123,18 @@ namespace Presentacion
 
         private void abreElementoMenu()
         {
+            //bool flat = true;
             TreeNode nodo = this.treMenu.SelectedNode;
             if (nodo.Tag != null)
             {
                 string formula = "Presentacion." + nodo.Tag.ToString().Trim();
                 Form frm = (Form)(Assembly.GetExecutingAssembly().CreateInstance(formula));
-
                 //int item = Convert.ToInt32(nodo.Name);
                 if (perfildetalleNE.validarModulo(sesion.SessionGlobal.p_inidperfil, Convert.ToInt32(nodo.Name)) == 1)
-                {                   
-
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
+                {
+                        //flat = false;
+                        frm.MdiParent = this.MdiParent;
+                        frm.Show();
                 }
                 else MessageBox.Show("Usted no tiene acceso a este módulo" + Convert.ToInt32(nodo.Name));
 
@@ -184,8 +184,6 @@ namespace Presentacion
                  f.ShowDialog();
                
             }
-
-            
             // mostrar la ventana si hace falta
         }
     }

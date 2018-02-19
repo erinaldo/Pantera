@@ -32,19 +32,19 @@ namespace Presentacion
         public void cargarData(int registro)
         {
             List<cliente> listado = clienteNE.clienteListar();
-            dgvCliente.DataSource = listado;
+            dgvListaClientes.DataSource = listado;
         }
         public void ejecutar(int dato)
         {
             cargarData(0);
-            foreach (DataGridViewRow Row in dgvCliente.Rows)
+            foreach (DataGridViewRow Row in dgvListaClientes.Rows)
             {
                 int valor = (int)Row.Cells["IDCLIENTE"].Value;
                 if (valor == dato)
                 {
                     int puntero = (int)Row.Index;
                     //                    dgvPersona.CurrentCell = dgvPersona.Rows[puntero].Cells["IDPERSONA"];
-                    dgvCliente.CurrentCell = dgvCliente.Rows[puntero].Cells[1];
+                    dgvListaClientes.CurrentCell = dgvListaClientes.Rows[puntero].Cells[1];
                     return;
                 }
             }
@@ -52,6 +52,24 @@ namespace Presentacion
         private void button5_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnAnadir_Click(object sender, EventArgs e)
+        {
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManClienteAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            frmManClienteAnadir f = new frmManClienteAnadir();
+            //f.pasado += new frmManClienteAnadir.pasar(ejecutar);
+            f.ShowDialog();
         }
     }
 }

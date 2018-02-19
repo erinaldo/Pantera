@@ -313,7 +313,24 @@ namespace Presentacion
                         else
                         {
                             // MessageBox.Show("Registro Ingresado", "Mensaje de Sistema", MessageBoxButtons.OK);
-                            pasado(varIdArticulo);
+                            saldoalmacen registros = new saldoalmacen();
+                            //registros.p_inidsaldoalmancen = 0;
+                            registros.nustockactual = 0;
+                            registros.nustockcomprpmetido = 0;
+                            registros.nustockminima = 0;
+                            registros.estado = true;
+                            registros.p_inidalmacen = sesion.SessionGlobal.p_inidalmacen;
+                            registros.p_inidproducto = varIdArticulo;
+                            int verdad = productoNE.productoInsertarSaldoalamcen(registros); ;
+                            if (verdad <= 0)
+                            {
+                                MessageBox.Show("Error en la creación de Stock, realizar manualmente", "Mensaje de Sistema", MessageBoxButtons.OK); 
+                            }
+                            else
+                            {
+                                pasado(varIdArticulo);
+                            }
+                            
                         }
                     }else
                     {

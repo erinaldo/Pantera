@@ -28,6 +28,10 @@ namespace Negocios
         {
             return productoDL.productoInsertar(productoObjeto);
         }
+        public static int productoInsertarSaldoalamcen(saldoalmacen productoObjeto)
+        {
+            return productoDL.productoInsertarSaldoalamcen(productoObjeto);
+        }
         //BUSQUEDA DE PRODUCTO GENERAL
         public static List<productobuscado> productobuscadoListar(string parametro)
         {

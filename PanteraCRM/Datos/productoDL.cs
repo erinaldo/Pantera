@@ -134,6 +134,19 @@ namespace Datos
             new parametro("in_req_serie", producto.req_serie));
 
         }
+        public static int productoInsertarSaldoalamcen(saldoalmacen registro)
+        {
+            return conexion.executeScalar("fn_saldoalmacen_ingresar",
+            CommandType.StoredProcedure,
+              new parametro("in_nustockactual", registro.nustockactual),
+            new parametro("in_nustockcomprpmetido", registro.nustockcomprpmetido),
+            new parametro("in_nustockminima", registro.nustockminima),
+            new parametro("in_estado", registro.estado),
+            new parametro("in_p_inidalmacen", registro.p_inidalmacen),
+            new parametro("in_p_inidproducto", registro.p_inidproducto));
+
+        }
+        
         //MODIFICAR PRODUCTOS
         public static int ProductoActualizar(producto producto)
         {

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class frmManProveedoresAnadir : Form
+    public partial class frmManTipoPersonaVentaAnadir : Form
     {
-        public frmManProveedoresAnadir()
+        public frmManTipoPersonaVentaAnadir()
         {
             InitializeComponent();
         }

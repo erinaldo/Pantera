@@ -13,6 +13,8 @@ namespace Presentacion
 {
     public partial class frmManProveedoresPrincipal : Form
     {
+
+        private string vBoton = "A";
         public frmManProveedoresPrincipal()
         {
             InitializeComponent();
@@ -26,27 +28,58 @@ namespace Presentacion
         public void cargarData(int registro)
         {
             List<proveedor> listado = proveedorNE.proveedorListar();
-            dgvProveedores.DataSource = listado;
+            dgvListadoProveedores.DataSource = listado;
         }
         public void ejecutar(int dato)
         {
             cargarData(0);
-            foreach (DataGridViewRow Row in dgvProveedores.Rows)
+            foreach (DataGridViewRow Row in dgvListadoProveedores.Rows)
             {
                 int valor = (int)Row.Cells["IDPROV"].Value;
                 if (valor == dato)
                 {
                     int puntero = (int)Row.Index;
                     //                    dgvPersona.CurrentCell = dgvPersona.Rows[puntero].Cells["IDPERSONA"];
-                    dgvProveedores.CurrentCell = dgvProveedores.Rows[puntero].Cells[1];
+                    dgvListadoProveedores.CurrentCell = dgvListadoProveedores.Rows[puntero].Cells[1];
                     return;
                 }
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+     
+
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnAnadir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                vBoton = "A";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProveedoresAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmManProveedoresAnadir f = new frmManProveedoresAnadir();
+                    //f.pasado += new frmManProveedoresAnadir.pasar(ejecutar);
+                    f.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
         }
     }
 }

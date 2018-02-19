@@ -44,7 +44,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.treMenu.BackColor = System.Drawing.Color.White;
             this.treMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.treMenu.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treMenu.ForeColor = System.Drawing.Color.Black;
             this.treMenu.ImageIndex = 0;
             this.treMenu.ImageList = this.imageList1;

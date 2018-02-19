@@ -139,6 +139,12 @@
     <Compile Include="Formularios\frmConsCobranzaDocuVentaPrincipal.Designer.cs">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmManClienteAnadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManClienteAnadir.Designer.cs">
+      <DependentUpon>frmManClienteAnadir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmManListaPrecioAnadir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,11 +205,23 @@
     <Compile Include="Formularios\frmImprStickerCodificaPrincipal.Designer.cs">
       <DependentUpon>frmImprStickerCodificaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmManStockMinimoAnadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManStockMinimoAnadir.Designer.cs">
+      <DependentUpon>frmManStockMinimoAnadir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmManStockMinimoPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmManStockMinimoPrincipal.Designer.cs">
       <DependentUpon>frmManStockMinimoPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmManTipoPersonaVentaAnadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManTipoPersonaVentaAnadir.Designer.cs">
+      <DependentUpon>frmManTipoPersonaVentaAnadir.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmManTipoPersonaVentaPrincipal.cs">
       <SubType>Form</SubType>
@@ -294,12 +312,6 @@
     </Compile>
     <Compile Include="Formularios\frmSecuAutenticacion.designer.cs">
       <DependentUpon>frmSecuAutenticacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmManClienteAnadir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmManClienteAnadir.Designer.cs">
-      <DependentUpon>frmManClienteAnadir.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmManClientePrincipal.cs">
       <SubType>Form</SubType>
@@ -531,6 +543,9 @@
     <EmbeddedResource Include="Formularios\frmConsCobranzaDocuVentaPrincipal.resx">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManClienteAnadir.resx">
+      <DependentUpon>frmManClienteAnadir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManListaPrecioAnadir.resx">
       <DependentUpon>frmManListaPrecioAnadir.cs</DependentUpon>
     </EmbeddedResource>
@@ -542,6 +557,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManProductoAnadir.resx">
       <DependentUpon>frmManProductoAnadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManStockMinimoAnadir.resx">
+      <DependentUpon>frmManStockMinimoAnadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManStockMinimoPrincipal.resx">
+      <DependentUpon>frmManStockMinimoPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManTipoPersonaVentaAnadir.resx">
+      <DependentUpon>frmManTipoPersonaVentaAnadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManTipoPersonaVentaPrincipal.resx">
+      <DependentUpon>frmManTipoPersonaVentaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcPedidosPedidosCabecera.resx">
       <DependentUpon>frmProcPedidosPedidosCabecera.cs</DependentUpon>
@@ -566,9 +593,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmSecuAutenticacion.resx">
       <DependentUpon>frmSecuAutenticacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmManClienteAnadir.resx">
-      <DependentUpon>frmManClienteAnadir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManClientePrincipal.resx">
       <DependentUpon>frmManClientePrincipal.cs</DependentUpon>
