@@ -9,6 +9,7 @@ namespace Negocios
 {
     public abstract class acesoNE
     {
+        //BUSQUEDA DE USUARIO POR LOGIN Y CLAVE
         public static sessionglobal buscarAcesoPorLoginClaveNE(string login, string clave)
         {
             try
