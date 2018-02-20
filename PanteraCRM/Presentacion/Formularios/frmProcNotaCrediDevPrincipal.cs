@@ -16,5 +16,14 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+        private void frmProcNotaCrediDevPrincipal_Load(object sender, EventArgs e)
+        {
+            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
+
+        }
+
+
     }
 }

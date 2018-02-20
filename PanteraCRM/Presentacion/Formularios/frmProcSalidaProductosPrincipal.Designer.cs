@@ -28,11 +28,432 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcSalidaProductosPrincipal));
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.TextBox();
+            this.dgvVales = new System.Windows.Forms.DataGridView();
+            this.IDVALEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDALMACEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHALMACEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCLASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCLASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCORRELATIVO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMONEDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMONEDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHPROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHGUIAREMI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFACBOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMOVIMIENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMOVIMIENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHOBSERVACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDUINSERT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUINSERT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDUDELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUDELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAnadir = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVales)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtParametro);
+            this.groupBox2.Location = new System.Drawing.Point(12, 1);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(647, 43);
+            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Busqueda";
+            // 
+            // txtParametro
+            // 
+            this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtParametro.Location = new System.Drawing.Point(67, 15);
+            this.txtParametro.Name = "txtParametro";
+            this.txtParametro.Size = new System.Drawing.Size(574, 20);
+            this.txtParametro.TabIndex = 0;
+            // 
+            // dgvVales
+            // 
+            this.dgvVales.AllowUserToAddRows = false;
+            this.dgvVales.AllowUserToDeleteRows = false;
+            this.dgvVales.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvVales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDVALEC,
+            this.IDALMACEN,
+            this.CHALMACEN,
+            this.IDCLASE,
+            this.CHCLASE,
+            this.IDCORRELATIVO,
+            this.CHFECHA,
+            this.IDMONEDA,
+            this.CHMONEDA,
+            this.IDPROVEEDOR,
+            this.CHPROVEEDOR,
+            this.CHGUIAREMI,
+            this.CHFACBOL,
+            this.IDMOVIMIENTO,
+            this.CHMOVIMIENTO,
+            this.CHOBSERVACION,
+            this.IDUINSERT,
+            this.CHUINSERT,
+            this.IDUDELETE,
+            this.CHUDELETE,
+            this.ESTADO});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVales.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvVales.Location = new System.Drawing.Point(12, 50);
+            this.dgvVales.Name = "dgvVales";
+            this.dgvVales.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVales.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvVales.Size = new System.Drawing.Size(647, 344);
+            this.dgvVales.TabIndex = 21;
+            // 
+            // IDVALEC
+            // 
+            this.IDVALEC.DataPropertyName = "p_inidvalecebecera";
+            this.IDVALEC.HeaderText = "IDVALEC";
+            this.IDVALEC.Name = "IDVALEC";
+            this.IDVALEC.ReadOnly = true;
+            this.IDVALEC.Visible = false;
+            // 
+            // IDALMACEN
+            // 
+            this.IDALMACEN.DataPropertyName = "p_inidalamacen";
+            this.IDALMACEN.HeaderText = "IDALMACEN";
+            this.IDALMACEN.Name = "IDALMACEN";
+            this.IDALMACEN.ReadOnly = true;
+            this.IDALMACEN.Visible = false;
+            // 
+            // CHALMACEN
+            // 
+            this.CHALMACEN.DataPropertyName = "chalamacen";
+            this.CHALMACEN.HeaderText = "ALMANCEN";
+            this.CHALMACEN.Name = "CHALMACEN";
+            this.CHALMACEN.ReadOnly = true;
+            this.CHALMACEN.Visible = false;
+            // 
+            // IDCLASE
+            // 
+            this.IDCLASE.DataPropertyName = "p_inidclase";
+            this.IDCLASE.HeaderText = "IDCLASE";
+            this.IDCLASE.Name = "IDCLASE";
+            this.IDCLASE.ReadOnly = true;
+            this.IDCLASE.Visible = false;
+            // 
+            // CHCLASE
+            // 
+            this.CHCLASE.DataPropertyName = "chclase";
+            this.CHCLASE.HeaderText = "CHCLASE";
+            this.CHCLASE.Name = "CHCLASE";
+            this.CHCLASE.ReadOnly = true;
+            this.CHCLASE.Visible = false;
+            // 
+            // IDCORRELATIVO
+            // 
+            this.IDCORRELATIVO.DataPropertyName = "p_inidcorrevale";
+            this.IDCORRELATIVO.HeaderText = "N° VALE";
+            this.IDCORRELATIVO.Name = "IDCORRELATIVO";
+            this.IDCORRELATIVO.ReadOnly = true;
+            this.IDCORRELATIVO.Width = 90;
+            // 
+            // CHFECHA
+            // 
+            this.CHFECHA.DataPropertyName = "chvalefecha";
+            this.CHFECHA.HeaderText = "FECHA";
+            this.CHFECHA.Name = "CHFECHA";
+            this.CHFECHA.ReadOnly = true;
+            this.CHFECHA.Width = 70;
+            // 
+            // IDMONEDA
+            // 
+            this.IDMONEDA.DataPropertyName = "p_inidtipomoneda";
+            this.IDMONEDA.HeaderText = "IDMONEDA";
+            this.IDMONEDA.Name = "IDMONEDA";
+            this.IDMONEDA.ReadOnly = true;
+            this.IDMONEDA.Visible = false;
+            // 
+            // CHMONEDA
+            // 
+            this.CHMONEDA.DataPropertyName = "chtipomoneda";
+            this.CHMONEDA.HeaderText = "CHMODENA";
+            this.CHMONEDA.Name = "CHMONEDA";
+            this.CHMONEDA.ReadOnly = true;
+            this.CHMONEDA.Visible = false;
+            // 
+            // IDPROVEEDOR
+            // 
+            this.IDPROVEEDOR.DataPropertyName = "p_inidproveedor";
+            this.IDPROVEEDOR.HeaderText = "IDPROVEEDOR";
+            this.IDPROVEEDOR.Name = "IDPROVEEDOR";
+            this.IDPROVEEDOR.ReadOnly = true;
+            this.IDPROVEEDOR.Visible = false;
+            // 
+            // CHPROVEEDOR
+            // 
+            this.CHPROVEEDOR.DataPropertyName = "chcodigoproveedor";
+            this.CHPROVEEDOR.HeaderText = "CHPROVEEDOR";
+            this.CHPROVEEDOR.Name = "CHPROVEEDOR";
+            this.CHPROVEEDOR.ReadOnly = true;
+            this.CHPROVEEDOR.Visible = false;
+            // 
+            // CHGUIAREMI
+            // 
+            this.CHGUIAREMI.DataPropertyName = "chguiaremision";
+            this.CHGUIAREMI.HeaderText = "CHGUIAREMI";
+            this.CHGUIAREMI.Name = "CHGUIAREMI";
+            this.CHGUIAREMI.ReadOnly = true;
+            this.CHGUIAREMI.Visible = false;
+            // 
+            // CHFACBOL
+            // 
+            this.CHFACBOL.DataPropertyName = "chboletafactura";
+            this.CHFACBOL.HeaderText = "CHFACBOL";
+            this.CHFACBOL.Name = "CHFACBOL";
+            this.CHFACBOL.ReadOnly = true;
+            this.CHFACBOL.Visible = false;
+            // 
+            // IDMOVIMIENTO
+            // 
+            this.IDMOVIMIENTO.DataPropertyName = "p_inidtipomoviemiento";
+            this.IDMOVIMIENTO.HeaderText = "IDMOVIMIENTO";
+            this.IDMOVIMIENTO.Name = "IDMOVIMIENTO";
+            this.IDMOVIMIENTO.ReadOnly = true;
+            this.IDMOVIMIENTO.Visible = false;
+            // 
+            // CHMOVIMIENTO
+            // 
+            this.CHMOVIMIENTO.DataPropertyName = "chtipomoviemiento";
+            this.CHMOVIMIENTO.HeaderText = "CHMOVIMIENTO";
+            this.CHMOVIMIENTO.Name = "CHMOVIMIENTO";
+            this.CHMOVIMIENTO.ReadOnly = true;
+            this.CHMOVIMIENTO.Width = 300;
+            // 
+            // CHOBSERVACION
+            // 
+            this.CHOBSERVACION.DataPropertyName = "chobservacion";
+            this.CHOBSERVACION.HeaderText = "OBSERVACION";
+            this.CHOBSERVACION.Name = "CHOBSERVACION";
+            this.CHOBSERVACION.ReadOnly = true;
+            this.CHOBSERVACION.Width = 300;
+            // 
+            // IDUINSERT
+            // 
+            this.IDUINSERT.DataPropertyName = "p_inidusuarioinsert";
+            this.IDUINSERT.HeaderText = "IDUINSERT";
+            this.IDUINSERT.Name = "IDUINSERT";
+            this.IDUINSERT.ReadOnly = true;
+            this.IDUINSERT.Visible = false;
+            // 
+            // CHUINSERT
+            // 
+            this.CHUINSERT.DataPropertyName = "chusuarioinsert";
+            this.CHUINSERT.HeaderText = "CHUINSERT";
+            this.CHUINSERT.Name = "CHUINSERT";
+            this.CHUINSERT.ReadOnly = true;
+            this.CHUINSERT.Visible = false;
+            // 
+            // IDUDELETE
+            // 
+            this.IDUDELETE.DataPropertyName = "p_inidusuariodelete";
+            this.IDUDELETE.HeaderText = "IDUDELETE";
+            this.IDUDELETE.Name = "IDUDELETE";
+            this.IDUDELETE.ReadOnly = true;
+            this.IDUDELETE.Visible = false;
+            // 
+            // CHUDELETE
+            // 
+            this.CHUDELETE.DataPropertyName = "chusuariodelete";
+            this.CHUDELETE.HeaderText = "CHUDELETE";
+            this.CHUDELETE.Name = "CHUDELETE";
+            this.CHUDELETE.ReadOnly = true;
+            this.CHUDELETE.Visible = false;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.DataPropertyName = "estado";
+            this.ESTADO.HeaderText = "ESTADO";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
+            this.ESTADO.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnAnadir);
+            this.groupBox1.Controls.Add(this.btnImprimir);
+            this.groupBox1.Controls.Add(this.btnModificar);
+            this.groupBox1.Controls.Add(this.btnVer);
+            this.groupBox1.Controls.Add(this.btnSalir);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(105, 400);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(451, 66);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            // 
+            // btnAnadir
+            // 
+            this.btnAnadir.BackColor = System.Drawing.SystemColors.Window;
+            this.btnAnadir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnadir.Location = new System.Drawing.Point(9, 19);
+            this.btnAnadir.Name = "btnAnadir";
+            this.btnAnadir.Size = new System.Drawing.Size(73, 35);
+            this.btnAnadir.TabIndex = 8;
+            this.btnAnadir.Text = "&Añadir";
+            this.btnAnadir.UseVisualStyleBackColor = false;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.SystemColors.Window;
+            this.btnImprimir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(268, 19);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(73, 35);
+            this.btnImprimir.TabIndex = 13;
+            this.btnImprimir.Text = "&Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnModificar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(96, 19);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(73, 35);
+            this.btnModificar.TabIndex = 9;
+            this.btnModificar.Text = "&Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackColor = System.Drawing.SystemColors.Window;
+            this.btnVer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Location = new System.Drawing.Point(181, 19);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(73, 35);
+            this.btnVer.TabIndex = 10;
+            this.btnVer.Text = "&Ver";
+            this.btnVer.UseVisualStyleBackColor = false;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(363, 19);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(73, 35);
+            this.btnSalir.TabIndex = 11;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // frmProcSalidaProductosPrincipal
+            // 
+            this.AcceptButton = this.btnAnadir;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmProcSalidaProductosPrincipal";
+            this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnSalir;
+            this.ClientSize = new System.Drawing.Size(671, 478);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.dgvVales);
+            this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmProcSalidaProductosPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "VALES DE SALIDA";
+            this.Load += new System.EventHandler(this.frmProcSalidaProductosPrincipal_Load);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVales)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtParametro;
+        private System.Windows.Forms.DataGridView dgvVales;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDVALEC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDALMACEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHALMACEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCLASE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCLASE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCORRELATIVO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHFECHA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDMONEDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHMONEDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPROVEEDOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHPROVEEDOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHGUIAREMI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHFACBOL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDMOVIMIENTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHMOVIMIENTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHOBSERVACION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDUINSERT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHUINSERT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDUDELETE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHUDELETE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnAnadir;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

@@ -570,6 +570,15 @@
     <EmbeddedResource Include="Formularios\frmManTipoPersonaVentaPrincipal.resx">
       <DependentUpon>frmManTipoPersonaVentaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcNotaCrediDevPrincipal.resx">
+      <DependentUpon>frmProcNotaCrediDevPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcNotaCrediOtroPrincipal.resx">
+      <DependentUpon>frmProcNotaCrediOtroPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcNotaDebitoPrincipal.resx">
+      <DependentUpon>frmProcNotaDebitoPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcPedidosPedidosCabecera.resx">
       <DependentUpon>frmProcPedidosPedidosCabecera.cs</DependentUpon>
     </EmbeddedResource>
@@ -578,6 +587,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcPedidosPrincipal.resx">
       <DependentUpon>frmProcPedidosPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcSalidaProductosPrincipal.resx">
+      <DependentUpon>frmProcSalidaProductosPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcValesIngresoAnadirVale.resx">
       <DependentUpon>frmProcValesIngresoAnadirVale.cs</DependentUpon>

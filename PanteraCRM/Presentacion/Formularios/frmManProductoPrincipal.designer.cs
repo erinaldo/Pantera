@@ -65,8 +65,8 @@
             this.IDSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtParametro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgProducto)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -411,15 +411,6 @@
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             // 
-            // txtParametro
-            // 
-            this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtParametro.Location = new System.Drawing.Point(67, 15);
-            this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(574, 20);
-            this.txtParametro.TabIndex = 0;
-            this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -428,6 +419,15 @@
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Busqueda";
+            // 
+            // txtParametro
+            // 
+            this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtParametro.Location = new System.Drawing.Point(67, 15);
+            this.txtParametro.Name = "txtParametro";
+            this.txtParametro.Size = new System.Drawing.Size(574, 20);
+            this.txtParametro.TabIndex = 0;
+            this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
             // 
             // frmManProductoPrincipal
             // 

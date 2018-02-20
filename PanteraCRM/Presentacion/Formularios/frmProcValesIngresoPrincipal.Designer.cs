@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcValesIngresoPrincipal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAnadir = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -57,20 +57,24 @@
             this.IDUDELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHUDELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVales)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnAnadir);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.btnVer);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(80, 343);
+            this.groupBox1.Location = new System.Drawing.Point(105, 400);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(451, 66);
             this.groupBox1.TabIndex = 15;
@@ -89,17 +93,17 @@
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
-            // button1
+            // btnImprimir
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Window;
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(268, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 35);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "&Imprimir";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnImprimir.BackColor = System.Drawing.SystemColors.Window;
+            this.btnImprimir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(268, 19);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(73, 35);
+            this.btnImprimir.TabIndex = 13;
+            this.btnImprimir.Text = "&Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
             // 
             // btnModificar
             // 
@@ -166,10 +170,10 @@
             this.IDUDELETE,
             this.CHUDELETE,
             this.ESTADO});
-            this.dgvVales.Location = new System.Drawing.Point(12, 12);
+            this.dgvVales.Location = new System.Drawing.Point(12, 50);
             this.dgvVales.Name = "dgvVales";
             this.dgvVales.ReadOnly = true;
-            this.dgvVales.Size = new System.Drawing.Size(609, 325);
+            this.dgvVales.Size = new System.Drawing.Size(647, 344);
             this.dgvVales.TabIndex = 16;
             // 
             // IDVALEC
@@ -340,6 +344,33 @@
             this.ESTADO.ReadOnly = true;
             this.ESTADO.Visible = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtParametro);
+            this.groupBox2.Location = new System.Drawing.Point(12, 1);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(647, 43);
+            this.groupBox2.TabIndex = 19;
+            this.groupBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Busqueda";
+            // 
+            // txtParametro
+            // 
+            this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtParametro.Location = new System.Drawing.Point(67, 15);
+            this.txtParametro.Name = "txtParametro";
+            this.txtParametro.Size = new System.Drawing.Size(574, 20);
+            this.txtParametro.TabIndex = 0;
+            // 
             // frmProcValesIngresoPrincipal
             // 
             this.AcceptButton = this.btnAnadir;
@@ -347,17 +378,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(633, 421);
+            this.ClientSize = new System.Drawing.Size(671, 478);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvVales);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProcValesIngresoPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "INGRESO DE VALES";
+            this.Text = "VALES DE INGRESO";
             this.Load += new System.EventHandler(this.frmProcValesIngresoPrincipal_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVales)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -366,7 +400,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAnadir;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnSalir;
@@ -392,5 +426,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDUDELETE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHUDELETE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtParametro;
     }
 }
