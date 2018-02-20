@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcSeriesAnadir));
             this.label1 = new System.Windows.Forms.Label();
             this.txtcodprod = new System.Windows.Forms.TextBox();
@@ -62,6 +62,7 @@
             this.txtsubtotal = new System.Windows.Forms.TextBox();
             this.txtprecio = new System.Windows.Forms.TextBox();
             this.txtMedida = new System.Windows.Forms.TextBox();
+            this.btnConfirma = new System.Windows.Forms.Button();
             this.grbAgregadoSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaIngreso)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -84,7 +85,7 @@
             this.txtcodprod.Location = new System.Drawing.Point(63, 13);
             this.txtcodprod.Name = "txtcodprod";
             this.txtcodprod.Size = new System.Drawing.Size(106, 20);
-            this.txtcodprod.TabIndex = 0;
+            this.txtcodprod.TabIndex = 1;
             this.txtcodprod.TextChanged += new System.EventHandler(this.txtcodprod_TextChanged);
             this.txtcodprod.DoubleClick += new System.EventHandler(this.txtcodprod_DoubleClick);
             // 
@@ -102,7 +103,7 @@
             this.grbAgregadoSerie.Location = new System.Drawing.Point(13, 91);
             this.grbAgregadoSerie.Name = "grbAgregadoSerie";
             this.grbAgregadoSerie.Size = new System.Drawing.Size(560, 410);
-            this.grbAgregadoSerie.TabIndex = 2;
+            this.grbAgregadoSerie.TabIndex = 4;
             this.grbAgregadoSerie.TabStop = false;
             // 
             // txtCodigoSerie
@@ -111,7 +112,7 @@
             this.txtCodigoSerie.Location = new System.Drawing.Point(333, 18);
             this.txtCodigoSerie.Name = "txtCodigoSerie";
             this.txtCodigoSerie.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigoSerie.TabIndex = 8;
+            this.txtCodigoSerie.TabIndex = 6;
             // 
             // txtfecfabri
             // 
@@ -119,7 +120,7 @@
             this.txtfecfabri.Location = new System.Drawing.Point(287, 21);
             this.txtfecfabri.Name = "txtfecfabri";
             this.txtfecfabri.Size = new System.Drawing.Size(40, 13);
-            this.txtfecfabri.TabIndex = 7;
+            this.txtfecfabri.TabIndex = 78;
             this.txtfecfabri.Text = "Codigo";
             // 
             // btnQuitar
@@ -132,7 +133,7 @@
             this.btnQuitar.Location = new System.Drawing.Point(456, 41);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(75, 26);
-            this.btnQuitar.TabIndex = 5;
+            this.btnQuitar.TabIndex = 9;
             this.btnQuitar.Text = "Quitar";
             this.btnQuitar.UseVisualStyleBackColor = false;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
@@ -143,7 +144,7 @@
             this.label5.Location = new System.Drawing.Point(6, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
-            this.label5.TabIndex = 4;
+            this.label5.TabIndex = 48;
             this.label5.Text = "Observacion";
             // 
             // label4
@@ -152,7 +153,7 @@
             this.label4.Location = new System.Drawing.Point(6, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 3;
+            this.label4.TabIndex = 38;
             this.label4.Text = "Serie";
             // 
             // btnAnadir
@@ -165,7 +166,7 @@
             this.btnAnadir.Location = new System.Drawing.Point(456, 14);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(75, 26);
-            this.btnAnadir.TabIndex = 2;
+            this.btnAnadir.TabIndex = 8;
             this.btnAnadir.Text = "Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
@@ -174,7 +175,7 @@
             // 
             this.dgvListaIngreso.AllowUserToAddRows = false;
             this.dgvListaIngreso.AllowUserToDeleteRows = false;
-            this.dgvListaIngreso.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvListaIngreso.BackgroundColor = System.Drawing.Color.White;
             this.dgvListaIngreso.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvListaIngreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvListaIngreso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -183,18 +184,17 @@
             this.CHPRODUCTO,
             this.CHSERIE,
             this.CHOBS});
-            this.dgvListaIngreso.Enabled = false;
             this.dgvListaIngreso.Location = new System.Drawing.Point(6, 78);
             this.dgvListaIngreso.Name = "dgvListaIngreso";
             this.dgvListaIngreso.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaIngreso.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaIngreso.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListaIngreso.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvListaIngreso.Size = new System.Drawing.Size(548, 303);
             this.dgvListaIngreso.TabIndex = 5;
@@ -241,7 +241,7 @@
             this.txtObs.Location = new System.Drawing.Point(79, 45);
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(354, 20);
-            this.txtObs.TabIndex = 1;
+            this.txtObs.TabIndex = 7;
             // 
             // txtSerie
             // 
@@ -249,7 +249,7 @@
             this.txtSerie.Location = new System.Drawing.Point(79, 18);
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(89, 20);
-            this.txtSerie.TabIndex = 1;
+            this.txtSerie.TabIndex = 5;
             // 
             // txtNombreconpuesto
             // 
@@ -263,7 +263,8 @@
             this.txtNombreconpuesto.Name = "txtNombreconpuesto";
             this.txtNombreconpuesto.ReadOnly = true;
             this.txtNombreconpuesto.Size = new System.Drawing.Size(376, 20);
-            this.txtNombreconpuesto.TabIndex = 4;
+            this.txtNombreconpuesto.TabIndex = 18;
+            this.txtNombreconpuesto.TabStop = false;
             // 
             // groupBox2
             // 
@@ -283,7 +284,6 @@
             this.btnGrabar.BackColor = System.Drawing.Color.White;
             this.btnGrabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnGrabar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnGrabar.ForeColor = System.Drawing.Color.Black;
             this.btnGrabar.Location = new System.Drawing.Point(11, 18);
@@ -319,7 +319,7 @@
             // 
             // txtidcodigo
             // 
-            this.txtidcodigo.Location = new System.Drawing.Point(13, 525);
+            this.txtidcodigo.Location = new System.Drawing.Point(13, 519);
             this.txtidcodigo.Name = "txtidcodigo";
             this.txtidcodigo.Size = new System.Drawing.Size(100, 20);
             this.txtidcodigo.TabIndex = 10;
@@ -330,7 +330,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(63, 46);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(38, 20);
-            this.txtCantidad.TabIndex = 11;
+            this.txtCantidad.TabIndex = 2;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
@@ -370,7 +370,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(560, 84);
-            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // label7
@@ -400,6 +400,7 @@
             this.txtsubtotal.ReadOnly = true;
             this.txtsubtotal.Size = new System.Drawing.Size(106, 20);
             this.txtsubtotal.TabIndex = 14;
+            this.txtsubtotal.TabStop = false;
             // 
             // txtprecio
             // 
@@ -408,7 +409,7 @@
             this.txtprecio.Location = new System.Drawing.Point(265, 46);
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(100, 20);
-            this.txtprecio.TabIndex = 13;
+            this.txtprecio.TabIndex = 3;
             this.txtprecio.TextChanged += new System.EventHandler(this.txtprecio_TextChanged);
             this.txtprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprecio_KeyPress);
             // 
@@ -422,6 +423,19 @@
             this.txtMedida.ReadOnly = true;
             this.txtMedida.Size = new System.Drawing.Size(62, 20);
             this.txtMedida.TabIndex = 12;
+            this.txtMedida.TabStop = false;
+            // 
+            // btnConfirma
+            // 
+            this.btnConfirma.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnConfirma.Enabled = false;
+            this.btnConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirma.ForeColor = System.Drawing.Color.Transparent;
+            this.btnConfirma.Location = new System.Drawing.Point(11, 545);
+            this.btnConfirma.Name = "btnConfirma";
+            this.btnConfirma.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirma.TabIndex = 15;
+            this.btnConfirma.UseVisualStyleBackColor = true;
             // 
             // frmProcSeriesAnadir
             // 
@@ -431,6 +445,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(584, 572);
+            this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.mskFecha);
@@ -488,5 +503,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSERIE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHOBS;
         private System.Windows.Forms.TextBox txtCodigoSerie;
+        private System.Windows.Forms.Button btnConfirma;
     }
 }

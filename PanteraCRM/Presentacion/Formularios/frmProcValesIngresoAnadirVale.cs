@@ -27,8 +27,13 @@ namespace Presentacion
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+            if (sesion.movprodaccion != null)
+            {
+                sesion.movprodaccion.Clear();
+            }
+            
         }
-        decimal suma = 0;
+        
         private void frmProcIngresoValesAnadir_Load(object sender, EventArgs e)
         {
             txtejercicio.Text = "2018";
@@ -47,7 +52,8 @@ namespace Presentacion
             cboTipoMov.ValueMember = "idmaestrodetalle";
             cboTipoMov.DisplayMember = "nombreitem";
             mskfechareg.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-            txtTotal.Text = ""+suma;
+            txtTotal.Text = "0.00";
+            cboTipoMov.Focus();
 
         }
 
@@ -61,36 +67,12 @@ namespace Presentacion
             }
             string vboton = "A";
             frmProcSeriesAnadir f = new frmProcSeriesAnadir(vboton);
-            f.pasado += new frmProcSeriesAnadir.pasar(ejecutar);
-            
+            f.p_inidproducto = dgvListaValeDetalle.RowCount+1;
             DialogResult res = f.ShowDialog();
             if (res == DialogResult.OK)
             {
-                valedetalle obj = sesion.valedetalles;
-                if (obj != null)
-                {
-                    dgvListaValeDetalle.Rows.Add(
-                     obj.chcodigoproducto, obj.chcodigoproducto,
-                     obj.nucantidad,
-                     obj.chcodigoserie,
-                     obj.chnombrecompuesto,
-                     obj.nucosto,
-                     obj.nutotal);
-                    suma =suma + obj.nutotal;
-                    txtTotal.Text = "" + suma;
-
-                }
-                else
-                {
-                    MessageBox.Show("No hay datos");
-                }
-                
-
+                CargarTabla();
             }
-
-
-
-
         }
         public void cargarData(int registro)
         {
@@ -110,6 +92,73 @@ namespace Presentacion
                     dgvListaValeDetalle.CurrentCell = dgvListaValeDetalle.Rows[puntero].Cells[1];
                     return;
                 }
+            }
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            sesion.movprodaccion.Clear();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                vBoton = "M";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    cargarFormularioModificar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void cargarFormularioModificar()
+        {
+            if (dgvListaValeDetalle.RowCount == 0)
+            {
+                MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSeriesAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            frmProcSeriesAnadir f = new frmProcSeriesAnadir(vBoton);
+            // f.pasado += new frmProcSeriesAnadir.pasar(ejecutar);            
+            f.p_inidproducto = (int)dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value;
+            //MessageBox.Show(dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            DialogResult res = f.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                CargarTabla();
+            }
+        }
+        private void CargarTabla()
+        {
+            decimal suma = 0;
+            List<movimientoproductoaccion> listaMovi = sesion.movprodaccion;
+            // valedetalle obj = sesion.valedetalles;
+            if (listaMovi != null)
+            {
+                dgvListaValeDetalle.Rows.Clear();
+                foreach (movimientoproductoaccion registrosMovi in listaMovi)
+                {
+                    dgvListaValeDetalle.Rows.Add(registrosMovi.valedet.p_inidvaledetalle,
+                        registrosMovi.valedet.p_inidproducto,
+                        registrosMovi.valedet.chcodigoproducto,
+                        registrosMovi.valedet.nucantidad,
+                        registrosMovi.valedet.chcodigoserie,
+                        registrosMovi.valedet.chnombrecompuesto,
+                        registrosMovi.valedet.nucosto,
+                        registrosMovi.valedet.nutotal);
+                    suma += registrosMovi.valedet.nutotal;                    
+                }
+                txtTotal.Text = decimal.Round(suma,2).ToString();
             }
         }
     }

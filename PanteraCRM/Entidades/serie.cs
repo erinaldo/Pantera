@@ -16,6 +16,7 @@ namespace Entidades
         public string chfecha { get; set; }
         public int p_inidusuarioinsert { get; set; }
         public int p_inidusuariodelete { get; set; }
+        
         public serie()
         {
             this.p_inidserie = 0;

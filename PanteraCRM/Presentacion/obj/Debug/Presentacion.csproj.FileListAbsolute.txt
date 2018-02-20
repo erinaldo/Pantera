@@ -466,7 +466,6 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\P
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcPedidosPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcIngresoValesAnadir.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSeriesAnadir.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSeriesPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcValesIngresoPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmLogin.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManClienteAnadir.resources
@@ -506,3 +505,6 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\P
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaCrediDevPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaCrediOtroPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSalidaProductosPrincipal.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcCancelacionCuentasPrincipal.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcKardexProductoPrincipal.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSalidaProductosAnadir.resources

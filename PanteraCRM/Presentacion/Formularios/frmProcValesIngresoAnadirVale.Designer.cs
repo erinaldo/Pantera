@@ -59,12 +59,13 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnAnadir = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.btnVer = new System.Windows.Forms.Button();
+            this.brnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.IDITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -345,6 +346,7 @@
             this.dgvListaValeDetalle.BackgroundColor = System.Drawing.Color.White;
             this.dgvListaValeDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaValeDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDITEM,
             this.IDPRODUCTO,
             this.CHCODIGO,
             this.CHCANTIDAD,
@@ -370,9 +372,9 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnAnadir);
-            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.btnGrabar);
             this.groupBox4.Controls.Add(this.btnModificar);
-            this.groupBox4.Controls.Add(this.btnVer);
+            this.groupBox4.Controls.Add(this.brnEliminar);
             this.groupBox4.Controls.Add(this.btnSalir);
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
@@ -386,7 +388,7 @@
             // 
             this.btnAnadir.BackColor = System.Drawing.SystemColors.Window;
             this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnadir.Location = new System.Drawing.Point(9, 17);
+            this.btnAnadir.Location = new System.Drawing.Point(9, 19);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(73, 35);
             this.btnAnadir.TabIndex = 0;
@@ -394,45 +396,47 @@
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
-            // button1
+            // btnGrabar
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Window;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(268, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "&Imprimir";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnGrabar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.Location = new System.Drawing.Point(284, 19);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(73, 35);
+            this.btnGrabar.TabIndex = 1;
+            this.btnGrabar.Text = "&Grabar";
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(96, 17);
+            this.btnModificar.Location = new System.Drawing.Point(88, 19);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(73, 35);
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // btnVer
+            // brnEliminar
             // 
-            this.btnVer.BackColor = System.Drawing.SystemColors.Window;
-            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(181, 17);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(73, 35);
-            this.btnVer.TabIndex = 3;
-            this.btnVer.Text = "&Ver";
-            this.btnVer.UseVisualStyleBackColor = false;
+            this.brnEliminar.BackColor = System.Drawing.SystemColors.Window;
+            this.brnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brnEliminar.Location = new System.Drawing.Point(167, 19);
+            this.brnEliminar.Name = "brnEliminar";
+            this.brnEliminar.Size = new System.Drawing.Size(73, 35);
+            this.brnEliminar.TabIndex = 3;
+            this.brnEliminar.Text = "&Eliminar";
+            this.brnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(363, 17);
+            this.btnSalir.Location = new System.Drawing.Point(363, 19);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(73, 35);
             this.btnSalir.TabIndex = 4;
@@ -459,6 +463,13 @@
             this.label13.Size = new System.Drawing.Size(42, 13);
             this.label13.TabIndex = 0;
             this.label13.Text = "TOTAL";
+            // 
+            // IDITEM
+            // 
+            this.IDITEM.HeaderText = "ITEM";
+            this.IDITEM.Name = "IDITEM";
+            this.IDITEM.ReadOnly = true;
+            this.IDITEM.Width = 40;
             // 
             // IDPRODUCTO
             // 
@@ -511,7 +522,7 @@
             // 
             // frmProcIngresoValesAnadir
             // 
-            this.AcceptButton = this.btnAnadir;
+            this.AcceptButton = this.btnGrabar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -571,14 +582,15 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnAnadir;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button brnEliminar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.MaskedTextBox mskfechareg;
         private System.Windows.Forms.ComboBox cboMoneda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDITEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODUCTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHCANTIDAD;

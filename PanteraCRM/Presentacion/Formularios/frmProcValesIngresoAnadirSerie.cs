@@ -14,10 +14,7 @@ namespace Presentacion
 {
     public partial class frmProcSeriesAnadir : Form
     {
-        
-        internal serie tmpSerie;
-        public delegate void pasar(int varreg);
-        public event pasar pasado;
+        internal int p_inidproducto;
         public frmProcSeriesAnadir(string vBoton)
         {
             InitializeComponent();
@@ -38,13 +35,14 @@ namespace Presentacion
             bool valserie = txtSerie.Text.Length > 0;
             bool valExisBd = validarExistencia(txtSerie.Text);
             bool valExisList = validarExistenciaMemoria(txtSerie.Text);
+            bool valExistMen = validarExistenciaMemoriaStatica(txtSerie.Text);
             if (validarCantidad())
             {               
                 if (validarCantidadfilas())
                 {
                     if (valserie)
                     {
-                        if (!valExisBd && !valExisList)
+                        if (!valExisBd && !valExisList  && !valExistMen)
                         {
                             int p_inidproducto = int.Parse(txtidcodigo.Text);
                             string chproducto = txtidcodigo.Text;
@@ -94,7 +92,36 @@ namespace Presentacion
                 MessageBox.Show("No hay registros", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            dgvListaIngreso.Rows.Remove(dgvListaIngreso.CurrentRow);
+            if (this.vBoton == "M")
+            {
+                string chcodigoserie = dgvListaIngreso.CurrentRow.Cells["CHSERIE"].Value.ToString();
+                dgvListaIngreso.Rows.Remove(dgvListaIngreso.CurrentRow);
+                List<movimientoproductoaccion> listaMovi = sesion.movprodaccion;
+                if (listaMovi != null)
+                {
+                    foreach (movimientoproductoaccion registrosMov in listaMovi)
+                    {
+                        if (registrosMov.valedet.p_inidvaledetalle == p_inidproducto)
+                        {
+                            List<serie> listaSerie = registrosMov.listaserie;
+                            int count = 0;
+                            foreach (serie registrosSerie in listaSerie)
+                            {
+                                if (chcodigoserie == registrosSerie.chcodigoserie)
+                                {
+                                    registrosSerie.estado = false;
+                                }
+                                count++;
+                            }
+                        }
+
+                    }
+                }
+            }
+            else
+            {
+                dgvListaIngreso.Rows.Remove(dgvListaIngreso.CurrentRow);
+            }
         }       
         
         private bool validarExistencia(string cosigoserie)
@@ -111,6 +138,26 @@ namespace Presentacion
                         flat = true;
                     }
                 }
+            return flat;
+        }
+        private bool validarExistenciaMemoriaStatica(string cosigoserie)
+        {
+            bool flat = false;
+            List<movimientoproductoaccion> listaMovi = sesion.movprodaccion;
+            if (listaMovi != null)
+            {
+                foreach (movimientoproductoaccion registrosMov in listaMovi)
+                {
+                    List<serie> listaSerie = registrosMov.listaserie;
+                    foreach (serie registrosSerie in listaSerie)
+                    {
+                        if (cosigoserie == registrosSerie.chcodigoserie && registrosSerie.estado == true)
+                        {
+                            flat = true;
+                        }                        
+                    }
+                }
+            }
             return flat;
         }
 
@@ -142,110 +189,144 @@ namespace Presentacion
       
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            // IDEA: PARA GARANTIZAR EL INGRESO SE TENDRIA QUE GUARDAR EN UN ARREGLO Y LUEGO VALIDAR SU EXISTENCIA TOTAL.
-            int varIdArticulo;
+             //int varIdArticulo;
             switch (this.vBoton)
             {
                 case "A":
-                    //ATRIBUTOS PARA INGRESAR PRODUCTO
-                    // CONFIRMACION
+                    //VALIDAR EXISTENCIA DE PRODUCTO
                     if (validarParaingreso())
                     {
-                        List<serie> obsej = new List<serie>();
-                        for (int i = 0; i < dgvListaIngreso.RowCount; i++)
+                        DialogResult result = MessageBox.Show("¿Esta Seguro de Grabar las series?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
                         {
-
-                            tmpSerie = new serie();
-                            tmpSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells[3].Value.ToString();
-                            tmpSerie.estado = true;
-                            tmpSerie.p_inidproducto = int.Parse(txtidcodigo.Text);
-                            tmpSerie.chadicional = dgvListaIngreso.Rows[i].Cells[4].Value.ToString();
-                            tmpSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-                            tmpSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                            tmpSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
-                            obsej.Add(tmpSerie);
-
+                            GrabarRegistros();
+                            btnConfirma.Enabled = true;
+                            btnConfirma.PerformClick();
                         }
-                        sesion.listaserie = obsej;
-                        valedetalle valedetallessss = new valedetalle();
-                        valedetallessss.chnombrecompuesto = txtNombreconpuesto.Text;
-                        valedetallessss.chcodigoproducto = txtcodprod.Text;
-                        valedetallessss.chcodigoserie = txtMedida.Text;
-                        valedetallessss.p_inidproducto = int.Parse(txtidcodigo.Text);
-                        valedetallessss.nucantidad = int.Parse(txtCantidad.Text);
-                        valedetallessss.nucosto = decimal.Parse(txtprecio.Text);
-                        valedetallessss.nutotal = decimal.Parse(txtsubtotal.Text);
-
-                        sesion.valedetalles = valedetallessss;
-                        //MessageBox.Show("Las Series se Ingresaron al Sistema");
-                        dgvListaIngreso.Rows.Clear();
+                        else
+                        {
+                            return;
+                        }
                     }
                     else
                     {
                         return;
                     }
-                    //bool flat3 = ValidarCampos();                    
-                    //if (flat3)
-                    //{
-                    //    //VALIDACION
-                    //    bool flat4 = ConfirmacionRegistro();
-                    //    if (flat4)
-                    //    {
-                    //        //INGRESO
-                    //        bool flat = true;
-                    //        //IngresoRegistros();
-                    //        List<serie> obsej =  new List<serie>();
-                    //        for (int i = 0; i < dgvListaIngreso.RowCount; i++)
-                    //        {
-
-                    //            tmpSerie = new serie();
-                    //            tmpSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells[3].Value.ToString();
-                    //            tmpSerie.estado = true;
-                    //            tmpSerie.p_inidproducto = int.Parse(txtidcodigo.Text);
-                    //            tmpSerie.chadicional = dgvListaIngreso.Rows[i].Cells[4].Value.ToString();
-                    //            tmpSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-                    //            tmpSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                    //            tmpSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
-                    //            obsej.Add(tmpSerie);
-
-                    //        }
-                    //        sesion.listaserie = obsej;
-                    //        valedetalle valedetallessss = new valedetalle();
-                    //        valedetallessss.chnombrecompuesto = txtNombreconpuesto.Text;
-                    //        valedetallessss.chcodigoproducto = txtcodprod.Text;
-                    //        valedetallessss.chcodigoserie = txtMedida.Text;
-                    //        valedetallessss.p_inidproducto = int.Parse(txtidcodigo.Text);
-                    //        valedetallessss.nucantidad = int.Parse(txtCantidad.Text);
-                    //        valedetallessss.nucosto = decimal.Parse(txtprecio.Text);
-                    //        valedetallessss.nutotal = decimal.Parse(txtsubtotal.Text);
-
-                    //        sesion.valedetalles = valedetallessss;
-                    //        //MessageBox.Show("Las Series se Ingresaron al Sistema");
-                    //        dgvListaIngreso.Rows.Clear();                           
-                    //     }
-                    //}else
-                    //{
-                    //    MessageBox.Show("Campos incorrectos verificar");
-                    //    return;
-                    //}             
                     break;
                 case "M":
-                    //tmpSerie = new serie();
-                    //varIdArticulo = serieNE.seriesIngresar(tmpSerie);
-                    //if (varIdArticulo <= 0)
-                    //{
-                    //    MessageBox.Show("Registro con error por actualizado, validar");
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Registro actualizado");
-                    //    pasado(varIdArticulo);
-                    //}
+                    if (validarParaingreso())
+                    {
+                        DialogResult result = MessageBox.Show("¿Esta Seguro de Grabar las series?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            ModificarRegistros();
+                            btnConfirma.Enabled = true;
+                            btnConfirma.PerformClick();
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        return;
+                    }
                     break;
                 default:
                     break;
+
             }
             this.Dispose();  
+        }
+        public void GrabarRegistros()
+        {
+            List<movimientoproductoaccion> listaMovi = listaMovi = sesion.movprodaccion;
+            if (listaMovi == null)
+            {
+                listaMovi = new List<movimientoproductoaccion>();
+            }
+            movimientoproductoaccion registrosMovi = new movimientoproductoaccion();
+
+            List<serie> ListaSerie = new List<serie>();
+            if (grbAgregadoSerie.Enabled == true)
+            {
+                for (int i = 0; i < dgvListaIngreso.RowCount; i++)
+                {
+                    serie registrosSerie = new serie();
+                    registrosSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells[3].Value.ToString();
+                    registrosSerie.estado = true;
+                    registrosSerie.p_inidproducto = int.Parse(txtidcodigo.Text);
+                    registrosSerie.chadicional = dgvListaIngreso.Rows[i].Cells[4].Value.ToString();
+                    registrosSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+                    registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                    registrosSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
+                    ListaSerie.Add(registrosSerie);
+                }
+            }
+            
+            valedetalle registrosValeDet = new valedetalle();
+            registrosValeDet.p_inidvaledetalle = p_inidproducto;
+            registrosValeDet.chnombrecompuesto = txtNombreconpuesto.Text;
+            registrosValeDet.chmedida = txtMedida.Text;
+            registrosValeDet.chcodigoproducto = txtcodprod.Text;
+            registrosValeDet.chcodigoserie = txtMedida.Text;
+            registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+            registrosValeDet.p_inidproducto = int.Parse(txtidcodigo.Text);
+            registrosValeDet.nucantidad = int.Parse(txtCantidad.Text);
+            registrosValeDet.nucosto = decimal.Parse(txtprecio.Text);
+            registrosValeDet.nutotal = decimal.Parse(txtsubtotal.Text);
+
+            registrosMovi.listaserie = ListaSerie;
+            registrosMovi.valedet = registrosValeDet;
+
+            listaMovi.Add(registrosMovi);
+            sesion.movprodaccion = listaMovi;
+            dgvListaIngreso.Rows.Clear();
+        }
+        public void ModificarRegistros()
+        {
+           
+            List<serie> ListaSerie = new List<serie>();
+            if (grbAgregadoSerie.Enabled == true)
+            {
+                for (int i = 0; i < dgvListaIngreso.RowCount; i++)
+                {
+                    serie registrosSerie = new serie();
+                    registrosSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells[3].Value.ToString();
+                    registrosSerie.estado = true;
+                    registrosSerie.p_inidproducto = int.Parse(txtidcodigo.Text);
+                    registrosSerie.chadicional = dgvListaIngreso.Rows[i].Cells[4].Value.ToString();
+                    registrosSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+                    registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                    registrosSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
+                    ListaSerie.Add(registrosSerie);
+                }
+            }
+
+            valedetalle registrosValeDet = new valedetalle();
+            registrosValeDet.p_inidvaledetalle = p_inidproducto;
+            registrosValeDet.chnombrecompuesto = txtNombreconpuesto.Text;
+            registrosValeDet.chmedida = txtMedida.Text;
+            registrosValeDet.chcodigoproducto = txtcodprod.Text;
+            registrosValeDet.chcodigoserie = txtMedida.Text;
+            registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+            registrosValeDet.p_inidproducto = int.Parse(txtidcodigo.Text);
+            registrosValeDet.nucantidad = int.Parse(txtCantidad.Text);
+            registrosValeDet.nucosto = decimal.Parse(txtprecio.Text);
+            registrosValeDet.nutotal = decimal.Parse(txtsubtotal.Text);      
+
+            List<movimientoproductoaccion> ListaMov = sesion.movprodaccion;
+            foreach (movimientoproductoaccion RegistrosMov in ListaMov)
+            {
+                if (RegistrosMov.valedet.p_inidvaledetalle == p_inidproducto)
+                {
+                    RegistrosMov.valedet = registrosValeDet;
+                    RegistrosMov.listaserie = ListaSerie;
+                }
+            }
+
+            dgvListaIngreso.Rows.Clear();
         }
         private  bool IngresoRegistros()
         {
@@ -253,7 +334,7 @@ namespace Presentacion
             bool flat2 = false;
             for (int i = 0; i < dgvListaIngreso.RowCount; i++)
             {
-                tmpSerie = new serie();
+                serie tmpSerie = new serie();
                 tmpSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells[3].Value.ToString();
                 tmpSerie.estado = true;
                 tmpSerie.p_inidproducto = int.Parse(txtidcodigo.Text);
@@ -293,31 +374,54 @@ namespace Presentacion
 
             return true;
         }
-        private bool ConfirmacionRegistro()
-        {
-            bool flat = false;
-            DialogResult result = MessageBox.Show("¿Esta Seguro de Grabar las series?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                flat = true;
-            }
-            return flat;
-        }
+       
 
         private void frmProcSeriesAnadir_Load(object sender, EventArgs e)
         {
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
-            mskFecha.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-            txtcodprod.Focus();
-            txtNombreconpuesto.Text = "";
-            txtMedida.Text = "";
-            txtidcodigo.Text = "";
-            txtCantidad.Text = "0";
-            txtSerie.Text = "";
-            txtCodigoSerie.Text = "";
-            txtObs.Text = "";
-            txtprecio.Text = "0.00";
+
+            if (this.vBoton == "A")
+            {
+                mskFecha.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+                txtcodprod.Focus();
+                txtNombreconpuesto.Text = "";
+                txtMedida.Text = "";
+                txtidcodigo.Text = "";
+                txtCantidad.Text = "0";
+                txtSerie.Text = "";
+                txtCodigoSerie.Text = "";
+                txtObs.Text = "";
+                txtprecio.Text = "0.00";
+            }
+            else
+                if (this.vBoton == "M")
+            {
+                List<movimientoproductoaccion> ListaMov = sesion.movprodaccion;
+                foreach (movimientoproductoaccion RegistrosMov in ListaMov)
+                {
+                    if (RegistrosMov.valedet.p_inidvaledetalle == p_inidproducto)
+                    {
+                        valedetalle RegistroValDet = RegistrosMov.valedet;
+                        txtcodprod.Text = RegistroValDet.chcodigoproducto;
+                        mskFecha.Text = RegistroValDet.chfecha;
+                        txtCantidad.Text = RegistroValDet.nucantidad.ToString();
+                        txtprecio.Text = RegistroValDet.nucosto.ToString();
+                        txtSerie.Text = "";
+                        txtObs.Text = "";
+                        txtSerie.Focus();
+                        List<serie> ListaSerie = RegistrosMov.listaserie;
+                        foreach (serie RegistrosSerie in ListaSerie)
+                        {
+                            if (RegistrosSerie.estado == true)
+                            {
+                                dgvListaIngreso.Rows.Add(p_inidproducto, RegistroValDet.chcodigoproducto, RegistroValDet.chnombrecompuesto, RegistrosSerie.chcodigoserie, RegistrosSerie.chadicional);
+                            }
+                            
+                        }
+                    }
+                }
+            }
         }
 
         private void txtcodprod_TextChanged(object sender, EventArgs e)
@@ -474,27 +578,62 @@ namespace Presentacion
             int lista = dgvListaIngreso.RowCount;
             if (grbAgregadoSerie.Enabled == true)
             {
-                if (cantidad == lista)
+                if (cantidad == lista && validarCantidad())
                 {
                     if(txtidcodigo.Text.Length > 0)
                     {
-
-                        flat = true;
+                        if (precio > 0)
+                        {
+                            flat = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ingrese costo unitario", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                            txtprecio.Focus();
+                        }
                     }
                     else
                     {
                         MessageBox.Show("Producto no Seleccionado", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                        flat = false;
+                        txtcodprod.Focus();
+                      
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Lista de series incompleta", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                    flat = false;
+                    MessageBox.Show("Lista incompleta", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                    txtSerie.Focus();
+                  
                 }
             }else
             {
-                flat = true;
+                if (validarCantidad())
+                {
+                    if (txtidcodigo.Text.Length > 0)
+                    {
+                        if (precio > 0)
+                        {
+                            flat = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ingrese costo unitario", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                            txtprecio.Focus();
+                        }                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Producto no Seleccionado", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        txtcodprod.Focus();
+                       
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese cantidad", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                    txtCantidad.Focus();
+                  
+                }
             }
             
             return flat;

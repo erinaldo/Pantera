@@ -18,6 +18,8 @@ namespace Entidades
         public int nucantidad { get; set; }
         public decimal nucosto { get; set; }
         public decimal nutotal { get; set; }
+        public string chfecha { get; set; }
+        public string chmedida { get; set; }
         public valedetalle()
         {
             this.p_inidvaledetalle = 0;
@@ -30,6 +32,8 @@ namespace Entidades
             this.nucantidad = 0;
             this.nucosto = 0;
             this.nutotal = 0;
+            this.chfecha = string.Empty;
+            this.chmedida = string.Empty;
         }
     }
 }

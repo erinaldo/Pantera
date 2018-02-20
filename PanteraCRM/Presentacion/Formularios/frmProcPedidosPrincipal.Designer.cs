@@ -40,7 +40,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
@@ -52,7 +51,7 @@
             // btnAnadir
             // 
             this.btnAnadir.BackColor = System.Drawing.Color.White;
-            this.btnAnadir.Location = new System.Drawing.Point(6, 22);
+            this.btnAnadir.Location = new System.Drawing.Point(17, 22);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(75, 32);
             this.btnAnadir.TabIndex = 0;
@@ -100,18 +99,17 @@
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnAnadir);
-            this.groupBox1.Location = new System.Drawing.Point(32, 395);
+            this.groupBox1.Location = new System.Drawing.Point(72, 395);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(609, 71);
+            this.groupBox1.Size = new System.Drawing.Size(526, 71);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(411, 22);
+            this.button6.Location = new System.Drawing.Point(341, 22);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 32);
             this.button6.TabIndex = 6;
@@ -121,7 +119,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(330, 22);
+            this.button5.Location = new System.Drawing.Point(260, 22);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 32);
             this.button5.TabIndex = 5;
@@ -131,7 +129,8 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(528, 22);
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Location = new System.Drawing.Point(422, 22);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 32);
             this.btnSalir.TabIndex = 4;
@@ -142,7 +141,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(249, 22);
+            this.button3.Location = new System.Drawing.Point(179, 22);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 32);
             this.button3.TabIndex = 3;
@@ -152,22 +151,12 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(168, 22);
+            this.button2.Location = new System.Drawing.Point(98, 22);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 32);
             this.button2.TabIndex = 2;
             this.button2.Text = "&Modificar";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(87, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 32);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "&Buscar";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
@@ -202,6 +191,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(671, 478);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -228,7 +218,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.GroupBox groupBox2;

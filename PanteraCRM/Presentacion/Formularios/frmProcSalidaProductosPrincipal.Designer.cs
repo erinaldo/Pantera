@@ -347,6 +347,7 @@
             this.btnAnadir.TabIndex = 8;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
+            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
             // btnImprimir
             // 
