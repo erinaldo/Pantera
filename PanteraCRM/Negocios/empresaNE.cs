@@ -34,5 +34,9 @@ namespace Negocios
         {
             return empresaDL.empresaActualizar(empresa);
         }
+        public static int EmpresaIngresar(empresas registros)
+        {
+            return empresaDL.EmpresaIngresar(registros);
+        }
     }
 }

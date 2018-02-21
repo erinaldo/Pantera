@@ -14,6 +14,7 @@ namespace Presentacion
 {
     public partial class frmProcSeriesAnadir : Form
     {
+        public bool estado = false;
         internal int p_inidproducto;
         public frmProcSeriesAnadir(string vBoton)
         {
@@ -196,17 +197,9 @@ namespace Presentacion
                     //VALIDAR EXISTENCIA DE PRODUCTO
                     if (validarParaingreso())
                     {
-                        DialogResult result = MessageBox.Show("¿Esta Seguro de Grabar las series?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (result == DialogResult.Yes)
-                        {
-                            GrabarRegistros();
-                            btnConfirma.Enabled = true;
-                            btnConfirma.PerformClick();
-                        }
-                        else
-                        {
-                            return;
-                        }
+                        GrabarRegistros();
+                        btnConfirma.Enabled = true;
+                        btnConfirma.PerformClick();                       
                     }
                     else
                     {
@@ -216,17 +209,9 @@ namespace Presentacion
                 case "M":
                     if (validarParaingreso())
                     {
-                        DialogResult result = MessageBox.Show("¿Esta Seguro de Grabar las series?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (result == DialogResult.Yes)
-                        {
                             ModificarRegistros();
                             btnConfirma.Enabled = true;
                             btnConfirma.PerformClick();
-                        }
-                        else
-                        {
-                            return;
-                        }
                     }
                     else
                     {
@@ -237,7 +222,7 @@ namespace Presentacion
                     break;
 
             }
-            this.Dispose();  
+            this.Close();  
         }
         public void GrabarRegistros()
         {

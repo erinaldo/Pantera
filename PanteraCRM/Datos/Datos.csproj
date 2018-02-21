@@ -61,6 +61,7 @@
     <Compile Include="maestrodetalleDL.cs" />
     <Compile Include="marcaDL.cs" />
     <Compile Include="modeloDL.cs" />
+    <Compile Include="movimientosDL.cs" />
     <Compile Include="parametro.cs" />
     <Compile Include="pedidoDL.cs" />
     <Compile Include="perfildetalleDL.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="productoDL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="proveedorDL.cs" />
+    <Compile Include="proveedorjuridicoDL.cs" />
     <Compile Include="puntoventaDL.cs" />
     <Compile Include="reniecDL.cs" />
     <Compile Include="serieDL.cs" />

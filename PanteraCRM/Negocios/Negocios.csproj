@@ -53,6 +53,7 @@
     <Compile Include="marcaNE.cs" />
     <Compile Include="menuNE.cs" />
     <Compile Include="modeloNE.cs" />
+    <Compile Include="movimientosNE.cs" />
     <Compile Include="pedidoNE.cs" />
     <Compile Include="perfildetalleNE.cs" />
     <Compile Include="perfilNE.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="presupuestoNE.cs" />
     <Compile Include="productoNE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="proveedorjuridicoNE.cs" />
     <Compile Include="proveedorNE.cs" />
     <Compile Include="puntoventaNE.cs" />
     <Compile Include="reniecNE.cs" />

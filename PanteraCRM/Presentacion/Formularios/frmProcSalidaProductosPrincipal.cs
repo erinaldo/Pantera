@@ -26,16 +26,27 @@ namespace Presentacion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
             this.Dispose();
         }
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            string formula = "Presentacion.frmProcSalidaProductosAnadir";
-            
-            Form frm = (Form)(Assembly.GetExecutingAssembly().CreateInstance(formula));
-            //frm.MdiParent = this.MdiParent;
-            //frm.Show();
+
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            frmProcSalidaProductosAnadir frm1 = new frmProcSalidaProductosAnadir();
+            frm1.MdiParent = this.MdiParent;
+            frm1.Show();
         }
         public void cheCarForm(Form frmhijo, Form frmpapa)
         {

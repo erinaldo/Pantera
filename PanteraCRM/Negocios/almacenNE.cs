@@ -44,5 +44,9 @@ namespace Negocios
         {
             return almacenDL.almacenActualizar(almacen);
         }
+        public static int SaldoAlmacenAdiconar(int a1, int p1, decimal cantidad)
+        {
+            return almacenDL.SaldoAlmacenAdiconar( a1,  p1,  cantidad);
+        }
     }
 }

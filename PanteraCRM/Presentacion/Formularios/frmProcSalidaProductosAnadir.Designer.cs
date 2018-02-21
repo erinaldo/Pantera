@@ -319,6 +319,7 @@
             this.txtCodprov.Name = "txtCodprov";
             this.txtCodprov.Size = new System.Drawing.Size(160, 20);
             this.txtCodprov.TabIndex = 2;
+            this.txtCodprov.TextChanged += new System.EventHandler(this.txtCodprov_TextChanged);
             // 
             // label12
             // 
@@ -558,7 +559,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProcSalidaProductosAnadir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmProcSalidaProductosAnadir";
+            this.Text = "AÑADIR SALIDA";
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaValeDetalle)).EndInit();

@@ -31,7 +31,8 @@ namespace Presentacion
             string vboton = "A";
             frmProcIngresoValesAnadir f = new frmProcIngresoValesAnadir(vboton);
             f.pasado += new frmProcIngresoValesAnadir.pasar(ejecutar);
-            f.ShowDialog();
+            f.MdiParent = this.MdiParent;
+            f.Show();
         }
         public void cargarData(int registro)
         {
@@ -63,7 +64,43 @@ namespace Presentacion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
             this.Dispose();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
         }
     }
 }

@@ -85,30 +85,30 @@ namespace Presentacion
                     persona tmpPersona = personaNE.buscaPorIdpersona(tmpPresupuesto.idpersona);
                     if (tmpPersona != null)
                     {
-                        txtDni.Text = tmpPersona.dni;
-                        txtUbigeo.Text = tmpPersona.ubigeo;
-                        txtIdpersona.Text = tmpPersona.idpersona.ToString();
-                        txtApe_paterno.Text = tmpPersona.ape_paterno;
-                        txtApe_materno.Text = tmpPersona.ape_materno;
-                        txtNombres.Text = tmpPersona.nombres;
-                        txtFecha_nac.Text = tmpPersona.fecha_nac;
-                        txtSexo.Text = tmpPersona.sexo;
-                        txtDireccion.Text = tmpPersona.direccion;
-                        txtTelefono.Text = tmpPersona.telefono;
-                        txtDireccion.Enabled = true;
-                        ubigeo tmpUbigeo = ubigeoNE.buscarPorCodigo(tmpPersona.ubigeo);
-                        txtUbigeo.Text = tmpUbigeo.cod_ubigeo;
-                        txtDepartamento.Text = tmpUbigeo.desc_departamento;
-                        txtProvincia.Text = tmpUbigeo.desc_provincia;
-                        txtDistrito.Text = tmpUbigeo.desc_distrito;
-                        txtUbigeo.Enabled = true;
-                        txtTelefono.Enabled = true;
-                        txtApe_paterno.Enabled = false;
-                        txtApe_materno.Enabled = false;
-                        txtNombres.Enabled = false;
-                        txtFecha_nac.Enabled = false;
-                        txtSexo.Enabled = false;
-                        txtDireccion.Enabled = true;
+                        //txtDni.Text = tmpPersona.dni;
+                        //txtUbigeo.Text = tmpPersona.ubigeo;
+                        //txtIdpersona.Text = tmpPersona.idpersona.ToString();
+                        //txtApe_paterno.Text = tmpPersona.ape_paterno;
+                        //txtApe_materno.Text = tmpPersona.ape_materno;
+                        //txtNombres.Text = tmpPersona.nombres;
+                        //txtFecha_nac.Text = tmpPersona.fecha_nac;
+                        //txtSexo.Text = tmpPersona.sexo;
+                        //txtDireccion.Text = tmpPersona.direccion;
+                        //txtTelefono.Text = tmpPersona.telefono;
+                        //txtDireccion.Enabled = true;
+                        //ubigeo tmpUbigeo = ubigeoNE.buscarPorCodigo(tmpPersona.ubigeo);
+                        //txtUbigeo.Text = tmpUbigeo.cod_ubigeo;
+                        //txtDepartamento.Text = tmpUbigeo.desc_departamento;
+                        //txtProvincia.Text = tmpUbigeo.desc_provincia;
+                        //txtDistrito.Text = tmpUbigeo.desc_distrito;
+                        //txtUbigeo.Enabled = true;
+                        //txtTelefono.Enabled = true;
+                        //txtApe_paterno.Enabled = false;
+                        //txtApe_materno.Enabled = false;
+                        //txtNombres.Enabled = false;
+                        //txtFecha_nac.Enabled = false;
+                        //txtSexo.Enabled = false;
+                        //txtDireccion.Enabled = true;
                     }
                     else
                     {
@@ -174,27 +174,27 @@ namespace Presentacion
                 persona registro = personaNE.buscaPorDNI(dni);
                 if ((this.vBoton == "A" && registro != null) || (this.vBoton == "M" && registro != null))
                 {
-                    txtIdpersona.Text = Convert.ToString(registro.idpersona);
-                    txtUbigeo.Text = registro.ubigeo;
-                    txtApe_paterno.Text = registro.ape_paterno;
-                    txtApe_materno.Text = registro.ape_materno;
-                    txtNombres.Text = registro.nombres;
-                    txtFecha_nac.Text = registro.fecha_nac;
-                    txtSexo.Text = registro.sexo;
-                    txtTelefono.Text = registro.telefono;
-                    txtDireccion.Text = registro.direccion;
-                    txtDireccion.Enabled = false;
-                    ubigeo registro3 = ubigeoNE.buscarPorCodigo(registro.ubigeo);
-                    txtUbigeo.Text = registro3.cod_ubigeo;
-                    txtDepartamento.Text = registro3.desc_departamento;
-                    txtProvincia.Text = registro3.desc_provincia;
-                    txtDistrito.Text = registro3.desc_distrito;
-                    txtUbigeo.Enabled = true;
-                    txtApe_paterno.Enabled = false;
-                    txtApe_materno.Enabled = false;
-                    txtNombres.Enabled = false;
-                    txtFecha_nac.Enabled = false;
-                    txtSexo.Enabled = false;
+                    //txtIdpersona.Text = Convert.ToString(registro.idpersona);
+                    //txtUbigeo.Text = registro.ubigeo;
+                    //txtApe_paterno.Text = registro.ape_paterno;
+                    //txtApe_materno.Text = registro.ape_materno;
+                    //txtNombres.Text = registro.nombres;
+                    //txtFecha_nac.Text = registro.fecha_nac;
+                    //txtSexo.Text = registro.sexo;
+                    //txtTelefono.Text = registro.telefono;
+                    //txtDireccion.Text = registro.direccion;
+                    //txtDireccion.Enabled = false;
+                    //ubigeo registro3 = ubigeoNE.buscarPorCodigo(registro.ubigeo);
+                    //txtUbigeo.Text = registro3.cod_ubigeo;
+                    //txtDepartamento.Text = registro3.desc_departamento;
+                    //txtProvincia.Text = registro3.desc_provincia;
+                    //txtDistrito.Text = registro3.desc_distrito;
+                    //txtUbigeo.Enabled = true;
+                    //txtApe_paterno.Enabled = false;
+                    //txtApe_materno.Enabled = false;
+                    //txtNombres.Enabled = false;
+                    //txtFecha_nac.Enabled = false;
+                    //txtSexo.Enabled = false;
                     txtDireccion.Enabled = true;
                     //MessageBox.Show("DNI ingresado ya se encuentra registrado", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                     //txtDni.Focus();
@@ -210,13 +210,13 @@ namespace Presentacion
                         txtApe_materno.Text = registro2.ape_materno;
                         txtNombres.Text = registro2.nombres;
                         txtFecha_nac.Text = registro2.fecha_nac;
-                        txtSexo.Text = registro2.sexo;
-                        txtDireccion.Enabled = false;
-                        ubigeo registro3 = ubigeoNE.buscarPorCodigo(registro2.ubigeo);
-                        txtUbigeo.Text = registro3.cod_ubigeo;
-                        txtDepartamento.Text = registro3.desc_departamento;
-                        txtProvincia.Text = registro3.desc_provincia;
-                        txtDistrito.Text = registro3.desc_distrito;
+                        //txtSexo.Text = registro2.sexo;
+                        //txtDireccion.Enabled = false;
+                        //ubigeo registro3 = ubigeoNE.buscarPorCodigo(registro2.ubigeo);
+                        //txtUbigeo.Text = registro3.cod_ubigeo;
+                        //txtDepartamento.Text = registro3.desc_departamento;
+                        //txtProvincia.Text = registro3.desc_provincia;
+                        //txtDistrito.Text = registro3.desc_distrito;
                         txtUbigeo.Enabled = true;
                         txtApe_paterno.Enabled = false;
                         txtApe_materno.Enabled = false;
@@ -259,7 +259,7 @@ namespace Presentacion
         }
         public void cargarUbigeo(ubigeo ubigeo)
         {
-            txtUbigeo.Text = ubigeo.cod_ubigeo;
+            //txtUbigeo.Text = ubigeo.cod_ubigeo;
             txtDepartamento.Text = ubigeo.desc_departamento;
             txtProvincia.Text = ubigeo.desc_provincia;
             txtDistrito.Text = ubigeo.desc_distrito;
@@ -373,10 +373,10 @@ namespace Presentacion
             string cod_ubigeo = txtUbigeo.Text;
             try
             {
-                ubigeo registro = ubigeoNE.buscarPorCodigo(cod_ubigeo);
+                ubigeo registro = ubigeoNE.buscarPorCodigo(1);
                 if (registro != null)
                 {
-                    txtUbigeo.Text = registro.cod_ubigeo;
+                    //txtUbigeo.Text = registro.cod_ubigeo;
                     txtDepartamento.Text = registro.desc_departamento;
                     txtProvincia.Text = registro.desc_provincia;
                     txtDistrito.Text = registro.desc_distrito;

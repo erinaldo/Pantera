@@ -32,9 +32,6 @@
             this.txtParametroBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvListaProductos = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnSeleccion = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +41,9 @@
             this.IDMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHPRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSeleccion = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -66,6 +66,7 @@
             this.txtParametroBusqueda.Name = "txtParametroBusqueda";
             this.txtParametroBusqueda.Size = new System.Drawing.Size(452, 20);
             this.txtParametroBusqueda.TabIndex = 1;
+            this.txtParametroBusqueda.TextChanged += new System.EventHandler(this.txtParametroBusqueda_TextChanged);
             // 
             // label1
             // 
@@ -97,49 +98,6 @@
             this.dgvListaProductos.ReadOnly = true;
             this.dgvListaProductos.Size = new System.Drawing.Size(578, 178);
             this.dgvListaProductos.TabIndex = 1;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnSeleccion);
-            this.groupBox2.Controls.Add(this.btnSalir);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(211, 246);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(180, 55);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            // 
-            // btnSeleccion
-            // 
-            this.btnSeleccion.BackColor = System.Drawing.Color.White;
-            this.btnSeleccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSeleccion.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnSeleccion.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSeleccion.ForeColor = System.Drawing.Color.Black;
-            this.btnSeleccion.Location = new System.Drawing.Point(11, 12);
-            this.btnSeleccion.Name = "btnSeleccion";
-            this.btnSeleccion.Size = new System.Drawing.Size(75, 34);
-            this.btnSeleccion.TabIndex = 1;
-            this.btnSeleccion.Text = "&Seleccionar";
-            this.btnSeleccion.UseVisualStyleBackColor = false;
-            this.btnSeleccion.Click += new System.EventHandler(this.btnSeleccion_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.White;
-            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(92, 12);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 34);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "&Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // IDPRODUCTO
             // 
@@ -203,6 +161,49 @@
             this.IDSERIE.Name = "IDSERIE";
             this.IDSERIE.ReadOnly = true;
             this.IDSERIE.Visible = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnSeleccion);
+            this.groupBox2.Controls.Add(this.btnSalir);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(211, 246);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(180, 55);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            // 
+            // btnSeleccion
+            // 
+            this.btnSeleccion.BackColor = System.Drawing.Color.White;
+            this.btnSeleccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSeleccion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnSeleccion.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSeleccion.ForeColor = System.Drawing.Color.Black;
+            this.btnSeleccion.Location = new System.Drawing.Point(11, 12);
+            this.btnSeleccion.Name = "btnSeleccion";
+            this.btnSeleccion.Size = new System.Drawing.Size(75, 34);
+            this.btnSeleccion.TabIndex = 1;
+            this.btnSeleccion.Text = "&Seleccionar";
+            this.btnSeleccion.UseVisualStyleBackColor = false;
+            this.btnSeleccion.Click += new System.EventHandler(this.btnSeleccion_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.White;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSalir.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.Location = new System.Drawing.Point(92, 12);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 34);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmBusquedaProductoFacturacion
             // 

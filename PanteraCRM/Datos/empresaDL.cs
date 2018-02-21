@@ -87,5 +87,29 @@ namespace Datos
                 new parametro("in_estadoempresa", empresa.estadoempresa));
             }
         }
+
+        public static int EmpresaIngresar(empresas registros)
+        {
+            {
+                return conexion.executeScalar("fn_empresa_ingresar",
+                CommandType.StoredProcedure,
+                new parametro("in_chrazonsocial", registros.chrazonsocial),
+                new parametro("in_chruc", registros.chruc),
+                new parametro("in_chtelefono", registros.chtelefono),
+                new parametro("in_chdirecfiscal", registros.chdirecfiscal),
+                new parametro("in_chobservacion", registros.chobservacion),
+                new parametro("in_estado", registros.estado),
+                new parametro("in_chnombrecomercial", registros.chnombrecomercial),
+                new parametro("in_p_inidubigeo", registros.p_inidubigeo)
+                );
+            }
+        }
+
+
+
+
+
+
+
     }
 }

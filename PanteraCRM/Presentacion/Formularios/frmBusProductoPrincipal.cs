@@ -31,5 +31,10 @@ namespace Presentacion.Formularios
         {
 
         }
+
+        private void btnSeleccion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

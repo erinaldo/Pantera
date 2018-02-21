@@ -23,7 +23,7 @@ namespace Datos
                     registro.chalamacen = Convert.ToString(datareader["chalamacen"]).Trim();
                     registro.p_inidclase = Convert.ToInt32(datareader["p_inidclase"]);
                     registro.chclase = Convert.ToString(datareader["chclase"]).Trim();
-                    registro.p_inidcorrevale = Convert.ToInt32(datareader["p_inidcorrevale"]);
+                    registro.p_inidcorrevale = Convert.ToString(datareader["p_inidcorrevale"]);
                     registro.chvalefecha = Convert.ToString(datareader["chvalefecha"]).Trim();
                     registro.p_inidtipomoneda = Convert.ToInt32(datareader["p_inidtipomoneda"]);
                     registro.chtipomoneda = Convert.ToString(datareader["chtipomoneda"]).Trim();

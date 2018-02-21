@@ -50,5 +50,10 @@ namespace Presentacion
         {
 
         }
+
+        private void txtParametroBusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

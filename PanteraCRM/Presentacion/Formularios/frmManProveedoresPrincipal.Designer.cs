@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
             this.dgvListadoProveedores = new System.Windows.Forms.DataGridView();
+            this.IDPROV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProveedores)).BeginInit();
@@ -148,6 +149,8 @@
             // 
             // dgvListadoProveedores
             // 
+            this.dgvListadoProveedores.AllowUserToAddRows = false;
+            this.dgvListadoProveedores.AllowUserToDeleteRows = false;
             this.dgvListadoProveedores.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -158,6 +161,8 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListadoProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListadoProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDPROV});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -168,8 +173,16 @@
             this.dgvListadoProveedores.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListadoProveedores.Location = new System.Drawing.Point(12, 51);
             this.dgvListadoProveedores.Name = "dgvListadoProveedores";
+            this.dgvListadoProveedores.ReadOnly = true;
             this.dgvListadoProveedores.Size = new System.Drawing.Size(647, 343);
             this.dgvListadoProveedores.TabIndex = 19;
+            // 
+            // IDPROV
+            // 
+            this.IDPROV.DataPropertyName = "p_inidcodigoclie";
+            this.IDPROV.HeaderText = "CODIGO";
+            this.IDPROV.Name = "IDPROV";
+            this.IDPROV.ReadOnly = true;
             // 
             // frmManProveedoresPrincipal
             // 
@@ -209,5 +222,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtParametro;
         private System.Windows.Forms.DataGridView dgvListadoProveedores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPROV;
     }
 }

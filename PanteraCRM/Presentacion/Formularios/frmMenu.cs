@@ -128,12 +128,20 @@ namespace Presentacion
             if (nodo.Tag != null)
             {
                 string formula = "Presentacion." + nodo.Tag.ToString().Trim();
+                string forumlario = nodo.Tag.ToString().Trim(); ;
                 Form frm = (Form)(Assembly.GetExecutingAssembly().CreateInstance(formula));
                 //int item = Convert.ToInt32(nodo.Name);
                 if (perfildetalleNE.validarModulo(sesion.SessionGlobal.p_inidperfil, Convert.ToInt32(nodo.Name)) == 1)
                 {
-                        //flat = false;
-                        frm.MdiParent = this.MdiParent;
+                    Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == forumlario).SingleOrDefault<Form>();
+
+                    if (existe != null)
+                    {
+                        existe.BringToFront();
+                        return;
+                    }
+                    //flat = false;
+                    frm.MdiParent = this.MdiParent;
                         frm.Show();
                 }
                 else MessageBox.Show("Usted no tiene acceso a este módulo" + Convert.ToInt32(nodo.Name));

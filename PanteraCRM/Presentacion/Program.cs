@@ -23,7 +23,7 @@ namespace Presentacion
             frm.ShowDialog();
             if (sesion.SessionGlobal != null)
             {
-                Application.Run(new frmPrincipal());
+                 Application.Run(new frmPrincipal());
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("es-ES");
             }
         }

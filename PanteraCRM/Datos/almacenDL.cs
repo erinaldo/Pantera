@@ -98,6 +98,18 @@ namespace Datos
                 new parametro("in_estadoalmacen", almacen.estadoalmacen));
             }
         }
+        public static int SaldoAlmacenAdiconar(int a1, int p2, decimal cantidad)
+        {
+            {
+                return conexion.executeScalar("fn_saldoalmacen_agregar_stock",
+                CommandType.StoredProcedure,
+                new parametro("in_p_inidalmacen", a1),
+                new parametro("in_p_inidproducto", p2),
+                new parametro("in_cantidad", cantidad)
+                );
+            }
+        }
+        
         public static int almacenActualizar(almacen almacen)
         {
             {

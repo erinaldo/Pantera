@@ -66,9 +66,10 @@ namespace Presentacion
                         frm.BringToFront();
                         return;
                     }
-                    frmManProveedoresAnadir f = new frmManProveedoresAnadir();
-                    //f.pasado += new frmManProveedoresAnadir.pasar(ejecutar);
-                    f.ShowDialog();
+                    frmManProveedoresAnadir f = new frmManProveedoresAnadir(vBoton);
+                    f.pasado += new frmManProveedoresAnadir.pasar(ejecutar);
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
                 }
                 else
                 {

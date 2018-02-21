@@ -34,7 +34,7 @@ namespace Datos
 
         public static int seriesIngresar(serie serie)
         {
-            return conexion.executeScalar("fn_serieingresar",
+            return conexion.executeScalar("fn_serie_ingresar",
             CommandType.StoredProcedure,
               new parametro("in_chcodigoserie", serie.chcodigoserie),
             new parametro("in_estado", serie.estado),
@@ -42,7 +42,9 @@ namespace Datos
             new parametro("in_chadicional", serie.chadicional),
             new parametro("in_chfecha", serie.chfecha),
             new parametro("in_p_inidusuarioinsert", serie.p_inidusuarioinsert),
-            new parametro("in_p_inidusuariodelete", serie.p_inidusuariodelete)
+            new parametro("in_p_inidusuariodelete", serie.p_inidusuariodelete),
+            new parametro("in_p_inidpedido", serie.p_inidpedidod),
+            new parametro("in_p_inidmovimientod", serie.p_inidmovimientod)
 
             );
 

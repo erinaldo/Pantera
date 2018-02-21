@@ -26,7 +26,7 @@ namespace Presentacion
 
         public void cargarUbigeo(ubigeo ubigeo)
         {
-            mtbUbigeo.Text = ubigeo.cod_ubigeo;
+            //mtbUbigeo.Text = ubigeo.cod_ubigeo;
             txtDepartamento.Text = ubigeo.desc_departamento;
             txtProvincia.Text = ubigeo.desc_provincia;
             txtDistrito.Text = ubigeo.desc_distrito;
@@ -113,7 +113,7 @@ namespace Presentacion
                     string cod_ubigeo = mtbUbigeo.Text;
                     try
                     {
-                        ubigeo registro = ubigeoNE.buscarPorCodigo(cod_ubigeo);
+                        ubigeo registro = ubigeoNE.buscarPorCodigo(1);
                         if (registro != null)
                         {
                             txtDepartamento.Text = registro.desc_departamento;
@@ -180,7 +180,7 @@ namespace Presentacion
                         txtDireccion.Enabled = false;
                 try
                 {
-                            ubigeo registro = ubigeoNE.buscarPorCodigo(cod_ubigeo);
+                            ubigeo registro = ubigeoNE.buscarPorCodigo(1);
                             if (registro != null)
                             {
                                 txtDepartamento.Text = registro.desc_departamento;
@@ -247,8 +247,8 @@ namespace Presentacion
                         txtFecha_nac.Text = registro2.fecha_nac;
                         txtSexo.Text = registro2.sexo;
                         txtDireccion.Enabled = false;
-                        ubigeo registro3 = ubigeoNE.buscarPorCodigo(registro2.ubigeo);
-                        mtbUbigeo.Text = registro3.cod_ubigeo;
+                        ubigeo registro3 = ubigeoNE.buscarPorCodigo(1);
+                        //mtbUbigeo.Text = registro3.cod_ubigeo;
                         txtDepartamento.Text = registro3.desc_departamento;
                         txtProvincia.Text = registro3.desc_provincia;
                         txtDistrito.Text = registro3.desc_distrito;
@@ -297,10 +297,10 @@ namespace Presentacion
             string cod_ubigeo = mtbUbigeo.Text;
             try
             {
-                ubigeo registro = ubigeoNE.buscarPorCodigo(cod_ubigeo);
+                ubigeo registro = ubigeoNE.buscarPorCodigo(1);
                 if (registro != null)
                 {
-                    mtbUbigeo.Text = registro.cod_ubigeo;
+                    //mtbUbigeo.Text = registro.cod_ubigeo;
                     txtDepartamento.Text = registro.desc_departamento;
                     txtProvincia.Text = registro.desc_provincia;
                     txtDistrito.Text = registro.desc_distrito;

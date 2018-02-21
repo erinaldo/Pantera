@@ -50,12 +50,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtFacBol = new System.Windows.Forms.TextBox();
-            this.txtguiarem = new System.Windows.Forms.TextBox();
-            this.txtCodprov = new System.Windows.Forms.TextBox();
+            this.txtGuiaRem = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvListaValeDetalle = new System.Windows.Forms.DataGridView();
+            this.IDITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCOSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnAnadir = new System.Windows.Forms.Button();
@@ -65,14 +72,10 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.IDITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCOSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHSUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtRuc = new System.Windows.Forms.TextBox();
+            this.txtProvnombre = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtidprov = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaValeDetalle)).BeginInit();
@@ -150,6 +153,7 @@
             // txtAlmacen
             // 
             this.txtAlmacen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAlmacen.ForeColor = System.Drawing.Color.Blue;
             this.txtAlmacen.Location = new System.Drawing.Point(509, 17);
             this.txtAlmacen.Name = "txtAlmacen";
@@ -161,6 +165,7 @@
             // txtNroVale
             // 
             this.txtNroVale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtNroVale.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNroVale.ForeColor = System.Drawing.Color.Blue;
             this.txtNroVale.Location = new System.Drawing.Point(260, 42);
             this.txtNroVale.Name = "txtNroVale";
@@ -173,6 +178,7 @@
             // 
             this.txtperiodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtperiodo.CausesValidation = false;
+            this.txtperiodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtperiodo.ForeColor = System.Drawing.Color.Blue;
             this.txtperiodo.Location = new System.Drawing.Point(260, 17);
             this.txtperiodo.Name = "txtperiodo";
@@ -184,6 +190,7 @@
             // txtClase
             // 
             this.txtClase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtClase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClase.ForeColor = System.Drawing.Color.Blue;
             this.txtClase.Location = new System.Drawing.Point(91, 42);
             this.txtClase.Name = "txtClase";
@@ -196,6 +203,7 @@
             // 
             this.txtejercicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtejercicio.CausesValidation = false;
+            this.txtejercicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtejercicio.ForeColor = System.Drawing.Color.Blue;
             this.txtejercicio.Location = new System.Drawing.Point(91, 17);
             this.txtejercicio.Name = "txtejercicio";
@@ -278,9 +286,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.txtProvnombre);
+            this.groupBox2.Controls.Add(this.txtRuc);
             this.groupBox2.Controls.Add(this.txtFacBol);
-            this.groupBox2.Controls.Add(this.txtguiarem);
-            this.groupBox2.Controls.Add(this.txtCodprov);
+            this.groupBox2.Controls.Add(this.txtGuiaRem);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
@@ -293,29 +303,22 @@
             // 
             // txtFacBol
             // 
-            this.txtFacBol.Location = new System.Drawing.Point(422, 32);
+            this.txtFacBol.Location = new System.Drawing.Point(575, 32);
             this.txtFacBol.Name = "txtFacBol";
-            this.txtFacBol.Size = new System.Drawing.Size(246, 20);
+            this.txtFacBol.Size = new System.Drawing.Size(93, 20);
             this.txtFacBol.TabIndex = 0;
             // 
-            // txtguiarem
+            // txtGuiaRem
             // 
-            this.txtguiarem.Location = new System.Drawing.Point(200, 32);
-            this.txtguiarem.Name = "txtguiarem";
-            this.txtguiarem.Size = new System.Drawing.Size(178, 20);
-            this.txtguiarem.TabIndex = 1;
-            // 
-            // txtCodprov
-            // 
-            this.txtCodprov.Location = new System.Drawing.Point(9, 32);
-            this.txtCodprov.Name = "txtCodprov";
-            this.txtCodprov.Size = new System.Drawing.Size(160, 20);
-            this.txtCodprov.TabIndex = 2;
+            this.txtGuiaRem.Location = new System.Drawing.Point(478, 32);
+            this.txtGuiaRem.Name = "txtGuiaRem";
+            this.txtGuiaRem.Size = new System.Drawing.Size(91, 20);
+            this.txtGuiaRem.TabIndex = 1;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(419, 16);
+            this.label12.Location = new System.Drawing.Point(572, 16);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 13);
             this.label12.TabIndex = 3;
@@ -324,7 +327,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(197, 16);
+            this.label11.Location = new System.Drawing.Point(475, 16);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 13);
             this.label11.TabIndex = 4;
@@ -333,7 +336,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 16);
+            this.label10.Location = new System.Drawing.Point(136, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 13);
             this.label10.TabIndex = 5;
@@ -359,6 +362,62 @@
             this.dgvListaValeDetalle.ReadOnly = true;
             this.dgvListaValeDetalle.Size = new System.Drawing.Size(662, 181);
             this.dgvListaValeDetalle.TabIndex = 0;
+            // 
+            // IDITEM
+            // 
+            this.IDITEM.HeaderText = "ITEM";
+            this.IDITEM.Name = "IDITEM";
+            this.IDITEM.ReadOnly = true;
+            this.IDITEM.Width = 40;
+            // 
+            // IDPRODUCTO
+            // 
+            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
+            this.IDPRODUCTO.Name = "IDPRODUCTO";
+            this.IDPRODUCTO.ReadOnly = true;
+            this.IDPRODUCTO.Visible = false;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 60;
+            // 
+            // CHCANTIDAD
+            // 
+            this.CHCANTIDAD.HeaderText = "CANTIDAD";
+            this.CHCANTIDAD.Name = "CHCANTIDAD";
+            this.CHCANTIDAD.ReadOnly = true;
+            this.CHCANTIDAD.Width = 70;
+            // 
+            // CHMEDIDA
+            // 
+            this.CHMEDIDA.HeaderText = "MEDIDA";
+            this.CHMEDIDA.Name = "CHMEDIDA";
+            this.CHMEDIDA.ReadOnly = true;
+            this.CHMEDIDA.Width = 60;
+            // 
+            // CHDESCRIPCION
+            // 
+            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
+            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
+            this.CHDESCRIPCION.ReadOnly = true;
+            this.CHDESCRIPCION.Width = 320;
+            // 
+            // CHCOSTO
+            // 
+            this.CHCOSTO.HeaderText = "COSTO";
+            this.CHCOSTO.Name = "CHCOSTO";
+            this.CHCOSTO.ReadOnly = true;
+            this.CHCOSTO.Width = 50;
+            // 
+            // CHSUBTOTAL
+            // 
+            this.CHSUBTOTAL.HeaderText = "SUB TOTAL";
+            this.CHSUBTOTAL.Name = "CHSUBTOTAL";
+            this.CHSUBTOTAL.ReadOnly = true;
+            this.CHSUBTOTAL.Width = 60;
             // 
             // groupBox3
             // 
@@ -447,6 +506,7 @@
             // txtTotal
             // 
             this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.Blue;
             this.txtTotal.Location = new System.Drawing.Point(587, 428);
             this.txtTotal.Name = "txtTotal";
@@ -464,61 +524,46 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "TOTAL";
             // 
-            // IDITEM
+            // txtRuc
             // 
-            this.IDITEM.HeaderText = "ITEM";
-            this.IDITEM.Name = "IDITEM";
-            this.IDITEM.ReadOnly = true;
-            this.IDITEM.Width = 40;
+            this.txtRuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRuc.Location = new System.Drawing.Point(6, 32);
+            this.txtRuc.Name = "txtRuc";
+            this.txtRuc.Size = new System.Drawing.Size(127, 20);
+            this.txtRuc.TabIndex = 6;
+            this.txtRuc.TextChanged += new System.EventHandler(this.txtRuc_TextChanged);
+            this.txtRuc.DoubleClick += new System.EventHandler(this.txtRuc_DoubleClick);
+            this.txtRuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRuc_KeyPress);
             // 
-            // IDPRODUCTO
+            // txtProvnombre
             // 
-            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
-            this.IDPRODUCTO.Name = "IDPRODUCTO";
-            this.IDPRODUCTO.ReadOnly = true;
-            this.IDPRODUCTO.Visible = false;
+            this.txtProvnombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtProvnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProvnombre.ForeColor = System.Drawing.Color.Blue;
+            this.txtProvnombre.Location = new System.Drawing.Point(139, 32);
+            this.txtProvnombre.Name = "txtProvnombre";
+            this.txtProvnombre.ReadOnly = true;
+            this.txtProvnombre.Size = new System.Drawing.Size(331, 20);
+            this.txtProvnombre.TabIndex = 17;
             // 
-            // CHCODIGO
+            // label14
             // 
-            this.CHCODIGO.HeaderText = "CODIGO";
-            this.CHCODIGO.Name = "CHCODIGO";
-            this.CHCODIGO.ReadOnly = true;
-            this.CHCODIGO.Width = 60;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 16);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(39, 13);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "R.U.C.";
             // 
-            // CHCANTIDAD
+            // txtidprov
             // 
-            this.CHCANTIDAD.HeaderText = "CANTIDAD";
-            this.CHCANTIDAD.Name = "CHCANTIDAD";
-            this.CHCANTIDAD.ReadOnly = true;
-            this.CHCANTIDAD.Width = 70;
-            // 
-            // CHMEDIDA
-            // 
-            this.CHMEDIDA.HeaderText = "MEDIDA";
-            this.CHMEDIDA.Name = "CHMEDIDA";
-            this.CHMEDIDA.ReadOnly = true;
-            this.CHMEDIDA.Width = 60;
-            // 
-            // CHDESCRIPCION
-            // 
-            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
-            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
-            this.CHDESCRIPCION.ReadOnly = true;
-            this.CHDESCRIPCION.Width = 320;
-            // 
-            // CHCOSTO
-            // 
-            this.CHCOSTO.HeaderText = "COSTO";
-            this.CHCOSTO.Name = "CHCOSTO";
-            this.CHCOSTO.ReadOnly = true;
-            this.CHCOSTO.Width = 50;
-            // 
-            // CHSUBTOTAL
-            // 
-            this.CHSUBTOTAL.HeaderText = "SUB TOTAL";
-            this.CHSUBTOTAL.Name = "CHSUBTOTAL";
-            this.CHSUBTOTAL.ReadOnly = true;
-            this.CHSUBTOTAL.Width = 60;
+            this.txtidprov.BackColor = System.Drawing.Color.White;
+            this.txtidprov.ForeColor = System.Drawing.Color.White;
+            this.txtidprov.Location = new System.Drawing.Point(469, 396);
+            this.txtidprov.Name = "txtidprov";
+            this.txtidprov.Size = new System.Drawing.Size(13, 20);
+            this.txtidprov.TabIndex = 19;
+            this.txtidprov.Visible = false;
             // 
             // frmProcIngresoValesAnadir
             // 
@@ -528,6 +573,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(703, 473);
+            this.Controls.Add(this.txtidprov);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.groupBox4);
@@ -537,7 +583,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProcIngresoValesAnadir";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AÑADIR MOVIMIENTO";
             this.Load += new System.EventHandler(this.frmProcIngresoValesAnadir_Load);
             this.groupBox1.ResumeLayout(false);
@@ -575,8 +621,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFacBol;
-        private System.Windows.Forms.TextBox txtguiarem;
-        private System.Windows.Forms.TextBox txtCodprov;
+        private System.Windows.Forms.TextBox txtGuiaRem;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -598,5 +643,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHDESCRIPCION;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHCOSTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSUBTOTAL;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtProvnombre;
+        private System.Windows.Forms.TextBox txtRuc;
+        private System.Windows.Forms.TextBox txtidprov;
     }
 }
