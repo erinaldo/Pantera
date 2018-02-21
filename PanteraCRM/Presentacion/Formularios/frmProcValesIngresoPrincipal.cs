@@ -49,7 +49,7 @@ namespace Presentacion
                 {
                     int puntero = (int)Row.Index;
                     //                    dgvPersona.CurrentCell = dgvPersona.Rows[puntero].Cells["IDPERSONA"];
-                    dgvVales.CurrentCell = dgvVales.Rows[puntero].Cells[1];
+                    dgvVales.CurrentCell = dgvVales.Rows[puntero].Cells["IDCORRELATIVO"];
                     return;
                 }
             }

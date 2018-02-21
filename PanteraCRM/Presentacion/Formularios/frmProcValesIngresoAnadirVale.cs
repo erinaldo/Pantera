@@ -209,7 +209,8 @@ namespace Presentacion
             if (sesion.movprodaccion != null)
             {
                 sesion.movprodaccion.Clear();
-            }            
+            }
+            this.Dispose();           
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
