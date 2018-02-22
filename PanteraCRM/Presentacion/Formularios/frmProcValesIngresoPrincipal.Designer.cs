@@ -36,6 +36,9 @@
             this.btnVer = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvVales = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.TextBox();
             this.IDVALEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDALMACEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHALMACEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,9 +60,6 @@
             this.IDUDELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHUDELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtParametro = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVales)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -179,6 +179,33 @@
             this.dgvVales.Size = new System.Drawing.Size(647, 344);
             this.dgvVales.TabIndex = 16;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtParametro);
+            this.groupBox2.Location = new System.Drawing.Point(12, 1);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(647, 43);
+            this.groupBox2.TabIndex = 19;
+            this.groupBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Busqueda";
+            // 
+            // txtParametro
+            // 
+            this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtParametro.Location = new System.Drawing.Point(67, 15);
+            this.txtParametro.Name = "txtParametro";
+            this.txtParametro.Size = new System.Drawing.Size(574, 20);
+            this.txtParametro.TabIndex = 0;
+            // 
             // IDVALEC
             // 
             this.IDVALEC.DataPropertyName = "p_inidvalecebecera";
@@ -294,7 +321,7 @@
             // CHMOVIMIENTO
             // 
             this.CHMOVIMIENTO.DataPropertyName = "chtipomoviemiento";
-            this.CHMOVIMIENTO.HeaderText = "CHMOVIMIENTO";
+            this.CHMOVIMIENTO.HeaderText = "MOVIMIENTO";
             this.CHMOVIMIENTO.Name = "CHMOVIMIENTO";
             this.CHMOVIMIENTO.ReadOnly = true;
             this.CHMOVIMIENTO.Width = 300;
@@ -347,33 +374,6 @@
             this.ESTADO.ReadOnly = true;
             this.ESTADO.Visible = false;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtParametro);
-            this.groupBox2.Location = new System.Drawing.Point(12, 1);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(647, 43);
-            this.groupBox2.TabIndex = 19;
-            this.groupBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Busqueda";
-            // 
-            // txtParametro
-            // 
-            this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtParametro.Location = new System.Drawing.Point(67, 15);
-            this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(574, 20);
-            this.txtParametro.TabIndex = 0;
-            // 
             // frmProcValesIngresoPrincipal
             // 
             this.AcceptButton = this.btnAnadir;
@@ -408,6 +408,9 @@
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView dgvVales;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtParametro;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDVALEC;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDALMACEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHALMACEN;
@@ -429,8 +432,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDUDELETE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHUDELETE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtParametro;
     }
 }

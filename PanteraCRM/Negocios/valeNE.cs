@@ -13,9 +13,21 @@ namespace Negocios
         {
             return valesDL.valesListar();
         }
-        public static int generarcorrelativo()
+        public static int CorrelativoMovimientoIngreso(int parametro)
         {
-            return valesDL.generarCorelativoIngresar();
+            return valesDL.CorrelativoMovimientoIngreso(parametro);
+        }
+        public static int CorrelativoMovimientoSalida(int parametro)
+        {
+            return valesDL.CorrelativoMovimientoSalida(parametro);
+        }
+        public static int GenerarCorrelativoMovimientoIngreso(int parametro)
+        {
+            return valesDL.GenerarCorrelativoMovimientoIngreso(parametro);
+        }
+        public static int GenerarCorrelativoMovimientoSalida(int parametro)
+        {
+            return valesDL.GenerarCorrelativoMovimientoSalida(parametro);
         }
     }
 }

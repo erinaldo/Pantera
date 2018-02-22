@@ -44,11 +44,22 @@ namespace Datos
                 return listado;
             }
         }
-        public static int generarCorelativoIngresar()
+        public static int CorrelativoMovimientoIngreso(int parametro)
         {
-            return conexion.executeScalar("fn_vale_correlativo", CommandType.StoredProcedure);
-
+            return conexion.executeScalar("fn_movimiento_correlativo_ingreso", CommandType.StoredProcedure, new parametro("in_p_inidalmacen", parametro));
         }
-        
+        public static int CorrelativoMovimientoSalida(int parametro)
+        {
+            return conexion.executeScalar("fn_movimiento_correlativo_salida", CommandType.StoredProcedure, new parametro("in_p_inidalmacen", parametro));
+        }
+        public static int GenerarCorrelativoMovimientoIngreso(int parametro)
+        {
+            return conexion.executeScalar("fn_almacen_generar_ingreso", CommandType.StoredProcedure, new parametro("in_p_inidalmacen", parametro));
+        }
+        public static int GenerarCorrelativoMovimientoSalida(int parametro)
+        {
+            return conexion.executeScalar("fn_almacen_generar_salida", CommandType.StoredProcedure, new parametro("in_p_inidalmacen", parametro));
+        }
+
     }
 }

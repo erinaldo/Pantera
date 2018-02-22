@@ -14,6 +14,7 @@ namespace Entidades
         public decimal nucantidad { get; set; }
         public decimal nucosto { get; set; }
         public decimal nutotal { get; set; }
+        
         public movimientoproductod()
         {
             this.p_inidvaledetalle = 0;
@@ -22,6 +23,7 @@ namespace Entidades
             this.nucantidad = 0;
             this.nucosto = 0;
             this.nutotal = 0;
+            
         }
     }
 }

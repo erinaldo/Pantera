@@ -21,18 +21,34 @@ namespace Presentacion
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
-            if (frm != null)
+            try
             {
-                frm.BringToFront();
-                return;
+                string vBoton = "A";
+                
+                if (basicas.validarAcceso(vBoton))
+                {
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmProcIngresoValesAnadir f = new frmProcIngresoValesAnadir(vBoton);
+                    f.pasado += new frmProcIngresoValesAnadir.pasar(ejecutar);
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                }
             }
-            string vboton = "A";
-            frmProcIngresoValesAnadir f = new frmProcIngresoValesAnadir(vboton);
-            f.pasado += new frmProcIngresoValesAnadir.pasar(ejecutar);
-            f.MdiParent = this.MdiParent;
-            f.Show();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }           
+        }
+        private void frmProcValesIngresoPrincipal_Load(object sender, EventArgs e)
+        {
+            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
+            cargarData(0);
         }
         public void cargarData(int registro)
         {
@@ -55,13 +71,6 @@ namespace Presentacion
             }
         }
 
-        private void frmProcValesIngresoPrincipal_Load(object sender, EventArgs e)
-        {
-            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
-            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
-            cargarData(0);
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
@@ -75,32 +84,88 @@ namespace Presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
-            if (frm != null)
+            try
             {
-                frm.BringToFront();
-                return;
+                string vBoton = "M";
+
+                if (basicas.validarAcceso(vBoton))
+                {
+                    if (dgvVales.RowCount == 0)
+                    {
+                        MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        return;
+                    }
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmProcIngresoValesAnadir f = new frmProcIngresoValesAnadir(vBoton);
+                    f.pasado += new frmProcIngresoValesAnadir.pasar(ejecutar);
+                    f.codigoMovimiento =(int)dgvVales.CurrentRow.Cells["IDVALEC"].Value;
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }             
         }
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
-            if (frm != null)
+            try
             {
-                frm.BringToFront();
-                return;
+                string vBoton = "V";
+
+                if (basicas.validarAcceso(vBoton))
+                {
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmProcIngresoValesAnadir f = new frmProcIngresoValesAnadir(vBoton);
+                    f.pasado += new frmProcIngresoValesAnadir.pasar(ejecutar);
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }                       
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
-            if (frm != null)
+            try
             {
-                frm.BringToFront();
-                return;
+                string vBoton = "I";
+
+                if (basicas.validarAcceso(vBoton))
+                {
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    //frmProcIngresoValesAnadir f = new frmProcIngresoValesAnadir(vBoton);
+                    //f.pasado += new frmProcIngresoValesAnadir.pasar(ejecutar);
+                    //f.MdiParent = this.MdiParent;
+                    //f.Show();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+
+            
         }
     }
 }

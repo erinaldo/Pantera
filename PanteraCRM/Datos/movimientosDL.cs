@@ -29,6 +29,22 @@ namespace Datos
             new parametro("in_p_inidmovimiento", registros.p_inidmovimiento ));
 
         }
+
+        public static List<valedetalle> MovimientoProductoDetalleBusqueda(int parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_ubigeo_busqueda_parametro", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
+            {
+                List<valedetalle> listado = new List<valedetalle>();
+                while (datareader.Read())
+                {
+                    valedetalle registro = new valedetalle();
+
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidubigeo"]);
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
         public static int MovimientoProductoDetalleIngresar(movimientoproductod registros)
         {
             return conexion.executeScalar("fn_moviproductodetalle_ingresar",
@@ -40,5 +56,26 @@ namespace Datos
             new parametro("in_nutotal", registros.nutotal));
 
         }
+        public static movimientoproductoc MovimientoProductoCabeceraBusqueda(int codigoMovimiento)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_movimiento_cabecera_busqueda",
+            CommandType.StoredProcedure, new parametro("in_parametro", codigoMovimiento)))
+            {
+                while (datareader.Read())
+                {
+                    return convertirRegistro(datareader);
+                }
+            }
+            return null;
+        }
+
+        private static movimientoproductoc convertirRegistro(IDataReader datareader)
+        {
+            movimientoproductoc registro = new movimientoproductoc();
+            registro.p_inidalamacen = Convert.ToInt32(datareader["p_inidubigeo"]);
+            return registro;
+        }
+
+        
     }
 }

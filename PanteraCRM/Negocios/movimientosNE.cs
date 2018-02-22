@@ -17,6 +17,14 @@ namespace Negocios
         public static int MovimientoProductoDetalleIngresar(movimientoproductod registros)
         {
             return movimientosDL.MovimientoProductoDetalleIngresar(registros);
-        }        
+        }
+        public static movimientoproductoc MovimientoProductoCabeceraBusqueda(int codigo)
+        {
+            return movimientosDL.MovimientoProductoCabeceraBusqueda(codigo);
+        }
+        public static List<valedetalle> MovimientoProductoDetalleBusqueda(int codigo)
+        {
+            return movimientosDL.MovimientoProductoDetalleBusqueda(codigo);
+        }
     }
 }

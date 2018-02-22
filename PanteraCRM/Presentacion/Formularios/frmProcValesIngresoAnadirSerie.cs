@@ -261,6 +261,7 @@ namespace Presentacion
             registrosValeDet.nucantidad = int.Parse(txtCantidad.Text);
             registrosValeDet.nucosto = decimal.Parse(txtprecio.Text);
             registrosValeDet.nutotal = decimal.Parse(txtsubtotal.Text);
+            registrosValeDet.estado = true;
 
             registrosMovi.listaserie = ListaSerie;
             registrosMovi.valedet = registrosValeDet;
@@ -382,33 +383,47 @@ namespace Presentacion
             else
                 if (this.vBoton == "M")
             {
-                List<movimientoproductoaccion> ListaMov = sesion.movprodaccion;
-                foreach (movimientoproductoaccion RegistrosMov in ListaMov)
+                cargarListaSereies();
+            }
+            else
+                if (this.vBoton == "V")
+            {
+                cargarListaSereies();
+                txtCantidad.ReadOnly = true;
+                txtprecio.ReadOnly = true;
+                txtcodprod.ReadOnly = true;
+                grbAgregadoSerie.Enabled = false;
+                dgvListaIngreso.ReadOnly = true;
+                btnGrabar.Enabled = false;
+            }
+        }
+        private void cargarListaSereies()
+        {
+            List<movimientoproductoaccion> ListaMov = sesion.movprodaccion;
+            foreach (movimientoproductoaccion RegistrosMov in ListaMov)
+            {
+                if (RegistrosMov.valedet.p_inidvaledetalle == p_inidproducto)
                 {
-                    if (RegistrosMov.valedet.p_inidvaledetalle == p_inidproducto)
+                    valedetalle RegistroValDet = RegistrosMov.valedet;
+                    txtcodprod.Text = RegistroValDet.chcodigoproducto;
+                    mskFecha.Text = RegistroValDet.chfecha;
+                    txtCantidad.Text = RegistroValDet.nucantidad.ToString();
+                    txtprecio.Text = RegistroValDet.nucosto.ToString();
+                    txtSerie.Text = "";
+                    txtObs.Text = "";
+                    txtSerie.Focus();
+                    List<serie> ListaSerie = RegistrosMov.listaserie;
+                    foreach (serie RegistrosSerie in ListaSerie)
                     {
-                        valedetalle RegistroValDet = RegistrosMov.valedet;
-                        txtcodprod.Text = RegistroValDet.chcodigoproducto;
-                        mskFecha.Text = RegistroValDet.chfecha;
-                        txtCantidad.Text = RegistroValDet.nucantidad.ToString();
-                        txtprecio.Text = RegistroValDet.nucosto.ToString();
-                        txtSerie.Text = "";
-                        txtObs.Text = "";
-                        txtSerie.Focus();
-                        List<serie> ListaSerie = RegistrosMov.listaserie;
-                        foreach (serie RegistrosSerie in ListaSerie)
+                        if (RegistrosSerie.estado == true)
                         {
-                            if (RegistrosSerie.estado == true)
-                            {
-                                dgvListaIngreso.Rows.Add(p_inidproducto, RegistroValDet.chcodigoproducto, RegistroValDet.chnombrecompuesto, RegistrosSerie.chcodigoserie, RegistrosSerie.chadicional);
-                            }
-                            
+                            dgvListaIngreso.Rows.Add(p_inidproducto, RegistroValDet.chcodigoproducto, RegistroValDet.chnombrecompuesto, RegistrosSerie.chcodigoserie, RegistrosSerie.chadicional);
                         }
+
                     }
                 }
             }
         }
-
         private void txtcodprod_TextChanged(object sender, EventArgs e)
         {
             string parametro = txtcodprod.Text;

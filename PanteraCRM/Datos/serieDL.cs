@@ -84,5 +84,23 @@ namespace Datos
                 return listado;
             }
         }
+        public static List<serie> SerieBusquedaMovimiento(int parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_series_busqueda_movimiento", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
+            {
+                List<serie> listado = new List<serie>();
+                while (datareader.Read())
+                {
+                    serie registro = new serie();
+                    registro.p_inidserie = Convert.ToInt32(datareader["p_inidserie"]);
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+
+
+        
+        
     }
 }

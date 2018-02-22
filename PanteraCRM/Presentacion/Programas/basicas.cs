@@ -46,7 +46,35 @@ namespace Presentacion
                             throw new Exception("No cuenta con los permisos para modificar");
                         }
                         break;
-                    case "N":  // Permiso para anular
+                    case "V":  // Permiso para ver
+                        if (sesion.SessionGlobal.p_inidperfil != 1)
+                        {
+                            vEvalua = false;
+                            throw new Exception("No cuenta con los permisos para anular");
+                        }
+                        break;
+                    case "G":  // Permiso para grabar
+                        if (sesion.SessionGlobal.p_inidperfil != 1)
+                        {
+                            vEvalua = false;
+                            throw new Exception("No cuenta con los permisos para anular");
+                        }
+                        break;
+                    case "E":  // Permiso para Eliminar
+                        if (sesion.SessionGlobal.p_inidperfil != 1)
+                        {
+                            vEvalua = false;
+                            throw new Exception("No cuenta con los permisos para anular");
+                        }
+                        break;
+                    case "I":  // Permiso para imprimir
+                        if (sesion.SessionGlobal.p_inidperfil != 1)
+                        {
+                            vEvalua = false;
+                            throw new Exception("No cuenta con los permisos para anular");
+                        }
+                        break;
+                    case "X":  // Permiso para exportar
                         if (sesion.SessionGlobal.p_inidperfil != 1)
                         {
                             vEvalua = false;

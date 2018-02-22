@@ -25,5 +25,9 @@ namespace Negocios
         {
             return serieDL.serieBuscar(parametro);
         }
+        public static List<serie> SerieBusquedaMovimiento(int parametro)
+        {
+            return serieDL.SerieBusquedaMovimiento(parametro);
+        }
     }
 }
