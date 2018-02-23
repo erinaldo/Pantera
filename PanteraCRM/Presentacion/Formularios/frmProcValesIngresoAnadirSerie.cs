@@ -50,7 +50,7 @@ namespace Presentacion
                             string chnombrecompuesto = txtNombreconpuesto.Text;
                             string chserie = txtSerie.Text;
                             string chobs = txtObs.Text;
-                            dgvListaIngreso.Rows.Add(p_inidproducto, chproducto, chnombrecompuesto, chserie, chobs);
+                            dgvListaIngreso.Rows.Add(p_inidproducto, chproducto, chnombrecompuesto, chserie, chobs,false,"","","");
                             txtSerie.Text = "";
                             txtObs.Text = "";
                             txtCodigoSerie.Text = "";
@@ -96,7 +96,7 @@ namespace Presentacion
             if (this.vBoton == "M")
             {
                 string chcodigoserie = dgvListaIngreso.CurrentRow.Cells["CHSERIE"].Value.ToString();
-                dgvListaIngreso.Rows.Remove(dgvListaIngreso.CurrentRow);
+                //dgvListaIngreso.Rows.Remove(dgvListaIngreso.CurrentRow);
                 List<movimientoproductoaccion> listaMovi = sesion.movprodaccion;
                 if (listaMovi != null)
                 {
@@ -104,15 +104,27 @@ namespace Presentacion
                     {
                         if (registrosMov.valedet.p_inidvaledetalle == p_inidproducto)
                         {
+                            bool flat = false;
                             List<serie> listaSerie = registrosMov.listaserie;
-                            int count = 0;
+                            
                             foreach (serie registrosSerie in listaSerie)
                             {
                                 if (chcodigoserie == registrosSerie.chcodigoserie)
                                 {
-                                    registrosSerie.estado = false;
+                                    if (registrosSerie.boexhibicion == false)
+                                    {
+                                        dgvListaIngreso.Rows.Remove(dgvListaIngreso.CurrentRow);
+                                        registrosSerie.estado = false;
+                                    }
+                                    else
+                                    {
+                                        flat = true;
+                                    }                                    
                                 }
-                                count++;
+                            }
+                            if (flat)
+                            {
+                                MessageBox.Show("No se puede quitar, Producto en Exhibicion", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                             }
                         }
 
@@ -226,7 +238,7 @@ namespace Presentacion
         }
         public void GrabarRegistros()
         {
-            List<movimientoproductoaccion> listaMovi = listaMovi = sesion.movprodaccion;
+            List<movimientoproductoaccion> listaMovi = sesion.movprodaccion;
             if (listaMovi == null)
             {
                 listaMovi = new List<movimientoproductoaccion>();
@@ -234,7 +246,7 @@ namespace Presentacion
             movimientoproductoaccion registrosMovi = new movimientoproductoaccion();
 
             List<serie> ListaSerie = new List<serie>();
-            if (grbAgregadoSerie.Enabled == true)
+            if (dgvListaIngreso.RowCount > 0 )
             {
                 for (int i = 0; i < dgvListaIngreso.RowCount; i++)
                 {
@@ -255,7 +267,6 @@ namespace Presentacion
             registrosValeDet.chnombrecompuesto = txtNombreconpuesto.Text;
             registrosValeDet.chmedida = txtMedida.Text;
             registrosValeDet.chcodigoproducto = txtcodprod.Text;
-            registrosValeDet.chcodigoserie = txtMedida.Text;
             registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
             registrosValeDet.p_inidproducto = int.Parse(txtidcodigo.Text);
             registrosValeDet.nucantidad = int.Parse(txtCantidad.Text);
@@ -267,14 +278,14 @@ namespace Presentacion
             registrosMovi.valedet = registrosValeDet;
 
             listaMovi.Add(registrosMovi);
+            //sesion.movprodaccion.Clear();
             sesion.movprodaccion = listaMovi;
             dgvListaIngreso.Rows.Clear();
         }
         public void ModificarRegistros()
-        {
-           
+        {           
             List<serie> ListaSerie = new List<serie>();
-            if (grbAgregadoSerie.Enabled == true)
+            if (dgvListaIngreso.RowCount > 0)
             {
                 for (int i = 0; i < dgvListaIngreso.RowCount; i++)
                 {
@@ -286,6 +297,11 @@ namespace Presentacion
                     registrosSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
                     registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
                     registrosSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
+
+                    registrosSerie.boexhibicion = (bool)dgvListaIngreso.Rows[i].Cells["BOEXHIBICION"].Value;
+                    registrosSerie.chinforme = dgvListaIngreso.Rows[i].Cells["CHINFORME"].Value.ToString();
+                    registrosSerie.chinformefecha = dgvListaIngreso.Rows[i].Cells["CHINFORMEFECHA"].Value.ToString();
+                    registrosSerie.chinformeobs = dgvListaIngreso.Rows[i].Cells["CHINFORMEOBS"].Value.ToString();
                     ListaSerie.Add(registrosSerie);
                 }
             }
@@ -295,12 +311,12 @@ namespace Presentacion
             registrosValeDet.chnombrecompuesto = txtNombreconpuesto.Text;
             registrosValeDet.chmedida = txtMedida.Text;
             registrosValeDet.chcodigoproducto = txtcodprod.Text;
-            registrosValeDet.chcodigoserie = txtMedida.Text;
             registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
             registrosValeDet.p_inidproducto = int.Parse(txtidcodigo.Text);
             registrosValeDet.nucantidad = int.Parse(txtCantidad.Text);
             registrosValeDet.nucosto = decimal.Parse(txtprecio.Text);
-            registrosValeDet.nutotal = decimal.Parse(txtsubtotal.Text);      
+            registrosValeDet.nutotal = decimal.Parse(txtsubtotal.Text);
+            registrosValeDet.estado = true;
 
             List<movimientoproductoaccion> ListaMov = sesion.movprodaccion;
             foreach (movimientoproductoaccion RegistrosMov in ListaMov)
@@ -309,9 +325,11 @@ namespace Presentacion
                 {
                     RegistrosMov.valedet = registrosValeDet;
                     RegistrosMov.listaserie = ListaSerie;
+                   
                 }
             }
-
+            //sesion.movprodaccion.Clear();
+            sesion.movprodaccion = ListaMov;
             dgvListaIngreso.Rows.Clear();
         }
         private  bool IngresoRegistros()
@@ -417,7 +435,7 @@ namespace Presentacion
                     {
                         if (RegistrosSerie.estado == true)
                         {
-                            dgvListaIngreso.Rows.Add(p_inidproducto, RegistroValDet.chcodigoproducto, RegistroValDet.chnombrecompuesto, RegistrosSerie.chcodigoserie, RegistrosSerie.chadicional);
+                            dgvListaIngreso.Rows.Add(p_inidproducto, RegistroValDet.chcodigoproducto, RegistroValDet.chnombrecompuesto, RegistrosSerie.chcodigoserie, RegistrosSerie.chadicional, RegistrosSerie.boexhibicion, RegistrosSerie.chinforme, RegistrosSerie.chinformefecha, RegistrosSerie.chinformeobs);
                         }
 
                     }
@@ -509,9 +527,7 @@ namespace Presentacion
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
         {
-
             calcular();
-            LimpiarFilasporCambio();
         }
 
         private void txtprecio_TextChanged(object sender, EventArgs e)
@@ -601,7 +617,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Lista incompleta", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                    MessageBox.Show("Cantidad de series, Añada o Quite", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                     txtSerie.Focus();
                   
                 }

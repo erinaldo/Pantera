@@ -15,7 +15,6 @@ namespace Presentacion.Formularios
 
         //internal productobuscado tmpProducto;
         public delegate void pasar(int varreg);
-        public event pasar pasado;
         public frmBusProductoPrincipal(string vBoton)
         {
             InitializeComponent();

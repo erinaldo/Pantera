@@ -29,17 +29,51 @@ namespace Datos
             new parametro("in_p_inidmovimiento", registros.p_inidmovimiento ));
 
         }
+        public static int MovimientoProductoCabeceraModificar(movimientoproductoc registros)
+        {
+            return conexion.executeScalar("fn_moviproductocabecera_modificar",
+            CommandType.StoredProcedure,
+            new parametro("in_p_inidvalecebecera", registros.p_inidvalecebecera),
+            new parametro("in_p_inidalamacen", registros.p_inidalamacen),
+            new parametro("in_p_inidclase", registros.p_inidclase),
+            new parametro("in_p_inidcorrevale", registros.p_inidcorrevale),
+            new parametro("in_chvalefecha", registros.chvalefecha),
+            new parametro("in_p_inidtipomoneda", registros.p_inidtipomoneda),
+            new parametro("in_p_inidproveedor", registros.p_inidproveedor),
+            new parametro("in_chguiaremision", registros.chguiaremision),
+            new parametro("in_chboletafactura", registros.chboletafactura),
+            new parametro("in_p_inidtipomoviemiento", registros.p_inidtipomoviemiento),
+            new parametro("in_chobservacion", registros.chobservacion),
+            new parametro("in_p_inidusuarioinsert", registros.p_inidusuarioinsert),
+            new parametro("in_p_inidusuariodelete", registros.p_inidusuariodelete),
+            new parametro("in_estado", registros.estado),
+            new parametro("in_p_inidmovimiento", registros.p_inidmovimiento));
+
+        }
+        public static int MovimientoProductoDetalleFalsear(int parametro)
+        {
+            return conexion.executeScalar("fn_movimiento_detalle_falsear", CommandType.StoredProcedure, new parametro("in_p_inidvalecebecera", parametro));
+        }
+
 
         public static List<valedetalle> MovimientoProductoDetalleBusqueda(int parametro)
         {
-            using (IDataReader datareader = conexion.executeOperation("fn_ubigeo_busqueda_parametro", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
+            using (IDataReader datareader = conexion.executeOperation("fn_movimiento_detalle_busqueda", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
             {
                 List<valedetalle> listado = new List<valedetalle>();
                 while (datareader.Read())
                 {
                     valedetalle registro = new valedetalle();
-
-                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidubigeo"]);
+                    registro.p_inidvaledetalle = Convert.ToInt32(datareader["p_inidvaledetalle"]);
+                    registro.p_inidvalecebecera = Convert.ToInt32(datareader["p_inidvalecebecera"]);
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
+                    registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]);
+                    registro.chnombrecompuesto = Convert.ToString(datareader["chnombrecompuesto"]);
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.nucantidad = Convert.ToInt32(datareader["nucantidad"]);
+                    registro.nucosto = Convert.ToDecimal(datareader["nucosto"]);
+                    registro.nutotal = Convert.ToDecimal(datareader["nutotal"]);
+                    registro.chmedida = Convert.ToString(datareader["chunidadmedidaproducto"]);
                     listado.Add(registro);
                 }
                 return listado;
@@ -72,7 +106,21 @@ namespace Datos
         private static movimientoproductoc convertirRegistro(IDataReader datareader)
         {
             movimientoproductoc registro = new movimientoproductoc();
-            registro.p_inidalamacen = Convert.ToInt32(datareader["p_inidubigeo"]);
+            registro.p_inidvalecebecera = Convert.ToInt32(datareader["p_inidvalecebecera"]);
+            registro.p_inidalamacen = Convert.ToInt32(datareader["p_inidalamacen"]);
+            registro.p_inidclase = Convert.ToInt32(datareader["p_inidclase"]);
+            registro.p_inidcorrevale = Convert.ToString(datareader["p_inidcorrevale"]);
+            registro.chvalefecha = Convert.ToString(datareader["chvalefecha"]);
+            registro.p_inidtipomoneda = Convert.ToInt32(datareader["p_inidtipomoneda"]);
+            registro.p_inidproveedor = Convert.ToInt32(datareader["p_inidproveedor"]);
+            registro.chguiaremision = Convert.ToString(datareader["chguiaremision"]);
+            registro.chboletafactura = Convert.ToString(datareader["chboletafactura"]);
+            registro.p_inidtipomoviemiento = Convert.ToInt32(datareader["p_inidtipomoviemiento"]);
+            registro.chobservacion = Convert.ToString(datareader["chobservacion"]);
+            registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+            registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]); ;
+            registro.estado = Convert.ToBoolean(datareader["estado"]);
+            registro.p_inidmovimiento = Convert.ToInt32(datareader["p_inidmovimiento"]);
             return registro;
         }
 

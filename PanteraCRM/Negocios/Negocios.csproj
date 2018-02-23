@@ -47,6 +47,7 @@
     <Compile Include="condicionpagoNE.cs" />
     <Compile Include="conductorNE.cs" />
     <Compile Include="empresaNE.cs" />
+    <Compile Include="exhibicionNE.cs" />
     <Compile Include="generarCodigoNE.cs" />
     <Compile Include="impresoraNE.cs" />
     <Compile Include="maestrodetalleNE.cs" />

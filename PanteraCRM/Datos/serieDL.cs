@@ -44,7 +44,20 @@ namespace Datos
             new parametro("in_p_inidusuarioinsert", serie.p_inidusuarioinsert),
             new parametro("in_p_inidusuariodelete", serie.p_inidusuariodelete),
             new parametro("in_p_inidpedido", serie.p_inidpedidod),
+
+            new parametro("in_boexhibicion", serie.boexhibicion),
+            new parametro("in_chinforme", serie.chinforme),
+            new parametro("in_chinformefecha", serie.chinformefecha),
+            new parametro("in_chinformeobs", serie.chinformeobs),
+
             new parametro("in_p_inidmovimientod", serie.p_inidmovimientod)
+
+            );
+
+        }
+        public static int SeriesFalsear(int parametro)
+        {
+            return conexion.executeScalar("fn_serie_detalle_falsear", CommandType.StoredProcedure,   new parametro("in_p_inidmovimientod", parametro)
 
             );
 
@@ -93,6 +106,20 @@ namespace Datos
                 {
                     serie registro = new serie();
                     registro.p_inidserie = Convert.ToInt32(datareader["p_inidserie"]);
+                    registro.chcodigoserie = Convert.ToString(datareader["chcodigoserie"]);
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
+                    registro.chadicional = Convert.ToString(datareader["chadicional"]).Trim();
+                    registro.chfecha = Convert.ToString(datareader["chfecha"]).Trim();
+                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
+                    registro.p_inidmovimientod = Convert.ToInt32(datareader["p_inidmovimientod"]);
+                    registro.p_inidpedidod = Convert.ToInt32(datareader["p_inidpedido"]);
+
+                    registro.boexhibicion = Convert.ToBoolean(datareader["boexhibicion"]);
+                    registro.chinforme = Convert.ToString(datareader["chinforme"]).Trim();
+                    registro.chinformeobs = Convert.ToString(datareader["chinformeobs"]).Trim();
+                    registro.chinformefecha = Convert.ToString(datareader["chinformefecha"]).Trim();
                     listado.Add(registro);
                 }
                 return listado;

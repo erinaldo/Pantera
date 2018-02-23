@@ -192,7 +192,7 @@ namespace Presentacion
             }
 
         }
-        bool flatcbotipo = false;
+        //bool flatcbotipo = false;
         private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             //if (cboTipo.Text == "--NUEVO TIPO--")

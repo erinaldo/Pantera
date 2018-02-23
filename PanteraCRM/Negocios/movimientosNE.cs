@@ -26,5 +26,13 @@ namespace Negocios
         {
             return movimientosDL.MovimientoProductoDetalleBusqueda(codigo);
         }
+        public static int MovimientoProductoDetalleFalsear(int registros)
+        {
+            return movimientosDL.MovimientoProductoDetalleFalsear(registros);
+        }
+        public static int MovimientoProductoCabeceraModificar(movimientoproductoc codigo)
+        {
+            return movimientosDL.MovimientoProductoCabeceraModificar(codigo);
+        }
     }
 }
