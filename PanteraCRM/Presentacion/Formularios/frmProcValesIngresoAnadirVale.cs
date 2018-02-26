@@ -48,7 +48,7 @@ namespace Presentacion
 
             if (this.vBoton == "A")
             {
-                txtejercicio.Text = "2018";
+                txtejercicio.Text = "2018"; 
                 txtperiodo.Text = "01";
                 txtAlmacen.Text = "PRINCIPAL";
                 txtClase.Text = "INGRESO";
@@ -73,6 +73,7 @@ namespace Presentacion
                 txtperiodo.Text = "01";
                 txtAlmacen.Text = "PRINCIPAL";
                 txtClase.Text = "INGRESO";
+                txtRuc.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
                 cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
                 cboTipoMov.SelectedValue = RegistrosMovimientoC.p_inidtipomoviemiento;
                 txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
@@ -92,10 +93,10 @@ namespace Presentacion
                     movimientoproductoaccion RegistrosMoviento = new movimientoproductoaccion();
                     valedetalle registrosValeDet = new valedetalle();
                     registrosValeDet.p_inidvaledetalle = i;
-                    registrosValeDet.chnombrecompuesto = registrosMovimientoD.chnombrecompuesto;
-                    registrosValeDet.chmedida = registrosMovimientoD.chmedida;
-                    registrosValeDet.chcodigoproducto = registrosMovimientoD.chcodigoproducto;
-                    registrosValeDet.chfecha = registrosMovimientoD.chfecha;
+                    registrosValeDet.chnombrecompuesto = registrosMovimientoD.chnombrecompuesto.ToString();
+                    registrosValeDet.chmedida = registrosMovimientoD.chmedida.ToString();
+                    registrosValeDet.chcodigoproducto = registrosMovimientoD.chcodigoproducto.ToString();
+                    registrosValeDet.chfecha = RegistrosMovimientoC.chvalefecha.ToString();
                     registrosValeDet.p_inidproducto = registrosMovimientoD.p_inidproducto;
                     registrosValeDet.nucantidad = registrosMovimientoD.nucantidad;
                     registrosValeDet.nucosto = registrosMovimientoD.nucosto;
@@ -108,15 +109,15 @@ namespace Presentacion
                     foreach (serie Registroxxxxs in ListaSerie)
                         {
                             serie registrosSerie = new serie();
-                            registrosSerie.chcodigoserie = Registroxxxxs.chcodigoserie;
+                            registrosSerie.chcodigoserie = Registroxxxxs.chcodigoserie.ToString();
                             registrosSerie.estado = true;
                             registrosSerie.p_inidproducto = Registroxxxxs.p_inidproducto;
-                            registrosSerie.chadicional = Registroxxxxs.chadicional;
+                            registrosSerie.chadicional = Registroxxxxs.chadicional.ToString();
                             registrosSerie.chfecha = Registroxxxxs.chfecha;
                             registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
                             registrosSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
-                        registrosSerie.chinforme = Registroxxxxs.chinforme;
-                        registrosSerie.chinformeobs = Registroxxxxs.chinformeobs;
+                        registrosSerie.chinforme = Registroxxxxs.chinforme.ToString();
+                        registrosSerie.chinformeobs = Registroxxxxs.chinformeobs.ToString();
                         registrosSerie.chinformefecha = Registroxxxxs.chinformefecha;
                         registrosSerie.boexhibicion = Registroxxxxs.boexhibicion;
                         ListasSeries.Add(registrosSerie);
@@ -136,20 +137,81 @@ namespace Presentacion
                    if (this.vBoton == "V")
             {
                 this.Text = "VER MOVIMIENTO";
-                txtejercicio.Text = "2018";
-                txtperiodo.Text = "01";
-                txtAlmacen.Text = "PRINCIPAL";
-                txtClase.Text = "INGRESO";
-                txtNroVale.Text = "";
-                mskfechareg.Text = "";
-                txtTotal.Text = "0.00";
-                cboTipoMov.Focus();
                 btnAnadir.Enabled = false;
                 btnModificar.Enabled = false;
                 btnEliminar.Enabled = false;
                 btnGrabar.Enabled = false;
-            }
 
+                RegistrosMovimientoC = movimientosNE.MovimientoProductoCabeceraBusqueda(codigoMovimiento);
+                txtejercicio.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+                txtperiodo.Text = "01";
+                txtAlmacen.Text = "PRINCIPAL";
+                txtClase.Text = "INGRESO";
+                txtRuc.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
+                cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
+                cboTipoMov.SelectedValue = RegistrosMovimientoC.p_inidtipomoviemiento;
+                txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
+                mskfechareg.Text = RegistrosMovimientoC.chvalefecha.ToString();
+                txtobs.Text = RegistrosMovimientoC.chobservacion;
+                txtFacBol.Text = RegistrosMovimientoC.chboletafactura;
+                txtGuiaRem.Text = RegistrosMovimientoC.chguiaremision;
+                cboTipoMov.Focus();
+                txtRuc.ReadOnly = true;
+                txtobs.ReadOnly = true;
+                txtFacBol.ReadOnly = true;
+                txtGuiaRem.ReadOnly = true;
+                mskfechareg.ReadOnly = true;
+
+                /**/
+                List<movimientoproductoaccion> ListaMovimiento = new List<movimientoproductoaccion>();
+                List<valedetalle> ListaMovimientoD = movimientosNE.MovimientoProductoDetalleBusqueda(RegistrosMovimientoC.p_inidvalecebecera);
+                int i = 1;
+                foreach (valedetalle registrosMovimientoD in ListaMovimientoD)
+                {
+                    movimientoproductoaccion RegistrosMoviento = new movimientoproductoaccion();
+                    valedetalle registrosValeDet = new valedetalle();
+                    registrosValeDet.p_inidvaledetalle = i;
+                    registrosValeDet.chnombrecompuesto = registrosMovimientoD.chnombrecompuesto;
+                    registrosValeDet.chmedida = registrosMovimientoD.chmedida;
+                    registrosValeDet.chcodigoproducto = registrosMovimientoD.chcodigoproducto;
+                    registrosValeDet.chfecha = registrosMovimientoD.chfecha;
+                    registrosValeDet.p_inidproducto = registrosMovimientoD.p_inidproducto;
+                    registrosValeDet.nucantidad = registrosMovimientoD.nucantidad;
+                    registrosValeDet.nucosto = registrosMovimientoD.nucosto;
+                    registrosValeDet.nutotal = registrosMovimientoD.nutotal;
+                    registrosValeDet.estado = registrosMovimientoD.estado;
+
+                    List<serie> ListaSerie = serieNE.SerieBusquedaMovimiento(registrosMovimientoD.p_inidvaledetalle);
+                    List<serie> ListasSeries = new List<serie>();
+                    //MessageBox.Show(""+registrosMovimientoD.p_inidvaledetalle, "Mensaje de Sistema", MessageBoxButtons.OK);
+                    foreach (serie Registroxxxxs in ListaSerie)
+                    {
+                        serie registrosSerie = new serie();
+                        registrosSerie.chcodigoserie = Registroxxxxs.chcodigoserie;
+                        registrosSerie.estado = true;
+                        registrosSerie.p_inidproducto = Registroxxxxs.p_inidproducto;
+                        registrosSerie.chadicional = Registroxxxxs.chadicional;
+                        registrosSerie.chfecha = Registroxxxxs.chfecha;
+                        registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                        registrosSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
+                        registrosSerie.chinforme = Registroxxxxs.chinforme;
+                        registrosSerie.chinformeobs = Registroxxxxs.chinformeobs;
+                        registrosSerie.chinformefecha = Registroxxxxs.chinformefecha;
+                        registrosSerie.boexhibicion = Registroxxxxs.boexhibicion;
+                        ListasSeries.Add(registrosSerie);
+                    }
+
+                    RegistrosMoviento.valedet = registrosValeDet;
+                    RegistrosMoviento.listaserie = ListasSeries;
+                    i++;
+                    ListaMovimiento.Add(RegistrosMoviento);
+                }
+
+
+                sesion.movprodaccion = ListaMovimiento;
+                CargarTabla();
+            }
+            
 
 
         }
@@ -322,7 +384,6 @@ namespace Presentacion
                                             codigoSerie = serieNE.seriesIngresar(Registros);
                                             if (codigoSerie <= 0)
                                             {
-
                                                 MessageBox.Show("Error Serie", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                                                 return;
                                             }
@@ -339,10 +400,9 @@ namespace Presentacion
                                 }
                             }
                         }
-                        if (flat)
-                        {
+                      
                             pasado(codigoCabecera);
-                        }
+                        
                     }
                
                 
@@ -424,19 +484,11 @@ namespace Presentacion
                             Registros.chinformefecha = registrosSerie.chinformefecha;
                             Registros.chinformeobs = registrosSerie.chinformeobs;
                             codigoSerie = serieNE.seriesIngresar(Registros);
-                            flat = true;
                         }
-                    }
-                    else
-                    {
-                        flat = true;
                     }
                 }
             }
-            if (flat)
-            {
-                pasado(codigoCabecera);
-            }                       
+            pasado(codigoMovimiento);                          
             if (sesion.movprodaccion != null)
             {
                 sesion.movprodaccion.Clear();
@@ -459,9 +511,12 @@ namespace Presentacion
                             i++;
                         }
                     }
-                    if (i != 0)
+                    if (i > 0)
                     {
-                        flat = true;
+                        flat = true;                        
+                    }else
+                    {
+                        MessageBox.Show("Lista Vacia", "Mensaje de Sistema", MessageBoxButtons.OK);
                     }
                 }
                 else
@@ -481,7 +536,7 @@ namespace Presentacion
         {
             try
             {
-                vBoton = "M";
+                string vBoton = "M";
                 if (basicas.validarAcceso(vBoton))
                 {
                     cargarFormularioModificar(vBoton);
@@ -540,6 +595,7 @@ namespace Presentacion
                         registrosMovi.valedet.estado = false;
                     }
                 }
+                sesion.movprodaccion = listaMovi;
             }
             CargarTabla();
             
@@ -554,18 +610,19 @@ namespace Presentacion
                 dgvListaValeDetalle.Rows.Clear();
                 foreach (movimientoproductoaccion registrosMovi in listaMovi)
                 {
-                   
+                    if (registrosMovi.valedet.estado == true)
+                    {
                         dgvListaValeDetalle.Rows.Add(
                         registrosMovi.valedet.p_inidvaledetalle,
                         registrosMovi.valedet.p_inidproducto,
-                        registrosMovi.valedet.chcodigoproducto,
+                        registrosMovi.valedet.chcodigoproducto.ToString(),
                         registrosMovi.valedet.nucantidad,
                         registrosMovi.valedet.chmedida,
-                        registrosMovi.valedet.chnombrecompuesto,
-                        registrosMovi.valedet.nucosto,
-                        registrosMovi.valedet.nutotal);
+                        registrosMovi.valedet.chnombrecompuesto.ToString(),
+                        decimal.Round(registrosMovi.valedet.nucosto, 2),
+                        decimal.Round(registrosMovi.valedet.nutotal, 2));
                         suma += registrosMovi.valedet.nutotal;
-                                      
+                    }                
                 }
                 txtTotal.Text = decimal.Round(suma, 2).ToString();
             }else
@@ -582,7 +639,21 @@ namespace Presentacion
             string parametro = txtRuc.Text;
             BuscaProveedor(parametro);
         }
+        private void BuscaProveedor(string ruc)
+        {
+            proveedor registro = proveedorNE.ProveedorBusquedaRuc(ruc);
+            if (registro != null)
+            {
+                txtProvnombre.Text = registro.razon;
+                txtidprov.Text = registro.p_inidcodigoclie.ToString();
+            }
+            else
+            {
+                txtProvnombre.Text = "";
+                txtidprov.Text = "";
 
+            }
+        }
         private void txtRuc_DoubleClick(object sender, EventArgs e)
         {
             Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmBusquedaProveedor);
@@ -600,20 +671,7 @@ namespace Presentacion
         {
             txtRuc.Text = ruc;
         }
-        private void BuscaProveedor(string ruc)
-        {
-            proveedor registro = proveedorNE.ProveedorBusquedaRuc(ruc);
-            if (registro != null)
-            {
-                txtProvnombre.Text = registro.razon;
-                txtidprov.Text = registro.p_inidcodigoclie.ToString();
-            }else
-            {
-                txtProvnombre.Text = "";
-                txtidprov.Text = "";
-
-            }
-        }
+        
 
         private void txtRuc_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -628,7 +686,7 @@ namespace Presentacion
         {
             try
             {
-                vBoton = "E";
+                string vBoton = "E";
                 if (basicas.validarAcceso(vBoton))
                 {
                     cargarFormularioEliminar();
@@ -644,7 +702,7 @@ namespace Presentacion
         {
             try
             {
-                vBoton = "V";
+                string vBoton = "V";
                 if (basicas.validarAcceso(vBoton))
                 {
                     cargarFormularioModificar(vBoton);

@@ -9,14 +9,20 @@ namespace Negocios
 {
     public abstract class valeNE
     {
-        public static List<valecabecera> valesListar()
+        public static List<valecabecera> valesListar(int tipo)
         {
-            return valesDL.valesListar();
+            return valesDL.valesListar(tipo);
         }
+        public static List<valecabecera> valesListarparmetro(int tipo,string parametro)
+        {
+            return valesDL.valesListarparmetro(tipo,parametro);
+        }
+        
         public static int CorrelativoMovimientoIngreso(int parametro)
         {
             return valesDL.CorrelativoMovimientoIngreso(parametro);
         }
+
         public static int CorrelativoMovimientoSalida(int parametro)
         {
             return valesDL.CorrelativoMovimientoSalida(parametro);

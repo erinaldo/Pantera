@@ -96,6 +96,11 @@ namespace Datos
             registro.telefono = Convert.ToString(datareader["telefono"]).Trim();
             return registro;
         }
+        public static string BuscarProveedorPorCodigo(int codigo)
+        {
+            return conexion.executeScalarStr("fn_proveedor_busqueda_codigo", CommandType.StoredProcedure, new parametro("in_p_inidcodigo", codigo));
+        }
+
 
 
     }

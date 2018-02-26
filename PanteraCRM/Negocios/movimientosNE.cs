@@ -34,5 +34,9 @@ namespace Negocios
         {
             return movimientosDL.MovimientoProductoCabeceraModificar(codigo);
         }
+        public static int MovimientoProductoCabeceraFalsear(int registros)
+        {
+            return movimientosDL.MovimientoProductoCabeceraFalsear(registros);
+        }
     }
 }

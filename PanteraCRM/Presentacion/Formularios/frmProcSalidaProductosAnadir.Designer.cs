@@ -32,13 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcSalidaProductosAnadir));
+            this.txtidprov = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnVer = new System.Windows.Forms.Button();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.brnEliminar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvListaValeDetalle = new System.Windows.Forms.DataGridView();
@@ -51,12 +53,14 @@
             this.CHCOSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.LNroDoc = new System.Windows.Forms.Label();
+            this.txtProvnombre = new System.Windows.Forms.TextBox();
+            this.txtRuc = new System.Windows.Forms.TextBox();
             this.txtFacBol = new System.Windows.Forms.TextBox();
-            this.txtguiarem = new System.Windows.Forms.TextBox();
-            this.txtCodprov = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.txtGuiaRem = new System.Windows.Forms.TextBox();
+            this.LFact = new System.Windows.Forms.Label();
+            this.LGuia = new System.Windows.Forms.Label();
+            this.LDecripcion = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboMoneda = new System.Windows.Forms.ComboBox();
             this.mskfechareg = new System.Windows.Forms.MaskedTextBox();
@@ -83,40 +87,64 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // txtidprov
+            // 
+            this.txtidprov.BackColor = System.Drawing.Color.White;
+            this.txtidprov.ForeColor = System.Drawing.Color.White;
+            this.txtidprov.Location = new System.Drawing.Point(678, 391);
+            this.txtidprov.Name = "txtidprov";
+            this.txtidprov.Size = new System.Drawing.Size(13, 20);
+            this.txtidprov.TabIndex = 26;
+            this.txtidprov.Visible = false;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(539, 426);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 13);
-            this.label13.TabIndex = 6;
+            this.label13.TabIndex = 20;
             this.label13.Text = "TOTAL";
             // 
             // txtTotal
             // 
             this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.Blue;
             this.txtTotal.Location = new System.Drawing.Point(587, 423);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(93, 20);
-            this.txtTotal.TabIndex = 7;
-            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTotal.TabIndex = 22;
+            this.txtTotal.TabStop = false;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnVer);
             this.groupBox4.Controls.Add(this.btnAnadir);
             this.groupBox4.Controls.Add(this.btnGrabar);
             this.groupBox4.Controls.Add(this.btnModificar);
-            this.groupBox4.Controls.Add(this.brnEliminar);
+            this.groupBox4.Controls.Add(this.btnEliminar);
             this.groupBox4.Controls.Add(this.btnSalir);
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
             this.groupBox4.Location = new System.Drawing.Point(12, 391);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(451, 66);
-            this.groupBox4.TabIndex = 8;
+            this.groupBox4.Size = new System.Drawing.Size(503, 66);
+            this.groupBox4.TabIndex = 25;
             this.groupBox4.TabStop = false;
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackColor = System.Drawing.SystemColors.Window;
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Location = new System.Drawing.Point(246, 19);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(73, 35);
+            this.btnVer.TabIndex = 3;
+            this.btnVer.Text = "&Ver";
+            this.btnVer.UseVisualStyleBackColor = false;
             // 
             // btnAnadir
             // 
@@ -128,15 +156,16 @@
             this.btnAnadir.TabIndex = 0;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
+            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
             // btnGrabar
             // 
             this.btnGrabar.BackColor = System.Drawing.SystemColors.Window;
             this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(284, 19);
+            this.btnGrabar.Location = new System.Drawing.Point(345, 19);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(73, 35);
-            this.btnGrabar.TabIndex = 1;
+            this.btnGrabar.TabIndex = 4;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             // 
@@ -147,32 +176,33 @@
             this.btnModificar.Location = new System.Drawing.Point(88, 19);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(73, 35);
-            this.btnModificar.TabIndex = 2;
+            this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             // 
-            // brnEliminar
+            // btnEliminar
             // 
-            this.brnEliminar.BackColor = System.Drawing.SystemColors.Window;
-            this.brnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnEliminar.Location = new System.Drawing.Point(167, 19);
-            this.brnEliminar.Name = "brnEliminar";
-            this.brnEliminar.Size = new System.Drawing.Size(73, 35);
-            this.brnEliminar.TabIndex = 3;
-            this.brnEliminar.Text = "&Eliminar";
-            this.brnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(167, 19);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(73, 35);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "&Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(363, 19);
+            this.btnSalir.Location = new System.Drawing.Point(424, 19);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(73, 35);
-            this.btnSalir.TabIndex = 4;
+            this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox3
             // 
@@ -180,7 +210,7 @@
             this.groupBox3.Location = new System.Drawing.Point(12, 185);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(679, 200);
-            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             // 
             // dgvListaValeDetalle
@@ -233,6 +263,7 @@
             this.IDITEM.HeaderText = "ITEM";
             this.IDITEM.Name = "IDITEM";
             this.IDITEM.ReadOnly = true;
+            this.IDITEM.Visible = false;
             this.IDITEM.Width = 40;
             // 
             // IDPRODUCTO
@@ -286,67 +317,93 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.LNroDoc);
+            this.groupBox2.Controls.Add(this.txtProvnombre);
+            this.groupBox2.Controls.Add(this.txtRuc);
             this.groupBox2.Controls.Add(this.txtFacBol);
-            this.groupBox2.Controls.Add(this.txtguiarem);
-            this.groupBox2.Controls.Add(this.txtCodprov);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtGuiaRem);
+            this.groupBox2.Controls.Add(this.LFact);
+            this.groupBox2.Controls.Add(this.LGuia);
+            this.groupBox2.Controls.Add(this.LDecripcion);
             this.groupBox2.Location = new System.Drawing.Point(12, 113);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(679, 66);
-            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de Referencia";
             // 
+            // LNroDoc
+            // 
+            this.LNroDoc.AutoSize = true;
+            this.LNroDoc.Location = new System.Drawing.Point(6, 16);
+            this.LNroDoc.Name = "LNroDoc";
+            this.LNroDoc.Size = new System.Drawing.Size(39, 13);
+            this.LNroDoc.TabIndex = 18;
+            this.LNroDoc.Text = "R.U.C.";
+            // 
+            // txtProvnombre
+            // 
+            this.txtProvnombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtProvnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProvnombre.ForeColor = System.Drawing.Color.Blue;
+            this.txtProvnombre.Location = new System.Drawing.Point(139, 32);
+            this.txtProvnombre.Name = "txtProvnombre";
+            this.txtProvnombre.ReadOnly = true;
+            this.txtProvnombre.Size = new System.Drawing.Size(331, 20);
+            this.txtProvnombre.TabIndex = 17;
+            this.txtProvnombre.TabStop = false;
+            // 
+            // txtRuc
+            // 
+            this.txtRuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRuc.Location = new System.Drawing.Point(6, 32);
+            this.txtRuc.Name = "txtRuc";
+            this.txtRuc.Size = new System.Drawing.Size(127, 20);
+            this.txtRuc.TabIndex = 5;
+            this.txtRuc.TextChanged += new System.EventHandler(this.txtRuc_TextChanged_1);
+            // 
             // txtFacBol
             // 
-            this.txtFacBol.Location = new System.Drawing.Point(422, 32);
+            this.txtFacBol.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFacBol.Location = new System.Drawing.Point(575, 32);
             this.txtFacBol.Name = "txtFacBol";
-            this.txtFacBol.Size = new System.Drawing.Size(246, 20);
-            this.txtFacBol.TabIndex = 0;
+            this.txtFacBol.Size = new System.Drawing.Size(93, 20);
+            this.txtFacBol.TabIndex = 7;
             // 
-            // txtguiarem
+            // txtGuiaRem
             // 
-            this.txtguiarem.Location = new System.Drawing.Point(200, 32);
-            this.txtguiarem.Name = "txtguiarem";
-            this.txtguiarem.Size = new System.Drawing.Size(178, 20);
-            this.txtguiarem.TabIndex = 1;
+            this.txtGuiaRem.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtGuiaRem.Location = new System.Drawing.Point(478, 32);
+            this.txtGuiaRem.Name = "txtGuiaRem";
+            this.txtGuiaRem.Size = new System.Drawing.Size(91, 20);
+            this.txtGuiaRem.TabIndex = 6;
             // 
-            // txtCodprov
+            // LFact
             // 
-            this.txtCodprov.Location = new System.Drawing.Point(9, 32);
-            this.txtCodprov.Name = "txtCodprov";
-            this.txtCodprov.Size = new System.Drawing.Size(160, 20);
-            this.txtCodprov.TabIndex = 2;
-            this.txtCodprov.TextChanged += new System.EventHandler(this.txtCodprov_TextChanged);
+            this.LFact.AutoSize = true;
+            this.LFact.Location = new System.Drawing.Point(572, 16);
+            this.LFact.Name = "LFact";
+            this.LFact.Size = new System.Drawing.Size(82, 13);
+            this.LFact.TabIndex = 3;
+            this.LFact.Text = "Factura - Boleta";
             // 
-            // label12
+            // LGuia
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(419, 16);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 13);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Factura - Boleta";
+            this.LGuia.AutoSize = true;
+            this.LGuia.Location = new System.Drawing.Point(475, 16);
+            this.LGuia.Name = "LGuia";
+            this.LGuia.Size = new System.Drawing.Size(75, 13);
+            this.LGuia.TabIndex = 4;
+            this.LGuia.Text = "Guia Remisión";
             // 
-            // label11
+            // LDecripcion
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(197, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 13);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Guia Remisión";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 13);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Proveedor";
+            this.LDecripcion.AutoSize = true;
+            this.LDecripcion.Location = new System.Drawing.Point(136, 16);
+            this.LDecripcion.Name = "LDecripcion";
+            this.LDecripcion.Size = new System.Drawing.Size(56, 13);
+            this.LDecripcion.TabIndex = 5;
+            this.LDecripcion.Text = "Proveedor";
             // 
             // groupBox1
             // 
@@ -371,16 +428,17 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(679, 106);
-            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             // 
             // cboMoneda
             // 
+            this.cboMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMoneda.FormattingEnabled = true;
             this.cboMoneda.Location = new System.Drawing.Point(260, 71);
             this.cboMoneda.Name = "cboMoneda";
             this.cboMoneda.Size = new System.Drawing.Size(121, 21);
-            this.cboMoneda.TabIndex = 0;
+            this.cboMoneda.TabIndex = 3;
             // 
             // mskfechareg
             // 
@@ -388,79 +446,92 @@
             this.mskfechareg.Mask = "00/00/0000";
             this.mskfechareg.Name = "mskfechareg";
             this.mskfechareg.Size = new System.Drawing.Size(100, 20);
-            this.mskfechareg.TabIndex = 1;
+            this.mskfechareg.TabIndex = 2;
             this.mskfechareg.ValidatingType = typeof(System.DateTime);
             // 
             // cboTipoMov
             // 
+            this.cboTipoMov.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoMov.FormattingEnabled = true;
             this.cboTipoMov.Location = new System.Drawing.Point(509, 42);
             this.cboTipoMov.Name = "cboTipoMov";
             this.cboTipoMov.Size = new System.Drawing.Size(159, 21);
-            this.cboTipoMov.TabIndex = 2;
+            this.cboTipoMov.TabIndex = 1;
+            this.cboTipoMov.SelectedIndexChanged += new System.EventHandler(this.cboTipoMov_SelectedIndexChanged);
             // 
             // txtobs
             // 
+            this.txtobs.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtobs.Location = new System.Drawing.Point(509, 69);
             this.txtobs.Name = "txtobs";
             this.txtobs.Size = new System.Drawing.Size(159, 20);
-            this.txtobs.TabIndex = 3;
+            this.txtobs.TabIndex = 4;
             // 
             // txtAlmacen
             // 
             this.txtAlmacen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAlmacen.ForeColor = System.Drawing.Color.Blue;
             this.txtAlmacen.Location = new System.Drawing.Point(509, 17);
             this.txtAlmacen.Name = "txtAlmacen";
             this.txtAlmacen.ReadOnly = true;
             this.txtAlmacen.Size = new System.Drawing.Size(159, 20);
             this.txtAlmacen.TabIndex = 4;
+            this.txtAlmacen.TabStop = false;
             this.txtAlmacen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNroVale
             // 
             this.txtNroVale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtNroVale.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNroVale.ForeColor = System.Drawing.Color.Blue;
             this.txtNroVale.Location = new System.Drawing.Point(260, 42);
             this.txtNroVale.Name = "txtNroVale";
             this.txtNroVale.ReadOnly = true;
             this.txtNroVale.Size = new System.Drawing.Size(121, 20);
             this.txtNroVale.TabIndex = 5;
-            this.txtNroVale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNroVale.TabStop = false;
+            this.txtNroVale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtperiodo
             // 
             this.txtperiodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtperiodo.CausesValidation = false;
+            this.txtperiodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtperiodo.ForeColor = System.Drawing.Color.Blue;
             this.txtperiodo.Location = new System.Drawing.Point(260, 17);
             this.txtperiodo.Name = "txtperiodo";
             this.txtperiodo.ReadOnly = true;
             this.txtperiodo.Size = new System.Drawing.Size(27, 20);
             this.txtperiodo.TabIndex = 6;
-            this.txtperiodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtperiodo.TabStop = false;
+            this.txtperiodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtClase
             // 
             this.txtClase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtClase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClase.ForeColor = System.Drawing.Color.Blue;
             this.txtClase.Location = new System.Drawing.Point(91, 42);
             this.txtClase.Name = "txtClase";
             this.txtClase.ReadOnly = true;
             this.txtClase.Size = new System.Drawing.Size(100, 20);
             this.txtClase.TabIndex = 7;
+            this.txtClase.TabStop = false;
             this.txtClase.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtejercicio
             // 
             this.txtejercicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtejercicio.CausesValidation = false;
+            this.txtejercicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtejercicio.ForeColor = System.Drawing.Color.Blue;
             this.txtejercicio.Location = new System.Drawing.Point(91, 17);
             this.txtejercicio.Name = "txtejercicio";
             this.txtejercicio.ReadOnly = true;
             this.txtejercicio.Size = new System.Drawing.Size(100, 20);
             this.txtejercicio.TabIndex = 8;
+            this.txtejercicio.TabStop = false;
             this.txtejercicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
@@ -546,9 +617,13 @@
             // 
             // frmProcSalidaProductosAnadir
             // 
+            this.AcceptButton = this.btnGrabar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(703, 473);
+            this.Controls.Add(this.txtidprov);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.groupBox4);
@@ -560,6 +635,7 @@
             this.Name = "frmProcSalidaProductosAnadir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR SALIDA";
+            this.Load += new System.EventHandler(this.frmProcSalidaProductosAnadir_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaValeDetalle)).EndInit();
@@ -574,13 +650,15 @@
 
         #endregion
 
+        private System.Windows.Forms.TextBox txtidprov;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnAnadir;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button brnEliminar;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvListaValeDetalle;
@@ -593,12 +671,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHCOSTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSUBTOTAL;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label LNroDoc;
+        private System.Windows.Forms.TextBox txtProvnombre;
+        private System.Windows.Forms.TextBox txtRuc;
         private System.Windows.Forms.TextBox txtFacBol;
-        private System.Windows.Forms.TextBox txtguiarem;
-        private System.Windows.Forms.TextBox txtCodprov;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtGuiaRem;
+        private System.Windows.Forms.Label LFact;
+        private System.Windows.Forms.Label LGuia;
+        private System.Windows.Forms.Label LDecripcion;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cboMoneda;
         private System.Windows.Forms.MaskedTextBox mskfechareg;

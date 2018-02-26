@@ -261,6 +261,7 @@
             this.cboTipo.BackColor = System.Drawing.Color.White;
             this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cboTipo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Location = new System.Drawing.Point(334, 28);
             this.cboTipo.Name = "cboTipo";
