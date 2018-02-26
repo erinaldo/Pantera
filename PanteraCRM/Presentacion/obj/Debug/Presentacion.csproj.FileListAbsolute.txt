@@ -513,22 +513,6 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\P
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.exe
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
 <<<<<<< HEAD
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManStockMinimoPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManTipoPersonaVentaPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManTipoPersonaVentaAnadir.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManStockMinimoAnadir.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaDebitoPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaCrediDevPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaCrediOtroPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSalidaProductosPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcCancelacionCuentasPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcKardexProductoPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSalidaProductosAnadir.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmBusquedaUbigeo.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmBusquedaProveedor.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSeparacionexhibicionPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSeparacionexhibicionAnadir.resources
-<<<<<<< HEAD
 =======
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmBusClientePrincipal.resources
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Formularios.frmBusProductoPrincipal.resources
@@ -559,7 +543,6 @@ C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Pres
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcValesIngresoPrincipal.resources
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmTipoDeCambio.resources
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.PrincipalOpcional.resources
-=======
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSalidaProductosAnadirDetalle.resources
 >>>>>>> 063b7b83387abc036ca9c3ea124ae7051021dae4
 >>>>>>> parent of db22e33... Revert "Merge branch 'master' of https://github.com/juniorcrisostomo/Pantera"

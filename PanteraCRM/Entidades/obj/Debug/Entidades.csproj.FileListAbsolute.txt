@@ -56,14 +56,8 @@ C:\Users\maiik\Documents\GitHub\Pantera\PanteraCRM\Entidades\obj\Debug\Entidades
 C:\Users\maiik\Documents\GitHub\Pantera\PanteraCRM\Entidades\obj\Debug\Entidades.pdb
 C:\Users\maiik\Documents\GitHub\Pantera\PanteraCRM\Entidades\bin\Debug\Entidades.dll
 C:\Users\maiik\Documents\GitHub\Pantera\PanteraCRM\Entidades\bin\Debug\Entidades.pdb
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
-=======
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Entidades\bin\Debug\Entidades.dll
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Entidades\obj\Debug\Entidades.dll
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Entidades\obj\Debug\Entidades.pdb
->>>>>>> 063b7b83387abc036ca9c3ea124ae7051021dae4
->>>>>>> parent of db22e33... Revert "Merge branch 'master' of https://github.com/juniorcrisostomo/Pantera"
