@@ -91,16 +91,16 @@
             // 
             this.txtidprov.BackColor = System.Drawing.Color.White;
             this.txtidprov.ForeColor = System.Drawing.Color.White;
-            this.txtidprov.Location = new System.Drawing.Point(678, 391);
+            this.txtidprov.Location = new System.Drawing.Point(681, 391);
             this.txtidprov.Name = "txtidprov";
-            this.txtidprov.Size = new System.Drawing.Size(13, 20);
+            this.txtidprov.Size = new System.Drawing.Size(10, 20);
             this.txtidprov.TabIndex = 26;
             this.txtidprov.Visible = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(539, 426);
+            this.label13.Location = new System.Drawing.Point(539, 412);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 13);
             this.label13.TabIndex = 20;
@@ -111,7 +111,7 @@
             this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.Blue;
-            this.txtTotal.Location = new System.Drawing.Point(587, 423);
+            this.txtTotal.Location = new System.Drawing.Point(587, 409);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(93, 20);
@@ -129,9 +129,9 @@
             this.groupBox4.Controls.Add(this.btnSalir);
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(12, 391);
+            this.groupBox4.Location = new System.Drawing.Point(11, 391);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(503, 66);
+            this.groupBox4.Size = new System.Drawing.Size(503, 48);
             this.groupBox4.TabIndex = 25;
             this.groupBox4.TabStop = false;
             // 
@@ -139,9 +139,9 @@
             // 
             this.btnVer.BackColor = System.Drawing.SystemColors.Window;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(246, 19);
+            this.btnVer.Location = new System.Drawing.Point(253, 13);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(73, 35);
+            this.btnVer.Size = new System.Drawing.Size(80, 28);
             this.btnVer.TabIndex = 3;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
@@ -150,9 +150,9 @@
             // 
             this.btnAnadir.BackColor = System.Drawing.SystemColors.Window;
             this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnadir.Location = new System.Drawing.Point(9, 19);
+            this.btnAnadir.Location = new System.Drawing.Point(4, 13);
             this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(73, 35);
+            this.btnAnadir.Size = new System.Drawing.Size(80, 28);
             this.btnAnadir.TabIndex = 0;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
@@ -162,9 +162,9 @@
             // 
             this.btnGrabar.BackColor = System.Drawing.SystemColors.Window;
             this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(345, 19);
+            this.btnGrabar.Location = new System.Drawing.Point(336, 13);
             this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(73, 35);
+            this.btnGrabar.Size = new System.Drawing.Size(80, 28);
             this.btnGrabar.TabIndex = 4;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
@@ -173,9 +173,9 @@
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(88, 19);
+            this.btnModificar.Location = new System.Drawing.Point(87, 13);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(73, 35);
+            this.btnModificar.Size = new System.Drawing.Size(80, 28);
             this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -184,9 +184,9 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.SystemColors.Window;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(167, 19);
+            this.btnEliminar.Location = new System.Drawing.Point(170, 13);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(73, 35);
+            this.btnEliminar.Size = new System.Drawing.Size(80, 28);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -196,9 +196,9 @@
             this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(424, 19);
+            this.btnSalir.Location = new System.Drawing.Point(419, 13);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(73, 35);
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -622,7 +622,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(703, 473);
+            this.ClientSize = new System.Drawing.Size(703, 450);
             this.Controls.Add(this.txtidprov);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtTotal);
