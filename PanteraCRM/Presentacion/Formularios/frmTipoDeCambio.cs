@@ -31,7 +31,7 @@ namespace Presentacion
 
         private void txtCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 8)
+            if (8 == Convert.ToInt32(e.KeyChar))
             {
                 e.Handled = false;
                 return;
@@ -50,17 +50,17 @@ namespace Presentacion
                     return;
                 }
             }
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
                 e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
-                e.Handled = true;
+            //else if (Convert.ToInt32(e.KeyChar) == 46)
+            //    e.Handled = (IsDec) ? true : false;
+            //else
+            //    e.Handled = true;
         }
 
         private void txtVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 8)
+            if (8 == Convert.ToInt32(e.KeyChar))
             {
                 e.Handled = false;
                 return;
@@ -79,9 +79,10 @@ namespace Presentacion
                     return;
                 }
             }
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            
+            if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
                 e.Handled = false;
-            else if (e.KeyChar == 46)
+            else if (Convert.ToInt32(e.KeyChar) == 46)
                 e.Handled = (IsDec) ? true : false;
             else
                 e.Handled = true;
