@@ -62,8 +62,10 @@
             this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnValidar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdSeries)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -300,9 +302,9 @@
             // btnGrabar
             // 
             this.btnGrabar.BackColor = System.Drawing.Color.White;
-            this.btnGrabar.Location = new System.Drawing.Point(253, 475);
+            this.btnGrabar.Location = new System.Drawing.Point(3, 9);
             this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(75, 32);
+            this.btnGrabar.Size = new System.Drawing.Size(80, 28);
             this.btnGrabar.TabIndex = 32;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
@@ -312,9 +314,9 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Location = new System.Drawing.Point(334, 475);
+            this.btnSalir.Location = new System.Drawing.Point(83, 9);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 32);
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
             this.btnSalir.TabIndex = 33;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -409,6 +411,16 @@
             this.btnValidar.UseVisualStyleBackColor = true;
             this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnGrabar);
+            this.groupBox2.Controls.Add(this.btnSalir);
+            this.groupBox2.Location = new System.Drawing.Point(247, 471);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(166, 41);
+            this.groupBox2.TabIndex = 36;
+            this.groupBox2.TabStop = false;
+            // 
             // frmProcPedidosPedidosDetalle
             // 
             this.AcceptButton = this.btnGrabar;
@@ -416,11 +428,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(663, 519);
+            this.ClientSize = new System.Drawing.Size(663, 523);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.dgvListaProdSeries);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -432,6 +443,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdSeries)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -470,5 +482,6 @@
         private System.Windows.Forms.CheckBox ckbSerie;
         private System.Windows.Forms.TextBox txtIdproducto;
         private System.Windows.Forms.Button btnValidar;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

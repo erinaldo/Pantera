@@ -64,8 +64,10 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -405,25 +407,36 @@
             // 
             this.btnGrabar.BackColor = System.Drawing.SystemColors.Window;
             this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(303, 299);
+            this.btnGrabar.Location = new System.Drawing.Point(8, 12);
             this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(73, 35);
+            this.btnGrabar.Size = new System.Drawing.Size(80, 28);
             this.btnGrabar.TabIndex = 12;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(382, 299);
+            this.btnSalir.Location = new System.Drawing.Point(94, 12);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(73, 35);
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
             this.btnSalir.TabIndex = 13;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnGrabar);
+            this.groupBox3.Controls.Add(this.btnSalir);
+            this.groupBox3.Location = new System.Drawing.Point(292, 299);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(181, 48);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
             // 
             // frmProcNotaDebitoPrincipal
             // 
@@ -432,9 +445,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(763, 346);
-            this.Controls.Add(this.btnGrabar);
-            this.Controls.Add(this.btnSalir);
+            this.ClientSize = new System.Drawing.Size(763, 356);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -448,6 +460,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -489,5 +502,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

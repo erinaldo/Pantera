@@ -51,9 +51,9 @@
             // btnAnadir
             // 
             this.btnAnadir.BackColor = System.Drawing.Color.White;
-            this.btnAnadir.Location = new System.Drawing.Point(17, 22);
+            this.btnAnadir.Location = new System.Drawing.Point(4, 9);
             this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(75, 32);
+            this.btnAnadir.Size = new System.Drawing.Size(80, 28);
             this.btnAnadir.TabIndex = 0;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
@@ -100,18 +100,18 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnAnadir);
-            this.groupBox1.Location = new System.Drawing.Point(72, 395);
+            this.groupBox1.Location = new System.Drawing.Point(76, 395);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(526, 71);
+            this.groupBox1.Size = new System.Drawing.Size(518, 43);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(341, 22);
+            this.button6.Location = new System.Drawing.Point(348, 9);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 32);
+            this.button6.Size = new System.Drawing.Size(80, 28);
             this.button6.TabIndex = 6;
             this.button6.Text = "&Anular";
             this.button6.UseVisualStyleBackColor = false;
@@ -119,9 +119,9 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(260, 22);
+            this.button5.Location = new System.Drawing.Point(262, 9);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 32);
+            this.button5.Size = new System.Drawing.Size(80, 28);
             this.button5.TabIndex = 5;
             this.button5.Text = "&Imprimir";
             this.button5.UseVisualStyleBackColor = false;
@@ -130,9 +130,9 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Location = new System.Drawing.Point(422, 22);
+            this.btnSalir.Location = new System.Drawing.Point(434, 9);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 32);
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -141,9 +141,9 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(179, 22);
+            this.button3.Location = new System.Drawing.Point(176, 9);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 32);
+            this.button3.Size = new System.Drawing.Size(80, 28);
             this.button3.TabIndex = 3;
             this.button3.Text = "&Ver";
             this.button3.UseVisualStyleBackColor = false;
@@ -151,9 +151,9 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(98, 22);
+            this.button2.Location = new System.Drawing.Point(90, 9);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 32);
+            this.button2.Size = new System.Drawing.Size(80, 28);
             this.button2.TabIndex = 2;
             this.button2.Text = "&Modificar";
             this.button2.UseVisualStyleBackColor = false;
@@ -192,7 +192,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(671, 478);
+            this.ClientSize = new System.Drawing.Size(671, 449);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);

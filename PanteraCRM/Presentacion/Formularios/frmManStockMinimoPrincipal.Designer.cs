@@ -64,7 +64,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(647, 43);
-            this.groupBox2.TabIndex = 19;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // label1
@@ -82,7 +82,7 @@
             this.txtParametro.Location = new System.Drawing.Point(67, 15);
             this.txtParametro.Name = "txtParametro";
             this.txtParametro.Size = new System.Drawing.Size(574, 20);
-            this.txtParametro.TabIndex = 0;
+            this.txtParametro.TabIndex = 1;
             this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
             // 
             // groupBox1
@@ -93,31 +93,32 @@
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(143, 400);
+            this.groupBox1.Location = new System.Drawing.Point(143, 393);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 66);
-            this.groupBox1.TabIndex = 20;
+            this.groupBox1.Size = new System.Drawing.Size(370, 53);
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
             // btnImprimir
             // 
             this.btnImprimir.BackColor = System.Drawing.SystemColors.Window;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.Location = new System.Drawing.Point(178, 20);
+            this.btnImprimir.Location = new System.Drawing.Point(190, 15);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(73, 35);
-            this.btnImprimir.TabIndex = 13;
+            this.btnImprimir.Size = new System.Drawing.Size(80, 28);
+            this.btnImprimir.TabIndex = 2;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(6, 20);
+            this.btnModificar.Location = new System.Drawing.Point(6, 15);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(73, 35);
-            this.btnModificar.TabIndex = 9;
+            this.btnModificar.Size = new System.Drawing.Size(80, 28);
+            this.btnModificar.TabIndex = 0;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -126,10 +127,10 @@
             // 
             this.btnVer.BackColor = System.Drawing.SystemColors.Window;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(91, 20);
+            this.btnVer.Location = new System.Drawing.Point(98, 15);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(73, 35);
-            this.btnVer.TabIndex = 10;
+            this.btnVer.Size = new System.Drawing.Size(80, 28);
+            this.btnVer.TabIndex = 1;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
@@ -139,10 +140,10 @@
             this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(284, 20);
+            this.btnSalir.Location = new System.Drawing.Point(282, 15);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(73, 35);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
+            this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -191,7 +192,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaSotck.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvListaSotck.Size = new System.Drawing.Size(647, 335);
-            this.dgvListaSotck.TabIndex = 21;
+            this.dgvListaSotck.TabIndex = 2;
             // 
             // IDPRODUCTO
             // 
@@ -276,7 +277,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(671, 478);
+            this.ClientSize = new System.Drawing.Size(671, 461);
             this.Controls.Add(this.dgvListaSotck);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);

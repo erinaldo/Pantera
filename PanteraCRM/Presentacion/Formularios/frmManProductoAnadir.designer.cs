@@ -99,7 +99,7 @@
             this.ckbSerie.Location = new System.Drawing.Point(372, 178);
             this.ckbSerie.Name = "ckbSerie";
             this.ckbSerie.Size = new System.Drawing.Size(15, 14);
-            this.ckbSerie.TabIndex = 24;
+            this.ckbSerie.TabIndex = 8;
             this.ckbSerie.UseVisualStyleBackColor = true;
             // 
             // label8
@@ -119,7 +119,7 @@
             this.cboCategoria.Location = new System.Drawing.Point(74, 28);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(173, 21);
-            this.cboCategoria.TabIndex = 22;
+            this.cboCategoria.TabIndex = 0;
             this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.cboCategoria_SelectedIndexChanged);
             // 
             // cboModelo
@@ -131,7 +131,7 @@
             this.cboModelo.Location = new System.Drawing.Point(74, 102);
             this.cboModelo.Name = "cboModelo";
             this.cboModelo.Size = new System.Drawing.Size(173, 21);
-            this.cboModelo.TabIndex = 21;
+            this.cboModelo.TabIndex = 4;
             this.cboModelo.SelectedIndexChanged += new System.EventHandler(this.cboModelo_SelectedIndexChanged);
             // 
             // cboCalibre
@@ -143,7 +143,7 @@
             this.cboCalibre.Location = new System.Drawing.Point(74, 65);
             this.cboCalibre.Name = "cboCalibre";
             this.cboCalibre.Size = new System.Drawing.Size(173, 21);
-            this.cboCalibre.TabIndex = 20;
+            this.cboCalibre.TabIndex = 2;
             this.cboCalibre.SelectedIndexChanged += new System.EventHandler(this.cboCalibre_SelectedIndexChanged);
             // 
             // label7
@@ -185,7 +185,7 @@
             this.cboMarca.Location = new System.Drawing.Point(334, 65);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(185, 21);
-            this.cboMarca.TabIndex = 16;
+            this.cboMarca.TabIndex = 3;
             this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
             // 
             // label13
@@ -209,7 +209,7 @@
             this.cboSituacion.Location = new System.Drawing.Point(74, 214);
             this.cboSituacion.Name = "cboSituacion";
             this.cboSituacion.Size = new System.Drawing.Size(171, 21);
-            this.cboSituacion.TabIndex = 13;
+            this.cboSituacion.TabIndex = 9;
             // 
             // label12
             // 
@@ -232,7 +232,7 @@
             this.cboMedida.Location = new System.Drawing.Point(74, 177);
             this.cboMedida.Name = "cboMedida";
             this.cboMedida.Size = new System.Drawing.Size(173, 21);
-            this.cboMedida.TabIndex = 9;
+            this.cboMedida.TabIndex = 7;
             // 
             // label6
             // 
@@ -265,7 +265,7 @@
             this.cboTipo.Location = new System.Drawing.Point(334, 28);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(185, 21);
-            this.cboTipo.TabIndex = 3;
+            this.cboTipo.TabIndex = 1;
             this.cboTipo.SelectedIndexChanged += new System.EventHandler(this.cboTipo_SelectedIndexChanged);
             // 
             // txtCodigo
@@ -300,7 +300,7 @@
             this.txtNombre.MaxLength = 80;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(436, 20);
-            this.txtNombre.TabIndex = 7;
+            this.txtNombre.TabIndex = 6;
             // 
             // Nombre
             // 
@@ -321,8 +321,9 @@
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.ReadOnly = true;
-            this.txtFecha.Size = new System.Drawing.Size(100, 20);
+            this.txtFecha.Size = new System.Drawing.Size(74, 20);
             this.txtFecha.TabIndex = 15;
+            this.txtFecha.TabStop = false;
             this.txtFecha.ValidatingType = typeof(System.DateTime);
             // 
             // label5
@@ -345,7 +346,7 @@
             this.groupBox2.Location = new System.Drawing.Point(201, 269);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(185, 51);
-            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // btnSalir
@@ -356,7 +357,7 @@
             this.btnSalir.Location = new System.Drawing.Point(97, 16);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 27);
-            this.btnSalir.TabIndex = 10;
+            this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
@@ -368,7 +369,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(9, 16);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 27);
-            this.btnGrabar.TabIndex = 9;
+            this.btnGrabar.TabIndex = 0;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click_1);

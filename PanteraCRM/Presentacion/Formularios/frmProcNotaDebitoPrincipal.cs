@@ -27,5 +27,10 @@ namespace Presentacion
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
         }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

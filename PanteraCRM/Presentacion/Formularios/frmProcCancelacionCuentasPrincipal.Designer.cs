@@ -77,9 +77,9 @@
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(251, 399);
+            this.groupBox1.Location = new System.Drawing.Point(246, 399);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(167, 66);
+            this.groupBox1.Size = new System.Drawing.Size(178, 48);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
@@ -87,9 +87,9 @@
             // 
             this.btnVer.BackColor = System.Drawing.SystemColors.Window;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(6, 19);
+            this.btnVer.Location = new System.Drawing.Point(6, 13);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(73, 35);
+            this.btnVer.Size = new System.Drawing.Size(80, 28);
             this.btnVer.TabIndex = 10;
             this.btnVer.Text = "&Ver Cuentas";
             this.btnVer.UseVisualStyleBackColor = false;
@@ -99,9 +99,9 @@
             this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(85, 19);
+            this.btnSalir.Location = new System.Drawing.Point(92, 14);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(73, 35);
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
             this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -141,10 +141,12 @@
             // 
             // frmProcCancelacionCuentasPrincipal
             // 
+            this.AcceptButton = this.btnVer;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(671, 478);
+            this.CancelButton = this.btnSalir;
+            this.ClientSize = new System.Drawing.Size(671, 461);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

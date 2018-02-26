@@ -24,6 +24,24 @@ namespace Presentacion
 
         }
 
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

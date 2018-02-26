@@ -79,12 +79,15 @@
             // 
             // txtFecha
             // 
+            this.txtFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtFecha.ForeColor = System.Drawing.Color.Blue;
             this.txtFecha.Location = new System.Drawing.Point(62, 46);
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.ReadOnly = true;
             this.txtFecha.Size = new System.Drawing.Size(79, 20);
             this.txtFecha.TabIndex = 10;
+            this.txtFecha.TabStop = false;
             this.txtFecha.ValidatingType = typeof(System.DateTime);
             // 
             // txtVenta
@@ -169,8 +172,7 @@
             // frmTipoDeCambio
             // 
             this.AcceptButton = this.btnGrabar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(270, 149);

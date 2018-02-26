@@ -74,14 +74,18 @@ namespace Presentacion
 
         private void frmManStockMinimoAnadir_Load(object sender, EventArgs e)
         {
+
+            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
             if (this.vBoton == "M")
             {
 
-                txtstockminimo.Text = "0";
+                txtstockminimo.Text = tmpsaldoalmacen.nustockminima.ToString();
                 txtstockminimo.Focus();
                 txtDescripcionprod.Text = tmpsaldoalmacen.chnombrecompuesto;
                 txtCodigo.Text = tmpsaldoalmacen.chcodigo;
-                txtIdproducto.Text = ""+tmpsaldoalmacen.p_inidproducto;
+                txtIdproducto.Text = tmpsaldoalmacen.p_inidproducto.ToString();
+
 
             }
             else
@@ -89,12 +93,14 @@ namespace Presentacion
             {
                 txtDescripcionprod.Text = tmpsaldoalmacen.chnombrecompuesto;
                 txtCodigo.Text = tmpsaldoalmacen.chcodigo;
-                txtIdproducto.Text = "" + tmpsaldoalmacen.p_inidproducto;
-                txtstockminimo.Text = ""+tmpsaldoalmacen.nustockminima;
+                txtIdproducto.Text = tmpsaldoalmacen.p_inidproducto.ToString();
+                txtstockminimo.Text = tmpsaldoalmacen.nustockminima.ToString();
                 txtstockminimo.ReadOnly = true;
                 txtstockminimo.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
                 txtstockminimo.ForeColor = Color.Blue;
+                txtstockminimo.TabStop = false;
                 btnGrabar.Enabled = false;
+
                 //txtstockminimo.Focus();
             }
             

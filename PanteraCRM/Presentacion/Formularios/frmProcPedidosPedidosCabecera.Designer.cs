@@ -603,19 +603,20 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Location = new System.Drawing.Point(685, 177);
+            this.btnSalir.Location = new System.Drawing.Point(687, 189);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 32);
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
             this.btnSalir.TabIndex = 31;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnGrabar
             // 
             this.btnGrabar.BackColor = System.Drawing.Color.White;
-            this.btnGrabar.Location = new System.Drawing.Point(604, 177);
+            this.btnGrabar.Location = new System.Drawing.Point(601, 189);
             this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(75, 32);
+            this.btnGrabar.Size = new System.Drawing.Size(80, 28);
             this.btnGrabar.TabIndex = 30;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
@@ -624,29 +625,31 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(180, 177);
+            this.btnEliminar.Location = new System.Drawing.Point(183, 189);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 32);
+            this.btnEliminar.Size = new System.Drawing.Size(80, 28);
             this.btnEliminar.TabIndex = 29;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(99, 177);
+            this.btnModificar.Location = new System.Drawing.Point(96, 189);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 32);
+            this.btnModificar.Size = new System.Drawing.Size(80, 28);
             this.btnModificar.TabIndex = 28;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAnadir
             // 
             this.btnAnadir.BackColor = System.Drawing.Color.White;
-            this.btnAnadir.Location = new System.Drawing.Point(18, 177);
+            this.btnAnadir.Location = new System.Drawing.Point(9, 189);
             this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(75, 32);
+            this.btnAnadir.Size = new System.Drawing.Size(80, 28);
             this.btnAnadir.TabIndex = 27;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;

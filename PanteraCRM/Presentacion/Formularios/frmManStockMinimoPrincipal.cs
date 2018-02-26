@@ -102,14 +102,19 @@ namespace Presentacion
             f.tmpsaldoalmacen.chcodigo = (string)dgvListaSotck.CurrentRow.Cells["CHCODIGO"].Value; 
             f.tmpsaldoalmacen.chnombrecompuesto = (string)dgvListaSotck.CurrentRow.Cells["CHDESCRIPCION"].Value;
             f.tmpsaldoalmacen.nustockminima= (decimal)dgvListaSotck.CurrentRow.Cells["CHSTOCK"].Value;
-
-            f.ShowDialog();
+            f.MdiParent = this.MdiParent;
+            f.Show();
         }
 
         private void btnVer_Click(object sender, EventArgs e)
         {
             vBoton = "V";
             cargarFormularioAnadir();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

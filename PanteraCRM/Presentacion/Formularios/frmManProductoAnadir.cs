@@ -74,7 +74,7 @@ namespace Presentacion
             {
                 //label8.Text = "Añadir Producto";
                 txtFecha.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-                int index = cboCategoria.FindString("--NUEVA CATEGORIA--");
+                int index = cboCategoria.FindString("ARMA");
                 cboCategoria.SelectedIndex = index;                
                 int index1 = cboMarca.FindString("--NUEVA MARCA--");
                 cboMarca.SelectedIndex = index1;
@@ -82,8 +82,10 @@ namespace Presentacion
                 cboCalibre.SelectedIndex = index2;
                 int index3 = cboModelo.FindString("--NUEVO MODELO--");
                 cboModelo.SelectedIndex = index3;
-                int index4 = cboTipo.FindString("--NUEVO TIPO--");
-                cboTipo.SelectedIndex = index4;
+                //int index4 = cboTipo.FindString("--NUEVO TIPO--");
+                //cboTipo.SelectedIndex = index4;
+                //cboTipo.Text = "--ELEGIR--";
+
             }
             else
                 if (this.vBoton == "M")
@@ -172,7 +174,6 @@ namespace Presentacion
                     MessageBox.Show("Nueva Categoria En Mantenimiento", "Mensaje de Sistema", MessageBoxButtons.OK);
                 }
                 // cboTipo.Enabled = true;
-                //cboTipo.Text = "--Elegir--";
                 flatcboCategoria = true;
             }
             else
@@ -187,7 +188,7 @@ namespace Presentacion
                 cboTipo.SelectedIndex = index;
                 //int index = cboCategoria.FindString("NUEVA CATGORIA");
                 //cboCategoria.SelectedIndex = 0;
-
+                
 
             }
 

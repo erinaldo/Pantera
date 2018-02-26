@@ -27,6 +27,7 @@ namespace Presentacion
             cboMoneda.DisplayMember = "libre";
             txtVenta.Text = "0.00";
             txtCompra.Text = "0.00";
+            cboMoneda.Focus();
         }
 
         private void txtCompra_KeyPress(object sender, KeyPressEventArgs e)

@@ -151,7 +151,7 @@
             this.groupBox1.Location = new System.Drawing.Point(165, 453);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(434, 49);
-            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
             // dvgProducto
@@ -193,7 +193,7 @@
             this.dvgProducto.ReadOnly = true;
             this.dvgProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dvgProducto.Size = new System.Drawing.Size(742, 392);
-            this.dvgProducto.TabIndex = 15;
+            this.dvgProducto.TabIndex = 2;
             // 
             // IDPRODUCTO
             // 
@@ -408,7 +408,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(742, 48);
-            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // label1
@@ -426,7 +426,7 @@
             this.txtParametro.Location = new System.Drawing.Point(70, 17);
             this.txtParametro.Name = "txtParametro";
             this.txtParametro.Size = new System.Drawing.Size(666, 20);
-            this.txtParametro.TabIndex = 0;
+            this.txtParametro.TabIndex = 1;
             this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
             // 
             // frmManProductoPrincipal
