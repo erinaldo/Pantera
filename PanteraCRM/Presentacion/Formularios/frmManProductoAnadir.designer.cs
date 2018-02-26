@@ -170,7 +170,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(292, 68);
+            this.label1.Location = new System.Drawing.Point(280, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 17;
@@ -192,7 +192,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label13.Location = new System.Drawing.Point(11, 217);
+            this.label13.Location = new System.Drawing.Point(11, 219);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(51, 13);
             this.label13.TabIndex = 12;
@@ -215,7 +215,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label12.Location = new System.Drawing.Point(11, 178);
+            this.label12.Location = new System.Drawing.Point(11, 180);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(42, 13);
             this.label12.TabIndex = 8;
@@ -229,7 +229,7 @@
             this.cboMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cboMedida.FormattingEnabled = true;
-            this.cboMedida.Location = new System.Drawing.Point(74, 175);
+            this.cboMedida.Location = new System.Drawing.Point(74, 177);
             this.cboMedida.Name = "cboMedida";
             this.cboMedida.Size = new System.Drawing.Size(173, 21);
             this.cboMedida.TabIndex = 9;
@@ -237,20 +237,20 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label6.Location = new System.Drawing.Point(11, 31);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Categoria";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(292, 31);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(280, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tipo";
             // 
@@ -261,7 +261,6 @@
             this.cboTipo.BackColor = System.Drawing.Color.White;
             this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cboTipo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Location = new System.Drawing.Point(334, 28);
             this.cboTipo.Name = "cboTipo";
@@ -285,10 +284,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label2.Location = new System.Drawing.Point(283, 217);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 14;
             this.label2.Text = "Creación";
             // 
@@ -297,7 +296,7 @@
             this.txtNombre.BackColor = System.Drawing.Color.White;
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtNombre.Location = new System.Drawing.Point(74, 139);
+            this.txtNombre.Location = new System.Drawing.Point(83, 139);
             this.txtNombre.MaxLength = 80;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(436, 20);
@@ -306,10 +305,10 @@
             // Nombre
             // 
             this.Nombre.AutoSize = true;
-            this.Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.Nombre.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.Nombre.Location = new System.Drawing.Point(11, 142);
             this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(63, 13);
+            this.Nombre.Size = new System.Drawing.Size(67, 13);
             this.Nombre.TabIndex = 6;
             this.Nombre.Text = "Descripción";
             // 
@@ -322,17 +321,17 @@
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.ReadOnly = true;
-            this.txtFecha.Size = new System.Drawing.Size(84, 20);
+            this.txtFecha.Size = new System.Drawing.Size(100, 20);
             this.txtFecha.TabIndex = 15;
             this.txtFecha.ValidatingType = typeof(System.DateTime);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.Location = new System.Drawing.Point(292, 105);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label5.Location = new System.Drawing.Point(192, 105);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Código";
             // 
@@ -366,7 +365,7 @@
             // 
             this.btnGrabar.BackColor = System.Drawing.SystemColors.Window;
             this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(8, 16);
+            this.btnGrabar.Location = new System.Drawing.Point(9, 16);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 27);
             this.btnGrabar.TabIndex = 9;

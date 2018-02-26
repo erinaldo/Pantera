@@ -38,9 +38,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dvgProducto = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtParametro = new System.Windows.Forms.TextBox();
             this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDCHECK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +64,9 @@
             this.NUPRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgProducto)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -195,34 +195,6 @@
             this.dvgProducto.Size = new System.Drawing.Size(742, 392);
             this.dvgProducto.TabIndex = 15;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtParametro);
-            this.groupBox2.Location = new System.Drawing.Point(12, 5);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(742, 48);
-            this.groupBox2.TabIndex = 16;
-            this.groupBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Búsqueda";
-            // 
-            // txtParametro
-            // 
-            this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtParametro.Location = new System.Drawing.Point(70, 17);
-            this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(561, 20);
-            this.txtParametro.TabIndex = 0;
-            this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
-            // 
             // IDPRODUCTO
             // 
             this.IDPRODUCTO.DataPropertyName = "p_inidproducto";
@@ -245,7 +217,7 @@
             this.CODPRODUCTO.HeaderText = "CODIGO";
             this.CODPRODUCTO.Name = "CODPRODUCTO";
             this.CODPRODUCTO.ReadOnly = true;
-            this.CODPRODUCTO.Width = 80;
+            this.CODPRODUCTO.Width = 60;
             // 
             // CHFAMILIA
             // 
@@ -253,6 +225,7 @@
             this.CHFAMILIA.HeaderText = "CATEGORIA";
             this.CHFAMILIA.Name = "CHFAMILIA";
             this.CHFAMILIA.ReadOnly = true;
+            this.CHFAMILIA.Width = 90;
             // 
             // CHMARCA
             // 
@@ -428,6 +401,34 @@
             this.CHSITUACION.Name = "CHSITUACION";
             this.CHSITUACION.ReadOnly = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtParametro);
+            this.groupBox2.Location = new System.Drawing.Point(12, 5);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(742, 48);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Búsqueda";
+            // 
+            // txtParametro
+            // 
+            this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtParametro.Location = new System.Drawing.Point(70, 17);
+            this.txtParametro.Name = "txtParametro";
+            this.txtParametro.Size = new System.Drawing.Size(666, 20);
+            this.txtParametro.TabIndex = 0;
+            this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
+            // 
             // frmManProductoPrincipal
             // 
             this.AcceptButton = this.btnAnadir;
@@ -465,9 +466,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DataGridView dvgProducto;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtParametro;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODUCTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDCHECK;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODPRODUCTO;
@@ -494,5 +492,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NUPRECIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDSITUACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSITUACION;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtParametro;
     }
 }

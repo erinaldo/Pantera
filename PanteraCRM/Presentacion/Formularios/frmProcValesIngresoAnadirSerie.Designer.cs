@@ -40,6 +40,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.dgvListaIngreso = new System.Windows.Forms.DataGridView();
+            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BOEXHIBICION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHINFORME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHINFORMEFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHINFORMEOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.txtNombreconpuesto = new System.Windows.Forms.TextBox();
@@ -58,15 +67,6 @@
             this.txtprecio = new System.Windows.Forms.TextBox();
             this.txtMedida = new System.Windows.Forms.TextBox();
             this.btnConfirma = new System.Windows.Forms.Button();
-            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BOEXHIBICION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHINFORME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHINFORMEFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHINFORMEOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbAgregadoSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaIngreso)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -106,7 +106,7 @@
             this.grbAgregadoSerie.Controls.Add(this.txtSerie);
             this.grbAgregadoSerie.Location = new System.Drawing.Point(13, 91);
             this.grbAgregadoSerie.Name = "grbAgregadoSerie";
-            this.grbAgregadoSerie.Size = new System.Drawing.Size(560, 410);
+            this.grbAgregadoSerie.Size = new System.Drawing.Size(560, 389);
             this.grbAgregadoSerie.TabIndex = 4;
             this.grbAgregadoSerie.TabStop = false;
             // 
@@ -134,9 +134,9 @@
             this.btnQuitar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnQuitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnQuitar.ForeColor = System.Drawing.Color.Black;
-            this.btnQuitar.Location = new System.Drawing.Point(456, 41);
+            this.btnQuitar.Location = new System.Drawing.Point(473, 44);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(75, 26);
+            this.btnQuitar.Size = new System.Drawing.Size(80, 28);
             this.btnQuitar.TabIndex = 9;
             this.btnQuitar.Text = "Quitar";
             this.btnQuitar.UseVisualStyleBackColor = false;
@@ -167,9 +167,9 @@
             this.btnAnadir.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAnadir.ForeColor = System.Drawing.Color.Black;
-            this.btnAnadir.Location = new System.Drawing.Point(456, 14);
+            this.btnAnadir.Location = new System.Drawing.Point(473, 13);
             this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(75, 26);
+            this.btnAnadir.Size = new System.Drawing.Size(80, 28);
             this.btnAnadir.TabIndex = 8;
             this.btnAnadir.Text = "Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
@@ -206,208 +206,6 @@
             this.dgvListaIngreso.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvListaIngreso.Size = new System.Drawing.Size(548, 303);
             this.dgvListaIngreso.TabIndex = 5;
-            // 
-            // txtObs
-            // 
-            this.txtObs.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtObs.Location = new System.Drawing.Point(79, 45);
-            this.txtObs.Name = "txtObs";
-            this.txtObs.Size = new System.Drawing.Size(354, 20);
-            this.txtObs.TabIndex = 7;
-            // 
-            // txtSerie
-            // 
-            this.txtSerie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSerie.Location = new System.Drawing.Point(79, 18);
-            this.txtSerie.Name = "txtSerie";
-            this.txtSerie.Size = new System.Drawing.Size(89, 20);
-            this.txtSerie.TabIndex = 5;
-            // 
-            // txtNombreconpuesto
-            // 
-            this.txtNombreconpuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtNombreconpuesto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreconpuesto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombreconpuesto.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtNombreconpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreconpuesto.ForeColor = System.Drawing.Color.Blue;
-            this.txtNombreconpuesto.Location = new System.Drawing.Point(178, 13);
-            this.txtNombreconpuesto.Name = "txtNombreconpuesto";
-            this.txtNombreconpuesto.ReadOnly = true;
-            this.txtNombreconpuesto.Size = new System.Drawing.Size(376, 20);
-            this.txtNombreconpuesto.TabIndex = 18;
-            this.txtNombreconpuesto.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnGrabar);
-            this.groupBox2.Controls.Add(this.btnSalir);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(190, 501);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(180, 59);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            // 
-            // btnGrabar
-            // 
-            this.btnGrabar.BackColor = System.Drawing.Color.White;
-            this.btnGrabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnGrabar.ForeColor = System.Drawing.Color.Black;
-            this.btnGrabar.Location = new System.Drawing.Point(11, 18);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(75, 30);
-            this.btnGrabar.TabIndex = 1;
-            this.btnGrabar.Text = "&Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = false;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.White;
-            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(92, 18);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 30);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "&Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Cantidad";
-            // 
-            // txtidcodigo
-            // 
-            this.txtidcodigo.Location = new System.Drawing.Point(13, 519);
-            this.txtidcodigo.Name = "txtidcodigo";
-            this.txtidcodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtidcodigo.TabIndex = 10;
-            this.txtidcodigo.Visible = false;
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(63, 46);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(38, 20);
-            this.txtCantidad.TabIndex = 2;
-            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
-            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
-            // 
-            // mskFecha
-            // 
-            this.mskFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(210)))));
-            this.mskFecha.ForeColor = System.Drawing.Color.Blue;
-            this.mskFecha.Location = new System.Drawing.Point(475, 530);
-            this.mskFecha.Mask = "00/00/0000";
-            this.mskFecha.Name = "mskFecha";
-            this.mskFecha.ReadOnly = true;
-            this.mskFecha.Size = new System.Drawing.Size(91, 20);
-            this.mskFecha.TabIndex = 12;
-            this.mskFecha.ValidatingType = typeof(System.DateTime);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(473, 515);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Fecha de Registro";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtsubtotal);
-            this.groupBox1.Controls.Add(this.txtprecio);
-            this.groupBox1.Controls.Add(this.txtMedida);
-            this.groupBox1.Controls.Add(this.txtNombreconpuesto);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtCantidad);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtcodprod);
-            this.groupBox1.Location = new System.Drawing.Point(12, 1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(560, 84);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(186, 49);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Costo Unitario";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(389, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Sub-Total";
-            // 
-            // txtsubtotal
-            // 
-            this.txtsubtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtsubtotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(250)))));
-            this.txtsubtotal.Location = new System.Drawing.Point(448, 46);
-            this.txtsubtotal.Name = "txtsubtotal";
-            this.txtsubtotal.ReadOnly = true;
-            this.txtsubtotal.Size = new System.Drawing.Size(106, 20);
-            this.txtsubtotal.TabIndex = 14;
-            this.txtsubtotal.TabStop = false;
-            // 
-            // txtprecio
-            // 
-            this.txtprecio.BackColor = System.Drawing.Color.White;
-            this.txtprecio.ForeColor = System.Drawing.Color.Black;
-            this.txtprecio.Location = new System.Drawing.Point(265, 46);
-            this.txtprecio.Name = "txtprecio";
-            this.txtprecio.Size = new System.Drawing.Size(100, 20);
-            this.txtprecio.TabIndex = 3;
-            this.txtprecio.TextChanged += new System.EventHandler(this.txtprecio_TextChanged);
-            this.txtprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprecio_KeyPress);
-            // 
-            // txtMedida
-            // 
-            this.txtMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtMedida.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMedida.ForeColor = System.Drawing.Color.Blue;
-            this.txtMedida.Location = new System.Drawing.Point(107, 46);
-            this.txtMedida.Name = "txtMedida";
-            this.txtMedida.ReadOnly = true;
-            this.txtMedida.Size = new System.Drawing.Size(62, 20);
-            this.txtMedida.TabIndex = 12;
-            this.txtMedida.TabStop = false;
-            // 
-            // btnConfirma
-            // 
-            this.btnConfirma.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnConfirma.Enabled = false;
-            this.btnConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirma.ForeColor = System.Drawing.Color.Transparent;
-            this.btnConfirma.Location = new System.Drawing.Point(11, 545);
-            this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirma.TabIndex = 15;
-            this.btnConfirma.UseVisualStyleBackColor = true;
             // 
             // IDPRODUCTO
             // 
@@ -472,6 +270,210 @@
             this.CHINFORMEOBS.ReadOnly = true;
             this.CHINFORMEOBS.Visible = false;
             // 
+            // txtObs
+            // 
+            this.txtObs.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtObs.Location = new System.Drawing.Point(79, 45);
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(354, 20);
+            this.txtObs.TabIndex = 7;
+            // 
+            // txtSerie
+            // 
+            this.txtSerie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSerie.Location = new System.Drawing.Point(79, 18);
+            this.txtSerie.Name = "txtSerie";
+            this.txtSerie.Size = new System.Drawing.Size(89, 20);
+            this.txtSerie.TabIndex = 5;
+            // 
+            // txtNombreconpuesto
+            // 
+            this.txtNombreconpuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtNombreconpuesto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombreconpuesto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNombreconpuesto.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtNombreconpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreconpuesto.ForeColor = System.Drawing.Color.Blue;
+            this.txtNombreconpuesto.Location = new System.Drawing.Point(178, 13);
+            this.txtNombreconpuesto.Name = "txtNombreconpuesto";
+            this.txtNombreconpuesto.ReadOnly = true;
+            this.txtNombreconpuesto.Size = new System.Drawing.Size(376, 20);
+            this.txtNombreconpuesto.TabIndex = 18;
+            this.txtNombreconpuesto.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnGrabar);
+            this.groupBox2.Controls.Add(this.btnSalir);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(204, 486);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(177, 49);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            // 
+            // btnGrabar
+            // 
+            this.btnGrabar.BackColor = System.Drawing.Color.White;
+            this.btnGrabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnGrabar.ForeColor = System.Drawing.Color.Black;
+            this.btnGrabar.Location = new System.Drawing.Point(6, 13);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(80, 28);
+            this.btnGrabar.TabIndex = 1;
+            this.btnGrabar.Text = "&Grabar";
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.White;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSalir.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.Location = new System.Drawing.Point(92, 13);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Cantidad";
+            // 
+            // txtidcodigo
+            // 
+            this.txtidcodigo.Location = new System.Drawing.Point(13, 496);
+            this.txtidcodigo.Name = "txtidcodigo";
+            this.txtidcodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtidcodigo.TabIndex = 10;
+            this.txtidcodigo.Visible = false;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(63, 46);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(38, 20);
+            this.txtCantidad.TabIndex = 2;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            this.txtCantidad.Enter += new System.EventHandler(this.txtCantidad_Enter);
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
+            // 
+            // mskFecha
+            // 
+            this.mskFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(210)))));
+            this.mskFecha.ForeColor = System.Drawing.Color.Blue;
+            this.mskFecha.Location = new System.Drawing.Point(481, 507);
+            this.mskFecha.Mask = "00/00/0000";
+            this.mskFecha.Name = "mskFecha";
+            this.mskFecha.ReadOnly = true;
+            this.mskFecha.Size = new System.Drawing.Size(91, 20);
+            this.mskFecha.TabIndex = 12;
+            this.mskFecha.ValidatingType = typeof(System.DateTime);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(479, 492);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Fecha de Registro";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtsubtotal);
+            this.groupBox1.Controls.Add(this.txtprecio);
+            this.groupBox1.Controls.Add(this.txtMedida);
+            this.groupBox1.Controls.Add(this.txtNombreconpuesto);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtCantidad);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtcodprod);
+            this.groupBox1.Location = new System.Drawing.Point(12, 1);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(560, 84);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(186, 49);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Costo Unitario";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(389, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Sub-Total";
+            // 
+            // txtsubtotal
+            // 
+            this.txtsubtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtsubtotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(250)))));
+            this.txtsubtotal.Location = new System.Drawing.Point(448, 46);
+            this.txtsubtotal.Name = "txtsubtotal";
+            this.txtsubtotal.ReadOnly = true;
+            this.txtsubtotal.Size = new System.Drawing.Size(106, 20);
+            this.txtsubtotal.TabIndex = 14;
+            this.txtsubtotal.TabStop = false;
+            // 
+            // txtprecio
+            // 
+            this.txtprecio.BackColor = System.Drawing.Color.White;
+            this.txtprecio.ForeColor = System.Drawing.Color.Black;
+            this.txtprecio.Location = new System.Drawing.Point(265, 46);
+            this.txtprecio.Name = "txtprecio";
+            this.txtprecio.Size = new System.Drawing.Size(100, 20);
+            this.txtprecio.TabIndex = 3;
+            this.txtprecio.TextChanged += new System.EventHandler(this.txtprecio_TextChanged);
+            this.txtprecio.Enter += new System.EventHandler(this.txtprecio_Enter);
+            this.txtprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprecio_KeyPress);
+            // 
+            // txtMedida
+            // 
+            this.txtMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtMedida.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMedida.ForeColor = System.Drawing.Color.Blue;
+            this.txtMedida.Location = new System.Drawing.Point(107, 46);
+            this.txtMedida.Name = "txtMedida";
+            this.txtMedida.ReadOnly = true;
+            this.txtMedida.Size = new System.Drawing.Size(62, 20);
+            this.txtMedida.TabIndex = 12;
+            this.txtMedida.TabStop = false;
+            // 
+            // btnConfirma
+            // 
+            this.btnConfirma.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnConfirma.Enabled = false;
+            this.btnConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirma.ForeColor = System.Drawing.Color.Transparent;
+            this.btnConfirma.Location = new System.Drawing.Point(11, 545);
+            this.btnConfirma.Name = "btnConfirma";
+            this.btnConfirma.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirma.TabIndex = 15;
+            this.btnConfirma.UseVisualStyleBackColor = true;
+            // 
             // frmProcSeriesAnadir
             // 
             this.AcceptButton = this.btnGrabar;
@@ -479,7 +481,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(584, 572);
+            this.ClientSize = new System.Drawing.Size(584, 543);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);

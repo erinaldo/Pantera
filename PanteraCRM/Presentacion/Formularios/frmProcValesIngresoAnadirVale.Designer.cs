@@ -58,6 +58,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvListaValeDetalle = new System.Windows.Forms.DataGridView();
+            this.IDITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCOSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnVer = new System.Windows.Forms.Button();
@@ -69,14 +77,6 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtidprov = new System.Windows.Forms.TextBox();
-            this.IDITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCOSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHSUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaValeDetalle)).BeginInit();
@@ -406,136 +406,6 @@
             this.dgvListaValeDetalle.Size = new System.Drawing.Size(662, 181);
             this.dgvListaValeDetalle.TabIndex = 0;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dgvListaValeDetalle);
-            this.groupBox3.Location = new System.Drawing.Point(12, 190);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(679, 200);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnVer);
-            this.groupBox4.Controls.Add(this.btnAnadir);
-            this.groupBox4.Controls.Add(this.btnGrabar);
-            this.groupBox4.Controls.Add(this.btnModificar);
-            this.groupBox4.Controls.Add(this.btnEliminar);
-            this.groupBox4.Controls.Add(this.btnSalir);
-            this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(12, 396);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(503, 66);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            // 
-            // btnVer
-            // 
-            this.btnVer.BackColor = System.Drawing.SystemColors.Window;
-            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(246, 19);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(73, 35);
-            this.btnVer.TabIndex = 3;
-            this.btnVer.Text = "&Ver";
-            this.btnVer.UseVisualStyleBackColor = false;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
-            // 
-            // btnAnadir
-            // 
-            this.btnAnadir.BackColor = System.Drawing.SystemColors.Window;
-            this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnadir.Location = new System.Drawing.Point(9, 19);
-            this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(73, 35);
-            this.btnAnadir.TabIndex = 0;
-            this.btnAnadir.Text = "&Añadir";
-            this.btnAnadir.UseVisualStyleBackColor = false;
-            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
-            // 
-            // btnGrabar
-            // 
-            this.btnGrabar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(345, 19);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(73, 35);
-            this.btnGrabar.TabIndex = 4;
-            this.btnGrabar.Text = "&Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = false;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(88, 19);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(73, 35);
-            this.btnModificar.TabIndex = 1;
-            this.btnModificar.Text = "&Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(167, 19);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(73, 35);
-            this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.Text = "&Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.brnEliminar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
-            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(424, 19);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(73, 35);
-            this.btnSalir.TabIndex = 5;
-            this.btnSalir.Text = "&Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.ForeColor = System.Drawing.Color.Blue;
-            this.txtTotal.Location = new System.Drawing.Point(587, 428);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(93, 20);
-            this.txtTotal.TabIndex = 1;
-            this.txtTotal.TabStop = false;
-            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(539, 431);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 13);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "TOTAL";
-            // 
-            // txtidprov
-            // 
-            this.txtidprov.BackColor = System.Drawing.Color.White;
-            this.txtidprov.ForeColor = System.Drawing.Color.White;
-            this.txtidprov.Location = new System.Drawing.Point(678, 396);
-            this.txtidprov.Name = "txtidprov";
-            this.txtidprov.Size = new System.Drawing.Size(13, 20);
-            this.txtidprov.TabIndex = 19;
-            this.txtidprov.Visible = false;
-            // 
             // IDITEM
             // 
             this.IDITEM.HeaderText = "ITEM";
@@ -593,6 +463,136 @@
             this.CHSUBTOTAL.ReadOnly = true;
             this.CHSUBTOTAL.Width = 60;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgvListaValeDetalle);
+            this.groupBox3.Location = new System.Drawing.Point(12, 190);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(679, 200);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnVer);
+            this.groupBox4.Controls.Add(this.btnAnadir);
+            this.groupBox4.Controls.Add(this.btnGrabar);
+            this.groupBox4.Controls.Add(this.btnModificar);
+            this.groupBox4.Controls.Add(this.btnEliminar);
+            this.groupBox4.Controls.Add(this.btnSalir);
+            this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.Color.Black;
+            this.groupBox4.Location = new System.Drawing.Point(12, 396);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(503, 48);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackColor = System.Drawing.SystemColors.Window;
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Location = new System.Drawing.Point(250, 13);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(80, 28);
+            this.btnVer.TabIndex = 3;
+            this.btnVer.Text = "&Ver";
+            this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // btnAnadir
+            // 
+            this.btnAnadir.BackColor = System.Drawing.SystemColors.Window;
+            this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnadir.Location = new System.Drawing.Point(4, 13);
+            this.btnAnadir.Name = "btnAnadir";
+            this.btnAnadir.Size = new System.Drawing.Size(80, 28);
+            this.btnAnadir.TabIndex = 0;
+            this.btnAnadir.Text = "&Añadir";
+            this.btnAnadir.UseVisualStyleBackColor = false;
+            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
+            // 
+            // btnGrabar
+            // 
+            this.btnGrabar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.Location = new System.Drawing.Point(333, 13);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(80, 28);
+            this.btnGrabar.TabIndex = 4;
+            this.btnGrabar.Text = "&Grabar";
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(84, 13);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(80, 28);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "&Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(167, 13);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(80, 28);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "&Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.brnEliminar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(416, 13);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
+            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.ForeColor = System.Drawing.Color.Blue;
+            this.txtTotal.Location = new System.Drawing.Point(587, 414);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(93, 20);
+            this.txtTotal.TabIndex = 1;
+            this.txtTotal.TabStop = false;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(539, 417);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(42, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "TOTAL";
+            // 
+            // txtidprov
+            // 
+            this.txtidprov.BackColor = System.Drawing.Color.White;
+            this.txtidprov.ForeColor = System.Drawing.Color.White;
+            this.txtidprov.Location = new System.Drawing.Point(678, 390);
+            this.txtidprov.Name = "txtidprov";
+            this.txtidprov.Size = new System.Drawing.Size(13, 20);
+            this.txtidprov.TabIndex = 19;
+            this.txtidprov.Visible = false;
+            // 
             // frmProcIngresoValesAnadir
             // 
             this.AcceptButton = this.btnGrabar;
@@ -600,7 +600,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(703, 473);
+            this.ClientSize = new System.Drawing.Size(703, 453);
             this.Controls.Add(this.txtidprov);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtTotal);
