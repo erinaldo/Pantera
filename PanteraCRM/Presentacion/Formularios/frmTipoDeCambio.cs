@@ -46,16 +46,26 @@ namespace Presentacion
 
                 if (IsDec && nroDec++ >= 2)
                 {
-                    e.Handled = true;
-                    return;
+                    if (txtCompra.SelectionLength > 0)
+                    {
+                        if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
+                            e.Handled = false;
+                        return;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                        return;
+                    }                    
                 }
             }
+           
             if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
                 e.Handled = false;
-            //else if (Convert.ToInt32(e.KeyChar) == 46)
-            //    e.Handled = (IsDec) ? true : false;
-            //else
-            //    e.Handled = true;
+            else if (Convert.ToInt32(e.KeyChar) == 46)
+                e.Handled = (IsDec) ? true : false;
+            else
+                e.Handled = true;
         }
 
         private void txtVenta_KeyPress(object sender, KeyPressEventArgs e)
@@ -75,8 +85,18 @@ namespace Presentacion
 
                 if (IsDec && nroDec++ >= 2)
                 {
-                    e.Handled = true;
-                    return;
+                    if (txtVenta.SelectionLength > 0)
+                    {
+                        if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
+                            e.Handled = false;
+                        return;
+
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                        return;
+                    }
                 }
             }
             
