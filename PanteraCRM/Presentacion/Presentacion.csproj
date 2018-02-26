@@ -271,6 +271,12 @@
     <Compile Include="Formularios\frmProcSalidaProductosAnadir.Designer.cs">
       <DependentUpon>frmProcSalidaProductosAnadir.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmProcSalidaProductosAnadirDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcSalidaProductosAnadirDetalle.Designer.cs">
+      <DependentUpon>frmProcSalidaProductosAnadirDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmProcSeparacionexhibicionAnadir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -626,6 +632,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcSalidaProductosAnadir.resx">
       <DependentUpon>frmProcSalidaProductosAnadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcSalidaProductosAnadirDetalle.resx">
+      <DependentUpon>frmProcSalidaProductosAnadirDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcSalidaProductosPrincipal.resx">
       <DependentUpon>frmProcSalidaProductosPrincipal.cs</DependentUpon>

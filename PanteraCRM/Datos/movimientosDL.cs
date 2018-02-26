@@ -54,6 +54,11 @@ namespace Datos
         {
             return conexion.executeScalar("fn_movimiento_detalle_falsear", CommandType.StoredProcedure, new parametro("in_p_inidvalecebecera", parametro));
         }
+        public static int MovimientoProductoCabeceraFalsear(int parametro)
+        {
+            return conexion.executeScalar("fn_movimiento_cabecera_falsear", CommandType.StoredProcedure, new parametro("in_p_inidvalecebecera", parametro));
+        }
+        
 
 
         public static List<valedetalle> MovimientoProductoDetalleBusqueda(int parametro)
@@ -67,13 +72,13 @@ namespace Datos
                     registro.p_inidvaledetalle = Convert.ToInt32(datareader["p_inidvaledetalle"]);
                     registro.p_inidvalecebecera = Convert.ToInt32(datareader["p_inidvalecebecera"]);
                     registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
-                    registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]);
-                    registro.chnombrecompuesto = Convert.ToString(datareader["chnombrecompuesto"]);
+                    registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]).Trim();
+                    registro.chnombrecompuesto = Convert.ToString(datareader["chnombrecompuesto"]).Trim();
                     registro.estado = Convert.ToBoolean(datareader["estado"]);
                     registro.nucantidad = Convert.ToInt32(datareader["nucantidad"]);
                     registro.nucosto = Convert.ToDecimal(datareader["nucosto"]);
                     registro.nutotal = Convert.ToDecimal(datareader["nutotal"]);
-                    registro.chmedida = Convert.ToString(datareader["chunidadmedidaproducto"]);
+                    registro.chmedida = Convert.ToString(datareader["chunidadmedidaproducto"]).Trim();
                     listado.Add(registro);
                 }
                 return listado;
@@ -110,13 +115,13 @@ namespace Datos
             registro.p_inidalamacen = Convert.ToInt32(datareader["p_inidalamacen"]);
             registro.p_inidclase = Convert.ToInt32(datareader["p_inidclase"]);
             registro.p_inidcorrevale = Convert.ToString(datareader["p_inidcorrevale"]);
-            registro.chvalefecha = Convert.ToString(datareader["chvalefecha"]);
+            registro.chvalefecha = Convert.ToString(datareader["chvalefecha"]).Trim();
             registro.p_inidtipomoneda = Convert.ToInt32(datareader["p_inidtipomoneda"]);
             registro.p_inidproveedor = Convert.ToInt32(datareader["p_inidproveedor"]);
-            registro.chguiaremision = Convert.ToString(datareader["chguiaremision"]);
-            registro.chboletafactura = Convert.ToString(datareader["chboletafactura"]);
+            registro.chguiaremision = Convert.ToString(datareader["chguiaremision"]).Trim();
+            registro.chboletafactura = Convert.ToString(datareader["chboletafactura"]).Trim();
             registro.p_inidtipomoviemiento = Convert.ToInt32(datareader["p_inidtipomoviemiento"]);
-            registro.chobservacion = Convert.ToString(datareader["chobservacion"]);
+            registro.chobservacion = Convert.ToString(datareader["chobservacion"]).Trim();
             registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
             registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]); ;
             registro.estado = Convert.ToBoolean(datareader["estado"]);

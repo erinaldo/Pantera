@@ -54,6 +54,7 @@
             // 
             // cboMoneda
             // 
+            this.cboMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMoneda.FormattingEnabled = true;
             this.cboMoneda.Location = new System.Drawing.Point(69, 13);
             this.cboMoneda.Name = "cboMoneda";
@@ -151,6 +152,7 @@
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
             this.btnSalir.Location = new System.Drawing.Point(221, 78);
@@ -163,9 +165,11 @@
             // 
             // frmTipoDeCambio
             // 
+            this.AcceptButton = this.btnGrabar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(317, 148);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox1);
