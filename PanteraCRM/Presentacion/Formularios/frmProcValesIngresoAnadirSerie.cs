@@ -16,6 +16,8 @@ namespace Presentacion
     {
         public bool estado = false;
         internal int p_inidproducto;
+        public delegate void CargarTabla();
+        public event CargarTabla Cargado;
         public frmProcSeriesAnadir(string vBoton)
         {
             InitializeComponent();
@@ -210,8 +212,9 @@ namespace Presentacion
                     if (validarParaingreso())
                     {
                         GrabarRegistros();
-                        btnConfirma.Enabled = true;
-                        btnConfirma.PerformClick();                       
+                        Cargado();
+                        //btnConfirma.Enabled = true;
+                        //btnConfirma.PerformClick();                       
                     }
                     else
                     {
@@ -221,9 +224,10 @@ namespace Presentacion
                 case "M":
                     if (validarParaingreso())
                     {
-                            ModificarRegistros();
-                            btnConfirma.Enabled = true;
-                            btnConfirma.PerformClick();
+                        ModificarRegistros();
+                        Cargado();
+                        //btnConfirma.Enabled = true;
+                        //btnConfirma.PerformClick();
                     }
                     else
                     {
@@ -513,8 +517,17 @@ namespace Presentacion
 
                 if (IsDec && nroDec++ >= 2)
                 {
-                    e.Handled = true;
-                    return;
+                    if (txtprecio.SelectionLength > 0)
+                    {
+                        if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
+                            e.Handled = false;
+                        return;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                        return;
+                    }
                 }
             }
             if (e.KeyChar >= 48 && e.KeyChar <= 57)
@@ -653,6 +666,16 @@ namespace Presentacion
             }
             
             return flat;
+        }
+
+        private void txtprecio_Enter(object sender, EventArgs e)
+        {
+            txtprecio.SelectAll();
+        }
+
+        private void txtCantidad_Enter(object sender, EventArgs e)
+        {
+            txtCantidad.SelectAll();
         }
     }
 }

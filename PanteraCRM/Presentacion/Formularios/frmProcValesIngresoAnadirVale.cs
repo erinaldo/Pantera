@@ -230,12 +230,15 @@ namespace Presentacion
                         return;
                     }
                     frmProcSeriesAnadir f = new frmProcSeriesAnadir(vBoton);
-                    f.p_inidproducto = dgvListaValeDetalle.RowCount + 1;
-                    DialogResult result = f.ShowDialog();
-                    if (result == DialogResult.OK)
-                    {
-                        CargarTabla();
-                    }
+                    f.p_inidproducto = dgvListaValeDetalle.RowCount + 1;                    
+                    f.Cargado += new frmProcSeriesAnadir.CargarTabla(CargarTabla);
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                    //DialogResult result = f.ShowDialog();
+                    //if (result == DialogResult.OK)
+                    //{
+                    //    CargarTabla();
+                    //}
                 }
             }
             catch (Exception ex)
@@ -564,11 +567,14 @@ namespace Presentacion
             // f.pasado += new frmProcSeriesAnadir.pasar(ejecutar);            
             f.p_inidproducto = (int)dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value;
             //MessageBox.Show(dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
-            DialogResult res = f.ShowDialog();
-            if (res == DialogResult.OK)
-            {
-                CargarTabla();
-            }
+            f.Cargado += new frmProcSeriesAnadir.CargarTabla(CargarTabla);
+            f.MdiParent = this.MdiParent;
+            f.Show();
+            //DialogResult res = f.ShowDialog();
+            //if (res == DialogResult.OK)
+            //{
+            //    CargarTabla();
+            //}
         }
         private void cargarFormularioEliminar()
         {

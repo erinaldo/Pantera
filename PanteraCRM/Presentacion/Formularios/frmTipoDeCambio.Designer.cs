@@ -94,6 +94,7 @@
             this.txtVenta.Size = new System.Drawing.Size(79, 20);
             this.txtVenta.TabIndex = 9;
             this.txtVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtVenta.Enter += new System.EventHandler(this.txtVenta_Enter);
             this.txtVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVenta_KeyPress);
             // 
             // label4
@@ -130,6 +131,7 @@
             this.txtCompra.Size = new System.Drawing.Size(79, 20);
             this.txtCompra.TabIndex = 5;
             this.txtCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCompra.Enter += new System.EventHandler(this.txtCompra_Enter);
             this.txtCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompra_KeyPress);
             // 
             // btnGrabar
@@ -171,7 +173,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(307, 225);
+            this.ClientSize = new System.Drawing.Size(270, 149);
             this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox1);

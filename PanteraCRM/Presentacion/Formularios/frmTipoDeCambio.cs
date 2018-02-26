@@ -168,5 +168,15 @@ namespace Presentacion
             }
             return flat;
         }
+
+        private void txtCompra_Enter(object sender, EventArgs e)
+        {
+            txtCompra.SelectAll();
+        }
+
+        private void txtVenta_Enter(object sender, EventArgs e)
+        {
+            txtVenta.SelectAll();
+        }
     }
 }
