@@ -25,10 +25,6 @@ namespace Negocios
         {
             return proveedorDL.ProveedorBusquedaParametro(parametro);
         }
-        public static string ProveedorBusquedaCodigo(int codigo)
-        {
-            return proveedorDL.BuscarProveedorPorCodigo(codigo);
-        }
-
+        
     }
 }

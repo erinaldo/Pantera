@@ -35,7 +35,7 @@ namespace Presentacion
                     }
                     frmManProductoAnadir f = new frmManProductoAnadir(vBoton);
                     f.pasado += new frmManProductoAnadir.pasar(ejecutar);
-                    f.Show();
+                    f.ShowDialog();
                 }
                 else
                 {

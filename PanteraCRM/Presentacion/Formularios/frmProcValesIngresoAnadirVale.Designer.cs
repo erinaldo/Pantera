@@ -116,7 +116,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(679, 106);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
             // cboMoneda
@@ -126,7 +126,7 @@
             this.cboMoneda.Location = new System.Drawing.Point(260, 71);
             this.cboMoneda.Name = "cboMoneda";
             this.cboMoneda.Size = new System.Drawing.Size(121, 21);
-            this.cboMoneda.TabIndex = 3;
+            this.cboMoneda.TabIndex = 0;
             // 
             // mskfechareg
             // 
@@ -134,7 +134,7 @@
             this.mskfechareg.Mask = "00/00/0000";
             this.mskfechareg.Name = "mskfechareg";
             this.mskfechareg.Size = new System.Drawing.Size(100, 20);
-            this.mskfechareg.TabIndex = 2;
+            this.mskfechareg.TabIndex = 1;
             this.mskfechareg.ValidatingType = typeof(System.DateTime);
             // 
             // cboTipoMov
@@ -144,7 +144,7 @@
             this.cboTipoMov.Location = new System.Drawing.Point(509, 42);
             this.cboTipoMov.Name = "cboTipoMov";
             this.cboTipoMov.Size = new System.Drawing.Size(159, 21);
-            this.cboTipoMov.TabIndex = 1;
+            this.cboTipoMov.TabIndex = 2;
             // 
             // txtobs
             // 
@@ -152,7 +152,7 @@
             this.txtobs.Location = new System.Drawing.Point(509, 69);
             this.txtobs.Name = "txtobs";
             this.txtobs.Size = new System.Drawing.Size(159, 20);
-            this.txtobs.TabIndex = 4;
+            this.txtobs.TabIndex = 3;
             // 
             // txtAlmacen
             // 
@@ -164,7 +164,6 @@
             this.txtAlmacen.ReadOnly = true;
             this.txtAlmacen.Size = new System.Drawing.Size(159, 20);
             this.txtAlmacen.TabIndex = 4;
-            this.txtAlmacen.TabStop = false;
             this.txtAlmacen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNroVale
@@ -177,7 +176,6 @@
             this.txtNroVale.ReadOnly = true;
             this.txtNroVale.Size = new System.Drawing.Size(121, 20);
             this.txtNroVale.TabIndex = 5;
-            this.txtNroVale.TabStop = false;
             this.txtNroVale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtperiodo
@@ -191,7 +189,6 @@
             this.txtperiodo.ReadOnly = true;
             this.txtperiodo.Size = new System.Drawing.Size(27, 20);
             this.txtperiodo.TabIndex = 6;
-            this.txtperiodo.TabStop = false;
             this.txtperiodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtClase
@@ -204,7 +201,6 @@
             this.txtClase.ReadOnly = true;
             this.txtClase.Size = new System.Drawing.Size(100, 20);
             this.txtClase.TabIndex = 7;
-            this.txtClase.TabStop = false;
             this.txtClase.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtejercicio
@@ -218,7 +214,6 @@
             this.txtejercicio.ReadOnly = true;
             this.txtejercicio.Size = new System.Drawing.Size(100, 20);
             this.txtejercicio.TabIndex = 8;
-            this.txtejercicio.TabStop = false;
             this.txtejercicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
@@ -306,7 +301,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 118);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(679, 66);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de Referencia";
             // 
@@ -329,7 +324,6 @@
             this.txtProvnombre.ReadOnly = true;
             this.txtProvnombre.Size = new System.Drawing.Size(331, 20);
             this.txtProvnombre.TabIndex = 17;
-            this.txtProvnombre.TabStop = false;
             // 
             // txtRuc
             // 
@@ -337,7 +331,7 @@
             this.txtRuc.Location = new System.Drawing.Point(6, 32);
             this.txtRuc.Name = "txtRuc";
             this.txtRuc.Size = new System.Drawing.Size(127, 20);
-            this.txtRuc.TabIndex = 5;
+            this.txtRuc.TabIndex = 6;
             this.txtRuc.TextChanged += new System.EventHandler(this.txtRuc_TextChanged);
             this.txtRuc.DoubleClick += new System.EventHandler(this.txtRuc_DoubleClick);
             this.txtRuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRuc_KeyPress);
@@ -348,7 +342,7 @@
             this.txtFacBol.Location = new System.Drawing.Point(575, 32);
             this.txtFacBol.Name = "txtFacBol";
             this.txtFacBol.Size = new System.Drawing.Size(93, 20);
-            this.txtFacBol.TabIndex = 7;
+            this.txtFacBol.TabIndex = 0;
             // 
             // txtGuiaRem
             // 
@@ -356,7 +350,7 @@
             this.txtGuiaRem.Location = new System.Drawing.Point(478, 32);
             this.txtGuiaRem.Name = "txtGuiaRem";
             this.txtGuiaRem.Size = new System.Drawing.Size(91, 20);
-            this.txtGuiaRem.TabIndex = 6;
+            this.txtGuiaRem.TabIndex = 1;
             // 
             // label12
             // 
@@ -412,7 +406,7 @@
             this.groupBox3.Location = new System.Drawing.Point(12, 190);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(679, 200);
-            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             // 
             // groupBox4
@@ -428,7 +422,7 @@
             this.groupBox4.Location = new System.Drawing.Point(12, 396);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(503, 66);
-            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             // 
             // btnVer
@@ -438,7 +432,7 @@
             this.btnVer.Location = new System.Drawing.Point(246, 19);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(73, 35);
-            this.btnVer.TabIndex = 3;
+            this.btnVer.TabIndex = 5;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
@@ -462,7 +456,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(345, 19);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(73, 35);
-            this.btnGrabar.TabIndex = 4;
+            this.btnGrabar.TabIndex = 1;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -474,7 +468,7 @@
             this.btnModificar.Location = new System.Drawing.Point(88, 19);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(73, 35);
-            this.btnModificar.TabIndex = 1;
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -486,7 +480,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(167, 19);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(73, 35);
-            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.brnEliminar_Click);
@@ -499,7 +493,7 @@
             this.btnSalir.Location = new System.Drawing.Point(424, 19);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(73, 35);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -514,7 +508,6 @@
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(93, 20);
             this.txtTotal.TabIndex = 1;
-            this.txtTotal.TabStop = false;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label13
@@ -612,7 +605,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProcIngresoValesAnadir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AÑADIR INGRESO";
+            this.Text = "AÑADIR MOVIMIENTO";
             this.Load += new System.EventHandler(this.frmProcIngresoValesAnadir_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -166,16 +166,11 @@
             // 
             // frmTipoDeCambio
             // 
-            this.AcceptButton = this.btnGrabar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(267, 153);
-=======
-            this.ClientSize = new System.Drawing.Size(317, 148);
->>>>>>> 063b7b83387abc036ca9c3ea124ae7051021dae4
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnGrabar);

@@ -456,34 +456,19 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\P
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Formularios.frmBusProductoPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmBusquedaProductoFacturacion.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmBusquedaProductoGeneral.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmBusquedaProveedor.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmBusquedaUbigeo.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmConsCobranzaDocuVentaPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManClienteAnadir.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManListaPrecioAnadir.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManListaPrecioPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManProductoPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManProductoAnadir.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManStockMinimoAnadir.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManStockMinimoPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManTipoPersonaVentaAnadir.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManTipoPersonaVentaPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcCancelacionCuentasPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcKardexProductoPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaCrediDevPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaCrediOtroPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaDebitoPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcPedidosPedidosCabecera.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcPedidosPedidosDetalle.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcPedidosPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSalidaProductosAnadir.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSalidaProductosPrincipal.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSeparacionexhibicionAnadir.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSeparacionExhibicionPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcIngresoValesAnadir.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSeriesAnadir.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcValesIngresoPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManClienteAnadir.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManClientePrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManProveedoresAnadir.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManProveedoresPrincipal.resources
@@ -512,7 +497,6 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\P
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.exe
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
-<<<<<<< HEAD
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManStockMinimoPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManTipoPersonaVentaPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManTipoPersonaVentaAnadir.resources
@@ -557,6 +541,3 @@ C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Pres
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcValesIngresoPrincipal.resources
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmTipoDeCambio.resources
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.PrincipalOpcional.resources
-=======
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSalidaProductosAnadirDetalle.resources
->>>>>>> 063b7b83387abc036ca9c3ea124ae7051021dae4

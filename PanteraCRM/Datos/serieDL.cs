@@ -106,7 +106,7 @@ namespace Datos
                 {
                     serie registro = new serie();
                     registro.p_inidserie = Convert.ToInt32(datareader["p_inidserie"]);
-                    registro.chcodigoserie = Convert.ToString(datareader["chcodigoserie"]).Trim();
+                    registro.chcodigoserie = Convert.ToString(datareader["chcodigoserie"]);
                     registro.estado = Convert.ToBoolean(datareader["estado"]);
                     registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
                     registro.chadicional = Convert.ToString(datareader["chadicional"]).Trim();

@@ -114,7 +114,7 @@ namespace Presentacion
                                     if (registrosSerie.boexhibicion == false)
                                     {
                                         dgvListaIngreso.Rows.Remove(dgvListaIngreso.CurrentRow);
-                                        //registrosSerie.estado = false;
+                                        registrosSerie.estado = false;
                                     }
                                     else
                                     {
@@ -270,8 +270,8 @@ namespace Presentacion
             registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
             registrosValeDet.p_inidproducto = int.Parse(txtidcodigo.Text);
             registrosValeDet.nucantidad = int.Parse(txtCantidad.Text);
-            registrosValeDet.nucosto = decimal.Round(decimal.Parse(txtprecio.Text),2);
-            registrosValeDet.nutotal =decimal.Round( decimal.Parse(txtsubtotal.Text),2);
+            registrosValeDet.nucosto = decimal.Parse(txtprecio.Text);
+            registrosValeDet.nutotal = decimal.Parse(txtsubtotal.Text);
             registrosValeDet.estado = true;
 
             registrosMovi.listaserie = ListaSerie;
@@ -314,8 +314,8 @@ namespace Presentacion
             registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
             registrosValeDet.p_inidproducto = int.Parse(txtidcodigo.Text);
             registrosValeDet.nucantidad = int.Parse(txtCantidad.Text);
-            registrosValeDet.nucosto = decimal.Round(decimal.Parse(txtprecio.Text), 2);
-            registrosValeDet.nutotal = decimal.Round(decimal.Parse(txtsubtotal.Text), 2);
+            registrosValeDet.nucosto = decimal.Parse(txtprecio.Text);
+            registrosValeDet.nutotal = decimal.Parse(txtsubtotal.Text);
             registrosValeDet.estado = true;
 
             List<movimientoproductoaccion> ListaMov = sesion.movprodaccion;
@@ -423,7 +423,7 @@ namespace Presentacion
                 if (RegistrosMov.valedet.p_inidvaledetalle == p_inidproducto)
                 {
                     valedetalle RegistroValDet = RegistrosMov.valedet;
-                    txtcodprod.Text = RegistroValDet.chcodigoproducto.ToString().Trim();
+                    txtcodprod.Text = RegistroValDet.chcodigoproducto;
                     mskFecha.Text = RegistroValDet.chfecha;
                     txtCantidad.Text = RegistroValDet.nucantidad.ToString();
                     txtprecio.Text = RegistroValDet.nucosto.ToString();
@@ -435,7 +435,7 @@ namespace Presentacion
                     {
                         if (RegistrosSerie.estado == true)
                         {
-                            dgvListaIngreso.Rows.Add(p_inidproducto, RegistroValDet.chcodigoproducto.ToString(), RegistroValDet.chnombrecompuesto.ToString(), RegistrosSerie.chcodigoserie.ToString(), RegistrosSerie.chadicional.ToString(), RegistrosSerie.boexhibicion, RegistrosSerie.chinforme, RegistrosSerie.chinformefecha, RegistrosSerie.chinformeobs);
+                            dgvListaIngreso.Rows.Add(p_inidproducto, RegistroValDet.chcodigoproducto, RegistroValDet.chnombrecompuesto, RegistrosSerie.chcodigoserie, RegistrosSerie.chadicional, RegistrosSerie.boexhibicion, RegistrosSerie.chinforme, RegistrosSerie.chinformefecha, RegistrosSerie.chinformeobs);
                         }
 
                     }
@@ -472,6 +472,7 @@ namespace Presentacion
                     txtidcodigo.Text = "" + a.p_inidproducto;
                     txtCantidad.Enabled = true;
                     txtCantidad.Text = "0";
+                    txtCantidad.Focus();
                     txtSerie.Text = "";
                     txtCodigoSerie.Text = "";
                     txtObs.Text = "";
@@ -497,8 +498,7 @@ namespace Presentacion
 
         private void txtprecio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
-            if (8 == Convert.ToInt32(e.KeyChar))
+            if (e.KeyChar == 8)
             {
                 e.Handled = false;
                 return;
