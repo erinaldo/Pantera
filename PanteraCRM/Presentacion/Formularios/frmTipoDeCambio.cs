@@ -51,13 +51,7 @@ namespace Presentacion
                 }
             }
             if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
-            {
                 e.Handled = false;
-            }else
-            {
-
-            }
-                
             //else if (Convert.ToInt32(e.KeyChar) == 46)
             //    e.Handled = (IsDec) ? true : false;
             //else
