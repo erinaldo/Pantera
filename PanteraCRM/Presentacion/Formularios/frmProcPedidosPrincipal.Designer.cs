@@ -112,7 +112,7 @@
             this.button6.Location = new System.Drawing.Point(348, 9);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(80, 28);
-            this.button6.TabIndex = 6;
+            this.button6.TabIndex = 5;
             this.button6.Text = "&Anular";
             this.button6.UseVisualStyleBackColor = false;
             // 
@@ -122,7 +122,7 @@
             this.button5.Location = new System.Drawing.Point(262, 9);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(80, 28);
-            this.button5.TabIndex = 5;
+            this.button5.TabIndex = 4;
             this.button5.Text = "&Imprimir";
             this.button5.UseVisualStyleBackColor = false;
             // 
@@ -133,7 +133,7 @@
             this.btnSalir.Location = new System.Drawing.Point(434, 9);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 4;
+            this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.button4_Click);

@@ -30,7 +30,7 @@ namespace Entidades
         public string chusuarioinsert { get; set; }
         public int p_inidusuariodelete { get; set; }
         public string chusuariodelete { get; set; }
-        public float nuprecio { get; set; }
+        public decimal nuprecio { get; set; }
         public int p_inidsituacion { get; set; }
         public string chsituacion { get; set; }
         public bool req_serie { get; set; }

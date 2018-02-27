@@ -302,7 +302,7 @@ namespace Presentacion
                         tmpProducto.chdescripcionproducto = txtNombre.Text;
                         tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
                         tmpProducto.p_inidusuariodelete = 0;
-                        tmpProducto.nuprecio = 0;
+                        tmpProducto.nuprecio = decimal.Parse("0.00");
                         tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
                         tmpProducto.req_serie = ckbSerie.Checked;
                         varIdArticulo = productoNE.productoInsertar(tmpProducto);
@@ -322,7 +322,7 @@ namespace Presentacion
                             registros.estado = true;
                             registros.p_inidalmacen = sesion.SessionGlobal.p_inidalmacen;
                             registros.p_inidproducto = varIdArticulo;
-                            int verdad = productoNE.productoInsertarSaldoalamcen(registros); ;
+                            int verdad = productoNE.productoInsertarSaldoalamcen(registros); 
                             if (verdad <= 0)
                             {
                                 MessageBox.Show("Error en la creación de Stock, realizar manualmente", "Mensaje de Sistema", MessageBoxButtons.OK); 

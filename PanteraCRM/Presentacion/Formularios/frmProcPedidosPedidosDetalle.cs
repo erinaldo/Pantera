@@ -289,8 +289,18 @@ namespace Presentacion
 
                 if (IsDec && nroDec++ >= 2)
                 {
-                    e.Handled = true;
-                    return;
+                    if (txtDesc1.SelectionLength > 0)
+                    {
+                        if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
+                            e.Handled = false;
+                        return;
+
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                        return;
+                    }
                 }
             }
             if (e.KeyChar >= 48 && e.KeyChar <= 57)
@@ -318,8 +328,18 @@ namespace Presentacion
 
                 if (IsDec && nroDec++ >= 2)
                 {
-                    e.Handled = true;
-                    return;
+                    if (txtDesc2.SelectionLength > 0)
+                    {
+                        if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
+                            e.Handled = false;
+                        return;
+
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                        return;
+                    }
                 }
             }
             if (e.KeyChar >= 48 && e.KeyChar <= 57)
@@ -460,6 +480,21 @@ namespace Presentacion
 
             }
 
+        }
+
+        private void txtDesc1_Enter(object sender, EventArgs e)
+        {
+            txtDesc1.SelectAll();
+        }
+
+        private void txtDesc2_Enter(object sender, EventArgs e)
+        {
+            txtDesc2.SelectAll();
+        }
+
+        private void txtCant_Enter(object sender, EventArgs e)
+        {
+            txtCant.SelectAll();
         }
     }
 }

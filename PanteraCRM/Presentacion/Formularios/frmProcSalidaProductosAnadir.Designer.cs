@@ -447,6 +447,7 @@
             this.mskfechareg.Name = "mskfechareg";
             this.mskfechareg.Size = new System.Drawing.Size(100, 20);
             this.mskfechareg.TabIndex = 2;
+            this.mskfechareg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mskfechareg.ValidatingType = typeof(System.DateTime);
             // 
             // cboTipoMov
@@ -470,7 +471,7 @@
             // txtAlmacen
             // 
             this.txtAlmacen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAlmacen.ForeColor = System.Drawing.Color.Blue;
             this.txtAlmacen.Location = new System.Drawing.Point(509, 17);
             this.txtAlmacen.Name = "txtAlmacen";
@@ -483,7 +484,7 @@
             // txtNroVale
             // 
             this.txtNroVale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtNroVale.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroVale.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNroVale.ForeColor = System.Drawing.Color.Blue;
             this.txtNroVale.Location = new System.Drawing.Point(260, 42);
             this.txtNroVale.Name = "txtNroVale";
@@ -497,7 +498,7 @@
             // 
             this.txtperiodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtperiodo.CausesValidation = false;
-            this.txtperiodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtperiodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtperiodo.ForeColor = System.Drawing.Color.Blue;
             this.txtperiodo.Location = new System.Drawing.Point(260, 17);
             this.txtperiodo.Name = "txtperiodo";
@@ -510,7 +511,7 @@
             // txtClase
             // 
             this.txtClase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtClase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClase.ForeColor = System.Drawing.Color.Blue;
             this.txtClase.Location = new System.Drawing.Point(91, 42);
             this.txtClase.Name = "txtClase";
@@ -524,7 +525,7 @@
             // 
             this.txtejercicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtejercicio.CausesValidation = false;
-            this.txtejercicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtejercicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtejercicio.ForeColor = System.Drawing.Color.Blue;
             this.txtejercicio.Location = new System.Drawing.Point(91, 17);
             this.txtejercicio.Name = "txtejercicio";

@@ -128,13 +128,14 @@
             // txtNroPedido
             // 
             this.txtNroPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtNroPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNroPedido.ForeColor = System.Drawing.Color.Blue;
             this.txtNroPedido.Location = new System.Drawing.Point(184, 13);
             this.txtNroPedido.Name = "txtNroPedido";
             this.txtNroPedido.ReadOnly = true;
             this.txtNroPedido.Size = new System.Drawing.Size(109, 20);
             this.txtNroPedido.TabIndex = 1;
+            this.txtNroPedido.TabStop = false;
             this.txtNroPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
@@ -149,13 +150,14 @@
             // txtFechaActual
             // 
             this.txtFechaActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtFechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechaActual.ForeColor = System.Drawing.Color.Blue;
             this.txtFechaActual.Location = new System.Drawing.Point(358, 13);
             this.txtFechaActual.Mask = "00/00/0000";
             this.txtFechaActual.Name = "txtFechaActual";
             this.txtFechaActual.Size = new System.Drawing.Size(93, 20);
             this.txtFechaActual.TabIndex = 3;
+            this.txtFechaActual.TabStop = false;
             this.txtFechaActual.ValidatingType = typeof(System.DateTime);
             // 
             // label3
@@ -174,7 +176,7 @@
             this.cboTipoDocu.Location = new System.Drawing.Point(37, 13);
             this.cboTipoDocu.Name = "cboTipoDocu";
             this.cboTipoDocu.Size = new System.Drawing.Size(70, 21);
-            this.cboTipoDocu.TabIndex = 5;
+            this.cboTipoDocu.TabIndex = 0;
             // 
             // cboTraslado
             // 
@@ -183,7 +185,7 @@
             this.cboTraslado.Location = new System.Drawing.Point(559, 13);
             this.cboTraslado.Name = "cboTraslado";
             this.cboTraslado.Size = new System.Drawing.Size(209, 21);
-            this.cboTraslado.TabIndex = 6;
+            this.cboTraslado.TabIndex = 2;
             // 
             // label4
             // 
@@ -225,19 +227,20 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(783, 135);
-            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtTipoCambio
             // 
             this.txtTipoCambio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtTipoCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTipoCambio.ForeColor = System.Drawing.Color.Blue;
             this.txtTipoCambio.Location = new System.Drawing.Point(441, 101);
             this.txtTipoCambio.Name = "txtTipoCambio";
             this.txtTipoCambio.ReadOnly = true;
             this.txtTipoCambio.Size = new System.Drawing.Size(86, 20);
             this.txtTipoCambio.TabIndex = 25;
+            this.txtTipoCambio.TabStop = false;
             this.txtTipoCambio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label13
@@ -253,13 +256,14 @@
             // 
             this.txtNombreAlmacen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtNombreAlmacen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombreAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreAlmacen.ForeColor = System.Drawing.Color.Blue;
             this.txtNombreAlmacen.Location = new System.Drawing.Point(66, 101);
             this.txtNombreAlmacen.Name = "txtNombreAlmacen";
             this.txtNombreAlmacen.ReadOnly = true;
             this.txtNombreAlmacen.Size = new System.Drawing.Size(207, 20);
             this.txtNombreAlmacen.TabIndex = 23;
+            this.txtNombreAlmacen.TabStop = false;
             // 
             // label12
             // 
@@ -273,13 +277,14 @@
             // txtDesc
             // 
             this.txtDesc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDesc.ForeColor = System.Drawing.Color.Blue;
             this.txtDesc.Location = new System.Drawing.Point(694, 101);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.ReadOnly = true;
             this.txtDesc.Size = new System.Drawing.Size(74, 20);
             this.txtDesc.TabIndex = 21;
+            this.txtDesc.TabStop = false;
             this.txtDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
@@ -298,19 +303,20 @@
             this.cboCondVenta.Location = new System.Drawing.Point(607, 72);
             this.cboCondVenta.Name = "cboCondVenta";
             this.cboCondVenta.Size = new System.Drawing.Size(162, 21);
-            this.cboCondVenta.TabIndex = 19;
+            this.cboCondVenta.TabIndex = 5;
             // 
             // txtNombreVendedor
             // 
             this.txtNombreVendedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtNombreVendedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombreVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreVendedor.ForeColor = System.Drawing.Color.Blue;
             this.txtNombreVendedor.Location = new System.Drawing.Point(235, 73);
             this.txtNombreVendedor.Name = "txtNombreVendedor";
             this.txtNombreVendedor.ReadOnly = true;
             this.txtNombreVendedor.Size = new System.Drawing.Size(290, 20);
             this.txtNombreVendedor.TabIndex = 18;
+            this.txtNombreVendedor.TabStop = false;
             // 
             // textBox5
             // 
@@ -318,7 +324,7 @@
             this.textBox5.Location = new System.Drawing.Point(51, 73);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(103, 20);
-            this.textBox5.TabIndex = 17;
+            this.textBox5.TabIndex = 4;
             // 
             // label10
             // 
@@ -350,24 +356,26 @@
             // txtCodigoCliente
             // 
             this.txtCodigoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoCliente.ForeColor = System.Drawing.Color.Blue;
             this.txtCodigoCliente.Location = new System.Drawing.Point(679, 40);
             this.txtCodigoCliente.Name = "txtCodigoCliente";
             this.txtCodigoCliente.Size = new System.Drawing.Size(90, 20);
             this.txtCodigoCliente.TabIndex = 13;
+            this.txtCodigoCliente.TabStop = false;
             // 
             // txtNombreCliente
             // 
             this.txtNombreCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtNombreCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreCliente.ForeColor = System.Drawing.Color.Blue;
             this.txtNombreCliente.Location = new System.Drawing.Point(224, 40);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.ReadOnly = true;
             this.txtNombreCliente.Size = new System.Drawing.Size(403, 20);
             this.txtNombreCliente.TabIndex = 12;
+            this.txtNombreCliente.TabStop = false;
             // 
             // txtRucCliente
             // 
@@ -375,7 +383,7 @@
             this.txtRucCliente.Location = new System.Drawing.Point(51, 40);
             this.txtRucCliente.Name = "txtRucCliente";
             this.txtRucCliente.Size = new System.Drawing.Size(103, 20);
-            this.txtRucCliente.TabIndex = 11;
+            this.txtRucCliente.TabIndex = 3;
             this.txtRucCliente.TextChanged += new System.EventHandler(this.txtRucCliente_TextChanged);
             this.txtRucCliente.DoubleClick += new System.EventHandler(this.txtRucCliente_DoubleClick);
             // 
@@ -427,7 +435,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 153);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(783, 121);
-            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Transportista";
             // 
@@ -446,7 +454,7 @@
             this.txtPtoLlegada.Location = new System.Drawing.Point(453, 83);
             this.txtPtoLlegada.Name = "txtPtoLlegada";
             this.txtPtoLlegada.Size = new System.Drawing.Size(315, 20);
-            this.txtPtoLlegada.TabIndex = 23;
+            this.txtPtoLlegada.TabIndex = 7;
             // 
             // txtPtoPartida
             // 
@@ -454,7 +462,7 @@
             this.txtPtoPartida.Location = new System.Drawing.Point(75, 83);
             this.txtPtoPartida.Name = "txtPtoPartida";
             this.txtPtoPartida.Size = new System.Drawing.Size(304, 20);
-            this.txtPtoPartida.TabIndex = 22;
+            this.txtPtoPartida.TabIndex = 6;
             // 
             // label20
             // 
@@ -480,7 +488,7 @@
             this.txtObs.Location = new System.Drawing.Point(559, 51);
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(209, 20);
-            this.txtObs.TabIndex = 19;
+            this.txtObs.TabIndex = 5;
             // 
             // txtfechaInicio
             // 
@@ -488,7 +496,7 @@
             this.txtfechaInicio.Mask = "00/00/0000";
             this.txtfechaInicio.Name = "txtfechaInicio";
             this.txtfechaInicio.Size = new System.Drawing.Size(92, 20);
-            this.txtfechaInicio.TabIndex = 18;
+            this.txtfechaInicio.TabIndex = 4;
             this.txtfechaInicio.ValidatingType = typeof(System.DateTime);
             // 
             // label18
@@ -507,7 +515,7 @@
             this.cboVehiculo.Location = new System.Drawing.Point(51, 51);
             this.cboVehiculo.Name = "cboVehiculo";
             this.cboVehiculo.Size = new System.Drawing.Size(100, 21);
-            this.cboVehiculo.TabIndex = 16;
+            this.cboVehiculo.TabIndex = 2;
             // 
             // label17
             // 
@@ -525,7 +533,7 @@
             this.cboNombreConductor.Location = new System.Drawing.Point(559, 18);
             this.cboNombreConductor.Name = "cboNombreConductor";
             this.cboNombreConductor.Size = new System.Drawing.Size(210, 21);
-            this.cboNombreConductor.TabIndex = 14;
+            this.cboNombreConductor.TabIndex = 1;
             // 
             // label16
             // 
@@ -540,13 +548,14 @@
             // 
             this.txtNombreTrans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtNombreTrans.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombreTrans.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreTrans.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreTrans.ForeColor = System.Drawing.Color.Blue;
             this.txtNombreTrans.Location = new System.Drawing.Point(207, 19);
             this.txtNombreTrans.Name = "txtNombreTrans";
             this.txtNombreTrans.ReadOnly = true;
             this.txtNombreTrans.Size = new System.Drawing.Size(284, 20);
             this.txtNombreTrans.TabIndex = 12;
+            this.txtNombreTrans.TabStop = false;
             // 
             // label15
             // 
@@ -563,7 +572,7 @@
             this.txtRucTrans.Location = new System.Drawing.Point(51, 19);
             this.txtRucTrans.Name = "txtRucTrans";
             this.txtRucTrans.Size = new System.Drawing.Size(100, 20);
-            this.txtRucTrans.TabIndex = 10;
+            this.txtRucTrans.TabIndex = 0;
             // 
             // label14
             // 
@@ -596,7 +605,7 @@
             this.groupBox3.Location = new System.Drawing.Point(13, 280);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(782, 278);
-            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
             // btnSalir
@@ -606,7 +615,7 @@
             this.btnSalir.Location = new System.Drawing.Point(687, 189);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 31;
+            this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -617,7 +626,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(601, 189);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 30;
+            this.btnGrabar.TabIndex = 4;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -628,7 +637,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(183, 189);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(80, 28);
-            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -639,7 +648,7 @@
             this.btnModificar.Location = new System.Drawing.Point(96, 189);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(80, 28);
-            this.btnModificar.TabIndex = 28;
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -650,7 +659,7 @@
             this.btnAnadir.Location = new System.Drawing.Point(9, 189);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(80, 28);
-            this.btnAnadir.TabIndex = 27;
+            this.btnAnadir.TabIndex = 1;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
@@ -708,61 +717,66 @@
             // txtTotVenta
             // 
             this.txtTotVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtTotVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotVenta.ForeColor = System.Drawing.Color.Blue;
             this.txtTotVenta.Location = new System.Drawing.Point(668, 252);
             this.txtTotVenta.Name = "txtTotVenta";
             this.txtTotVenta.ReadOnly = true;
             this.txtTotVenta.Size = new System.Drawing.Size(100, 20);
             this.txtTotVenta.TabIndex = 21;
+            this.txtTotVenta.TabStop = false;
             this.txtTotVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtIgv
             // 
             this.txtIgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtIgv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIgv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIgv.ForeColor = System.Drawing.Color.Blue;
             this.txtIgv.Location = new System.Drawing.Point(513, 252);
             this.txtIgv.Name = "txtIgv";
             this.txtIgv.ReadOnly = true;
             this.txtIgv.Size = new System.Drawing.Size(100, 20);
             this.txtIgv.TabIndex = 20;
+            this.txtIgv.TabStop = false;
             this.txtIgv.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtValVenta
             // 
             this.txtValVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtValVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValVenta.ForeColor = System.Drawing.Color.Blue;
             this.txtValVenta.Location = new System.Drawing.Point(357, 252);
             this.txtValVenta.Name = "txtValVenta";
             this.txtValVenta.ReadOnly = true;
             this.txtValVenta.Size = new System.Drawing.Size(100, 20);
             this.txtValVenta.TabIndex = 19;
+            this.txtValVenta.TabStop = false;
             this.txtValVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtDesctot
             // 
             this.txtDesctot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtDesctot.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesctot.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDesctot.ForeColor = System.Drawing.Color.Blue;
             this.txtDesctot.Location = new System.Drawing.Point(178, 252);
             this.txtDesctot.Name = "txtDesctot";
             this.txtDesctot.ReadOnly = true;
             this.txtDesctot.Size = new System.Drawing.Size(100, 20);
             this.txtDesctot.TabIndex = 18;
+            this.txtDesctot.TabStop = false;
             this.txtDesctot.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtSubtotal
             // 
             this.txtSubtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubtotal.ForeColor = System.Drawing.Color.Blue;
             this.txtSubtotal.Location = new System.Drawing.Point(6, 252);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.ReadOnly = true;
             this.txtSubtotal.Size = new System.Drawing.Size(100, 20);
             this.txtSubtotal.TabIndex = 17;
+            this.txtSubtotal.TabStop = false;
             this.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dgvListaPedidoDetalle
@@ -860,6 +874,8 @@
             // CHPRECIO
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = "0.00";
             this.CHPRECIO.DefaultCellStyle = dataGridViewCellStyle1;
             this.CHPRECIO.HeaderText = "PRECIO";
             this.CHPRECIO.Name = "CHPRECIO";
@@ -869,6 +885,8 @@
             // DESC1
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = "0.00";
             this.DESC1.DefaultCellStyle = dataGridViewCellStyle2;
             this.DESC1.HeaderText = "DSCTO%";
             this.DESC1.Name = "DESC1";
@@ -878,6 +896,8 @@
             // DESC2
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "0.00";
             this.DESC2.DefaultCellStyle = dataGridViewCellStyle3;
             this.DESC2.HeaderText = "DSCTO%";
             this.DESC2.Name = "DESC2";

@@ -60,7 +60,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(9, 19);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(73, 35);
-            this.btnGrabar.TabIndex = 8;
+            this.btnGrabar.TabIndex = 0;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             // 
@@ -72,7 +72,7 @@
             this.btnSalir.Location = new System.Drawing.Point(88, 19);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(73, 35);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -86,7 +86,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(496, 44);
-            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // label2
@@ -104,7 +104,7 @@
             this.textBox2.Location = new System.Drawing.Point(416, 13);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(74, 20);
-            this.textBox2.TabIndex = 25;
+            this.textBox2.TabIndex = 1;
             // 
             // textBox1
             // 
@@ -112,7 +112,7 @@
             this.textBox1.Location = new System.Drawing.Point(82, 13);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(271, 20);
-            this.textBox1.TabIndex = 24;
+            this.textBox1.TabIndex = 0;
             // 
             // label1
             // 

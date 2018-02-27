@@ -292,7 +292,7 @@
             this.txtNombreconpuesto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreconpuesto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombreconpuesto.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtNombreconpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreconpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreconpuesto.ForeColor = System.Drawing.Color.Blue;
             this.txtNombreconpuesto.Location = new System.Drawing.Point(178, 13);
             this.txtNombreconpuesto.Name = "txtNombreconpuesto";
@@ -366,6 +366,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(38, 20);
             this.txtCantidad.TabIndex = 2;
+            this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             this.txtCantidad.Enter += new System.EventHandler(this.txtCantidad_Enter);
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
@@ -380,6 +381,7 @@
             this.mskFecha.ReadOnly = true;
             this.mskFecha.Size = new System.Drawing.Size(91, 20);
             this.mskFecha.TabIndex = 12;
+            this.mskFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mskFecha.ValidatingType = typeof(System.DateTime);
             // 
             // label6
@@ -437,6 +439,7 @@
             this.txtsubtotal.Size = new System.Drawing.Size(106, 20);
             this.txtsubtotal.TabIndex = 14;
             this.txtsubtotal.TabStop = false;
+            this.txtsubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtprecio
             // 
@@ -446,6 +449,7 @@
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(100, 20);
             this.txtprecio.TabIndex = 3;
+            this.txtprecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtprecio.TextChanged += new System.EventHandler(this.txtprecio_TextChanged);
             this.txtprecio.Enter += new System.EventHandler(this.txtprecio_Enter);
             this.txtprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprecio_KeyPress);

@@ -62,10 +62,11 @@ namespace Presentacion
                         decimal desc1 = obj.nuporcentajedesc1;
                         decimal desc2 = obj.nuporcentajedesc2;
                         decimal importe = obj.nuimportesubtotal;
+                        decimal preunit = obj.nuprecioproducto;
                         string sval = "000" + val;
                         int pini = sval.Length - 3;
                         int pfin = sval.Length - 1;
-                        dgvListaPedidoDetalle.Rows.Add("1", "2", sval.Substring(pini, pfin), idproducto, codigo, "1", stock, nombrecompuesto, obj.chserie, precio, desc1, desc2, "", importe, "15", "16");
+                        dgvListaPedidoDetalle.Rows.Add("1", "2", sval.Substring(pini, pfin), idproducto, codigo, "1", stock, nombrecompuesto, obj.chserie, precio, desc1, desc2, preunit, importe, "15", "16");
                     }
                     //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");
                 }
@@ -80,18 +81,52 @@ namespace Presentacion
                     decimal desc1 = f.tmbpedidodetalle.nuporcentajedesc1;
                     decimal desc2 = f.tmbpedidodetalle.nuporcentajedesc2;
                     decimal importe = f.tmbpedidodetalle.nuimportesubtotal;
+                    decimal preunit = f.tmbpedidodetalle.nuprecioproducto;
                     string sval = "000" + val;
                     int pini = sval.Length - 3;
                     int pfin = sval.Length - 1;
                     //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");
-                    dgvListaPedidoDetalle.Rows.Add("1", "2", sval.Substring(pini, pfin), idproducto, codigo, cantidad, stock, nombrecompuesto, "-", precio, desc1, desc2, "", importe, "15", "16");
+                    dgvListaPedidoDetalle.Rows.Add("1", "2", sval.Substring(pini, pfin), idproducto, codigo, cantidad, stock, nombrecompuesto, "-", precio, desc1, desc2, preunit, importe, "15", "16");
                     //f.tmbpedidodetalle.chnombrecompuesto;
                 }
-
+                GenerarTotales();
             }
             
         }
+        public void GenerarTotales()
+        {
+            if (dgvListaPedidoDetalle.RowCount > 0)
+            {
+                decimal importe=0;
+                decimal preciprod = 0;
+                decimal precio = 0;
+                int cantidad = 0;
+                decimal preciototal = 0;
+                List<pedidodetalle>  listado = new List<pedidodetalle>();
+                for (int i = 0; i < dgvListaPedidoDetalle.RowCount; i++)
+                {
+                    //precio += decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["CHPRECIO"].Value.ToString());
+                    importe += decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUIMPORTE"].Value.ToString());
+                    preciprod = decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUPRECIOVENTA"].Value.ToString());
+                    cantidad = int.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUCANTIDAD"].Value.ToString());
+                    preciototal += decimal.Round(cantidad * preciprod, 2);
+                }
 
+                //txtTotVenta.Text = importe.ToString();
+                //txtIgv.Text = decimal.Round(subsindesc- valorventa, 2).ToString();
+                //txtDesctot.Text = decimal.Round(subsindesc-importe,2).ToString();
+                //txtSubtotal.Text = decimal.Round(decimal.Round(subsindesc / (118 / 100) - decimal.Round(subsindesc - importe, 2), 2), 2).ToString();
+
+                txtTotVenta.Text = importe.ToString();
+                decimal valorventa = decimal.Round(importe / decimal.Parse("1.18"), 2);
+                txtValVenta.Text = valorventa.ToString();
+                txtIgv.Text = (importe - valorventa).ToString();
+                decimal tdescuentototal = decimal.Round(preciototal - valorventa,2);
+                txtDesctot.Text =tdescuentototal.ToString();
+                txtSubtotal.Text = (valorventa- tdescuentototal).ToString();
+                //txtValVenta.Text = decimal.Round(subsindesc, 2).ToString();
+            }
+        }
         private void frmProcPedidosPedidosCabecera_Load(object sender, EventArgs e)
         {
             GenerarCodigoPedido();

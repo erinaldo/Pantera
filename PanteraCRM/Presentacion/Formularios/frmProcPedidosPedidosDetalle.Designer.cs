@@ -83,7 +83,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(52, 13);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 30;
+            this.txtCodigo.TabIndex = 0;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             this.txtCodigo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtCodigo_MouseDoubleClick);
             // 
@@ -112,7 +112,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(639, 164);
-            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtIdproducto
@@ -182,47 +182,51 @@
             // txtImporte
             // 
             this.txtImporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtImporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtImporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtImporte.ForeColor = System.Drawing.Color.Blue;
             this.txtImporte.Location = new System.Drawing.Point(533, 125);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.ReadOnly = true;
             this.txtImporte.Size = new System.Drawing.Size(100, 20);
             this.txtImporte.TabIndex = 41;
+            this.txtImporte.TabStop = false;
             this.txtImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPrecioVenta
             // 
             this.txtPrecioVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtPrecioVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecioVenta.ForeColor = System.Drawing.Color.Blue;
             this.txtPrecioVenta.Location = new System.Drawing.Point(338, 125);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.ReadOnly = true;
             this.txtPrecioVenta.Size = new System.Drawing.Size(63, 20);
             this.txtPrecioVenta.TabIndex = 40;
+            this.txtPrecioVenta.TabStop = false;
             this.txtPrecioVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtMedida
             // 
             this.txtMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtMedida.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMedida.ForeColor = System.Drawing.Color.Blue;
             this.txtMedida.Location = new System.Drawing.Point(106, 125);
             this.txtMedida.Name = "txtMedida";
             this.txtMedida.ReadOnly = true;
             this.txtMedida.Size = new System.Drawing.Size(100, 20);
             this.txtMedida.TabIndex = 39;
+            this.txtMedida.TabStop = false;
             // 
             // txtCant
             // 
             this.txtCant.Location = new System.Drawing.Point(61, 125);
             this.txtCant.Name = "txtCant";
             this.txtCant.Size = new System.Drawing.Size(39, 20);
-            this.txtCant.TabIndex = 38;
+            this.txtCant.TabIndex = 3;
             this.txtCant.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCant.TextChanged += new System.EventHandler(this.txtCant_TextChanged);
+            this.txtCant.Enter += new System.EventHandler(this.txtCant_Enter);
             this.txtCant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCant_KeyPress);
             // 
             // txtDesc2
@@ -230,9 +234,10 @@
             this.txtDesc2.Location = new System.Drawing.Point(533, 89);
             this.txtDesc2.Name = "txtDesc2";
             this.txtDesc2.Size = new System.Drawing.Size(100, 20);
-            this.txtDesc2.TabIndex = 37;
+            this.txtDesc2.TabIndex = 2;
             this.txtDesc2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDesc2.TextChanged += new System.EventHandler(this.txtDesc2_TextChanged);
+            this.txtDesc2.Enter += new System.EventHandler(this.txtDesc2_Enter);
             this.txtDesc2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesc2_KeyPress);
             // 
             // txtDesc1
@@ -240,33 +245,36 @@
             this.txtDesc1.Location = new System.Drawing.Point(106, 86);
             this.txtDesc1.Name = "txtDesc1";
             this.txtDesc1.Size = new System.Drawing.Size(100, 20);
-            this.txtDesc1.TabIndex = 36;
+            this.txtDesc1.TabIndex = 1;
             this.txtDesc1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDesc1.TextChanged += new System.EventHandler(this.txtDesc1_TextChanged);
+            this.txtDesc1.Enter += new System.EventHandler(this.txtDesc1_Enter);
             this.txtDesc1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesc1_KeyPress);
             // 
             // txtStock
             // 
             this.txtStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStock.ForeColor = System.Drawing.Color.Blue;
             this.txtStock.Location = new System.Drawing.Point(533, 49);
             this.txtStock.Name = "txtStock";
             this.txtStock.ReadOnly = true;
             this.txtStock.Size = new System.Drawing.Size(100, 20);
             this.txtStock.TabIndex = 35;
+            this.txtStock.TabStop = false;
             this.txtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPreUnit
             // 
             this.txtPreUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtPreUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPreUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPreUnit.ForeColor = System.Drawing.Color.Blue;
             this.txtPreUnit.Location = new System.Drawing.Point(106, 49);
             this.txtPreUnit.Name = "txtPreUnit";
             this.txtPreUnit.ReadOnly = true;
             this.txtPreUnit.Size = new System.Drawing.Size(100, 20);
             this.txtPreUnit.TabIndex = 34;
+            this.txtPreUnit.TabStop = false;
             this.txtPreUnit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
@@ -291,13 +299,14 @@
             // 
             this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.Color.Blue;
             this.txtDescripcion.Location = new System.Drawing.Point(158, 13);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.Size = new System.Drawing.Size(475, 20);
             this.txtDescripcion.TabIndex = 31;
+            this.txtDescripcion.TabStop = false;
             // 
             // btnGrabar
             // 

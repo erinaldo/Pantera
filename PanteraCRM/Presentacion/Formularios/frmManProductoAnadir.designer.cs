@@ -56,12 +56,14 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.txtidproducto = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.ckbSerie);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cboCategoria);
@@ -272,7 +274,7 @@
             // 
             this.txtCodigo.BackColor = System.Drawing.Color.White;
             this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.ForeColor = System.Drawing.Color.Black;
             this.txtCodigo.Location = new System.Drawing.Point(334, 102);
             this.txtCodigo.MaxLength = 15;
@@ -383,6 +385,16 @@
             this.txtidproducto.TabIndex = 5;
             this.txtidproducto.Visible = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label9.Location = new System.Drawing.Point(280, 105);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Codigo";
+            // 
             // frmManProductoAnadir
             // 
             this.AcceptButton = this.btnGrabar;
@@ -440,5 +452,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -61,3 +61,4 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Entidades\bin\Debug\Enti
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Entidades\obj\Debug\Entidades.dll
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Entidades\obj\Debug\Entidades.pdb
+C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache

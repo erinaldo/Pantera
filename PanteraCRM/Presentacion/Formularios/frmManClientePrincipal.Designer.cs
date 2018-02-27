@@ -39,6 +39,13 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHRAZON = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIPODOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NRODOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDIRECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTIPOCLIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaClientes)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -61,7 +68,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Busqueda";
+            this.label1.Text = "Búsqueda";
             // 
             // txtParametro
             // 
@@ -73,10 +80,21 @@
             // 
             // dgvListaClientes
             // 
+            this.dgvListaClientes.AllowUserToAddRows = false;
+            this.dgvListaClientes.AllowUserToDeleteRows = false;
             this.dgvListaClientes.BackgroundColor = System.Drawing.Color.White;
             this.dgvListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CHCODIGO,
+            this.CHRAZON,
+            this.TIPODOCU,
+            this.NRODOCU,
+            this.CHDIRECCION,
+            this.CHTIPOCLIE,
+            this.CHTELEFONO});
             this.dgvListaClientes.Location = new System.Drawing.Point(12, 50);
             this.dgvListaClientes.Name = "dgvListaClientes";
+            this.dgvListaClientes.ReadOnly = true;
             this.dgvListaClientes.Size = new System.Drawing.Size(647, 344);
             this.dgvListaClientes.TabIndex = 18;
             // 
@@ -153,6 +171,62 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.DataPropertyName = "p_inidcodigoclie";
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 60;
+            // 
+            // CHRAZON
+            // 
+            this.CHRAZON.DataPropertyName = "razon";
+            this.CHRAZON.HeaderText = "RAZON SOCIAL";
+            this.CHRAZON.Name = "CHRAZON";
+            this.CHRAZON.ReadOnly = true;
+            this.CHRAZON.Width = 280;
+            // 
+            // TIPODOCU
+            // 
+            this.TIPODOCU.DataPropertyName = "tipodocu";
+            this.TIPODOCU.HeaderText = "TIPO DOCUMENTO";
+            this.TIPODOCU.Name = "TIPODOCU";
+            this.TIPODOCU.ReadOnly = true;
+            this.TIPODOCU.Width = 80;
+            // 
+            // NRODOCU
+            // 
+            this.NRODOCU.DataPropertyName = "nrodocumento";
+            this.NRODOCU.HeaderText = "N° DOCUMENTO";
+            this.NRODOCU.Name = "NRODOCU";
+            this.NRODOCU.ReadOnly = true;
+            this.NRODOCU.Width = 80;
+            // 
+            // CHDIRECCION
+            // 
+            this.CHDIRECCION.DataPropertyName = "chdireccion";
+            this.CHDIRECCION.HeaderText = "DIRECCION";
+            this.CHDIRECCION.Name = "CHDIRECCION";
+            this.CHDIRECCION.ReadOnly = true;
+            this.CHDIRECCION.Width = 200;
+            // 
+            // CHTIPOCLIE
+            // 
+            this.CHTIPOCLIE.DataPropertyName = "tipoclie";
+            this.CHTIPOCLIE.HeaderText = "TIPO CLIENTE";
+            this.CHTIPOCLIE.Name = "CHTIPOCLIE";
+            this.CHTIPOCLIE.ReadOnly = true;
+            this.CHTIPOCLIE.Width = 80;
+            // 
+            // CHTELEFONO
+            // 
+            this.CHTELEFONO.DataPropertyName = "telefono";
+            this.CHTELEFONO.HeaderText = "TELEFONO";
+            this.CHTELEFONO.Name = "CHTELEFONO";
+            this.CHTELEFONO.ReadOnly = true;
+            this.CHTELEFONO.Width = 80;
+            // 
             // frmManClientePrincipal
             // 
             this.AcceptButton = this.btnAnadir;
@@ -192,5 +266,12 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHRAZON;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TIPODOCU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NRODOCU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHDIRECCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHTIPOCLIE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHTELEFONO;
     }
 }

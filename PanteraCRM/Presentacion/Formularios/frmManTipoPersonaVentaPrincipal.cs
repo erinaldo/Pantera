@@ -58,5 +58,10 @@ namespace Presentacion
                 MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
             }
         }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -78,7 +78,7 @@ namespace Presentacion
                 this.Text = "MODIFICAR PRECIO";
                 txtCodigo.Text = tmpProducto.chcodigoproducto.ToString();
                 txtDescripcion.Text = tmpProducto.chnombrecompuesto;
-                txtCantidad.Text = tmpProducto.nuprecio.ToString();
+                txtCantidad.Text =decimal.Round( decimal.Parse(tmpProducto.nuprecio.ToString()),2).ToString();
                 txtCantidad.Focus();
                 txtIdproducto.Text = tmpProducto.p_inidproducto.ToString();
                 txtCodigo.ReadOnly = true;

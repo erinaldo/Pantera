@@ -126,7 +126,8 @@ namespace Presentacion
             f.tmpProducto.chnombrecompuesto = (string)dgvListaPrecios.CurrentRow.Cells["CHDESCRIPCION"].Value;
             f.tmpProducto.nuprecio = (decimal)dgvListaPrecios.CurrentRow.Cells["CHPRECIO"].Value;
             f.tmpProducto.chcodigoproducto = (string)(dgvListaPrecios.CurrentRow.Cells["CHCODIGO"].Value);
-            f.ShowDialog();
+            f.MdiParent = this.MdiParent;
+            f.Show();
         }
 
         private void btnVer_Click(object sender, EventArgs e)
