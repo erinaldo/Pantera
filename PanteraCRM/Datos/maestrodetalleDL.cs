@@ -28,6 +28,70 @@ namespace Datos
                 return listado;
             }
         }
+        public static List<maestrocabecera> MaestroCabeceraListar()
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_maestrocabecera_listar", CommandType.StoredProcedure ))
+            {
+                List<maestrocabecera> listado = new List<maestrocabecera>();
+                while (datareader.Read())
+                {
+                    maestrocabecera registro = new maestrocabecera();
+                    registro.p_inidmaestrocabecera = Convert.ToInt32(datareader["p_inidmaestrocabecera"]);
+                    registro.chdesmoestro = Convert.ToString(datareader["chdesmoestro"]).Trim();
+                    registro.chobserbacion = Convert.ToString(datareader["chobserbacion"]).Trim();
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.chcodigomaestrocab = Convert.ToString(datareader["chcodigomaestrocab"]).Trim();
+                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
+                    
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+        
+            public static maestrocabecera MaestroCabeceraListarCodigo(int parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_maestrocabecera_listar_codigo", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
+            {
+                maestrocabecera registro = new maestrocabecera();
+                while (datareader.Read())
+                {
+                    registro.p_inidmaestrocabecera = Convert.ToInt32(datareader["p_inidmaestrocabecera"]);
+                    registro.chdesmoestro = Convert.ToString(datareader["chdesmoestro"]).Trim();
+                    registro.chobserbacion = Convert.ToString(datareader["chobserbacion"]).Trim();
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.chcodigomaestrocab = Convert.ToString(datareader["chcodigomaestrocab"]).Trim();
+                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
+
+                }
+                return registro;
+            }
+        }
+        public static List<maestrocabecera> MaestroCabeceraListarParametro(string parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_maestrocabecera_listar_parametro", CommandType.StoredProcedure, new parametro("in_parametro",parametro)))
+            {
+                List<maestrocabecera> listado = new List<maestrocabecera>();
+                while (datareader.Read())
+                {
+                    maestrocabecera registro = new maestrocabecera();
+                    registro.p_inidmaestrocabecera = Convert.ToInt32(datareader["p_inidmaestrocabecera"]);
+                    registro.chdesmoestro = Convert.ToString(datareader["chdesmoestro"]).Trim();
+                    registro.chobserbacion = Convert.ToString(datareader["chobserbacion"]).Trim();
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.chcodigomaestrocab = Convert.ToString(datareader["chcodigomaestrocab"]).Trim();
+                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
+
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+        
+
         public static List<categoria> ListarCategorias()
         {
             using (IDataReader datareader = conexion.executeOperation("fn_categorias_listar", CommandType.StoredProcedure))

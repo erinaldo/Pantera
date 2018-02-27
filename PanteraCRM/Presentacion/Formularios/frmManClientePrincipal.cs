@@ -14,6 +14,7 @@ namespace Presentacion
 {
     public partial class frmManClientePrincipal : Form
     {
+        string vBoton;
         public frmManClientePrincipal()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace Presentacion
             cargarData(0);
             foreach (DataGridViewRow Row in dgvListaClientes.Rows)
             {
-                int valor = (int)Row.Cells["IDCLIENTE"].Value;
+                int valor = (int)Row.Cells["CHCODIGO"].Value;
                 if (valor == dato)
                 {
                     int puntero = (int)Row.Index;
@@ -61,15 +62,33 @@ namespace Presentacion
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManClienteAnadir);
-            if (frm != null)
+            try
             {
-                frm.BringToFront();
-                return;
+                vBoton = "A";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManClienteAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmManClienteAnadir f = new frmManClienteAnadir(vBoton);
+                    f.pasado += new frmManClienteAnadir.pasar(ejecutar);
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+
             }
-            frmManClienteAnadir f = new frmManClienteAnadir();
-            //f.pasado += new frmManClienteAnadir.pasar(ejecutar);
-            f.ShowDialog();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+           
         }
     }
 }

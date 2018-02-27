@@ -22,6 +22,14 @@ namespace Negocios
         {
             return maestrodetalleDL.buscarTipoPorCategoria(codigomaestro);
         }
-
+        public static List<maestrocabecera> MaestroCabeceraListar()
+        {
+            return maestrodetalleDL.MaestroCabeceraListar();
+        }
+        public static List<maestrocabecera> MaestroCabeceraListarParametro(string parametro)
+        {
+            return maestrodetalleDL.MaestroCabeceraListarParametro(parametro);
+        }
+        
     }
 }

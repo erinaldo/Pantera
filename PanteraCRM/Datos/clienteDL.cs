@@ -74,8 +74,60 @@ namespace Datos
                 return listado;
             }
         }
+        public static int ClienteIngresar(Mcliente registros)
+        {
+            return conexion.executeScalar("fn_cliente_ingresar",
+            CommandType.StoredProcedure,
+            new parametro("in_chdireccionenvio", registros.chdireccionenvio ),
+            new parametro("in_p_inidtipovia", registros.p_inidtipovia),
+            new parametro("in_chnombrevia", registros.chnombrevia),
+            new parametro("in_chnumero", registros.chnumero),
+            new parametro("in_chnumerointerior", registros.chnumerointerior),
+            new parametro("in_p_inidtipozona", registros.p_inidtipozona),
+            new parametro("in_chnombrezona", registros.chnombrezona),
+            new parametro("in_estado", registros.estado),
+            new parametro("in_chtelefono2", registros.chtelefono2),
+            new parametro("in_chtelefono3", registros.chtelefono3),
+            new parametro("in_p_inidpais", registros.p_inidpais),
+            new parametro("in_p_inidtipocliente", registros.p_inidtipocliente)
+                );
 
+        }
+        public static int ClienteJuridicoIngresar(Mclientejuridico registros)
+        {
+            return conexion.executeScalar("fn_clientejuridico_ingresar",
+            CommandType.StoredProcedure,
+            new parametro("in_p_inidcliente", registros.p_inidcliente),
+            new parametro("in_p_inidempresa", registros.p_inidempresa));
 
+        }
+        public static int ClienteNaturalIngresar(Mclientenatural registros)
+        {
+            return conexion.executeScalar("fn_clientenatural_ingresar",
+            CommandType.StoredProcedure,
+            new parametro("in_p_inidcliente", registros.p_inidcliente),
+            new parametro("in_p_inidpersona", registros.p_inidpersona));
 
+        }
+        public static int LicenciaIngresar(licencia registros)
+        {
+            return conexion.executeScalar("fn_licencia_ingresar",
+            CommandType.StoredProcedure,
+            new parametro("in_p_inidcliente", registros.p_inidcliente),
+            new parametro("in_chnumerolicencia", registros.chlicencia),
+            new parametro("in_chfechavencimiento", registros.fechavencimiento),
+            new parametro("in_estado", registros.estado));
+
+        }
+        public static int TarjetaIngresar(tarjetapropiedad registros)
+        {
+            return conexion.executeScalar("fn_tarjeta_ingresar",
+            CommandType.StoredProcedure,
+            new parametro("in_p_inidcliente", registros.p_inidcliente),
+            new parametro("in_chtarjeta", registros.chtarjeta),
+            new parametro("in_fechavencimiento", registros.fechavencimiento ),
+            new parametro("in_estado", registros.estado ));
+
+        }
     }
 }

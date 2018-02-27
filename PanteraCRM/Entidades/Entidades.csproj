@@ -55,11 +55,15 @@
     <Compile Include="empresa.cs" />
     <Compile Include="empresas.cs" />
     <Compile Include="empresasesion.cs" />
+    <Compile Include="licencia.cs" />
     <Compile Include="maestrodetalle.cs" />
     <Compile Include="marca.cs" />
     <Compile Include="Mcliente.cs" />
+    <Compile Include="Mclientejuridico.cs" />
+    <Compile Include="Mclientenatural.cs" />
     <Compile Include="Mempresa.cs" />
     <Compile Include="menu.cs" />
+    <Compile Include="mestrocabecera.cs" />
     <Compile Include="modelo.cs" />
     <Compile Include="movimientoproductod.cs" />
     <Compile Include="movimientoproductoaccion.cs" />
@@ -87,6 +91,7 @@
     <Compile Include="serie.cs" />
     <Compile Include="seriebuscada.cs" />
     <Compile Include="sesionglobal.cs" />
+    <Compile Include="tarjetapropiedad.cs" />
     <Compile Include="tipo.cs" />
     <Compile Include="tipocambio.cs" />
     <Compile Include="tipodocumento.cs" />

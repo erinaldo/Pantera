@@ -74,7 +74,6 @@
     <Compile Include="proveedorDL.cs" />
     <Compile Include="proveedorjuridicoDL.cs" />
     <Compile Include="puntoventaDL.cs" />
-    <Compile Include="reniecDL.cs" />
     <Compile Include="serieDL.cs" />
     <Compile Include="tipocambioDL.cs" />
     <Compile Include="tipodocumentoDL.cs" />

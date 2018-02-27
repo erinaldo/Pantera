@@ -59,13 +59,11 @@
     <Compile Include="perfildetalleNE.cs" />
     <Compile Include="perfilNE.cs" />
     <Compile Include="personaNE.cs" />
-    <Compile Include="presupuestoNE.cs" />
     <Compile Include="productoNE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="proveedorjuridicoNE.cs" />
     <Compile Include="proveedorNE.cs" />
     <Compile Include="puntoventaNE.cs" />
-    <Compile Include="reniecNE.cs" />
     <Compile Include="serieNE.cs" />
     <Compile Include="tipocambioNE.cs" />
     <Compile Include="tipodocumentoNE.cs" />

@@ -241,6 +241,18 @@
     <Compile Include="Formularios\frmManTipoPersonaVentaPrincipal.Designer.cs">
       <DependentUpon>frmManTipoPersonaVentaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmManVariosAnadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManVariosAnadir.Designer.cs">
+      <DependentUpon>frmManVariosAnadir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmManVariosPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManVariosPrincipal.Designer.cs">
+      <DependentUpon>frmManVariosPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmProcCancelacionCuentasPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,53 +391,11 @@
     <Compile Include="Formularios\frmImprNotaVentaReciboPagoPrincipal.Designer.cs">
       <DependentUpon>frmImprNotaVentaReciboPagoPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmMarca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmMarca.Designer.cs">
-      <DependentUpon>frmMarca.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmModelo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmModelo.Designer.cs">
-      <DependentUpon>frmModelo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmModeloAnadir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmModeloAnadir.Designer.cs">
-      <DependentUpon>frmModeloAnadir.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmPerfil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmPerfil.designer.cs">
-      <DependentUpon>frmPerfil.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmPerfilAnadir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmPerfilAnadir.designer.cs">
-      <DependentUpon>frmPerfilAnadir.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmPersona.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmPersona.designer.cs">
-      <DependentUpon>frmPersona.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmPersonaAnadir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmPersonaAnadir.designer.cs">
-      <DependentUpon>frmPersonaAnadir.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -456,36 +426,6 @@
     </Compile>
     <Compile Include="Formularios\frmRepoReposicionStockPrincipal.Designer.cs">
       <DependentUpon>frmRepoReposicionStockPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmReporteDiarioPresupuesto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmReporteDiarioPresupuesto.Designer.cs">
-      <DependentUpon>frmReporteDiarioPresupuesto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmReporteMovimiento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmReporteMovimiento.Designer.cs">
-      <DependentUpon>frmReporteMovimiento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmReportePresupuesto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmReportePresupuesto.designer.cs">
-      <DependentUpon>frmReportePresupuesto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmRegistroPresupuesto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmRegistroPresupuesto.designer.cs">
-      <DependentUpon>frmRegistroPresupuesto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmRegistroPresupuestoAnadir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmRegistroPresupuestoAnadir.designer.cs">
-      <DependentUpon>frmRegistroPresupuestoAnadir.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmRepoVentasPrincipal.cs">
       <SubType>Form</SubType>
@@ -528,12 +468,6 @@
     </Compile>
     <Compile Include="Formularios\frmUsuarioAnadir.designer.cs">
       <DependentUpon>frmUsuarioAnadir.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmMarcaAnadir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmMarcaAnadir.Designer.cs">
-      <DependentUpon>frmMarcaAnadir.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\PrincipalOpcional.cs">
       <SubType>Form</SubType>
@@ -606,6 +540,12 @@
     <EmbeddedResource Include="Formularios\frmManTipoPersonaVentaPrincipal.resx">
       <DependentUpon>frmManTipoPersonaVentaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManVariosAnadir.resx">
+      <DependentUpon>frmManVariosAnadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManVariosPrincipal.resx">
+      <DependentUpon>frmManVariosPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcCancelacionCuentasPrincipal.resx">
       <DependentUpon>frmProcCancelacionCuentasPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -666,47 +606,11 @@
     <EmbeddedResource Include="Formularios\frmManProveedoresPrincipal.resx">
       <DependentUpon>frmManProveedoresPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmMarca.resx">
-      <DependentUpon>frmMarca.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmModelo.resx">
-      <DependentUpon>frmModelo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmModeloAnadir.resx">
-      <DependentUpon>frmModeloAnadir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmPerfil.resx">
-      <DependentUpon>frmPerfil.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmPerfilAnadir.resx">
-      <DependentUpon>frmPerfilAnadir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmPersona.resx">
-      <DependentUpon>frmPersona.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmPersonaAnadir.resx">
-      <DependentUpon>frmPersonaAnadir.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmReporteDiarioPresupuesto.resx">
-      <DependentUpon>frmReporteDiarioPresupuesto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmReporteMovimiento.resx">
-      <DependentUpon>frmReporteMovimiento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmReportePresupuesto.resx">
-      <DependentUpon>frmReportePresupuesto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmRegistroPresupuesto.resx">
-      <DependentUpon>frmRegistroPresupuesto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmRegistroPresupuestoAnadir.resx">
-      <DependentUpon>frmRegistroPresupuestoAnadir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmTipoDeCambio.resx">
       <DependentUpon>frmTipoDeCambio.cs</DependentUpon>
@@ -719,9 +623,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmUsuarioAnadir.resx">
       <DependentUpon>frmUsuarioAnadir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmMarcaAnadir.resx">
-      <DependentUpon>frmMarcaAnadir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\PrincipalOpcional.resx">
       <DependentUpon>PrincipalOpcional.cs</DependentUpon>

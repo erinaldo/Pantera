@@ -8,28 +8,34 @@ namespace Entidades
 {
     public class persona
     {
-        public int idpersona { get; set; }
-        public string dni { get; set; }
-        public string ubigeo { get; set; }
-        public string ape_paterno { get; set; }
-        public string ape_materno { get; set; }
-        public string nombres { get; set; }
-        public string fecha_nac { get; set; }
-        public string sexo { get; set; }
-        public string telefono { get; set; }
-        public string direccion { get; set; }
+        public int p_inidpersona { get; set; }
+        public string nrodocumento { get; set; }
+        public string chapellidopaterno { get; set; }
+        public string chapellidomaterno { get; set; }
+        public string chnombres { get; set; }
+        public string chfechanacimiento { get; set; }
+        public int p_inidtiposexo { get; set; }
+        public string chtelefono { get; set; }
+        public string chdireccion { get; set; }
+        public string observacion { get; set; }
+        public bool estado { get; set; }
+        public int p_inidubigeo { get; set; }
+        public int p_inidtipodocumento { get; set; }
         public persona()
-            {
-            this.idpersona = 0;
-            this.dni = string.Empty;
-            this.ubigeo = string.Empty;
-            this.ape_paterno = string.Empty;
-            this.ape_materno = string.Empty;
-            this.nombres = string.Empty;
-            this.fecha_nac = string.Empty;
-            this.sexo = string.Empty;
-            this.telefono = string.Empty;
-            this.direccion = string.Empty;
+        {
+            this.p_inidpersona = 0;
+            this.nrodocumento = string.Empty;
+            this.chapellidopaterno = string.Empty;
+            this.chapellidomaterno = string.Empty;
+            this.chnombres = string.Empty;
+            this.chfechanacimiento = string.Empty;
+            this.p_inidtiposexo = 0;
+            this.chtelefono = string.Empty;
+            this.chdireccion = string.Empty;
+            this.observacion = string.Empty;
+            this.estado = false;
+            this.p_inidubigeo = 0;
+            this.p_inidtipodocumento = 0;
         }
     }
 }
