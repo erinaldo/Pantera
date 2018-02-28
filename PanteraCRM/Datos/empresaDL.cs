@@ -33,6 +33,26 @@ namespace Datos
                 return listado;
             }
         }
+        public static empresas EmpresaBusquedaCodigo(int codigo)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_empresa_buqueda_codigo", CommandType.StoredProcedure, new parametro("",codigo)))
+            {
+                empresas registro = new empresas();
+                while (datareader.Read())
+                {
+                    registro.p_inidempresa = Convert.ToInt32(datareader["p_inidempresa"]);
+                    registro.chrazonsocial = Convert.ToString(datareader["chrazonsocial"]).Trim();
+                    registro.chruc = Convert.ToString(datareader["chruc"]).Trim();
+                    registro.chtelefono = Convert.ToString(datareader["chtelefono"]).Trim();
+                    registro.chdirecfiscal = Convert.ToString(datareader["chdirecfiscal"]).Trim();
+                    registro.chobservacion = Convert.ToString(datareader["chobservacion"]).Trim();
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.chnombrecomercial = Convert.ToString(datareader["chnombrecomercial"]).Trim();
+                    registro.p_inidubigeo = Convert.ToInt32(datareader["p_inidubigeo"]); 
+                }
+                return registro;
+            }
+        }
         public static empresasesion buscarPorCodigo(int idempresa)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_empresa_busca_por_codigo", CommandType.StoredProcedure, new parametro("in_idempresa", idempresa)))
@@ -104,7 +124,23 @@ namespace Datos
                 );
             }
         }
-
+        public static int EmpresaModificar(empresas registros)
+        {
+            {
+                return conexion.executeScalar("fn_empresa_ingresar",
+                CommandType.StoredProcedure,
+                new parametro("in_chrazonsocial", registros.p_inidempresa ),
+                new parametro("in_chrazonsocial", registros.chrazonsocial),
+                new parametro("in_chruc", registros.chruc),
+                new parametro("in_chtelefono", registros.chtelefono),
+                new parametro("in_chdirecfiscal", registros.chdirecfiscal),
+                new parametro("in_chobservacion", registros.chobservacion),
+                new parametro("in_estado", registros.estado),
+                new parametro("in_chnombrecomercial", registros.chnombrecomercial),
+                new parametro("in_p_inidubigeo", registros.p_inidubigeo)
+                );
+            }
+        }
 
 
 

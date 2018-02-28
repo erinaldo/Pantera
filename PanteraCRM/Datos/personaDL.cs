@@ -26,29 +26,48 @@ namespace Datos
             new parametro("in_p_inidtipodocumento", registros.p_inidtipodocumento ));
 
         }
-        //    public static List<persona> personaListar()
-        //    {
-        //        using (IDataReader datareader = conexion.executeOperation("fn_persona_listar", CommandType.StoredProcedure))
-        //        {
-        //            List<persona> listado = new List<persona>();
-        //            while (datareader.Read())
-        //            {
-        //                persona registro = new persona();
-        //                registro.idpersona = Convert.ToInt32(datareader["idpersona"]);
-        //                registro.dni = Convert.ToString(datareader["dni"]);
-        //                registro.ubigeo = Convert.ToString(datareader["ubigeo"]).Trim();
-        //                registro.ape_paterno = Convert.ToString(datareader["ape_paterno"]).Trim();
-        //                registro.ape_materno = Convert.ToString(datareader["ape_materno"]).Trim();
-        //                registro.nombres = Convert.ToString(datareader["nombres"]);
-        //                registro.fecha_nac = Convert.ToString(datareader["fecha_nac"]);
-        //                registro.sexo = Convert.ToString(datareader["sexo"]);
-        //                registro.telefono = Convert.ToString(datareader["telefono"]);
-        //                registro.direccion = Convert.ToString(datareader["direccion"]);
-        //                listado.Add(registro);
-        //            }
-        //            return listado;
-        //        }
-        //    }
+        public static int PersonaModificar(persona registros)
+        {
+            return conexion.executeScalar("fn_persona_ingresar",
+            CommandType.StoredProcedure,
+            new parametro("in_p_inidpersona", registros.p_inidpersona),
+            new parametro("in_nrodocumento", registros.nrodocumento),
+            new parametro("in_chapellidopaterno", registros.chapellidopaterno),
+            new parametro("in_chapellidomaterno", registros.chapellidomaterno),
+            new parametro("in_chnombres", registros.chnombres),
+            new parametro("in_p_inidtiposexo", registros.p_inidtiposexo),
+            new parametro("in_chtelefono", registros.chtelefono),
+            new parametro("in_chdireccion", registros.chdireccion),
+            new parametro("in_estado", registros.estado),
+            new parametro("in_p_inidubigeo", registros.p_inidubigeo),
+            new parametro("in_p_inidtipodocumento", registros.p_inidtipodocumento));
+
+        }
+        public static persona PersonaBusquedaCodigo(int codigo)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_persona_buqueda_codigo", CommandType.StoredProcedure, new parametro("in_p_inidpersona", codigo) ))
+            {
+                persona registro = new persona();
+                while (datareader.Read())
+                {
+                    registro.p_inidpersona = Convert.ToInt32(datareader["p_inidpersona"]);
+                    registro.nrodocumento = Convert.ToString(datareader["nrodocumento"]).Trim();
+                    registro.chapellidopaterno = Convert.ToString(datareader["chapellidopaterno"]).Trim();
+                    registro.chapellidomaterno = Convert.ToString(datareader["chapellidomaterno"]).Trim();
+                    registro.chnombres = Convert.ToString(datareader["chnombres"]).Trim();
+                    registro.chfechanacimiento = Convert.ToString(datareader["chfechanacimiento"]).Trim();
+                    registro.p_inidtiposexo = Convert.ToInt32(datareader["p_inidtiposexo"]);
+                    registro.chtelefono = Convert.ToString(datareader["chtelefono"]).Trim();
+                    registro.chdireccion = Convert.ToString(datareader["chdireccion"]).Trim();
+                    registro.observacion = Convert.ToString(datareader["observacion"]).Trim();
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.p_inidubigeo = Convert.ToInt32(datareader["p_inidubigeo"]);
+                    registro.p_inidtipodocumento = Convert.ToInt32(datareader["p_inidtipodocumento"]);
+                                        
+                }
+                return registro;
+            }
+        }
 
         //    public static persona buscarPorDNI(string dni)
         //    {

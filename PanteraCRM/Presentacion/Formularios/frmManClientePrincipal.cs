@@ -93,7 +93,74 @@ namespace Presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                vBoton = "M";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    if (dgvListaClientes.RowCount == 0)
+                    {
+                        MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        return;
+                    }
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManClienteAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmManClienteAnadir f = new frmManClienteAnadir(vBoton);
+                    f.codigoCliente =(int) dgvListaClientes.CurrentRow.Cells["CHCODIGO"].Value;
+                    f.pasado += new frmManClienteAnadir.pasar(ejecutar);
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                vBoton = "V";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    if (dgvListaClientes.RowCount == 0)
+                    {
+                        MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        return;
+                    }
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManClienteAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmManClienteAnadir f = new frmManClienteAnadir(vBoton);
+                    f.codigoCliente = (int)dgvListaClientes.CurrentRow.Cells["CHCODIGO"].Value;
+                    f.pasado += new frmManClienteAnadir.pasar(ejecutar);
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
         }
     }
 }

@@ -532,3 +532,4 @@ C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Pres
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.PrincipalOpcional.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManVariosPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManVariosAnadir.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManClienteTarjetaAnadir.resources

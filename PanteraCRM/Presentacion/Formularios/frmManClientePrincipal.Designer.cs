@@ -33,6 +33,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
             this.dgvListaClientes = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAnadir = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.IDCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHRAZON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIPODOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,12 +47,6 @@
             this.CHDIRECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHTIPOCLIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHTELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAnadir = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnVer = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaClientes)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -85,6 +86,7 @@
             this.dgvListaClientes.BackgroundColor = System.Drawing.Color.White;
             this.dgvListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDCLIENTE,
             this.CHCODIGO,
             this.CHRAZON,
             this.TIPODOCU,
@@ -97,62 +99,6 @@
             this.dgvListaClientes.ReadOnly = true;
             this.dgvListaClientes.Size = new System.Drawing.Size(647, 344);
             this.dgvListaClientes.TabIndex = 18;
-            // 
-            // CHCODIGO
-            // 
-            this.CHCODIGO.DataPropertyName = "p_inidcodigoclie";
-            this.CHCODIGO.HeaderText = "CODIGO";
-            this.CHCODIGO.Name = "CHCODIGO";
-            this.CHCODIGO.ReadOnly = true;
-            this.CHCODIGO.Width = 60;
-            // 
-            // CHRAZON
-            // 
-            this.CHRAZON.DataPropertyName = "razon";
-            this.CHRAZON.HeaderText = "RAZON SOCIAL";
-            this.CHRAZON.Name = "CHRAZON";
-            this.CHRAZON.ReadOnly = true;
-            this.CHRAZON.Width = 280;
-            // 
-            // TIPODOCU
-            // 
-            this.TIPODOCU.DataPropertyName = "tipodocu";
-            this.TIPODOCU.HeaderText = "TIPO DOCUMENTO";
-            this.TIPODOCU.Name = "TIPODOCU";
-            this.TIPODOCU.ReadOnly = true;
-            this.TIPODOCU.Width = 80;
-            // 
-            // NRODOCU
-            // 
-            this.NRODOCU.DataPropertyName = "nrodocumento";
-            this.NRODOCU.HeaderText = "N° DOCUMENTO";
-            this.NRODOCU.Name = "NRODOCU";
-            this.NRODOCU.ReadOnly = true;
-            this.NRODOCU.Width = 80;
-            // 
-            // CHDIRECCION
-            // 
-            this.CHDIRECCION.DataPropertyName = "chdireccion";
-            this.CHDIRECCION.HeaderText = "DIRECCION";
-            this.CHDIRECCION.Name = "CHDIRECCION";
-            this.CHDIRECCION.ReadOnly = true;
-            this.CHDIRECCION.Width = 200;
-            // 
-            // CHTIPOCLIE
-            // 
-            this.CHTIPOCLIE.DataPropertyName = "tipoclie";
-            this.CHTIPOCLIE.HeaderText = "TIPO CLIENTE";
-            this.CHTIPOCLIE.Name = "CHTIPOCLIE";
-            this.CHTIPOCLIE.ReadOnly = true;
-            this.CHTIPOCLIE.Width = 80;
-            // 
-            // CHTELEFONO
-            // 
-            this.CHTELEFONO.DataPropertyName = "telefono";
-            this.CHTELEFONO.HeaderText = "TELEFONO";
-            this.CHTELEFONO.Name = "CHTELEFONO";
-            this.CHTELEFONO.ReadOnly = true;
-            this.CHTELEFONO.Width = 80;
             // 
             // groupBox1
             // 
@@ -214,6 +160,7 @@
             this.btnVer.TabIndex = 10;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // btnSalir
             // 
@@ -227,6 +174,69 @@
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // IDCLIENTE
+            // 
+            this.IDCLIENTE.HeaderText = "IDCLIENTE";
+            this.IDCLIENTE.Name = "IDCLIENTE";
+            this.IDCLIENTE.ReadOnly = true;
+            this.IDCLIENTE.Visible = false;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.DataPropertyName = "p_inidcodigoclie";
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 60;
+            // 
+            // CHRAZON
+            // 
+            this.CHRAZON.DataPropertyName = "razon";
+            this.CHRAZON.HeaderText = "RAZON SOCIAL";
+            this.CHRAZON.Name = "CHRAZON";
+            this.CHRAZON.ReadOnly = true;
+            this.CHRAZON.Width = 280;
+            // 
+            // TIPODOCU
+            // 
+            this.TIPODOCU.DataPropertyName = "tipodocu";
+            this.TIPODOCU.HeaderText = "TIPO DOCUMENTO";
+            this.TIPODOCU.Name = "TIPODOCU";
+            this.TIPODOCU.ReadOnly = true;
+            this.TIPODOCU.Width = 80;
+            // 
+            // NRODOCU
+            // 
+            this.NRODOCU.DataPropertyName = "nrodocumento";
+            this.NRODOCU.HeaderText = "N° DOCUMENTO";
+            this.NRODOCU.Name = "NRODOCU";
+            this.NRODOCU.ReadOnly = true;
+            this.NRODOCU.Width = 80;
+            // 
+            // CHDIRECCION
+            // 
+            this.CHDIRECCION.DataPropertyName = "chdireccion";
+            this.CHDIRECCION.HeaderText = "DIRECCION";
+            this.CHDIRECCION.Name = "CHDIRECCION";
+            this.CHDIRECCION.ReadOnly = true;
+            this.CHDIRECCION.Width = 200;
+            // 
+            // CHTIPOCLIE
+            // 
+            this.CHTIPOCLIE.DataPropertyName = "tipoclie";
+            this.CHTIPOCLIE.HeaderText = "TIPO CLIENTE";
+            this.CHTIPOCLIE.Name = "CHTIPOCLIE";
+            this.CHTIPOCLIE.ReadOnly = true;
+            this.CHTIPOCLIE.Width = 80;
+            // 
+            // CHTELEFONO
+            // 
+            this.CHTELEFONO.DataPropertyName = "telefono";
+            this.CHTELEFONO.HeaderText = "TELEFONO";
+            this.CHTELEFONO.Name = "CHTELEFONO";
+            this.CHTELEFONO.ReadOnly = true;
+            this.CHTELEFONO.Width = 80;
             // 
             // frmManClientePrincipal
             // 
@@ -267,6 +277,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCLIENTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHRAZON;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPODOCU;

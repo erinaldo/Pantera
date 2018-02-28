@@ -14,5 +14,13 @@ namespace Negocios
         {
             return personaDL.PersonaIngresar(registros);
         }
+        public static persona PersonaBusquedaCodigo(int codigo)
+        {
+            return personaDL.PersonaBusquedaCodigo(codigo);
+        }
+        public static int PersonaModificar(persona registro)
+        {
+            return personaDL.PersonaModificar(registro);
+        }
     }
 }

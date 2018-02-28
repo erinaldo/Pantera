@@ -15,6 +15,7 @@ namespace Entidades
         public string chdireccion { get; set; }
         public string tipoclie { get; set; }
         public string telefono { get; set; }
+        public string chcodigo { get; set; }
         public cliente()
         {
         this.p_inidcodigoclie = 0;
@@ -24,6 +25,7 @@ namespace Entidades
             this.chdireccion = string.Empty;
             this.tipoclie = string.Empty;
             this.telefono = string.Empty;
+            this.chcodigo = string.Empty;
 
     }
 }

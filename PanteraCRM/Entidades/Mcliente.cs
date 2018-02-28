@@ -23,6 +23,7 @@ namespace Entidades
         public int p_inidpais { get; set; }
         public string chcodigocliente { get; set; }
         public int p_inidtipocliente { get; set; }
+        public int p_inidjurinat { get; set; }
         public Mcliente()
         {
             this.p_inidcliente = 0;
@@ -40,6 +41,7 @@ namespace Entidades
             this.p_inidpais = 0;
             this.chcodigocliente = string.Empty;
             this.p_inidtipocliente = 0;
+            this.p_inidjurinat = 0;
         }
     }
 }
