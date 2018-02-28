@@ -141,7 +141,7 @@ namespace Presentacion
             ClienteRegistros.chtelefono2 = txtTelefono.Text;
             ClienteRegistros.chtelefono3 = txtTelefono.Text;
             ClienteRegistros.p_inidpais = int.Parse(cboPais.SelectedValue.ToString());
-            if (tabControl.SelectedIndex == 0)
+            if (tabControl.SelectedIndex == 1)
             {
                 //empresa    
                 ClienteRegistros.p_inidtipocliente = int.Parse(cboTipoClienteE.SelectedValue.ToString());
@@ -152,7 +152,7 @@ namespace Presentacion
                 ClienteRegistros.p_inidtipocliente = int.Parse(cboTipoClienteP.SelectedValue.ToString());
             }
             codigocliente = clienteNE.ClienteIngresar(ClienteRegistros);
-            if (tabControl.SelectedIndex == 0)
+            if (tabControl.SelectedIndex == 1)
             {
                 //empresa    
                 empresas EmpresaRegistros = new empresas();
@@ -204,8 +204,8 @@ namespace Presentacion
             clienteNE.LicenciaIngresar(LicenciaRegistros);
             tarjetapropiedad Tarjetaregistros = new tarjetapropiedad();
             Tarjetaregistros.p_inidcliente = codigocliente;
-            Tarjetaregistros.chtarjeta = txtTarjeta.Text;
-            Tarjetaregistros.fechavencimiento = txtVenciTarjeta.Text;
+            //Tarjetaregistros.chtarjeta = txtTarjeta.Text;
+            //Tarjetaregistros.fechavencimiento = txtVenciTarjeta.Text;
             Tarjetaregistros.estado = true;
             clienteNE.TarjetaIngresar(Tarjetaregistros);
 
@@ -249,6 +249,24 @@ namespace Presentacion
                 e.Handled = true;
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManClienteTarjetaAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            frmManClienteTarjetaAnadir f = new frmManClienteTarjetaAnadir(vBoton);
+            f.pasado += new frmManClienteTarjetaAnadir.pasar(ejecutar);
+            f.MdiParent = this.MdiParent;
+            f.Show();
+        }
+        private void ejecutar(int a)
+        {
+
         }
     }
 }

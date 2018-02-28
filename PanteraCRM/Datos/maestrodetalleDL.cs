@@ -122,7 +122,51 @@ namespace Datos
                 return listado;
             }
         }
-        
+        public static int MaestroCabeceraIngresar(maestrocabecera registro)
+        {
+            return conexion.executeScalar("fn_maestrocabecera_ingresar",
+            CommandType.StoredProcedure,
 
+            //new parametro("in_chcodigoproducto", registro.p_inidmaestrocabecera = 0;
+            new parametro("in_chdesmoestro", registro.chdesmoestro),
+            new parametro("in_chobserbacion", registro.chobserbacion),
+            new parametro("in_estado", registro.estado),
+            new parametro("in_chcodigomaestrocab", registro.chcodigomaestrocab),
+            new parametro("in_p_inidusuarioinsert", registro.p_inidusuarioinsert)
+);
+
+        }
+        public static int MaestroDetalleIngresar(maestrodetalle registro)
+        {
+            return conexion.executeScalar("fn_maestrodetalle_ingresar",
+            CommandType.StoredProcedure,
+
+            //new parametro("in_chcodigoproducto", registro.idmaestrodetalle = 0;
+            new parametro("in_p_inidmaestrocabecera", registro.idmaestro ),
+            new parametro("in_chdesitem", registro.nombreitem),
+            new parametro("in_chacroitem", registro.libre),
+            new parametro("in_estado", registro.estado ));
+
+        }
+        public static int MaestroCabeceraModificar(maestrocabecera registro)
+        {
+            return conexion.executeScalar("fn_maestrocabecera_modificar",
+            CommandType.StoredProcedure,
+
+            new parametro("in_p_inidmaestrocabecera", registro.p_inidmaestrocabecera ),
+            new parametro("in_chdesmoestro", registro.chdesmoestro),
+            new parametro("in_chobserbacion", registro.chobserbacion),
+            new parametro("in_estado", registro.estado),
+            new parametro("in_chcodigomaestrocab", registro.chcodigomaestrocab),
+            new parametro("in_p_inidusuarioinsert", registro.p_inidusuarioinsert) );
+
+        }
+        public static int MaestroDetalleFalsear(int codigo)
+        {
+            return conexion.executeScalar("fn_maestrodetalle_falsear",
+            CommandType.StoredProcedure,
+            new parametro("in_p_inidmaestrocabecera", codigo));
+
+        }
     }
 }

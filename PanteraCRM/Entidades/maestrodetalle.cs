@@ -11,8 +11,9 @@ namespace Entidades
         public int idmaestrodetalle { get; set; }
         public int idmaestro { get; set; }
         public string codigoitem { get; set; }
-        public string nombreitem { get; set; }
+        public string nombreitem {  get; set; }
         public string libre { get; set; }
+        public bool estado { get; set; }
         public maestrodetalle()
         {
             this.idmaestrodetalle = 0;
@@ -20,6 +21,7 @@ namespace Entidades
             this.codigoitem = string.Empty;
             this.nombreitem = string.Empty;
             this.libre = string.Empty;
+            this.estado = false;
         }
     }
 }

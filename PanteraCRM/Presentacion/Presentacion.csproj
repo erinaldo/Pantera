@@ -157,6 +157,12 @@
     <Compile Include="Formularios\frmManClienteAnadir.Designer.cs">
       <DependentUpon>frmManClienteAnadir.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmManClienteTarjetaAnadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmManClienteTarjetaAnadir.Designer.cs">
+      <DependentUpon>frmManClienteTarjetaAnadir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmManListaPrecioAnadir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -515,6 +521,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManClienteAnadir.resx">
       <DependentUpon>frmManClienteAnadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmManClienteTarjetaAnadir.resx">
+      <DependentUpon>frmManClienteTarjetaAnadir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManListaPrecioAnadir.resx">
       <DependentUpon>frmManListaPrecioAnadir.cs</DependentUpon>

@@ -13,6 +13,7 @@ namespace Presentacion
 {
     public partial class frmManVariosPrincipal : Form
     {
+        string vBoton;
         public frmManVariosPrincipal()
         {
             InitializeComponent();
@@ -49,7 +50,7 @@ namespace Presentacion
             cargarData(0, "");
             foreach (DataGridViewRow Row in dgvListaCabecera.Rows)
             {
-                int valor = (int)Row.Cells["IDPRODUCTO"].Value;
+                int valor = (int)Row.Cells["IDMAESTRO"].Value;
                 if (valor == dato)
                 {
                     int puntero = (int)Row.Index;
@@ -64,6 +65,69 @@ namespace Presentacion
         {
             string parametro = txtParametro.Text;
             cargarData(0,parametro);
+        }
+
+
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                vBoton = "M";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    CargarVista(vBoton);
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void CargarVista(string vBoton)
+        {
+            if (dgvListaCabecera.RowCount == 0)
+            {
+                MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManVariosAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            frmManVariosAnadir f = new frmManVariosAnadir(vBoton);
+            f.Maestrocodigo = (int)dgvListaCabecera.CurrentRow.Cells["IDMAESTRO"].Value;
+            f.MdiParent = this.MdiParent;
+            f.pasado += new frmManVariosAnadir.pasar(ejecutar);
+            f.Show();
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                vBoton = "V";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    CargarVista(vBoton);
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
         }
     }
 }

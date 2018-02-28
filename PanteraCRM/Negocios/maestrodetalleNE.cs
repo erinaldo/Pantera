@@ -30,6 +30,25 @@ namespace Negocios
         {
             return maestrodetalleDL.MaestroCabeceraListarParametro(parametro);
         }
-        
+        public static maestrocabecera MaestroCabeceraListarCodigo(int parametro)
+        {
+            return maestrodetalleDL.MaestroCabeceraListarCodigo(parametro);
+        }
+        public static int MaestroCabeceraIngresar(maestrocabecera registros)
+        {
+            return maestrodetalleDL.MaestroCabeceraIngresar(registros);
+        }
+        public static int MaestroDetalleIngresar(maestrodetalle registros)
+        {
+            return maestrodetalleDL.MaestroDetalleIngresar(registros);
+        }
+        public static int MaestroCabeceraModificar(maestrocabecera registros)
+        {
+            return maestrodetalleDL.MaestroCabeceraModificar(registros);
+        }
+        public static int MaestroDetalleFalsear(int registros)
+        {
+            return maestrodetalleDL.MaestroDetalleFalsear(registros);
+        }
     }
 }
