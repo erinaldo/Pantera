@@ -127,9 +127,9 @@ namespace Datos
         public static int EmpresaModificar(empresas registros)
         {
             {
-                return conexion.executeScalar("fn_empresa_ingresar",
+                return conexion.executeScalar("fn_empresa_modificar",
                 CommandType.StoredProcedure,
-                new parametro("in_chrazonsocial", registros.p_inidempresa ),
+                new parametro("in_p_inidempresa", registros.p_inidempresa ),
                 new parametro("in_chrazonsocial", registros.chrazonsocial),
                 new parametro("in_chruc", registros.chruc),
                 new parametro("in_chtelefono", registros.chtelefono),

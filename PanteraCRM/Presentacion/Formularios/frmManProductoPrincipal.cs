@@ -35,6 +35,7 @@ namespace Presentacion
                     }
                     frmManProductoAnadir f = new frmManProductoAnadir(vBoton);
                     f.pasado += new frmManProductoAnadir.pasar(ejecutar);
+                    f.MdiParent = this.MdiParent;
                     f.Show();
                 }
                 else
@@ -129,8 +130,8 @@ namespace Presentacion
             f.tmpProducto.chcodigoproducto = (string)(dvgProducto.CurrentRow.Cells["CODPRODUCTO"].Value);
             f.tmpProducto.chfechacreacion = (string)(dvgProducto.CurrentRow.Cells["CHFECHA"].Value);
             f.tmpProducto.req_serie = (bool)(dvgProducto.CurrentRow.Cells["IDCHECK"].Value);
-
-            f.ShowDialog();
+            f.MdiParent = this.MdiParent;
+            f.Show();
         }
 
         private void btnVer_Click(object sender, EventArgs e)

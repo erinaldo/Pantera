@@ -30,6 +30,28 @@ namespace Datos
                 return listado;
             }
         }
+        public static List<cliente> ClienteListarParametro2(string parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_cliente_listar_parametro2", CommandType.StoredProcedure, new parametro ("in_parametro", parametro)))
+            {
+                List<cliente> listado = new List<cliente>();
+                while (datareader.Read())
+                {
+                    cliente registro = new cliente();
+                    registro.p_inidcodigoclie = Convert.ToInt32(datareader["p_inidcodigoclie"]);
+                    registro.chcodigo = Convert.ToString(datareader["chcodigo"]).Trim();
+                    registro.razon = Convert.ToString(datareader["razon"]).Trim();
+                    registro.tipodocu = Convert.ToString(datareader["tipodocu"]).Trim();
+                    registro.nrodocumento = Convert.ToString(datareader["nrodocumento"]).Trim();
+                    registro.chdireccion = Convert.ToString(datareader["chdireccion"]).Trim();
+                    registro.tipoclie = Convert.ToString(datareader["tipoclie"]).Trim();
+                    registro.telefono = Convert.ToString(datareader["telefono"]).Trim();
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+        
         public static List<clientebusqueda> ClienteListarParametro(string parametro)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_cliente_listar_parametro", CommandType.StoredProcedure,
@@ -173,11 +195,52 @@ namespace Datos
                 return listado;
             }
         }
+        public static clientebusqueda ClienteBusquedaCodigoSecundario(string parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_cliente_busqueda_codigo_secundario", CommandType.StoredProcedure,
+                new parametro("in_chcodigocliente", parametro)))
+            {
+                clientebusqueda registro = new clientebusqueda();
+                while (datareader.Read())
+                {
+                    registro.p_inidcodigoclie = Convert.ToInt32(datareader["p_inidcodigoclie"]);
+                    registro.chcodigocliente = Convert.ToString(datareader["chcodigocliente"]).Trim();
+                    registro.razon = Convert.ToString(datareader["razon"]).Trim();
+                    registro.tipodocu = Convert.ToString(datareader["tipodocu"]).Trim();
+                    registro.nrodocumento = Convert.ToString(datareader["nrodocumento"]).Trim();
+                    registro.chdireccion = Convert.ToString(datareader["chdireccion"]).Trim();
+                    registro.tipoclie = Convert.ToString(datareader["tipoclie"]).Trim();
+                    registro.telefono = Convert.ToString(datareader["telefono"]).Trim();
+                }
+                return registro;
+            }
+        }
         public static int ClienteIngresar(Mcliente registros)
         {
             return conexion.executeScalar("fn_cliente_ingresar",
             CommandType.StoredProcedure,
             new parametro("in_chdireccionenvio", registros.chdireccionenvio ),
+            new parametro("in_p_inidtipovia", registros.p_inidtipovia),
+            new parametro("in_chnombrevia", registros.chnombrevia),
+            new parametro("in_chnumero", registros.chnumero),
+            new parametro("in_chnumerointerior", registros.chnumerointerior),
+            new parametro("in_p_inidtipozona", registros.p_inidtipozona),
+            new parametro("in_chnombrezona", registros.chnombrezona),
+            new parametro("in_estado", registros.estado),
+            new parametro("in_chtelefono2", registros.chtelefono2),
+            new parametro("in_chtelefono3", registros.chtelefono3),
+            new parametro("in_p_inidpais", registros.p_inidpais),
+            new parametro("in_p_inidjurinat", registros.p_inidjurinat),
+            new parametro("in_p_inidtipocliente", registros.p_inidtipocliente)
+                );
+
+        }
+        public static int ClienteModificar(Mcliente registros)
+        {
+            return conexion.executeScalar("fn_cliente_modificar",
+            CommandType.StoredProcedure,
+            new parametro("in_p_inidcliente", registros.p_inidcliente),
+            new parametro("in_chdireccionenvio", registros.chdireccionenvio),
             new parametro("in_p_inidtipovia", registros.p_inidtipovia),
             new parametro("in_chnombrevia", registros.chnombrevia),
             new parametro("in_chnumero", registros.chnumero),
@@ -237,6 +300,18 @@ namespace Datos
             new parametro("in_estado", registros.estado));
 
         }
+        public static int LicenciaModificar(licencia registros)
+        {
+            return conexion.executeScalar("fn_licencia_modificar",
+            CommandType.StoredProcedure,
+            new parametro("in_p_inidlicencia", registros.p_inidlicencia),
+            new parametro("in_p_inidcliente", registros.p_inidcliente),
+            new parametro("in_chnumerolicencia", registros.chlicencia),
+            new parametro("in_chfechavencimiento", registros.fechavencimiento),
+            new parametro("in_estado", registros.estado));
+
+        }
+        
         public static int TarjetaIngresar(tarjetapropiedad registros)
         {
             return conexion.executeScalar("fn_tarjeta_ingresar",
@@ -245,6 +320,13 @@ namespace Datos
             new parametro("in_chtarjeta", registros.chtarjeta),
             new parametro("in_fechavencimiento", registros.fechavencimiento ),
             new parametro("in_estado", registros.estado ));
+
+        }
+        public static int TarjetaFalsear(int registros)
+        {
+            return conexion.executeScalar("fn_tarjeta_falsear",
+            CommandType.StoredProcedure,
+            new parametro("in_p_inidtarjeta", registros));
 
         }
     }

@@ -23,16 +23,24 @@ namespace Presentacion
         {
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
-            cargarData(0);
+            cargarData(0,"");
         }
-        public void cargarData(int registro)
+        public void cargarData(int registro, string parametro)
         {
-            List<proveedor> listado = proveedorNE.proveedorListar();
-            dgvListadoProveedores.DataSource = listado;
+            if (parametro == "")
+            {
+                List<proveedor> listado = proveedorNE.proveedorListar();
+                dgvListadoProveedores.DataSource = listado;
+            }
+            else
+            {
+                List<proveedor> listado = proveedorNE.ProveedorListarParametro(parametro);
+                dgvListadoProveedores.DataSource = listado;
+            }
         }
         public void ejecutar(int dato)
         {
-            cargarData(0);
+            cargarData(0,"");
             foreach (DataGridViewRow Row in dgvListadoProveedores.Rows)
             {
                 int valor = (int)Row.Cells["IDPROV"].Value;
@@ -90,11 +98,80 @@ namespace Presentacion
 
         private void btnVer_Click(object sender, EventArgs e)
         {
+            try
+            {
+                vBoton = "V";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    if (dgvListadoProveedores.RowCount == 0)
+                    {
+                        MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        return;
+                    }
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProveedoresAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmManProveedoresAnadir f = new frmManProveedoresAnadir(vBoton);
+                    f.pasado += new frmManProveedoresAnadir.pasar(ejecutar);
+                    f.ProveedorCodigo = (int)dgvListadoProveedores.CurrentRow.Cells["IDPROV"].Value;
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                vBoton = "M";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    if (dgvListadoProveedores.RowCount == 0)
+                    {
+                        MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        return;
+                    }
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProveedoresAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmManProveedoresAnadir f = new frmManProveedoresAnadir(vBoton);
+                    f.pasado += new frmManProveedoresAnadir.pasar(ejecutar);
+                    f.ProveedorCodigo = (int)dgvListadoProveedores.CurrentRow.Cells["IDPROV"].Value;
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+
+        private void txtParametro_TextChanged(object sender, EventArgs e)
+        {
+            string parametro = txtParametro.Text;
+            cargarData(0, parametro);
 
         }
     }

@@ -28,6 +28,7 @@ namespace Presentacion
             this.cargaListaImagenes();
             this.cargaMenu();
             this.ObtenerTipoCambio();
+            LCabecera.Text = "USUARIO: "+sesion.SessionGlobal.chnombrepersona;
         }
 
         private void cargaListaImagenes()
@@ -194,5 +195,7 @@ namespace Presentacion
             }
             // mostrar la ventana si hace falta
         }
+
+      
     }
 }

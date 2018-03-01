@@ -81,11 +81,8 @@ namespace Presentacion
                 txtCantidad.Text =decimal.Round( decimal.Parse(tmpProducto.nuprecio.ToString()),2).ToString();
                 txtCantidad.Focus();
                 txtIdproducto.Text = tmpProducto.p_inidproducto.ToString();
-                txtCodigo.ReadOnly = true;
-                txtCodigo.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-                txtCodigo.ForeColor = Color.Blue;
-                txtCodigo.Font = new Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                
+                CambiarForma(txtCodigo);
+
 
             }
             else
@@ -96,20 +93,19 @@ namespace Presentacion
                 txtDescripcion.Text = tmpProducto.chnombrecompuesto;
                 txtCantidad.Text = tmpProducto.nuprecio.ToString();
                 txtIdproducto.Text = tmpProducto.p_inidproducto.ToString();
-                txtCodigo.ReadOnly = true;
-                txtCodigo.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-                txtCodigo.ForeColor = Color.Blue;
-                txtCantidad.ReadOnly = true;
-                txtCantidad.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-                txtCantidad.ForeColor = Color.Blue;
-                txtCodigo.Font = new Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                txtCantidad.Font = new Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                CambiarForma(txtCodigo);
+                CambiarForma(txtCantidad);
 
                 btnGrabar.Enabled = false;
             }
 
         }
-
+        private void CambiarForma(TextBox Tex)
+        {
+            Tex.ReadOnly = true;
+            Tex.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            Tex.ForeColor = Color.Blue;
+        }
        
 
        

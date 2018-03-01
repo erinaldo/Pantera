@@ -11,14 +11,14 @@ using Entidades;
 using Negocios;
 namespace Presentacion
 {
-    public partial class frmProcPedidosPedidosDetalle : Form
+    public partial class frmProcPedidosDetalle : Form
     {
         public pedidodetalle tmbpedidodetalle;
         public pedidodetalle tmppedidodetalle;
         public List<pedidodetalle> tmplistadovalidar;
         public List<pedidodetalle> tmplistado;
         public bool reqserie ;
-        public frmProcPedidosPedidosDetalle()
+        public frmProcPedidosDetalle()
         {
             InitializeComponent();
         }

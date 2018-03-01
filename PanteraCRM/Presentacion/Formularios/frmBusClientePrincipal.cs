@@ -14,6 +14,9 @@ namespace Presentacion
     public partial class frmBusClientePrincipal : Form
     {
         public clientebusqueda tmpcliente;
+        public delegate void PasarClienteCodigo(string CodigoCliente);
+        public event PasarClienteCodigo Pasado;
+
         public frmBusClientePrincipal()
         {
             InitializeComponent();
@@ -54,7 +57,8 @@ namespace Presentacion
         {
             try
             {
-                cargarFormularioAnadir();
+                Pasado((string)dgvListaclientes.CurrentRow.Cells["CHCODIGO"].Value);
+                this.Dispose();
 
             }
             catch (Exception ex)
@@ -62,23 +66,42 @@ namespace Presentacion
                 MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
             }
         }
-        private void cargarFormularioAnadir()
-        {
-            if (dgvListaclientes.RowCount == 0)
-            {
-                MessageBox.Show("Ninun item Seleccionado", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                return;
-            }
-            tmpcliente = new clientebusqueda();
-            tmpcliente.p_inidcodigoclie = (int)dgvListaclientes.CurrentRow.Cells["IDCLIENTE"].Value;
-            tmpcliente.chcodigocliente = (string)dgvListaclientes.CurrentRow.Cells["CHCODIGO"].Value;
-            tmpcliente.razon = (string)(dgvListaclientes.CurrentRow.Cells["CHDESCRIPCION"].Value);
-            tmpcliente.tipodocu = (string)dgvListaclientes.CurrentRow.Cells["CHTIPOCODU"].Value;
-            tmpcliente.nrodocumento = (string)(dgvListaclientes.CurrentRow.Cells["CHNRODOCU"].Value);
-            tmpcliente.chdireccion = (string)(dgvListaclientes.CurrentRow.Cells["CHDIRECCION"].Value);
-            tmpcliente.tipoclie = (string)(dgvListaclientes.CurrentRow.Cells["CHTIPOCLIENTE"].Value);
-            tmpcliente.telefono = (string)(dgvListaclientes.CurrentRow.Cells["CHTELEFONO"].Value);
 
+
+        private void frmBusClientePrincipal_Load(object sender, EventArgs e)
+        {
+            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string vBoton = "A";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManClienteAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmManClienteAnadir f = new frmManClienteAnadir(vBoton);
+                    f.pasado += new frmManClienteAnadir.pasar(ejecutar);
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
         }
     }
 }

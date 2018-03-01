@@ -155,6 +155,7 @@
             this.txtParametro.Name = "txtParametro";
             this.txtParametro.Size = new System.Drawing.Size(574, 20);
             this.txtParametro.TabIndex = 0;
+            this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
             // 
             // dgvListadoProveedores
             // 

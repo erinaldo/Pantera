@@ -89,16 +89,13 @@ namespace Presentacion
                         CambiarForma(txtTelefono);
                         CambiarForma(txtRazon);
                         CambiarForma(txtRuc);
-                        CambiarForma(txtTelefono);
-                        CambiarForma(txtDireccion);
                         CambiarForma(txtNombreComercial);
-                        CambiarForma(txtUbigeo);
+
                         CambiarForma(txtNroDocumento);
                         CambiarForma(txtApePat);
                         CambiarForma(txtApeMat);
                         CambiarForma(txtNombres);
-                        CambiarForma(txtTelefono);
-                        CambiarForma(txtDireccion);
+                        
                         CambiarForma(txtUbigeo);
                         CambiarForma(txtLicencia);
                         txtVenciLicencia.ReadOnly = true;
@@ -106,6 +103,7 @@ namespace Presentacion
                         txtVenciLicencia.ForeColor = Color.Blue;
                         txtVenciLicencia.TabStop = false;
                         CambiarForma(txtcantidadtarjetas);
+                        btnGrabar.Enabled = false;
                     }
                 }
             }
@@ -142,7 +140,7 @@ namespace Presentacion
 
                     break;
                 case "M":
-                    if (ValidarCamposIndependientes())
+                    if (ValidarCamposIndependientesModificar())
                     {
                         DialogResult result = MessageBox.Show("¿Está seguro de Registrar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (result == DialogResult.Yes)
@@ -185,7 +183,12 @@ namespace Presentacion
             //MessageBox.Show(":"+ ClienteGeneral.p_inidjurinat, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
             if (ClienteGeneral.p_inidjurinat == 1)
             {
-                //empresa    
+
+                //empresa    CambiarForma(txtRazon);
+                CambiarForma(txtRuc);
+                CambiarForma(txtNombreComercial);
+                
+                //tbPersona.
                 tabControl.SelectedIndex = 1;
                 cboTipoClienteP.SelectedValue = ClienteGeneral.p_inidtipocliente;
 
@@ -200,6 +203,10 @@ namespace Presentacion
             }
             else
             {
+                CambiarForma(txtRazon);
+                CambiarForma(txtRuc);
+                CambiarForma(txtNombreComercial);
+                
                 //persona
                 tabControl.SelectedIndex = 0;
 
@@ -224,10 +231,95 @@ namespace Presentacion
             txtVenciLicencia.Text = LicenciaG.fechavencimiento;
             txtcantidadtarjetas.Text = ListaTarjetasdePropiedad.Count.ToString();
         }
-        private  bool ValidarCamposIndependientes()
+        private bool ValidarCamposIndependientes()
         {
             bool flat = false;
             if (tabControl.SelectedIndex == 1)
+            {
+                //empresa    
+                if (txtNombreComercial.Text.Length > 0)
+                {
+                    if (txtRazon.Text.Length > 0)
+                    {
+                        if (txtRuc.Text.Length == 11)
+                        {
+                            if (ValidarCamposGenerales())
+                            {
+                                flat = true;
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ruc Incompleto", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                            txtNombres.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Razón social vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        txtRazon.Focus();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Nombre Comercial vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                    txtNombreComercial.Focus();
+                }
+
+            }
+            else
+            {
+                //persona
+                if (txtApePat.Text.Length > 0)
+                {
+                    if (txtApeMat.Text.Length > 0)
+                    {
+                        if (txtNombres.Text.Length > 0)
+                        {
+                            if (validarNrodocumento())
+                            {
+                                if (ValidarCamposGenerales())
+                                {
+                                    flat = true;
+                                }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Número de documento incompleto", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                                txtNroDocumento.Focus();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nombres vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                            txtNombres.Focus();
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Apellido materno vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        txtApeMat.Focus();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Apellido Paterno vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                    txtApePat.Focus();
+                }
+            }
+
+
+            return flat;
+        }
+        private  bool ValidarCamposIndependientesModificar()
+        {
+            bool flat = false;
+            if (ClienteGeneral.p_inidjurinat == 1)
             {
                 //empresa    
                 if (txtNombreComercial.Text.Length > 0)
@@ -506,7 +598,7 @@ namespace Presentacion
             ClienteRegistros.chtelefono2 = txtTelefono.Text;
             ClienteRegistros.chtelefono3 = txtTelefono.Text;
             ClienteRegistros.p_inidpais = int.Parse(cboPais.SelectedValue.ToString());
-            if (tabControl.SelectedIndex == 1)
+            if (ClienteGeneral.p_inidjurinat == 1)
             {
                 //empresa    
                 ClienteRegistros.p_inidtipocliente = int.Parse(cboTipoClienteE.SelectedValue.ToString());
@@ -517,13 +609,13 @@ namespace Presentacion
                 ClienteRegistros.p_inidtipocliente = int.Parse(cboTipoClienteP.SelectedValue.ToString());
             }
             //modificar cliente
-            codigocliente = clienteNE.ClienteIngresar(ClienteRegistros);
+            codigocliente = clienteNE.ClienteModificar(ClienteRegistros);
 
-            if (tabControl.SelectedIndex == 1)
+            if (ClienteGeneral.p_inidjurinat == 1)
             {
                 //empresa    
                 empresas EmpresaRegistros = new empresas();
-                EmpresaRegistros.p_inidempresa = 0;
+                EmpresaRegistros.p_inidempresa = EmpresaG.p_inidempresa ;
                 EmpresaRegistros.chrazonsocial = txtRazon.Text;
                 EmpresaRegistros.chruc = txtRuc.Text;
                 EmpresaRegistros.chtelefono = txtTelefono.Text;
@@ -533,18 +625,13 @@ namespace Presentacion
                 EmpresaRegistros.chnombrecomercial = txtNombreComercial.Text;
                 EmpresaRegistros.p_inidubigeo = int.Parse(txtUbigeo.Text);
                 //modificarempresa
-                codigoempresa = empresaNE.EmpresaIngresar(EmpresaRegistros);
-                Mclientejuridico JuridicoRegistros = new Mclientejuridico();
-                //JuridicoRegistros.p_inidclientejuridico = 0;
-                JuridicoRegistros.p_inidcliente = codigocliente;
-                JuridicoRegistros.p_inidempresa = codigoempresa;
-                clienteNE.ClienteJuridicoIngresar(JuridicoRegistros);
+                codigoempresa = empresaNE.EmpresaModificar(EmpresaRegistros);
             }
             else
             {
                 //persona
                 persona PersonaRegistro = new persona();
-                PersonaRegistro.p_inidpersona = 0;
+                PersonaRegistro.p_inidpersona = PersonaG.p_inidpersona;
                 PersonaRegistro.nrodocumento = txtNroDocumento.Text;
                 PersonaRegistro.chapellidopaterno = txtApePat.Text;
                 PersonaRegistro.chapellidomaterno = txtApeMat.Text;
@@ -558,22 +645,23 @@ namespace Presentacion
                 PersonaRegistro.p_inidubigeo = int.Parse(txtUbigeo.Text);
                 PersonaRegistro.p_inidtipodocumento = int.Parse(cboTipoDocu.SelectedValue.ToString());
                 //modificar emprsa
-                codigopersona = personaNE.PersonaIngresar(PersonaRegistro);
-                Mclientenatural NaturalRegistros = new Mclientenatural();
-                NaturalRegistros.p_inidclientenatural = 0;
-                NaturalRegistros.p_inidcliente = codigocliente;
-                NaturalRegistros.p_inidpersona = codigopersona;
-                clienteNE.ClienteNaturalIngresar(NaturalRegistros);
+                codigopersona = personaNE.PersonaModificar(PersonaRegistro);
             }
             licencia LicenciaRegistros = new licencia();
+            LicenciaRegistros.p_inidlicencia = LicenciaG.p_inidlicencia;
             LicenciaRegistros.p_inidcliente = codigocliente;
             LicenciaRegistros.chlicencia = txtLicencia.Text;
             LicenciaRegistros.fechavencimiento = txtVenciLicencia.Text;
             LicenciaRegistros.estado = true;
             //modificar licencia
-            clienteNE.LicenciaIngresar(LicenciaRegistros);
-
+            clienteNE.LicenciaModificar(LicenciaRegistros);
+            //MessageBox.Show("E: "+con, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
             // falsear tarjeta
+            List<tarjetapropiedad> Listas = clienteNE.TarjetaPropiedadBusquedaCodigo(codigoCliente); 
+            foreach (tarjetapropiedad Registros in Listas)
+            {                
+                clienteNE.TarjetaFalsear(Registros.p_inidtarjeta);
+            }
             // ingresar tarjeta
             foreach (tarjetapropiedad Registros in ListaTarjetasdePropiedad)
             {
@@ -806,5 +894,23 @@ namespace Presentacion
                 
             }
         }
+
+        private void txtUbigeo_DoubleClick(object sender, EventArgs e)
+        {
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmBusquedaUbigeo);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            frmBusquedaUbigeo f = new frmBusquedaUbigeo();
+            f.pasadoUbigeo += new frmBusquedaUbigeo.pasarUbigeo(PoneUbigeo);
+            f.MdiParent = this.MdiParent;
+            f.Show();
+        }
+        private void PoneUbigeo(int ubigeo)
+        {
+            txtUbigeo.Text = ubigeo.ToString();
+        }    
     }
 }

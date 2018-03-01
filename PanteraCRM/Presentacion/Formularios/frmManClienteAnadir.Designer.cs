@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManClienteAnadir));
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbPersona = new System.Windows.Forms.TabPage();
             this.cboSexo = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.cboTipoDocu = new System.Windows.Forms.ComboBox();
             this.txtApePat = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tbEmpresa = new System.Windows.Forms.TabPage();
             this.cbodocumentoE = new System.Windows.Forms.ComboBox();
             this.lbNombreComercial = new System.Windows.Forms.Label();
             this.txtNombreComercial = new System.Windows.Forms.TextBox();
@@ -95,8 +95,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtVenciLicencia = new System.Windows.Forms.MaskedTextBox();
             this.tabControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tbPersona.SuspendLayout();
+            this.tbEmpresa.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -104,37 +104,37 @@
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tbPersona);
+            this.tabControl.Controls.Add(this.tbEmpresa);
             this.tabControl.Location = new System.Drawing.Point(12, 12);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(534, 155);
             this.tabControl.TabIndex = 0;
             // 
-            // tabPage1
+            // tbPersona
             // 
-            this.tabPage1.Controls.Add(this.cboSexo);
-            this.tabPage1.Controls.Add(this.label28);
-            this.tabPage1.Controls.Add(this.label26);
-            this.tabPage1.Controls.Add(this.label30);
-            this.tabPage1.Controls.Add(this.cboTipoClienteP);
-            this.tabPage1.Controls.Add(this.label27);
-            this.tabPage1.Controls.Add(this.label29);
-            this.tabPage1.Controls.Add(this.txtNroDocumento);
-            this.tabPage1.Controls.Add(this.label25);
-            this.tabPage1.Controls.Add(this.txtApeMat);
-            this.tabPage1.Controls.Add(this.txtNombres);
-            this.tabPage1.Controls.Add(this.label24);
-            this.tabPage1.Controls.Add(this.cboTipoDocu);
-            this.tabPage1.Controls.Add(this.txtApePat);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(526, 129);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Persona";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tbPersona.Controls.Add(this.cboSexo);
+            this.tbPersona.Controls.Add(this.label28);
+            this.tbPersona.Controls.Add(this.label26);
+            this.tbPersona.Controls.Add(this.label30);
+            this.tbPersona.Controls.Add(this.cboTipoClienteP);
+            this.tbPersona.Controls.Add(this.label27);
+            this.tbPersona.Controls.Add(this.label29);
+            this.tbPersona.Controls.Add(this.txtNroDocumento);
+            this.tbPersona.Controls.Add(this.label25);
+            this.tbPersona.Controls.Add(this.txtApeMat);
+            this.tbPersona.Controls.Add(this.txtNombres);
+            this.tbPersona.Controls.Add(this.label24);
+            this.tbPersona.Controls.Add(this.cboTipoDocu);
+            this.tbPersona.Controls.Add(this.txtApePat);
+            this.tbPersona.Location = new System.Drawing.Point(4, 22);
+            this.tbPersona.Name = "tbPersona";
+            this.tbPersona.Padding = new System.Windows.Forms.Padding(3);
+            this.tbPersona.Size = new System.Drawing.Size(526, 129);
+            this.tbPersona.TabIndex = 0;
+            this.tbPersona.Text = "Persona";
+            this.tbPersona.UseVisualStyleBackColor = true;
             // 
             // cboSexo
             // 
@@ -260,25 +260,25 @@
             this.txtApePat.Size = new System.Drawing.Size(158, 20);
             this.txtApePat.TabIndex = 0;
             // 
-            // tabPage2
+            // tbEmpresa
             // 
-            this.tabPage2.Controls.Add(this.cbodocumentoE);
-            this.tabPage2.Controls.Add(this.lbNombreComercial);
-            this.tabPage2.Controls.Add(this.txtNombreComercial);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.txtRazon);
-            this.tabPage2.Controls.Add(this.lbRazon);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.cboTipoClienteE);
-            this.tabPage2.Controls.Add(this.txtRuc);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(526, 129);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Empresa";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tbEmpresa.Controls.Add(this.cbodocumentoE);
+            this.tbEmpresa.Controls.Add(this.lbNombreComercial);
+            this.tbEmpresa.Controls.Add(this.txtNombreComercial);
+            this.tbEmpresa.Controls.Add(this.label6);
+            this.tbEmpresa.Controls.Add(this.txtRazon);
+            this.tbEmpresa.Controls.Add(this.lbRazon);
+            this.tbEmpresa.Controls.Add(this.label5);
+            this.tbEmpresa.Controls.Add(this.label4);
+            this.tbEmpresa.Controls.Add(this.cboTipoClienteE);
+            this.tbEmpresa.Controls.Add(this.txtRuc);
+            this.tbEmpresa.Location = new System.Drawing.Point(4, 22);
+            this.tbEmpresa.Name = "tbEmpresa";
+            this.tbEmpresa.Padding = new System.Windows.Forms.Padding(3);
+            this.tbEmpresa.Size = new System.Drawing.Size(526, 129);
+            this.tbEmpresa.TabIndex = 1;
+            this.tbEmpresa.Text = "Empresa";
+            this.tbEmpresa.UseVisualStyleBackColor = true;
             // 
             // cbodocumentoE
             // 
@@ -564,6 +564,7 @@
             this.txtUbigeo.Size = new System.Drawing.Size(164, 20);
             this.txtUbigeo.TabIndex = 9;
             this.txtUbigeo.TextChanged += new System.EventHandler(this.txtUbigeo_TextChanged);
+            this.txtUbigeo.DoubleClick += new System.EventHandler(this.txtUbigeo_DoubleClick);
             this.txtUbigeo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUbigeo_KeyPress);
             // 
             // txtInterior
@@ -782,10 +783,10 @@
             this.Text = "AÑADIR CLIENTE";
             this.Load += new System.EventHandler(this.frmManClienteAnadir_Load);
             this.tabControl.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tbPersona.ResumeLayout(false);
+            this.tbPersona.PerformLayout();
+            this.tbEmpresa.ResumeLayout(false);
+            this.tbEmpresa.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -797,8 +798,8 @@
 
         #endregion
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tbPersona;
+        private System.Windows.Forms.TabPage tbEmpresa;
         private System.Windows.Forms.ComboBox cbodocumentoE;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

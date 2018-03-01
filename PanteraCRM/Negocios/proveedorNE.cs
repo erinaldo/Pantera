@@ -13,9 +13,18 @@ namespace Negocios
         {
             return proveedorDL.proveedorListar();
         }
+        public static List<proveedor> ProveedorListarParametro(string parametro)
+        {
+            return proveedorDL.ProveedorListarParametro(parametro);
+        }
+        
         public static int ProveedorIngresar(proveedores registros)
         {
             return proveedorDL.ProveedorIngresar(registros);
+        }
+        public static int ProveedorModificar(proveedores registros)
+        {
+            return proveedorDL.ProveedorModificar(registros);
         }
         public static proveedor ProveedorBusquedaRuc(string ruc)
         {
@@ -29,6 +38,13 @@ namespace Negocios
         {
             return proveedorDL.BuscarProveedorPorCodigo(codigo);
         }
-
+        public static proveedores ProveedorBusquedaCodigo2(int codigo)
+        {
+            return proveedorDL.ProveedorBusquedaCodigo(codigo);
+        }
+        public static proveedorjuridico ProveedorJuridicoBusqueda(int codigo)
+        {
+            return proveedorDL.ProveedorJuridicoBusqueda(codigo);
+        }
     }
 }

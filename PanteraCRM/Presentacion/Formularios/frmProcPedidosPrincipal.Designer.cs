@@ -35,11 +35,11 @@
             this.btnAnadir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             this.btnAnadir.TabIndex = 0;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
-            this.btnAnadir.Click += new System.EventHandler(this.button1_Click);
+            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
             // dataGridView1
             // 
@@ -94,11 +94,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.btnAnular);
+            this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.Controls.Add(this.btnSalir);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnVer);
+            this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.btnAnadir);
             this.groupBox1.Location = new System.Drawing.Point(76, 395);
             this.groupBox1.Name = "groupBox1";
@@ -106,25 +106,25 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // button6
+            // btnAnular
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(348, 9);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(80, 28);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "&Anular";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnAnular.BackColor = System.Drawing.Color.White;
+            this.btnAnular.Location = new System.Drawing.Point(348, 9);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(80, 28);
+            this.btnAnular.TabIndex = 5;
+            this.btnAnular.Text = "&Anular";
+            this.btnAnular.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnImprimir
             // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(262, 9);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(80, 28);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "&Imprimir";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnImprimir.BackColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(262, 9);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(80, 28);
+            this.btnImprimir.TabIndex = 4;
+            this.btnImprimir.Text = "&Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
             // 
             // btnSalir
             // 
@@ -138,25 +138,25 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // btnVer
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(176, 9);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 28);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "&Ver";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnVer.BackColor = System.Drawing.Color.White;
+            this.btnVer.Location = new System.Drawing.Point(176, 9);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(80, 28);
+            this.btnVer.TabIndex = 3;
+            this.btnVer.Text = "&Ver";
+            this.btnVer.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnModificar
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(90, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 28);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "&Modificar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnModificar.BackColor = System.Drawing.Color.White;
+            this.btnModificar.Location = new System.Drawing.Point(90, 9);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(80, 28);
+            this.btnModificar.TabIndex = 2;
+            this.btnModificar.Text = "&Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
@@ -216,10 +216,10 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnAnular;
+        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtParametro;

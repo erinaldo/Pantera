@@ -33,13 +33,13 @@
             this.btnSeleccion = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvListaUbigeo = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtParametroBusqueda = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.IDUBIGEO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHDEPARTAMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHPROVINCIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHDISTRITO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtParametroBusqueda = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUbigeo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -52,9 +52,9 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(208, 193);
+            this.groupBox2.Location = new System.Drawing.Point(214, 193);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(180, 55);
+            this.groupBox2.Size = new System.Drawing.Size(167, 53);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             // 
@@ -65,7 +65,7 @@
             this.btnSeleccion.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnSeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSeleccion.ForeColor = System.Drawing.Color.Black;
-            this.btnSeleccion.Location = new System.Drawing.Point(11, 12);
+            this.btnSeleccion.Location = new System.Drawing.Point(5, 13);
             this.btnSeleccion.Name = "btnSeleccion";
             this.btnSeleccion.Size = new System.Drawing.Size(75, 34);
             this.btnSeleccion.TabIndex = 1;
@@ -79,7 +79,7 @@
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(92, 12);
+            this.btnSalir.Location = new System.Drawing.Point(86, 13);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 34);
             this.btnSalir.TabIndex = 2;
@@ -103,34 +103,6 @@
             this.dgvListaUbigeo.ReadOnly = true;
             this.dgvListaUbigeo.Size = new System.Drawing.Size(572, 136);
             this.dgvListaUbigeo.TabIndex = 8;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtParametroBusqueda);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(572, 44);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            // 
-            // txtParametroBusqueda
-            // 
-            this.txtParametroBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtParametroBusqueda.Location = new System.Drawing.Point(75, 13);
-            this.txtParametroBusqueda.Name = "txtParametroBusqueda";
-            this.txtParametroBusqueda.Size = new System.Drawing.Size(491, 20);
-            this.txtParametroBusqueda.TabIndex = 1;
-            this.txtParametroBusqueda.TextChanged += new System.EventHandler(this.txtParametroBusqueda_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Descripción";
             // 
             // IDUBIGEO
             // 
@@ -163,6 +135,34 @@
             this.CHDISTRITO.Name = "CHDISTRITO";
             this.CHDISTRITO.ReadOnly = true;
             this.CHDISTRITO.Width = 150;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtParametroBusqueda);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 1);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(572, 44);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            // 
+            // txtParametroBusqueda
+            // 
+            this.txtParametroBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtParametroBusqueda.Location = new System.Drawing.Point(75, 13);
+            this.txtParametroBusqueda.Name = "txtParametroBusqueda";
+            this.txtParametroBusqueda.Size = new System.Drawing.Size(491, 20);
+            this.txtParametroBusqueda.TabIndex = 1;
+            this.txtParametroBusqueda.TextChanged += new System.EventHandler(this.txtParametroBusqueda_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Descripción";
             // 
             // frmBusquedaUbigeo
             // 

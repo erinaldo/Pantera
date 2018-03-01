@@ -13,6 +13,11 @@ namespace Negocios
         {
             return clienteDL.clienteListar();
         }
+        public static List<cliente> ClienteListarParametro2(string parametro)
+        {
+            return clienteDL.ClienteListarParametro2(parametro);
+        }
+        
         public static Mcliente ClienteBusquedaCodigo(int codigo)
         {
             return clienteDL.ClienteBusquedaCodigo(codigo);
@@ -21,13 +26,23 @@ namespace Negocios
         {
             return clienteDL.ClienteListarParametro(parametro);
         }
+        
         public static List<clientebusqueda> ClienteBusquedaParametro(string parametro)
         {
             return clienteDL.ClienteBusquedaParametro(parametro);
         }
+
+        public static clientebusqueda ClienteBusquedaCodigoSecundario(string parametro)
+        {
+            return clienteDL.ClienteBusquedaCodigoSecundario(parametro);
+        }
         public static int ClienteIngresar(Mcliente registros)
         {
             return clienteDL.ClienteIngresar(registros);
+        }
+        public static int ClienteModificar(Mcliente registros)
+        {
+            return clienteDL.ClienteModificar(registros);
         }
         public static int ClienteJuridicoIngresar(Mclientejuridico registros)
         {
@@ -57,9 +72,17 @@ namespace Negocios
         {
             return clienteDL.LicenciaIngresar(registros);
         }
+        public static int LicenciaModificar(licencia registros)
+        {
+            return clienteDL.LicenciaModificar(registros);
+        }
         public static int TarjetaIngresar(tarjetapropiedad registros)
         {
             return clienteDL.TarjetaIngresar(registros);
+        }
+        public static int TarjetaFalsear(int registros)
+        {
+            return clienteDL.TarjetaFalsear(registros);
         }
     }
 }

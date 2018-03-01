@@ -38,6 +38,10 @@ namespace Negocios
         {
             return empresaDL.EmpresaIngresar(registros);
         }
+        public static int EmpresaModificar(empresas registros)
+        {
+            return empresaDL.EmpresaModificar(registros);
+        }
         public static empresas EmpresaBusquedaCodigo(int codigo)
         {
             return empresaDL.EmpresaBusquedaCodigo(codigo);

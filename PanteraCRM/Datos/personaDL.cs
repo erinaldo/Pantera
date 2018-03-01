@@ -28,7 +28,7 @@ namespace Datos
         }
         public static int PersonaModificar(persona registros)
         {
-            return conexion.executeScalar("fn_persona_ingresar",
+            return conexion.executeScalar("fn_persona_modificar",
             CommandType.StoredProcedure,
             new parametro("in_p_inidpersona", registros.p_inidpersona),
             new parametro("in_nrodocumento", registros.nrodocumento),

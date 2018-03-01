@@ -28,16 +28,26 @@ namespace Presentacion
         {
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
-            cargarData(0);
+            cargarData(0,"");
         }
-        public void cargarData(int registro)
+        public void cargarData(int registro,string parametro)
         {
-            List<cliente> listado = clienteNE.clienteListar();
-            dgvListaClientes.DataSource = listado;
+            if (parametro == "")
+            {
+                List<cliente> listado = clienteNE.clienteListar();
+                dgvListaClientes.DataSource = listado;
+            }
+            else
+            {
+                List<cliente> listado = clienteNE.ClienteListarParametro2(parametro);
+                dgvListaClientes.DataSource = listado;
+            }
+            
+            
         }
         public void ejecutar(int dato)
         {
-            cargarData(0);
+            cargarData(0,"");
             foreach (DataGridViewRow Row in dgvListaClientes.Rows)
             {
                 int valor = (int)Row.Cells["CHCODIGO"].Value;
@@ -161,6 +171,13 @@ namespace Presentacion
             {
                 MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
             }
+        }
+
+        private void txtParametro_TextChanged(object sender, EventArgs e)
+        {
+            string parametro =txtParametro.Text;
+            cargarData(0,parametro);
+
         }
     }
 }

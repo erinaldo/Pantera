@@ -151,6 +151,12 @@
     <Compile Include="Formularios\frmConsCobranzaDocuVentaPrincipal.Designer.cs">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmFondo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmFondo.Designer.cs">
+      <DependentUpon>frmFondo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmManClienteAnadir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,17 +271,17 @@
     <Compile Include="Formularios\frmProcCancelacionCuentasPrincipal.Designer.cs">
       <DependentUpon>frmProcCancelacionCuentasPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmProcPedidosPedidosCabecera.cs">
+    <Compile Include="Formularios\frmProcPedidosCabecera.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmProcPedidosPedidosCabecera.Designer.cs">
-      <DependentUpon>frmProcPedidosPedidosCabecera.cs</DependentUpon>
+    <Compile Include="Formularios\frmProcPedidosCabecera.Designer.cs">
+      <DependentUpon>frmProcPedidosCabecera.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmProcPedidosPedidosDetalle.cs">
+    <Compile Include="Formularios\frmProcPedidosDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmProcPedidosPedidosDetalle.Designer.cs">
-      <DependentUpon>frmProcPedidosPedidosDetalle.cs</DependentUpon>
+    <Compile Include="Formularios\frmProcPedidosDetalle.Designer.cs">
+      <DependentUpon>frmProcPedidosDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmProcPedidosPrincipal.cs">
       <SubType>Form</SubType>
@@ -519,6 +525,9 @@
     <EmbeddedResource Include="Formularios\frmConsCobranzaDocuVentaPrincipal.resx">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmFondo.resx">
+      <DependentUpon>frmFondo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManClienteAnadir.resx">
       <DependentUpon>frmManClienteAnadir.cs</DependentUpon>
     </EmbeddedResource>
@@ -570,11 +579,11 @@
     <EmbeddedResource Include="Formularios\frmProcNotaDebitoPrincipal.resx">
       <DependentUpon>frmProcNotaDebitoPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmProcPedidosPedidosCabecera.resx">
-      <DependentUpon>frmProcPedidosPedidosCabecera.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmProcPedidosCabecera.resx">
+      <DependentUpon>frmProcPedidosCabecera.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmProcPedidosPedidosDetalle.resx">
-      <DependentUpon>frmProcPedidosPedidosDetalle.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmProcPedidosDetalle.resx">
+      <DependentUpon>frmProcPedidosDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcPedidosPrincipal.resx">
       <DependentUpon>frmProcPedidosPrincipal.cs</DependentUpon>

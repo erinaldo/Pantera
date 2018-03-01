@@ -188,10 +188,7 @@ namespace Presentacion
                 cboTipo.SelectedIndex = index;
                 //int index = cboCategoria.FindString("NUEVA CATGORIA");
                 //cboCategoria.SelectedIndex = 0;
-                
-
             }
-
         }
         //bool flatcbotipo = false;
         private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
