@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DtsFacturacion" targetNamespace="http://tempuri.org/DtsFacturacion.xsd" xmlns:mstns="http://tempuri.org/DtsFacturacion.xsd" xmlns="http://tempuri.org/DtsFacturacion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DtsFacturacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DtsFacturacion" msprop:Generator_UserDSName="DtsFacturacion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TPedidoCabecera" msprop:Generator_TableClassName="TPedidoCabeceraDataTable" msprop:Generator_TableVarName="tableTPedidoCabecera" msprop:Generator_TablePropName="TPedidoCabecera" msprop:Generator_RowDeletingName="TPedidoCabeceraRowDeleting" msprop:Generator_RowChangingName="TPedidoCabeceraRowChanging" msprop:Generator_RowEvHandlerName="TPedidoCabeceraRowChangeEventHandler" msprop:Generator_RowDeletedName="TPedidoCabeceraRowDeleted" msprop:Generator_UserTableName="TPedidoCabecera" msprop:Generator_RowChangedName="TPedidoCabeceraRowChanged" msprop:Generator_RowEvArgName="TPedidoCabeceraRowChangeEvent" msprop:Generator_RowClassName="TPedidoCabeceraRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="p_inidpedidocabecera" msprop:Generator_ColumnVarNameInTable="columnp_inidpedidocabecera" msprop:Generator_ColumnPropNameInRow="p_inidpedidocabecera" msprop:Generator_ColumnPropNameInTable="p_inidpedidocabeceraColumn" msprop:Generator_UserColumnName="p_inidpedidocabecera" type="xs:string" minOccurs="0" />
+              <xs:element name="p_inidproducto" msprop:Generator_ColumnVarNameInTable="columnp_inidproducto" msprop:Generator_ColumnPropNameInRow="p_inidproducto" msprop:Generator_ColumnPropNameInTable="p_inidproductoColumn" msprop:Generator_UserColumnName="p_inidproducto" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnDataColumn1" msprop:Generator_ColumnPropNameInRow="DataColumn1" msprop:Generator_ColumnPropNameInTable="DataColumn1Column" msprop:Generator_UserColumnName="DataColumn1" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TPedidoDetalle" msprop:Generator_TableClassName="TPedidoDetalleDataTable" msprop:Generator_TableVarName="tableTPedidoDetalle" msprop:Generator_TablePropName="TPedidoDetalle" msprop:Generator_RowDeletingName="TPedidoDetalleRowDeleting" msprop:Generator_RowChangingName="TPedidoDetalleRowChanging" msprop:Generator_RowEvHandlerName="TPedidoDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="TPedidoDetalleRowDeleted" msprop:Generator_UserTableName="TPedidoDetalle" msprop:Generator_RowChangedName="TPedidoDetalleRowChanged" msprop:Generator_RowEvArgName="TPedidoDetalleRowChangeEvent" msprop:Generator_RowClassName="TPedidoDetalleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="p_inidpedidodetalle" msprop:Generator_ColumnVarNameInTable="columnp_inidpedidodetalle" msprop:Generator_ColumnPropNameInRow="p_inidpedidodetalle" msprop:Generator_ColumnPropNameInTable="p_inidpedidodetalleColumn" msprop:Generator_UserColumnName="p_inidpedidodetalle" type="xs:string" minOccurs="0" />
+              <xs:element name="p_inidpedidocabecera" msprop:Generator_ColumnVarNameInTable="columnp_inidpedidocabecera" msprop:Generator_ColumnPropNameInRow="p_inidpedidocabecera" msprop:Generator_ColumnPropNameInTable="p_inidpedidocabeceraColumn" msprop:Generator_UserColumnName="p_inidpedidocabecera" type="xs:string" minOccurs="0" />
+              <xs:element name="p_inidproducto" msprop:Generator_ColumnVarNameInTable="columnp_inidproducto" msprop:Generator_ColumnPropNameInRow="p_inidproducto" msprop:Generator_ColumnPropNameInTable="p_inidproductoColumn" msprop:Generator_UserColumnName="p_inidproducto" type="xs:string" minOccurs="0" />
+              <xs:element name="p_inidserie" msprop:Generator_ColumnVarNameInTable="columnp_inidserie" msprop:Generator_ColumnPropNameInRow="p_inidserie" msprop:Generator_ColumnPropNameInTable="p_inidserieColumn" msprop:Generator_UserColumnName="p_inidserie" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TProducto" msprop:Generator_TableClassName="TProductoDataTable" msprop:Generator_TableVarName="tableTProducto" msprop:Generator_TablePropName="TProducto" msprop:Generator_RowDeletingName="TProductoRowDeleting" msprop:Generator_RowChangingName="TProductoRowChanging" msprop:Generator_RowEvHandlerName="TProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="TProductoRowDeleted" msprop:Generator_UserTableName="TProducto" msprop:Generator_RowChangedName="TProductoRowChanged" msprop:Generator_RowEvArgName="TProductoRowChangeEvent" msprop:Generator_RowClassName="TProductoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="p_inidproducto" msprop:Generator_ColumnVarNameInTable="columnp_inidproducto" msprop:Generator_ColumnPropNameInRow="p_inidproducto" msprop:Generator_ColumnPropNameInTable="p_inidproductoColumn" msprop:Generator_UserColumnName="p_inidproducto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TSeries" msprop:Generator_TableClassName="TSeriesDataTable" msprop:Generator_TableVarName="tableTSeries" msprop:Generator_TablePropName="TSeries" msprop:Generator_RowDeletingName="TSeriesRowDeleting" msprop:Generator_RowChangingName="TSeriesRowChanging" msprop:Generator_RowEvHandlerName="TSeriesRowChangeEventHandler" msprop:Generator_RowDeletedName="TSeriesRowDeleted" msprop:Generator_UserTableName="TSeries" msprop:Generator_RowChangedName="TSeriesRowChanged" msprop:Generator_RowEvArgName="TSeriesRowChangeEvent" msprop:Generator_RowClassName="TSeriesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="p_inidserie" msprop:Generator_ColumnVarNameInTable="columnp_inidserie" msprop:Generator_ColumnPropNameInRow="p_inidserie" msprop:Generator_ColumnPropNameInTable="p_inidserieColumn" msprop:Generator_UserColumnName="p_inidserie" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="TPedidoDetalle_TPedidoCabecera" msdata:parent="TPedidoDetalle" msdata:child="TPedidoCabecera" msdata:parentkey="p_inidpedidocabecera" msdata:childkey="p_inidpedidocabecera" msprop:Generator_UserChildTable="TPedidoCabecera" msprop:Generator_ChildPropName="GetTPedidoCabeceraRows" msprop:Generator_UserRelationName="TPedidoDetalle_TPedidoCabecera" msprop:Generator_RelationVarName="relationTPedidoDetalle_TPedidoCabecera" msprop:Generator_UserParentTable="TPedidoDetalle" msprop:Generator_ParentPropName="TPedidoDetalleRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

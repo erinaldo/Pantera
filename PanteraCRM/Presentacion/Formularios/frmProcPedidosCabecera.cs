@@ -245,17 +245,72 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Esta seguro de Registrar el pedido", "MENSAJE DE SISTEMA", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            switch (this.vBotonG)
             {
-                MessageBox.Show("Registros Grabados", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-            }
-            else
-            {
-                MessageBox.Show("Cancelo la Grabacion ", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                return;
+                case "A":
+                    if (ValidarCamposIndependientes())
+                    {
+                        DialogResult result = MessageBox.Show("¿Está seguro de Registrar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            PedidoRegistrar();
+                        }
+                        else
+                        {
+                            return;
+                        }
+
+                    }
+                    else
+                    {
+                        return;
+                    }
+
+                    break;
+                case "M":
+                    if (ValidarCamposIndependientesModificar())
+                    {
+                        DialogResult result = MessageBox.Show("¿Está seguro de Modificar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            PedidoModificar();
+                        }
+                        else
+                        {
+                            return;
+                        }
+
+                    }
+                    else
+                    {
+                        return;
+                    }
+                    break;
+                default:
+                    break;
             }
             this.Dispose();
+        }
+        private bool ValidarCamposIndependientes()
+        {
+            bool flat = false;
+            return flat;
+
+        }
+        private bool ValidarCamposIndependientesModificar()
+        {
+            bool flat = false;
+            return flat;
+
+        }
+        
+        private void PedidoRegistrar()
+        {
+
+        }
+        private void PedidoModificar()
+        {
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

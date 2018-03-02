@@ -101,6 +101,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dataset\DtsFacturacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DtsFacturacion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DtsUsuario.cs">
       <DependentUpon>DtsUsuario.xsd</DependentUpon>
     </Compile>
@@ -662,6 +667,17 @@
     <EmbeddedResource Include="Reportes\FrmReporte.resx">
       <DependentUpon>FrmReporte.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Dataset\DtsFacturacion.xsc">
+      <DependentUpon>DtsFacturacion.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DtsFacturacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DtsFacturacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DtsFacturacion.xss">
+      <DependentUpon>DtsFacturacion.xsd</DependentUpon>
+    </None>
     <None Include="Dataset\DtsUsuario.xsc">
       <DependentUpon>DtsUsuario.xsd</DependentUpon>
     </None>
