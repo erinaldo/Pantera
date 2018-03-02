@@ -101,10 +101,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dataset\DtsFacturacion.Designer.cs">
+    <Compile Include="Dataset\DtsPedidos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DtsFacturacion.xsd</DependentUpon>
+      <DependentUpon>DtsPedidos.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\DtsUsuario.cs">
       <DependentUpon>DtsUsuario.xsd</DependentUpon>
@@ -667,16 +667,16 @@
     <EmbeddedResource Include="Reportes\FrmReporte.resx">
       <DependentUpon>FrmReporte.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Dataset\DtsFacturacion.xsc">
-      <DependentUpon>DtsFacturacion.xsd</DependentUpon>
+    <None Include="Dataset\DtsPedidos.xsc">
+      <DependentUpon>DtsPedidos.xsd</DependentUpon>
     </None>
-    <None Include="Dataset\DtsFacturacion.xsd">
+    <None Include="Dataset\DtsPedidos.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DtsFacturacion.Designer.cs</LastGenOutput>
+      <LastGenOutput>DtsPedidos.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Dataset\DtsFacturacion.xss">
-      <DependentUpon>DtsFacturacion.xsd</DependentUpon>
+    <None Include="Dataset\DtsPedidos.xss">
+      <DependentUpon>DtsPedidos.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DtsUsuario.xsc">
       <DependentUpon>DtsUsuario.xsd</DependentUpon>
