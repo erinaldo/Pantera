@@ -17,12 +17,12 @@ namespace Presentacion
         internal clientebusqueda ClienteG;
         internal licencia LicenciaG;
         internal List<tarjetapropiedad> TarjetaG;
-        public frmProcPedidosCabecera(string vBoton)
+        public frmProcPedidosCabecera(string vBotonG)
         {
             InitializeComponent();
-            this.vBoton = vBoton;
+            this.vBotonG = vBotonG;
         }
-        string vBoton;
+        string vBotonG;
 
 
         private void button2_Click(object sender, EventArgs e)
@@ -32,70 +32,85 @@ namespace Presentacion
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            int val = 0;
-            List<pedidodetalle> listado = null;
-            
-            if (dgvListaPedidoDetalle.RowCount > 0)
+            try
             {
-                listado =new List<pedidodetalle>();
-                for (int i = 0; i < dgvListaPedidoDetalle.RowCount; i++)
+                string vBoton = "A";
+                if (basicas.validarAcceso(vBoton))
                 {
-                    pedidodetalle registros = new pedidodetalle();
-                    registros.p_inidproducto = int.Parse(dgvListaPedidoDetalle.Rows[i].Cells["IDPRODUCTO"].Value.ToString());
-                    registros.nucantidad = decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUCANTIDAD"].Value.ToString());
-                    listado.Add(registros);
-                }
-            }
-            frmProcPedidosDetalle f = new frmProcPedidosDetalle();
-            f.tmplistadovalidar = listado;
-            DialogResult res = f.ShowDialog();
-            if (res == DialogResult.OK)
-            {
-                val++;
-                tmbpedidodetalle = f.tmplistado;
-                if (f.reqserie)
-                {
-                    foreach (pedidodetalle obj in tmbpedidodetalle)
+                    List<pedidodetalle> listado = null;
+                    if (dgvListaPedidoDetalle.RowCount > 0)
                     {
-                        string nombrecompuesto = obj.chnombrecompuesto;
-                        string codigo = obj.chcodigoproducto;
-                        int idproducto = obj.p_inidproducto;
-                        decimal cantidad = obj.nucantidad;
-                        decimal stock = obj.nustock;
-                        decimal precio =obj.nuprecioventa;
-                        decimal desc1 = obj.nuporcentajedesc1;
-                        decimal desc2 = obj.nuporcentajedesc2;
-                        decimal importe = obj.nuimportesubtotal;
-                        decimal preunit = obj.nuprecioproducto;
-                        string sval = "000" + val;
-                        int pini = sval.Length - 3;
-                        int pfin = sval.Length - 1;
-                        dgvListaPedidoDetalle.Rows.Add("1", "2", sval.Substring(pini, pfin), idproducto, codigo, "1", stock, nombrecompuesto, obj.chserie, precio, desc1, desc2, preunit, importe, "15", "16");
+                        listado = new List<pedidodetalle>();
+                        for (int i = 0; i < dgvListaPedidoDetalle.RowCount; i++)
+                        {
+                            pedidodetalle registros = new pedidodetalle();
+                            registros.p_inidproducto = int.Parse(dgvListaPedidoDetalle.Rows[i].Cells["IDPRODUCTO"].Value.ToString());
+                            registros.nucantidad = decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUCANTIDAD"].Value.ToString());
+                            listado.Add(registros);
+                        }
                     }
-                    //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");
+                    frmProcPedidosDetalle f = new frmProcPedidosDetalle(vBoton);
+                    f.ListadoValidarG = listado;                    
+                    f.PasadoDetalle += new frmProcPedidosDetalle.PasarDetalle(CargarAdionar);
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
                 }
                 else
                 {
-                    string nombrecompuesto = f.tmbpedidodetalle.chnombrecompuesto;
-                    string codigo = f.tmbpedidodetalle.chcodigoproducto;
-                    int idproducto = f.tmbpedidodetalle.p_inidproducto;
-                    decimal cantidad = f.tmbpedidodetalle.nucantidad;
-                    decimal stock = f.tmbpedidodetalle.nustock;
-                    decimal precio = f.tmbpedidodetalle.nuprecioventa;
-                    decimal desc1 = f.tmbpedidodetalle.nuporcentajedesc1;
-                    decimal desc2 = f.tmbpedidodetalle.nuporcentajedesc2;
-                    decimal importe = f.tmbpedidodetalle.nuimportesubtotal;
-                    decimal preunit = f.tmbpedidodetalle.nuprecioproducto;
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void CargarAdionar(List<pedidodetalle> ListaPedido,pedidodetalle RegistroPedido, bool Flat)
+        {
+            int val = 0;
+            val++;
+            if (Flat)
+            {
+                foreach (pedidodetalle obj in ListaPedido)
+                {
+                    string nombrecompuesto = obj.chnombrecompuesto;
+                    string codigo = obj.chcodigoproducto;
+                    int idproducto = obj.p_inidproducto;
+                    decimal cantidad = obj.nucantidad;
+                    decimal stock = obj.nustock;
+                    decimal precio = obj.nuprecioventa;
+                    decimal desc1 = obj.nuporcentajedesc1;
+                    decimal desc2 = obj.nuporcentajedesc2;
+                    decimal importe = obj.nuimportesubtotal;
+                    decimal preunit = obj.nuprecioproducto;
                     string sval = "000" + val;
                     int pini = sval.Length - 3;
                     int pfin = sval.Length - 1;
-                    //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");
-                    dgvListaPedidoDetalle.Rows.Add("1", "2", sval.Substring(pini, pfin), idproducto, codigo, cantidad, stock, nombrecompuesto, "-", precio, desc1, desc2, preunit, importe, "15", "16");
-                    //f.tmbpedidodetalle.chnombrecompuesto;
+                    dgvListaPedidoDetalle.Rows.Add("1", "2", sval.Substring(pini, pfin), idproducto, codigo, "1", stock, nombrecompuesto, obj.chserie, preunit, precio, desc1, desc2, importe, "15", "16");
                 }
-                GenerarTotales();
+                //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");
             }
-            
+            else
+            {
+                string nombrecompuesto = RegistroPedido.chnombrecompuesto;
+                string codigo = RegistroPedido.chcodigoproducto;
+                int idproducto = RegistroPedido.p_inidproducto;
+                decimal cantidad = RegistroPedido.nucantidad;
+                decimal stock = RegistroPedido.nustock;
+                decimal precio = RegistroPedido.nuprecioventa;
+                decimal desc1 = RegistroPedido.nuporcentajedesc1;
+                decimal desc2 = RegistroPedido.nuporcentajedesc2;
+                decimal importe = RegistroPedido.nuimportesubtotal;
+                decimal preunit = RegistroPedido.nuprecioproducto;
+                string sval = "000" + val;
+                int pini = sval.Length - 3;
+                int pfin = sval.Length - 1;
+                //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");
+                dgvListaPedidoDetalle.Rows.Add("1", "2", sval.Substring(pini, pfin), idproducto, codigo, cantidad, stock, nombrecompuesto, "-", preunit,precio, desc1, desc2, importe, "15", "16");
+                //f.tmbpedidodetalle.chnombrecompuesto;
+            }
+            GenerarTotales();
         }
         public void GenerarTotales()
         {
@@ -103,7 +118,6 @@ namespace Presentacion
             {
                 decimal importe=0;
                 decimal preciprod = 0;
-                decimal precio = 0;
                 int cantidad = 0;
                 decimal preciototal = 0;
                 List<pedidodetalle>  listado = new List<pedidodetalle>();
@@ -114,21 +128,16 @@ namespace Presentacion
                     preciprod = decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUPRECIOVENTA"].Value.ToString());
                     cantidad = int.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUCANTIDAD"].Value.ToString());
                     preciototal += decimal.Round(cantidad * preciprod, 2);
-                }
-
-                //txtTotVenta.Text = importe.ToString();
-                //txtIgv.Text = decimal.Round(subsindesc- valorventa, 2).ToString();
-                //txtDesctot.Text = decimal.Round(subsindesc-importe,2).ToString();
-                //txtSubtotal.Text = decimal.Round(decimal.Round(subsindesc / (118 / 100) - decimal.Round(subsindesc - importe, 2), 2), 2).ToString();
+                }              
 
                 txtTotVenta.Text = importe.ToString();
                 decimal valorventa = decimal.Round(importe / decimal.Parse("1.18"), 2);
                 txtValVenta.Text = valorventa.ToString();
-                txtIgv.Text = (importe - valorventa).ToString();
+                decimal igv = importe - valorventa;
+                txtIgv.Text = (igv).ToString();
                 decimal tdescuentototal = decimal.Round(preciototal - valorventa,2);
                 txtDesctot.Text =tdescuentototal.ToString();
                 txtSubtotal.Text = (valorventa- tdescuentototal).ToString();
-                //txtValVenta.Text = decimal.Round(subsindesc, 2).ToString();
             }
         }
         private void frmProcPedidosPedidosCabecera_Load(object sender, EventArgs e)
@@ -170,31 +179,28 @@ namespace Presentacion
             {
                 txtTipoCambio.Text = "0.00";
             }
-            if (vBoton == "A")
+            if (vBotonG == "A")
             {
-
-            }else
+                txtSubtotal.Text = "0.00";
+                txtDesctot.Text = "0.00";
+                txtIgv.Text = "0.00";
+                txtValVenta.Text = "0.00";
+                txtTotVenta.Text = "0.00";
+                txtDesc.Text = "0.00";
+            }
+            else
             {
-                if (vBoton == "M")
+                if (vBotonG == "M")
                 {
 
                 }else
                 {
-                    if (vBoton == "V")
+                    if (vBotonG == "V")
                     {
 
                     }
                 }
             }
-            
-           
-            
-            txtSubtotal.Text = "0.00";
-            txtDesctot.Text = "0.00";
-            txtIgv.Text = "0.00";
-            txtValVenta.Text = "0.00";
-            txtTotVenta.Text = "0.00";
-            txtDesc.Text = "0.00";
         }
 
         public void CargaVehiculos(int parametro)
