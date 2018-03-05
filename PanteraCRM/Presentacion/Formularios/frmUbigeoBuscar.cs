@@ -19,7 +19,6 @@ namespace Presentacion
             InitializeComponent();
         }
         public delegate void pasarUbigeo(ubigeo ubigeo);
-        public event pasarUbigeo pasadoUbigeo;
 
         private void txtDescripcion_Validated(object sender, EventArgs e)
         {

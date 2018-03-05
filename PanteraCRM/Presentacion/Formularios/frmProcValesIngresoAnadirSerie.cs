@@ -16,6 +16,7 @@ namespace Presentacion
     {
         public bool estado = false;
         internal int p_inidproducto;
+        internal productoparaventa ProductoG;
         public delegate void CargarTabla();
         public event CargarTabla Cargado;
         public frmProcSeriesAnadir(string vBoton)
@@ -465,25 +466,19 @@ namespace Presentacion
         }
         public void buscaProducto(string parametro)
         {
-            List<productoparaventa> obprodventa = new List<productoparaventa>();
-            obprodventa = productoNE.ProductosVentaParametro(parametro);
-            if (obprodventa.Count > 0)
+            ProductoG = productoNE.ProductosVentaParametro(parametro);
+            if (ProductoG != null)
             {
-                foreach (productoparaventa a in obprodventa)
-                {
-                    txtNombreconpuesto.Text = a.chnombrecompuesto;
-                    txtMedida.Text = a.chunidadmedidaproducto;
-                    txtidcodigo.Text = "" + a.p_inidproducto;
-                    txtCantidad.Enabled = true;
-                    txtCantidad.Text = "0";
-                    txtSerie.Text = "";
-                    txtCodigoSerie.Text = "";
-                    txtObs.Text = "";
-                    txtprecio.Text = "00.00";
-                    grbAgregadoSerie.Enabled = a.req_serie;
-                    
-
-                }
+                txtNombreconpuesto.Text = ProductoG.chnombrecompuesto;
+                txtMedida.Text = ProductoG.chunidadmedidaproducto;
+                txtidcodigo.Text = "" + ProductoG.p_inidproducto;
+                txtCantidad.Enabled = true;
+                txtCantidad.Text = "0";
+                txtSerie.Text = "";
+                txtCodigoSerie.Text = "";
+                txtObs.Text = "";
+                txtprecio.Text = "00.00";
+                grbAgregadoSerie.Enabled = ProductoG.req_serie;
                 dgvListaIngreso.Rows.Clear();
             }
             else

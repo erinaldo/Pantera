@@ -18,5 +18,6 @@ namespace Presentacion
         public static List<serie> listaserie { get; set; }
         public static valedetalle valedetalles { get; set; }
         public static List<movimientoproductoaccion> movprodaccion { get; set; }
+        public static List<pedidodetallecontenido> pedidodetallecontenido { get; set; }
     }
 }

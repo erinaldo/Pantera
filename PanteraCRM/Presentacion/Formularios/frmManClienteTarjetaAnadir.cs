@@ -13,7 +13,6 @@ namespace Presentacion
 {
     public partial class frmManClienteTarjetaAnadir : Form
     {
-        internal int codigocliente;
         internal List<tarjetapropiedad> ListaTarjetadeProiedadG;
         public delegate void PasarListaTarjetas(List<tarjetapropiedad> TarjetasRegistro);
         public event PasarListaTarjetas pasado;

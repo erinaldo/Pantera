@@ -50,7 +50,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cboCondVenta = new System.Windows.Forms.ComboBox();
             this.txtNombreVendedor = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtordcomp = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -119,6 +119,8 @@
             this.NUIMPORTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label31 = new System.Windows.Forms.Label();
+            this.cboigv = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -210,6 +212,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label31);
+            this.groupBox1.Controls.Add(this.cboigv);
             this.groupBox1.Controls.Add(this.txtTipoCambio);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txtNombreAlmacen);
@@ -218,7 +222,7 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.cboCondVenta);
             this.groupBox1.Controls.Add(this.txtNombreVendedor);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtordcomp);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -327,14 +331,15 @@
             this.txtNombreVendedor.TabStop = false;
             this.txtNombreVendedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox5
+            // txtordcomp
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(62, 67);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(109, 20);
-            this.textBox5.TabIndex = 4;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtordcomp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtordcomp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtordcomp.Location = new System.Drawing.Point(62, 67);
+            this.txtordcomp.Name = "txtordcomp";
+            this.txtordcomp.Size = new System.Drawing.Size(109, 20);
+            this.txtordcomp.TabIndex = 4;
+            this.txtordcomp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -626,6 +631,7 @@
             this.groupBox3.Size = new System.Drawing.Size(782, 249);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // btnSalir
             // 
@@ -824,6 +830,7 @@
             this.dgvListaPedidoDetalle.Location = new System.Drawing.Point(9, 19);
             this.dgvListaPedidoDetalle.Name = "dgvListaPedidoDetalle";
             this.dgvListaPedidoDetalle.ReadOnly = true;
+            this.dgvListaPedidoDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPedidoDetalle.Size = new System.Drawing.Size(759, 148);
             this.dgvListaPedidoDetalle.TabIndex = 0;
             // 
@@ -957,6 +964,7 @@
             this.CHITEM.HeaderText = "N°";
             this.CHITEM.Name = "CHITEM";
             this.CHITEM.ReadOnly = true;
+            this.CHITEM.Visible = false;
             this.CHITEM.Width = 25;
             // 
             // IDPRODUCTO
@@ -1064,7 +1072,24 @@
             this.IDSERIE.HeaderText = "IDSERIE";
             this.IDSERIE.Name = "IDSERIE";
             this.IDSERIE.ReadOnly = true;
-            this.IDSERIE.Visible = false;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(435, 74);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(34, 13);
+            this.label31.TabIndex = 27;
+            this.label31.Text = "I.G.V.";
+            // 
+            // cboigv
+            // 
+            this.cboigv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboigv.FormattingEnabled = true;
+            this.cboigv.Location = new System.Drawing.Point(492, 67);
+            this.cboigv.Name = "cboigv";
+            this.cboigv.Size = new System.Drawing.Size(79, 21);
+            this.cboigv.TabIndex = 26;
             // 
             // frmProcPedidosCabecera
             // 
@@ -1109,7 +1134,7 @@
         private System.Windows.Forms.ComboBox cboTraslado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtordcomp;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -1186,5 +1211,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NUIMPORTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDSERIE;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ComboBox cboigv;
     }
 }

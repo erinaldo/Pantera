@@ -466,20 +466,6 @@ C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Pres
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcValesIngresoPrincipal.resources
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmTipoDeCambio.resources
 C:\Users\William\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.PrincipalOpcional.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Rufigas CRM.exe.config
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Rufigas CRM.exe
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Rufigas CRM.pdb
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Entidades.dll
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Negocios.dll
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Npgsql.dll
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Datos.dll
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Entidades.pdb
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Negocios.pdb
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Npgsql.xml
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Datos.pdb
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csproj.ResolveComReference.cache
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmBusClientePrincipal.resources
@@ -507,6 +493,8 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\P
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaCrediDevPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaCrediOtroPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaDebitoPrincipal.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcPedidosCabecera.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcPedidosDetalle.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcPedidosPrincipal.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSalidaProductosAnadir.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcSalidaProductosAnadirDetalle.resources
@@ -530,14 +518,19 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\P
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReporte.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.exe
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcPedidosCabecera.resources
-C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcPedidosDetalle.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Rufigas CRM.exe.config
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Rufigas CRM.exe
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Rufigas CRM.pdb
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\CrystalDecisions.ReportSource.dll
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\CrystalDecisions.Shared.dll
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Entidades.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Negocios.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Npgsql.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Datos.dll
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
@@ -553,3 +546,10 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\F
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\stdole.dll
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Negocios.pdb
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Npgsql.xml
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Datos.pdb
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.exe
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.pdb

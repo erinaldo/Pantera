@@ -68,9 +68,9 @@
     <Compile Include="movimientoproductod.cs" />
     <Compile Include="movimientoproductoaccion.cs" />
     <Compile Include="movimientoproductoc.cs" />
-    <Compile Include="Mpersona.cs" />
     <Compile Include="pedidocabecera.cs" />
     <Compile Include="pedidodetalle.cs" />
+    <Compile Include="pedidodetallecontenido.cs" />
     <Compile Include="perfil.cs" />
     <Compile Include="perfildetalle.cs" />
     <Compile Include="persona.cs" />

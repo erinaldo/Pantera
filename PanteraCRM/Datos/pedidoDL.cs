@@ -68,18 +68,18 @@ namespace Datos
                     new parametro("in_p_inidpedidocabecera", registros.p_inidpedidocabecera),
                     new parametro("in_chitem", registros.chitem),
                     new parametro("in_p_inidproducto", registros.p_inidproducto),
-                    new parametro("in_chcodigoproducto", registros.chcodigoproducto),
+                    //new parametro("in_chcodigoproducto", registros.chcodigoproducto),
                     new parametro("in_nucantidad", registros.nucantidad),
-                    new parametro("in_nustock", registros.nustock),
-                    new parametro("in_chnombrecompuesto", registros.chnombrecompuesto),
+                    //new parametro("in_nustock", registros.nustock),
+                    //new parametro("in_chnombrecompuesto", registros.chnombrecompuesto),
                     new parametro("in_nuprecioproducto", registros.nuprecioproducto),
                     new parametro("in_nuporcentajedesc1", registros.nuporcentajedesc1),
                     new parametro("in_nuporcentajedesc2", registros.nuporcentajedesc2),
                     new parametro("in_nuprecioventa", registros.nuprecioventa),
                     new parametro("in_nuimportesubtotal", registros.nuimportesubtotal),
                     new parametro("in_estado", registros.estado),
-                    new parametro("in_p_inidserie", registros.p_inidserie),
-                    new parametro("in_chserie", registros.chserie)
+                    new parametro("in_p_inidserie", registros.p_inidserie)
+                    //new parametro("in_chserie", registros.chserie)
               );
                 contador++;
             }

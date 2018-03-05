@@ -15,14 +15,17 @@ namespace Presentacion
     {
         public pedidodetalle tmbpedidodetalle;
         public pedidodetalle tmppedidodetalle;
-        
-        public List<pedidodetalle> tmplistado;
 
+        internal int codigoorden;
+
+        public List<pedidodetalle> tmplistado;
+        internal productoparaventa ProductoG;
         internal List<pedidodetalle> ListadoValidarG;
         internal pedidodetalle PedidoG;
-        internal List<pedidodetalle> ListaDetalleG;
+        internal List<productoparaventa> ListaproductoparaventaDetalleG;
+        internal List<pedidodetallecontenido> ListasDetallePedidoContenido;
         internal bool FlatG;
-        public delegate void PasarDetalle(List<pedidodetalle> Listado, pedidodetalle Registros,bool Flat);
+        public delegate void PasarDetalle();
         public event PasarDetalle PasadoDetalle;
         public frmProcPedidosDetalle(string vBoton)
         {
@@ -52,8 +55,18 @@ namespace Presentacion
             {
                 if (vBoton == "M")
                 {
-
-                }else
+                    foreach (pedidodetallecontenido obj in sesion.pedidodetallecontenido)
+                    {
+                        if (codigoorden == obj.orden)
+                        {
+                            txtCodigo.Text = obj.productoparaventa.chcodigoproducto;
+                            txtDesc1.Text = obj.pedidodetalle.nuporcentajedesc1.ToString();
+                            txtDesc2.Text = obj.pedidodetalle.nuporcentajedesc2.ToString();
+                        }
+                    }
+                    
+                }
+                else
                 {
                     if (vBoton == "V")
                     {
@@ -69,76 +82,131 @@ namespace Presentacion
         }
         public void cargarDatosCabecera(string parametro)
         {
-            List<productoparaventa> obprodventa = productoNE.ProductosVentaParametro(parametro);
-            if (obprodventa != null)
+            ProductoG = productoNE.ProductosVentaParametro(parametro);
+            if (ProductoG != null)
             {
-                foreach (productoparaventa a in obprodventa)
-                {
-                    if (ListadoValidarG != null)
+                decimal val = 0;
+                if (ListadoValidarG != null)
+                {                    
+                    foreach (pedidodetalle obj in ListadoValidarG)
                     {
-                        decimal val = 0;
-                        foreach (pedidodetalle obj in ListadoValidarG)
+                        if (obj.p_inidproducto == ProductoG.p_inidproducto)
                         {
-                            if (obj.p_inidproducto == a.p_inidproducto)
-                            {
-                                val = val + obj.nucantidad;                                
-                            }                            
+                            val = val + obj.nucantidad;
                         }
-                        txtStock.Text = (a.nustockactual - val).ToString();
-                        txtDescripcion.Text = a.chnombrecompuesto;
-                        txtIdproducto.Text = a.p_inidproducto.ToString();
-                        txtImporte.Text = "0.000";
-                        txtPreUnit.Text = a.nuprecio.ToString();
-                        txtMedida.Text = a.chunidadmedidaproducto;
-                        cargarData(0, a.p_inidproducto);
-                        ckbSerie.Checked = a.req_serie;
                     }
-                    else
-                    {
-                        txtDescripcion.Text = a.chnombrecompuesto;
-                        txtIdproducto.Text = a.p_inidproducto.ToString();
-                        txtImporte.Text = "0.00";
-                        txtPreUnit.Text = a.nuprecio.ToString();
-                        txtStock.Text = a.nustockactual.ToString(); ;
-                        txtMedida.Text = a.chunidadmedidaproducto;
-                        cargarData(0, a.p_inidproducto);
-                        ckbSerie.Checked = a.req_serie;
-                    }
-                    
                 }
-            }else
-            {
-                txtDescripcion.Text = "";
-            }
-        }
-       
-        public void cargarData(int registro, int parametro)
-        {
-            List<productoparaventa> listado = productoNE.ListaProductosVentaParametro(parametro);
-            if (listado != null)
-            {
-                dgvListaProdSeries.DataSource = listado;
+                if (vBoton=="A")
+                {
+                    txtStock.Text = (ProductoG.nustockactual - val).ToString();
+                }
+                else
+                {
+                    txtStock.Text = (ProductoG.nustockactual).ToString();
+                }                
+                txtDescripcion.Text = ProductoG.chnombrecompuesto;
+                txtImporte.Text = "0.00";
+                txtPreUnit.Text = ProductoG.nuprecio.ToString();
+                txtMedida.Text = ProductoG.chunidadmedidaproducto;
+                cargarData(0, ProductoG.p_inidproducto);
             }
             else
             {
+                txtDescripcion.Text = "";
+                txtDesc1.Text = "0.00";
+                txtDesc2.Text = "0.00";
+                txtPrecioVenta.Text = "0.00";
+                txtImporte.Text = "0.00";
+                txtPreUnit.Text = "0.00";
+                txtStock.Text = "0";
+                dgvListaProdSeries.Rows.Clear();
+                
+            }
+        }
+       
+        private void cargarData(int registro, int parametro)
+        {
+            List<productoparaventa> listado = productoNE.ListaProductosVentaParametro(parametro);
+            List<productoparaventa> listadosssss = new List<productoparaventa>();
+            if (listado != null)
+            {
+                foreach (productoparaventa rrr in listado)
+                {
+                    
+                    bool flat = buscarSerieM(rrr.p_inidserie, rrr.p_inidproducto);
+                    if (!flat)
+                    {
+                        if (vBoton == "M")
+                        {
+                            //productoparaventa registros = new productoparaventa();
+                            //registros = rrr;
+                            //rrr.req_serie = buscarSerieMcodigo(rrr.p_inidserie);
+                            dgvListaProdSeries.Rows.Add(buscarSerieMcodigo(rrr.p_inidserie), rrr.p_inidproducto, rrr.chcodigoproducto, rrr.chnombrecompuesto, rrr.chunidadmedidaproducto, rrr.nuprecio, rrr.chserie, rrr.p_inidserie);
+                            //listadosssss.Add(registros);
+                        }
+                        else
+                        {
+                            //productoparaventa registros = new productoparaventa();
+                            //registros = rrr;
+                            dgvListaProdSeries.Rows.Add(rrr.req_serie, rrr.p_inidproducto, rrr.chcodigoproducto, rrr.chnombrecompuesto, rrr.chunidadmedidaproducto, rrr.nuprecio, rrr.chserie, rrr.p_inidserie);
+                            //listadosssss.Add(registros);
+                        }
+
+                    }
+                    //dgvListaProdSeries.DataSource = listadosssss;
+                    //CargarTablaDetalleSeries();
+                }
+                //dgvListaProdSeries.DataSource = listado;
+            }
+            else
+            {
+               // dgvListaProdSeries.DataSource = listadosssss;
+                //dgvListaProdSeries.Rows.Clear();
                 dgvListaProdSeries.ReadOnly = true;
             }   
         }
-        public void ejecutar(int dato)
+        private void CargarTablaDetalleSeries()
         {
-            cargarData(0, 0);
-            foreach (DataGridViewRow Row in dgvListaProdSeries.Rows)
+            dgvListaProdSeries.DataSource = ListaproductoparaventaDetalleG;
+        }
+        private bool buscarSerieMcodigo(int serie)
+        {
+            bool flat = false;
+            foreach (pedidodetalle s in ListadoValidarG)
             {
-                int valor = (int)Row.Cells["IDPRODUCTO"].Value;
-                if (valor == dato)
+                if (s.p_inidserie == serie)
                 {
-                    int puntero = (int)Row.Index;
-                    //                    dgvPersona.CurrentCell = dgvPersona.Rows[puntero].Cells["IDPERSONA"];
-                    dgvListaProdSeries.CurrentCell = dgvListaProdSeries.Rows[puntero].Cells[1];
-                    return;
+                    flat = true;
+
                 }
             }
+            return flat;
         }
+        private bool buscarSerieM(int serie, int producto)
+        {
+            bool flat = false;
+            if (sesion.pedidodetallecontenido != null)
+            {
+                foreach (pedidodetallecontenido obj in sesion.pedidodetallecontenido)
+                {
+                    if (obj.serie != null)
+                    {
+                        if (obj.serie.p_inidserie == serie && obj.pedidodetalle.p_inidproducto == producto && obj.estado == true)
+                        {
+                            if (vBoton != "M")
+                            {
+                                flat = true;
+                            }
+                        }
+                    }                   
+
+                }
+            }
+            return flat;
+        }
+            
+
+
 
         private void txtCodigo_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -158,23 +226,23 @@ namespace Presentacion
         }
         private void txtCant_TextChanged(object sender, EventArgs e)
         {
-
             int cantidad = 0;
             int stock = 0;
             decimal preciounitario = 0;
             decimal desc1 = 0;
             decimal desc2 = 0;
+
             if (txtPreUnit.Text.Length > 0)
             {
-                desc1 = decimal.Round(decimal.Parse(txtPreUnit.Text));
+                preciounitario = decimal.Round(decimal.Parse(txtPreUnit.Text), 2);
             }
             if (txtDesc1.Text.Length > 0)
             {
-                desc1 = decimal.Round(decimal.Parse(txtDesc1.Text));
+                desc1 = decimal.Round(decimal.Parse(txtDesc1.Text), 2);
             }
             if (txtDesc2.Text.Length > 0)
             {
-                desc2 = decimal.Round(decimal.Parse(txtDesc2.Text));
+                desc2 = decimal.Round(decimal.Parse(txtDesc2.Text), 2);
             }
             if (txtCant.Text.Length > 0)
             {
@@ -184,11 +252,14 @@ namespace Presentacion
             {
                 stock = int.Parse(txtStock.Text);
             }
-            txtPrecioVenta.Text = (cantidad * (preciounitario * (desc1 / 100) * (desc2 / 100))).ToString();
+            txtPrecioVenta.Text = "";
+            txtPrecioVenta.Text = decimal.Round((preciounitario * (1 - (desc1 / 100)) * (1 - (desc2 / 100))), 2).ToString();
+  
             if (cantidad > stock)
             {
                 MessageBox.Show("La Cantidad Ingresada Supera el Stock Actual", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                txtCant.Text = "0";
+                txtCant.Focus();
+                txtCant.Text = "";
                 return;
             }
         }
@@ -199,17 +270,18 @@ namespace Presentacion
             decimal preciounitario = 0;
             decimal desc1 = 0;
             decimal desc2 = 0;
+          
             if (txtPreUnit.Text.Length > 0)
             {
-                desc1 = decimal.Round(decimal.Parse(txtPreUnit.Text));
+                preciounitario = decimal.Round(decimal.Parse(txtPreUnit.Text),2);
             }
             if (txtDesc1.Text.Length > 0)
             {
-                desc1 = decimal.Round(decimal.Parse(txtDesc1.Text));
+                desc1 = decimal.Round(decimal.Parse(txtDesc1.Text),2);
             }
             if (txtDesc2.Text.Length > 0)
             {
-                desc2 = decimal.Round(decimal.Parse(txtDesc2.Text));
+                desc2 = decimal.Round(decimal.Parse(txtDesc2.Text),2);
             }
             if (txtCant.Text.Length > 0)
             {
@@ -219,27 +291,27 @@ namespace Presentacion
             {
                 stock = int.Parse(txtStock.Text);
             }
-            txtPrecioVenta.Text = (cantidad * (preciounitario * (desc1 / 100) * (desc2 / 100))).ToString();
+            txtPrecioVenta.Text = decimal.Round((preciounitario * (1 - (desc1 / 100)) * (1 - (desc2 / 100))),2).ToString();
         }
         private void txtDesc2_TextChanged(object sender, EventArgs e)
         {
-
             int cantidad = 0;
             int stock = 0;
             decimal preciounitario = 0;
             decimal desc1 = 0;
             decimal desc2 = 0;
+
             if (txtPreUnit.Text.Length > 0)
             {
-                desc1 = decimal.Round(decimal.Parse(txtPreUnit.Text));
+                preciounitario = decimal.Round(decimal.Parse(txtPreUnit.Text), 2);
             }
             if (txtDesc1.Text.Length > 0)
             {
-                desc1 = decimal.Round(decimal.Parse(txtDesc1.Text));
+                desc1 = decimal.Round(decimal.Parse(txtDesc1.Text), 2);
             }
             if (txtDesc2.Text.Length > 0)
             {
-                desc2 = decimal.Round(decimal.Parse(txtDesc2.Text));
+                desc2 = decimal.Round(decimal.Parse(txtDesc2.Text), 2);
             }
             if (txtCant.Text.Length > 0)
             {
@@ -249,7 +321,7 @@ namespace Presentacion
             {
                 stock = int.Parse(txtStock.Text);
             }
-            txtPrecioVenta.Text = (cantidad * (preciounitario * (desc1 / 100) * (desc2 / 100))).ToString();
+            txtPrecioVenta.Text = decimal.Round((preciounitario * (1 - (desc1 / 100)) * (1 - (desc2 / 100))), 2).ToString();
         }
         private void txtDesc1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -325,65 +397,127 @@ namespace Presentacion
                 e.Handled = (IsDec) ? true : false;
             else
                 e.Handled = true;
-        }   
+        }
+
         private void btnGrabar_Click(object sender, EventArgs e)
-        {            
-            if (Validar())
+        {
+            switch (this.vBoton)
             {
-                ListaDetalleG = new List<pedidodetalle>();
-                PedidoG = new pedidodetalle();
-                if (ckbSerie.Checked)
-                {
-                    FlatG = ckbSerie.Checked;
-                    
-                    for (int i = 0; i < dgvListaProdSeries.RowCount; i++)
+                case "A":
+                    if (Validar())
                     {
-                        if (bool.Parse(dgvListaProdSeries.Rows[i].Cells["REQSERIE"].Value.ToString()))
-                        {
-                            PedidoG = new pedidodetalle();
-                            PedidoG.p_inidproducto = int.Parse(txtIdproducto.Text);
-                            PedidoG.chcodigoproducto = txtCodigo.Text;
-                            PedidoG.chnombrecompuesto = txtDescripcion.Text;
-                            PedidoG.nustock = int.Parse(txtStock.Text);
-                            PedidoG.nuprecioproducto = decimal.Parse(txtPreUnit.Text);
-                            PedidoG.nuprecioventa = decimal.Parse(txtPrecioVenta.Text);
-                            PedidoG.nuporcentajedesc1 = decimal.Parse(txtDesc1.Text);
-                            PedidoG.nuporcentajedesc2 = decimal.Parse(txtDesc2.Text);
-                            PedidoG.nuimportesubtotal = decimal.Parse(txtPrecioVenta.Text) * 1;
-                            PedidoG.nucantidad = decimal.Parse(txtCant.Text);
-                            PedidoG.p_inidserie = int.Parse(dgvListaProdSeries.Rows[i].Cells["IDSERIE"].Value.ToString());
-                            PedidoG.chserie = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
-                            ListaDetalleG.Add(PedidoG);
-                        }
+                        AgregarDetalle();
+                    }
+                    else
+                    {
+                        return;
+                    }
+
+                    break;
+                case "M":
+                    if (Validar())
+                    {
+                        falsearDatos();
+                        AgregarDetalle();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            this.Dispose();
+
+
+        }
+        private void falsearDatos()
+        {
+            int producto = 0;
+            foreach (pedidodetallecontenido obj in sesion.pedidodetallecontenido)
+            {
+                if (codigoorden == obj.orden)
+                {
+                    producto = obj.productoparaventa.p_inidproducto;
+                    break;
+                }
+            }
+            List < pedidodetallecontenido> pedcont = sesion.pedidodetallecontenido;
+            foreach (pedidodetallecontenido obj in pedcont)
+            {
+                if (producto == obj.productoparaventa.p_inidproducto)
+                {
+                    obj.estado = false;
+                }
+            }
+            sesion.pedidodetallecontenido = pedcont;
+
+        }
+        private void AgregarDetalle()
+        {
+            if (ProductoG.req_serie)
+            {
+                ListasDetallePedidoContenido = new List<pedidodetallecontenido>();
+                for (int i = 0; i < dgvListaProdSeries.RowCount; i++)
+                {
+                    if (sesion.pedidodetallecontenido != null)
+                    {
+                        ListasDetallePedidoContenido = sesion.pedidodetallecontenido;
+                    }
+                    if (bool.Parse(dgvListaProdSeries.Rows[i].Cells["REQSERIE"].Value.ToString()))
+                    {
+                        pedidodetallecontenido objpedidocontenido = new pedidodetallecontenido();
+                        pedidodetalle ObjpedidoDetalle = new pedidodetalle();
+                        serie objserie = new serie();
+                        ObjpedidoDetalle.p_inidproducto = ProductoG.p_inidproducto;
+                        ObjpedidoDetalle.nuprecioproducto = decimal.Parse(txtPreUnit.Text);
+                        ObjpedidoDetalle.nuprecioventa = decimal.Parse(txtPrecioVenta.Text);
+                        ObjpedidoDetalle.nuporcentajedesc1 = decimal.Parse(txtDesc1.Text);
+                        ObjpedidoDetalle.nuporcentajedesc2 = decimal.Parse(txtDesc2.Text);
+                        ObjpedidoDetalle.nuimportesubtotal = decimal.Parse(txtImporte.Text);
+                        ObjpedidoDetalle.nucantidad = decimal.Parse(txtCant.Text);
+                        
+                        objserie.p_inidserie = int.Parse(dgvListaProdSeries.Rows[i].Cells["IDSERIE"].Value.ToString());
+                        objserie.chcodigoserie = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
+                        objpedidocontenido.orden = ListasDetallePedidoContenido.Count + 1;
+                        objpedidocontenido.serie = objserie;
+                        objpedidocontenido.pedidodetalle = ObjpedidoDetalle;
+                        objpedidocontenido.productoparaventa = ProductoG;
+                        objpedidocontenido.estado = true;
+                        ListasDetallePedidoContenido.Add(objpedidocontenido);
                     }
                 }
-                else
-                {
-                    FlatG = ckbSerie.Checked;
-                    //EL PRODUCTO NO REQUIERE DE SERIES
-                    
-                    PedidoG.p_inidproducto = int.Parse(txtIdproducto.Text);
-                    PedidoG.chcodigoproducto = txtCodigo.Text;
-                    PedidoG.chnombrecompuesto = txtDescripcion.Text;
-                    PedidoG.nustock = int.Parse(txtStock.Text);
-                    PedidoG.nuprecioproducto = decimal.Parse(txtPreUnit.Text);
-                    PedidoG.nuprecioventa = decimal.Parse(txtPrecioVenta.Text);
-                    PedidoG.nuporcentajedesc1 = decimal.Parse(txtDesc1.Text);
-                    PedidoG.nuporcentajedesc2 = decimal.Parse(txtDesc2.Text);
-                    PedidoG.nuimportesubtotal = decimal.Parse(txtImporte.Text);
-                    PedidoG.nucantidad = decimal.Parse(txtCant.Text);
-                }
-                PasadoDetalle(ListaDetalleG, PedidoG,FlatG);
+                sesion.pedidodetallecontenido = ListasDetallePedidoContenido;
             }
             else
             {
-                return;
+                ListasDetallePedidoContenido = new List<pedidodetallecontenido>();
+                if (sesion.pedidodetallecontenido != null)
+                {
+                    ListasDetallePedidoContenido = sesion.pedidodetallecontenido;
+                }
+                //EL PRODUCTO NO REQUIERE DE SERIES
+                pedidodetallecontenido objpedidocontenido = new pedidodetallecontenido();
+                pedidodetalle ObjpedidoDetalle = new pedidodetalle();
+                ObjpedidoDetalle.p_inidproducto = ProductoG.p_inidproducto;
+                ObjpedidoDetalle.nuprecioproducto = decimal.Parse(txtPreUnit.Text);
+                ObjpedidoDetalle.nuprecioventa = decimal.Parse(txtPrecioVenta.Text);
+                ObjpedidoDetalle.nuporcentajedesc1 = decimal.Parse(txtDesc1.Text);
+                ObjpedidoDetalle.nuporcentajedesc2 = decimal.Parse(txtDesc2.Text);
+                ObjpedidoDetalle.nuimportesubtotal = decimal.Parse(txtImporte.Text);
+                ObjpedidoDetalle.nucantidad = decimal.Parse(txtCant.Text);
+                objpedidocontenido.serie = null;
+                objpedidocontenido.orden = ListasDetallePedidoContenido.Count + 1;
+                objpedidocontenido.pedidodetalle = ObjpedidoDetalle;
+                objpedidocontenido.productoparaventa = ProductoG;
+                objpedidocontenido.estado = true;
+                ListasDetallePedidoContenido.Add(objpedidocontenido);
+                sesion.pedidodetallecontenido = ListasDetallePedidoContenido;
             }
-
-            this.Dispose();
+            PasadoDetalle();
         }
-
-        
+       
         public bool Validar()
         {
             bool flatvalidar = false;
@@ -393,12 +527,12 @@ namespace Presentacion
                 cantidad = int.Parse(txtCant.Text);
 
             }
-            
+
             if (decimal.Parse(txtPreUnit.Text) > 0)
             {
                 if (cantidad > 0)
                 {
-                    
+
                     if (dgvListaProdSeries.RowCount > 0)
                     {
                         int variante = 0;
@@ -419,13 +553,14 @@ namespace Presentacion
                             MessageBox.Show("La CANTIDAD debe ser igual a los ITEMS Seleccionados", "MENSAJE DE SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             //txtCant.BackColor = Color.Red;
                             txtCant.Focus();
-                            
+
                         }
-                    }else
+                    }
+                    else
                     {
                         flatvalidar = true;
                     }
-                    
+
                 }
                 else
                 {
@@ -435,7 +570,8 @@ namespace Presentacion
                     //txtCant.BackColor = Color.Red;
                     txtCant.Focus();
                 }
-            }else
+            }
+            else
             {
                 MessageBox.Show("Ingrese un Codigo Válido", "MENSAJE DE SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 //MessageBox.Show("Ingrese un Codigo Válido", "MENSAJE DE SISTEMA");
@@ -446,13 +582,6 @@ namespace Presentacion
             return flatvalidar;
 
         }
-
-        private void btnValidar_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
         private void txtDesc1_Enter(object sender, EventArgs e)
         {
             txtDesc1.SelectAll();
@@ -472,12 +601,12 @@ namespace Presentacion
         {
             decimal precioventa = 0;
             decimal cantidad = 0;
-            if (txtPrecioVenta.Text.Length >0 && txtCant.Text.Length > 0)
+            if (txtPrecioVenta.Text.Length > 0 && txtCant.Text.Length > 0)
             {
                 precioventa = decimal.Parse(txtPrecioVenta.Text);
                 cantidad = decimal.Round(decimal.Parse(txtCant.Text));
             }
-            txtImporte.Text = (precioventa*cantidad).ToString();
+            txtImporte.Text = (precioventa * cantidad).ToString();
         }
     }
 }

@@ -32,8 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtIdproducto = new System.Windows.Forms.TextBox();
-            this.ckbSerie = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,6 +51,7 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvListaProdSeries = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.REQSERIE = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +60,6 @@
             this.CHPRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdSeries)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -88,8 +86,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtIdproducto);
-            this.groupBox1.Controls.Add(this.ckbSerie);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -113,25 +109,6 @@
             this.groupBox1.Size = new System.Drawing.Size(639, 126);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // txtIdproducto
-            // 
-            this.txtIdproducto.Location = new System.Drawing.Point(318, 69);
-            this.txtIdproducto.Name = "txtIdproducto";
-            this.txtIdproducto.Size = new System.Drawing.Size(100, 20);
-            this.txtIdproducto.TabIndex = 48;
-            this.txtIdproducto.Visible = false;
-            // 
-            // ckbSerie
-            // 
-            this.ckbSerie.AutoSize = true;
-            this.ckbSerie.ForeColor = System.Drawing.Color.White;
-            this.ckbSerie.Location = new System.Drawing.Point(357, 44);
-            this.ckbSerie.Name = "ckbSerie";
-            this.ckbSerie.Size = new System.Drawing.Size(15, 14);
-            this.ckbSerie.TabIndex = 47;
-            this.ckbSerie.UseVisualStyleBackColor = true;
-            this.ckbSerie.Visible = false;
             // 
             // label8
             // 
@@ -334,7 +311,6 @@
             // dgvListaProdSeries
             // 
             this.dgvListaProdSeries.AllowUserToAddRows = false;
-            this.dgvListaProdSeries.AllowUserToDeleteRows = false;
             this.dgvListaProdSeries.BackgroundColor = System.Drawing.Color.White;
             this.dgvListaProdSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaProdSeries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -348,8 +324,19 @@
             this.IDSERIE});
             this.dgvListaProdSeries.Location = new System.Drawing.Point(12, 144);
             this.dgvListaProdSeries.Name = "dgvListaProdSeries";
+            this.dgvListaProdSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaProdSeries.Size = new System.Drawing.Size(639, 166);
             this.dgvListaProdSeries.TabIndex = 34;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnGrabar);
+            this.groupBox2.Controls.Add(this.btnSalir);
+            this.groupBox2.Location = new System.Drawing.Point(248, 316);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(166, 41);
+            this.groupBox2.TabIndex = 36;
+            this.groupBox2.TabStop = false;
             // 
             // REQSERIE
             // 
@@ -370,6 +357,7 @@
             this.CHCODIGO.DataPropertyName = "chcodigoproducto";
             this.CHCODIGO.HeaderText = "CODIGO";
             this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
             this.CHCODIGO.Width = 60;
             // 
             // CHDESCRIPCION
@@ -377,6 +365,7 @@
             this.CHDESCRIPCION.DataPropertyName = "chnombrecompuesto";
             this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
             this.CHDESCRIPCION.Name = "CHDESCRIPCION";
+            this.CHDESCRIPCION.ReadOnly = true;
             this.CHDESCRIPCION.Width = 350;
             // 
             // CHMEDIDA
@@ -384,6 +373,7 @@
             this.CHMEDIDA.DataPropertyName = "chunidadmedidaproducto";
             this.CHMEDIDA.HeaderText = "MEDIDA";
             this.CHMEDIDA.Name = "CHMEDIDA";
+            this.CHMEDIDA.ReadOnly = true;
             this.CHMEDIDA.Width = 60;
             // 
             // CHPRECIO
@@ -391,6 +381,7 @@
             this.CHPRECIO.DataPropertyName = "nuprecio";
             this.CHPRECIO.HeaderText = "PRECIO";
             this.CHPRECIO.Name = "CHPRECIO";
+            this.CHPRECIO.ReadOnly = true;
             this.CHPRECIO.Visible = false;
             // 
             // CHSERIE
@@ -398,6 +389,7 @@
             this.CHSERIE.DataPropertyName = "chserie";
             this.CHSERIE.HeaderText = "SERIE";
             this.CHSERIE.Name = "CHSERIE";
+            this.CHSERIE.ReadOnly = true;
             this.CHSERIE.Width = 90;
             // 
             // IDSERIE
@@ -405,17 +397,7 @@
             this.IDSERIE.DataPropertyName = "p_inidserie";
             this.IDSERIE.HeaderText = "IDSERIE";
             this.IDSERIE.Name = "IDSERIE";
-            this.IDSERIE.Visible = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnGrabar);
-            this.groupBox2.Controls.Add(this.btnSalir);
-            this.groupBox2.Location = new System.Drawing.Point(248, 316);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(166, 41);
-            this.groupBox2.TabIndex = 36;
-            this.groupBox2.TabStop = false;
+            this.IDSERIE.ReadOnly = true;
             // 
             // frmProcPedidosDetalle
             // 
@@ -466,6 +448,7 @@
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView dgvListaProdSeries;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn REQSERIE;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODUCTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
@@ -474,8 +457,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHPRECIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSERIE;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDSERIE;
-        private System.Windows.Forms.CheckBox ckbSerie;
-        private System.Windows.Forms.TextBox txtIdproducto;
-        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

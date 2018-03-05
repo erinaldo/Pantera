@@ -251,14 +251,14 @@ namespace Datos
 
         }
         
-            public static List<productoparaventa> ProductosVentaParametro(string parametro)
+            public static productoparaventa ProductosVentaParametro(string parametro)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_producto_buscar_venta_cabecera", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
             {
-                List<productoparaventa> listado = new List<productoparaventa>();
+                productoparaventa registro = new productoparaventa();
                 while (datareader.Read())
                 {
-                    productoparaventa registro = new productoparaventa();
+                   
                     registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
                     registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]).Trim();
                     registro.chnombrecompuesto = Convert.ToString(datareader["chnombrecompuesto"]).Trim();
@@ -267,9 +267,8 @@ namespace Datos
                     registro.p_inidsaldoalmancen = Convert.ToInt32(datareader["p_inidsaldoalmancen"]);
                     registro.nustockactual = Convert.ToInt32(datareader["nustockactual"]);
                     registro.req_serie = Convert.ToBoolean(datareader["req_serie"]);
-                    listado.Add(registro);
                 }
-                return listado;
+                return registro;
             }
         }
         public static List<productoparaventa> ListaProductosVentaParametro(int parametro)

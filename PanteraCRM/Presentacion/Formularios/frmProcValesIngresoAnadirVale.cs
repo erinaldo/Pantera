@@ -310,106 +310,94 @@ namespace Presentacion
         }
         private void GrabarMovimiento()
         {
-            
-                int codigoSerie = 0;
-                int codigoCabecera = 0;
-                int codigoDetalle = 0;
-                //validar Campos
-                
-                    bool flat = false;
-                    movimientoproductoc registrosCabecera = new movimientoproductoc();
-                    //registrosCabecera.p_inidvalecebecera = 0;
-                    registrosCabecera.p_inidalamacen = sesion.SessionGlobal.p_inidalmacen;
-                    registrosCabecera.p_inidclase = 1;
-                    registrosCabecera.p_inidcorrevale = txtNroVale.Text;
-                    registrosCabecera.chvalefecha = mskfechareg.Text;
-                    registrosCabecera.p_inidtipomoneda = (int)cboMoneda.SelectedValue;
-                    registrosCabecera.p_inidproveedor = int.Parse(txtidprov.Text);
-                    registrosCabecera.chguiaremision = txtGuiaRem.Text;
-                    registrosCabecera.chboletafactura = txtFacBol.Text;
-                    registrosCabecera.p_inidtipomoviemiento = (int)cboTipoMov.SelectedValue;
-                    registrosCabecera.chobservacion = txtobs.Text;
-                    registrosCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                    registrosCabecera.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
-                    registrosCabecera.estado = true;
-                    registrosCabecera.p_inidmovimiento = 14;
-                    //ingreso de cabecera
-                    codigoCabecera = movimientosNE.MovimientoProductoCabeceraIngresar(registrosCabecera);
-                    int gorrelativo = valeNE.GenerarCorrelativoMovimientoIngreso(sesion.SessionGlobal.p_inidalmacen);
+            int codigoSerie = 0;
+            int codigoCabecera = 0;
+            int codigoDetalle = 0;
+            //validar Campos
+            movimientoproductoc registrosCabecera = new movimientoproductoc();
+            //registrosCabecera.p_inidvalecebecera = 0;
+            registrosCabecera.p_inidalamacen = sesion.SessionGlobal.p_inidalmacen;
+            registrosCabecera.p_inidclase = 1;
+            registrosCabecera.p_inidcorrevale = txtNroVale.Text;
+            registrosCabecera.chvalefecha = mskfechareg.Text;
+            registrosCabecera.p_inidtipomoneda = (int)cboMoneda.SelectedValue;
+            registrosCabecera.p_inidproveedor = int.Parse(txtidprov.Text);
+            registrosCabecera.chguiaremision = txtGuiaRem.Text;
+            registrosCabecera.chboletafactura = txtFacBol.Text;
+            registrosCabecera.p_inidtipomoviemiento = (int)cboTipoMov.SelectedValue;
+            registrosCabecera.chobservacion = txtobs.Text;
+            registrosCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+            registrosCabecera.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
+            registrosCabecera.estado = true;
+            registrosCabecera.p_inidmovimiento = 14;
+            //ingreso de cabecera
+            codigoCabecera = movimientosNE.MovimientoProductoCabeceraIngresar(registrosCabecera);
+            int gorrelativo = valeNE.GenerarCorrelativoMovimientoIngreso(sesion.SessionGlobal.p_inidalmacen);
 
-                    if (codigoCabecera <= 0 && gorrelativo <= 0)
-                    {
+            if (codigoCabecera <= 0 && gorrelativo <= 0)
+            {
 
-                        MessageBox.Show("error Cabecera", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                        return;
-                    }
-                    else
+                MessageBox.Show("error Cabecera", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                List<movimientoproductoaccion> ListaMovimeintoDetalle = sesion.movprodaccion;
+                foreach (movimientoproductoaccion RegistrosMovimeintoDetalle in ListaMovimeintoDetalle)
+                {
+
+                    if (RegistrosMovimeintoDetalle.valedet.estado == true)
                     {
-                        List<movimientoproductoaccion> ListaMovimeintoDetalle = sesion.movprodaccion;
-                        foreach (movimientoproductoaccion RegistrosMovimeintoDetalle in ListaMovimeintoDetalle)
+                        movimientoproductod registrosDetalle = new movimientoproductod();
+                        //registrosDetalle.p_inidvaledetalle = 0;
+                        registrosDetalle.p_inidvalecebecera = codigoCabecera;
+                        registrosDetalle.p_inidproducto = RegistrosMovimeintoDetalle.valedet.p_inidproducto;
+                        registrosDetalle.nucantidad = RegistrosMovimeintoDetalle.valedet.nucantidad;
+                        registrosDetalle.nucosto = RegistrosMovimeintoDetalle.valedet.nucosto;
+                        registrosDetalle.nutotal = RegistrosMovimeintoDetalle.valedet.nutotal;
+                        codigoDetalle = movimientosNE.MovimientoProductoDetalleIngresar(registrosDetalle);
+                        int entero = almacenNE.SaldoAlmacenAdiconar(sesion.SessionGlobal.p_inidalmacen, RegistrosMovimeintoDetalle.valedet.p_inidproducto, RegistrosMovimeintoDetalle.valedet.nucantidad);
+                        if (codigoDetalle <= 0 && entero <= 0)
                         {
 
-                            if (RegistrosMovimeintoDetalle.valedet.estado == true)
+                            MessageBox.Show("Error Detalle", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                            return;
+                        }
+                        else
+                        {
+                            List<serie> ListaSeries = RegistrosMovimeintoDetalle.listaserie;
+                            if (ListaSeries != null)
                             {
-                                movimientoproductod registrosDetalle = new movimientoproductod();
-                                //registrosDetalle.p_inidvaledetalle = 0;
-                                registrosDetalle.p_inidvalecebecera = codigoCabecera;
-                                registrosDetalle.p_inidproducto = RegistrosMovimeintoDetalle.valedet.p_inidproducto;
-                                registrosDetalle.nucantidad = RegistrosMovimeintoDetalle.valedet.nucantidad;
-                                registrosDetalle.nucosto = RegistrosMovimeintoDetalle.valedet.nucosto;
-                                registrosDetalle.nutotal = RegistrosMovimeintoDetalle.valedet.nutotal;
-                                codigoDetalle = movimientosNE.MovimientoProductoDetalleIngresar(registrosDetalle);
-                                int entero = almacenNE.SaldoAlmacenAdiconar(sesion.SessionGlobal.p_inidalmacen, RegistrosMovimeintoDetalle.valedet.p_inidproducto, RegistrosMovimeintoDetalle.valedet.nucantidad);
-                                if (codigoDetalle <= 0 && entero <= 0)
+                                foreach (serie registrosSerie in ListaSeries)
                                 {
-
-                                    MessageBox.Show("Error Detalle", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                                    return;
-                                }
-                                else
-                                {
-                                    List<serie> ListaSeries = RegistrosMovimeintoDetalle.listaserie;
-                                    if (ListaSeries != null)
+                                    serie Registros = new serie();
+                                    //Registros.p_inidserie = 0;
+                                    Registros.chcodigoserie = registrosSerie.chcodigoserie;
+                                    Registros.estado = true;
+                                    Registros.p_inidproducto = RegistrosMovimeintoDetalle.valedet.p_inidproducto;
+                                    Registros.chadicional = "";
+                                    Registros.chfecha = mskfechareg.Text;
+                                    Registros.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                                    Registros.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
+                                    Registros.p_inidmovimientod = codigoDetalle;
+                                    Registros.p_inidpedidod = 0;
+                                    codigoSerie = serieNE.seriesIngresar(Registros);
+                                    if (codigoSerie <= 0)
                                     {
-                                        foreach (serie registrosSerie in ListaSeries)
-                                        {
-                                            serie Registros = new serie();
-                                            //Registros.p_inidserie = 0;
-                                            Registros.chcodigoserie = registrosSerie.chcodigoserie;
-                                            Registros.estado = true;
-                                            Registros.p_inidproducto = RegistrosMovimeintoDetalle.valedet.p_inidproducto;
-                                            Registros.chadicional = "";
-                                            Registros.chfecha = mskfechareg.Text;
-                                            Registros.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                                            Registros.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
-                                            Registros.p_inidmovimientod = codigoDetalle;
-                                            Registros.p_inidpedidod = 0;
-                                            codigoSerie = serieNE.seriesIngresar(Registros);
-                                            if (codigoSerie <= 0)
-                                            {
-                                                MessageBox.Show("Error Serie", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                                                return;
-                                            }
-                                            else
-                                            {
-                                                flat = true;
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        flat = true;
+                                        MessageBox.Show("Error Serie", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                                        return;
                                     }
                                 }
                             }
                         }
-                      
-                            pasado(codigoCabecera);
-                        
                     }
-               
-                
-           
+                }
+                pasado(codigoCabecera);
+
+            }
+
+
+
             if (sesion.movprodaccion != null)
             {
                 sesion.movprodaccion.Clear();
@@ -422,7 +410,6 @@ namespace Presentacion
             int codigoCabecera = 0;
             int codigoDetalle = 0;
             //validar Campos
-            bool flat = false;
             movimientoproductoc registrosCabecera = new movimientoproductoc();
             registrosCabecera.p_inidvalecebecera = RegistrosMovimientoC.p_inidvalecebecera;
             registrosCabecera.p_inidalamacen = sesion.SessionGlobal.p_inidalmacen;
