@@ -124,7 +124,7 @@ namespace Presentacion
                     importe += decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUIMPORTE"].Value.ToString());
                     preciprod = decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUPRECIOVENTA"].Value.ToString());
                     cantidad = int.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUCANTIDAD"].Value.ToString());
-                    preciototal += decimal.Round(cantidad * preciprod, 2);
+                    preciototal += (decimal.Round(cantidad * preciprod, 2) / decimal.Parse("1.18"));
                 }              
 
                 txtTotVenta.Text = importe.ToString();
@@ -133,7 +133,7 @@ namespace Presentacion
                 decimal igv = importe - valorventa;
                 txtIgv.Text = (igv).ToString();
 
-                decimal tdescuentototal = decimal.Round(preciototal - valorventa,2);
+                decimal tdescuentototal = decimal.Round(preciototal - valorventa, 2);
                 txtDesctot.Text =tdescuentototal.ToString();
                 txtSubtotal.Text = decimal.Round(preciototal, 2).ToString();
             }
