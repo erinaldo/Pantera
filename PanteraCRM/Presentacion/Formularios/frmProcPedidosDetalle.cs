@@ -475,7 +475,7 @@ namespace Presentacion
                         ObjpedidoDetalle.nuprecioventa = decimal.Parse(txtPrecioVenta.Text);
                         ObjpedidoDetalle.nuporcentajedesc1 = decimal.Parse(txtDesc1.Text);
                         ObjpedidoDetalle.nuporcentajedesc2 = decimal.Parse(txtDesc2.Text);
-                        ObjpedidoDetalle.nuimportesubtotal = decimal.Parse(txtImporte.Text);
+                        ObjpedidoDetalle.nuimportesubtotal = decimal.Parse(txtImporte.Text)/ decimal.Parse(txtCant.Text);
                         ObjpedidoDetalle.nucantidad = decimal.Parse(txtCant.Text);
                         
                         objserie.p_inidserie = int.Parse(dgvListaProdSeries.Rows[i].Cells["IDSERIE"].Value.ToString());
