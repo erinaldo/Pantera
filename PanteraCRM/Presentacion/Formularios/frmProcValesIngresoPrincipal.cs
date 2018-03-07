@@ -170,10 +170,71 @@ namespace Presentacion
                         frm.BringToFront();
                         return;
                     }
-                    //frmProcIngresoValesAnadir f = new frmProcIngresoValesAnadir(vBoton);
-                    //f.pasado += new frmProcIngresoValesAnadir.pasar(ejecutar);
-                    //f.MdiParent = this.MdiParent;
-                    //f.Show();
+
+                    Reportes.FrmReportesM Re = new Reportes.FrmReportesM();
+                    CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt1;
+
+                    //declarar listas
+                    List<valecabecera> listCab = valeNE.valesListarparmetroCodigo(14, (int)dgvVales.CurrentRow.Cells["IDVALEC"].Value);
+
+                    //declarar tablas y agregar al DataSet
+                    DataSet ds = new DataSet();
+                    //Empresa
+                    empresas emp = empresaNE.EmpresaBusquedaCodigo(1);
+                    Dataset.DtsReporte.TEmpresaDataTable dtE = new Dataset.DtsReporte.TEmpresaDataTable();
+                    ds.Tables.Add(dtE);
+                    DataRow filaE = dtE.NewRow();
+                    filaE[0] = emp.chrazonsocial;
+                    filaE[1] = emp.chruc;
+                    dtE.Rows.Add(filaE);
+                    Dataset.DtsReporte.TDetalleDataTable dt = new Dataset.DtsReporte.TDetalleDataTable();
+                    Dataset.DtsReporte.TCabeceraDataTable dtc = new Dataset.DtsReporte.TCabeceraDataTable();
+                    ds.Tables.Add(dt);
+                    ds.Tables.Add(dtc);
+
+                    DataRow filaC;
+                    DataRow filaD;
+                    foreach (valecabecera reg in listCab)
+                    {
+                        filaC = dtc.NewRow();
+                        filaC[0] = reg.p_inidvalecebecera;
+                        filaC[1] = reg.p_inidalamacen;
+                        filaC[2] = reg.p_inidclase;
+                        filaC[3] = reg.p_inidcorrevale;
+                        filaC[4] = reg.chvalefecha;
+                        filaC[5] = reg.p_inidtipomoneda;
+                        filaC[6] = reg.p_inidproveedor;
+                        filaC[7] = reg.chguiaremision;
+                        filaC[8] = reg.chboletafactura;
+                        filaC[9] = reg.p_inidtipomoviemiento;
+                        filaC[10] = reg.chobservacion;
+                        filaC[11] = reg.p_inidusuarioinsert;
+                        filaC[12] = reg.p_inidusuariodelete;
+                        filaC[13] = reg.estado;
+                        filaC[14] = reg.p_inidtipomoviemiento;
+                        dtc.Rows.Add(filaC);
+                        List<valedetalle> listaDeta = movimientosNE.MovimientoProductoDetalleBusqueda(reg.p_inidvalecebecera);
+
+                        foreach (valedetalle reg2 in listaDeta)
+                        {
+                            filaD = dt.NewRow();
+                            filaD[0] = reg2.p_inidvaledetalle;
+                            filaD[1] = reg2.p_inidvalecebecera;
+                            filaD[2] = reg2.p_inidproducto;
+                            filaD[3] = reg2.nucantidad;
+                            filaD[4] = reg2.nucosto;
+                            filaD[5] = reg2.nutotal;
+                            filaD[6] = reg2.estado;
+                            dt.Rows.Add(filaD);
+                        }
+                    }
+
+                    Rpt1 = new Reportes.CrystalReportVales();
+                    Rpt1.SetDataSource(ds);
+                    Re.Rpt = Rpt1;
+                    Re.ShowDialog();
+
+
                 }
             }
             catch (Exception ex)
@@ -181,7 +242,7 @@ namespace Presentacion
                 MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
             }
 
-            
+
         }
 
         private void btnAnular_Click(object sender, EventArgs e)

@@ -93,7 +93,38 @@ namespace Presentacion
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            Reportes.FrmReportesM Re = new Reportes.FrmReportesM();
+            CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt1;
 
+            List<proveedor> LisProv = proveedorNE.proveedorListar();
+            DataSet ds = new DataSet();
+            //Empresa
+            empresas emp = empresaNE.EmpresaBusquedaCodigo(1);
+            Dataset.DtsReporte.TEmpresaDataTable dtE = new Dataset.DtsReporte.TEmpresaDataTable();
+            ds.Tables.Add(dtE);
+            DataRow filaE = dtE.NewRow();
+            filaE[0] = emp.chrazonsocial;
+            filaE[1] = emp.chruc;
+            dtE.Rows.Add(filaE);
+            Dataset.DtsReporte.TProovedoresDataTable dtP = new Dataset.DtsReporte.TProovedoresDataTable();
+            ds.Tables.Add(dtP);
+            DataRow fila;
+
+            foreach (proveedor p in LisProv)
+            {
+                fila = dtP.NewRow();
+                fila[0] = p.p_inidcodigoclie;
+                fila[1] = p.razon;
+                fila[2] = p.tipodocu;
+                fila[3] = p.nrodocumento;
+                fila[4] = p.telefono;
+                dtP.Rows.Add(fila);
+            }
+
+            Rpt1 = new Reportes.CrystalReportProveedor();
+            Rpt1.SetDataSource(ds);
+            Re.Rpt = Rpt1;
+            Re.ShowDialog();
         }
 
         private void btnVer_Click(object sender, EventArgs e)
