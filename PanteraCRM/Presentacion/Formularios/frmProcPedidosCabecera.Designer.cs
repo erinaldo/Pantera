@@ -42,6 +42,8 @@
             this.cboTraslado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.cboigv = new System.Windows.Forms.ComboBox();
             this.txtTipoCambio = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtNombreAlmacen = new System.Windows.Forms.TextBox();
@@ -94,15 +96,6 @@
             this.txtDesctot = new System.Windows.Forms.TextBox();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.dgvListaPedidoDetalle = new System.Windows.Forms.DataGridView();
-            this.cboTarjeta = new System.Windows.Forms.ComboBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtLicencia = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.txtVencLicencia = new System.Windows.Forms.MaskedTextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.txtFechaVenciTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.IDPEDIDODETALLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDPEDIDOCABECERA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,8 +112,15 @@
             this.NUIMPORTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label31 = new System.Windows.Forms.Label();
-            this.cboigv = new System.Windows.Forms.ComboBox();
+            this.cboTarjeta = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtLicencia = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtVencLicencia = new System.Windows.Forms.MaskedTextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtFechaVenciTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -240,6 +240,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Pedido";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(435, 74);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(45, 13);
+            this.label31.TabIndex = 27;
+            this.label31.Text = "I.G.V. %";
+            // 
+            // cboigv
+            // 
+            this.cboigv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboigv.FormattingEnabled = true;
+            this.cboigv.Location = new System.Drawing.Point(492, 67);
+            this.cboigv.Name = "cboigv";
+            this.cboigv.Size = new System.Drawing.Size(59, 21);
+            this.cboigv.TabIndex = 26;
             // 
             // txtTipoCambio
             // 
@@ -834,117 +852,6 @@
             this.dgvListaPedidoDetalle.Size = new System.Drawing.Size(759, 148);
             this.dgvListaPedidoDetalle.TabIndex = 0;
             // 
-            // cboTarjeta
-            // 
-            this.cboTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTarjeta.FormattingEnabled = true;
-            this.cboTarjeta.Location = new System.Drawing.Point(493, 49);
-            this.cboTarjeta.Name = "cboTarjeta";
-            this.cboTarjeta.Size = new System.Drawing.Size(119, 21);
-            this.cboTarjeta.TabIndex = 26;
-            this.cboTarjeta.SelectedIndexChanged += new System.EventHandler(this.cboTarjeta_SelectedIndexChanged);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(381, 52);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(106, 13);
-            this.label27.TabIndex = 27;
-            this.label27.Text = "N° Tarjeta Propiedad";
-            // 
-            // txtLicencia
-            // 
-            this.txtLicencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtLicencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLicencia.ForeColor = System.Drawing.Color.Blue;
-            this.txtLicencia.Location = new System.Drawing.Point(74, 49);
-            this.txtLicencia.Name = "txtLicencia";
-            this.txtLicencia.ReadOnly = true;
-            this.txtLicencia.Size = new System.Drawing.Size(96, 20);
-            this.txtLicencia.TabIndex = 28;
-            this.txtLicencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(7, 52);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(62, 13);
-            this.label28.TabIndex = 29;
-            this.label28.Text = "N° Licencia";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.label30);
-            this.groupBox4.Controls.Add(this.txtVencLicencia);
-            this.groupBox4.Controls.Add(this.label29);
-            this.groupBox4.Controls.Add(this.txtFechaVenciTarjeta);
-            this.groupBox4.Controls.Add(this.txtLicencia);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.label28);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.cboTarjeta);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.txtRucCliente);
-            this.groupBox4.Controls.Add(this.label27);
-            this.groupBox4.Controls.Add(this.txtNombreCliente);
-            this.groupBox4.Controls.Add(this.txtCodigoCliente);
-            this.groupBox4.Location = new System.Drawing.Point(13, 111);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(783, 81);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Datos de Cliente";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(177, 52);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(78, 13);
-            this.label30.TabIndex = 33;
-            this.label30.Text = "Venc. Licencia";
-            // 
-            // txtVencLicencia
-            // 
-            this.txtVencLicencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtVencLicencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVencLicencia.ForeColor = System.Drawing.Color.Blue;
-            this.txtVencLicencia.Location = new System.Drawing.Point(261, 49);
-            this.txtVencLicencia.Mask = "00/00/0000";
-            this.txtVencLicencia.Name = "txtVencLicencia";
-            this.txtVencLicencia.ReadOnly = true;
-            this.txtVencLicencia.Size = new System.Drawing.Size(82, 20);
-            this.txtVencLicencia.TabIndex = 32;
-            this.txtVencLicencia.TabStop = false;
-            this.txtVencLicencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtVencLicencia.ValidatingType = typeof(System.DateTime);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(618, 52);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(71, 13);
-            this.label29.TabIndex = 30;
-            this.label29.Text = "Venc. Tarjeta";
-            // 
-            // txtFechaVenciTarjeta
-            // 
-            this.txtFechaVenciTarjeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtFechaVenciTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaVenciTarjeta.ForeColor = System.Drawing.Color.Blue;
-            this.txtFechaVenciTarjeta.Location = new System.Drawing.Point(694, 49);
-            this.txtFechaVenciTarjeta.Mask = "00/00/0000";
-            this.txtFechaVenciTarjeta.Name = "txtFechaVenciTarjeta";
-            this.txtFechaVenciTarjeta.ReadOnly = true;
-            this.txtFechaVenciTarjeta.Size = new System.Drawing.Size(82, 20);
-            this.txtFechaVenciTarjeta.TabIndex = 31;
-            this.txtFechaVenciTarjeta.TabStop = false;
-            this.txtFechaVenciTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtFechaVenciTarjeta.ValidatingType = typeof(System.DateTime);
-            // 
             // IDPEDIDODETALLE
             // 
             this.IDPEDIDODETALLE.HeaderText = "IDPEDIDODETALLE";
@@ -1073,23 +980,116 @@
             this.IDSERIE.Name = "IDSERIE";
             this.IDSERIE.ReadOnly = true;
             // 
-            // label31
+            // cboTarjeta
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(435, 74);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(34, 13);
-            this.label31.TabIndex = 27;
-            this.label31.Text = "I.G.V.";
+            this.cboTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTarjeta.FormattingEnabled = true;
+            this.cboTarjeta.Location = new System.Drawing.Point(493, 49);
+            this.cboTarjeta.Name = "cboTarjeta";
+            this.cboTarjeta.Size = new System.Drawing.Size(119, 21);
+            this.cboTarjeta.TabIndex = 26;
+            this.cboTarjeta.SelectedIndexChanged += new System.EventHandler(this.cboTarjeta_SelectedIndexChanged);
             // 
-            // cboigv
+            // label27
             // 
-            this.cboigv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboigv.FormattingEnabled = true;
-            this.cboigv.Location = new System.Drawing.Point(492, 67);
-            this.cboigv.Name = "cboigv";
-            this.cboigv.Size = new System.Drawing.Size(79, 21);
-            this.cboigv.TabIndex = 26;
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(381, 52);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(106, 13);
+            this.label27.TabIndex = 27;
+            this.label27.Text = "N° Tarjeta Propiedad";
+            // 
+            // txtLicencia
+            // 
+            this.txtLicencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtLicencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLicencia.ForeColor = System.Drawing.Color.Blue;
+            this.txtLicencia.Location = new System.Drawing.Point(74, 49);
+            this.txtLicencia.Name = "txtLicencia";
+            this.txtLicencia.ReadOnly = true;
+            this.txtLicencia.Size = new System.Drawing.Size(96, 20);
+            this.txtLicencia.TabIndex = 28;
+            this.txtLicencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(7, 52);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(62, 13);
+            this.label28.TabIndex = 29;
+            this.label28.Text = "N° Licencia";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label30);
+            this.groupBox4.Controls.Add(this.txtVencLicencia);
+            this.groupBox4.Controls.Add(this.label29);
+            this.groupBox4.Controls.Add(this.txtFechaVenciTarjeta);
+            this.groupBox4.Controls.Add(this.txtLicencia);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.label28);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.cboTarjeta);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.txtRucCliente);
+            this.groupBox4.Controls.Add(this.label27);
+            this.groupBox4.Controls.Add(this.txtNombreCliente);
+            this.groupBox4.Controls.Add(this.txtCodigoCliente);
+            this.groupBox4.Location = new System.Drawing.Point(13, 111);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(783, 81);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Datos de Cliente";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(177, 52);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(78, 13);
+            this.label30.TabIndex = 33;
+            this.label30.Text = "Venc. Licencia";
+            // 
+            // txtVencLicencia
+            // 
+            this.txtVencLicencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtVencLicencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVencLicencia.ForeColor = System.Drawing.Color.Blue;
+            this.txtVencLicencia.Location = new System.Drawing.Point(261, 49);
+            this.txtVencLicencia.Mask = "00/00/0000";
+            this.txtVencLicencia.Name = "txtVencLicencia";
+            this.txtVencLicencia.ReadOnly = true;
+            this.txtVencLicencia.Size = new System.Drawing.Size(82, 20);
+            this.txtVencLicencia.TabIndex = 32;
+            this.txtVencLicencia.TabStop = false;
+            this.txtVencLicencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtVencLicencia.ValidatingType = typeof(System.DateTime);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(618, 52);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(71, 13);
+            this.label29.TabIndex = 30;
+            this.label29.Text = "Venc. Tarjeta";
+            // 
+            // txtFechaVenciTarjeta
+            // 
+            this.txtFechaVenciTarjeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtFechaVenciTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaVenciTarjeta.ForeColor = System.Drawing.Color.Blue;
+            this.txtFechaVenciTarjeta.Location = new System.Drawing.Point(694, 49);
+            this.txtFechaVenciTarjeta.Mask = "00/00/0000";
+            this.txtFechaVenciTarjeta.Name = "txtFechaVenciTarjeta";
+            this.txtFechaVenciTarjeta.ReadOnly = true;
+            this.txtFechaVenciTarjeta.Size = new System.Drawing.Size(82, 20);
+            this.txtFechaVenciTarjeta.TabIndex = 31;
+            this.txtFechaVenciTarjeta.TabStop = false;
+            this.txtFechaVenciTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFechaVenciTarjeta.ValidatingType = typeof(System.DateTime);
             // 
             // frmProcPedidosCabecera
             // 

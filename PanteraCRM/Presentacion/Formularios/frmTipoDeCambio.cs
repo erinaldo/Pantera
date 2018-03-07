@@ -21,6 +21,8 @@ namespace Presentacion
        
         private void frmTipoDeCambio_Load(object sender, EventArgs e)
         {
+            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
             txtFecha.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
             cboMoneda.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(17);
             cboMoneda.ValueMember = "idmaestrodetalle";
