@@ -114,7 +114,38 @@ namespace Presentacion
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            Reportes.FrmReportesM Re = new Reportes.FrmReportesM();
+            CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt1;
 
+            List<productobuscado> LisPro = productoNE.ListaStockminimoLista();
+            DataSet ds = new DataSet();
+            //Empresa
+            empresas emp = empresaNE.EmpresaBusquedaCodigo(1);
+            Dataset.DtsReporte.TEmpresaDataTable dtE = new Dataset.DtsReporte.TEmpresaDataTable();
+            ds.Tables.Add(dtE);
+            DataRow filaE = dtE.NewRow();
+            filaE[0] = emp.chrazonsocial;
+            filaE[1] = emp.chruc;
+            dtE.Rows.Add(filaE);
+            Dataset.DtsReporte.TProductosDataTable dtP = new Dataset.DtsReporte.TProductosDataTable();
+            ds.Tables.Add(dtP);
+            DataRow fila;
+
+            foreach (productobuscado p in LisPro)
+            {
+                fila = dtP.NewRow();
+                fila[0] = p.p_inidproducto;
+                fila[1] = p.chcodigoproducto;
+                fila[5] = p.chunidadmedidaproducto;
+                fila[11] = p.chnombrecompuesto;
+                fila[13] = p.nuprecio;
+                dtP.Rows.Add(fila);
+            }
+
+            Rpt1 = new Reportes.CrystalReportProductoMinimo();
+            Rpt1.SetDataSource(ds);
+            Re.Rpt = Rpt1;
+            Re.ShowDialog();
         }
     }
 }

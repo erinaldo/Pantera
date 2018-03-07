@@ -17,7 +17,12 @@ namespace Negocios
         {
             return valesDL.valesListarparmetro(tipo,parametro);
         }
-        
+
+        public static List<valecabecera> valesListarparmetroCodigo(int tipo, int parametro)
+        {
+            return valesDL.valesListarparmetroCodigo(tipo, parametro);
+        }
+
         public static int CorrelativoMovimientoIngreso(int parametro)
         {
             return valesDL.CorrelativoMovimientoIngreso(parametro);
