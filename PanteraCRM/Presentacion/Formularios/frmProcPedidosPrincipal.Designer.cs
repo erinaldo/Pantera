@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcPedidosPrincipal));
             this.btnAnadir = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -43,7 +47,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.IDPEDIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCORRELATIVO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -59,9 +70,11 @@
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
-            // dataGridView1
+            // dgvPedidos
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPedidos.AllowUserToAddRows = false;
+            this.dgvPedidos.AllowUserToDeleteRows = false;
+            this.dgvPedidos.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -69,28 +82,37 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(647, 339);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDPEDIDO,
+            this.CHCORRELATIVO,
+            this.CHFECHA,
+            this.CHCLIENTE,
+            this.CHDOC,
+            this.CHTOTAL,
+            this.CHESTADO});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPedidos.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvPedidos.Location = new System.Drawing.Point(12, 50);
+            this.dgvPedidos.Name = "dgvPedidos";
+            this.dgvPedidos.ReadOnly = true;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvPedidos.Size = new System.Drawing.Size(771, 452);
+            this.dgvPedidos.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -100,7 +122,7 @@
             this.groupBox1.Controls.Add(this.btnVer);
             this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.btnAnadir);
-            this.groupBox1.Location = new System.Drawing.Point(76, 395);
+            this.groupBox1.Location = new System.Drawing.Point(138, 508);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(518, 43);
             this.groupBox1.TabIndex = 2;
@@ -164,7 +186,7 @@
             this.groupBox2.Controls.Add(this.txtParametro);
             this.groupBox2.Location = new System.Drawing.Point(12, 1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(647, 43);
+            this.groupBox2.Size = new System.Drawing.Size(771, 43);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             // 
@@ -182,8 +204,66 @@
             this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtParametro.Location = new System.Drawing.Point(67, 15);
             this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(574, 20);
+            this.txtParametro.Size = new System.Drawing.Size(698, 20);
             this.txtParametro.TabIndex = 0;
+            // 
+            // IDPEDIDO
+            // 
+            this.IDPEDIDO.HeaderText = "IDPEDIDO";
+            this.IDPEDIDO.Name = "IDPEDIDO";
+            this.IDPEDIDO.ReadOnly = true;
+            this.IDPEDIDO.Visible = false;
+            // 
+            // CHCORRELATIVO
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CHCORRELATIVO.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CHCORRELATIVO.HeaderText = "N° PEDIDO";
+            this.CHCORRELATIVO.Name = "CHCORRELATIVO";
+            this.CHCORRELATIVO.ReadOnly = true;
+            // 
+            // CHFECHA
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CHFECHA.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CHFECHA.HeaderText = "FECHA";
+            this.CHFECHA.Name = "CHFECHA";
+            this.CHFECHA.ReadOnly = true;
+            this.CHFECHA.Width = 80;
+            // 
+            // CHCLIENTE
+            // 
+            this.CHCLIENTE.HeaderText = "CLIENTE";
+            this.CHCLIENTE.Name = "CHCLIENTE";
+            this.CHCLIENTE.ReadOnly = true;
+            this.CHCLIENTE.Width = 300;
+            // 
+            // CHDOC
+            // 
+            this.CHDOC.HeaderText = "DOC.";
+            this.CHDOC.Name = "CHDOC";
+            this.CHDOC.ReadOnly = true;
+            this.CHDOC.Width = 60;
+            // 
+            // CHTOTAL
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "00.00";
+            this.CHTOTAL.DefaultCellStyle = dataGridViewCellStyle4;
+            this.CHTOTAL.HeaderText = "TOTAL";
+            this.CHTOTAL.Name = "CHTOTAL";
+            this.CHTOTAL.ReadOnly = true;
+            this.CHTOTAL.Width = 80;
+            // 
+            // CHESTADO
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CHESTADO.DefaultCellStyle = dataGridViewCellStyle5;
+            this.CHESTADO.HeaderText = "ESTADO";
+            this.CHESTADO.Name = "CHESTADO";
+            this.CHESTADO.ReadOnly = true;
+            this.CHESTADO.Width = 80;
             // 
             // frmProcPedidosPrincipal
             // 
@@ -192,17 +272,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(671, 449);
+            this.ClientSize = new System.Drawing.Size(795, 564);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPedidos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProcPedidosPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MODULO FACTURACION";
             this.Load += new System.EventHandler(this.frmProcPedidosPrincipal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -213,7 +293,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnAnadir;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPedidos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnVer;
@@ -223,5 +303,12 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtParametro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPEDIDO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCORRELATIVO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHFECHA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHDOC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHTOTAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHESTADO;
     }
 }

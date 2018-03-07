@@ -102,6 +102,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dataset\DtsPedidos.cs">
+      <DependentUpon>DtsPedidos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DtsPedidos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -521,6 +524,12 @@
       <DependentUpon>CrystalReportClientes.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\CrystalReportPedidos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPedidos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\CrystalReportProductoMinimo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -725,6 +734,10 @@
     <EmbeddedResource Include="Reportes\CrystalReportClientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportClientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CrystalReportPedidos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPedidos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\CrystalReportProductoMinimo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

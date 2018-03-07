@@ -18,6 +18,10 @@ namespace Negocios
         {
             return productoDL.productoListarBusqueda(parametro);
         }
+        public static producto ProductoBusquedaCodigo(int parametro)
+        {
+            return productoDL.ProductoBusquedaCodigo(parametro);
+        }
         //ACTUALIZAR PRODUCTO
         public static int ProductoActualizar(producto productoObjeto)
         {

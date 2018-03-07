@@ -17,5 +17,17 @@ namespace Negocios
         {
             return pedidoDL.IngresoPedidoDetalle(listado);
         }
+        public static List<pedidocabecera> PedidoCabeceraListar()
+        {
+            return pedidoDL.PedidoCabeceraListar();
+        }
+        public static List<pedidocabecera> PedidoCabeceraBusquedaParametro(string parametro)
+        {
+            return pedidoDL.PedidoCabeceraBusquedaParametro(parametro);
+        }
+        public static pedidocabecera PedidoCabeceraBusquedaCodigo(int parametro)
+        {
+            return pedidoDL.PedidoCabeceraBusquedaCodigo(parametro);
+        }
     }
 }

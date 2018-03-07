@@ -9,9 +9,9 @@ namespace Datos
     public abstract class generarCodigoDL
     {
         
-        public static int ObtegerUltimocodigoPedido(int parametro)
+        public static string ObtegerUltimocodigoPedido(int parametro)
         {
-            return conexion.executeScalar("fn_pedido_correlativo",CommandType.StoredProcedure, new parametro("in_parametro", parametro) );
+            return conexion.executeScalarStr("fn_pedido_correlativo",CommandType.StoredProcedure, new parametro("in_parametro", parametro));
         }
 
         public static int ObetenertipoCambio(string parametro)

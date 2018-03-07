@@ -49,6 +49,44 @@ namespace Datos
                 return listado;
             }
         }
+        public static producto ProductoBusquedaCodigo(int parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_producto_busqueda_codigo", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
+            {
+                producto registro = new producto();
+                while (datareader.Read())
+                {
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
+                    registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]).Trim();
+                    registro.p_inidtipoproducto = Convert.ToInt32(datareader["p_inidtipoproducto"]);
+                    registro.chtipoproducto = Convert.ToString(datareader["chtipoproducto"]).Trim();
+                    registro.p_inidmarca = Convert.ToInt32(datareader["p_inidmarca"]);
+                    registro.chmarca = Convert.ToString(datareader["chmarca"]).Trim();
+                    registro.p_inidunidadmedidaproducto = Convert.ToInt32(datareader["p_inidunidadmedidaproducto"]);
+                    registro.chunidadmedidaproducto = Convert.ToString(datareader["chunidadmedidaproducto"]).Trim();
+                    registro.chfechacreacion = Convert.ToString(datareader["chfechacreacion"]).Trim();
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.p_inidfamiliaproducto = Convert.ToInt32(datareader["p_inidfamiliaproducto"]);
+                    registro.chfamiliaproducto = Convert.ToString(datareader["chfamiliaproducto"]).Trim();
+                    registro.p_inidcalibre = Convert.ToInt32(datareader["p_inidcalibre"]);
+                    registro.chcalibre = Convert.ToString(datareader["chcalibre"]).Trim();
+                    registro.p_inidmodelo = Convert.ToInt32(datareader["p_inidmodelo"]);
+                    registro.chdmodelo = Convert.ToString(datareader["chdmodelo"]).Trim();
+                    registro.chcodigoproductoantes = Convert.ToString(datareader["chcodigoproductoantes"]).Trim();
+                    registro.chdescripcionproducto = Convert.ToString(datareader["chdescripcionproducto"]).Trim();
+                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+                    registro.chusuarioinsert = Convert.ToString(datareader["chusuarioinsert"]).Trim();
+                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
+                    registro.chusuariodelete = Convert.ToString(datareader["chusuariodelete"]).Trim();
+                    registro.p_inidsituacion = Convert.ToInt32(datareader["p_inidsituacion"]);
+                    registro.req_serie = Convert.ToBoolean(datareader["o_req_serie"]);
+                    registro.chsituacion = Convert.ToString(datareader["chsituacion"]).Trim();
+                }
+                return registro;
+            }
+        }
+
+        
         public static List<producto> productoListar()
         {
             using (IDataReader datareader = conexion.executeOperation("fn_producto_listar", CommandType.StoredProcedure))

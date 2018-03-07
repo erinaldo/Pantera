@@ -49,6 +49,8 @@ namespace Entidades
         public int p_inidusuariodelete { get; set; }
         public bool estado { get; set; }
         public int p_inidvehiculo { get; set; }
+        public int p_inidlicencia { get; set; }
+        public int p_inidtarjeta { get; set; }
         public pedidocabecera()
         {
             this.p_inidpedidocabecera = 0;
@@ -92,6 +94,8 @@ namespace Entidades
             this.p_inidusuariodelete = 0;
             this.estado = false;
             this.p_inidvehiculo = 0;
-        }
+            this.p_inidlicencia = 0;
+            this.p_inidtarjeta = 0;
+    }
     }
 }

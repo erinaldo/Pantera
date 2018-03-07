@@ -36,17 +36,19 @@
             this.crpViewer.ActiveViewIndex = -1;
             this.crpViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crpViewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crpViewer.DisplayStatusBar = false;
             this.crpViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crpViewer.Location = new System.Drawing.Point(0, 0);
             this.crpViewer.Name = "crpViewer";
-            this.crpViewer.Size = new System.Drawing.Size(591, 360);
+            this.crpViewer.Size = new System.Drawing.Size(532, 483);
             this.crpViewer.TabIndex = 0;
+            this.crpViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // FrmReportesM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 360);
+            this.ClientSize = new System.Drawing.Size(532, 483);
             this.Controls.Add(this.crpViewer);
             this.Name = "FrmReportesM";
             this.Text = "FrmReportesM";

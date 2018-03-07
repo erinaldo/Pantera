@@ -69,7 +69,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
-            this.txtfechaInicio = new System.Windows.Forms.MaskedTextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.cboVehiculo = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -121,6 +120,7 @@
             this.txtVencLicencia = new System.Windows.Forms.MaskedTextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.txtFechaVenciTarjeta = new System.Windows.Forms.MaskedTextBox();
+            this.txtfechaInicio = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -244,7 +244,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(435, 74);
+            this.label31.Location = new System.Drawing.Point(435, 70);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(45, 13);
             this.label31.TabIndex = 27;
@@ -254,7 +254,7 @@
             // 
             this.cboigv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboigv.FormattingEnabled = true;
-            this.cboigv.Location = new System.Drawing.Point(492, 67);
+            this.cboigv.Location = new System.Drawing.Point(492, 66);
             this.cboigv.Name = "cboigv";
             this.cboigv.Size = new System.Drawing.Size(59, 21);
             this.cboigv.TabIndex = 26;
@@ -264,7 +264,7 @@
             this.txtTipoCambio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtTipoCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTipoCambio.ForeColor = System.Drawing.Color.Blue;
-            this.txtTipoCambio.Location = new System.Drawing.Point(248, 71);
+            this.txtTipoCambio.Location = new System.Drawing.Point(247, 67);
             this.txtTipoCambio.Name = "txtTipoCambio";
             this.txtTipoCambio.ReadOnly = true;
             this.txtTipoCambio.Size = new System.Drawing.Size(86, 20);
@@ -275,7 +275,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(178, 74);
+            this.label13.Location = new System.Drawing.Point(177, 70);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 13);
             this.label13.TabIndex = 24;
@@ -389,6 +389,7 @@
             // txtCodigoCliente
             // 
             this.txtCodigoCliente.BackColor = System.Drawing.Color.White;
+            this.txtCodigoCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoCliente.ForeColor = System.Drawing.Color.Black;
             this.txtCodigoCliente.Location = new System.Drawing.Point(61, 19);
@@ -454,13 +455,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtfechaInicio);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.txtPtoLlegada);
             this.groupBox2.Controls.Add(this.txtPtoPartida);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.txtObs);
-            this.groupBox2.Controls.Add(this.txtfechaInicio);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.cboVehiculo);
             this.groupBox2.Controls.Add(this.label17);
@@ -528,20 +529,10 @@
             this.txtObs.Size = new System.Drawing.Size(314, 20);
             this.txtObs.TabIndex = 5;
             // 
-            // txtfechaInicio
-            // 
-            this.txtfechaInicio.Location = new System.Drawing.Point(704, 18);
-            this.txtfechaInicio.Mask = "00/00/0000";
-            this.txtfechaInicio.Name = "txtfechaInicio";
-            this.txtfechaInicio.Size = new System.Drawing.Size(73, 20);
-            this.txtfechaInicio.TabIndex = 4;
-            this.txtfechaInicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtfechaInicio.ValidatingType = typeof(System.DateTime);
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(611, 21);
+            this.label18.Location = new System.Drawing.Point(602, 21);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(92, 13);
             this.label18.TabIndex = 17;
@@ -1091,6 +1082,15 @@
             this.txtFechaVenciTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFechaVenciTarjeta.ValidatingType = typeof(System.DateTime);
             // 
+            // txtfechaInicio
+            // 
+            this.txtfechaInicio.CustomFormat = "";
+            this.txtfechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtfechaInicio.Location = new System.Drawing.Point(694, 18);
+            this.txtfechaInicio.Name = "txtfechaInicio";
+            this.txtfechaInicio.Size = new System.Drawing.Size(83, 20);
+            this.txtfechaInicio.TabIndex = 25;
+            // 
             // frmProcPedidosCabecera
             // 
             this.AcceptButton = this.btnGrabar;
@@ -1160,7 +1160,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtObs;
-        private System.Windows.Forms.MaskedTextBox txtfechaInicio;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cboVehiculo;
         private System.Windows.Forms.Label label17;
@@ -1213,5 +1212,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDSERIE;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.ComboBox cboigv;
+        private System.Windows.Forms.DateTimePicker txtfechaInicio;
     }
 }

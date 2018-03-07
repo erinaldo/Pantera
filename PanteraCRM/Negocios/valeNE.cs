@@ -23,12 +23,12 @@ namespace Negocios
             return valesDL.valesListarparmetroCodigo(tipo, parametro);
         }
 
-        public static int CorrelativoMovimientoIngreso(int parametro)
+        public static string CorrelativoMovimientoIngreso(int parametro)
         {
             return valesDL.CorrelativoMovimientoIngreso(parametro);
         }
 
-        public static int CorrelativoMovimientoSalida(int parametro)
+        public static string CorrelativoMovimientoSalida(int parametro)
         {
             return valesDL.CorrelativoMovimientoSalida(parametro);
         }

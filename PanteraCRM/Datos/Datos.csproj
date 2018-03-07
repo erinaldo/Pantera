@@ -65,6 +65,7 @@
     <Compile Include="movimientosDL.cs" />
     <Compile Include="parametro.cs" />
     <Compile Include="pedidoDL.cs" />
+    <Compile Include="pedidovistaprevia.cs" />
     <Compile Include="perfildetalleDL.cs" />
     <Compile Include="perfilDL.cs" />
     <Compile Include="personaDL.cs" />

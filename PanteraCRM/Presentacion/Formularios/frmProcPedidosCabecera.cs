@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Dataset;
 namespace Presentacion
 {
     public partial class frmProcPedidosCabecera : Form
@@ -117,6 +118,7 @@ namespace Presentacion
                 decimal preciprod = 0;
                 int cantidad = 0;
                 decimal preciototal = 0;
+                decimal valorigv = (100 + decimal.Parse(cboigv.Text)) / 100;
                 List<pedidodetalle>  listado = new List<pedidodetalle>();
                 for (int i = 0; i < dgvListaPedidoDetalle.RowCount; i++)
                 {
@@ -124,11 +126,12 @@ namespace Presentacion
                     importe += decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUIMPORTE"].Value.ToString());
                     preciprod = decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUPRECIOVENTA"].Value.ToString());
                     cantidad = int.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUCANTIDAD"].Value.ToString());
-                    preciototal += (decimal.Round(cantidad * preciprod, 2) / ((100+ decimal.Parse(cboigv.Text))/100));
-                }              
+                    preciototal += (decimal.Round(cantidad * preciprod, 2) / valorigv);
+                    //(100+ decimal.Parse(cboigv.Text))/100)
+                }
 
                 txtTotVenta.Text = importe.ToString();
-                decimal valorventa = decimal.Round(importe / ((100 + decimal.Parse(cboigv.Text)) / 100), 2);
+                decimal valorventa = decimal.Round(importe / valorigv, 2);
                 txtValVenta.Text = valorventa.ToString();
                 decimal igv = importe - valorventa;
                 txtIgv.Text = (igv).ToString();
@@ -220,11 +223,7 @@ namespace Presentacion
         }
         public void GenerarCodigoPedido()
         {
-            int codigo = generarCodigoNE.ObtenerUltimoCodigoPedido(sesion.SessionGlobal.p_inidpuntoventa);
-            string seudocorrelativo = "0000000000" + codigo;
-            int pini = seudocorrelativo.Length-10;
-            int pfin = seudocorrelativo.Length-1;
-            string correlativo = seudocorrelativo.Substring(pini, pfin);
+            string correlativo = generarCodigoNE.ObtenerUltimoCodigoPedido(sesion.SessionGlobal.p_inidpuntoventa);
             txtNroPedido.Text = correlativo;
             txtRucCliente.Focus();
         }
@@ -257,6 +256,7 @@ namespace Presentacion
                         if (result == DialogResult.Yes)
                         {
                             PedidoRegistrar();
+                            MostrarVistaImpresion();
                         }
                         else
                         {
@@ -276,8 +276,99 @@ namespace Presentacion
                 default:
                     break;
             }
-            this.Dispose();
+           this.Dispose();
         }
+        private void MostrarVistaImpresion()
+        {
+            Reportes.FrmReporte f = new Reportes.FrmReporte();
+            CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt1;
+            DataSet Dts = new DtsPedidos();
+            /*PRA CABECERA*/
+            Dts.Tables["cabecera"].LoadDataRow(new object[] 
+            {
+                txtNombreCliente.Text,
+                txtPtoLlegada.Text,
+                "LIMA",
+                "976566115",
+                txtRucCliente.Text,
+                txtordcomp.Text,
+                txtCodigoCliente.Text,
+                txtFechaActual.Text,
+                txtfechaInicio.Text,
+                sesion.SessionGlobal.chusuario,
+                txtNroPedido.Text,
+                cboCondVenta.Text,
+                txtLicencia.Text,
+                txtVencLicencia.Text,
+                cboTarjeta.Text,
+                txtFechaVenciTarjeta.Text,
+                cboTipoDocu.Text,
+                "003-0001",
+                "CIENTO CUARENTA Y TRES CON 40/100 NUEVOS SOLES",
+                txtValVenta.Text,
+                "0",
+                "0",
+                "0",
+                txtIgv.Text,
+                txtTotVenta.Text,
+                sesion.SessionGlobal.chpuntoventa,
+                "10717767603"
+            }, true);
+            Dts.AcceptChanges();
+            if (sesion.pedidodetallecontenido != null)
+            {
+                dgvListaPedidoDetalle.Rows.Clear();
+                foreach (pedidodetallecontenido obj in sesion.pedidodetallecontenido)
+                {
+                    producto productoM = productoNE.ProductoBusquedaCodigo(obj.pedidodetalle.p_inidproducto);
+
+                    string nombrecompuesto = obj.productoparaventa.chnombrecompuesto;
+                    string codigo = obj.productoparaventa.chcodigoproducto;
+                    int idproducto = obj.pedidodetalle.p_inidproducto;
+                    decimal cantidad = obj.pedidodetalle.nucantidad;
+                    decimal stock = 0;// ProductoM.nustock;
+                    decimal precio = obj.pedidodetalle.nuprecioventa;
+                    decimal desc1 = obj.pedidodetalle.nuporcentajedesc1;
+                    decimal desc2 = obj.pedidodetalle.nuporcentajedesc2;
+                    decimal importe = obj.pedidodetalle.nuimportesubtotal;
+                    decimal preunit = obj.pedidodetalle.nuprecioproducto;
+                    int idserie = 0;
+                    string codigoserie = "-";
+                    if (obj.serie != null)
+                    {
+                        cantidad = 1;
+                        idserie = obj.serie.p_inidserie;
+                        codigoserie = obj.serie.chcodigoserie;
+                    }
+                    if (obj.estado == true)
+                    {
+                        //dgvListaPedidoDetalle.Rows.Add("1", "2", obj.orden, idproducto, codigo, cantidad, stock, nombrecompuesto, codigoserie, preunit, precio, desc1, desc2, importe, "15", idserie);
+                        Dts.Tables["detalle"].LoadDataRow(new object[] 
+                        {
+                            codigo,
+                            obj.pedidodetalle.nucantidad,
+                            productoM.chtipoproducto,
+                            productoM.chmarca,
+                            productoM.chdmodelo,
+                            productoM.chcalibre,
+                            codigoserie,
+                            codigoserie,
+                            obj.pedidodetalle.nuprecioventa,
+                            obj.pedidodetalle.nuimportesubtotal,
+                            obj.productoparaventa.chunidadmedidaproducto
+                        }, true);
+                        Dts.AcceptChanges();
+                    }
+                }
+                //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");   
+                //GenerarTotales();
+            }
+            Rpt1 = new Reportes.CrystalReportPedidos();
+            Rpt1.SetDataSource(Dts);
+            f.Rpt = Rpt1;
+            f.ShowDialog(this);
+        }
+
         private bool ValidacionyConfirmacion()
         {
             bool flat = true;
@@ -324,28 +415,28 @@ namespace Presentacion
             registrosPedidoCabecera.p_inidpuntoventa = sesion.SessionGlobal.p_inidpuntoventa;
             registrosPedidoCabecera.chcodigopedido = txtNroPedido.Text;
             registrosPedidoCabecera.chfechapedido = txtFechaActual.Text;
-            registrosPedidoCabecera.tmhorapedido = string.Empty;
+            registrosPedidoCabecera.tmhorapedido = "";
             registrosPedidoCabecera.p_inidtipodocumento = (int)cboTipoDocu.SelectedValue;
             registrosPedidoCabecera.p_inidcliente = ClienteG.p_inidcodigoclie;
             registrosPedidoCabecera.p_inmotivotransaccion = (int)cboCondVenta.SelectedValue;
             registrosPedidoCabecera.p_inidcompromisopago = (int)cboCondVenta.SelectedValue;
             registrosPedidoCabecera.nuporcenatajedesc = 0;
-            registrosPedidoCabecera.chordencompra = string.Empty;
+            registrosPedidoCabecera.chordencompra = txtordcomp.Text;
             registrosPedidoCabecera.p_inidalmacen = sesion.SessionGlobal.p_inidalmacen;
             registrosPedidoCabecera.p_inidtransportista = Transportistacodigo;
             registrosPedidoCabecera.p_inidconductor = (int)cboNombreConductor.SelectedValue;
-            registrosPedidoCabecera.chplacavehiculo = cboNombreConductor.Text;
+            registrosPedidoCabecera.chplacavehiculo = cboVehiculo.Text;
             registrosPedidoCabecera.chfechainiciotransporte = txtfechaInicio.Text;
             registrosPedidoCabecera.chpuntopartida = txtPtoPartida.Text;
             registrosPedidoCabecera.chpuntollegada = txtPtoLlegada.Text;
             registrosPedidoCabecera.nuventaafectamonnacional = 0;
-            registrosPedidoCabecera.chmotivotransaccion = string.Empty;
+            registrosPedidoCabecera.chmotivotransaccion ="";
             registrosPedidoCabecera.p_inidmoneda = 0;
             registrosPedidoCabecera.p_inidigv = (int)cboigv.SelectedValue;
             registrosPedidoCabecera.boafectoigv = true;
             registrosPedidoCabecera.nuimportecambioventa = 0;
             registrosPedidoCabecera.p_inidvendedor = sesion.SessionGlobal.p_inidusuario;
-            registrosPedidoCabecera.chtiempoentrega = string.Empty;
+            registrosPedidoCabecera.chtiempoentrega = "";
 
             registrosPedidoCabecera.nuventainafectamonnacional = decimal.Parse(txtSubtotal.Text);
             registrosPedidoCabecera.nutotaldescmonnacional = decimal.Parse(txtDesctot.Text);
@@ -364,6 +455,10 @@ namespace Presentacion
             //registrosPedidoCabecera.p_inidusuariodelete = 0;
             registrosPedidoCabecera.estado = true;
             registrosPedidoCabecera.p_inidvehiculo = (int)cboVehiculo.SelectedValue;
+
+            registrosPedidoCabecera.p_inidlicencia = (int)cboTarjeta.SelectedValue;
+            registrosPedidoCabecera.p_inidtarjeta = LicenciaG.p_inidlicencia;
+
             int codigocabecera = pedidoNE.IngresoPedidoCabecera(registrosPedidoCabecera);
             if (sesion.pedidodetallecontenido != null)
             {
@@ -510,11 +605,14 @@ namespace Presentacion
         private void BuscarClienteCodigo(string codigo)
         {
             ClienteG = clienteNE.ClienteBusquedaCodigoSecundario(codigo);
+            
+               // MessageBox.Show(""+ClienteG1.p_inidcodigoclie, "Mensaje de Sistema", MessageBoxButtons.OK);
             if (ClienteG != null)
             {
-                
+                //ClienteG = ClienteG1;
                 txtNombreCliente.Text = ClienteG.razon;
                 txtRucCliente.Text = ClienteG.nrodocumento;
+                txtPtoLlegada.Text = ClienteG.chdireccion;
                 LicenciaG = clienteNE.LicenciaBusquedaCodigo(ClienteG.p_inidcodigoclie);
                 TarjetaG = clienteNE.TarjetaPropiedadBusquedaCodigo(ClienteG.p_inidcodigoclie);
                 txtLicencia.Text = LicenciaG.chlicencia;
@@ -522,7 +620,6 @@ namespace Presentacion
                 cboTarjeta.DataSource = TarjetaG;
                 cboTarjeta.ValueMember = "p_inidtarjeta";
                 cboTarjeta.DisplayMember = "chtarjeta";
-                txtPtoLlegada.Text = ClienteG.chdireccion;
 
             }
             else

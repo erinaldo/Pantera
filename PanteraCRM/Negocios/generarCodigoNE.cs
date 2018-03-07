@@ -9,7 +9,7 @@ namespace Negocios
 {
     public abstract class generarCodigoNE
     {
-        public static int ObtenerUltimoCodigoPedido(int parametro)
+        public static string ObtenerUltimoCodigoPedido(int parametro)
         {
             return generarCodigoDL.ObtegerUltimocodigoPedido(parametro);
         }

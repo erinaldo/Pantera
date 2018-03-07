@@ -52,11 +52,8 @@ namespace Presentacion
                 txtperiodo.Text = "01";
                 txtAlmacen.Text = "PRINCIPAL";
                 txtClase.Text = "INGRESO";
-                int vale = valeNE.CorrelativoMovimientoIngreso(sesion.SessionGlobal.p_inidalmacen) + 1;
-                string correlativo = "0000000000" + vale;
-                int cfin = correlativo.Length - 1;
-                int cini = correlativo.Length - 10;
-                txtNroVale.Text = "" + correlativo.Substring(cini, cfin);
+                string correlativo = valeNE.CorrelativoMovimientoIngreso(sesion.SessionGlobal.p_inidalmacen) ;
+                txtNroVale.Text = correlativo;
                 mskfechareg.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
                 txtTotal.Text = "0.00";
                 cboTipoMov.Focus();

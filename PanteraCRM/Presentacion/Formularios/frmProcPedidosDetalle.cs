@@ -83,11 +83,13 @@ namespace Presentacion
         public void cargarDatosCabecera(string parametro)
         {
             ProductoG = productoNE.ProductosVentaParametro(parametro);
-            if (ProductoG != null)
+            
+            if (ProductoG.p_inidproducto != 0)
             {
+                //MessageBox.Show("" + ProductoG.p_inidproducto, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 decimal val = 0;
                 if (ListadoValidarG != null)
-                {                    
+                {
                     foreach (pedidodetalle obj in ListadoValidarG)
                     {
                         if (obj.p_inidproducto == ProductoG.p_inidproducto)
@@ -96,14 +98,14 @@ namespace Presentacion
                         }
                     }
                 }
-                if (vBoton=="A")
+                if (vBoton == "A")
                 {
                     txtStock.Text = (ProductoG.nustockactual - val).ToString();
                 }
                 else
                 {
                     txtStock.Text = (ProductoG.nustockactual).ToString();
-                }                
+                }
                 txtDescripcion.Text = ProductoG.chnombrecompuesto;
                 txtImporte.Text = "0.00";
                 txtPreUnit.Text = ProductoG.nuprecio.ToString();
@@ -112,6 +114,7 @@ namespace Presentacion
             }
             else
             {
+                //MessageBox.Show("" + ProductoG.p_inidproducto, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 txtDescripcion.Text = "";
                 txtDesc1.Text = "0.00";
                 txtDesc2.Text = "0.00";
@@ -120,7 +123,7 @@ namespace Presentacion
                 txtPreUnit.Text = "0.00";
                 txtStock.Text = "0";
                 dgvListaProdSeries.Rows.Clear();
-                
+
             }
         }
        

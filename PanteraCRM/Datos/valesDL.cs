@@ -116,13 +116,13 @@ namespace Datos
             }
         }
 
-        public static int CorrelativoMovimientoIngreso(int parametro)
+        public static string CorrelativoMovimientoIngreso(int parametro)
         {
-            return conexion.executeScalar("fn_movimiento_correlativo_ingreso", CommandType.StoredProcedure, new parametro("in_p_inidalmacen", parametro));
+            return conexion.executeScalarStr("fn_movimiento_correlativo_ingreso", CommandType.StoredProcedure, new parametro("in_p_inidalmacen", parametro));
         }
-        public static int CorrelativoMovimientoSalida(int parametro)
+        public static string CorrelativoMovimientoSalida(int parametro)
         {
-            return conexion.executeScalar("fn_movimiento_correlativo_salida", CommandType.StoredProcedure, new parametro("in_p_inidalmacen", parametro));
+            return conexion.executeScalarStr("fn_movimiento_correlativo_salida", CommandType.StoredProcedure, new parametro("in_p_inidalmacen", parametro));
         }
         public static int GenerarCorrelativoMovimientoIngreso(int parametro)
         {
