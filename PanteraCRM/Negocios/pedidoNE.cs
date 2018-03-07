@@ -13,7 +13,7 @@ namespace Negocios
         {
             return pedidoDL.IngresoPedidoCabecera(registros);
         }
-        public static int IngresoPedidoDetalle(List<pedidodetalle> listado)
+        public static int IngresoPedidoDetalle(pedidodetalle listado)
         {
             return pedidoDL.IngresoPedidoDetalle(listado);
         }

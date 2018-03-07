@@ -23,7 +23,6 @@ namespace Presentacion
         {
             this.Text = "SISTEMA PANTERA S.A.C. :: BIENVENIDO " ;
             this.cargaMenu();
-            this.CargarFondo();
         }
        
 
@@ -37,12 +36,7 @@ namespace Presentacion
             this.menu.Height = this.ClientSize.Height - 5;
             this.menu.Show();
         }
-        protected void CargarFondo()
-        {
-            this.fondo = new frmFondo();
-            this.fondo.MdiParent = this;
-            this.fondo.Show();
-        }
+        
 
         protected override void OnResize(EventArgs e)
         {

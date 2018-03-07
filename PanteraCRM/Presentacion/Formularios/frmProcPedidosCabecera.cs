@@ -124,11 +124,11 @@ namespace Presentacion
                     importe += decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUIMPORTE"].Value.ToString());
                     preciprod = decimal.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUPRECIOVENTA"].Value.ToString());
                     cantidad = int.Parse(dgvListaPedidoDetalle.Rows[i].Cells["NUCANTIDAD"].Value.ToString());
-                    preciototal += (decimal.Round(cantidad * preciprod, 2) / decimal.Parse("1.18"));
+                    preciototal += (decimal.Round(cantidad * preciprod, 2) / ((100+ decimal.Parse(cboigv.Text))/100));
                 }              
 
                 txtTotVenta.Text = importe.ToString();
-                decimal valorventa = decimal.Round(importe /decimal.Parse("1.18") , 2);
+                decimal valorventa = decimal.Round(importe / ((100 + decimal.Parse(cboigv.Text)) / 100), 2);
                 txtValVenta.Text = valorventa.ToString();
                 decimal igv = importe - valorventa;
                 txtIgv.Text = (igv).ToString();
@@ -317,6 +317,7 @@ namespace Presentacion
         
         private void PedidoRegistrar()
         {
+            decimal valortipocambio = decimal.Parse(txtTipoCambio.Text);
             //MessageBox.Show("Pedido registrado", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
             pedidocabecera registrosPedidoCabecera = new pedidocabecera();
             //registrosPedidoCabecera.p_inidpedidocabecera = 0;
@@ -340,32 +341,36 @@ namespace Presentacion
             registrosPedidoCabecera.nuventaafectamonnacional = 0;
             registrosPedidoCabecera.chmotivotransaccion = string.Empty;
             registrosPedidoCabecera.p_inidmoneda = 0;
-            registrosPedidoCabecera.p_inidigv = 1;
+            registrosPedidoCabecera.p_inidigv = (int)cboigv.SelectedValue;
             registrosPedidoCabecera.boafectoigv = true;
             registrosPedidoCabecera.nuimportecambioventa = 0;
-            registrosPedidoCabecera.p_inidvendedor = 0;
+            registrosPedidoCabecera.p_inidvendedor = sesion.SessionGlobal.p_inidusuario;
             registrosPedidoCabecera.chtiempoentrega = string.Empty;
-            registrosPedidoCabecera.nuventainafectamonnacional = 0;
-            registrosPedidoCabecera.nutotaldescmonnacional = 0;
-            registrosPedidoCabecera.nutotaligvmonnacional = 0;
-            registrosPedidoCabecera.nutotalventamonnacional = 0;
-            registrosPedidoCabecera.nuventaafectamonextra = 0;
-            registrosPedidoCabecera.nuventainafectamonextra = 0;
-            registrosPedidoCabecera.nutotaldescmonextra = 0;
-            registrosPedidoCabecera.nutotaligvmonextra = 0;
-            registrosPedidoCabecera.nutotalventamonextra = 0;
+
+            registrosPedidoCabecera.nuventainafectamonnacional = decimal.Parse(txtSubtotal.Text);
+            registrosPedidoCabecera.nutotaldescmonnacional = decimal.Parse(txtDesctot.Text);
+            registrosPedidoCabecera.nutotaligvmonnacional = decimal.Parse(txtIgv.Text);
+            registrosPedidoCabecera.nutotalventamonnacional = decimal.Parse(txtTotVenta.Text);
+
+            registrosPedidoCabecera.nuventaafectamonextra = decimal.Parse(txtSubtotal.Text);
+            registrosPedidoCabecera.nuventainafectamonextra = decimal.Parse(txtDesctot.Text);
+            registrosPedidoCabecera.nutotaldescmonextra = decimal.Parse(txtIgv.Text);
+            registrosPedidoCabecera.nutotaligvmonextra = decimal.Parse(txtIgv.Text);
+            registrosPedidoCabecera.nutotalventamonextra = decimal.Parse(txtTotVenta.Text);
+
             registrosPedidoCabecera.p_inidsituacionpedido = 0;
             registrosPedidoCabecera.chobservacion = txtObs.Text;
             registrosPedidoCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
             //registrosPedidoCabecera.p_inidusuariodelete = 0;
             registrosPedidoCabecera.estado = true;
             registrosPedidoCabecera.p_inidvehiculo = (int)cboVehiculo.SelectedValue;
-            int codigocabecera = 0;
+            int codigocabecera = pedidoNE.IngresoPedidoCabecera(registrosPedidoCabecera);
             if (sesion.pedidodetallecontenido != null)
             {
-                dgvListaPedidoDetalle.Rows.Clear();
+                //dgvListaPedidoDetalle.Rows.Clear();
                 foreach (pedidodetallecontenido obj in sesion.pedidodetallecontenido)
                 {
+                    int codigodetalle = 0;
                     //producto productoM = productoNE.
                     string nombrecompuesto = obj.productoparaventa.chnombrecompuesto;
                     string codigo = obj.productoparaventa.chcodigoproducto;
@@ -400,10 +405,11 @@ namespace Presentacion
                         RegistrosPedidosDetalle.nuimportetotal = 0;
                         RegistrosPedidosDetalle.estado = true;
                         RegistrosPedidosDetalle.p_inidserie = idserie;
+                        codigodetalle = pedidoNE.IngresoPedidoDetalle(RegistrosPedidosDetalle);
                     }
                 }
                 //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");   
-                GenerarTotales();
+                //GenerarTotales();
             }
             
 

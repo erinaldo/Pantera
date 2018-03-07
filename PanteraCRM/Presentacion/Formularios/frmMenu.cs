@@ -27,10 +27,16 @@ namespace Presentacion
         {
             this.cargaListaImagenes();
             this.cargaMenu();
+            this.CargarFondo();
             this.ObtenerTipoCambio();
             LCabecera.Text = "USUARIO: "+sesion.SessionGlobal.chnombrepersona;
         }
-
+        protected void CargarFondo()
+        {
+            frmFondo f = new frmFondo();
+            f.MdiParent = this.MdiParent;
+            f.Show();
+        }
         private void cargaListaImagenes()
         {
             ResourceSet images = Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentCulture, true, true);
@@ -190,7 +196,8 @@ namespace Presentacion
             if (flat == 0)
             {
                 frmTipoDeCambio f = new frmTipoDeCambio();
-                 f.ShowDialog();
+                f.MdiParent = this.MdiParent;
+                 f.Show();
                
             }
             // mostrar la ventana si hace falta
