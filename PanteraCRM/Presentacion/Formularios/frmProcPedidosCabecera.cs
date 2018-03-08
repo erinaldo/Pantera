@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Entidades;
 using Negocios;
 using Presentacion.Dataset;
-namespace Presentacion
+    namespace Presentacion
 {
     public partial class frmProcPedidosCabecera : Form
     {
@@ -22,6 +22,10 @@ namespace Presentacion
         internal List<pedidodetallecontenido> ListaDetalleContenidoG;
         internal productoparaventa ProductoG;
         internal bool FlatG;
+        internal int CodigoPedidoCabecera;
+        public delegate void PasarCabecera(int codigo);
+        public event PasarCabecera PasadoCabecera;
+
         public frmProcPedidosCabecera(string vBotonG)
         {
             InitializeComponent();
@@ -130,15 +134,15 @@ namespace Presentacion
                     //(100+ decimal.Parse(cboigv.Text))/100)
                 }
 
-                txtTotVenta.Text = importe.ToString();
+                txtTotVenta.Text = string.Format("{0:0,0.00}", importe);
                 decimal valorventa = decimal.Round(importe / valorigv, 2);
-                txtValVenta.Text = valorventa.ToString();
+                txtValVenta.Text = string.Format("{0:0,0.00}", valorventa);
                 decimal igv = importe - valorventa;
                 txtIgv.Text = (igv).ToString();
 
                 decimal tdescuentototal = decimal.Round(preciototal - valorventa, 2);
-                txtDesctot.Text =tdescuentototal.ToString();
-                txtSubtotal.Text = decimal.Round(preciototal, 2).ToString();
+                txtDesctot.Text = string.Format("{0:0,0.00}", tdescuentototal);
+                txtSubtotal.Text = string.Format("{0:0,0.00}", decimal.Round(preciototal, 2));
             }
         }
         private void frmProcPedidosPedidosCabecera_Load(object sender, EventArgs e)
@@ -198,17 +202,85 @@ namespace Presentacion
             {
                 if (vBotonG == "M")
                 {
-
-                }else
+                    CargarDatosCabecera();
+                }
+                else
                 {
                     if (vBotonG == "V")
                     {
-
+                        CargarDatosCabecera();
+                        Desactivartext(txtCodigoCliente);
+                        Desactivartext(txtordcomp);
+                        Desactivartext(txtPtoPartida);
+                        Desactivartext(txtPtoLlegada);
+                        Desactivartext(txtObs);
+                        btnAnadir.Enabled = false;
+                        btnModificar.Enabled = false;
+                        btnEliminar.Enabled = false;
+                        btnGrabar.Enabled = false;
                     }
                 }
             }
         }
+        private void CargarDatosCabecera()
+        {
+            pedidocabecera pedCab = pedidoNE.PedidoCabeceraBusquedaCodigo(CodigoPedidoCabecera);
+            List<pedidodetalle> peddet = pedidoNE.PedidoDetalleBusquedaParametro(CodigoPedidoCabecera);
+            
+            List<pedidodetallecontenido> ListaPedidoContenido = new List<pedidodetallecontenido>();
+            foreach (pedidodetalle obj in peddet)
+            {
+                pedidodetallecontenido RegistroPed = new pedidodetallecontenido();
+                RegistroPed.orden = int.Parse( obj.chitem);
+                RegistroPed.pedidodetalle = obj;
+                RegistroPed.serie = serieNE.SerieBusquedaCodigo(obj.p_inidserie);
+                producto prod = productoNE.ProductoBusquedaCodigo(obj.p_inidproducto);
+                RegistroPed.productoparaventa = productoNE.ProductosVentaParametro(prod.chcodigoproducto);
+                RegistroPed.estado = true;
+                ListaPedidoContenido.Add(RegistroPed);
+            }
 
+
+            sesion.pedidodetallecontenido = ListaPedidoContenido;
+            Mcliente Registroscliente = clienteNE.ClienteBusquedaCodigo(pedCab.p_inidcliente);
+            txtCodigoCliente.Text = Registroscliente.chcodigocliente;
+            txtNroPedido.Text = pedCab.chcodigopedido ;
+            txtFechaActual.Text = pedCab.chfechapedido;
+            cboTipoDocu.SelectedValue = pedCab.p_inidtipodocumento;
+            cboCondVenta.SelectedValue = pedCab.p_inmotivotransaccion;
+            cboCondVenta.SelectedValue= pedCab.p_inidcompromisopago;
+            txtordcomp.Text = pedCab.chordencompra;
+            cboNombreConductor.SelectedValue = pedCab.p_inidconductor;
+            cboVehiculo.Text = pedCab.chplacavehiculo;
+            //txtfechaInicio.Text = pedCab.chfechainiciotransporte;
+            txtPtoPartida.Text = pedCab.chpuntopartida;
+            txtPtoLlegada.Text = pedCab.chpuntollegada;
+            cboigv.SelectedValue= pedCab.p_inidigv;
+            
+
+            txtSubtotal.Text = "" + decimal.Round(pedCab.nuventainafectamonnacional- pedCab.nutotaldescmonnacional, 2);
+            txtValVenta.Text = "" + decimal.Round(pedCab.nuventainafectamonnacional, 2);
+            txtDesctot.Text = "" + decimal.Round(pedCab.nutotaldescmonnacional, 2);
+            txtIgv.Text = "" + decimal.Round(pedCab.nutotaligvmonnacional , 2) ;
+            txtTotVenta.Text = "" + decimal.Round(pedCab.nutotalventamonnacional , 2);
+            txtObs.Text = pedCab.chobservacion;
+            cboVehiculo.SelectedValue = pedCab.p_inidvehiculo;
+            cboTarjeta.SelectedValue = pedCab.p_inidlicencia;
+
+            CargarTablaDetalle();
+
+        }
+        private void CargarDatosDetalle()
+        {
+
+        }
+        private void Desactivartext(TextBox texbox)
+        {
+            texbox.ReadOnly = true;
+            texbox.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            texbox.ForeColor = Color.Blue;
+            texbox.TabStop = false;
+        }
         public void CargaVehiculos(int parametro)
         {
             cboVehiculo.DataSource = vehiculoNE.ListaVehiculosPorTransportista(parametro);
@@ -276,6 +348,7 @@ namespace Presentacion
                 default:
                     break;
             }
+            sesion.pedidodetallecontenido = null;
            this.Dispose();
         }
         private void MostrarVistaImpresion()
@@ -284,7 +357,7 @@ namespace Presentacion
             CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt1;
             DataSet Dts = new DtsPedidos();
             /*PRA CABECERA*/
-            Dts.Tables["cabecera"].LoadDataRow(new object[] 
+            Dts.Tables["cabecera"].LoadDataRow(new object[]
             {
                 txtNombreCliente.Text,
                 txtPtoLlegada.Text,
@@ -304,20 +377,23 @@ namespace Presentacion
                 txtFechaVenciTarjeta.Text,
                 cboTipoDocu.Text,
                 "003-0001",
-                "CIENTO CUARENTA Y TRES CON 40/100 NUEVOS SOLES",
-                txtValVenta.Text,
+                basicas.Convertir(txtTotVenta.Text,true),
+                //txtValVenta.Text,
+                string.Format("{0:0,0.00}", decimal.Parse(txtValVenta.Text)),
                 "0",
                 "0",
                 "0",
-                txtIgv.Text,
-                txtTotVenta.Text,
+                string.Format("{0:0,0.00}", decimal.Parse(txtIgv.Text)),
+                //txtIgv.Text,
+                string.Format("{0:0,0.00}", decimal.Parse(txtTotVenta.Text)),
+                //txtTotVenta.Text,
                 sesion.SessionGlobal.chpuntoventa,
                 "10717767603"
             }, true);
             Dts.AcceptChanges();
             if (sesion.pedidodetallecontenido != null)
             {
-                dgvListaPedidoDetalle.Rows.Clear();
+                //dgvListaPedidoDetalle.Rows.Clear();
                 foreach (pedidodetallecontenido obj in sesion.pedidodetallecontenido)
                 {
                     producto productoM = productoNE.ProductoBusquedaCodigo(obj.pedidodetalle.p_inidproducto);
@@ -352,10 +428,10 @@ namespace Presentacion
                             productoM.chdmodelo,
                             productoM.chcalibre,
                             codigoserie,
-                            codigoserie,
-                            obj.pedidodetalle.nuprecioventa,
-                            obj.pedidodetalle.nuimportesubtotal,
-                            obj.productoparaventa.chunidadmedidaproducto
+                            codigoserie,                            
+                            string.Format("{0:0,0.00}",obj.pedidodetalle.nuprecioventa),
+                            string.Format("{0:0,0.00}",obj.pedidodetalle.nuimportesubtotal),
+                            string.Format("{0:0,0.00}",obj.productoparaventa.chunidadmedidaproducto)
                         }, true);
                         Dts.AcceptChanges();
                     }
@@ -449,7 +525,7 @@ namespace Presentacion
             registrosPedidoCabecera.nutotaligvmonextra = decimal.Parse(txtIgv.Text);
             registrosPedidoCabecera.nutotalventamonextra = decimal.Parse(txtTotVenta.Text);
 
-            registrosPedidoCabecera.p_inidsituacionpedido = 0;
+            registrosPedidoCabecera.p_inidsituacionpedido = 85;
             registrosPedidoCabecera.chobservacion = txtObs.Text;
             registrosPedidoCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
             //registrosPedidoCabecera.p_inidusuariodelete = 0;
@@ -458,8 +534,9 @@ namespace Presentacion
 
             registrosPedidoCabecera.p_inidlicencia = (int)cboTarjeta.SelectedValue;
             registrosPedidoCabecera.p_inidtarjeta = LicenciaG.p_inidlicencia;
-
-            int codigocabecera = pedidoNE.IngresoPedidoCabecera(registrosPedidoCabecera);
+            int CodigoCabecera = 0;
+             CodigoCabecera = pedidoNE.IngresoPedidoCabecera(registrosPedidoCabecera);
+            
             if (sesion.pedidodetallecontenido != null)
             {
                 //dgvListaPedidoDetalle.Rows.Clear();
@@ -488,7 +565,7 @@ namespace Presentacion
                     {
                         pedidodetalle RegistrosPedidosDetalle = new pedidodetalle();
                         //RegistrosPedidosDetalle.p_inidpedidodetalle = 0;
-                        RegistrosPedidosDetalle.p_inidpedidocabecera = codigocabecera;
+                        RegistrosPedidosDetalle.p_inidpedidocabecera = CodigoCabecera;
                         RegistrosPedidosDetalle.chitem = obj.orden.ToString();
                         RegistrosPedidosDetalle.p_inidproducto = idproducto;
                         RegistrosPedidosDetalle.nucantidad = cantidad;
@@ -500,14 +577,15 @@ namespace Presentacion
                         RegistrosPedidosDetalle.nuimportetotal = 0;
                         RegistrosPedidosDetalle.estado = true;
                         RegistrosPedidosDetalle.p_inidserie = idserie;
+                        RegistrosPedidosDetalle.p_inidpedidodetalle = sesion.SessionGlobal.p_inidalmacen;
                         codigodetalle = pedidoNE.IngresoPedidoDetalle(RegistrosPedidosDetalle);
                     }
                 }
                 //dgvListaPedidoDetalle.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");   
                 //GenerarTotales();
             }
-            
-
+            //MessageBox.Show("A:"+CodigoCabecera+":", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+            PasadoCabecera(CodigoCabecera);
 
         }
         private void PedidoModificar()

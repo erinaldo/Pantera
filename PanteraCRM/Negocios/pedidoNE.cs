@@ -29,5 +29,10 @@ namespace Negocios
         {
             return pedidoDL.PedidoCabeceraBusquedaCodigo(parametro);
         }
+        public static List<pedidodetalle> PedidoDetalleBusquedaParametro(int parametro)
+        {
+            return pedidoDL.PedidoDetalleBusquedaParametro(parametro);
+        }
+        
     }
 }

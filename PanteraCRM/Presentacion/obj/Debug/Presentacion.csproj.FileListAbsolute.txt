@@ -676,3 +676,4 @@ C:\Users\maiik\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presen
 C:\Users\maiik\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
 C:\Users\maiik\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReportesM.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReportesM.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Formularios.frmProcConversionComprobantes.resources

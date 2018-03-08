@@ -32,6 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcPedidosCabecera));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNroPedido = new System.Windows.Forms.TextBox();
@@ -63,6 +66,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtfechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.txtPtoLlegada = new System.Windows.Forms.TextBox();
             this.txtPtoPartida = new System.Windows.Forms.TextBox();
@@ -95,6 +99,15 @@
             this.txtDesctot = new System.Windows.Forms.TextBox();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.dgvListaPedidoDetalle = new System.Windows.Forms.DataGridView();
+            this.cboTarjeta = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtLicencia = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtVencLicencia = new System.Windows.Forms.MaskedTextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtFechaVenciTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.IDPEDIDODETALLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDPEDIDOCABECERA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,16 +124,6 @@
             this.NUIMPORTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboTarjeta = new System.Windows.Forms.ComboBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtLicencia = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.txtVencLicencia = new System.Windows.Forms.MaskedTextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.txtFechaVenciTarjeta = new System.Windows.Forms.MaskedTextBox();
-            this.txtfechaInicio = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -477,6 +480,15 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Transportista";
+            // 
+            // txtfechaInicio
+            // 
+            this.txtfechaInicio.CustomFormat = "";
+            this.txtfechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtfechaInicio.Location = new System.Drawing.Point(694, 18);
+            this.txtfechaInicio.Name = "txtfechaInicio";
+            this.txtfechaInicio.Size = new System.Drawing.Size(83, 20);
+            this.txtfechaInicio.TabIndex = 25;
             // 
             // label21
             // 
@@ -843,134 +855,6 @@
             this.dgvListaPedidoDetalle.Size = new System.Drawing.Size(759, 148);
             this.dgvListaPedidoDetalle.TabIndex = 0;
             // 
-            // IDPEDIDODETALLE
-            // 
-            this.IDPEDIDODETALLE.HeaderText = "IDPEDIDODETALLE";
-            this.IDPEDIDODETALLE.Name = "IDPEDIDODETALLE";
-            this.IDPEDIDODETALLE.ReadOnly = true;
-            this.IDPEDIDODETALLE.Visible = false;
-            // 
-            // IDPEDIDOCABECERA
-            // 
-            this.IDPEDIDOCABECERA.HeaderText = "IDPEDIDOCABECERA";
-            this.IDPEDIDOCABECERA.Name = "IDPEDIDOCABECERA";
-            this.IDPEDIDOCABECERA.ReadOnly = true;
-            this.IDPEDIDOCABECERA.Visible = false;
-            // 
-            // CHITEM
-            // 
-            this.CHITEM.HeaderText = "N°";
-            this.CHITEM.Name = "CHITEM";
-            this.CHITEM.ReadOnly = true;
-            this.CHITEM.Visible = false;
-            this.CHITEM.Width = 25;
-            // 
-            // IDPRODUCTO
-            // 
-            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
-            this.IDPRODUCTO.Name = "IDPRODUCTO";
-            this.IDPRODUCTO.ReadOnly = true;
-            this.IDPRODUCTO.Visible = false;
-            // 
-            // CHCODIGO
-            // 
-            this.CHCODIGO.HeaderText = "CODIGO";
-            this.CHCODIGO.Name = "CHCODIGO";
-            this.CHCODIGO.ReadOnly = true;
-            this.CHCODIGO.Width = 60;
-            // 
-            // NUCANTIDAD
-            // 
-            this.NUCANTIDAD.HeaderText = "CANTIDAD";
-            this.NUCANTIDAD.Name = "NUCANTIDAD";
-            this.NUCANTIDAD.ReadOnly = true;
-            this.NUCANTIDAD.Width = 70;
-            // 
-            // NUSTOCK
-            // 
-            this.NUSTOCK.HeaderText = "STOCK";
-            this.NUSTOCK.Name = "NUSTOCK";
-            this.NUSTOCK.ReadOnly = true;
-            this.NUSTOCK.Visible = false;
-            this.NUSTOCK.Width = 60;
-            // 
-            // CHDESCRIPCION
-            // 
-            this.CHDESCRIPCION.HeaderText = "DESCIPCION";
-            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
-            this.CHDESCRIPCION.ReadOnly = true;
-            this.CHDESCRIPCION.Width = 270;
-            // 
-            // CHSERIE
-            // 
-            this.CHSERIE.HeaderText = "SERIE";
-            this.CHSERIE.Name = "CHSERIE";
-            this.CHSERIE.ReadOnly = true;
-            this.CHSERIE.Width = 70;
-            // 
-            // NUPRECIOVENTA
-            // 
-            this.NUPRECIOVENTA.HeaderText = "PREC. UNIT.";
-            this.NUPRECIOVENTA.Name = "NUPRECIOVENTA";
-            this.NUPRECIOVENTA.ReadOnly = true;
-            this.NUPRECIOVENTA.Width = 50;
-            // 
-            // CHPRECIO
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = "0.00";
-            this.CHPRECIO.DefaultCellStyle = dataGridViewCellStyle1;
-            this.CHPRECIO.HeaderText = "PRECIO";
-            this.CHPRECIO.Name = "CHPRECIO";
-            this.CHPRECIO.ReadOnly = true;
-            this.CHPRECIO.Visible = false;
-            this.CHPRECIO.Width = 50;
-            // 
-            // DESC1
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = "0.00";
-            this.DESC1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DESC1.HeaderText = "DSCTO%";
-            this.DESC1.Name = "DESC1";
-            this.DESC1.ReadOnly = true;
-            this.DESC1.Width = 60;
-            // 
-            // DESC2
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = "0.00";
-            this.DESC2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DESC2.HeaderText = "DSCTO%";
-            this.DESC2.Name = "DESC2";
-            this.DESC2.ReadOnly = true;
-            this.DESC2.Width = 60;
-            // 
-            // NUIMPORTE
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.NUIMPORTE.DefaultCellStyle = dataGridViewCellStyle4;
-            this.NUIMPORTE.HeaderText = "IMPORTE";
-            this.NUIMPORTE.Name = "NUIMPORTE";
-            this.NUIMPORTE.ReadOnly = true;
-            this.NUIMPORTE.Width = 60;
-            // 
-            // ESTADO
-            // 
-            this.ESTADO.HeaderText = "ESTADO";
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.ReadOnly = true;
-            this.ESTADO.Visible = false;
-            // 
-            // IDSERIE
-            // 
-            this.IDSERIE.HeaderText = "IDSERIE";
-            this.IDSERIE.Name = "IDSERIE";
-            this.IDSERIE.ReadOnly = true;
-            // 
             // cboTarjeta
             // 
             this.cboTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1082,14 +966,144 @@
             this.txtFechaVenciTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFechaVenciTarjeta.ValidatingType = typeof(System.DateTime);
             // 
-            // txtfechaInicio
+            // IDPEDIDODETALLE
             // 
-            this.txtfechaInicio.CustomFormat = "";
-            this.txtfechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtfechaInicio.Location = new System.Drawing.Point(694, 18);
-            this.txtfechaInicio.Name = "txtfechaInicio";
-            this.txtfechaInicio.Size = new System.Drawing.Size(83, 20);
-            this.txtfechaInicio.TabIndex = 25;
+            this.IDPEDIDODETALLE.HeaderText = "IDPEDIDODETALLE";
+            this.IDPEDIDODETALLE.Name = "IDPEDIDODETALLE";
+            this.IDPEDIDODETALLE.ReadOnly = true;
+            this.IDPEDIDODETALLE.Visible = false;
+            // 
+            // IDPEDIDOCABECERA
+            // 
+            this.IDPEDIDOCABECERA.HeaderText = "IDPEDIDOCABECERA";
+            this.IDPEDIDOCABECERA.Name = "IDPEDIDOCABECERA";
+            this.IDPEDIDOCABECERA.ReadOnly = true;
+            this.IDPEDIDOCABECERA.Visible = false;
+            // 
+            // CHITEM
+            // 
+            this.CHITEM.HeaderText = "N°";
+            this.CHITEM.Name = "CHITEM";
+            this.CHITEM.ReadOnly = true;
+            this.CHITEM.Visible = false;
+            this.CHITEM.Width = 25;
+            // 
+            // IDPRODUCTO
+            // 
+            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
+            this.IDPRODUCTO.Name = "IDPRODUCTO";
+            this.IDPRODUCTO.ReadOnly = true;
+            this.IDPRODUCTO.Visible = false;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 60;
+            // 
+            // NUCANTIDAD
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NUCANTIDAD.DefaultCellStyle = dataGridViewCellStyle1;
+            this.NUCANTIDAD.HeaderText = "CANTIDAD";
+            this.NUCANTIDAD.Name = "NUCANTIDAD";
+            this.NUCANTIDAD.ReadOnly = true;
+            this.NUCANTIDAD.Width = 70;
+            // 
+            // NUSTOCK
+            // 
+            this.NUSTOCK.HeaderText = "STOCK";
+            this.NUSTOCK.Name = "NUSTOCK";
+            this.NUSTOCK.ReadOnly = true;
+            this.NUSTOCK.Visible = false;
+            this.NUSTOCK.Width = 60;
+            // 
+            // CHDESCRIPCION
+            // 
+            this.CHDESCRIPCION.HeaderText = "DESCIPCION";
+            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
+            this.CHDESCRIPCION.ReadOnly = true;
+            this.CHDESCRIPCION.Width = 270;
+            // 
+            // CHSERIE
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CHSERIE.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CHSERIE.HeaderText = "SERIE";
+            this.CHSERIE.Name = "CHSERIE";
+            this.CHSERIE.ReadOnly = true;
+            this.CHSERIE.Width = 70;
+            // 
+            // NUPRECIOVENTA
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "00.00";
+            this.NUPRECIOVENTA.DefaultCellStyle = dataGridViewCellStyle3;
+            this.NUPRECIOVENTA.HeaderText = "PREC. UNIT.";
+            this.NUPRECIOVENTA.Name = "NUPRECIOVENTA";
+            this.NUPRECIOVENTA.ReadOnly = true;
+            this.NUPRECIOVENTA.Width = 50;
+            // 
+            // CHPRECIO
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0.00";
+            this.CHPRECIO.DefaultCellStyle = dataGridViewCellStyle4;
+            this.CHPRECIO.HeaderText = "PRECIO";
+            this.CHPRECIO.Name = "CHPRECIO";
+            this.CHPRECIO.ReadOnly = true;
+            this.CHPRECIO.Visible = false;
+            this.CHPRECIO.Width = 50;
+            // 
+            // DESC1
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = "00.00";
+            this.DESC1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DESC1.HeaderText = "DSCTO%";
+            this.DESC1.Name = "DESC1";
+            this.DESC1.ReadOnly = true;
+            this.DESC1.Width = 60;
+            // 
+            // DESC2
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = "0.00";
+            this.DESC2.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DESC2.HeaderText = "DSCTO%";
+            this.DESC2.Name = "DESC2";
+            this.DESC2.ReadOnly = true;
+            this.DESC2.Width = 60;
+            // 
+            // NUIMPORTE
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = "00.00";
+            this.NUIMPORTE.DefaultCellStyle = dataGridViewCellStyle7;
+            this.NUIMPORTE.HeaderText = "IMPORTE";
+            this.NUIMPORTE.Name = "NUIMPORTE";
+            this.NUIMPORTE.ReadOnly = true;
+            this.NUIMPORTE.Width = 60;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.HeaderText = "ESTADO";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
+            this.ESTADO.Visible = false;
+            // 
+            // IDSERIE
+            // 
+            this.IDSERIE.HeaderText = "IDSERIE";
+            this.IDSERIE.Name = "IDSERIE";
+            this.IDSERIE.ReadOnly = true;
+            this.IDSERIE.Visible = false;
             // 
             // frmProcPedidosCabecera
             // 
@@ -1194,6 +1208,9 @@
         private System.Windows.Forms.MaskedTextBox txtVencLicencia;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.MaskedTextBox txtFechaVenciTarjeta;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ComboBox cboigv;
+        private System.Windows.Forms.DateTimePicker txtfechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPEDIDODETALLE;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPEDIDOCABECERA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHITEM;
@@ -1210,8 +1227,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NUIMPORTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDSERIE;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.ComboBox cboigv;
-        private System.Windows.Forms.DateTimePicker txtfechaInicio;
     }
 }

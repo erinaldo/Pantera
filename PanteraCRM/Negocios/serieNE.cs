@@ -33,5 +33,9 @@ namespace Negocios
         {
             return serieDL.SeriesFalsear(parametro);
         }
+        public static serie SerieBusquedaCodigo(int parametro)
+        {
+            return serieDL.SerieBusquedaCodigo(parametro);
+        }
     }
 }

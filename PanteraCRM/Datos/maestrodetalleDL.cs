@@ -28,6 +28,23 @@ namespace Datos
                 return listado;
             }
         }
+        public static maestrodetalle BuscarPorCodigoDetalle(int codigomaestro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_maestrodetalle_buscar_por_codigodetale", CommandType.StoredProcedure, new parametro("in_idmaestrodetalle", codigomaestro)))
+            {
+                maestrodetalle registro = new maestrodetalle();
+                while (datareader.Read())
+                {
+                    registro.idmaestrodetalle = Convert.ToInt32(datareader["idmaestrodetalle"]);
+                    registro.idmaestro = Convert.ToInt32(datareader["idmaestro"]);
+                    registro.codigoitem = Convert.ToString(datareader["codigoitem"]).Trim();
+                    registro.nombreitem = Convert.ToString(datareader["nombreitem"]).Trim();
+                    registro.libre = Convert.ToString(datareader["libre"]).Trim();
+                }
+                return registro;
+            }
+        }
+        
         public static List<maestrocabecera> MaestroCabeceraListar()
         {
             using (IDataReader datareader = conexion.executeOperation("fn_maestrocabecera_listar", CommandType.StoredProcedure ))

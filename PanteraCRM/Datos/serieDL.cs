@@ -80,6 +80,33 @@ namespace Datos
                 return listado;
             }
         }
+        
+            public static serie SerieBusquedaCodigo(int parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_series_busqueda_codigo", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
+            {
+                serie registro = new serie();
+                while (datareader.Read())
+                {
+                    registro.p_inidserie = Convert.ToInt32(datareader["p_inidserie"]);
+                    registro.chcodigoserie = Convert.ToString(datareader["chcodigoserie"]).Trim();
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
+                    registro.chadicional = Convert.ToString(datareader["chadicional"]).Trim();
+                    registro.chfecha = Convert.ToString(datareader["chfecha"]).Trim();
+                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
+                    registro.p_inidmovimientod = Convert.ToInt32(datareader["p_inidmovimientod"]);
+                    registro.p_inidpedidod = Convert.ToInt32(datareader["p_inidpedido"]);
+
+                    registro.boexhibicion = Convert.ToBoolean(datareader["boexhibicion"]);
+                    registro.chinforme = Convert.ToString(datareader["chinforme"]).Trim();
+                    registro.chinformeobs = Convert.ToString(datareader["chinformeobs"]).Trim();
+                    registro.chinformefecha = Convert.ToString(datareader["chinformefecha"]).Trim();
+                }
+                return registro;
+            }
+        }
         public static List<seriebuscada> serieBuscar(string parametro)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_series_busqueda", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))

@@ -30,7 +30,9 @@ namespace Presentacion
 
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
-            //cargarData(0,"");
+            cargarData(0,"");
+            
+
         }
         public void cargarData(int registro, string parametro)
         {
@@ -50,10 +52,35 @@ namespace Presentacion
         }
         private void CargarTabla(List<pedidocabecera> Listado)
         {
+            dgvPedidos.Rows.Clear();
+            int countfile = 0;
             foreach (pedidocabecera registros in Listado)
             {
-                //Mcliente Registroscliente = clienteNE.ClienteBusquedaCodigo();
-                //dgvPedidos.Rows.Add(registros.p_inidpedidocabecera,,,,,,);
+                string razon="";
+                string documento = "";
+                Mcliente Registroscliente = clienteNE.ClienteBusquedaCodigo(registros.p_inidcliente);
+                if (Registroscliente.p_inidjurinat == 1)
+                {
+                    Mclientejuridico    ClienteJuridicoG = clienteNE.ClienteJuridicoBusquedaCodigo(Registroscliente.p_inidcliente);
+                    empresas EmpresaG = empresaNE.EmpresaBusquedaCodigo(ClienteJuridicoG.p_inidempresa);
+                    razon = EmpresaG.chrazonsocial;
+                }
+                else
+                {
+
+                    Mclientenatural ClienteNaturalG = clienteNE.ClienteNaturalBusquedaCodigo(Registroscliente.p_inidcliente);
+                    persona PersonaG = personaNE.PersonaBusquedaCodigo(ClienteNaturalG.p_inidpersona);
+                    razon = PersonaG.chapellidopaterno+""+ PersonaG.chapellidomaterno+", "+ PersonaG.chnombres;
+                }
+                maestrodetalle madet = maestrodetalleNE.BuscarPorCodigoDetalle(registros.p_inidsituacionpedido);
+                tipodocumento detalle = tipodocumentoNE.documentoVentaBusquedacodigo(registros.p_inidtipodocumento);
+                
+                dgvPedidos.Rows.Add(registros.p_inidpedidocabecera, registros.chcodigopedido, registros.chfechapedido, razon, detalle.chnombredocumento, registros.nutotalventamonnacional, madet.nombreitem);
+                if (madet.nombreitem == "BAJA")
+                {
+                    dgvPedidos.Rows[countfile].DefaultCellStyle.ForeColor = Color.Red;
+                }
+                countfile++;
             }
             
         }
@@ -87,7 +114,7 @@ namespace Presentacion
                         return;
                     }
                     frmProcPedidosCabecera f = new frmProcPedidosCabecera(vBoton);
-                    //f.pasado += new frmManClienteAnadir.pasar(ejecutar);
+                    f.PasadoCabecera += new frmProcPedidosCabecera.PasarCabecera(ejecutar);
                     f.MdiParent = this.MdiParent;
                     f.Show();
                 }
@@ -100,6 +127,87 @@ namespace Presentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+
+        private void txtParametro_TextChanged(object sender, EventArgs e)
+        {
+            string parametro = txtParametro.Text;
+            cargarData(0,parametro);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                vBoton = "M";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    ConectaFormSecundario(vBoton);
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                vBoton = "V";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    ConectaFormSecundario(vBoton);
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void ConectaFormSecundario(string vBoton)
+        {
+            if (dgvPedidos.RowCount == 0)
+            {
+                MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcPedidosCabecera);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            if (dgvPedidos.CurrentRow.Cells["CHESTADO"].Value.ToString() == "ACTIVO")
+            {
+                frmProcPedidosCabecera f = new frmProcPedidosCabecera(vBoton);
+                f.PasadoCabecera += new frmProcPedidosCabecera.PasarCabecera(ejecutar);
+                f.CodigoPedidoCabecera = (int)dgvPedidos.CurrentRow.Cells["IDPEDIDO"].Value;
+                f.MdiParent = this.MdiParent;
+                f.Show();
+            }
+            else
+            {
+                if (dgvPedidos.CurrentRow.Cells["CHESTADO"].Value.ToString() == "BAJA")
+                {
+                    MessageBox.Show("El pedido está anulado", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("El pedido ya tiene lo comprobantes generados", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
             }
         }
     }

@@ -15,6 +15,8 @@ namespace Presentacion.Reportes
     {
 
         public CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt = new CrystalDecisions.CrystalReports.Engine.ReportDocument();
+        internal string correlativofactura;
+        internal string correlativoguia;
         public FrmReporte()
         {
             InitializeComponent();
@@ -23,7 +25,14 @@ namespace Presentacion.Reportes
         private void FrmReporte_Load(object sender, EventArgs e)
         {
 
+            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
             this.CrpViewer.ReportSource = Rpt;            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

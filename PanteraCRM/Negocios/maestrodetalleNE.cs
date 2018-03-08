@@ -14,6 +14,10 @@ namespace Negocios
         {
             return maestrodetalleDL.buscarPorCodigoMaestro(codigomaestro);
         }
+        public static maestrodetalle BuscarPorCodigoDetalle(int codigo)
+        {
+            return maestrodetalleDL.BuscarPorCodigoDetalle(codigo);
+        }
         public static List<categoria> ListarCategorias()
         {
             return maestrodetalleDL.ListarCategorias();

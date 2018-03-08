@@ -110,6 +110,7 @@ namespace Presentacion
                 txtImporte.Text = "0.00";
                 txtPreUnit.Text = ProductoG.nuprecio.ToString();
                 txtMedida.Text = ProductoG.chunidadmedidaproducto;
+                dgvListaProdSeries.Rows.Clear();
                 cargarData(0, ProductoG.p_inidproducto);
             }
             else

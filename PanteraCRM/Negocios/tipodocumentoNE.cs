@@ -13,5 +13,9 @@ namespace Negocios
         {
             return tipodocumentoDL.ListarTipoDocumentosVenta();
         }
+        public static tipodocumento documentoVentaBusquedacodigo(int codigo)
+        {
+            return tipodocumentoDL.documentoVentaBusquedacodigo(codigo);
+        }
     }
 }

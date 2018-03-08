@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using System.Data;
-
 namespace Datos
 {
     public abstract class pedidoDL
@@ -74,7 +73,8 @@ namespace Datos
             new parametro("in_nuimportesubtotal", registros.nuimportesubtotal),
             new parametro("in_nuimportetotal", registros.nuimportetotal),
             new parametro("in_estado", registros.estado),
-            new parametro("in_p_inidserie", registros.p_inidserie)
+            new parametro("in_p_inidserie", registros.p_inidserie),
+            new parametro("in_p_inidalmacen", registros.p_inidpedidodetalle)
               );
          
         }
@@ -105,23 +105,23 @@ namespace Datos
                     registro.chfechainiciotransporte = Convert.ToString(datareader["chfechainiciotransporte"]).Trim();
                     registro.chpuntopartida = Convert.ToString(datareader["chpuntopartida"]).Trim();
                     registro.chpuntollegada = Convert.ToString(datareader["chpuntollegada"]).Trim();
-                    registro.nuventaafectamonnacional = Convert.ToInt32(datareader["nuventaafectamonnacional"]);
+                    registro.nuventaafectamonnacional = Convert.ToDecimal(datareader["nuventaafectamonnacional"]);
                     registro.chmotivotransaccion = Convert.ToString(datareader["chmotivotransaccion"]).Trim();
                     registro.p_inidmoneda = Convert.ToInt32(datareader["p_inidmoneda"]);
                     registro.p_inidigv = Convert.ToInt32(datareader["p_inidigv"]);
                     registro.boafectoigv = Convert.ToBoolean(datareader["boafectoigv"]);
-                    registro.nuimportecambioventa = Convert.ToInt32(datareader["nuimportecambioventa"]);
+                    registro.nuimportecambioventa = Convert.ToDecimal(datareader["nuimportecambioventa"]);
                     registro.p_inidvendedor = Convert.ToInt32(datareader["p_inidvendedor"]);
                     registro.chtiempoentrega = Convert.ToString(datareader["chtiempoentrega"]).Trim();
-                    registro.nuventainafectamonnacional = Convert.ToInt32(datareader["nuventainafectamonnacional"]);
-                    registro.nutotaldescmonnacional = Convert.ToInt32(datareader["nutotaldescmonnacional"]);
-                    registro.nutotaligvmonnacional = Convert.ToInt32(datareader["nutotaligvmonnacional"]);
-                    registro.nutotalventamonnacional = Convert.ToInt32(datareader["nutotalventamonnacional"]);
-                    registro.nuventaafectamonextra = Convert.ToInt32(datareader["nuventaafectamonextra"]);
-                    registro.nuventainafectamonextra = Convert.ToInt32(datareader["nuventainafectamonextra"]);
-                    registro.nutotaldescmonextra = Convert.ToInt32(datareader["nutotaldescmonextra"]);
-                    registro.nutotaligvmonextra = Convert.ToInt32(datareader["nutotaligvmonextra"]);
-                    registro.nutotalventamonextra = Convert.ToInt32(datareader["nutotalventamonextra"]);
+                    registro.nuventainafectamonnacional = Convert.ToDecimal(datareader["nuventainafectamonnacional"]);
+                    registro.nutotaldescmonnacional = Convert.ToDecimal(datareader["nutotaldescmonnacional"]);
+                    registro.nutotaligvmonnacional = Convert.ToDecimal(datareader["nutotaligvmonnacional"]);
+                    registro.nutotalventamonnacional = Convert.ToDecimal(datareader["nutotalventamonnacional"]);
+                    registro.nuventaafectamonextra = Convert.ToDecimal(datareader["nuventaafectamonextra"]);
+                    registro.nuventainafectamonextra = Convert.ToDecimal(datareader["nuventainafectamonextra"]);
+                    registro.nutotaldescmonextra = Convert.ToDecimal(datareader["nutotaldescmonextra"]);
+                    registro.nutotaligvmonextra = Convert.ToDecimal(datareader["nutotaligvmonextra"]);
+                    registro.nutotalventamonextra = Convert.ToDecimal(datareader["nutotalventamonextra"]);
                     registro.p_inidsituacionpedido = Convert.ToInt32(datareader["p_inidsituacionpedido"]);
                     registro.chobservacion = Convert.ToString(datareader["chobservacion"]).Trim();
                     registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
@@ -130,6 +130,33 @@ namespace Datos
                     registro.p_inidvehiculo = Convert.ToInt32(datareader["p_inidvehiculo"]);
                     registro.p_inidlicencia = Convert.ToInt32(datareader["p_inidlicencia"]);
                     registro.p_inidtarjeta = Convert.ToInt32(datareader["p_inidtarjeta"]);
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+        
+            public static List<pedidodetalle> PedidoDetalleBusquedaParametro(int parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_pedidodetalle_busqueda_codigo_cabecera", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
+            {
+                List<pedidodetalle> listado = new List<pedidodetalle>();
+                while (datareader.Read())
+                {
+                    pedidodetalle registro = new pedidodetalle();
+                    registro.p_inidpedidodetalle = Convert.ToInt32(datareader["p_inidpedidodetalle"]);
+                    registro.p_inidpedidocabecera = Convert.ToInt32(datareader["p_inidpedidocabecera"]);
+                    registro.chitem = Convert.ToString(datareader["chitem"]).Trim();
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
+                    registro.nucantidad = Convert.ToInt32(datareader["nucantidad"]);
+                    registro.nuprecioproducto = Convert.ToInt32(datareader["nuprecioproducto"]);
+                    registro.nuporcentajedesc1 = Convert.ToInt32(datareader["nuporcentajedesc1"]);
+                    registro.nuporcentajedesc2 = Convert.ToInt32(datareader["nuporcentajedesc2"]);
+                    registro.nuprecioventa = Convert.ToInt32(datareader["nuprecioventa"]);
+                    registro.nuimportesubtotal = Convert.ToInt32(datareader["nuimportesubtotal"]);
+                    registro.nuimportetotal = Convert.ToInt32(datareader["nuimportetotal"]);
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.p_inidserie = Convert.ToInt32(datareader["p_inidserie"]);
                     listado.Add(registro);
                 }
                 return listado;
@@ -160,23 +187,23 @@ namespace Datos
                     registro.chfechainiciotransporte = Convert.ToString(datareader["chfechainiciotransporte"]).Trim();
                     registro.chpuntopartida = Convert.ToString(datareader["chpuntopartida"]).Trim();
                     registro.chpuntollegada = Convert.ToString(datareader["chpuntollegada"]).Trim();
-                    registro.nuventaafectamonnacional = Convert.ToInt32(datareader["nuventaafectamonnacional"]);
+                    registro.nuventaafectamonnacional = Convert.ToDecimal(datareader["nuventaafectamonnacional"]);
                     registro.chmotivotransaccion = Convert.ToString(datareader["chmotivotransaccion"]).Trim();
                     registro.p_inidmoneda = Convert.ToInt32(datareader["p_inidmoneda"]);
                     registro.p_inidigv = Convert.ToInt32(datareader["p_inidigv"]);
                     registro.boafectoigv = Convert.ToBoolean(datareader["boafectoigv"]);
-                    registro.nuimportecambioventa = Convert.ToInt32(datareader["nuimportecambioventa"]);
+                    registro.nuimportecambioventa = Convert.ToDecimal(datareader["nuimportecambioventa"]);
                     registro.p_inidvendedor = Convert.ToInt32(datareader["p_inidvendedor"]);
                     registro.chtiempoentrega = Convert.ToString(datareader["chtiempoentrega"]).Trim();
-                    registro.nuventainafectamonnacional = Convert.ToInt32(datareader["nuventainafectamonnacional"]);
-                    registro.nutotaldescmonnacional = Convert.ToInt32(datareader["nutotaldescmonnacional"]);
-                    registro.nutotaligvmonnacional = Convert.ToInt32(datareader["nutotaligvmonnacional"]);
-                    registro.nutotalventamonnacional = Convert.ToInt32(datareader["nutotalventamonnacional"]);
-                    registro.nuventaafectamonextra = Convert.ToInt32(datareader["nuventaafectamonextra"]);
-                    registro.nuventainafectamonextra = Convert.ToInt32(datareader["nuventainafectamonextra"]);
-                    registro.nutotaldescmonextra = Convert.ToInt32(datareader["nutotaldescmonextra"]);
-                    registro.nutotaligvmonextra = Convert.ToInt32(datareader["nutotaligvmonextra"]);
-                    registro.nutotalventamonextra = Convert.ToInt32(datareader["nutotalventamonextra"]);
+                    registro.nuventainafectamonnacional = Convert.ToDecimal(datareader["nuventainafectamonnacional"]);
+                    registro.nutotaldescmonnacional = Convert.ToDecimal(datareader["nutotaldescmonnacional"]);
+                    registro.nutotaligvmonnacional = Convert.ToDecimal(datareader["nutotaligvmonnacional"]);
+                    registro.nutotalventamonnacional = Convert.ToDecimal(datareader["nutotalventamonnacional"]);
+                    registro.nuventaafectamonextra = Convert.ToDecimal(datareader["nuventaafectamonextra"]);
+                    registro.nuventainafectamonextra = Convert.ToDecimal(datareader["nuventainafectamonextra"]);
+                    registro.nutotaldescmonextra = Convert.ToDecimal(datareader["nutotaldescmonextra"]);
+                    registro.nutotaligvmonextra = Convert.ToDecimal(datareader["nutotaligvmonextra"]);
+                    registro.nutotalventamonextra = Convert.ToDecimal(datareader["nutotalventamonextra"]);
                     registro.p_inidsituacionpedido = Convert.ToInt32(datareader["p_inidsituacionpedido"]);
                     registro.chobservacion = Convert.ToString(datareader["chobservacion"]).Trim();
                     registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
@@ -215,23 +242,23 @@ namespace Datos
                     registro.chfechainiciotransporte = Convert.ToString(datareader["chfechainiciotransporte"]).Trim();
                     registro.chpuntopartida = Convert.ToString(datareader["chpuntopartida"]).Trim();
                     registro.chpuntollegada = Convert.ToString(datareader["chpuntollegada"]).Trim();
-                    registro.nuventaafectamonnacional = Convert.ToInt32(datareader["nuventaafectamonnacional"]);
+                    registro.nuventaafectamonnacional = Convert.ToDecimal(datareader["nuventaafectamonnacional"]);
                     registro.chmotivotransaccion = Convert.ToString(datareader["chmotivotransaccion"]).Trim();
                     registro.p_inidmoneda = Convert.ToInt32(datareader["p_inidmoneda"]);
                     registro.p_inidigv = Convert.ToInt32(datareader["p_inidigv"]);
                     registro.boafectoigv = Convert.ToBoolean(datareader["boafectoigv"]);
-                    registro.nuimportecambioventa = Convert.ToInt32(datareader["nuimportecambioventa"]);
+                    registro.nuimportecambioventa = Convert.ToDecimal(datareader["nuimportecambioventa"]);
                     registro.p_inidvendedor = Convert.ToInt32(datareader["p_inidvendedor"]);
                     registro.chtiempoentrega = Convert.ToString(datareader["chtiempoentrega"]).Trim();
-                    registro.nuventainafectamonnacional = Convert.ToInt32(datareader["nuventainafectamonnacional"]);
-                    registro.nutotaldescmonnacional = Convert.ToInt32(datareader["nutotaldescmonnacional"]);
-                    registro.nutotaligvmonnacional = Convert.ToInt32(datareader["nutotaligvmonnacional"]);
-                    registro.nutotalventamonnacional = Convert.ToInt32(datareader["nutotalventamonnacional"]);
-                    registro.nuventaafectamonextra = Convert.ToInt32(datareader["nuventaafectamonextra"]);
-                    registro.nuventainafectamonextra = Convert.ToInt32(datareader["nuventainafectamonextra"]);
-                    registro.nutotaldescmonextra = Convert.ToInt32(datareader["nutotaldescmonextra"]);
-                    registro.nutotaligvmonextra = Convert.ToInt32(datareader["nutotaligvmonextra"]);
-                    registro.nutotalventamonextra = Convert.ToInt32(datareader["nutotalventamonextra"]);
+                    registro.nuventainafectamonnacional = Convert.ToDecimal(datareader["nuventainafectamonnacional"]);
+                    registro.nutotaldescmonnacional = Convert.ToDecimal(datareader["nutotaldescmonnacional"]);
+                    registro.nutotaligvmonnacional = Convert.ToDecimal(datareader["nutotaligvmonnacional"]);
+                    registro.nutotalventamonnacional = Convert.ToDecimal(datareader["nutotalventamonnacional"]);
+                    registro.nuventaafectamonextra = Convert.ToDecimal(datareader["nuventaafectamonextra"]);
+                    registro.nuventainafectamonextra = Convert.ToDecimal(datareader["nuventainafectamonextra"]);
+                    registro.nutotaldescmonextra = Convert.ToDecimal(datareader["nutotaldescmonextra"]);
+                    registro.nutotaligvmonextra = Convert.ToDecimal(datareader["nutotaligvmonextra"]);
+                    registro.nutotalventamonextra = Convert.ToDecimal(datareader["nutotalventamonextra"]);
                     registro.p_inidsituacionpedido = Convert.ToInt32(datareader["p_inidsituacionpedido"]);
                     registro.chobservacion = Convert.ToString(datareader["chobservacion"]).Trim();
                     registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
