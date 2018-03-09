@@ -72,7 +72,7 @@ namespace Presentacion
         {
             txtCodigo.Text = tmpProductoSerie.chcodigoproducto;
             txtDescripcion.Text = tmpProductoSerie.chdescripcion;
-            txtcodigoSerie.Text = tmpProductoSerie.chcodigo;
+            txtidentificador.Text = tmpProductoSerie.identificador;            
             txtSerie.Text = tmpProductoSerie.chcodigoserie;
             ckbExhibicion.Checked = tmpProductoSerie.boexhibicion;
             txtDocumento.Text = tmpProductoSerie.chinforme;
@@ -94,6 +94,15 @@ namespace Presentacion
                     chinformeobs = txtObservacion.Text;
                     chinformefecha = txtFecha.Text;
                     boexhibicion = ckbExhibicion.Checked;
+                    int cantidad = 0;
+                    if (boexhibicion)
+                    {
+                        cantidad = 1;
+                    }else
+                    {
+                        cantidad = -1;
+                    }
+                    int entero = almacenNE.CambiarSaldoComprometido(sesion.SessionGlobal.p_inidalmacen, tmpProductoSerie.p_inidproducto, cantidad);
                     flat = exhibicionNE.ExibicionIngresar(p_inidserie, chinforme, chinformeobs, chinformefecha, boexhibicion);
                     if (flat <= 0)
                     {

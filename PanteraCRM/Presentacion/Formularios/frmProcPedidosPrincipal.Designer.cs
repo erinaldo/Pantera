@@ -38,6 +38,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcPedidosPrincipal));
             this.btnAnadir = new System.Windows.Forms.Button();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
+            this.IDPEDIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCORRELATIVO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -47,13 +54,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
-            this.IDPEDIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCORRELATIVO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHDOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -115,6 +115,65 @@
             this.dgvPedidos.Size = new System.Drawing.Size(784, 452);
             this.dgvPedidos.TabIndex = 1;
             // 
+            // IDPEDIDO
+            // 
+            this.IDPEDIDO.HeaderText = "IDPEDIDO";
+            this.IDPEDIDO.Name = "IDPEDIDO";
+            this.IDPEDIDO.ReadOnly = true;
+            this.IDPEDIDO.Visible = false;
+            // 
+            // CHCORRELATIVO
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CHCORRELATIVO.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CHCORRELATIVO.HeaderText = "N° PEDIDO";
+            this.CHCORRELATIVO.Name = "CHCORRELATIVO";
+            this.CHCORRELATIVO.ReadOnly = true;
+            this.CHCORRELATIVO.Width = 80;
+            // 
+            // CHFECHA
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CHFECHA.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CHFECHA.HeaderText = "FECHA";
+            this.CHFECHA.Name = "CHFECHA";
+            this.CHFECHA.ReadOnly = true;
+            this.CHFECHA.Width = 80;
+            // 
+            // CHCLIENTE
+            // 
+            this.CHCLIENTE.HeaderText = "CLIENTE";
+            this.CHCLIENTE.Name = "CHCLIENTE";
+            this.CHCLIENTE.ReadOnly = true;
+            this.CHCLIENTE.Width = 300;
+            // 
+            // CHDOC
+            // 
+            this.CHDOC.HeaderText = "DOC.";
+            this.CHDOC.Name = "CHDOC";
+            this.CHDOC.ReadOnly = true;
+            this.CHDOC.Width = 120;
+            // 
+            // CHTOTAL
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "00.00";
+            this.CHTOTAL.DefaultCellStyle = dataGridViewCellStyle4;
+            this.CHTOTAL.HeaderText = "TOTAL";
+            this.CHTOTAL.Name = "CHTOTAL";
+            this.CHTOTAL.ReadOnly = true;
+            this.CHTOTAL.Width = 80;
+            // 
+            // CHESTADO
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CHESTADO.DefaultCellStyle = dataGridViewCellStyle5;
+            this.CHESTADO.HeaderText = "ESTADO";
+            this.CHESTADO.Name = "CHESTADO";
+            this.CHESTADO.ReadOnly = true;
+            this.CHESTADO.Width = 80;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnAnular);
@@ -138,6 +197,7 @@
             this.btnAnular.TabIndex = 5;
             this.btnAnular.Text = "&Anular";
             this.btnAnular.UseVisualStyleBackColor = false;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // btnImprimir
             // 
@@ -210,65 +270,6 @@
             this.txtParametro.Size = new System.Drawing.Size(710, 20);
             this.txtParametro.TabIndex = 0;
             this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
-            // 
-            // IDPEDIDO
-            // 
-            this.IDPEDIDO.HeaderText = "IDPEDIDO";
-            this.IDPEDIDO.Name = "IDPEDIDO";
-            this.IDPEDIDO.ReadOnly = true;
-            this.IDPEDIDO.Visible = false;
-            // 
-            // CHCORRELATIVO
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CHCORRELATIVO.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CHCORRELATIVO.HeaderText = "N° PEDIDO";
-            this.CHCORRELATIVO.Name = "CHCORRELATIVO";
-            this.CHCORRELATIVO.ReadOnly = true;
-            this.CHCORRELATIVO.Width = 80;
-            // 
-            // CHFECHA
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CHFECHA.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CHFECHA.HeaderText = "FECHA";
-            this.CHFECHA.Name = "CHFECHA";
-            this.CHFECHA.ReadOnly = true;
-            this.CHFECHA.Width = 80;
-            // 
-            // CHCLIENTE
-            // 
-            this.CHCLIENTE.HeaderText = "CLIENTE";
-            this.CHCLIENTE.Name = "CHCLIENTE";
-            this.CHCLIENTE.ReadOnly = true;
-            this.CHCLIENTE.Width = 300;
-            // 
-            // CHDOC
-            // 
-            this.CHDOC.HeaderText = "DOC.";
-            this.CHDOC.Name = "CHDOC";
-            this.CHDOC.ReadOnly = true;
-            this.CHDOC.Width = 120;
-            // 
-            // CHTOTAL
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "00.00";
-            this.CHTOTAL.DefaultCellStyle = dataGridViewCellStyle4;
-            this.CHTOTAL.HeaderText = "TOTAL";
-            this.CHTOTAL.Name = "CHTOTAL";
-            this.CHTOTAL.ReadOnly = true;
-            this.CHTOTAL.Width = 80;
-            // 
-            // CHESTADO
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CHESTADO.DefaultCellStyle = dataGridViewCellStyle5;
-            this.CHESTADO.HeaderText = "ESTADO";
-            this.CHESTADO.Name = "CHESTADO";
-            this.CHESTADO.ReadOnly = true;
-            this.CHESTADO.Width = 80;
             // 
             // frmProcPedidosPrincipal
             // 

@@ -52,6 +52,7 @@
             this.CHINFORMEOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHINFORMEFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCODIGOSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHIDENTIFICADOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaExhibicion)).BeginInit();
@@ -175,7 +176,8 @@
             this.CHINFORME,
             this.CHINFORMEOBS,
             this.CHINFORMEFECHA,
-            this.CHCODIGOSERIE});
+            this.CHCODIGOSERIE,
+            this.CHIDENTIFICADOR});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -288,6 +290,14 @@
             this.CHCODIGOSERIE.ReadOnly = true;
             this.CHCODIGOSERIE.Visible = false;
             // 
+            // CHIDENTIFICADOR
+            // 
+            this.CHIDENTIFICADOR.DataPropertyName = "identificador";
+            this.CHIDENTIFICADOR.HeaderText = "CHIDENTIFICADOR";
+            this.CHIDENTIFICADOR.Name = "CHIDENTIFICADOR";
+            this.CHIDENTIFICADOR.ReadOnly = true;
+            this.CHIDENTIFICADOR.Visible = false;
+            // 
             // frmProcSeparacionExhibicionPrincipal
             // 
             this.AcceptButton = this.btnModificar;
@@ -335,5 +345,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHINFORMEOBS;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHINFORMEFECHA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGOSERIE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHIDENTIFICADOR;
     }
 }

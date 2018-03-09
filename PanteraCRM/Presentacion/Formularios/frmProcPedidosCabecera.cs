@@ -575,6 +575,7 @@ using Presentacion.Dataset;
                         RegistrosPedidosDetalle.nuimportetotal = 0;
                         RegistrosPedidosDetalle.estado = true;
                         RegistrosPedidosDetalle.p_inidserie = idserie;
+                        serieNE.SeriesFalsearCodigo(idserie);
                         RegistrosPedidosDetalle.p_inidpedidodetalle = sesion.SessionGlobal.p_inidalmacen;
                         codigodetalle = pedidoNE.IngresoPedidoDetalle(RegistrosPedidosDetalle);
                     }

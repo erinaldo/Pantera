@@ -210,5 +210,45 @@ namespace Presentacion
                 }
             }
         }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            if (dgvPedidos.RowCount == 0)
+            {
+                MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcPedidosCabecera);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            if (dgvPedidos.CurrentRow.Cells["CHESTADO"].Value.ToString() == "ACTIVO")
+            {
+                DialogResult result = MessageBox.Show("¿Está seguro de anular el pedido N° "+ dgvPedidos.CurrentRow.Cells["CHCORRELATIVO"].Value.ToString() + " ?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    //MessageBox.Show("Registro anulado", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                  int codigo =  serieNE.CabeceraAnular((int)dgvPedidos.CurrentRow.Cells["IDPEDIDO"].Value);
+                    ejecutar(codigo);
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                if (dgvPedidos.CurrentRow.Cells["CHESTADO"].Value.ToString() == "BAJA")
+                {
+                    MessageBox.Show("El pedido ya está anulado", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("El pedido ya tiene lo comprobantes generados", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+            }
+        }
     }
 }

@@ -57,12 +57,21 @@ namespace Datos
         }
         public static int SeriesFalsear(int parametro)
         {
-            return conexion.executeScalar("fn_serie_detalle_falsear", CommandType.StoredProcedure,   new parametro("in_p_inidmovimientod", parametro)
+            return conexion.executeScalar("fn_serie_detalle_falsear", CommandType.StoredProcedure,   new parametro("in_p_inidmovimientod", parametro));
 
-            );
+        }
+        public static int SeriesFalsearCodigo(int parametro)
+        {
+            return conexion.executeScalar("fn_serie_detalle_falsear_codigo", CommandType.StoredProcedure, new parametro("in_p_inidvaledetalle", parametro));
+
+        }
+        public static int CabeceraAnular(int parametro)
+        {
+            return conexion.executeScalar("fn_movimiento_cabecera_anular", CommandType.StoredProcedure, new parametro("in_p_inidpedidocabecera", parametro));
 
         }
         
+
         public static List<seriebuscada> serieListar()
         {
             using (IDataReader datareader = conexion.executeOperation("fn_series_litar", CommandType.StoredProcedure))

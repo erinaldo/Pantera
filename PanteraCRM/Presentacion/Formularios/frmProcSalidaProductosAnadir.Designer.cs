@@ -365,6 +365,7 @@
             this.txtRuc.Size = new System.Drawing.Size(127, 20);
             this.txtRuc.TabIndex = 5;
             this.txtRuc.TextChanged += new System.EventHandler(this.txtRuc_TextChanged_1);
+            this.txtRuc.DoubleClick += new System.EventHandler(this.txtRuc_DoubleClick);
             // 
             // txtFacBol
             // 

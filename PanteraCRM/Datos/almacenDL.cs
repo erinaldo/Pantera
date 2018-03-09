@@ -109,6 +109,17 @@ namespace Datos
                 );
             }
         }
+        public static int CambiarSaldoComprometido(int a1, int p2, decimal cantidad)
+        {
+            {
+                return conexion.executeScalar("fn_saldoalmacen_stock_comprometido",
+                CommandType.StoredProcedure,
+                new parametro("in_p_inidalmacen", a1),
+                new parametro("in_p_inidproducto", p2),
+                new parametro("in_cantidad", cantidad)
+                );
+            }
+        }
         
         public static int almacenActualizar(almacen almacen)
         {

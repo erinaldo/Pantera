@@ -19,6 +19,7 @@ namespace Entidades
         public string chinformeobs { get; set; }
         public string chinformefecha { get; set; }
         public string chcodigo { get; set; }
+        public string identificador { get; set; }
         public productoserie()
         {
             this.p_inidproducto = 0;
@@ -32,6 +33,7 @@ namespace Entidades
             this.chinformeobs = string.Empty;
             this.chinformefecha = string.Empty;
             this.chcodigo = string.Empty;
+            this.identificador = string.Empty;
         }
     }
 }

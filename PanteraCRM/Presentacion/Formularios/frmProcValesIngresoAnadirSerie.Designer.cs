@@ -113,19 +113,19 @@
             // txtCodigoSerie
             // 
             this.txtCodigoSerie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigoSerie.Location = new System.Drawing.Point(333, 18);
+            this.txtCodigoSerie.Location = new System.Drawing.Point(264, 18);
             this.txtCodigoSerie.Name = "txtCodigoSerie";
-            this.txtCodigoSerie.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigoSerie.Size = new System.Drawing.Size(169, 20);
             this.txtCodigoSerie.TabIndex = 6;
             // 
             // txtfecfabri
             // 
             this.txtfecfabri.AutoSize = true;
-            this.txtfecfabri.Location = new System.Drawing.Point(287, 21);
+            this.txtfecfabri.Location = new System.Drawing.Point(188, 21);
             this.txtfecfabri.Name = "txtfecfabri";
-            this.txtfecfabri.Size = new System.Drawing.Size(40, 13);
+            this.txtfecfabri.Size = new System.Drawing.Size(65, 13);
             this.txtfecfabri.TabIndex = 78;
-            this.txtfecfabri.Text = "Codigo";
+            this.txtfecfabri.Text = "Identificador";
             // 
             // btnQuitar
             // 

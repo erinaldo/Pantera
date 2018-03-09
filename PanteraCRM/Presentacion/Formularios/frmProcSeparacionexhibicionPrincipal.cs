@@ -75,6 +75,7 @@ namespace Presentacion
             f.tmpProductoSerie.chinformeobs =(string)dgvListaExhibicion.CurrentRow.Cells["CHINFORMEOBS"].Value;
             f.tmpProductoSerie.chinformefecha = (string)dgvListaExhibicion.CurrentRow.Cells["CHINFORMEFECHA"].Value;
             f.tmpProductoSerie.chcodigo = (string)dgvListaExhibicion.CurrentRow.Cells["CHCODIGOSERIE"].Value;
+            f.tmpProductoSerie.identificador = (string)dgvListaExhibicion.CurrentRow.Cells["CHIDENTIFICADOR"].Value;
             f.MdiParent = this.MdiParent;
             f.Show();
         }

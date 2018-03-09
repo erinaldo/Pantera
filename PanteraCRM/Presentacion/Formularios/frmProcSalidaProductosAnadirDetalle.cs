@@ -41,68 +41,83 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            List<movimientoproductoaccion> listaMovi = sesion.movprodaccion;
-            if (listaMovi == null)
+            if (validarCamposdetalle())
             {
-                listaMovi = new List<movimientoproductoaccion>();
-            }
-            movimientoproductoaccion registrosMovi = new movimientoproductoaccion();
-
-            List<serie> ListaSerie = new List<serie>();
-            if (dgvListaProdSeries.RowCount > 0)
-            {
-                for (int i = 0; i < dgvListaProdSeries.RowCount; i++)
+                List<movimientoproductoaccion> listaMovi = sesion.movprodaccion;
+                if (listaMovi == null)
                 {
-                    serie registrosSerie = new serie();
-                    registrosSerie.chcodigoserie = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
-                    registrosSerie.estado = true;
-                    registrosSerie.p_inidproducto = ProductoG.p_inidproducto;
-                    registrosSerie.chadicional = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
-                    registrosSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-                    registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                    ListaSerie.Add(registrosSerie);
+                    listaMovi = new List<movimientoproductoaccion>();
                 }
+                movimientoproductoaccion registrosMovi = new movimientoproductoaccion();
+
+                List<serie> ListaSerie = new List<serie>();
+                if (dgvListaProdSeries.RowCount > 0)
+                {
+                    for (int i = 0; i < dgvListaProdSeries.RowCount; i++)
+                    {
+                        serie registrosSerie = new serie();
+                        registrosSerie.chcodigoserie = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
+                        registrosSerie.estado = true;
+                        registrosSerie.p_inidproducto = ProductoG.p_inidproducto;
+                        registrosSerie.chadicional = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
+                        registrosSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+                        registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                        ListaSerie.Add(registrosSerie);
+                    }
+                }
+
+                valedetalle registrosValeDet = new valedetalle();
+                registrosValeDet.p_inidvaledetalle = ProductoG.p_inidproducto;
+                registrosValeDet.chnombrecompuesto = ProductoG.chnombrecompuesto;
+                registrosValeDet.chmedida = txtMedida.Text;
+                registrosValeDet.chcodigoproducto = ProductoG.chcodigoproducto;
+                registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+                registrosValeDet.p_inidproducto = ProductoG.p_inidproducto;
+                registrosValeDet.nucantidad = int.Parse(txtCant.Text);
+                registrosValeDet.nucosto = decimal.Round(decimal.Parse(txtPreComp.Text), 2);
+                registrosValeDet.nutotal = decimal.Round(decimal.Parse(txtImporte.Text), 2);
+                registrosValeDet.estado = true;
+
+                registrosMovi.listaserie = ListaSerie;
+                registrosMovi.valedet = registrosValeDet;
+
+                listaMovi.Add(registrosMovi);
+                //sesion.movprodaccion.Clear();
+                sesion.movprodaccion = listaMovi;
+                dgvListaProdSeries.Rows.Clear();
+                pasadoDetalle();
+                this.Dispose();
             }
-
-            valedetalle registrosValeDet = new valedetalle();
-            registrosValeDet.p_inidvaledetalle = ProductoG.p_inidproducto;
-            registrosValeDet.chnombrecompuesto = ProductoG.chnombrecompuesto;
-            registrosValeDet.chmedida = txtMedida.Text;
-            registrosValeDet.chcodigoproducto = ProductoG.chcodigoproducto;
-            registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-            registrosValeDet.p_inidproducto = ProductoG.p_inidproducto;
-            registrosValeDet.nucantidad = int.Parse(txtCant.Text);
-            registrosValeDet.nucosto = decimal.Round(decimal.Parse(txtPreComp.Text), 2);
-            registrosValeDet.nutotal = decimal.Round(decimal.Parse(txtImporte.Text), 2);
-            registrosValeDet.estado = true;
-
-            registrosMovi.listaserie = ListaSerie;
-            registrosMovi.valedet = registrosValeDet;
-
-            listaMovi.Add(registrosMovi);
-            //sesion.movprodaccion.Clear();
-            sesion.movprodaccion = listaMovi;
-            dgvListaProdSeries.Rows.Clear();
-            pasadoDetalle();
-            this.Dispose();
+            
         }
         private bool validarCamposdetalle()
         {
             bool flat = false;
-            if (txtCant.Text.Length > 0 )
+            int cantidad = 0;
+            decimal compra = 0;
+            if (txtCant.Text.Length > 0)
             {
-                if (txtPreComp.Text.Length > 0)
+                cantidad = int.Parse(txtCant.Text);
+            }
+            if (txtPreComp.Text.Length > 0)
+            {
+                compra = decimal.Parse(txtPreComp.Text);
+            }
+            if ( cantidad > 0 )
+            {
+                if ( compra > 0)
                 {
                     if (txtDescripcion.Text.Length > 0)
                     {
                         if (ValidaLista())
                         {
-
-                        }else
+                            flat = true;
+                        }
+                        else
                         {
                             MessageBox.Show("Erro de Lista", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                         }
-                        flat = true;
+                        
                     }else
                     {
                         MessageBox.Show("Ingrese código de producto", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
@@ -124,6 +139,40 @@ namespace Presentacion
         private bool ValidaLista()
         {
             bool flat = false;
+            int cantidad = 0;
+            if (txtCant.Text.Length > 0)
+            {
+                cantidad = int.Parse(txtCant.Text);
+            }
+
+            if (dgvListaProdSeries.RowCount > 0)
+            {
+                int variante = 0;
+                for (int i = 0; i < dgvListaProdSeries.RowCount; i++)
+                {
+                    if (bool.Parse(dgvListaProdSeries.Rows[i].Cells["REQSERIE"].Value.ToString()))
+                    {
+                        variante++;
+                    }
+                }
+                if (cantidad == variante)
+                {
+
+                    flat = true;
+                }
+                else
+                {
+                    MessageBox.Show("La CANTIDAD debe ser igual a los ITEMS Seleccionados", "MENSAJE DE SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //txtCant.BackColor = Color.Red;
+                    txtCant.Focus();
+
+                }
+            }
+            else
+            {
+                flat = true;
+            }
+
             return flat;
         }
         private void txtCodigo_TextChanged(object sender, EventArgs e)

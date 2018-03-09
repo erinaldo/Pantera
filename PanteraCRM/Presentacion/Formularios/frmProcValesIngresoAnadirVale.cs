@@ -372,7 +372,7 @@ namespace Presentacion
                                     Registros.chcodigoserie = registrosSerie.chcodigoserie;
                                     Registros.estado = true;
                                     Registros.p_inidproducto = RegistrosMovimeintoDetalle.valedet.p_inidproducto;
-                                    Registros.chadicional = "";
+                                    Registros.chadicional = registrosSerie.chadicional;
                                     Registros.chfecha = mskfechareg.Text;
                                     Registros.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
                                     Registros.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;

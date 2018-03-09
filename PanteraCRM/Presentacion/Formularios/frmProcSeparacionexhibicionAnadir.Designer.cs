@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcSeparacionexhibicionAnadir));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ckbExhibicion = new System.Windows.Forms.CheckBox();
-            this.txtcodigoSerie = new System.Windows.Forms.TextBox();
+            this.txtidentificador = new System.Windows.Forms.TextBox();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.ckbExhibicion);
-            this.groupBox1.Controls.Add(this.txtcodigoSerie);
+            this.groupBox1.Controls.Add(this.txtidentificador);
             this.groupBox1.Controls.Add(this.txtSerie);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtDescripcion);
@@ -83,16 +83,16 @@
             this.ckbExhibicion.UseVisualStyleBackColor = true;
             this.ckbExhibicion.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // txtcodigoSerie
+            // txtidentificador
             // 
-            this.txtcodigoSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtcodigoSerie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcodigoSerie.ForeColor = System.Drawing.Color.Blue;
-            this.txtcodigoSerie.Location = new System.Drawing.Point(115, 82);
-            this.txtcodigoSerie.Name = "txtcodigoSerie";
-            this.txtcodigoSerie.ReadOnly = true;
-            this.txtcodigoSerie.Size = new System.Drawing.Size(100, 20);
-            this.txtcodigoSerie.TabIndex = 7;
+            this.txtidentificador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtidentificador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtidentificador.ForeColor = System.Drawing.Color.Blue;
+            this.txtidentificador.Location = new System.Drawing.Point(115, 82);
+            this.txtidentificador.Name = "txtidentificador";
+            this.txtidentificador.ReadOnly = true;
+            this.txtidentificador.Size = new System.Drawing.Size(100, 20);
+            this.txtidentificador.TabIndex = 7;
             // 
             // txtSerie
             // 
@@ -111,9 +111,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(112, 66);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 13);
+            this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Codigo de Serie";
+            this.label4.Text = "Identificador";
             // 
             // txtDescripcion
             // 
@@ -299,7 +299,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox ckbExhibicion;
-        private System.Windows.Forms.TextBox txtcodigoSerie;
+        private System.Windows.Forms.TextBox txtidentificador;
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDescripcion;

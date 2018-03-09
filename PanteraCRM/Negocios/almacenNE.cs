@@ -48,5 +48,9 @@ namespace Negocios
         {
             return almacenDL.SaldoAlmacenAdiconar( a1,  p1,  cantidad);
         }
+        public static int CambiarSaldoComprometido(int a1, int p1, decimal cantidad)
+        {
+            return almacenDL.CambiarSaldoComprometido(a1, p1, cantidad);
+        }
     }
 }
