@@ -197,6 +197,7 @@ using Presentacion.Dataset;
                 txtValVenta.Text = "0.00";
                 txtTotVenta.Text = "0.00";
                 txtDesc.Text = "0.00";
+                txtTipoCambio.Text = "0.00";
             }
             else
             {
@@ -225,22 +226,21 @@ using Presentacion.Dataset;
         private void CargarDatosCabecera()
         {
             pedidocabecera pedCab = pedidoNE.PedidoCabeceraBusquedaCodigo(CodigoPedidoCabecera);
-            List<pedidodetalle> peddet = pedidoNE.PedidoDetalleBusquedaParametro(CodigoPedidoCabecera);
-            
+            List<pedidodetalle> peddet = pedidoNE.PedidoDetalleBusquedaParametro(CodigoPedidoCabecera);            
             List<pedidodetallecontenido> ListaPedidoContenido = new List<pedidodetallecontenido>();
             foreach (pedidodetalle obj in peddet)
             {
                 pedidodetallecontenido RegistroPed = new pedidodetallecontenido();
                 RegistroPed.orden = int.Parse( obj.chitem);
                 RegistroPed.pedidodetalle = obj;
-                RegistroPed.serie = serieNE.SerieBusquedaCodigo(obj.p_inidserie);
+                serie registrosserie= serieNE.SerieBusquedaCodigo(obj.p_inidserie);
+                if (registrosserie.p_inidserie == 0) { registrosserie = null; }
+                RegistroPed.serie = registrosserie;
                 producto prod = productoNE.ProductoBusquedaCodigo(obj.p_inidproducto);
                 RegistroPed.productoparaventa = productoNE.ProductosVentaParametro(prod.chcodigoproducto);
                 RegistroPed.estado = true;
                 ListaPedidoContenido.Add(RegistroPed);
             }
-
-
             sesion.pedidodetallecontenido = ListaPedidoContenido;
             Mcliente Registroscliente = clienteNE.ClienteBusquedaCodigo(pedCab.p_inidcliente);
             txtCodigoCliente.Text = Registroscliente.chcodigocliente;
@@ -255,18 +255,16 @@ using Presentacion.Dataset;
             //txtfechaInicio.Text = pedCab.chfechainiciotransporte;
             txtPtoPartida.Text = pedCab.chpuntopartida;
             txtPtoLlegada.Text = pedCab.chpuntollegada;
-            cboigv.SelectedValue= pedCab.p_inidigv;
-            
+            cboigv.SelectedValue= pedCab.p_inidigv;           
 
-            txtSubtotal.Text = "" + decimal.Round(pedCab.nuventainafectamonnacional- pedCab.nutotaldescmonnacional, 2);
-            txtValVenta.Text = "" + decimal.Round(pedCab.nuventainafectamonnacional, 2);
-            txtDesctot.Text = "" + decimal.Round(pedCab.nutotaldescmonnacional, 2);
-            txtIgv.Text = "" + decimal.Round(pedCab.nutotaligvmonnacional , 2) ;
-            txtTotVenta.Text = "" + decimal.Round(pedCab.nutotalventamonnacional , 2);
+            //txtSubtotal.Text = "" + decimal.Round(pedCab.nuventainafectamonnacional- pedCab.nutotaldescmonnacional, 2);
+            //txtValVenta.Text = "" + decimal.Round(pedCab.nuventainafectamonnacional, 2);
+            //txtDesctot.Text = "" + decimal.Round(pedCab.nutotaldescmonnacional, 2);
+            //txtIgv.Text = "" + decimal.Round(pedCab.nutotaligvmonnacional , 2) ;
+            //txtTotVenta.Text = "" + decimal.Round(pedCab.nutotalventamonnacional , 2);
             txtObs.Text = pedCab.chobservacion;
             cboVehiculo.SelectedValue = pedCab.p_inidvehiculo;
             cboTarjeta.SelectedValue = pedCab.p_inidlicencia;
-
             CargarTablaDetalle();
 
         }
@@ -555,7 +553,7 @@ using Presentacion.Dataset;
                     decimal preunit = obj.pedidodetalle.nuprecioproducto;
                     int idserie = 0;
                     string codigoserie = "-";
-                    if (obj.serie != null)
+                    if (obj.serie.p_inidserie > 0)
                     {
                         cantidad = 1;
                         idserie = obj.serie.p_inidserie;

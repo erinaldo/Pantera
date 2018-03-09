@@ -22,6 +22,8 @@ namespace Presentacion
         public string chmedida;
         public decimal nuprecio;
         public bool req_seriesss;
+        public delegate void CargarTabla(string codigo);
+        public event CargarTabla Cargado;
         public frmBusquedaProductoGeneral()
         {
             InitializeComponent();
@@ -76,16 +78,23 @@ namespace Presentacion
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-           
-            p_inidproducto= (int)dgvBusqueda.CurrentRow.Cells["IDPRODUCTO"].Value;
-            chcodigoproducto= (string)dgvBusqueda.CurrentRow.Cells["CHCODIGO"].Value;
-            nombrecompuesto = (string)(dgvBusqueda.CurrentRow.Cells["CHPRODUCTO"].Value);
-            p_inidsituacionproducto = (int)dgvBusqueda.CurrentRow.Cells["IDSITUACION"].Value;
-            chsituacionproducto = (string)(dgvBusqueda.CurrentRow.Cells["CHSITUACION"].Value);
-            chmedida = (string)(dgvBusqueda.CurrentRow.Cells["CHMEDIDAS"].Value);
-            nuprecio = (decimal)(dgvBusqueda.CurrentRow.Cells["CHPRECIOS"].Value);
-            req_seriesss = (bool)(dgvBusqueda.CurrentRow.Cells["BOSERIE"].Value);
+            
+            chcodigoproducto = (string)dgvBusqueda.CurrentRow.Cells["CHCODIGO"].Value;
+            Cargado(chcodigoproducto);
+            this.Dispose();
 
+        }
+
+        private void frmBusquedaProductoGeneral_Load(object sender, EventArgs e)
+        {
+
+            this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -145,6 +145,7 @@
             this.btnVer.TabIndex = 3;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // btnAnadir
             // 
@@ -168,6 +169,7 @@
             this.btnGrabar.TabIndex = 4;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnModificar
             // 
@@ -179,6 +181,7 @@
             this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -190,6 +193,7 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 

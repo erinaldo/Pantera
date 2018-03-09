@@ -13,6 +13,9 @@ namespace Presentacion
 {
     public partial class frmProcSalidaProductosAnadir : Form
     {
+        internal int p_inidmovimientoG;
+        public delegate void pasarNuevoVale(int varreg);
+        public event pasarNuevoVale pasadoVale;
         public frmProcSalidaProductosAnadir(string vBoton)
         {
             InitializeComponent();
@@ -52,22 +55,19 @@ namespace Presentacion
                 if (this.vBoton == "M")
                 {
                     this.Text = "MODIFICAR MOVIMIENTO";
-
-
-
-                    //RegistrosMovimientoC = movimientosNE.MovimientoProductoCabeceraBusqueda(codigoMovimiento);
-                    //txtejercicio.Text = "2018";
-                    //txtperiodo.Text = "01";
-                    //txtAlmacen.Text = "PRINCIPAL";
-                    //txtClase.Text = "INGRESO";
-                    //txtRuc.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
-                    //cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
-                    //cboTipoMov.SelectedValue = RegistrosMovimientoC.p_inidtipomoviemiento;
-                    //txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
-                    //mskfechareg.Text = RegistrosMovimientoC.chvalefecha.ToString();
-                    //txtobs.Text = RegistrosMovimientoC.chobservacion;
-                    //txtFacBol.Text = RegistrosMovimientoC.chboletafactura;
-                    //txtGuiaRem.Text = RegistrosMovimientoC.chguiaremision;
+                    movimientoproductoc RegistrosMovimientoC = movimientosNE.MovimientoProductoCabeceraBusqueda(p_inidmovimientoG);
+                    txtejercicio.Text = "2018";
+                    txtperiodo.Text = "01";
+                    txtAlmacen.Text = "PRINCIPAL";
+                    txtClase.Text = "SALIDA";
+                    txtRuc.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
+                    cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
+                    cboTipoMov.SelectedValue = RegistrosMovimientoC.p_inidtipomoviemiento;
+                    txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
+                    mskfechareg.Text = RegistrosMovimientoC.chvalefecha.ToString();
+                    txtobs.Text = RegistrosMovimientoC.chobservacion;
+                    txtFacBol.Text = RegistrosMovimientoC.chboletafactura;
+                    txtGuiaRem.Text = RegistrosMovimientoC.chguiaremision;
                     //cboTipoMov.Focus();
 
 
@@ -202,7 +202,14 @@ namespace Presentacion
                 }                   
             }                
         }
+        private void CargarDatos()
+        {
 
+        }
+        private void CargarTablaDetalle()
+        {
+
+        }
       
         private void BuscaProveedor(string ruc)
         {
@@ -246,20 +253,272 @@ namespace Presentacion
         private void txtRuc_TextChanged_1(object sender, EventArgs e)
         {
             string parametro = txtRuc.Text;
-            if (cboTipoMov.Text == "VENTA")
+            if (cboTipoMov.Text == "DEVOLUCION POR COMPRA")
             {
+                BuscaProveedor(parametro);
             }
-            else
-            {
-                if (cboTipoMov.Text == "DEVOLUCION POR COMPRA")
-                {
-                    BuscaProveedor(parametro);
-                }
-            }
-            
         }
 
         private void btnAnadir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string vBoton = "A";
+
+                if (basicas.validarAcceso(vBoton))
+                {
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadirDetalle);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmProcSalidaProductosAnadirDetalle f = new frmProcSalidaProductosAnadirDetalle(vBoton);
+                    f.pasadoDetalle += new frmProcSalidaProductosAnadirDetalle.pasarDetalleAnadido(CargarDatosSession);
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void CargarDatosSession()
+        {
+            decimal suma = 0;
+            List<movimientoproductoaccion> listaMovi = sesion.movprodaccion;
+            // valedetalle obj = sesion.valedetalles;
+            if (listaMovi != null)
+            {
+                dgvListaValeDetalle.Rows.Clear();
+                foreach (movimientoproductoaccion registrosMovi in listaMovi)
+                {
+                    if (registrosMovi.valedet.estado == true)
+                    {
+                        dgvListaValeDetalle.Rows.Add(
+                        registrosMovi.valedet.p_inidvaledetalle,
+                        registrosMovi.valedet.p_inidproducto,
+                        registrosMovi.valedet.chcodigoproducto.ToString(),
+                        registrosMovi.valedet.nucantidad,
+                        registrosMovi.valedet.chmedida,
+                        registrosMovi.valedet.chnombrecompuesto.ToString(),
+                        decimal.Round(registrosMovi.valedet.nucosto, 2),
+                        decimal.Round(registrosMovi.valedet.nutotal, 2));
+                        suma += registrosMovi.valedet.nutotal;
+                    }
+                }
+                txtTotal.Text = decimal.Round(suma, 2).ToString();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+            }
+        }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string vBoton = "M";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    cargarFormularioModificar(vBoton);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string vBoton = "E";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    cargarFormularioEliminar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void cargarFormularioEliminar()
+        {
+            if (dgvListaValeDetalle.RowCount == 0)
+            {
+                MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            List<movimientoproductoaccion> listaMovi = sesion.movprodaccion;
+
+            if (listaMovi != null)
+            {
+                foreach (movimientoproductoaccion registrosMovi in listaMovi)
+                {
+                    if (registrosMovi.valedet.p_inidvaledetalle == (int)dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value)
+                    {
+                        //registrosMovi.valedet.p_inidvaledetalle = 0;
+                        registrosMovi.valedet.estado = false;
+                    }
+                }
+                sesion.movprodaccion = listaMovi;
+            }
+            CargarTablaDetalle();
+        }
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string vBoton = "V";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    cargarFormularioModificar(vBoton);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void cargarFormularioModificar(string vBoton)
+        {
+            if (dgvListaValeDetalle.RowCount == 0)
+            {
+                MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadir);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            frmProcSalidaProductosAnadir f = new frmProcSalidaProductosAnadir(vBoton);
+            // f.pasado += new frmProcSeriesAnadir.pasar(ejecutar);            
+            //f.p_inidproducto = (int)dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value;
+            //MessageBox.Show(dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            //f.Cargado += new frmProcSalidaProductosAnadir.CargarTabla(CargarTabla);
+            f.MdiParent = this.MdiParent;
+            f.Show();
+            //DialogResult res = f.ShowDialog();
+            //if (res == DialogResult.OK)
+            //{
+            //    CargarTabla();
+            //}
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string moton2 = "G";
+                if (basicas.validarAcceso(moton2))
+                {
+                    switch (this.vBoton)
+                    {
+                        case "A":
+                            if (ValdiarCabeceramovimiento())
+                            {
+                                DialogResult result = MessageBox.Show("¿Está seguro de Registrar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (result == DialogResult.Yes)
+                                {
+                                    GrabarMovimiento();
+                                }
+                                else
+                                {
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                return;
+                            }
+
+                            break;
+                        case "M":
+                            if (ValdiarCabeceramovimiento())
+                            {
+                                DialogResult result = MessageBox.Show("¿Está seguro de Registrar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (result == DialogResult.Yes)
+                                {
+                                    ModificarMovimiento();
+                                }
+                                else
+                                {
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                return;
+                            }
+
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+
+            this.Dispose();
+        }
+
+        private bool ValdiarCabeceramovimiento()
+        {
+            bool flat = false;
+            if (txtidprov.Text.Length > 0)
+            {
+                if (sesion.movprodaccion != null)
+                {
+                    int i = 0;
+                    List<movimientoproductoaccion> lita = sesion.movprodaccion;
+                    foreach (movimientoproductoaccion oj in lita)
+                    {
+                        if (oj.valedet.estado == true)
+                        {
+                            i++;
+                        }
+                    }
+                    if (i > 0)
+                    {
+                        flat = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lista Vacia", "Mensaje de Sistema", MessageBoxButtons.OK);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Lista Vacia", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingresar proveedor", "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+            return flat;
+        }
+        private void GrabarMovimiento()
+        {
+
+        }
+        private void ModificarMovimiento()
         {
 
         }

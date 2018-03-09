@@ -127,7 +127,6 @@ namespace Presentacion
 
             }
         }
-       
         private void cargarData(int registro, int parametro)
         {
             List<productoparaventa> listado = productoNE.ListaProductosVentaParametro(parametro);
@@ -136,7 +135,7 @@ namespace Presentacion
             {
                 foreach (productoparaventa rrr in listado)
                 {
-                    
+
                     bool flat = buscarSerieM(rrr.p_inidserie, rrr.p_inidproducto);
                     if (!flat)
                     {
@@ -164,11 +163,12 @@ namespace Presentacion
             }
             else
             {
-               // dgvListaProdSeries.DataSource = listadosssss;
+                // dgvListaProdSeries.DataSource = listadosssss;
                 //dgvListaProdSeries.Rows.Clear();
                 dgvListaProdSeries.ReadOnly = true;
-            }   
+            }
         }
+   
         private void CargarTablaDetalleSeries()
         {
             dgvListaProdSeries.DataSource = ListaproductoparaventaDetalleG;
