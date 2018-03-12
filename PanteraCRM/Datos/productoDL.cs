@@ -365,7 +365,47 @@ namespace Datos
                 return listado;
             }
         }
+  
         
+            public static List<productobuscado> ListaProductosKardex()
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_producto_listar_kardex", CommandType.StoredProcedure))
+            {
+                List<productobuscado> listado = new List<productobuscado>();
+                while (datareader.Read())
+                {
+                    productobuscado registro = new productobuscado();
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
+                    registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]).Trim();
+                    registro.chnombrecompuesto = Convert.ToString(datareader["chnombrecompuesto"]).Trim();
+                    registro.chunidadmedidaproducto = Convert.ToString(datareader["chunidadmedidaproducto"]).Trim();
+                    registro.nuprecio = decimal.Round(Convert.ToDecimal(datareader["nuprecio"]), 2);
+                    registro.p_inidsituacion = Convert.ToInt32(datareader["stock"]);
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+        public static List<productobuscado> ListaProductosKardexBusquedaParametro(string parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_producto_busqueda_kardex", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
+            {
+                List<productobuscado> listado = new List<productobuscado>();
+                while (datareader.Read())
+                {
+                    productobuscado registro = new productobuscado();
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
+                    registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]).Trim();
+                    registro.chnombrecompuesto = Convert.ToString(datareader["chnombrecompuesto"]).Trim();
+                    registro.chunidadmedidaproducto = Convert.ToString(datareader["chunidadmedidaproducto"]).Trim();
+                    registro.nuprecio = decimal.Round(Convert.ToDecimal(datareader["nuprecio"]), 2);
+                    registro.p_inidsituacion = Convert.ToInt32(datareader["stock"]);
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+
 
     }
 }

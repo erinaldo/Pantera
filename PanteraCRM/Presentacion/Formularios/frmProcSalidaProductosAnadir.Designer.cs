@@ -44,14 +44,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvListaValeDetalle = new System.Windows.Forms.DataGridView();
-            this.IDITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCOSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHSUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.LNroDoc = new System.Windows.Forms.Label();
             this.txtProvnombre = new System.Windows.Forms.TextBox();
@@ -80,6 +72,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.IDITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCOSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaValeDetalle)).BeginInit();
@@ -261,63 +261,6 @@
             this.dgvListaValeDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListaValeDetalle.Size = new System.Drawing.Size(662, 181);
             this.dgvListaValeDetalle.TabIndex = 0;
-            // 
-            // IDITEM
-            // 
-            this.IDITEM.HeaderText = "ITEM";
-            this.IDITEM.Name = "IDITEM";
-            this.IDITEM.ReadOnly = true;
-            this.IDITEM.Visible = false;
-            this.IDITEM.Width = 40;
-            // 
-            // IDPRODUCTO
-            // 
-            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
-            this.IDPRODUCTO.Name = "IDPRODUCTO";
-            this.IDPRODUCTO.ReadOnly = true;
-            this.IDPRODUCTO.Visible = false;
-            // 
-            // CHCODIGO
-            // 
-            this.CHCODIGO.HeaderText = "CODIGO";
-            this.CHCODIGO.Name = "CHCODIGO";
-            this.CHCODIGO.ReadOnly = true;
-            this.CHCODIGO.Width = 60;
-            // 
-            // CHCANTIDAD
-            // 
-            this.CHCANTIDAD.HeaderText = "CANTIDAD";
-            this.CHCANTIDAD.Name = "CHCANTIDAD";
-            this.CHCANTIDAD.ReadOnly = true;
-            this.CHCANTIDAD.Width = 70;
-            // 
-            // CHMEDIDA
-            // 
-            this.CHMEDIDA.HeaderText = "MEDIDA";
-            this.CHMEDIDA.Name = "CHMEDIDA";
-            this.CHMEDIDA.ReadOnly = true;
-            this.CHMEDIDA.Width = 60;
-            // 
-            // CHDESCRIPCION
-            // 
-            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
-            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
-            this.CHDESCRIPCION.ReadOnly = true;
-            this.CHDESCRIPCION.Width = 320;
-            // 
-            // CHCOSTO
-            // 
-            this.CHCOSTO.HeaderText = "COSTO";
-            this.CHCOSTO.Name = "CHCOSTO";
-            this.CHCOSTO.ReadOnly = true;
-            this.CHCOSTO.Width = 50;
-            // 
-            // CHSUBTOTAL
-            // 
-            this.CHSUBTOTAL.HeaderText = "SUB TOTAL";
-            this.CHSUBTOTAL.Name = "CHSUBTOTAL";
-            this.CHSUBTOTAL.ReadOnly = true;
-            this.CHSUBTOTAL.Width = 60;
             // 
             // groupBox2
             // 
@@ -621,6 +564,62 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Ejercicio";
             // 
+            // IDITEM
+            // 
+            this.IDITEM.HeaderText = "ITEM";
+            this.IDITEM.Name = "IDITEM";
+            this.IDITEM.ReadOnly = true;
+            this.IDITEM.Width = 40;
+            // 
+            // IDPRODUCTO
+            // 
+            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
+            this.IDPRODUCTO.Name = "IDPRODUCTO";
+            this.IDPRODUCTO.ReadOnly = true;
+            this.IDPRODUCTO.Visible = false;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 60;
+            // 
+            // CHCANTIDAD
+            // 
+            this.CHCANTIDAD.HeaderText = "CANTIDAD";
+            this.CHCANTIDAD.Name = "CHCANTIDAD";
+            this.CHCANTIDAD.ReadOnly = true;
+            this.CHCANTIDAD.Width = 70;
+            // 
+            // CHMEDIDA
+            // 
+            this.CHMEDIDA.HeaderText = "MEDIDA";
+            this.CHMEDIDA.Name = "CHMEDIDA";
+            this.CHMEDIDA.ReadOnly = true;
+            this.CHMEDIDA.Width = 60;
+            // 
+            // CHDESCRIPCION
+            // 
+            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
+            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
+            this.CHDESCRIPCION.ReadOnly = true;
+            this.CHDESCRIPCION.Width = 320;
+            // 
+            // CHCOSTO
+            // 
+            this.CHCOSTO.HeaderText = "COSTO";
+            this.CHCOSTO.Name = "CHCOSTO";
+            this.CHCOSTO.ReadOnly = true;
+            this.CHCOSTO.Width = 50;
+            // 
+            // CHSUBTOTAL
+            // 
+            this.CHSUBTOTAL.HeaderText = "SUB TOTAL";
+            this.CHSUBTOTAL.Name = "CHSUBTOTAL";
+            this.CHSUBTOTAL.ReadOnly = true;
+            this.CHSUBTOTAL.Width = 60;
+            // 
             // frmProcSalidaProductosAnadir
             // 
             this.AcceptButton = this.btnGrabar;
@@ -668,14 +667,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvListaValeDetalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDITEM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODUCTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHCANTIDAD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHMEDIDA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHDESCRIPCION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHCOSTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHSUBTOTAL;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label LNroDoc;
         private System.Windows.Forms.TextBox txtProvnombre;
@@ -704,5 +695,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDITEM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPRODUCTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCANTIDAD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHMEDIDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHDESCRIPCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCOSTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHSUBTOTAL;
     }
 }

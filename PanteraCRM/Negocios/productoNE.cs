@@ -49,6 +49,15 @@ namespace Negocios
         {
             return productoDL.productobuscadoListar(parametro);
         }
+        public static List<productobuscado> ListaProductosKardexBusquedaParametro(string parametro)
+        {
+            return productoDL.ListaProductosKardexBusquedaParametro(parametro);
+        }
+        public static List<productobuscado> ListaProductosKardex()
+        {
+            return productoDL.ListaProductosKardex();
+        }
+
         public static List<productobuscado> productobuscadoListaPrecios(string parametro)
         {
             return productoDL.productobuscadoListaPrecio(parametro);

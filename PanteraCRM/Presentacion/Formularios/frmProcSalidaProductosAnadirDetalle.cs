@@ -60,6 +60,7 @@ namespace Presentacion
                 }
             }
         }
+    
         private void Desactivartext(TextBox texbox)
         {
             texbox.ReadOnly = true;
@@ -69,7 +70,6 @@ namespace Presentacion
         }
         private void CargarDatos()
         {
-            List<movimientoproductoaccion> obregismovimient = new List<movimientoproductoaccion>();
             foreach (movimientoproductoaccion objMovimiento in sesion.movprodaccion)
             {
                 if (orden == objMovimiento.orden)
@@ -79,6 +79,7 @@ namespace Presentacion
                     txtPreComp.Text = objMovimiento.valedet.nucosto.ToString();
                 }
             }
+
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -132,7 +133,7 @@ namespace Presentacion
             if (listaMovi == null)
             {
                 listaMovi = new List<movimientoproductoaccion>();
-            }
+            }          
             movimientoproductoaccion registrosMovi = new movimientoproductoaccion();
 
             List<serie> ListaSerie = new List<serie>();
@@ -144,13 +145,9 @@ namespace Presentacion
                     registrosSerie.chcodigoserie = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
                     registrosSerie.estado = true;
                     registrosSerie.p_inidproducto = ProductoG.p_inidproducto;
-                    registrosSerie.chadicional = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
-                    registrosSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-                    registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
                     ListaSerie.Add(registrosSerie);
                 }
             }
-
             valedetalle registrosValeDet = new valedetalle();
             registrosValeDet.chnombrecompuesto = ProductoG.chnombrecompuesto;
             registrosValeDet.chmedida = txtMedida.Text;
@@ -161,12 +158,10 @@ namespace Presentacion
             registrosValeDet.nucosto = decimal.Round(decimal.Parse(txtPreComp.Text), 2);
             registrosValeDet.nutotal = decimal.Round(decimal.Parse(txtImporte.Text), 2);
             registrosValeDet.estado = true;
-
             registrosMovi.listaserie = ListaSerie;
             registrosMovi.valedet = registrosValeDet;
             registrosMovi.orden = listaMovi.Count + 1;
             listaMovi.Add(registrosMovi);
-            //sesion.movprodaccion.Clear();
             sesion.movprodaccion = listaMovi;
             dgvListaProdSeries.Rows.Clear();
             pasadoDetalle();
@@ -268,17 +263,7 @@ namespace Presentacion
             if (ProductoG.p_inidproducto != 0)
             {
                 //MessageBox.Show("" + ProductoG.p_inidproducto, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                //decimal val = 0;
-                //if (dgvListaProdSeries != null)
-                //{
-                //    foreach (pedidodetalle obj in ListadoValidarG)
-                //    {
-                //        if (obj.p_inidproducto == ProductoG.p_inidproducto)
-                //        {
-                //            val = val + obj.nucantidad;
-                //        }
-                //    }
-                //}
+             
                 txtDescripcion.Text = ProductoG.chnombrecompuesto;
                 txtCant.Text = "0";
                 txtPreComp.Text = "0.00";
@@ -304,20 +289,14 @@ namespace Presentacion
         private void cargarData(int registro, int parametro)
         {
             List<productoparaventa> listado = productoNE.ListaProductosVentaParametro(parametro);
-            List<productoparaventa> listadosssss = new List<productoparaventa>();
+          
             if (listado != null)
             {
                 foreach (productoparaventa rrr in listado)
                 {
-
-                    bool flat = buscarSerieM(rrr.p_inidserie, rrr.p_inidproducto);
-                    if (!flat)
-                    {
-                        
-                            dgvListaProdSeries.Rows.Add(rrr.req_serie, rrr.p_inidproducto, rrr.chcodigoproducto, rrr.chnombrecompuesto, rrr.chunidadmedidaproducto, rrr.nuprecio, rrr.chserie, rrr.p_inidserie);                           
-                        
-
-                    }
+                   
+                        dgvListaProdSeries.Rows.Add(rrr.req_serie, rrr.p_inidproducto, rrr.chcodigoproducto, rrr.chnombrecompuesto, rrr.chunidadmedidaproducto, rrr.nuprecio, rrr.chserie, rrr.p_inidserie);
+                                     
                 }
             }
             else
@@ -328,34 +307,43 @@ namespace Presentacion
         private bool buscarSerieMcodigo(int serie)
         {
             bool flat = false;
-            foreach (pedidodetalle s in ListadoValidarG)
+            foreach (movimientoproductoaccion s in sesion.movprodaccion)
             {
-                if (s.p_inidserie == serie)
+                if (s.orden == orden)
                 {
-                    flat = true;
-
-                }
+                    foreach (serie objSerie in s.listaserie)
+                    {
+                        if (objSerie.p_inidserie == serie)
+                        {
+                            flat = true;
+                        }
+                    }
+                }                                 
             }
             return flat;
         }
         private bool buscarSerieM(int serie, int producto)
         {
             bool flat = false;
-            if (sesion.pedidodetallecontenido != null)
+            if (sesion.movprodaccion != null)
             {
-                foreach (pedidodetallecontenido obj in sesion.pedidodetallecontenido)
+                foreach (movimientoproductoaccion obj in sesion.movprodaccion)
                 {
-                    if (obj.serie != null)
+                    if (obj.listaserie != null)
                     {
-                        if (obj.serie.p_inidserie == serie && obj.pedidodetalle.p_inidproducto == producto && obj.estado == true)
+                        if (obj.valedet.p_inidproducto == producto && obj.valedet.estado == true)
                         {
-                            if (vBoton != "M")
+                            foreach (serie objSerie in obj.listaserie)
                             {
-                                flat = true;
+                                if (objSerie.p_inidserie == serie)
+                                {
+                                    
+                                        flat = true;
+                                    
+                                }
                             }
-                        }
+                        }                       
                     }
-
                 }
             }
             return flat;

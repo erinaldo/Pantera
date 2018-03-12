@@ -93,7 +93,6 @@ namespace Presentacion
             txtperiodo.Text = "01";
             txtAlmacen.Text = "PRINCIPAL";
             txtClase.Text = "SALIDA";
-
             cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
             cboTipoMov.SelectedValue = RegistrosMovimientoC.p_inidtipomoviemiento;
             txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
@@ -101,10 +100,12 @@ namespace Presentacion
             txtobs.Text = RegistrosMovimientoC.chobservacion;
             txtFacBol.Text = RegistrosMovimientoC.chboletafactura;
             txtGuiaRem.Text = RegistrosMovimientoC.chguiaremision;
+
             txtRuc.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
+
             List<movimientoproductoaccion> ListaMovimientosPr = new List<movimientoproductoaccion>();
             List<valedetalle> valdedetalle = movimientosNE.MovimientoProductoDetalleBusqueda(p_inidmovimientoG);
-            int count = 0;
+            int count = 1;
             foreach (valedetalle obj in valdedetalle)
             {
                 movimientoproductoaccion movprodac = new movimientoproductoaccion();
@@ -242,12 +243,12 @@ namespace Presentacion
                         registrosMovi.valedet.nucantidad,
                         registrosMovi.valedet.chmedida,
                         registrosMovi.valedet.chnombrecompuesto.ToString(),
-                        decimal.Round(registrosMovi.valedet.nucosto, 2),
-                        decimal.Round(registrosMovi.valedet.nutotal, 2));
+                        string.Format("{0:0,0.00}", decimal.Round(registrosMovi.valedet.nucosto, 2).ToString()),
+                        string.Format("{0:0,0.00}", decimal.Round(registrosMovi.valedet.nutotal, 2).ToString()));
                         suma += registrosMovi.valedet.nutotal;
                     }
                 }
-                txtTotal.Text = decimal.Round(suma, 2).ToString();
+                txtTotal.Text = string.Format("{0:0,0.00}", decimal.Round(suma, 2).ToString()); 
             }
             else
             {
@@ -304,7 +305,7 @@ namespace Presentacion
             {
                 foreach (movimientoproductoaccion registrosMovi in listaMovi)
                 {
-                    if (registrosMovi.valedet.p_inidvaledetalle == (int)dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value)
+                    if (registrosMovi.orden == (int)dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value)
                     {
                         //registrosMovi.valedet.p_inidvaledetalle = 0;
                         registrosMovi.valedet.estado = false;
@@ -312,9 +313,10 @@ namespace Presentacion
                 }
                 sesion.movprodaccion = listaMovi;
             }
-            CargarTablaDetalle();
+            CargarDatosSession();
+
         }
-        private void btnVer_Click(object sender, EventArgs e)
+    private void btnVer_Click(object sender, EventArgs e)
         {
             try
             {

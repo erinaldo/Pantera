@@ -55,6 +55,7 @@
     <Compile Include="empresa.cs" />
     <Compile Include="empresas.cs" />
     <Compile Include="empresasesion.cs" />
+    <Compile Include="kardexdetalle.cs" />
     <Compile Include="licencia.cs" />
     <Compile Include="maestrodetalle.cs" />
     <Compile Include="marca.cs" />
