@@ -27,7 +27,7 @@ namespace Datos
                     registro.chinforme = Convert.ToString(datareader["chinforme"]).Trim();
                     registro.chinformeobs = Convert.ToString(datareader["chinformeobs"]).Trim();
                     registro.chinformefecha = Convert.ToString(datareader["chinformefecha"]).Trim();
-                    registro.chcodigo = Convert.ToString(datareader["chcodigo"]).Trim();
+                    registro.chcodigo = Convert.ToString(datareader["chidentificador"]).Trim();
                     registro.identificador = Convert.ToString(datareader["chadicional"]).Trim();
                     listado.Add(registro);
                 }

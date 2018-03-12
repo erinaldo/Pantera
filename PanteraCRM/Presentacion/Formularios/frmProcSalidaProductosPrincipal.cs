@@ -99,12 +99,66 @@ namespace Presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string vBoton = "M";
 
+                if (basicas.validarAcceso(vBoton))
+                {
+                    if (dgvVales.RowCount == 0)
+                    {
+                        MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        return;
+                    }
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmProcSalidaProductosAnadir f = new frmProcSalidaProductosAnadir(vBoton);                    
+                    f.p_inidmovimientoG = (int)dgvVales.CurrentRow.Cells["IDVALEC"].Value;
+                    f.pasadoVale += new frmProcSalidaProductosAnadir.pasarNuevoVale(ejecutar);
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
         }
 
         private void btnVer_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string vBoton = "V";
 
+                if (basicas.validarAcceso(vBoton))
+                {
+                    if (dgvVales.RowCount == 0)
+                    {
+                        MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        return;
+                    }
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    frmProcSalidaProductosAnadir f = new frmProcSalidaProductosAnadir(vBoton);
+                    f.p_inidmovimientoG = (int)dgvVales.CurrentRow.Cells["IDVALEC"].Value;
+                    f.pasadoVale += new frmProcSalidaProductosAnadir.pasarNuevoVale(ejecutar);
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -198,7 +252,55 @@ namespace Presentacion
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string vBoton = "E";
 
+                if (basicas.validarAcceso(vBoton))
+                {
+                    if (dgvVales.RowCount == 0)
+                    {
+                        MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        return;
+                    }
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
+                    DialogResult result = MessageBox.Show("¿Está seguro de anular el Movimiento N°"+ dgvVales.CurrentRow.Cells["IDCORRELATIVO"].Value + "?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        
+                        //MessageBox.Show("Movimiento eliminado", "Mensaje de Sistema", MessageBoxButtons.OK);
+                        AnularMovimiento((int)dgvVales.CurrentRow.Cells["IDVALEC"].Value);
+                        cargarData(0, "");
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void AnularMovimiento(int codigo)
+        {
+            //modificacion de cabecera
+            List<valedetalle> ListaMovimientoD = movimientosNE.MovimientoProductoDetalleBusqueda(codigo);
+            foreach (valedetalle registrosMovimientoD in ListaMovimientoD)
+            {
+                serieNE.SeriesFalsear(registrosMovimientoD.p_inidvaledetalle, true);
+                //MessageBox.Show("error Falseo"+ registrosMovimientoD.p_inidvaledetalle, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                int cantidad = (-1) * registrosMovimientoD.nucantidad;
+                almacenNE.SaldoAlmacenAdiconar(sesion.SessionGlobal.p_inidalmacen, registrosMovimientoD.p_inidproducto, cantidad);
+            }
+            movimientosNE.MovimientoProductoDetalleFalsear(codigo);
+            movimientosNE.MovimientoProductoCabeceraFalsear(codigo);
         }
     }
 }

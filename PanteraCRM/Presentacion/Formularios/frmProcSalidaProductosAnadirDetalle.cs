@@ -14,6 +14,7 @@ namespace Presentacion
     public partial class frmProcSalidaProductosAnadirDetalle : Form
     {
         internal productoparaventa ProductoG ;
+        internal int orden;
         public delegate void pasarDetalleAnadido();
         public event pasarDetalleAnadido pasadoDetalle;
         internal List<pedidodetalle> ListadoValidarG;
@@ -33,62 +34,142 @@ namespace Presentacion
         {
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
-            txtImporte.Text = "0.00";
-            txtCant.Text = "0";
-            txtPreComp.Text = "0.00";
-            txtStock.Text = "0.00";
+            
+            if (vBoton == "A")
+            {
+                txtImporte.Text = "0.00";
+                txtCant.Text = "0";
+                txtPreComp.Text = "0.00";
+                txtStock.Text = "0.00";
+            }
+            else
+            {
+                if (vBoton == "M")
+                {
+                    CargarDatos();
+                }
+                else
+                {
+                    if (vBoton == "V")
+                    {
+                        CargarDatos();
+                        Desactivartext(txtCant);
+                        Desactivartext(txtCodigo);
+                        Desactivartext(txtPreComp);
+                    }
+                }
+            }
+        }
+        private void Desactivartext(TextBox texbox)
+        {
+            texbox.ReadOnly = true;
+            texbox.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            texbox.ForeColor = Color.Blue;
+            texbox.TabStop = false;
+        }
+        private void CargarDatos()
+        {
+            List<movimientoproductoaccion> obregismovimient = new List<movimientoproductoaccion>();
+            foreach (movimientoproductoaccion objMovimiento in sesion.movprodaccion)
+            {
+                if (orden == objMovimiento.orden)
+                {
+                    txtCodigo.Text = objMovimiento.valedet.chcodigoproducto;
+                    txtCant.Text = objMovimiento.valedet.nucantidad.ToString();
+                    txtPreComp.Text = objMovimiento.valedet.nucosto.ToString();
+                }
+            }
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (validarCamposdetalle())
+            switch (this.vBoton)
             {
-                List<movimientoproductoaccion> listaMovi = sesion.movprodaccion;
-                if (listaMovi == null)
-                {
-                    listaMovi = new List<movimientoproductoaccion>();
-                }
-                movimientoproductoaccion registrosMovi = new movimientoproductoaccion();
-
-                List<serie> ListaSerie = new List<serie>();
-                if (dgvListaProdSeries.RowCount > 0)
-                {
-                    for (int i = 0; i < dgvListaProdSeries.RowCount; i++)
+                case "A":
+                    if (validarCamposdetalle())
                     {
-                        serie registrosSerie = new serie();
-                        registrosSerie.chcodigoserie = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
-                        registrosSerie.estado = true;
-                        registrosSerie.p_inidproducto = ProductoG.p_inidproducto;
-                        registrosSerie.chadicional = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
-                        registrosSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-                        registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                        ListaSerie.Add(registrosSerie);
+                        AgregarDetalle();
                     }
-                }
+                    else
+                    {
+                        return;
+                    }
 
-                valedetalle registrosValeDet = new valedetalle();
-                registrosValeDet.p_inidvaledetalle = ProductoG.p_inidproducto;
-                registrosValeDet.chnombrecompuesto = ProductoG.chnombrecompuesto;
-                registrosValeDet.chmedida = txtMedida.Text;
-                registrosValeDet.chcodigoproducto = ProductoG.chcodigoproducto;
-                registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-                registrosValeDet.p_inidproducto = ProductoG.p_inidproducto;
-                registrosValeDet.nucantidad = int.Parse(txtCant.Text);
-                registrosValeDet.nucosto = decimal.Round(decimal.Parse(txtPreComp.Text), 2);
-                registrosValeDet.nutotal = decimal.Round(decimal.Parse(txtImporte.Text), 2);
-                registrosValeDet.estado = true;
-
-                registrosMovi.listaserie = ListaSerie;
-                registrosMovi.valedet = registrosValeDet;
-
-                listaMovi.Add(registrosMovi);
-                //sesion.movprodaccion.Clear();
-                sesion.movprodaccion = listaMovi;
-                dgvListaProdSeries.Rows.Clear();
-                pasadoDetalle();
-                this.Dispose();
+                    break;
+                case "M":
+                    if (validarCamposdetalle())
+                    {
+                        falsearDatos();
+                        AgregarDetalle();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                    break;
+                default:
+                    break;
             }
+            this.Dispose();
             
+        }
+        private void falsearDatos()
+        {           
+            List<movimientoproductoaccion> pedcont = sesion.movprodaccion;
+            foreach (movimientoproductoaccion obj in pedcont)
+            {
+                if (orden == obj.orden)
+                {
+                    obj.valedet.estado = false;
+                }
+            }
+            sesion.movprodaccion = pedcont;
+
+        }
+        private void AgregarDetalle()
+        {
+            List<movimientoproductoaccion> listaMovi = sesion.movprodaccion;
+            if (listaMovi == null)
+            {
+                listaMovi = new List<movimientoproductoaccion>();
+            }
+            movimientoproductoaccion registrosMovi = new movimientoproductoaccion();
+
+            List<serie> ListaSerie = new List<serie>();
+            if (dgvListaProdSeries.RowCount > 0)
+            {
+                for (int i = 0; i < dgvListaProdSeries.RowCount; i++)
+                {
+                    serie registrosSerie = new serie();
+                    registrosSerie.chcodigoserie = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
+                    registrosSerie.estado = true;
+                    registrosSerie.p_inidproducto = ProductoG.p_inidproducto;
+                    registrosSerie.chadicional = dgvListaProdSeries.Rows[i].Cells["CHSERIE"].Value.ToString();
+                    registrosSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+                    registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                    ListaSerie.Add(registrosSerie);
+                }
+            }
+
+            valedetalle registrosValeDet = new valedetalle();
+            registrosValeDet.chnombrecompuesto = ProductoG.chnombrecompuesto;
+            registrosValeDet.chmedida = txtMedida.Text;
+            registrosValeDet.chcodigoproducto = ProductoG.chcodigoproducto;
+            registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
+            registrosValeDet.p_inidproducto = ProductoG.p_inidproducto;
+            registrosValeDet.nucantidad = int.Parse(txtCant.Text);
+            registrosValeDet.nucosto = decimal.Round(decimal.Parse(txtPreComp.Text), 2);
+            registrosValeDet.nutotal = decimal.Round(decimal.Parse(txtImporte.Text), 2);
+            registrosValeDet.estado = true;
+
+            registrosMovi.listaserie = ListaSerie;
+            registrosMovi.valedet = registrosValeDet;
+            registrosMovi.orden = listaMovi.Count + 1;
+            listaMovi.Add(registrosMovi);
+            //sesion.movprodaccion.Clear();
+            sesion.movprodaccion = listaMovi;
+            dgvListaProdSeries.Rows.Clear();
+            pasadoDetalle();
         }
         private bool validarCamposdetalle()
         {
@@ -232,14 +313,9 @@ namespace Presentacion
                     bool flat = buscarSerieM(rrr.p_inidserie, rrr.p_inidproducto);
                     if (!flat)
                     {
-                        if (vBoton == "M")
-                        {
-                            dgvListaProdSeries.Rows.Add(buscarSerieMcodigo(rrr.p_inidserie), rrr.p_inidproducto, rrr.chcodigoproducto, rrr.chnombrecompuesto, rrr.chunidadmedidaproducto, rrr.nuprecio, rrr.chserie, rrr.p_inidserie);            
-                        }
-                        else
-                        {
+                        
                             dgvListaProdSeries.Rows.Add(rrr.req_serie, rrr.p_inidproducto, rrr.chcodigoproducto, rrr.chnombrecompuesto, rrr.chunidadmedidaproducto, rrr.nuprecio, rrr.chserie, rrr.p_inidserie);                           
-                        }
+                        
 
                     }
                 }
@@ -265,7 +341,7 @@ namespace Presentacion
         private bool buscarSerieM(int serie, int producto)
         {
             bool flat = false;
-            if (sesion.movprodaccion != null)
+            if (sesion.pedidodetallecontenido != null)
             {
                 foreach (pedidodetallecontenido obj in sesion.pedidodetallecontenido)
                 {

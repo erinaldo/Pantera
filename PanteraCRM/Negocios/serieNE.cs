@@ -29,9 +29,9 @@ namespace Negocios
         {
             return serieDL.SerieBusquedaMovimiento(parametro);
         }
-        public static int SeriesFalsear(int parametro)
+        public static int SeriesFalsear(int parametro,bool estado)
         {
-            return serieDL.SeriesFalsear(parametro);
+            return serieDL.SeriesFalsear(parametro,estado);
         }
         public static int SeriesFalsearCodigo(int parametro)
         {
@@ -41,9 +41,6 @@ namespace Negocios
         {
             return serieDL.SerieBusquedaCodigo(parametro);
         }
-        public static int CabeceraAnular(int parametro)
-        {
-            return serieDL.CabeceraAnular(parametro);
-        }
+        
     }
 }

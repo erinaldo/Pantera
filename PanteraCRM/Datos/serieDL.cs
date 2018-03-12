@@ -40,6 +40,7 @@ namespace Datos
             new parametro("in_estado", serie.estado),
             new parametro("in_p_inidproducto", serie.p_inidproducto),
             new parametro("in_chadicional", serie.chadicional),
+            new parametro("in_chidentificador", serie.chidentificador),
             new parametro("in_chfecha", serie.chfecha),
             new parametro("in_p_inidusuarioinsert", serie.p_inidusuarioinsert),
             new parametro("in_p_inidusuariodelete", serie.p_inidusuariodelete),
@@ -55,9 +56,9 @@ namespace Datos
             );
 
         }
-        public static int SeriesFalsear(int parametro)
+        public static int SeriesFalsear(int parametro,bool estado)
         {
-            return conexion.executeScalar("fn_serie_detalle_falsear", CommandType.StoredProcedure,   new parametro("in_p_inidmovimientod", parametro));
+            return conexion.executeScalar("fn_serie_detalle_falsear", CommandType.StoredProcedure,   new parametro("in_p_inidmovimientod", parametro), new parametro("in_estado", estado));
 
         }
         public static int SeriesFalsearCodigo(int parametro)
@@ -65,11 +66,7 @@ namespace Datos
             return conexion.executeScalar("fn_serie_detalle_falsear_codigo", CommandType.StoredProcedure, new parametro("in_p_inidvaledetalle", parametro));
 
         }
-        public static int CabeceraAnular(int parametro)
-        {
-            return conexion.executeScalar("fn_movimiento_cabecera_anular", CommandType.StoredProcedure, new parametro("in_p_inidpedidocabecera", parametro));
-
-        }
+        
         
 
         public static List<seriebuscada> serieListar()

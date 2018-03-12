@@ -373,9 +373,9 @@ namespace Presentacion
                                     Registros.estado = true;
                                     Registros.p_inidproducto = RegistrosMovimeintoDetalle.valedet.p_inidproducto;
                                     Registros.chadicional = registrosSerie.chadicional;
+                                    Registros.chidentificador = registrosSerie.chidentificador;
                                     Registros.chfecha = mskfechareg.Text;
                                     Registros.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                                    Registros.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
                                     Registros.p_inidmovimientod = codigoDetalle;
                                     Registros.p_inidpedidod = 0;
                                     codigoSerie = serieNE.seriesIngresar(Registros);
@@ -428,7 +428,7 @@ namespace Presentacion
             List<valedetalle> ListaMovimientoD = movimientosNE.MovimientoProductoDetalleBusqueda(RegistrosMovimientoC.p_inidvalecebecera);
             foreach (valedetalle registrosMovimientoD in ListaMovimientoD)
             {
-                serieNE.SeriesFalsear(registrosMovimientoD.p_inidvaledetalle);
+                serieNE.SeriesFalsear(registrosMovimientoD.p_inidvaledetalle,true);
                 //MessageBox.Show("error Falseo"+ registrosMovimientoD.p_inidvaledetalle, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 int cantidad = (-1) * registrosMovimientoD.nucantidad;
                 almacenNE.SaldoAlmacenAdiconar(sesion.SessionGlobal.p_inidalmacen, registrosMovimientoD.p_inidproducto, cantidad);

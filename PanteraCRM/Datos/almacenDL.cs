@@ -109,7 +109,7 @@ namespace Datos
                 );
             }
         }
-        public static int CambiarSaldoComprometido(int a1, int p2, decimal cantidad)
+        public static int CambiarSaldoComprometido(int a1, int p2, int cantidad)
         {
             {
                 return conexion.executeScalar("fn_saldoalmacen_stock_comprometido",

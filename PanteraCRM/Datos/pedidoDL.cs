@@ -9,6 +9,11 @@ namespace Datos
 {
     public abstract class pedidoDL
     {
+        public static int CabeceraAnular(int parametro)
+        {
+            return conexion.executeScalar("fn_movimiento_cabecera_anular", CommandType.StoredProcedure, new parametro("in_p_inidpedidocabecera", parametro));
+
+        }
         public static int IngresoPedidoCabecera(pedidocabecera registros)
         {
             return conexion.executeScalar("fn_pedidocabecera_ingresar",

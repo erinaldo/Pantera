@@ -288,7 +288,7 @@ namespace Presentacion
             List<valedetalle> ListaMovimientoD = movimientosNE.MovimientoProductoDetalleBusqueda(codigo);
             foreach (valedetalle registrosMovimientoD in ListaMovimientoD)
             {
-                serieNE.SeriesFalsear(registrosMovimientoD.p_inidvaledetalle);
+                serieNE.SeriesFalsear(registrosMovimientoD.p_inidvaledetalle,true);
                 //MessageBox.Show("error Falseo"+ registrosMovimientoD.p_inidvaledetalle, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 int cantidad = (-1) * registrosMovimientoD.nucantidad;
                 almacenNE.SaldoAlmacenAdiconar(sesion.SessionGlobal.p_inidalmacen, registrosMovimientoD.p_inidproducto, cantidad);

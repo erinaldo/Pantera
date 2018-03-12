@@ -33,6 +33,11 @@ namespace Negocios
         {
             return pedidoDL.PedidoDetalleBusquedaParametro(parametro);
         }
+        public static int CabeceraAnular(int parametro)
+        {
+            return pedidoDL.CabeceraAnular(parametro);
+        }
         
+
     }
 }

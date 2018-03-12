@@ -256,13 +256,14 @@ namespace Presentacion
                 for (int i = 0; i < dgvListaIngreso.RowCount; i++)
                 {
                     serie registrosSerie = new serie();
-                    registrosSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells[3].Value.ToString();
+                    registrosSerie.chcodigoserie = dgvListaIngreso.Rows[i].Cells["CHSERIE"].Value.ToString();
                     registrosSerie.estado = true;
                     registrosSerie.p_inidproducto = int.Parse(txtidcodigo.Text);
-                    registrosSerie.chadicional = dgvListaIngreso.Rows[i].Cells[4].Value.ToString();
+                    registrosSerie.chadicional = dgvListaIngreso.Rows[i].Cells["CHOBS"].Value.ToString();
                     registrosSerie.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
                     registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
                     registrosSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
+                    registrosSerie.chidentificador = dgvListaIngreso.Rows[i].Cells["CHIDENT"].Value.ToString();
                     ListaSerie.Add(registrosSerie);
                 }
             }

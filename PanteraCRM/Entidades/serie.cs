@@ -22,6 +22,8 @@ namespace Entidades
         public string chinforme { get; set; }
         public string chinformeobs { get; set; }
         public string chinformefecha { get; set; }
+        public string chidentificador { get; set; }
+       
 
         public serie()
         {
@@ -39,6 +41,7 @@ namespace Entidades
             this.chinforme = string.Empty;
             this.chinformeobs = string.Empty;
             this.chinformefecha = string.Empty;
+            this.chidentificador = string.Empty;
         }
     }
 }

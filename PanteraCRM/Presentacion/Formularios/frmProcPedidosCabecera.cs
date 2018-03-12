@@ -138,7 +138,7 @@ using Presentacion.Dataset;
                 decimal valorventa = decimal.Round(importe / valorigv, 2);
                 txtValVenta.Text = string.Format("{0:0,0.00}", valorventa);
                 decimal igv = importe - valorventa;
-                txtIgv.Text = (igv).ToString();
+                txtIgv.Text = string.Format("{0:0,0.00}", igv);
 
                 decimal tdescuentototal = decimal.Round(preciototal - valorventa, 2);
                 txtDesctot.Text = string.Format("{0:0,0.00}", tdescuentototal);
@@ -553,7 +553,7 @@ using Presentacion.Dataset;
                     decimal preunit = obj.pedidodetalle.nuprecioproducto;
                     int idserie = 0;
                     string codigoserie = "-";
-                    if (obj.serie.p_inidserie > 0)
+                    if (obj.serie != null)
                     {
                         cantidad = 1;
                         idserie = obj.serie.p_inidserie;

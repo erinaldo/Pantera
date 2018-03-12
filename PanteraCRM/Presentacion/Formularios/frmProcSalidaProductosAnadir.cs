@@ -54,157 +54,77 @@ namespace Presentacion
             {
                 if (this.vBoton == "M")
                 {
-                    this.Text = "MODIFICAR MOVIMIENTO";
-                    movimientoproductoc RegistrosMovimientoC = movimientosNE.MovimientoProductoCabeceraBusqueda(p_inidmovimientoG);
-                    txtejercicio.Text = "2018";
-                    txtperiodo.Text = "01";
-                    txtAlmacen.Text = "PRINCIPAL";
-                    txtClase.Text = "SALIDA";
-                    txtRuc.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
-                    cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
-                    cboTipoMov.SelectedValue = RegistrosMovimientoC.p_inidtipomoviemiento;
-                    txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
-                    mskfechareg.Text = RegistrosMovimientoC.chvalefecha.ToString();
-                    txtobs.Text = RegistrosMovimientoC.chobservacion;
-                    txtFacBol.Text = RegistrosMovimientoC.chboletafactura;
-                    txtGuiaRem.Text = RegistrosMovimientoC.chguiaremision;
-                    //cboTipoMov.Focus();
-
-
-                    ///**/
-                    //List<movimientoproductoaccion> ListaMovimiento = new List<movimientoproductoaccion>();
-                    //List<valedetalle> ListaMovimientoD = movimientosNE.MovimientoProductoDetalleBusqueda(RegistrosMovimientoC.p_inidvalecebecera);
-                    //int i = 1;
-                    //foreach (valedetalle registrosMovimientoD in ListaMovimientoD)
-                    //{
-                    //    movimientoproductoaccion RegistrosMoviento = new movimientoproductoaccion();
-                    //    valedetalle registrosValeDet = new valedetalle();
-                    //    registrosValeDet.p_inidvaledetalle = i;
-                    //    registrosValeDet.chnombrecompuesto = registrosMovimientoD.chnombrecompuesto.ToString();
-                    //    registrosValeDet.chmedida = registrosMovimientoD.chmedida.ToString();
-                    //    registrosValeDet.chcodigoproducto = registrosMovimientoD.chcodigoproducto.ToString();
-                    //    registrosValeDet.chfecha = RegistrosMovimientoC.chvalefecha.ToString();
-                    //    registrosValeDet.p_inidproducto = registrosMovimientoD.p_inidproducto;
-                    //    registrosValeDet.nucantidad = registrosMovimientoD.nucantidad;
-                    //    registrosValeDet.nucosto = registrosMovimientoD.nucosto;
-                    //    registrosValeDet.nutotal = registrosMovimientoD.nutotal;
-                    //    registrosValeDet.estado = registrosMovimientoD.estado;
-
-                    //    List<serie> ListaSerie = serieNE.SerieBusquedaMovimiento(registrosMovimientoD.p_inidvaledetalle);
-                    //    List<serie> ListasSeries = new List<serie>();
-                    //    //MessageBox.Show(""+registrosMovimientoD.p_inidvaledetalle, "Mensaje de Sistema", MessageBoxButtons.OK);
-                    //    foreach (serie Registroxxxxs in ListaSerie)
-                    //    {
-                    //        serie registrosSerie = new serie();
-                    //        registrosSerie.chcodigoserie = Registroxxxxs.chcodigoserie.ToString();
-                    //        registrosSerie.estado = true;
-                    //        registrosSerie.p_inidproducto = Registroxxxxs.p_inidproducto;
-                    //        registrosSerie.chadicional = Registroxxxxs.chadicional.ToString();
-                    //        registrosSerie.chfecha = Registroxxxxs.chfecha;
-                    //        registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                    //        registrosSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
-                    //        registrosSerie.chinforme = Registroxxxxs.chinforme.ToString();
-                    //        registrosSerie.chinformeobs = Registroxxxxs.chinformeobs.ToString();
-                    //        registrosSerie.chinformefecha = Registroxxxxs.chinformefecha;
-                    //        registrosSerie.boexhibicion = Registroxxxxs.boexhibicion;
-                    //        ListasSeries.Add(registrosSerie);
-                    //    }
-
-                    //    RegistrosMoviento.valedet = registrosValeDet;
-                    //    RegistrosMoviento.listaserie = ListasSeries;
-                    //    i++;
-                    //    ListaMovimiento.Add(RegistrosMoviento);
-                    //}
-
-
-                    //sesion.movprodaccion = ListaMovimiento;
-                    //CargarTabla();
+                    this.Text = "MODIFICAR MOVIMIENTO";                    
+                    CargarDatos();
+                    CargarDatosSession();
+                   
                 }
                 else
                 {
                     if (this.vBoton == "V")
                     {
-                        //this.Text = "VER MOVIMIENTO";
-                        //btnAnadir.Enabled = false;
-                        //btnModificar.Enabled = false;
-                        //btnEliminar.Enabled = false;
-                        //btnGrabar.Enabled = false;
-
-                        //RegistrosMovimientoC = movimientosNE.MovimientoProductoCabeceraBusqueda(codigoMovimiento);
-                        //txtejercicio.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-                        //txtperiodo.Text = "01";
-                        //txtAlmacen.Text = "PRINCIPAL";
-                        //txtClase.Text = "INGRESO";
-                        //txtRuc.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
-                        //cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
-                        //cboTipoMov.SelectedValue = RegistrosMovimientoC.p_inidtipomoviemiento;
-                        //txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
-                        //mskfechareg.Text = RegistrosMovimientoC.chvalefecha.ToString();
-                        //txtobs.Text = RegistrosMovimientoC.chobservacion;
-                        //txtFacBol.Text = RegistrosMovimientoC.chboletafactura;
-                        //txtGuiaRem.Text = RegistrosMovimientoC.chguiaremision;
-                        //cboTipoMov.Focus();
-                        //txtRuc.ReadOnly = true;
-                        //txtobs.ReadOnly = true;
-                        //txtFacBol.ReadOnly = true;
-                        //txtGuiaRem.ReadOnly = true;
-                        //mskfechareg.ReadOnly = true;
-
-                        ///**/
-                        //List<movimientoproductoaccion> ListaMovimiento = new List<movimientoproductoaccion>();
-                        //List<valedetalle> ListaMovimientoD = movimientosNE.MovimientoProductoDetalleBusqueda(RegistrosMovimientoC.p_inidvalecebecera);
-                        //int i = 1;
-                        //foreach (valedetalle registrosMovimientoD in ListaMovimientoD)
-                        //{
-                        //    movimientoproductoaccion RegistrosMoviento = new movimientoproductoaccion();
-                        //    valedetalle registrosValeDet = new valedetalle();
-                        //    registrosValeDet.p_inidvaledetalle = i;
-                        //    registrosValeDet.chnombrecompuesto = registrosMovimientoD.chnombrecompuesto;
-                        //    registrosValeDet.chmedida = registrosMovimientoD.chmedida;
-                        //    registrosValeDet.chcodigoproducto = registrosMovimientoD.chcodigoproducto;
-                        //    registrosValeDet.chfecha = registrosMovimientoD.chfecha;
-                        //    registrosValeDet.p_inidproducto = registrosMovimientoD.p_inidproducto;
-                        //    registrosValeDet.nucantidad = registrosMovimientoD.nucantidad;
-                        //    registrosValeDet.nucosto = registrosMovimientoD.nucosto;
-                        //    registrosValeDet.nutotal = registrosMovimientoD.nutotal;
-                        //    registrosValeDet.estado = registrosMovimientoD.estado;
-
-                        //    List<serie> ListaSerie = serieNE.SerieBusquedaMovimiento(registrosMovimientoD.p_inidvaledetalle);
-                        //    List<serie> ListasSeries = new List<serie>();
-                        //    //MessageBox.Show(""+registrosMovimientoD.p_inidvaledetalle, "Mensaje de Sistema", MessageBoxButtons.OK);
-                        //    foreach (serie Registroxxxxs in ListaSerie)
-                        //    {
-                        //        serie registrosSerie = new serie();
-                        //        registrosSerie.chcodigoserie = Registroxxxxs.chcodigoserie;
-                        //        registrosSerie.estado = true;
-                        //        registrosSerie.p_inidproducto = Registroxxxxs.p_inidproducto;
-                        //        registrosSerie.chadicional = Registroxxxxs.chadicional;
-                        //        registrosSerie.chfecha = Registroxxxxs.chfecha;
-                        //        registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                        //        registrosSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
-                        //        registrosSerie.chinforme = Registroxxxxs.chinforme;
-                        //        registrosSerie.chinformeobs = Registroxxxxs.chinformeobs;
-                        //        registrosSerie.chinformefecha = Registroxxxxs.chinformefecha;
-                        //        registrosSerie.boexhibicion = Registroxxxxs.boexhibicion;
-                        //        ListasSeries.Add(registrosSerie);
-                        //    }
-
-                        //    RegistrosMoviento.valedet = registrosValeDet;
-                        //    RegistrosMoviento.listaserie = ListasSeries;
-                        //    i++;
-                        //    ListaMovimiento.Add(RegistrosMoviento);
-                        //}
-
-
-                        //sesion.movprodaccion = ListaMovimiento;
-                        //CargarTabla();
+                        CargarDatos();
+                        CargarDatosSession();
+                        Desactivartext(txtobs);
+                        Desactivartext(txtRuc);
+                        Desactivartext(txtGuiaRem);
+                        Desactivartext(txtFacBol);
+                        Desactivartext(txtFacBol);
+                        btnAnadir.Enabled = false;
+                        btnEliminar.Enabled = false;
+                        btnGrabar.Enabled = false;
+                        btnModificar.Enabled = false;
+                        btnVer.Enabled = false;
                     }
                 }                   
             }                
         }
+        private void Desactivartext(TextBox texbox)
+        {
+            texbox.ReadOnly = true;
+            texbox.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            texbox.ForeColor = Color.Blue;
+            texbox.TabStop = false;
+        }
         private void CargarDatos()
         {
+            movimientoproductoc RegistrosMovimientoC = movimientosNE.MovimientoProductoCabeceraBusqueda(p_inidmovimientoG);
+            txtejercicio.Text = "2018";
+            txtperiodo.Text = "01";
+            txtAlmacen.Text = "PRINCIPAL";
+            txtClase.Text = "SALIDA";
 
+            cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
+            cboTipoMov.SelectedValue = RegistrosMovimientoC.p_inidtipomoviemiento;
+            txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
+            mskfechareg.Text = RegistrosMovimientoC.chvalefecha.ToString();
+            txtobs.Text = RegistrosMovimientoC.chobservacion;
+            txtFacBol.Text = RegistrosMovimientoC.chboletafactura;
+            txtGuiaRem.Text = RegistrosMovimientoC.chguiaremision;
+            txtRuc.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
+            List<movimientoproductoaccion> ListaMovimientosPr = new List<movimientoproductoaccion>();
+            List<valedetalle> valdedetalle = movimientosNE.MovimientoProductoDetalleBusqueda(p_inidmovimientoG);
+            int count = 0;
+            foreach (valedetalle obj in valdedetalle)
+            {
+                movimientoproductoaccion movprodac = new movimientoproductoaccion();
+                movprodac.orden = count;
+                movprodac.valedet = obj;
+                List<serie> regiserie = new List<serie>();
+                regiserie = serieNE.SerieBusquedaMovimiento(obj.p_inidvaledetalle);
+                if (regiserie != null)
+                {
+                    movprodac.listaserie = regiserie;
+                }
+                else
+                {
+                    movprodac.listaserie = null;
+                }
+
+                ListaMovimientosPr.Add(movprodac);
+                count++;
+            }
+            sesion.movprodaccion = ListaMovimientosPr;
         }
         private void CargarTablaDetalle()
         {
@@ -316,7 +236,7 @@ namespace Presentacion
                     if (registrosMovi.valedet.estado == true)
                     {
                         dgvListaValeDetalle.Rows.Add(
-                        registrosMovi.valedet.p_inidvaledetalle,
+                        registrosMovi.orden,
                         registrosMovi.valedet.p_inidproducto,
                         registrosMovi.valedet.chcodigoproducto.ToString(),
                         registrosMovi.valedet.nucantidad,
@@ -372,7 +292,7 @@ namespace Presentacion
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadir);
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadirDetalle);
             if (frm != null)
             {
                 frm.BringToFront();
@@ -416,17 +336,17 @@ namespace Presentacion
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadir);
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadirDetalle);
             if (frm != null)
             {
                 frm.BringToFront();
                 return;
             }
-            frmProcSalidaProductosAnadir f = new frmProcSalidaProductosAnadir(vBoton);
+            frmProcSalidaProductosAnadirDetalle f = new frmProcSalidaProductosAnadirDetalle(vBoton);
             // f.pasado += new frmProcSeriesAnadir.pasar(ejecutar);            
-            //f.p_inidproducto = (int)dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value;
+             f.orden = (int)dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value;
             //MessageBox.Show(dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
-            //f.Cargado += new frmProcSalidaProductosAnadir.CargarTabla(CargarTabla);
+            f.pasadoDetalle += new frmProcSalidaProductosAnadirDetalle.pasarDetalleAnadido(CargarDatosSession);
             f.MdiParent = this.MdiParent;
             f.Show();
             //DialogResult res = f.ShowDialog();
@@ -552,7 +472,6 @@ namespace Presentacion
             registrosCabecera.p_inidtipomoviemiento = (int)cboTipoMov.SelectedValue;
             registrosCabecera.chobservacion = txtobs.Text;
             registrosCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-            registrosCabecera.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
             registrosCabecera.estado = true;
             registrosCabecera.p_inidmovimiento = 19;
             //ingreso de cabecera
@@ -596,23 +515,7 @@ namespace Presentacion
                             {
                                 foreach (serie registrosSerie in ListaSeries)
                                 {
-                                    serie Registros = new serie();
-                                    //Registros.p_inidserie = 0;
-                                    Registros.chcodigoserie = registrosSerie.chcodigoserie;
-                                    Registros.estado = true;
-                                    Registros.p_inidproducto = RegistrosMovimeintoDetalle.valedet.p_inidproducto;
-                                    Registros.chadicional = "";
-                                    Registros.chfecha = mskfechareg.Text;
-                                    Registros.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                                    Registros.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
-                                    Registros.p_inidmovimientod = codigoDetalle;
-                                    Registros.p_inidpedidod = 0;
-                                    codigoSerie = serieNE.seriesIngresar(Registros);
-                                    if (codigoSerie <= 0)
-                                    {
-                                        MessageBox.Show("Error Serie", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                                        return;
-                                    }
+                                    serieNE.SeriesFalsearCodigo(registrosSerie.p_inidserie);
                                 }
                             }
                         }
@@ -629,7 +532,91 @@ namespace Presentacion
         }
         private void ModificarMovimiento()
         {
+            int codigoSerie = 0;
+            int codigoCabecera = 0;
+            int codigoDetalle = 0;
+            //validar Campos
+            movimientoproductoc registrosCabecera = new movimientoproductoc();
+            registrosCabecera.p_inidvalecebecera = p_inidmovimientoG;
+            registrosCabecera.p_inidalamacen = sesion.SessionGlobal.p_inidalmacen;
+            registrosCabecera.p_inidclase = 1;
+            registrosCabecera.p_inidcorrevale = txtNroVale.Text;
+            registrosCabecera.chvalefecha = mskfechareg.Text;
+            registrosCabecera.p_inidtipomoneda = (int)cboMoneda.SelectedValue;
+            registrosCabecera.p_inidproveedor = int.Parse(txtidprov.Text);
+            registrosCabecera.chguiaremision = txtGuiaRem.Text;
+            registrosCabecera.chboletafactura = txtFacBol.Text;
+            registrosCabecera.p_inidtipomoviemiento = (int)cboTipoMov.SelectedValue;
+            registrosCabecera.chobservacion = txtobs.Text;
+            registrosCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+            registrosCabecera.estado = true;
+            registrosCabecera.p_inidmovimiento = 19;
+            //ingreso de cabecera
+            codigoCabecera = movimientosNE.MovimientoProductoCabeceraModificar(registrosCabecera);
+            int gorrelativo = valeNE.GenerarCorrelativoMovimientoSalida(sesion.SessionGlobal.p_inidalmacen);
 
+            if (codigoCabecera <= 0 && gorrelativo <= 0)
+            {
+
+                MessageBox.Show("error Cabecera", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                List<valedetalle> ListaMovimientoD = movimientosNE.MovimientoProductoDetalleBusqueda(p_inidmovimientoG);
+                foreach (valedetalle registrosMovimientoD in ListaMovimientoD)
+                {
+                    serieNE.SeriesFalsear(registrosMovimientoD.p_inidvaledetalle, true);
+                    //MessageBox.Show("error Falseo"+ registrosMovimientoD.p_inidvaledetalle, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                    int cantidad = (-1) * registrosMovimientoD.nucantidad;
+                    almacenNE.SaldoAlmacenAdiconar(sesion.SessionGlobal.p_inidalmacen, registrosMovimientoD.p_inidproducto, cantidad);
+
+                }
+                movimientosNE.MovimientoProductoDetalleFalsear(p_inidmovimientoG);
+
+                List<movimientoproductoaccion> ListaMovimeintoDetalle = sesion.movprodaccion;
+                foreach (movimientoproductoaccion RegistrosMovimeintoDetalle in ListaMovimeintoDetalle)
+                {
+
+                    if (RegistrosMovimeintoDetalle.valedet.estado == true)
+                    {
+                        movimientoproductod registrosDetalle = new movimientoproductod();
+                        //registrosDetalle.p_inidvaledetalle = 0;
+                        registrosDetalle.p_inidvalecebecera = codigoCabecera;
+                        registrosDetalle.p_inidproducto = RegistrosMovimeintoDetalle.valedet.p_inidproducto;
+                        registrosDetalle.nucantidad = RegistrosMovimeintoDetalle.valedet.nucantidad;
+                        registrosDetalle.nucosto = RegistrosMovimeintoDetalle.valedet.nucosto;
+                        registrosDetalle.nutotal = RegistrosMovimeintoDetalle.valedet.nutotal;
+                        codigoDetalle = movimientosNE.MovimientoProductoDetalleIngresar(registrosDetalle);
+                        int cantidad = RegistrosMovimeintoDetalle.valedet.nucantidad * (-1);
+                        int entero = almacenNE.SaldoAlmacenAdiconar(sesion.SessionGlobal.p_inidalmacen, RegistrosMovimeintoDetalle.valedet.p_inidproducto, cantidad);
+                        if (codigoDetalle <= 0 && entero <= 0)
+                        {
+
+                            MessageBox.Show("Error Detalle", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                            return;
+                        }
+                        else
+                        {
+                            List<serie> ListaSeries = RegistrosMovimeintoDetalle.listaserie;
+                            if (ListaSeries != null)
+                            {
+                                foreach (serie registrosSerie in ListaSeries)
+                                {
+                                    serieNE.SeriesFalsearCodigo(registrosSerie.p_inidserie);
+                                }
+                            }
+                        }
+                    }
+                }
+                pasadoVale(codigoCabecera);
+
+            }
+            if (sesion.movprodaccion != null)
+            {
+                sesion.movprodaccion.Clear();
+                dgvListaValeDetalle.Rows.Clear();
+            }
         }
 
         private void txtRuc_DoubleClick(object sender, EventArgs e)

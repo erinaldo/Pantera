@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+
 namespace Presentacion
 {
     public partial class frmProcPedidosPrincipal : Form
@@ -230,7 +231,14 @@ namespace Presentacion
                 if (result == DialogResult.Yes)
                 {
                     //MessageBox.Show("Registro anulado", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                  int codigo =  serieNE.CabeceraAnular((int)dgvPedidos.CurrentRow.Cells["IDPEDIDO"].Value);
+                    int codigo = (int)dgvPedidos.CurrentRow.Cells["IDPEDIDO"].Value;
+                    List<pedidodetalle> ListaPedidosDetalle = pedidoNE.PedidoDetalleBusquedaParametro(codigo);
+                    foreach (pedidodetalle obj in ListaPedidosDetalle)
+                    {                       
+                        int cantidad = (-1) * int.Parse(obj.nucantidad.ToString());
+                        almacenNE.CambiarSaldoComprometido(sesion.SessionGlobal.p_inidalmacen,obj.p_inidproducto, cantidad);
+                    }
+                    codigo = pedidoNE.CabeceraAnular(codigo);
                     ejecutar(codigo);
                 }
                 else
