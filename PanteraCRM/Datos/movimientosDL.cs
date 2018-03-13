@@ -27,8 +27,8 @@ namespace Datos
             new parametro("in_p_inidusuariodelete", registros.p_inidusuariodelete),
             new parametro("in_estado", registros.estado),
             new parametro("in_p_inidmovimiento", registros.p_inidmovimiento ));
-
         }
+
         public static int MovimientoProductoCabeceraModificar(movimientoproductoc registros)
         {
             return conexion.executeScalar("fn_moviproductocabecera_modificar",
@@ -58,9 +58,6 @@ namespace Datos
         {
             return conexion.executeScalar("fn_movimiento_cabecera_falsear", CommandType.StoredProcedure, new parametro("in_p_inidvalecebecera", parametro));
         }
-        
-
-
         public static List<valedetalle> MovimientoProductoDetalleBusqueda(int parametro)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_movimiento_detalle_busqueda", CommandType.StoredProcedure, new parametro("in_parametro", parametro)))
@@ -128,7 +125,32 @@ namespace Datos
             registro.p_inidmovimiento = Convert.ToInt32(datareader["p_inidmovimiento"]);
             return registro;
         }
+        public static List<kardexdetalle> ListarKardexBusquedaCodigo(int codigo)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_kardex_listar_codigo", CommandType.StoredProcedure, new parametro("in_codigo", codigo)))
+            {
+                List<kardexdetalle> listado = new List<kardexdetalle>();
+                while (datareader.Read())
+                {
+                    kardexdetalle registro = new kardexdetalle();
+                    registro.chfechamovi = Convert.ToString(datareader["chvalefecha"]).Trim();
+                    registro.p_inidtipomovimiento = Convert.ToInt32(datareader["p_inidtipomovimiento"]);
+                    registro.chcorrelativo = Convert.ToString(datareader["chcorrelativo"]).Trim();
+                    registro.nucantidad = Convert.ToInt32(datareader["nucantidad"]);
+                    registro.p_inidmovimiento = Convert.ToInt32(datareader["p_inidmovimiento"]);
+                    registro.chreftip1 = Convert.ToString(datareader["chreftip1"]).Trim();
+                    registro.chrefnombre1 = Convert.ToString(datareader["chrefnombre1"]).Trim();
+                    registro.chreftip2 = Convert.ToString(datareader["chreftip2"]).Trim();
+                    registro.chrefnombre2 = Convert.ToString(datareader["chrefnombre2"]).Trim();
+                    registro.chreftip3 = Convert.ToString(datareader["chreftip3"]).Trim();
+                    registro.chrefnombre3 = Convert.ToString(datareader["chrefnombre3"]).Trim();
+                    registro.chreftip4 = Convert.ToString(datareader["chreftip4"]).Trim();
+                    registro.chrefnombre4 = Convert.ToString(datareader["chrefnombre4"]).Trim();                    
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
 
-        
     }
 }

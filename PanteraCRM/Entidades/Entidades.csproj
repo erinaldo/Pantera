@@ -72,6 +72,7 @@
     <Compile Include="pedidocabecera.cs" />
     <Compile Include="pedidodetalle.cs" />
     <Compile Include="pedidodetallecontenido.cs" />
+    <Compile Include="pedidoguicomp.cs" />
     <Compile Include="perfil.cs" />
     <Compile Include="perfildetalle.cs" />
     <Compile Include="persona.cs" />

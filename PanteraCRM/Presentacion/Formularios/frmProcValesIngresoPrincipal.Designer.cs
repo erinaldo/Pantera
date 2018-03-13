@@ -40,27 +40,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
             this.dgvVales = new System.Windows.Forms.DataGridView();
-            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHUDELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDUDELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHUINSERT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDUINSERT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHOBSERVACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMOVIMIENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMOVIMIENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHFACBOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHGUIAREMI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHPROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDPROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMONEDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMONEDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCORRELATIVO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCLASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCLASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHALMACEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDALMACEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDVALEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDALMACEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHALMACEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCLASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCLASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCORRELATIVO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMONEDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMONEDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHPROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHGUIAREMI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFACBOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMOVIMIENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMOVIMIENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHOBSERVACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDUINSERT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUINSERT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDUDELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUDELETE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVales)).BeginInit();
@@ -222,157 +222,13 @@
             this.dgvVales.Size = new System.Drawing.Size(647, 344);
             this.dgvVales.TabIndex = 16;
             // 
-            // ESTADO
+            // IDVALEC
             // 
-            this.ESTADO.DataPropertyName = "estado";
-            this.ESTADO.HeaderText = "ESTADO";
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.ReadOnly = true;
-            this.ESTADO.Visible = false;
-            // 
-            // CHUDELETE
-            // 
-            this.CHUDELETE.DataPropertyName = "chusuariodelete";
-            this.CHUDELETE.HeaderText = "CHUDELETE";
-            this.CHUDELETE.Name = "CHUDELETE";
-            this.CHUDELETE.ReadOnly = true;
-            this.CHUDELETE.Visible = false;
-            // 
-            // IDUDELETE
-            // 
-            this.IDUDELETE.DataPropertyName = "p_inidusuariodelete";
-            this.IDUDELETE.HeaderText = "IDUDELETE";
-            this.IDUDELETE.Name = "IDUDELETE";
-            this.IDUDELETE.ReadOnly = true;
-            this.IDUDELETE.Visible = false;
-            // 
-            // CHUINSERT
-            // 
-            this.CHUINSERT.DataPropertyName = "chusuarioinsert";
-            this.CHUINSERT.HeaderText = "CHUINSERT";
-            this.CHUINSERT.Name = "CHUINSERT";
-            this.CHUINSERT.ReadOnly = true;
-            this.CHUINSERT.Visible = false;
-            // 
-            // IDUINSERT
-            // 
-            this.IDUINSERT.DataPropertyName = "p_inidusuarioinsert";
-            this.IDUINSERT.HeaderText = "IDUINSERT";
-            this.IDUINSERT.Name = "IDUINSERT";
-            this.IDUINSERT.ReadOnly = true;
-            this.IDUINSERT.Visible = false;
-            // 
-            // CHOBSERVACION
-            // 
-            this.CHOBSERVACION.DataPropertyName = "chobservacion";
-            this.CHOBSERVACION.HeaderText = "OBSERVACION";
-            this.CHOBSERVACION.Name = "CHOBSERVACION";
-            this.CHOBSERVACION.ReadOnly = true;
-            this.CHOBSERVACION.Width = 300;
-            // 
-            // CHMOVIMIENTO
-            // 
-            this.CHMOVIMIENTO.DataPropertyName = "chtipomoviemiento";
-            this.CHMOVIMIENTO.HeaderText = "MOVIMIENTO";
-            this.CHMOVIMIENTO.Name = "CHMOVIMIENTO";
-            this.CHMOVIMIENTO.ReadOnly = true;
-            this.CHMOVIMIENTO.Width = 300;
-            // 
-            // IDMOVIMIENTO
-            // 
-            this.IDMOVIMIENTO.DataPropertyName = "p_inidtipomoviemiento";
-            this.IDMOVIMIENTO.HeaderText = "IDMOVIMIENTO";
-            this.IDMOVIMIENTO.Name = "IDMOVIMIENTO";
-            this.IDMOVIMIENTO.ReadOnly = true;
-            this.IDMOVIMIENTO.Visible = false;
-            // 
-            // CHFACBOL
-            // 
-            this.CHFACBOL.DataPropertyName = "chboletafactura";
-            this.CHFACBOL.HeaderText = "CHFACBOL";
-            this.CHFACBOL.Name = "CHFACBOL";
-            this.CHFACBOL.ReadOnly = true;
-            this.CHFACBOL.Visible = false;
-            // 
-            // CHGUIAREMI
-            // 
-            this.CHGUIAREMI.DataPropertyName = "chguiaremision";
-            this.CHGUIAREMI.HeaderText = "CHGUIAREMI";
-            this.CHGUIAREMI.Name = "CHGUIAREMI";
-            this.CHGUIAREMI.ReadOnly = true;
-            this.CHGUIAREMI.Visible = false;
-            // 
-            // CHPROVEEDOR
-            // 
-            this.CHPROVEEDOR.DataPropertyName = "chcodigoproveedor";
-            this.CHPROVEEDOR.HeaderText = "CHPROVEEDOR";
-            this.CHPROVEEDOR.Name = "CHPROVEEDOR";
-            this.CHPROVEEDOR.ReadOnly = true;
-            this.CHPROVEEDOR.Visible = false;
-            // 
-            // IDPROVEEDOR
-            // 
-            this.IDPROVEEDOR.DataPropertyName = "p_inidproveedor";
-            this.IDPROVEEDOR.HeaderText = "IDPROVEEDOR";
-            this.IDPROVEEDOR.Name = "IDPROVEEDOR";
-            this.IDPROVEEDOR.ReadOnly = true;
-            this.IDPROVEEDOR.Visible = false;
-            // 
-            // CHMONEDA
-            // 
-            this.CHMONEDA.DataPropertyName = "chtipomoneda";
-            this.CHMONEDA.HeaderText = "CHMODENA";
-            this.CHMONEDA.Name = "CHMONEDA";
-            this.CHMONEDA.ReadOnly = true;
-            this.CHMONEDA.Visible = false;
-            // 
-            // IDMONEDA
-            // 
-            this.IDMONEDA.DataPropertyName = "p_inidtipomoneda";
-            this.IDMONEDA.HeaderText = "IDMONEDA";
-            this.IDMONEDA.Name = "IDMONEDA";
-            this.IDMONEDA.ReadOnly = true;
-            this.IDMONEDA.Visible = false;
-            // 
-            // CHFECHA
-            // 
-            this.CHFECHA.DataPropertyName = "chvalefecha";
-            this.CHFECHA.HeaderText = "FECHA";
-            this.CHFECHA.Name = "CHFECHA";
-            this.CHFECHA.ReadOnly = true;
-            this.CHFECHA.Width = 70;
-            // 
-            // IDCORRELATIVO
-            // 
-            this.IDCORRELATIVO.DataPropertyName = "p_inidcorrevale";
-            this.IDCORRELATIVO.HeaderText = "N° VALE";
-            this.IDCORRELATIVO.Name = "IDCORRELATIVO";
-            this.IDCORRELATIVO.ReadOnly = true;
-            this.IDCORRELATIVO.Width = 90;
-            // 
-            // CHCLASE
-            // 
-            this.CHCLASE.DataPropertyName = "chclase";
-            this.CHCLASE.HeaderText = "CHCLASE";
-            this.CHCLASE.Name = "CHCLASE";
-            this.CHCLASE.ReadOnly = true;
-            this.CHCLASE.Visible = false;
-            // 
-            // IDCLASE
-            // 
-            this.IDCLASE.DataPropertyName = "p_inidclase";
-            this.IDCLASE.HeaderText = "IDCLASE";
-            this.IDCLASE.Name = "IDCLASE";
-            this.IDCLASE.ReadOnly = true;
-            this.IDCLASE.Visible = false;
-            // 
-            // CHALMACEN
-            // 
-            this.CHALMACEN.DataPropertyName = "chalamacen";
-            this.CHALMACEN.HeaderText = "ALMANCEN";
-            this.CHALMACEN.Name = "CHALMACEN";
-            this.CHALMACEN.ReadOnly = true;
-            this.CHALMACEN.Visible = false;
+            this.IDVALEC.DataPropertyName = "p_inidvalecebecera";
+            this.IDVALEC.HeaderText = "IDVALEC";
+            this.IDVALEC.Name = "IDVALEC";
+            this.IDVALEC.ReadOnly = true;
+            this.IDVALEC.Visible = false;
             // 
             // IDALMACEN
             // 
@@ -382,13 +238,157 @@
             this.IDALMACEN.ReadOnly = true;
             this.IDALMACEN.Visible = false;
             // 
-            // IDVALEC
+            // CHALMACEN
             // 
-            this.IDVALEC.DataPropertyName = "p_inidvalecebecera";
-            this.IDVALEC.HeaderText = "IDVALEC";
-            this.IDVALEC.Name = "IDVALEC";
-            this.IDVALEC.ReadOnly = true;
-            this.IDVALEC.Visible = false;
+            this.CHALMACEN.DataPropertyName = "chalamacen";
+            this.CHALMACEN.HeaderText = "ALMANCEN";
+            this.CHALMACEN.Name = "CHALMACEN";
+            this.CHALMACEN.ReadOnly = true;
+            this.CHALMACEN.Visible = false;
+            // 
+            // IDCLASE
+            // 
+            this.IDCLASE.DataPropertyName = "p_inidclase";
+            this.IDCLASE.HeaderText = "IDCLASE";
+            this.IDCLASE.Name = "IDCLASE";
+            this.IDCLASE.ReadOnly = true;
+            this.IDCLASE.Visible = false;
+            // 
+            // CHCLASE
+            // 
+            this.CHCLASE.DataPropertyName = "chclase";
+            this.CHCLASE.HeaderText = "CHCLASE";
+            this.CHCLASE.Name = "CHCLASE";
+            this.CHCLASE.ReadOnly = true;
+            this.CHCLASE.Visible = false;
+            // 
+            // IDCORRELATIVO
+            // 
+            this.IDCORRELATIVO.DataPropertyName = "p_inidcorrevale";
+            this.IDCORRELATIVO.HeaderText = "N° VALE";
+            this.IDCORRELATIVO.Name = "IDCORRELATIVO";
+            this.IDCORRELATIVO.ReadOnly = true;
+            this.IDCORRELATIVO.Width = 90;
+            // 
+            // CHFECHA
+            // 
+            this.CHFECHA.DataPropertyName = "chvalefecha";
+            this.CHFECHA.HeaderText = "FECHA";
+            this.CHFECHA.Name = "CHFECHA";
+            this.CHFECHA.ReadOnly = true;
+            this.CHFECHA.Width = 70;
+            // 
+            // IDMONEDA
+            // 
+            this.IDMONEDA.DataPropertyName = "p_inidtipomoneda";
+            this.IDMONEDA.HeaderText = "IDMONEDA";
+            this.IDMONEDA.Name = "IDMONEDA";
+            this.IDMONEDA.ReadOnly = true;
+            this.IDMONEDA.Visible = false;
+            // 
+            // CHMONEDA
+            // 
+            this.CHMONEDA.DataPropertyName = "chtipomoneda";
+            this.CHMONEDA.HeaderText = "CHMODENA";
+            this.CHMONEDA.Name = "CHMONEDA";
+            this.CHMONEDA.ReadOnly = true;
+            this.CHMONEDA.Visible = false;
+            // 
+            // IDPROVEEDOR
+            // 
+            this.IDPROVEEDOR.DataPropertyName = "p_inidproveedor";
+            this.IDPROVEEDOR.HeaderText = "IDPROVEEDOR";
+            this.IDPROVEEDOR.Name = "IDPROVEEDOR";
+            this.IDPROVEEDOR.ReadOnly = true;
+            this.IDPROVEEDOR.Visible = false;
+            // 
+            // CHPROVEEDOR
+            // 
+            this.CHPROVEEDOR.DataPropertyName = "chcodigoproveedor";
+            this.CHPROVEEDOR.HeaderText = "CHPROVEEDOR";
+            this.CHPROVEEDOR.Name = "CHPROVEEDOR";
+            this.CHPROVEEDOR.ReadOnly = true;
+            this.CHPROVEEDOR.Visible = false;
+            // 
+            // CHGUIAREMI
+            // 
+            this.CHGUIAREMI.DataPropertyName = "chguiaremision";
+            this.CHGUIAREMI.HeaderText = "CHGUIAREMI";
+            this.CHGUIAREMI.Name = "CHGUIAREMI";
+            this.CHGUIAREMI.ReadOnly = true;
+            this.CHGUIAREMI.Visible = false;
+            // 
+            // CHFACBOL
+            // 
+            this.CHFACBOL.DataPropertyName = "chboletafactura";
+            this.CHFACBOL.HeaderText = "CHFACBOL";
+            this.CHFACBOL.Name = "CHFACBOL";
+            this.CHFACBOL.ReadOnly = true;
+            this.CHFACBOL.Visible = false;
+            // 
+            // IDMOVIMIENTO
+            // 
+            this.IDMOVIMIENTO.DataPropertyName = "p_inidtipomoviemiento";
+            this.IDMOVIMIENTO.HeaderText = "IDMOVIMIENTO";
+            this.IDMOVIMIENTO.Name = "IDMOVIMIENTO";
+            this.IDMOVIMIENTO.ReadOnly = true;
+            this.IDMOVIMIENTO.Visible = false;
+            // 
+            // CHMOVIMIENTO
+            // 
+            this.CHMOVIMIENTO.DataPropertyName = "chtipomoviemiento";
+            this.CHMOVIMIENTO.HeaderText = "MOVIMIENTO";
+            this.CHMOVIMIENTO.Name = "CHMOVIMIENTO";
+            this.CHMOVIMIENTO.ReadOnly = true;
+            this.CHMOVIMIENTO.Width = 300;
+            // 
+            // CHOBSERVACION
+            // 
+            this.CHOBSERVACION.DataPropertyName = "chobservacion";
+            this.CHOBSERVACION.HeaderText = "OBSERVACION";
+            this.CHOBSERVACION.Name = "CHOBSERVACION";
+            this.CHOBSERVACION.ReadOnly = true;
+            this.CHOBSERVACION.Width = 300;
+            // 
+            // IDUINSERT
+            // 
+            this.IDUINSERT.DataPropertyName = "p_inidusuarioinsert";
+            this.IDUINSERT.HeaderText = "IDUINSERT";
+            this.IDUINSERT.Name = "IDUINSERT";
+            this.IDUINSERT.ReadOnly = true;
+            this.IDUINSERT.Visible = false;
+            // 
+            // CHUINSERT
+            // 
+            this.CHUINSERT.DataPropertyName = "chusuarioinsert";
+            this.CHUINSERT.HeaderText = "CHUINSERT";
+            this.CHUINSERT.Name = "CHUINSERT";
+            this.CHUINSERT.ReadOnly = true;
+            this.CHUINSERT.Visible = false;
+            // 
+            // IDUDELETE
+            // 
+            this.IDUDELETE.DataPropertyName = "p_inidusuariodelete";
+            this.IDUDELETE.HeaderText = "IDUDELETE";
+            this.IDUDELETE.Name = "IDUDELETE";
+            this.IDUDELETE.ReadOnly = true;
+            this.IDUDELETE.Visible = false;
+            // 
+            // CHUDELETE
+            // 
+            this.CHUDELETE.DataPropertyName = "chusuariodelete";
+            this.CHUDELETE.HeaderText = "CHUDELETE";
+            this.CHUDELETE.Name = "CHUDELETE";
+            this.CHUDELETE.ReadOnly = true;
+            this.CHUDELETE.Visible = false;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.DataPropertyName = "estado";
+            this.ESTADO.HeaderText = "ESTADO";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
+            this.ESTADO.Visible = false;
             // 
             // frmProcValesIngresoPrincipal
             // 
@@ -402,7 +402,10 @@
             this.Controls.Add(this.dgvVales);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmProcValesIngresoPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VALES DE INGRESO";

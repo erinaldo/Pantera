@@ -38,5 +38,9 @@ namespace Negocios
         {
             return movimientosDL.MovimientoProductoCabeceraFalsear(registros);
         }
+        public static List<kardexdetalle> ListarKardexBusquedaCodigo(int codigo)
+        {
+            return movimientosDL.ListarKardexBusquedaCodigo(codigo);
+        }
     }
 }

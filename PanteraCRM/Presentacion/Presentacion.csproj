@@ -606,8 +606,32 @@
     <EmbeddedResource Include="Formularios\frmConsCobranzaDocuVentaPrincipal.resx">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConsCuentasCobrarPrincipal.resx">
+      <DependentUpon>frmConsCuentasCobrarPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConsEstadoCuentaPrincipal.resx">
+      <DependentUpon>frmConsEstadoCuentaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConsVentasPrincipal.resx">
+      <DependentUpon>frmConsVentasPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmFondo.resx">
       <DependentUpon>frmFondo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmImprFacturaBoletaPrincipal.resx">
+      <DependentUpon>frmImprFacturaBoletaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmImprNotaCreditoGRemisionPrincipal.resx">
+      <DependentUpon>frmImprNotaCreditoGRemisionPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmImprNotaDebDevoNotaDebOtrosPrincipal.resx">
+      <DependentUpon>frmImprNotaDebDevoNotaDebOtrosPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmImprNotaVentaReciboPagoPrincipal.resx">
+      <DependentUpon>frmImprNotaVentaReciboPagoPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmImprStickerCodificaPrincipal.resx">
+      <DependentUpon>frmImprStickerCodificaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmManClienteAnadir.resx">
       <DependentUpon>frmManClienteAnadir.cs</DependentUpon>
@@ -675,6 +699,9 @@
     <EmbeddedResource Include="Formularios\frmProcPedidosPrincipal.resx">
       <DependentUpon>frmProcPedidosPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcSaldoProductoPrincipal.resx">
+      <DependentUpon>frmProcSaldoProductoPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcSalidaProductosAnadir.resx">
       <DependentUpon>frmProcSalidaProductosAnadir.cs</DependentUpon>
     </EmbeddedResource>
@@ -699,6 +726,21 @@
     <EmbeddedResource Include="Formularios\frmProcValesIngresoPrincipal.resx">
       <DependentUpon>frmProcValesIngresoPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepoCierreMensualPrincipal.resx">
+      <DependentUpon>frmRepoCierreMensualPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepoCobranzaDiaria.resx">
+      <DependentUpon>frmRepoCobranzaDiaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepoCuentasCobrarPrincipal.resx">
+      <DependentUpon>frmRepoCuentasCobrarPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepoReposicionStockPrincipal.resx">
+      <DependentUpon>frmRepoReposicionStockPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepoVentasPrincipal.resx">
+      <DependentUpon>frmRepoVentasPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmSecuAutenticacion.resx">
       <DependentUpon>frmSecuAutenticacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -716,6 +758,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmSecuUsuariosPrincipal.resx">
+      <DependentUpon>frmSecuUsuariosPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmTipoDeCambio.resx">
       <DependentUpon>frmTipoDeCambio.cs</DependentUpon>

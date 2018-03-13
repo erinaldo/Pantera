@@ -9,9 +9,9 @@ namespace Datos
 {
     public abstract class pedidoDL
     {
-        public static int CabeceraAnular(int parametro)
+        public static int CabeceraCambiarEstado(int parametro, int codigo)
         {
-            return conexion.executeScalar("fn_movimiento_cabecera_anular", CommandType.StoredProcedure, new parametro("in_p_inidpedidocabecera", parametro));
+            return conexion.executeScalar("fn_movimiento_cabecera_anular", CommandType.StoredProcedure, new parametro("in_p_inidpedidocabecera", parametro), new parametro("in_p_inidcodigo", codigo));
 
         }
         public static int IngresoPedidoCabecera(pedidocabecera registros)
@@ -83,7 +83,23 @@ namespace Datos
               );
          
         }
+        public static int IngresoComprobantesGenerado(pedidoguicomp registros)
+        {
+            return conexion.executeScalar("fn_pedidoguicomp_ingresar",
+                    CommandType.StoredProcedure,
+
+            //new parametro("in_p_inidpedidocabecera", registros.p_inidpedidoguicomp),
+            new parametro("in_chcodigopedido", registros.chcodigopedido),
+            new parametro("in_chguiaremision", registros.chguiaremision),
+            new parametro("in_chcomprobante", registros.chcomprobante),
+            new parametro("in_chtipocompro", registros.chtipocompro),
+            new parametro("in_estado", registros.estado),
+            new parametro("in_chobservacion", registros.chobservacion)
+              );
+
+        }
         
+
         public static List<pedidocabecera> PedidoCabeceraBusquedaParametro(string parametro)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_pedidocabecera_listar_parametro", CommandType.StoredProcedure, new parametro ("in_parametro",parametro)))

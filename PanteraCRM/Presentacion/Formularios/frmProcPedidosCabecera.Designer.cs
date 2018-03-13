@@ -350,7 +350,6 @@
             this.txtNombreVendedor.Size = new System.Drawing.Size(285, 20);
             this.txtNombreVendedor.TabIndex = 18;
             this.txtNombreVendedor.TabStop = false;
-            this.txtNombreVendedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtordcomp
             // 
@@ -416,7 +415,6 @@
             this.txtNombreCliente.Size = new System.Drawing.Size(349, 20);
             this.txtNombreCliente.TabIndex = 12;
             this.txtNombreCliente.TabStop = false;
-            this.txtNombreCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtRucCliente
             // 
@@ -599,7 +597,6 @@
             this.txtNombreTrans.Size = new System.Drawing.Size(349, 20);
             this.txtNombreTrans.TabIndex = 12;
             this.txtNombreTrans.TabStop = false;
-            this.txtNombreTrans.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
             // 
@@ -1119,8 +1116,10 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmProcPedidosCabecera";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR PEDIDO";

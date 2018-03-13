@@ -112,7 +112,7 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPedidos.Size = new System.Drawing.Size(784, 452);
+            this.dgvPedidos.Size = new System.Drawing.Size(807, 452);
             this.dgvPedidos.TabIndex = 1;
             // 
             // IDPEDIDO
@@ -182,7 +182,7 @@
             this.groupBox1.Controls.Add(this.btnVer);
             this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.btnAnadir);
-            this.groupBox1.Location = new System.Drawing.Point(144, 508);
+            this.groupBox1.Location = new System.Drawing.Point(156, 508);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(518, 43);
             this.groupBox1.TabIndex = 2;
@@ -208,6 +208,7 @@
             this.btnImprimir.TabIndex = 4;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnSalir
             // 
@@ -249,7 +250,7 @@
             this.groupBox2.Controls.Add(this.txtParametro);
             this.groupBox2.Location = new System.Drawing.Point(12, 1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(783, 43);
+            this.groupBox2.Size = new System.Drawing.Size(807, 43);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             // 
@@ -267,7 +268,7 @@
             this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtParametro.Location = new System.Drawing.Point(67, 15);
             this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(710, 20);
+            this.txtParametro.Size = new System.Drawing.Size(734, 20);
             this.txtParametro.TabIndex = 0;
             this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
             // 
@@ -278,12 +279,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(807, 564);
+            this.ClientSize = new System.Drawing.Size(831, 564);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvPedidos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmProcPedidosPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MODULO FACTURACION";

@@ -51,7 +51,6 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvListaProdSeries = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.REQSERIE = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +59,7 @@
             this.CHPRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdSeries)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -328,16 +328,6 @@
             this.dgvListaProdSeries.Size = new System.Drawing.Size(639, 166);
             this.dgvListaProdSeries.TabIndex = 34;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnGrabar);
-            this.groupBox2.Controls.Add(this.btnSalir);
-            this.groupBox2.Location = new System.Drawing.Point(248, 316);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(166, 41);
-            this.groupBox2.TabIndex = 36;
-            this.groupBox2.TabStop = false;
-            // 
             // REQSERIE
             // 
             this.REQSERIE.DataPropertyName = "req_serie";
@@ -399,6 +389,16 @@
             this.IDSERIE.Name = "IDSERIE";
             this.IDSERIE.ReadOnly = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnGrabar);
+            this.groupBox2.Controls.Add(this.btnSalir);
+            this.groupBox2.Location = new System.Drawing.Point(248, 316);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(166, 41);
+            this.groupBox2.TabIndex = 36;
+            this.groupBox2.TabStop = false;
+            // 
             // frmProcPedidosDetalle
             // 
             this.AcceptButton = this.btnGrabar;
@@ -411,8 +411,10 @@
             this.Controls.Add(this.dgvListaProdSeries);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmProcPedidosDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR DETALLE";

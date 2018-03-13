@@ -25,6 +25,7 @@ using Presentacion.Dataset;
         internal int CodigoPedidoCabecera;
         public delegate void PasarCabecera(int codigo);
         public event PasarCabecera PasadoCabecera;
+        internal int CodigoCabecera;
 
         public frmProcPedidosCabecera(string vBotonG)
         {
@@ -219,6 +220,13 @@ using Presentacion.Dataset;
                         btnModificar.Enabled = false;
                         btnEliminar.Enabled = false;
                         btnGrabar.Enabled = false;
+                    }else
+                    {
+                        CargarDatosCabecera();
+                        CodigoCabecera = CodigoPedidoCabecera;
+                        MostrarVistaImpresion();
+                        PasadoCabecera(CodigoCabecera);
+                        
                     }
                 }
             }
@@ -327,6 +335,7 @@ using Presentacion.Dataset;
                         {
                             PedidoRegistrar();
                             MostrarVistaImpresion();
+                            PasadoCabecera(CodigoCabecera);
                         }
                         else
                         {
@@ -352,9 +361,13 @@ using Presentacion.Dataset;
         private void MostrarVistaImpresion()
         {
             Reportes.FrmReporte f = new Reportes.FrmReporte();
+            f.tipocomprobante = cboTipoDocu.Text;
+            f.codigopedido = txtNroPedido.Text;
+            f.p_inidcodigopedido = CodigoCabecera;
             CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt1;
             DataSet Dts = new DtsPedidos();
             /*PRA CABECERA*/
+            decimal cadenatotol = decimal.Parse(txtTotVenta.Text);
             Dts.Tables["cabecera"].LoadDataRow(new object[]
             {
                 txtNombreCliente.Text,
@@ -375,7 +388,7 @@ using Presentacion.Dataset;
                 txtFechaVenciTarjeta.Text,
                 cboTipoDocu.Text,
                 "003-0001",
-                basicas.Convertir(txtTotVenta.Text,true),
+                basicas.Convertir(cadenatotol.ToString(),true),
                 //txtValVenta.Text,
                 string.Format("{0:0,0.00}", decimal.Parse(txtValVenta.Text)),
                 "0",
@@ -532,7 +545,7 @@ using Presentacion.Dataset;
 
             registrosPedidoCabecera.p_inidlicencia = (int)cboTarjeta.SelectedValue;
             registrosPedidoCabecera.p_inidtarjeta = LicenciaG.p_inidlicencia;
-            int CodigoCabecera = 0;
+            CodigoCabecera = 0;
              CodigoCabecera = pedidoNE.IngresoPedidoCabecera(registrosPedidoCabecera);
             
             if (sesion.pedidodetallecontenido != null)
@@ -584,7 +597,7 @@ using Presentacion.Dataset;
                 //GenerarTotales();
             }
             //MessageBox.Show("A:"+CodigoCabecera+":", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-            PasadoCabecera(CodigoCabecera);
+            
 
         }
         private void PedidoModificar()
