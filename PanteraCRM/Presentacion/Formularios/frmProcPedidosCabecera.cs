@@ -255,7 +255,7 @@ using Presentacion.Dataset;
             txtNroPedido.Text = pedCab.chcodigopedido ;
             txtFechaActual.Text = pedCab.chfechapedido;
             cboTipoDocu.SelectedValue = pedCab.p_inidtipodocumento;
-            cboCondVenta.SelectedValue = pedCab.p_inmotivotransaccion;
+            cboTraslado.SelectedValue = pedCab.p_inmotivotransaccion;
             cboCondVenta.SelectedValue= pedCab.p_inidcompromisopago;
             txtordcomp.Text = pedCab.chordencompra;
             cboNombreConductor.SelectedValue = pedCab.p_inidconductor;

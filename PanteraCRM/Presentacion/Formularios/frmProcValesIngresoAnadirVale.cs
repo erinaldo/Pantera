@@ -41,15 +41,14 @@ namespace Presentacion
             cboMoneda.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(13);
             cboMoneda.ValueMember = "idmaestrodetalle";
             cboMoneda.DisplayMember = "nombreitem";
-            cboTipoMov.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(14);
-            cboTipoMov.ValueMember = "idmaestrodetalle";
-            cboTipoMov.DisplayMember = "nombreitem";
-
-
+            cboTipoMov.DataSource = movimientosNE.ListarTipomovimientos(14);
+            cboTipoMov.ValueMember = "p_inidtipomovimiento";
+            cboTipoMov.DisplayMember = "chnombremovimiento";
+            DateTime fecha = Convert.ToDateTime(DateTime.Now.ToShortDateString().PadLeft(10, '0'));
             if (this.vBoton == "A")
             {
-                txtejercicio.Text = "2018"; 
-                txtperiodo.Text = "01";
+                txtejercicio.Text = fecha.Year.ToString(); ;
+                txtperiodo.Text = fecha.Month.ToString(); 
                 txtAlmacen.Text = "PRINCIPAL";
                 txtClase.Text = "INGRESO";
                 string correlativo = valeNE.CorrelativoMovimientoIngreso(sesion.SessionGlobal.p_inidalmacen) ;
@@ -634,12 +633,12 @@ namespace Presentacion
             proveedor registro = proveedorNE.ProveedorBusquedaRuc(ruc);
             if (registro != null)
             {
-                txtProvnombre.Text = registro.razon;
+                //txtProvnombre.Text = registro.razon;
                 txtidprov.Text = registro.p_inidcodigoclie.ToString();
             }
             else
             {
-                txtProvnombre.Text = "";
+                //txtProvnombre.Text = "";
                 txtidprov.Text = "";
 
             }

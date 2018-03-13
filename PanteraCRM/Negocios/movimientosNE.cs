@@ -42,5 +42,10 @@ namespace Negocios
         {
             return movimientosDL.ListarKardexBusquedaCodigo(codigo);
         }
+        public static List<tipomovimiento> ListarTipomovimientos(int codigo)
+        {
+            return movimientosDL.ListarTipomovimientos(codigo);
+        }
+        
     }
 }

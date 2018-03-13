@@ -151,6 +151,35 @@ namespace Datos
                 return listado;
             }
         }
+        public static List<tipomovimiento> ListarTipomovimientos(int codigo)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_tipomovimiento_listar_codigo", CommandType.StoredProcedure, new parametro("in_codigo", codigo)))
+            {
+                List<tipomovimiento> listado = new List<tipomovimiento>();
+                while (datareader.Read())
+                {
+                    tipomovimiento registro = new tipomovimiento();
+                    registro.p_inidtipomovimiento = Convert.ToInt32(datareader["p_inidtipomovimiento"]);
+                    registro.p_inidmovimiento = Convert.ToInt32(datareader["p_inidmovimiento"]);
+                    registro.chnombremovimiento = Convert.ToString(datareader["chnombremovimiento"]).Trim();
+                    registro.chnref1 = Convert.ToString(datareader["chnref1"]).Trim();
+                    registro.chtipref1 = Convert.ToString(datareader["chtipref1"]).Trim();
+                    registro.chnref2 = Convert.ToString(datareader["chnref2"]).Trim();
+                    registro.chtipref2 = Convert.ToString(datareader["chtipref2"]).Trim();
+                    registro.chnref3 = Convert.ToString(datareader["chnref3"]).Trim();
+                    registro.chtipref3 = Convert.ToString(datareader["chtipref3"]).Trim();
+                    registro.chnref4 = Convert.ToString(datareader["chnref4"]).Trim();
+                    registro.chtipref4 = Convert.ToString(datareader["chtipref4"]).Trim();
+                    registro.chnref5 = Convert.ToString(datareader["chnref5"]).Trim();
+                    registro.chtipref5 = Convert.ToString(datareader["chtipref5"]).Trim();
+                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
 
     }
 }

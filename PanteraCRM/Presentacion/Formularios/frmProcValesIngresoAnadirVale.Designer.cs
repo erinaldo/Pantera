@@ -50,7 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtProvnombre = new System.Windows.Forms.TextBox();
             this.txtRuc = new System.Windows.Forms.TextBox();
             this.txtFacBol = new System.Windows.Forms.TextBox();
             this.txtGuiaRem = new System.Windows.Forms.TextBox();
@@ -77,6 +76,9 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtidprov = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaValeDetalle)).BeginInit();
@@ -130,11 +132,14 @@
             // 
             // mskfechareg
             // 
+            this.mskfechareg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.mskfechareg.ForeColor = System.Drawing.Color.Blue;
             this.mskfechareg.Location = new System.Drawing.Point(91, 69);
             this.mskfechareg.Mask = "00/00/0000";
             this.mskfechareg.Name = "mskfechareg";
             this.mskfechareg.Size = new System.Drawing.Size(100, 20);
             this.mskfechareg.TabIndex = 2;
+            this.mskfechareg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mskfechareg.ValidatingType = typeof(System.DateTime);
             // 
             // cboTipoMov
@@ -295,8 +300,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.txtProvnombre);
             this.groupBox2.Controls.Add(this.txtRuc);
             this.groupBox2.Controls.Add(this.txtFacBol);
             this.groupBox2.Controls.Add(this.txtGuiaRem);
@@ -319,18 +326,6 @@
             this.label14.TabIndex = 18;
             this.label14.Text = "R.U.C.";
             // 
-            // txtProvnombre
-            // 
-            this.txtProvnombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtProvnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProvnombre.ForeColor = System.Drawing.Color.Blue;
-            this.txtProvnombre.Location = new System.Drawing.Point(139, 32);
-            this.txtProvnombre.Name = "txtProvnombre";
-            this.txtProvnombre.ReadOnly = true;
-            this.txtProvnombre.Size = new System.Drawing.Size(331, 20);
-            this.txtProvnombre.TabIndex = 17;
-            this.txtProvnombre.TabStop = false;
-            // 
             // txtRuc
             // 
             this.txtRuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -345,23 +340,23 @@
             // txtFacBol
             // 
             this.txtFacBol.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFacBol.Location = new System.Drawing.Point(575, 32);
+            this.txtFacBol.Location = new System.Drawing.Point(405, 32);
             this.txtFacBol.Name = "txtFacBol";
-            this.txtFacBol.Size = new System.Drawing.Size(93, 20);
+            this.txtFacBol.Size = new System.Drawing.Size(127, 20);
             this.txtFacBol.TabIndex = 7;
             // 
             // txtGuiaRem
             // 
             this.txtGuiaRem.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtGuiaRem.Location = new System.Drawing.Point(478, 32);
+            this.txtGuiaRem.Location = new System.Drawing.Point(272, 32);
             this.txtGuiaRem.Name = "txtGuiaRem";
-            this.txtGuiaRem.Size = new System.Drawing.Size(91, 20);
+            this.txtGuiaRem.Size = new System.Drawing.Size(127, 20);
             this.txtGuiaRem.TabIndex = 6;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(572, 16);
+            this.label12.Location = new System.Drawing.Point(403, 16);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 13);
             this.label12.TabIndex = 3;
@@ -370,7 +365,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(475, 16);
+            this.label11.Location = new System.Drawing.Point(269, 16);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 13);
             this.label11.TabIndex = 4;
@@ -593,6 +588,31 @@
             this.txtidprov.TabIndex = 19;
             this.txtidprov.Visible = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(139, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(127, 20);
+            this.textBox1.TabIndex = 19;
+            // 
+            // textBox2
+            // 
+            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox2.Location = new System.Drawing.Point(538, 32);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(127, 20);
+            this.textBox2.TabIndex = 20;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(535, 16);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(82, 13);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Factura - Boleta";
+            // 
             // frmProcIngresoValesAnadir
             // 
             this.AcceptButton = this.btnGrabar;
@@ -667,7 +687,6 @@
         private System.Windows.Forms.MaskedTextBox mskfechareg;
         private System.Windows.Forms.ComboBox cboMoneda;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtProvnombre;
         private System.Windows.Forms.TextBox txtRuc;
         private System.Windows.Forms.TextBox txtidprov;
         private System.Windows.Forms.Button btnVer;
@@ -679,5 +698,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHDESCRIPCION;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHCOSTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSUBTOTAL;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

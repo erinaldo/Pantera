@@ -182,7 +182,7 @@ namespace Presentacion
                 string[] Num = numero.Split(',');
 
                 //de da formato al numero decimal
-                parte_decimal = "con"+ Num[1] + "/100 nuevos soles.";
+                parte_decimal = " con "+ Num[1] + "/100 nuevos soles.";
                 //se convierte el numero a literal
                 if (int.Parse(Num[0]) == 0)
                 {//si el valor es cero                

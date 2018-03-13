@@ -144,12 +144,16 @@ namespace Presentacion.Reportes
                 MessageBox.Show("Error al generar comprobantes", "Mensaje de Sistema", MessageBoxButtons.OK);
             }else
             {
-                int cc = pedidoNE.CabeceraCambiarEstado(p_inidcodigopedido, 87);
-                if (cc > 0 )
-                {
-                    MessageBox.Show("Error al generar comprobantes" +cc, "Mensaje de Sistema", MessageBoxButtons.OK);
-                }
+                int cc = pedidoNE.CabeceraCambiarEstado(p_inidcodigopedido, 87);                
             }
+        }
+        private void GenerarMovimientoSalida()
+        {
+
+        }
+        private void GenerarStockYComprometido()
+        {
+
         }
     }
 }

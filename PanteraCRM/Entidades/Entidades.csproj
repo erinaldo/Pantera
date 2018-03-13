@@ -97,6 +97,7 @@
     <Compile Include="tipo.cs" />
     <Compile Include="tipocambio.cs" />
     <Compile Include="tipodocumento.cs" />
+    <Compile Include="tipomovimiento.cs" />
     <Compile Include="transportista.cs" />
     <Compile Include="ubigeo.cs" />
     <Compile Include="usuario.cs" />
