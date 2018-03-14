@@ -44,7 +44,32 @@ namespace Datos
             return conexion.executeScalarStr("fn_correlativo_notaventa", CommandType.StoredProcedure, new parametro("in_parametro", parametro));
         }
         /* FIN :: OBTENER CORRELATIVOS DE COMPROBANTES*/
-
+        /*INICIO :: GENERAR CODIGOS COMPROBANTES*/
+        public static int GenerarCorrelativoFactura(int parametro)
+        {
+            return conexion.executeScalar("fn_Correlativo_generar_factura", CommandType.StoredProcedure, new parametro("in_parametro", parametro));
+        }
+        public static int GenerarCorrelativoBoleta(int parametro)
+        {
+            return conexion.executeScalar("fn_Correlativo_generar_boleta", CommandType.StoredProcedure, new parametro("in_parametro", parametro));
+        }
+        public static int GenerarCorrelativoGuia(int parametro)
+        {
+            return conexion.executeScalar("fn_Correlativo_generar_guia", CommandType.StoredProcedure, new parametro("in_parametro", parametro));
+        }
+        public static int GenerarCorrelativoNotaCredito(int parametro)
+        {
+            return conexion.executeScalar("fn_Correlativo_generar_notacredito", CommandType.StoredProcedure, new parametro("in_parametro", parametro));
+        }
+        public static int GenerarCorrelativoNotaDebito(int parametro)
+        {
+            return conexion.executeScalar("fn_Correlativo_generar_notadebito", CommandType.StoredProcedure, new parametro("in_parametro", parametro));
+        }
+        public static int GenerarCorrelativoNotaVenta(int parametro)
+        {
+            return conexion.executeScalar("fn_Correlativo_generar_notaventa", CommandType.StoredProcedure, new parametro("in_parametro", parametro));
+        }
+        /*INICIO :: GENERAR CODIGOS COMPROBANTES*/
 
     }
 }

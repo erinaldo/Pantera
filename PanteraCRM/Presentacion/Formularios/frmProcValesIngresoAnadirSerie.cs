@@ -51,12 +51,13 @@ namespace Presentacion
                             int p_inidproducto = int.Parse(txtidcodigo.Text);
                             string chproducto = txtidcodigo.Text;
                             string chnombrecompuesto = txtNombreconpuesto.Text;
-                            string chserie = txtSerie.Text;
+                            string identificador = txtidentificador.Text;
                             string chobs = txtObs.Text;
-                            dgvListaIngreso.Rows.Add(p_inidproducto, chproducto, chnombrecompuesto, chserie, chobs,false,"","","");
+                            string serie = txtSerie.Text;
+                            dgvListaIngreso.Rows.Add(p_inidproducto, chproducto, chnombrecompuesto, serie,identificador, chobs,false,"","","");
                             txtSerie.Text = "";
                             txtObs.Text = "";
-                            txtCodigoSerie.Text = "";
+                            txtidentificador.Text = "";
                             txtSerie.Focus();
                         }
                         else
@@ -400,7 +401,7 @@ namespace Presentacion
                 txtidcodigo.Text = "";
                 txtCantidad.Text = "0";
                 txtSerie.Text = "";
-                txtCodigoSerie.Text = "";
+                txtidentificador.Text = "";
                 txtObs.Text = "";
                 txtprecio.Text = "0.00";
             }
@@ -476,7 +477,7 @@ namespace Presentacion
                 txtCantidad.Enabled = true;
                 txtCantidad.Text = "0";
                 txtSerie.Text = "";
-                txtCodigoSerie.Text = "";
+                txtidentificador.Text = "";
                 txtObs.Text = "";
                 txtprecio.Text = "00.00";
                 grbAgregadoSerie.Enabled = ProductoG.req_serie;
@@ -489,7 +490,7 @@ namespace Presentacion
                 txtidcodigo.Text = "";
                 txtCantidad.Text = "0" ;
                 txtSerie.Text = "";
-                txtCodigoSerie.Text = "";
+                txtidentificador.Text = "";
                 txtObs.Text = "";
                 txtprecio.Text = "00.00";
             }

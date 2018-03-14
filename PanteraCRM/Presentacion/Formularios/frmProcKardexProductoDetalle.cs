@@ -40,10 +40,11 @@ namespace Presentacion
                 decimal ingreso = 0;
                 decimal salida = 0;
                 if (RegistrosKardex.p_inidmovimiento == 14) {/*INGRESO*/ ingreso = RegistrosKardex.nucantidad; saldo += ingreso; } else {/*SALIDA*/ salida = RegistrosKardex.nucantidad; saldo -= salida; }
-               
+
                 dgvListaKardex.Rows.Add(
                     RegistrosKardex.chfechamovi,
-                    maestrodetalleNE.BuscarPorCodigoDetalle(RegistrosKardex.p_inidtipomovimiento).nombreitem,
+                    movimientosNE.TipoMovimientoBusqueda(RegistrosKardex.p_inidtipomovimiento).chnombremovimiento,
+                    //maestrodetalleNE.BuscarPorCodigoDetalle(RegistrosKardex.p_inidtipomovimiento).nombreitem,
                     RegistrosKardex.chcorrelativo,
                     ingreso,
                     salida,

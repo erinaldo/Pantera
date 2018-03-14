@@ -8,6 +8,7 @@ namespace Entidades
 {
     public class proveedor
     {
+        public string chcodigoproveedor { get; set; }
         public int p_inidcodigoclie { get; set; }
         public string razon { get; set; }
         public string tipodocu { get; set; }
@@ -24,6 +25,7 @@ namespace Entidades
             this.chdireccion = string.Empty;
             this.tipoclie = string.Empty;
             this.telefono = string.Empty;
+            this.chcodigoproveedor = string.Empty;
 
     }
     }

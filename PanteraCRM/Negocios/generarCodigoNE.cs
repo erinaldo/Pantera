@@ -41,5 +41,32 @@ namespace Negocios
         {
             return generarCodigoDL.ObtenerCorrelativoNotaVenta(parametro);
         }
+        /*INICIO :: GENERAR CORRELATIVOS COMPROBANTES*/
+        public static int GenerarCorrelativoFactura(int parametro)
+        {
+            return generarCodigoDL.GenerarCorrelativoFactura(parametro);
+        }
+        public static int GenerarCorrelativoBoleta(int parametro)
+        {
+            return generarCodigoDL.GenerarCorrelativoBoleta(parametro);
+        }
+        public static int GenerarCorrelativoGuia(int parametro)
+        {
+            return generarCodigoDL.GenerarCorrelativoGuia(parametro);
+        }
+        public static int GenerarCorrelativoNotaCredito(int parametro)
+        {
+            return generarCodigoDL.GenerarCorrelativoNotaCredito(parametro);
+        }
+        public static int GenerarCorrelativoNotaDebito(int parametro)
+        {
+            return generarCodigoDL.GenerarCorrelativoNotaDebito(parametro);
+        }
+        public static int GenerarCorrelativoNotaVenta(int parametro)
+        {
+            return generarCodigoDL.GenerarCorrelativoNotaVenta(parametro);
+        }
+
+        /*FIN :: GENERAR CORRELATIVOS COMPROBANTES*/
     }
 }

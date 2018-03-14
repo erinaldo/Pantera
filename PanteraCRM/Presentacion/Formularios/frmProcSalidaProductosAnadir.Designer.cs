@@ -52,15 +52,6 @@
             this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCOSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.LNroDoc = new System.Windows.Forms.Label();
-            this.txtProvnombre = new System.Windows.Forms.TextBox();
-            this.txtRuc = new System.Windows.Forms.TextBox();
-            this.txtFacBol = new System.Windows.Forms.TextBox();
-            this.txtGuiaRem = new System.Windows.Forms.TextBox();
-            this.LFact = new System.Windows.Forms.Label();
-            this.LGuia = new System.Windows.Forms.Label();
-            this.LDecripcion = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboMoneda = new System.Windows.Forms.ComboBox();
             this.mskfechareg = new System.Windows.Forms.MaskedTextBox();
@@ -80,11 +71,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblTipref2 = new System.Windows.Forms.Label();
+            this.lblTipref5 = new System.Windows.Forms.Label();
+            this.lblTipref4 = new System.Windows.Forms.Label();
+            this.lblTipref3 = new System.Windows.Forms.Label();
+            this.lblTipref1 = new System.Windows.Forms.Label();
+            this.lblNref5 = new System.Windows.Forms.Label();
+            this.txtCref5 = new System.Windows.Forms.TextBox();
+            this.txtCref2 = new System.Windows.Forms.TextBox();
+            this.lblNref1 = new System.Windows.Forms.Label();
+            this.txtCref1 = new System.Windows.Forms.TextBox();
+            this.txtCref4 = new System.Windows.Forms.TextBox();
+            this.txtCref3 = new System.Windows.Forms.TextBox();
+            this.lblNref4 = new System.Windows.Forms.Label();
+            this.lblNref3 = new System.Windows.Forms.Label();
+            this.lblNref2 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaValeDetalle)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtidprov
@@ -318,97 +325,6 @@
             this.CHSUBTOTAL.ReadOnly = true;
             this.CHSUBTOTAL.Width = 60;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.LNroDoc);
-            this.groupBox2.Controls.Add(this.txtProvnombre);
-            this.groupBox2.Controls.Add(this.txtRuc);
-            this.groupBox2.Controls.Add(this.txtFacBol);
-            this.groupBox2.Controls.Add(this.txtGuiaRem);
-            this.groupBox2.Controls.Add(this.LFact);
-            this.groupBox2.Controls.Add(this.LGuia);
-            this.groupBox2.Controls.Add(this.LDecripcion);
-            this.groupBox2.Location = new System.Drawing.Point(12, 113);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(679, 66);
-            this.groupBox2.TabIndex = 23;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos de Referencia";
-            // 
-            // LNroDoc
-            // 
-            this.LNroDoc.AutoSize = true;
-            this.LNroDoc.Location = new System.Drawing.Point(6, 16);
-            this.LNroDoc.Name = "LNroDoc";
-            this.LNroDoc.Size = new System.Drawing.Size(39, 13);
-            this.LNroDoc.TabIndex = 18;
-            this.LNroDoc.Text = "R.U.C.";
-            // 
-            // txtProvnombre
-            // 
-            this.txtProvnombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtProvnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProvnombre.ForeColor = System.Drawing.Color.Blue;
-            this.txtProvnombre.Location = new System.Drawing.Point(139, 32);
-            this.txtProvnombre.Name = "txtProvnombre";
-            this.txtProvnombre.ReadOnly = true;
-            this.txtProvnombre.Size = new System.Drawing.Size(331, 20);
-            this.txtProvnombre.TabIndex = 17;
-            this.txtProvnombre.TabStop = false;
-            // 
-            // txtRuc
-            // 
-            this.txtRuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRuc.Location = new System.Drawing.Point(6, 32);
-            this.txtRuc.Name = "txtRuc";
-            this.txtRuc.Size = new System.Drawing.Size(127, 20);
-            this.txtRuc.TabIndex = 5;
-            this.txtRuc.TextChanged += new System.EventHandler(this.txtRuc_TextChanged_1);
-            this.txtRuc.DoubleClick += new System.EventHandler(this.txtRuc_DoubleClick);
-            // 
-            // txtFacBol
-            // 
-            this.txtFacBol.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFacBol.Location = new System.Drawing.Point(575, 32);
-            this.txtFacBol.Name = "txtFacBol";
-            this.txtFacBol.Size = new System.Drawing.Size(93, 20);
-            this.txtFacBol.TabIndex = 7;
-            // 
-            // txtGuiaRem
-            // 
-            this.txtGuiaRem.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtGuiaRem.Location = new System.Drawing.Point(478, 32);
-            this.txtGuiaRem.Name = "txtGuiaRem";
-            this.txtGuiaRem.Size = new System.Drawing.Size(91, 20);
-            this.txtGuiaRem.TabIndex = 6;
-            // 
-            // LFact
-            // 
-            this.LFact.AutoSize = true;
-            this.LFact.Location = new System.Drawing.Point(572, 16);
-            this.LFact.Name = "LFact";
-            this.LFact.Size = new System.Drawing.Size(82, 13);
-            this.LFact.TabIndex = 3;
-            this.LFact.Text = "Factura - Boleta";
-            // 
-            // LGuia
-            // 
-            this.LGuia.AutoSize = true;
-            this.LGuia.Location = new System.Drawing.Point(475, 16);
-            this.LGuia.Name = "LGuia";
-            this.LGuia.Size = new System.Drawing.Size(75, 13);
-            this.LGuia.TabIndex = 4;
-            this.LGuia.Text = "Guia Remisión";
-            // 
-            // LDecripcion
-            // 
-            this.LDecripcion.AutoSize = true;
-            this.LDecripcion.Location = new System.Drawing.Point(136, 16);
-            this.LDecripcion.Name = "LDecripcion";
-            this.LDecripcion.Size = new System.Drawing.Size(56, 13);
-            this.LDecripcion.TabIndex = 5;
-            this.LDecripcion.Text = "Proveedor";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cboMoneda);
@@ -620,20 +536,172 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Ejercicio";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblTipref2);
+            this.groupBox2.Controls.Add(this.lblTipref5);
+            this.groupBox2.Controls.Add(this.lblTipref4);
+            this.groupBox2.Controls.Add(this.lblTipref3);
+            this.groupBox2.Controls.Add(this.lblTipref1);
+            this.groupBox2.Controls.Add(this.lblNref5);
+            this.groupBox2.Controls.Add(this.txtCref5);
+            this.groupBox2.Controls.Add(this.txtCref2);
+            this.groupBox2.Controls.Add(this.lblNref1);
+            this.groupBox2.Controls.Add(this.txtCref1);
+            this.groupBox2.Controls.Add(this.txtCref4);
+            this.groupBox2.Controls.Add(this.txtCref3);
+            this.groupBox2.Controls.Add(this.lblNref4);
+            this.groupBox2.Controls.Add(this.lblNref3);
+            this.groupBox2.Controls.Add(this.lblNref2);
+            this.groupBox2.Location = new System.Drawing.Point(12, 113);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(679, 66);
+            this.groupBox2.TabIndex = 27;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos de Referencia";
+            // 
+            // lblTipref2
+            // 
+            this.lblTipref2.AutoSize = true;
+            this.lblTipref2.Location = new System.Drawing.Point(136, 35);
+            this.lblTipref2.Name = "lblTipref2";
+            this.lblTipref2.Size = new System.Drawing.Size(0, 13);
+            this.lblTipref2.TabIndex = 26;
+            // 
+            // lblTipref5
+            // 
+            this.lblTipref5.AutoSize = true;
+            this.lblTipref5.Location = new System.Drawing.Point(538, 35);
+            this.lblTipref5.Name = "lblTipref5";
+            this.lblTipref5.Size = new System.Drawing.Size(0, 13);
+            this.lblTipref5.TabIndex = 25;
+            // 
+            // lblTipref4
+            // 
+            this.lblTipref4.AutoSize = true;
+            this.lblTipref4.Location = new System.Drawing.Point(413, 35);
+            this.lblTipref4.Name = "lblTipref4";
+            this.lblTipref4.Size = new System.Drawing.Size(0, 13);
+            this.lblTipref4.TabIndex = 24;
+            // 
+            // lblTipref3
+            // 
+            this.lblTipref3.AutoSize = true;
+            this.lblTipref3.Location = new System.Drawing.Point(269, 35);
+            this.lblTipref3.Name = "lblTipref3";
+            this.lblTipref3.Size = new System.Drawing.Size(0, 13);
+            this.lblTipref3.TabIndex = 23;
+            // 
+            // lblTipref1
+            // 
+            this.lblTipref1.AutoSize = true;
+            this.lblTipref1.Location = new System.Drawing.Point(9, 35);
+            this.lblTipref1.Name = "lblTipref1";
+            this.lblTipref1.Size = new System.Drawing.Size(0, 13);
+            this.lblTipref1.TabIndex = 22;
+            // 
+            // lblNref5
+            // 
+            this.lblNref5.AutoSize = true;
+            this.lblNref5.Location = new System.Drawing.Point(538, 16);
+            this.lblNref5.Name = "lblNref5";
+            this.lblNref5.Size = new System.Drawing.Size(0, 13);
+            this.lblNref5.TabIndex = 21;
+            // 
+            // txtCref5
+            // 
+            this.txtCref5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCref5.Location = new System.Drawing.Point(591, 32);
+            this.txtCref5.Name = "txtCref5";
+            this.txtCref5.Size = new System.Drawing.Size(80, 20);
+            this.txtCref5.TabIndex = 4;
+            this.txtCref5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCref1_KeyPress);
+            // 
+            // txtCref2
+            // 
+            this.txtCref2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCref2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCref2.Location = new System.Drawing.Point(174, 32);
+            this.txtCref2.Name = "txtCref2";
+            this.txtCref2.Size = new System.Drawing.Size(80, 20);
+            this.txtCref2.TabIndex = 1;
+            this.txtCref2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCref1_KeyPress);
+            // 
+            // lblNref1
+            // 
+            this.lblNref1.AutoSize = true;
+            this.lblNref1.Location = new System.Drawing.Point(9, 16);
+            this.lblNref1.Name = "lblNref1";
+            this.lblNref1.Size = new System.Drawing.Size(0, 13);
+            this.lblNref1.TabIndex = 18;
+            // 
+            // txtCref1
+            // 
+            this.txtCref1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCref1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCref1.Location = new System.Drawing.Point(35, 32);
+            this.txtCref1.Name = "txtCref1";
+            this.txtCref1.Size = new System.Drawing.Size(80, 20);
+            this.txtCref1.TabIndex = 0;
+            this.txtCref1.TextChanged += new System.EventHandler(this.txtCref1_TextChanged);
+            this.txtCref1.DoubleClick += new System.EventHandler(this.txtCref1_DoubleClick);
+            this.txtCref1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCref1_KeyPress);
+            // 
+            // txtCref4
+            // 
+            this.txtCref4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCref4.Location = new System.Drawing.Point(452, 32);
+            this.txtCref4.Name = "txtCref4";
+            this.txtCref4.Size = new System.Drawing.Size(80, 20);
+            this.txtCref4.TabIndex = 3;
+            this.txtCref4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCref1_KeyPress);
+            // 
+            // txtCref3
+            // 
+            this.txtCref3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCref3.Location = new System.Drawing.Point(323, 32);
+            this.txtCref3.Name = "txtCref3";
+            this.txtCref3.Size = new System.Drawing.Size(80, 20);
+            this.txtCref3.TabIndex = 2;
+            this.txtCref3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCref1_KeyPress);
+            // 
+            // lblNref4
+            // 
+            this.lblNref4.AutoSize = true;
+            this.lblNref4.Location = new System.Drawing.Point(413, 16);
+            this.lblNref4.Name = "lblNref4";
+            this.lblNref4.Size = new System.Drawing.Size(0, 13);
+            this.lblNref4.TabIndex = 3;
+            // 
+            // lblNref3
+            // 
+            this.lblNref3.AutoSize = true;
+            this.lblNref3.Location = new System.Drawing.Point(269, 16);
+            this.lblNref3.Name = "lblNref3";
+            this.lblNref3.Size = new System.Drawing.Size(0, 13);
+            this.lblNref3.TabIndex = 4;
+            // 
+            // lblNref2
+            // 
+            this.lblNref2.AutoSize = true;
+            this.lblNref2.Location = new System.Drawing.Point(136, 16);
+            this.lblNref2.Name = "lblNref2";
+            this.lblNref2.Size = new System.Drawing.Size(0, 13);
+            this.lblNref2.TabIndex = 5;
+            // 
             // frmProcSalidaProductosAnadir
             // 
-            this.AcceptButton = this.btnGrabar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(703, 450);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtidprov);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -647,10 +715,10 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaValeDetalle)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -670,15 +738,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvListaValeDetalle;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label LNroDoc;
-        private System.Windows.Forms.TextBox txtProvnombre;
-        private System.Windows.Forms.TextBox txtRuc;
-        private System.Windows.Forms.TextBox txtFacBol;
-        private System.Windows.Forms.TextBox txtGuiaRem;
-        private System.Windows.Forms.Label LFact;
-        private System.Windows.Forms.Label LGuia;
-        private System.Windows.Forms.Label LDecripcion;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cboMoneda;
         private System.Windows.Forms.MaskedTextBox mskfechareg;
@@ -706,5 +765,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHDESCRIPCION;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHCOSTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHSUBTOTAL;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblTipref2;
+        private System.Windows.Forms.Label lblTipref5;
+        private System.Windows.Forms.Label lblTipref4;
+        private System.Windows.Forms.Label lblTipref3;
+        private System.Windows.Forms.Label lblTipref1;
+        private System.Windows.Forms.Label lblNref5;
+        private System.Windows.Forms.TextBox txtCref5;
+        private System.Windows.Forms.TextBox txtCref2;
+        private System.Windows.Forms.Label lblNref1;
+        private System.Windows.Forms.TextBox txtCref1;
+        private System.Windows.Forms.TextBox txtCref4;
+        private System.Windows.Forms.TextBox txtCref3;
+        private System.Windows.Forms.Label lblNref4;
+        private System.Windows.Forms.Label lblNref3;
+        private System.Windows.Forms.Label lblNref2;
     }
 }

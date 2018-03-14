@@ -75,7 +75,7 @@ namespace Presentacion
                 MessageBox.Show("Ningun item Seleccionado", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            string codigo = (string)dgvListaProveedores.CurrentRow.Cells["NRODOCU"].Value;
+            string codigo = (string)dgvListaProveedores.CurrentRow.Cells["CHCODPROV"].Value;
             pasadoproveedor(codigo);
             this.Dispose();
 

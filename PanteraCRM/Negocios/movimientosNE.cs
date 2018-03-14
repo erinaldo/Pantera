@@ -46,6 +46,10 @@ namespace Negocios
         {
             return movimientosDL.ListarTipomovimientos(codigo);
         }
-        
+        public static tipomovimiento TipoMovimientoBusqueda(int codigo)
+        {
+            return movimientosDL.TipoMovimientoBusqueda(codigo);
+        }
+
     }
 }

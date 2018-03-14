@@ -14,7 +14,7 @@ namespace Presentacion
     public partial class frmProcIngresoValesAnadir : Form
     {
         internal movimientoproductoc RegistrosMovimientoC;
-        
+        internal List<tipomovimiento> ListasMovimientoG;
         internal int codigoMovimiento;
         public delegate void pasar(int varreg);
         public event pasar pasado;
@@ -41,13 +41,14 @@ namespace Presentacion
             cboMoneda.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(13);
             cboMoneda.ValueMember = "idmaestrodetalle";
             cboMoneda.DisplayMember = "nombreitem";
-            cboTipoMov.DataSource = movimientosNE.ListarTipomovimientos(14);
+            ListasMovimientoG = movimientosNE.ListarTipomovimientos(14);
+            cboTipoMov.DataSource = ListasMovimientoG;
             cboTipoMov.ValueMember = "p_inidtipomovimiento";
             cboTipoMov.DisplayMember = "chnombremovimiento";
             DateTime fecha = Convert.ToDateTime(DateTime.Now.ToShortDateString().PadLeft(10, '0'));
             if (this.vBoton == "A")
             {
-                txtejercicio.Text = fecha.Year.ToString(); ;
+                txtejercicio.Text = fecha.Year.ToString(); 
                 txtperiodo.Text = fecha.Month.ToString(); 
                 txtAlmacen.Text = "PRINCIPAL";
                 txtClase.Text = "INGRESO";
@@ -60,158 +61,121 @@ namespace Presentacion
             else
                 if (this.vBoton == "M")
             {
-                this.Text = "MODIFICAR MOVIMIENTO";
-                
-                
-                
-                RegistrosMovimientoC = movimientosNE.MovimientoProductoCabeceraBusqueda(codigoMovimiento);
-                txtejercicio.Text = "2018";
-                txtperiodo.Text = "01";
+                this.Text = "MODIFICAR MOVIMIENTO";     
+               
                 txtAlmacen.Text = "PRINCIPAL";
                 txtClase.Text = "INGRESO";
-                txtRuc.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
-                cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
-                cboTipoMov.SelectedValue = RegistrosMovimientoC.p_inidtipomoviemiento;
-                txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
-                mskfechareg.Text = RegistrosMovimientoC.chvalefecha.ToString();
-                txtobs.Text = RegistrosMovimientoC.chobservacion;
-                txtFacBol.Text = RegistrosMovimientoC.chboletafactura;
-                txtGuiaRem.Text = RegistrosMovimientoC.chguiaremision;
-                cboTipoMov.Focus();
-
-
-                /**/                
-                List<movimientoproductoaccion> ListaMovimiento = new List<movimientoproductoaccion>();
-                List<valedetalle> ListaMovimientoD = movimientosNE.MovimientoProductoDetalleBusqueda(RegistrosMovimientoC.p_inidvalecebecera);
-                int i = 1;
-                foreach (valedetalle registrosMovimientoD in ListaMovimientoD)
-                {
-                    movimientoproductoaccion RegistrosMoviento = new movimientoproductoaccion();
-                    valedetalle registrosValeDet = new valedetalle();
-                    registrosValeDet.p_inidvaledetalle = i;
-                    registrosValeDet.chnombrecompuesto = registrosMovimientoD.chnombrecompuesto.ToString();
-                    registrosValeDet.chmedida = registrosMovimientoD.chmedida.ToString();
-                    registrosValeDet.chcodigoproducto = registrosMovimientoD.chcodigoproducto.ToString();
-                    registrosValeDet.chfecha = RegistrosMovimientoC.chvalefecha.ToString();
-                    registrosValeDet.p_inidproducto = registrosMovimientoD.p_inidproducto;
-                    registrosValeDet.nucantidad = registrosMovimientoD.nucantidad;
-                    registrosValeDet.nucosto = registrosMovimientoD.nucosto;
-                    registrosValeDet.nutotal = registrosMovimientoD.nutotal;
-                    registrosValeDet.estado = registrosMovimientoD.estado;
-                    
-                        List<serie> ListaSerie = serieNE.SerieBusquedaMovimiento(registrosMovimientoD.p_inidvaledetalle);
-                    List<serie> ListasSeries = new List<serie>();
-                    //MessageBox.Show(""+registrosMovimientoD.p_inidvaledetalle, "Mensaje de Sistema", MessageBoxButtons.OK);
-                    foreach (serie Registroxxxxs in ListaSerie)
-                        {
-                            serie registrosSerie = new serie();
-                            registrosSerie.chcodigoserie = Registroxxxxs.chcodigoserie.ToString();
-                            registrosSerie.estado = true;
-                            registrosSerie.p_inidproducto = Registroxxxxs.p_inidproducto;
-                            registrosSerie.chadicional = Registroxxxxs.chadicional.ToString();
-                            registrosSerie.chfecha = Registroxxxxs.chfecha;
-                            registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                            registrosSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
-                        registrosSerie.chinforme = Registroxxxxs.chinforme.ToString();
-                        registrosSerie.chinformeobs = Registroxxxxs.chinformeobs.ToString();
-                        registrosSerie.chinformefecha = Registroxxxxs.chinformefecha;
-                        registrosSerie.boexhibicion = Registroxxxxs.boexhibicion;
-                        ListasSeries.Add(registrosSerie);
-                        }
-                    
-                    RegistrosMoviento.valedet = registrosValeDet;
-                    RegistrosMoviento.listaserie = ListasSeries;
-                    i++;
-                    ListaMovimiento.Add(RegistrosMoviento);
-                }
-
-                
-                sesion.movprodaccion = ListaMovimiento;   
+                CargarDatosrecarga();
                 CargarTabla();
             }
             else
                    if (this.vBoton == "V")
             {
                 this.Text = "VER MOVIMIENTO";
+                CargarDatosrecarga();
                 btnAnadir.Enabled = false;
                 btnModificar.Enabled = false;
                 btnEliminar.Enabled = false;
                 btnGrabar.Enabled = false;
+                
 
-                RegistrosMovimientoC = movimientosNE.MovimientoProductoCabeceraBusqueda(codigoMovimiento);
-                txtejercicio.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
-                txtperiodo.Text = "01";
                 txtAlmacen.Text = "PRINCIPAL";
                 txtClase.Text = "INGRESO";
-                txtRuc.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
-                cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
-                cboTipoMov.SelectedValue = RegistrosMovimientoC.p_inidtipomoviemiento;
-                txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
-                mskfechareg.Text = RegistrosMovimientoC.chvalefecha.ToString();
-                txtobs.Text = RegistrosMovimientoC.chobservacion;
-                txtFacBol.Text = RegistrosMovimientoC.chboletafactura;
-                txtGuiaRem.Text = RegistrosMovimientoC.chguiaremision;
-                cboTipoMov.Focus();
-                txtRuc.ReadOnly = true;
-                txtobs.ReadOnly = true;
-                txtFacBol.ReadOnly = true;
-                txtGuiaRem.ReadOnly = true;
-                mskfechareg.ReadOnly = true;
+               
 
-                /**/
-                List<movimientoproductoaccion> ListaMovimiento = new List<movimientoproductoaccion>();
-                List<valedetalle> ListaMovimientoD = movimientosNE.MovimientoProductoDetalleBusqueda(RegistrosMovimientoC.p_inidvalecebecera);
-                int i = 1;
-                foreach (valedetalle registrosMovimientoD in ListaMovimientoD)
-                {
-                    movimientoproductoaccion RegistrosMoviento = new movimientoproductoaccion();
-                    valedetalle registrosValeDet = new valedetalle();
-                    registrosValeDet.p_inidvaledetalle = i;
-                    registrosValeDet.chnombrecompuesto = registrosMovimientoD.chnombrecompuesto;
-                    registrosValeDet.chmedida = registrosMovimientoD.chmedida;
-                    registrosValeDet.chcodigoproducto = registrosMovimientoD.chcodigoproducto;
-                    registrosValeDet.chfecha = registrosMovimientoD.chfecha;
-                    registrosValeDet.p_inidproducto = registrosMovimientoD.p_inidproducto;
-                    registrosValeDet.nucantidad = registrosMovimientoD.nucantidad;
-                    registrosValeDet.nucosto = registrosMovimientoD.nucosto;
-                    registrosValeDet.nutotal = registrosMovimientoD.nutotal;
-                    registrosValeDet.estado = registrosMovimientoD.estado;
+                InvalidarCampos(txtobs);
+                InvalidarCampos(txtCref1);
+                InvalidarCampos(txtCref2);
+                InvalidarCampos(txtCref3);
+                InvalidarCampos(txtCref4);
+                InvalidarCampos(txtCref5);
 
-                    List<serie> ListaSerie = serieNE.SerieBusquedaMovimiento(registrosMovimientoD.p_inidvaledetalle);
-                    List<serie> ListasSeries = new List<serie>();
-                    //MessageBox.Show(""+registrosMovimientoD.p_inidvaledetalle, "Mensaje de Sistema", MessageBoxButtons.OK);
-                    foreach (serie Registroxxxxs in ListaSerie)
-                    {
-                        serie registrosSerie = new serie();
-                        registrosSerie.chcodigoserie = Registroxxxxs.chcodigoserie;
-                        registrosSerie.estado = true;
-                        registrosSerie.p_inidproducto = Registroxxxxs.p_inidproducto;
-                        registrosSerie.chadicional = Registroxxxxs.chadicional;
-                        registrosSerie.chfecha = Registroxxxxs.chfecha;
-                        registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                        registrosSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
-                        registrosSerie.chinforme = Registroxxxxs.chinforme;
-                        registrosSerie.chinformeobs = Registroxxxxs.chinformeobs;
-                        registrosSerie.chinformefecha = Registroxxxxs.chinformefecha;
-                        registrosSerie.boexhibicion = Registroxxxxs.boexhibicion;
-                        ListasSeries.Add(registrosSerie);
-                    }
-
-                    RegistrosMoviento.valedet = registrosValeDet;
-                    RegistrosMoviento.listaserie = ListasSeries;
-                    i++;
-                    ListaMovimiento.Add(RegistrosMoviento);
-                }
-
-
-                sesion.movprodaccion = ListaMovimiento;
+                
                 CargarTabla();
             }
             
 
 
         }
+        private void InvalidarCampos(TextBox TextBox)
+        {
+            TextBox.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            TextBox.ForeColor = Color.Blue;
+            TextBox.ReadOnly = true;
+        }
+        private void CargarDatosrecarga()
+        {
+            
+            
+            
+            RegistrosMovimientoC = movimientosNE.MovimientoProductoCabeceraBusqueda(codigoMovimiento);
+            
+            txtidprov.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
+            cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
+            cboTipoMov.SelectedValue = RegistrosMovimientoC.p_inidtipomoviemiento;
+            txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
+            mskfechareg.Text = RegistrosMovimientoC.chvalefecha.ToString();
+            DateTime fechaV = Convert.ToDateTime(mskfechareg.Text);
+            txtejercicio.Text = fechaV.Year.ToString();
+            txtobs.Text = RegistrosMovimientoC.chobservacion;
 
+            txtperiodo.Text = fechaV.Month.ToString();
+            //txtCref4.Text = RegistrosMovimientoC.chboletafactura;
+            //txtCref3.Text = RegistrosMovimientoC.chguiaremision;
+            cboTipoMov.Focus();
+
+            txtCref1.Text = RegistrosMovimientoC.chref1;
+            txtCref2.Text = RegistrosMovimientoC.chref2;
+            txtCref3.Text = RegistrosMovimientoC.chref3;
+            txtCref4.Text = RegistrosMovimientoC.chref4;
+            txtCref5.Text = RegistrosMovimientoC.chref5;
+
+            /**/
+            List<movimientoproductoaccion> ListaMovimiento = new List<movimientoproductoaccion>();
+            List<valedetalle> ListaMovimientoD = movimientosNE.MovimientoProductoDetalleBusqueda(RegistrosMovimientoC.p_inidvalecebecera);
+            int i = 1;
+            foreach (valedetalle registrosMovimientoD in ListaMovimientoD)
+            {
+                movimientoproductoaccion RegistrosMoviento = new movimientoproductoaccion();
+                valedetalle registrosValeDet = new valedetalle();
+                registrosValeDet.p_inidvaledetalle = i;
+                registrosValeDet.chnombrecompuesto = registrosMovimientoD.chnombrecompuesto.ToString();
+                registrosValeDet.chmedida = registrosMovimientoD.chmedida.ToString();
+                registrosValeDet.chcodigoproducto = registrosMovimientoD.chcodigoproducto.ToString();
+                registrosValeDet.chfecha = RegistrosMovimientoC.chvalefecha.ToString();
+                registrosValeDet.p_inidproducto = registrosMovimientoD.p_inidproducto;
+                registrosValeDet.nucantidad = registrosMovimientoD.nucantidad;
+                registrosValeDet.nucosto = registrosMovimientoD.nucosto;
+                registrosValeDet.nutotal = registrosMovimientoD.nutotal;
+                registrosValeDet.estado = registrosMovimientoD.estado;
+
+                List<serie> ListaSerie = serieNE.SerieBusquedaMovimiento(registrosMovimientoD.p_inidvaledetalle);
+                List<serie> ListasSeries = new List<serie>();
+                //MessageBox.Show(""+registrosMovimientoD.p_inidvaledetalle, "Mensaje de Sistema", MessageBoxButtons.OK);
+                foreach (serie Registroxxxxs in ListaSerie)
+                {
+                    serie registrosSerie = new serie();
+                    registrosSerie.chcodigoserie = Registroxxxxs.chcodigoserie.ToString();
+                    registrosSerie.estado = true;
+                    registrosSerie.p_inidproducto = Registroxxxxs.p_inidproducto;
+                    registrosSerie.chadicional = Registroxxxxs.chadicional.ToString();
+                    registrosSerie.chfecha = Registroxxxxs.chfecha;
+                    registrosSerie.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                    registrosSerie.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
+                    registrosSerie.chinforme = Registroxxxxs.chinforme.ToString();
+                    registrosSerie.chinformeobs = Registroxxxxs.chinformeobs.ToString();
+                    registrosSerie.chinformefecha = Registroxxxxs.chinformefecha;
+                    registrosSerie.boexhibicion = Registroxxxxs.boexhibicion;
+                    ListasSeries.Add(registrosSerie);
+                }
+
+                RegistrosMoviento.valedet = registrosValeDet;
+                RegistrosMoviento.listaserie = ListasSeries;
+                i++;
+                ListaMovimiento.Add(RegistrosMoviento);
+            }
+            sesion.movprodaccion = ListaMovimiento;
+        }
         private void btnAnadir_Click(object sender, EventArgs e)
         {
             try
@@ -230,11 +194,6 @@ namespace Presentacion
                     f.Cargado += new frmProcSeriesAnadir.CargarTabla(CargarTabla);
                     f.MdiParent = this.MdiParent;
                     f.Show();
-                    //DialogResult result = f.ShowDialog();
-                    //if (result == DialogResult.OK)
-                    //{
-                    //    CargarTabla();
-                    //}
                 }
             }
             catch (Exception ex)
@@ -318,21 +277,37 @@ namespace Presentacion
             registrosCabecera.chvalefecha = mskfechareg.Text;
             registrosCabecera.p_inidtipomoneda = (int)cboMoneda.SelectedValue;
             registrosCabecera.p_inidproveedor = int.Parse(txtidprov.Text);
-            registrosCabecera.chguiaremision = txtGuiaRem.Text;
-            registrosCabecera.chboletafactura = txtFacBol.Text;
+            registrosCabecera.chguiaremision = txtCref3.Text;
+            registrosCabecera.chboletafactura = txtCref4.Text;
             registrosCabecera.p_inidtipomoviemiento = (int)cboTipoMov.SelectedValue;
             registrosCabecera.chobservacion = txtobs.Text;
             registrosCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
             registrosCabecera.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
             registrosCabecera.estado = true;
             registrosCabecera.p_inidmovimiento = 14;
+
+
+            registrosCabecera.chtipref1 = lblTipref1.Text;
+            registrosCabecera.chref1 = txtCref1.Text;
+            registrosCabecera.chnref1 = lblNref1.Text;
+            registrosCabecera.chtipref2 = lblTipref2.Text;
+            registrosCabecera.chref2 = txtCref2.Text;
+            registrosCabecera.chnref2 = lblNref2.Text;
+            registrosCabecera.chtipref3 = lblTipref3.Text;
+            registrosCabecera.chref3 = txtCref3.Text;
+            registrosCabecera.chnref3 = lblNref3.Text;
+            registrosCabecera.chtipref4 = lblTipref4.Text;
+            registrosCabecera.chref4 = txtCref4.Text;
+            registrosCabecera.chnref4 = lblNref4.Text;
+            registrosCabecera.chtipref5 = lblTipref5.Text;
+            registrosCabecera.chref5 = txtCref5.Text;
+            registrosCabecera.chnref5 = lblNref5.Text;
             //ingreso de cabecera
             codigoCabecera = movimientosNE.MovimientoProductoCabeceraIngresar(registrosCabecera);
             int gorrelativo = valeNE.GenerarCorrelativoMovimientoIngreso(sesion.SessionGlobal.p_inidalmacen);
 
             if (codigoCabecera <= 0 && gorrelativo <= 0)
             {
-
                 MessageBox.Show("error Cabecera", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
@@ -389,11 +364,7 @@ namespace Presentacion
                     }
                 }
                 pasado(codigoCabecera);
-
             }
-
-
-
             if (sesion.movprodaccion != null)
             {
                 sesion.movprodaccion.Clear();
@@ -414,8 +385,8 @@ namespace Presentacion
             registrosCabecera.chvalefecha = mskfechareg.Text;
             registrosCabecera.p_inidtipomoneda = (int)cboMoneda.SelectedValue;
             registrosCabecera.p_inidproveedor = int.Parse(txtidprov.Text);
-            registrosCabecera.chguiaremision = txtGuiaRem.Text;
-            registrosCabecera.chboletafactura = txtFacBol.Text;
+            registrosCabecera.chguiaremision = txtCref3.Text;
+            registrosCabecera.chboletafactura = txtCref4.Text;
             registrosCabecera.p_inidtipomoviemiento = (int)cboTipoMov.SelectedValue;
             registrosCabecera.chobservacion = txtobs.Text;
             registrosCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
@@ -623,11 +594,7 @@ namespace Presentacion
        
        
 
-        private void txtRuc_TextChanged(object sender, EventArgs e)
-        {
-            string parametro = txtRuc.Text;
-            BuscaProveedor(parametro);
-        }
+      
         private void BuscaProveedor(string ruc)
         {
             proveedor registro = proveedorNE.ProveedorBusquedaRuc(ruc);
@@ -638,12 +605,17 @@ namespace Presentacion
             }
             else
             {
-                //txtProvnombre.Text = "";
-                txtidprov.Text = "";
-
+                LlamarVentanaBusquedaProveedor();
             }
         }
         private void txtRuc_DoubleClick(object sender, EventArgs e)
+        {
+            if (cboTipoMov.Text == "COMPRAS NACIONALES")
+            {
+                LlamarVentanaBusquedaProveedor();
+            }
+        }
+        private void LlamarVentanaBusquedaProveedor()
         {
             Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmBusquedaProveedor);
             if (frm != null)
@@ -658,18 +630,18 @@ namespace Presentacion
         }
         private void PonerProveedor(string ruc)
         {
-            txtRuc.Text = ruc;
+            
+            if (ruc == "")
+            {
+                MessageBox.Show("Datos no encontrados", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                txtCref1.Text = "";
+            }else
+            {
+                txtCref1.Text = ruc;
+            }
         }
         
 
-        private void txtRuc_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
-            {
-                e.Handled = true;
-
-            }
-        }
 
         private void brnEliminar_Click(object sender, EventArgs e)
         {
@@ -702,5 +674,54 @@ namespace Presentacion
                 MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
             }
         }
+
+        private void cboTipoMov_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (tipomovimiento Registrostipomovimiento in ListasMovimientoG)
+            {
+                if (cboTipoMov.Text == Registrostipomovimiento.chnombremovimiento)
+                {
+                    LimpiarDatosTexto();
+                    lblNref1.Text = Registrostipomovimiento.chnref1;
+                    lblNref2.Text = Registrostipomovimiento.chnref2;
+                    lblNref3.Text = Registrostipomovimiento.chnref3;
+                    lblNref4.Text = Registrostipomovimiento.chnref4;
+                    lblNref5.Text = Registrostipomovimiento.chnref5;
+                    lblTipref1.Text = Registrostipomovimiento.chtipref1;
+                    lblTipref2.Text = Registrostipomovimiento.chtipref2;
+                    lblTipref3.Text = Registrostipomovimiento.chtipref3;
+                    lblTipref4.Text = Registrostipomovimiento.chtipref4;
+                    lblTipref5.Text = Registrostipomovimiento.chtipref5;
+                }
+            }
+        }
+        private void LimpiarDatosTexto()
+        {
+            txtCref1.Text = "";
+            txtCref2.Text = "";
+            txtCref3.Text = "";
+            txtCref4.Text = "";
+            txtCref5.Text = "";
+        }
+
+        private void txtCref1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txtCref1.Text.Length >= 20 || txtCref2.Text.Length >= 20 || txtCref3.Text.Length >= 20 || txtCref4.Text.Length >= 20 || txtCref5.Text.Length >= 20 )
+            {
+                e.Handled = true;
+            }
+            if ( 13 == Convert.ToInt32(e.KeyChar))
+            {
+                if (cboTipoMov.Text == "COMPRAS NACIONALES" && txtCref1.Text.Length > 0)
+                {
+                    string parametro = txtCref1.Text;
+                    BuscaProveedor(parametro);
+                }
+            }
+            if (8 == Convert.ToInt32(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+        }       
     }
 }

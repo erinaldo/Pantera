@@ -16,6 +16,7 @@ namespace Presentacion
         internal int p_inidmovimientoG;
         public delegate void pasarNuevoVale(int varreg);
         public event pasarNuevoVale pasadoVale;
+        internal List<tipomovimiento> ListasMovimientoG;
         public frmProcSalidaProductosAnadir(string vBoton)
         {
             InitializeComponent();
@@ -33,15 +34,18 @@ namespace Presentacion
             cboMoneda.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(13);
             cboMoneda.ValueMember = "idmaestrodetalle";
             cboMoneda.DisplayMember = "nombreitem";
-            cboTipoMov.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(19);
-            cboTipoMov.ValueMember = "idmaestrodetalle";
-            cboTipoMov.DisplayMember = "nombreitem";
 
+            ListasMovimientoG = movimientosNE.ListarTipomovimientos(19);
+            cboTipoMov.DataSource = ListasMovimientoG;
+            cboTipoMov.ValueMember = "p_inidtipomovimiento";
+            cboTipoMov.DisplayMember = "chnombremovimiento";
+
+            DateTime fecha = Convert.ToDateTime(DateTime.Now.ToShortDateString().PadLeft(10, '0'));
 
             if (this.vBoton == "A")
             {
-                txtejercicio.Text = "2018";
-                txtperiodo.Text = "01";
+                txtejercicio.Text = fecha.Year.ToString();
+                txtperiodo.Text = fecha.Month.ToString();
                 txtAlmacen.Text = "PRINCIPAL";
                 txtClase.Text = "SALIDA";
                 string correlativo = valeNE.CorrelativoMovimientoSalida(sesion.SessionGlobal.p_inidalmacen) ;
@@ -66,10 +70,11 @@ namespace Presentacion
                         CargarDatos();
                         CargarDatosSession();
                         Desactivartext(txtobs);
-                        Desactivartext(txtRuc);
-                        Desactivartext(txtGuiaRem);
-                        Desactivartext(txtFacBol);
-                        Desactivartext(txtFacBol);
+                        Desactivartext(txtCref1);
+                        Desactivartext(txtCref2);
+                        Desactivartext(txtCref3);
+                        Desactivartext(txtCref4);
+                        Desactivartext(txtCref5);
                         btnAnadir.Enabled = false;
                         btnEliminar.Enabled = false;
                         btnGrabar.Enabled = false;
@@ -89,8 +94,7 @@ namespace Presentacion
         private void CargarDatos()
         {
             movimientoproductoc RegistrosMovimientoC = movimientosNE.MovimientoProductoCabeceraBusqueda(p_inidmovimientoG);
-            txtejercicio.Text = "2018";
-            txtperiodo.Text = "01";
+            
             txtAlmacen.Text = "PRINCIPAL";
             txtClase.Text = "SALIDA";
             cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
@@ -98,10 +102,19 @@ namespace Presentacion
             txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
             mskfechareg.Text = RegistrosMovimientoC.chvalefecha.ToString();
             txtobs.Text = RegistrosMovimientoC.chobservacion;
-            txtFacBol.Text = RegistrosMovimientoC.chboletafactura;
-            txtGuiaRem.Text = RegistrosMovimientoC.chguiaremision;
+            DateTime Fechas = Convert.ToDateTime(mskfechareg.Text);
+            txtejercicio.Text = Fechas.Year.ToString();
+            txtperiodo.Text = Fechas.Month.ToString();
 
-            txtRuc.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
+            txtCref1.Text = RegistrosMovimientoC.chref1;
+            txtCref2.Text = RegistrosMovimientoC.chref2;
+            txtCref3.Text = RegistrosMovimientoC.chref3;
+            txtCref4.Text = RegistrosMovimientoC.chref4;
+            txtCref5.Text = RegistrosMovimientoC.chref5;
+            //txtFacBol.Text = RegistrosMovimientoC.chboletafactura;
+            //txtGuiaRem.Text = RegistrosMovimientoC.chguiaremision;
+
+            //txtRuc.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
 
             List<movimientoproductoaccion> ListaMovimientosPr = new List<movimientoproductoaccion>();
             List<valedetalle> valdedetalle = movimientosNE.MovimientoProductoDetalleBusqueda(p_inidmovimientoG);
@@ -131,19 +144,26 @@ namespace Presentacion
         {
 
         }
-      
+        private void LimpiarDatosTexto()
+        {
+            txtCref1.Text = "";
+            txtCref2.Text = "";
+            txtCref3.Text = "";
+            txtCref4.Text = "";
+            txtCref5.Text = "";
+        }
         private void BuscaProveedor(string ruc)
         {
             proveedor registro = proveedorNE.ProveedorBusquedaRuc(ruc);
             if (registro != null)
             {
-                txtProvnombre.Text = registro.razon;
-                //txtidprov.Text = registro.p_inidcodigoclie.ToString();
+                //txtProvnombre.Text = registro.razon;
+                txtidprov.Text = registro.p_inidcodigoclie.ToString();
             }
             else
             {
-                txtProvnombre.Text = "";
-                //txtidprov.Text = "";
+                //txtProvnombre.Text = "";
+                txtidprov.Text = "";
 
             }
         }
@@ -155,49 +175,52 @@ namespace Presentacion
 
         private void cboTipoMov_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboTipoMov.Text == "VENTA")
+            foreach (tipomovimiento Registrostipomovimiento in ListasMovimientoG)
             {
-                LNroDoc.Text = "Codigo";
-                LDecripcion.Text = "Cliente";
-            }
-            else
-            {
-                if (cboTipoMov.Text == "DEVOLUCION POR COMPRA")
+                if (cboTipoMov.Text == Registrostipomovimiento.chnombremovimiento)
                 {
-
-                    LNroDoc.Text = "R.U.C.";
-                    LDecripcion.Text = "Proveedor";
+                    LimpiarDatosTexto();
+                    lblNref1.Text = Registrostipomovimiento.chnref1;
+                    lblNref2.Text = Registrostipomovimiento.chnref2;
+                    lblNref3.Text = Registrostipomovimiento.chnref3;
+                    lblNref4.Text = Registrostipomovimiento.chnref4;
+                    lblNref5.Text = Registrostipomovimiento.chnref5;
+                    lblTipref1.Text = Registrostipomovimiento.chtipref1;
+                    lblTipref2.Text = Registrostipomovimiento.chtipref2;
+                    lblTipref3.Text = Registrostipomovimiento.chtipref3;
+                    lblTipref4.Text = Registrostipomovimiento.chtipref4;
+                    lblTipref5.Text = Registrostipomovimiento.chtipref5;
                 }
             }
         }
 
         private void txtRuc_TextChanged_1(object sender, EventArgs e)
         {
-            string parametro = txtRuc.Text;
-            if (cboTipoMov.Text == "DEVOLUCION POR COMPRA")
-            {
-                BuscarProveedor(parametro);
-            }
+            //string parametro = txtRuc.Text;
+            //if (cboTipoMov.Text == "DEVOLUCION POR COMPRA")
+            //{
+            //    BuscarProveedor(parametro);
+            //}
         }
         private void BuscarProveedor(string parametro)
         {
-            proveedor registro = proveedorNE.ProveedorBusquedaRuc(parametro);
-            if (registro != null)
-            {
-                txtProvnombre.Text = registro.razon;
-                txtidprov.Text = registro.p_inidcodigoclie.ToString();
-            }
-            else
-            {
-                txtProvnombre.Text = "";
-                txtidprov.Text = "";
+            //proveedor registro = proveedorNE.ProveedorBusquedaRuc(parametro);
+            //if (registro != null)
+            //{
+            //    txtProvnombre.Text = registro.razon;
+            //    txtidprov.Text = registro.p_inidcodigoclie.ToString();
+            //}
+            //else
+            //{
+            //    txtProvnombre.Text = "";
+            //    txtidprov.Text = "";
 
-            }
+            //}
         }
- 
+
         private void PonerProveedor(string ruc)
         {
-            txtRuc.Text = ruc;
+                txtCref1.Text = ruc;            
         }
         private void btnAnadir_Click(object sender, EventArgs e)
         {
@@ -469,14 +492,31 @@ namespace Presentacion
             registrosCabecera.chvalefecha = mskfechareg.Text;
             registrosCabecera.p_inidtipomoneda = (int)cboMoneda.SelectedValue;
             registrosCabecera.p_inidproveedor = int.Parse(txtidprov.Text);
-            registrosCabecera.chguiaremision = txtGuiaRem.Text;
-            registrosCabecera.chboletafactura = txtFacBol.Text;
+            //registrosCabecera.chguiaremision = txtGuiaRem.Text;
+            //registrosCabecera.chboletafactura = txtFacBol.Text;
             registrosCabecera.p_inidtipomoviemiento = (int)cboTipoMov.SelectedValue;
             registrosCabecera.chobservacion = txtobs.Text;
             registrosCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
             registrosCabecera.estado = true;
             registrosCabecera.p_inidmovimiento = 19;
             //ingreso de cabecera
+
+
+            registrosCabecera.chtipref1 = lblTipref1.Text;
+            registrosCabecera.chref1 = txtCref1.Text;
+            registrosCabecera.chnref1 = lblNref1.Text;
+            registrosCabecera.chtipref2 = lblTipref2.Text;
+            registrosCabecera.chref2 = txtCref2.Text;
+            registrosCabecera.chnref2 = lblNref2.Text;
+            registrosCabecera.chtipref3 = lblTipref3.Text;
+            registrosCabecera.chref3 = txtCref3.Text;
+            registrosCabecera.chnref3 = lblNref3.Text;
+            registrosCabecera.chtipref4 = lblTipref4.Text;
+            registrosCabecera.chref4 = txtCref4.Text;
+            registrosCabecera.chnref4 = lblNref4.Text;
+            registrosCabecera.chtipref5 = lblTipref5.Text;
+            registrosCabecera.chref5 = txtCref5.Text;
+            registrosCabecera.chnref5 = lblNref5.Text;
             codigoCabecera = movimientosNE.MovimientoProductoCabeceraIngresar(registrosCabecera);
             int gorrelativo = valeNE.GenerarCorrelativoMovimientoSalida(sesion.SessionGlobal.p_inidalmacen);
 
@@ -546,8 +586,8 @@ namespace Presentacion
             registrosCabecera.chvalefecha = mskfechareg.Text;
             registrosCabecera.p_inidtipomoneda = (int)cboMoneda.SelectedValue;
             registrosCabecera.p_inidproveedor = int.Parse(txtidprov.Text);
-            registrosCabecera.chguiaremision = txtGuiaRem.Text;
-            registrosCabecera.chboletafactura = txtFacBol.Text;
+            //registrosCabecera.chguiaremision = txtGuiaRem.Text;
+            //registrosCabecera.chboletafactura = txtFacBol.Text;
             registrosCabecera.p_inidtipomoviemiento = (int)cboTipoMov.SelectedValue;
             registrosCabecera.chobservacion = txtobs.Text;
             registrosCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
@@ -637,6 +677,53 @@ namespace Presentacion
                 f.Show();
             }
 
+        }
+
+        private void txtCref1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txtCref1.Text.Length >= 20 || txtCref2.Text.Length >= 20 || txtCref3.Text.Length >= 20 || txtCref4.Text.Length >= 20 || txtCref5.Text.Length >= 20)
+            {
+                e.Handled = true;
+            }
+            if (13 == Convert.ToInt32(e.KeyChar))
+            {
+                if (cboTipoMov.Text == "DEVOLUCION POR COMPRA" && txtCref1.Text.Length > 0)
+                {
+                    string parametro = txtCref1.Text;
+                    BuscaProveedor(parametro);
+                }
+            }
+            if (8 == Convert.ToInt32(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+        }
+
+        private void txtCref1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCref1_DoubleClick(object sender, EventArgs e)
+        {
+            if (cboTipoMov.Text == "DEVOLUCION POR COMPRA")
+            {
+                LlamarVentanaBusquedaProveedor();
+            }
+        }
+        private void LlamarVentanaBusquedaProveedor()
+        {
+            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmBusquedaProveedor);
+            if (frm != null)
+            {
+                frm.BringToFront();
+                return;
+            }
+            frmBusquedaProveedor f = new frmBusquedaProveedor();
+            f.pasadoproveedor += new frmBusquedaProveedor.pasarproveedor(PonerProveedor);
+            f.MdiParent = this.MdiParent;
+            f.Show();
         }
     }
 }

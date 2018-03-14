@@ -102,6 +102,7 @@ namespace Datos
                     registro.chdireccion = Convert.ToString(datareader["chdireccion"]).Trim();
                     registro.tipoclie = Convert.ToString(datareader["tipoclie"]).Trim();
                     registro.telefono = Convert.ToString(datareader["telefono"]).Trim();
+                    registro.chcodigoproveedor = Convert.ToString(datareader["chcodigoproveedor"]).Trim();
                     listado.Add(registro);
                 }
                 return listado;
@@ -153,8 +154,8 @@ namespace Datos
 
         public static proveedor ProveedorBusquedaRuc(string ruc)
         {
-            using (IDataReader datareader = conexion.executeOperation("fn_proveedor_busqueda_ruc",
-            CommandType.StoredProcedure, new parametro("in_ruc", ruc)))
+            using (IDataReader datareader = conexion.executeOperation("fn_proveedor_busqueda_codigo3",
+            CommandType.StoredProcedure, new parametro("in_chcodigoproveedor", ruc)))
             {
                 while (datareader.Read())
                 {
@@ -174,6 +175,7 @@ namespace Datos
             registro.chdireccion = Convert.ToString(datareader["chdireccion"]).Trim();
             registro.tipoclie = Convert.ToString(datareader["tipoclie"]).Trim();
             registro.telefono = Convert.ToString(datareader["telefono"]).Trim();
+            registro.chcodigoproveedor = Convert.ToString(datareader["chcodigoproveedor"]).Trim();
             return registro;
         }
         public static string BuscarProveedorPorCodigo(int codigo)

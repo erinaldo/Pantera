@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvListaProveedores = new System.Windows.Forms.DataGridView();
             this.IDPROVE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODPROV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHRAZON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIPODOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NRODOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -128,6 +129,7 @@
             this.dgvListaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDPROVE,
+            this.CHCODPROV,
             this.CHRAZON,
             this.TIPODOCU,
             this.NRODOCU,
@@ -147,6 +149,13 @@
             this.IDPROVE.Name = "IDPROVE";
             this.IDPROVE.ReadOnly = true;
             this.IDPROVE.Visible = false;
+            // 
+            // CHCODPROV
+            // 
+            this.CHCODPROV.DataPropertyName = "chcodigoproveedor";
+            this.CHCODPROV.HeaderText = "CODIGO";
+            this.CHCODPROV.Name = "CHCODPROV";
+            this.CHCODPROV.ReadOnly = true;
             // 
             // CHRAZON
             // 
@@ -231,6 +240,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvListaProveedores;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPROVE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCODPROV;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHRAZON;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPODOCU;
         private System.Windows.Forms.DataGridViewTextBoxColumn NRODOCU;

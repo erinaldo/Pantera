@@ -241,6 +241,7 @@ namespace Presentacion
                     {                       
                         int cantidad = (-1) * int.Parse(obj.nucantidad.ToString());
                         almacenNE.CambiarSaldoComprometido(sesion.SessionGlobal.p_inidalmacen,obj.p_inidproducto, cantidad);
+                        serieNE.SeriesFalsear(obj.p_inidserie,true);
                     }
                     codigo = pedidoNE.CabeceraCambiarEstado(codigo,86);
                     ejecutar(codigo);
@@ -420,7 +421,6 @@ namespace Presentacion
             f.Rpt = Rpt1;
             f.ShowDialog(this);
             ejecutar(CodigoPedidoCabecera);
-            sesion.pedidodetallecontenido = null;
 
         }
         private void CargarDatosDetalle(int CodigoPedidoCabecera)
