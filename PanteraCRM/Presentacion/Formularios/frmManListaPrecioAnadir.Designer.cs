@@ -88,6 +88,7 @@
             this.txtCantidad.TabIndex = 8;
             this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
+            this.txtCantidad.Validated += new System.EventHandler(this.txtCantidad_Validated);
             // 
             // txtIdproducto
             // 

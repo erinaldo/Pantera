@@ -140,16 +140,19 @@ namespace Presentacion
                 //int item = Convert.ToInt32(nodo.Name);
                 if (perfildetalleNE.validarModulo(sesion.SessionGlobal.p_inidperfil, Convert.ToInt32(nodo.Name)) == 1)
                 {
-                    Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == forumlario).SingleOrDefault<Form>();
+                    Form existe = null;
+                    existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == forumlario).SingleOrDefault<Form>();
 
                     if (existe != null)
                     {
                         existe.BringToFront();
                         return;
                     }
-                    //flat = false;
-                    frm.MdiParent = this.MdiParent;
+                    if (frm != null)
+                    {
+                        frm.MdiParent = this.MdiParent;
                         frm.Show();
+                    }
                 }
                 else MessageBox.Show("Usted no tiene acceso a este módulo" + Convert.ToInt32(nodo.Name));
 

@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using Entidades;
 using Negocios;
 using Presentacion.Dataset;
-    namespace Presentacion
+using Presentacion.Programas;
+namespace Presentacion
 {
     public partial class frmProcPedidosCabecera : Form
     {
@@ -90,7 +91,7 @@ using Presentacion.Dataset;
                     string nombrecompuesto = obj.productoparaventa.chnombrecompuesto;
                     string codigo = obj.productoparaventa.chcodigoproducto;
                     int idproducto = obj.pedidodetalle.p_inidproducto;
-                    decimal cantidad = obj.pedidodetalle.nucantidad;
+                    int cantidad = Decimal.ToInt32(obj.pedidodetalle.nucantidad); 
                     decimal stock = 0;// ProductoM.nustock;
                     decimal precio = obj.pedidodetalle.nuprecioventa;
                     decimal desc1 = obj.pedidodetalle.nuporcentajedesc1;
@@ -765,6 +766,30 @@ using Presentacion.Dataset;
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtordcomp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 20);
+        }
+
+        private void txtObs_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 100);
+        }
+
+        private void txtPtoPartida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 200);
+        }
+
+        private void txtPtoLlegada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 20);
         }
     }
 }

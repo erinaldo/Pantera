@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmManProveedoresAnadir : Form
@@ -428,6 +429,54 @@ namespace Presentacion
         private void PoneUbigeo(int ubigeo)
         {
             txtUbigeo.Text = ubigeo.ToString();
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 150);
+        }
+
+        private void txtRazon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 150);
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 150);
+        }
+
+        private void txtNombreVia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 70);
+        }
+
+        private void txtNumeroVia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 70);
+        }
+
+        private void txtInterior_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e,70);
+        }
+
+        private void txtNombreZona_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 50);
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 9);
         }
     }
 }

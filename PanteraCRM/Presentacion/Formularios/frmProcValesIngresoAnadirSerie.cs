@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Programas;
 
 namespace Presentacion
 {
@@ -19,6 +20,7 @@ namespace Presentacion
         internal productoparaventa ProductoG;
         public delegate void CargarTabla();
         public event CargarTabla Cargado;
+        internal bool EstadoModificar;
         public frmProcSeriesAnadir(string vBoton)
         {
             InitializeComponent();
@@ -178,29 +180,20 @@ namespace Presentacion
             return flat;
         }
 
-        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            //VALIDAR SOLOR NUMEROS Y BORRADO
-            if (!char.IsDigit(e.KeyChar) &&  !(8== Convert.ToInt32(e.KeyChar)) )
-            {
-                e.Handled = true;
-                
-            }
-        }
+        
         public void calcular()
         {
             int cantidad = 0;
             if (txtCantidad.Text.Length >0)
             {
-                cantidad =int.Parse(txtCantidad.Text);
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCantidad.Text));
             }
             decimal precio = 0;
             if (txtprecio.Text.Length > 0)
             {
                 precio = decimal.Parse(txtprecio.Text);
             }
-            txtsubtotal.Text =decimal.Round( precio * cantidad,2).ToString();
+            txtsubtotal.Text = string.Format("{0:0,0.00}", precio * cantidad);
         }
 
       
@@ -276,7 +269,7 @@ namespace Presentacion
             registrosValeDet.chcodigoproducto = txtcodprod.Text;
             registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
             registrosValeDet.p_inidproducto = int.Parse(txtidcodigo.Text);
-            registrosValeDet.nucantidad = int.Parse(txtCantidad.Text);
+            registrosValeDet.nucantidad = Decimal.ToInt32(decimal.Parse(txtCantidad.Text));
             registrosValeDet.nucosto = decimal.Round(decimal.Parse(txtprecio.Text),2);
             registrosValeDet.nutotal =decimal.Round( decimal.Parse(txtsubtotal.Text),2);
             registrosValeDet.estado = true;
@@ -308,7 +301,7 @@ namespace Presentacion
                     registrosSerie.boexhibicion = (bool)dgvListaIngreso.Rows[i].Cells["BOEXHIBICION"].Value;
                     registrosSerie.chinforme = dgvListaIngreso.Rows[i].Cells["CHINFORME"].Value.ToString();
                     registrosSerie.chinformefecha = dgvListaIngreso.Rows[i].Cells["CHINFORMEFECHA"].Value.ToString();
-                    registrosSerie.chinformeobs = dgvListaIngreso.Rows[i].Cells["CHINFORMEOBS"].Value.ToString();
+                   registrosSerie.chinformeobs = dgvListaIngreso.Rows[i].Cells["CHINFORMEOBS"].Value.ToString();
                     ListaSerie.Add(registrosSerie);
                 }
             }
@@ -320,7 +313,7 @@ namespace Presentacion
             registrosValeDet.chcodigoproducto = txtcodprod.Text;
             registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
             registrosValeDet.p_inidproducto = int.Parse(txtidcodigo.Text);
-            registrosValeDet.nucantidad = int.Parse(txtCantidad.Text);
+            registrosValeDet.nucantidad = Decimal.ToInt32(decimal.Parse(txtCantidad.Text));
             registrosValeDet.nucosto = decimal.Round(decimal.Parse(txtprecio.Text), 2);
             registrosValeDet.nutotal = decimal.Round(decimal.Parse(txtsubtotal.Text), 2);
             registrosValeDet.estado = true;
@@ -442,7 +435,7 @@ namespace Presentacion
                     {
                         if (RegistrosSerie.estado == true)
                         {
-                            dgvListaIngreso.Rows.Add(p_inidproducto, RegistroValDet.chcodigoproducto.ToString(), RegistroValDet.chnombrecompuesto.ToString(), RegistrosSerie.chcodigoserie.ToString(), RegistrosSerie.chadicional.ToString(), RegistrosSerie.boexhibicion, RegistrosSerie.chinforme, RegistrosSerie.chinformefecha, RegistrosSerie.chinformeobs);
+                            dgvListaIngreso.Rows.Add(p_inidproducto, RegistroValDet.chcodigoproducto.ToString(), RegistroValDet.chnombrecompuesto.ToString(), RegistrosSerie.chcodigoserie.ToString(), RegistrosSerie.chidentificador, RegistrosSerie.chadicional.ToString(), RegistrosSerie.boexhibicion, RegistrosSerie.chinforme, RegistrosSerie.chinformefecha, RegistrosSerie.chinformeobs);
                         }
 
                     }
@@ -496,44 +489,7 @@ namespace Presentacion
             }
         }
 
-        private void txtprecio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-            if (8 == Convert.ToInt32(e.KeyChar))
-            {
-                e.Handled = false;
-                return;
-            }
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txtprecio.Text.Length; i++)
-            {
-                if (txtprecio.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    if (txtprecio.SelectionLength > 0)
-                    {
-                        if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
-                            e.Handled = false;
-                        return;
-                    }
-                    else
-                    {
-                        e.Handled = true;
-                        return;
-                    }
-                }
-            }
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
-                e.Handled = true;
-        }
+        
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
         {
@@ -551,7 +507,7 @@ namespace Presentacion
             int cantidad = 0;
             if (txtCantidad.Text.Length >0)
             {
-                cantidad = int.Parse(txtCantidad.Text);
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCantidad.Text));
             }
             if (cantidad > dgvListaIngreso.RowCount)
             {
@@ -565,7 +521,7 @@ namespace Presentacion
             int cantidad = 0;
             if (txtCantidad.Text.Length > 0)
             {
-                cantidad = int.Parse(txtCantidad.Text);
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCantidad.Text));
             }
             if (cantidad < dgvListaIngreso.RowCount)
             {
@@ -579,7 +535,7 @@ namespace Presentacion
             int cantidad = 0;
             if (txtCantidad.Text.Length > 0)
             {
-                cantidad = int.Parse(txtCantidad.Text);
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCantidad.Text));
                 if (cantidad > 0)
                 {
                     flat = true;
@@ -595,7 +551,7 @@ namespace Presentacion
             decimal precio = 0;
             if (txtCantidad.Text.Length > 0)
             {
-                cantidad = int.Parse(txtCantidad.Text);
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCantidad.Text));
             }
             if (txtprecio.Text.Length >0)
             {
@@ -657,11 +613,9 @@ namespace Presentacion
                 else
                 {
                     MessageBox.Show("Ingrese cantidad", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                    txtCantidad.Focus();
-                  
+                    txtCantidad.Focus();                  
                 }
-            }
-            
+            }            
             return flat;
         }
 
@@ -674,5 +628,52 @@ namespace Presentacion
         {
             txtCantidad.SelectAll();
         }
+        /*INICIO :: */
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.solonumeros(ref textboxusado, e);
+        }
+        private void txtprecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.solonumeros(ref textboxusado, e);
+        }
+
+        
+
+        private void txtCantidad_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.ValidarNumero(ref textboxusado, e);
+        }
+
+        private void txtprecio_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.ValidarNumero(ref textboxusado, e);
+        }
+
+        private void txtSerie_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 20);
+        }
+
+        private void txtObs_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 150);
+        }
+
+        private void txtidentificador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 20);
+        }
+
+
+        /*FIN :: */
     }
 }

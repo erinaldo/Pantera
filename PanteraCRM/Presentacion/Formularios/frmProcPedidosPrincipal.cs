@@ -241,7 +241,8 @@ namespace Presentacion
                     {                       
                         int cantidad = (-1) * int.Parse(obj.nucantidad.ToString());
                         almacenNE.CambiarSaldoComprometido(sesion.SessionGlobal.p_inidalmacen,obj.p_inidproducto, cantidad);
-                        serieNE.SeriesFalsear(obj.p_inidserie,true);
+                        //MessageBox.Show("codigoi Serie: "+ obj.p_inidserie, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        serieNE.SeriesFalsearPedido(obj.p_inidserie,true);
                     }
                     codigo = pedidoNE.CabeceraCambiarEstado(codigo,86);
                     ejecutar(codigo);

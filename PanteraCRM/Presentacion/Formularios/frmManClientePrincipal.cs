@@ -50,7 +50,7 @@ namespace Presentacion
             cargarData(0,"");
             foreach (DataGridViewRow Row in dgvListaClientes.Rows)
             {
-                int valor = (int)Row.Cells["CHCODIGO"].Value;
+                int valor = (int)Row.Cells["IDCLIENTE"].Value;
                 if (valor == dato)
                 {
                     int puntero = (int)Row.Index;
@@ -120,7 +120,7 @@ namespace Presentacion
                         return;
                     }
                     frmManClienteAnadir f = new frmManClienteAnadir(vBoton);
-                    f.codigoCliente =(int) dgvListaClientes.CurrentRow.Cells["CHCODIGO"].Value;
+                    f.codigoCliente =(int) dgvListaClientes.CurrentRow.Cells["IDCLIENTE"].Value;
                     f.pasado += new frmManClienteAnadir.pasar(ejecutar);
                     f.MdiParent = this.MdiParent;
                     f.Show();
@@ -156,7 +156,7 @@ namespace Presentacion
                         return;
                     }
                     frmManClienteAnadir f = new frmManClienteAnadir(vBoton);
-                    f.codigoCliente = (int)dgvListaClientes.CurrentRow.Cells["CHCODIGO"].Value;
+                    f.codigoCliente = (int)dgvListaClientes.CurrentRow.Cells["IDCLIENTE"].Value;
                     f.pasado += new frmManClienteAnadir.pasar(ejecutar);
                     f.MdiParent = this.MdiParent;
                     f.Show();

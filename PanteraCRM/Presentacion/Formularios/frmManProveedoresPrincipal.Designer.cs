@@ -41,7 +41,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
             this.dgvListadoProveedores = new System.Windows.Forms.DataGridView();
-            this.IDPROV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPROVE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHRAZON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIPODOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NRODOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -172,7 +173,8 @@
             this.dgvListadoProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListadoProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListadoProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDPROV,
+            this.IDPROVE,
+            this.CHCODIGO,
             this.CHRAZON,
             this.TIPODOCU,
             this.NRODOCU,
@@ -193,13 +195,21 @@
             this.dgvListadoProveedores.Size = new System.Drawing.Size(647, 343);
             this.dgvListadoProveedores.TabIndex = 19;
             // 
-            // IDPROV
+            // IDPROVE
             // 
-            this.IDPROV.DataPropertyName = "p_inidcodigoclie";
-            this.IDPROV.HeaderText = "CODIGO";
-            this.IDPROV.Name = "IDPROV";
-            this.IDPROV.ReadOnly = true;
-            this.IDPROV.Width = 60;
+            this.IDPROVE.DataPropertyName = "p_inidcodigoclie";
+            this.IDPROVE.HeaderText = "IDPROVE";
+            this.IDPROVE.Name = "IDPROVE";
+            this.IDPROVE.ReadOnly = true;
+            this.IDPROVE.Visible = false;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.DataPropertyName = "chcodigoproveedor";
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 60;
             // 
             // CHRAZON
             // 
@@ -288,7 +298,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtParametro;
         private System.Windows.Forms.DataGridView dgvListadoProveedores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDPROV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPROVE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHRAZON;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPODOCU;
         private System.Windows.Forms.DataGridViewTextBoxColumn NRODOCU;

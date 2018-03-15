@@ -47,15 +47,15 @@
             this.btnQuitar = new System.Windows.Forms.Button();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.dgvListaDetalle = new System.Windows.Forms.DataGridView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
             this.IDMAESTRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDDETALLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnGrabar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDetalle)).BeginInit();
@@ -252,53 +252,6 @@
             this.dgvListaDetalle.Size = new System.Drawing.Size(345, 153);
             this.dgvListaDetalle.TabIndex = 2;
             // 
-            // IDMAESTRO
-            // 
-            this.IDMAESTRO.DataPropertyName = "idmaestro";
-            this.IDMAESTRO.HeaderText = "IDMAESTRO";
-            this.IDMAESTRO.Name = "IDMAESTRO";
-            this.IDMAESTRO.ReadOnly = true;
-            this.IDMAESTRO.Visible = false;
-            // 
-            // IDDETALLE
-            // 
-            this.IDDETALLE.DataPropertyName = "idmaestrodetalle";
-            this.IDDETALLE.HeaderText = "IDDETALLE";
-            this.IDDETALLE.Name = "IDDETALLE";
-            this.IDDETALLE.ReadOnly = true;
-            this.IDDETALLE.Visible = false;
-            // 
-            // CHCODIGO
-            // 
-            this.CHCODIGO.DataPropertyName = "codigoitem";
-            this.CHCODIGO.HeaderText = "CHCODIGO";
-            this.CHCODIGO.Name = "CHCODIGO";
-            this.CHCODIGO.ReadOnly = true;
-            this.CHCODIGO.Visible = false;
-            // 
-            // CHITEM
-            // 
-            this.CHITEM.DataPropertyName = "nombreitem";
-            this.CHITEM.HeaderText = "DESCRIPCION";
-            this.CHITEM.Name = "CHITEM";
-            this.CHITEM.ReadOnly = true;
-            // 
-            // CHOBS
-            // 
-            this.CHOBS.DataPropertyName = "libre";
-            this.CHOBS.HeaderText = "ACRONIMO";
-            this.CHOBS.Name = "CHOBS";
-            this.CHOBS.ReadOnly = true;
-            this.CHOBS.Width = 200;
-            // 
-            // ESTADO
-            // 
-            this.ESTADO.DataPropertyName = "estado";
-            this.ESTADO.HeaderText = "ESTADO";
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.ReadOnly = true;
-            this.ESTADO.Visible = false;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnSalir);
@@ -336,6 +289,50 @@
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // IDMAESTRO
+            // 
+            this.IDMAESTRO.DataPropertyName = "idmaestro";
+            this.IDMAESTRO.HeaderText = "IDMAESTRO";
+            this.IDMAESTRO.Name = "IDMAESTRO";
+            this.IDMAESTRO.ReadOnly = true;
+            // 
+            // IDDETALLE
+            // 
+            this.IDDETALLE.DataPropertyName = "idmaestrodetalle";
+            this.IDDETALLE.HeaderText = "IDDETALLE";
+            this.IDDETALLE.Name = "IDDETALLE";
+            this.IDDETALLE.ReadOnly = true;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.DataPropertyName = "codigoitem";
+            this.CHCODIGO.HeaderText = "CHCODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            // 
+            // CHITEM
+            // 
+            this.CHITEM.DataPropertyName = "nombreitem";
+            this.CHITEM.HeaderText = "DESCRIPCION";
+            this.CHITEM.Name = "CHITEM";
+            this.CHITEM.ReadOnly = true;
+            // 
+            // CHOBS
+            // 
+            this.CHOBS.DataPropertyName = "libre";
+            this.CHOBS.HeaderText = "ACRONIMO";
+            this.CHOBS.Name = "CHOBS";
+            this.CHOBS.ReadOnly = true;
+            this.CHOBS.Width = 200;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.DataPropertyName = "estado";
+            this.ESTADO.HeaderText = "ESTADO";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
+            this.ESTADO.Visible = false;
             // 
             // frmManVariosAnadir
             // 

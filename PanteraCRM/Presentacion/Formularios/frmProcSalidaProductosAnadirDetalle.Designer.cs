@@ -305,6 +305,7 @@
             this.txtCant.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCant.TextChanged += new System.EventHandler(this.txtCant_TextChanged);
             this.txtCant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCant_KeyPress);
+            this.txtCant.Validated += new System.EventHandler(this.txtCant_Validated);
             // 
             // txtPreComp
             // 
@@ -315,6 +316,7 @@
             this.txtPreComp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPreComp.TextChanged += new System.EventHandler(this.txtPreComp_TextChanged);
             this.txtPreComp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreComp_KeyPress);
+            this.txtPreComp.Validated += new System.EventHandler(this.txtPreComp_Validated);
             // 
             // txtDescripcion
             // 
@@ -347,6 +349,7 @@
             this.txtCodigo.TabIndex = 0;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             this.txtCodigo.DoubleClick += new System.EventHandler(this.txtCodigo_DoubleClick);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // frmProcSalidaProductosAnadirDetalle
             // 

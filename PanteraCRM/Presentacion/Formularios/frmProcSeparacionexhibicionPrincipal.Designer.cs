@@ -296,6 +296,7 @@
             this.CHIDENTIFICADOR.HeaderText = "CHIDENTIFICADOR";
             this.CHIDENTIFICADOR.Name = "CHIDENTIFICADOR";
             this.CHIDENTIFICADOR.ReadOnly = true;
+            this.CHIDENTIFICADOR.Visible = false;
             // 
             // frmProcSeparacionExhibicionPrincipal
             // 

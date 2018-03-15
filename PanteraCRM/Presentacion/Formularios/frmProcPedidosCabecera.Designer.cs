@@ -360,6 +360,7 @@
             this.txtordcomp.Size = new System.Drawing.Size(109, 20);
             this.txtordcomp.TabIndex = 4;
             this.txtordcomp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtordcomp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtordcomp_KeyPress);
             // 
             // label10
             // 
@@ -505,6 +506,7 @@
             this.txtPtoLlegada.Name = "txtPtoLlegada";
             this.txtPtoLlegada.Size = new System.Drawing.Size(315, 20);
             this.txtPtoLlegada.TabIndex = 7;
+            this.txtPtoLlegada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPtoLlegada_KeyPress);
             // 
             // txtPtoPartida
             // 
@@ -513,6 +515,7 @@
             this.txtPtoPartida.Name = "txtPtoPartida";
             this.txtPtoPartida.Size = new System.Drawing.Size(311, 20);
             this.txtPtoPartida.TabIndex = 6;
+            this.txtPtoPartida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPtoPartida_KeyPress);
             // 
             // label20
             // 
@@ -539,6 +542,7 @@
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(314, 20);
             this.txtObs.TabIndex = 5;
+            this.txtObs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtObs_KeyPress);
             // 
             // label18
             // 

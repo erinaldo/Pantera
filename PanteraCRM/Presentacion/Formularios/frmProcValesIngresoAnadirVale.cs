@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmProcIngresoValesAnadir : Form
@@ -16,6 +17,7 @@ namespace Presentacion
         internal movimientoproductoc RegistrosMovimientoC;
         internal List<tipomovimiento> ListasMovimientoG;
         internal int codigoMovimiento;
+        internal bool EstadoModificar=true;
         public delegate void pasar(int varreg);
         public event pasar pasado;
         public frmProcIngresoValesAnadir(string vBoton)
@@ -67,6 +69,7 @@ namespace Presentacion
                 txtClase.Text = "INGRESO";
                 CargarDatosrecarga();
                 CargarTabla();
+                btnGrabar.Enabled = EstadoModificar;
             }
             else
                    if (this.vBoton == "V")
@@ -105,12 +108,8 @@ namespace Presentacion
         }
         private void CargarDatosrecarga()
         {
-            
-            
-            
-            RegistrosMovimientoC = movimientosNE.MovimientoProductoCabeceraBusqueda(codigoMovimiento);
-            
-            txtidprov.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
+            RegistrosMovimientoC = movimientosNE.MovimientoProductoCabeceraBusqueda(codigoMovimiento);            
+            //txtidprov.Text = proveedorNE.ProveedorBusquedaCodigo(RegistrosMovimientoC.p_inidproveedor);
             cboMoneda.SelectedValue = RegistrosMovimientoC.p_inidtipomoneda;
             cboTipoMov.SelectedValue = RegistrosMovimientoC.p_inidtipomoviemiento;
             txtNroVale.Text = RegistrosMovimientoC.p_inidcorrevale.ToString();
@@ -157,6 +156,7 @@ namespace Presentacion
                     serie registrosSerie = new serie();
                     registrosSerie.chcodigoserie = Registroxxxxs.chcodigoserie.ToString();
                     registrosSerie.estado = true;
+                    EstadoModificar = Registroxxxxs.estado;
                     registrosSerie.p_inidproducto = Registroxxxxs.p_inidproducto;
                     registrosSerie.chadicional = Registroxxxxs.chadicional.ToString();
                     registrosSerie.chfecha = Registroxxxxs.chfecha;
@@ -166,6 +166,7 @@ namespace Presentacion
                     registrosSerie.chinformeobs = Registroxxxxs.chinformeobs.ToString();
                     registrosSerie.chinformefecha = Registroxxxxs.chinformefecha;
                     registrosSerie.boexhibicion = Registroxxxxs.boexhibicion;
+                    registrosSerie.chidentificador = Registroxxxxs.chidentificador;
                     ListasSeries.Add(registrosSerie);
                 }
 
@@ -276,7 +277,7 @@ namespace Presentacion
             registrosCabecera.p_inidcorrevale = txtNroVale.Text;
             registrosCabecera.chvalefecha = mskfechareg.Text;
             registrosCabecera.p_inidtipomoneda = (int)cboMoneda.SelectedValue;
-            registrosCabecera.p_inidproveedor = int.Parse(txtidprov.Text);
+            registrosCabecera.p_inidproveedor = 0;
             registrosCabecera.chguiaremision = txtCref3.Text;
             registrosCabecera.chboletafactura = txtCref4.Text;
             registrosCabecera.p_inidtipomoviemiento = (int)cboTipoMov.SelectedValue;
@@ -384,7 +385,7 @@ namespace Presentacion
             registrosCabecera.p_inidcorrevale = txtNroVale.Text;
             registrosCabecera.chvalefecha = mskfechareg.Text;
             registrosCabecera.p_inidtipomoneda = (int)cboMoneda.SelectedValue;
-            registrosCabecera.p_inidproveedor = int.Parse(txtidprov.Text);
+            registrosCabecera.p_inidproveedor = 0;
             registrosCabecera.chguiaremision = txtCref3.Text;
             registrosCabecera.chboletafactura = txtCref4.Text;
             registrosCabecera.p_inidtipomoviemiento = (int)cboTipoMov.SelectedValue;
@@ -398,7 +399,7 @@ namespace Presentacion
             List<valedetalle> ListaMovimientoD = movimientosNE.MovimientoProductoDetalleBusqueda(RegistrosMovimientoC.p_inidvalecebecera);
             foreach (valedetalle registrosMovimientoD in ListaMovimientoD)
             {
-                serieNE.SeriesFalsear(registrosMovimientoD.p_inidvaledetalle,true);
+                serieNE.SeriesFalsear(registrosMovimientoD.p_inidvaledetalle,false);
                 //MessageBox.Show("error Falseo"+ registrosMovimientoD.p_inidvaledetalle, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 int cantidad = (-1) * registrosMovimientoD.nucantidad;
                 almacenNE.SaldoAlmacenAdiconar(sesion.SessionGlobal.p_inidalmacen, registrosMovimientoD.p_inidproducto, cantidad);
@@ -430,17 +431,18 @@ namespace Presentacion
                             Registros.chcodigoserie = registrosSerie.chcodigoserie;
                             Registros.estado = true;
                             Registros.p_inidproducto = RegistrosMovimeintoDetalle.valedet.p_inidproducto;
-                            Registros.chadicional = "";
+                            Registros.chadicional = registrosSerie.chadicional;
+                            Registros.chidentificador = registrosSerie.chidentificador;
                             Registros.chfecha = mskfechareg.Text;
                             Registros.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                            Registros.p_inidusuariodelete = sesion.SessionGlobal.p_inidusuario;
                             Registros.p_inidmovimientod = codigoDetalle;
                             Registros.p_inidpedidod = 0;
-                            Registros.boexhibicion = registrosSerie.boexhibicion;
-                            Registros.chinforme = registrosSerie.chinforme;
-                            Registros.chinformefecha = registrosSerie.chinformefecha;
-                            Registros.chinformeobs = registrosSerie.chinformeobs;
                             codigoSerie = serieNE.seriesIngresar(Registros);
+                            if (codigoSerie <= 0)
+                            {
+                                MessageBox.Show("Error Serie", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                                return;
+                            }
                         }
                     }
                 }
@@ -455,8 +457,7 @@ namespace Presentacion
         private bool ValdiarCabeceramovimiento()
         {
             bool flat = false;
-            if (txtidprov.Text.Length > 0)
-            {
+          
                 if (sesion.movprodaccion != null)
                 {
                     int i = 0;
@@ -480,11 +481,8 @@ namespace Presentacion
                 {
                     MessageBox.Show("Lista Vacia", "Mensaje de Sistema", MessageBoxButtons.OK);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Ingresar proveedor", "Mensaje de Sistema", MessageBoxButtons.OK);
-            }
+            
+           
             return flat;
         }
 
@@ -579,12 +577,12 @@ namespace Presentacion
                         registrosMovi.valedet.nucantidad,
                         registrosMovi.valedet.chmedida,
                         registrosMovi.valedet.chnombrecompuesto.ToString(),
-                        decimal.Round(registrosMovi.valedet.nucosto, 2),
-                        decimal.Round(registrosMovi.valedet.nutotal, 2));
+                        registrosMovi.valedet.nucosto,
+                        registrosMovi.valedet.nutotal);
                         suma += registrosMovi.valedet.nutotal;
                     }                
                 }
-                txtTotal.Text = decimal.Round(suma, 2).ToString();
+                txtTotal.Text = string.Format("{0:0,0.00}", suma); 
             }else
             {
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
@@ -601,7 +599,7 @@ namespace Presentacion
             if (registro != null)
             {
                 //txtProvnombre.Text = registro.razon;
-                txtidprov.Text = registro.p_inidcodigoclie.ToString();
+                //txtidprov.Text = registro.p_inidcodigoclie.ToString();
             }
             else
             {
@@ -722,6 +720,17 @@ namespace Presentacion
             {
                 e.Handled = false;
             }
-        }       
+        }
+
+        private void txtobs_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 20);
+        }
+
+        private void txtCref1_Validated(object sender, EventArgs e)
+        {
+
+        }
     }
 }

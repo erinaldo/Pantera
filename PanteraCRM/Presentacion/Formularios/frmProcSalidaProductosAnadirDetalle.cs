@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmProcSalidaProductosAnadirDetalle : Form
@@ -154,7 +155,7 @@ namespace Presentacion
             registrosValeDet.chcodigoproducto = ProductoG.chcodigoproducto;
             registrosValeDet.chfecha = DateTime.Now.ToShortDateString().PadLeft(10, '0');
             registrosValeDet.p_inidproducto = ProductoG.p_inidproducto;
-            registrosValeDet.nucantidad = int.Parse(txtCant.Text);
+            registrosValeDet.nucantidad = Decimal.ToInt32(decimal.Parse(txtCant.Text));
             registrosValeDet.nucosto = decimal.Round(decimal.Parse(txtPreComp.Text), 2);
             registrosValeDet.nutotal = decimal.Round(decimal.Parse(txtImporte.Text), 2);
             registrosValeDet.estado = true;
@@ -173,7 +174,7 @@ namespace Presentacion
             decimal compra = 0;
             if (txtCant.Text.Length > 0)
             {
-                cantidad = int.Parse(txtCant.Text);
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCant.Text));
             }
             if (txtPreComp.Text.Length > 0)
             {
@@ -188,10 +189,6 @@ namespace Presentacion
                         if (ValidaLista())
                         {
                             flat = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Erro de Lista", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                         }
                         
                     }else
@@ -218,7 +215,7 @@ namespace Presentacion
             int cantidad = 0;
             if (txtCant.Text.Length > 0)
             {
-                cantidad = int.Parse(txtCant.Text);
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCant.Text));
             }
 
             if (dgvListaProdSeries.RowCount > 0)
@@ -269,7 +266,7 @@ namespace Presentacion
                 txtPreComp.Text = "0.00";
                 txtImporte.Text = "0.00";
                 txtMedida.Text = ProductoG.chunidadmedidaproducto;
-                txtStock.Text = ProductoG.nustockactual.ToString();
+                txtStock.Text = string.Format("{0:0,0.00}", ProductoG.nustockactual.ToString());
                 dgvListaProdSeries.Rows.Clear();
                 cargarData(0, ProductoG.p_inidproducto);
             }
@@ -362,14 +359,39 @@ namespace Presentacion
             txtCodigo.Text = codigo;
         }
 
+
+        
+        /*INICIO :: VALIDACION DE NUMEROS Y FORMATO*/
+        private void txtPreComp_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.ValidarNumero(ref textboxusado, e);
+        }
+        private void txtPreComp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.solonumeros(ref textboxusado, e);
+        }
+
+        private void txtCant_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.ValidarNumero(ref textboxusado, e);
+        }
+        private void txtCant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.solonumeros(ref textboxusado, e);
+        }
+
         private void txtCant_TextChanged(object sender, EventArgs e)
         {
             int cantidad = 0;
             int stock = 0;
-            decimal preciocompra = 0;            
+            decimal preciocompra = 0;
             if (txtCant.Text.Length > 0)
             {
-                cantidad = int.Parse(txtCant.Text);
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCant.Text));
             }
             if (txtStock.Text.Length > 0)
             {
@@ -379,7 +401,7 @@ namespace Presentacion
             {
                 preciocompra = decimal.Parse(txtPreComp.Text);
             }
-            txtImporte.Text = (decimal.Round(cantidad * preciocompra,2)).ToString();
+            txtImporte.Text = string.Format("{0:0,0.00}",cantidad * preciocompra);
             if (cantidad > stock)
             {
                 MessageBox.Show("La Cantidad Ingresada Supera el Stock Actual", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
@@ -397,61 +419,20 @@ namespace Presentacion
             decimal preciocompra = 0;
             if (txtCant.Text.Length > 0)
             {
-                cantidad = int.Parse(txtCant.Text);
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCant.Text));
             }
             if (txtPreComp.Text.Length > 0)
             {
                 preciocompra = decimal.Parse(txtPreComp.Text);
             }
-            txtImporte.Text = (decimal.Round(cantidad * preciocompra, 2)).ToString();
+            txtImporte.Text = string.Format("{0:0,0.00}", (cantidad * preciocompra)); 
         }
 
-        private void txtCant_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
-            {
-                e.Handled = true;
-
-            }
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 15);
         }
-
-        private void txtPreComp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 8)
-            {
-                e.Handled = false;
-                return;
-            }
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txtPreComp.Text.Length; i++)
-            {
-                if (txtPreComp.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    if (txtPreComp.SelectionLength > 0)
-                    {
-                        if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
-                            e.Handled = false;
-                        return;
-
-                    }
-                    else
-                    {
-                        e.Handled = true;
-                        return;
-                    }
-                }
-            }
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
-                e.Handled = true;
-        }
+        /*FIN :: VALIDACION DE NUMEROS Y FORMATO*/
     }
 }

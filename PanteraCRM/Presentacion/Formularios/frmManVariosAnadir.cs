@@ -147,7 +147,7 @@ namespace Presentacion
                 for (int i = 0; i < dgvListaDetalle.RowCount; i++)
                 {
                     maestrodetalle RegistrosIngresoDetalle = new maestrodetalle();                    
-                    RegistrosIngresoDetalle.idmaestrodetalle = 0;
+                    //RegistrosIngresoDetalle.idmaestrodetalle = 0;
                     RegistrosIngresoDetalle.idmaestro = Maestrocodigo;
                     RegistrosIngresoDetalle.codigoitem = dgvListaDetalle.Rows[i].Cells["CHOBS"].Value.ToString();
                     RegistrosIngresoDetalle.nombreitem = dgvListaDetalle.Rows[i].Cells["CHITEM"].Value.ToString();

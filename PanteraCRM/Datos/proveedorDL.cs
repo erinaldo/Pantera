@@ -23,7 +23,8 @@ namespace Datos
                     registro.nrodocumento = Convert.ToString(datareader["nrodocumento"]).Trim();
                     registro.chdireccion = Convert.ToString(datareader["chdireccion"]).Trim();
                     registro.tipoclie = Convert.ToString(datareader["tipoclie"]).Trim();
-                    registro.telefono = Convert.ToString(datareader["telefono"]).Trim();                    
+                    registro.telefono = Convert.ToString(datareader["telefono"]).Trim();
+                    registro.chcodigoproveedor = Convert.ToString(datareader["chcodigoproveedor"]).Trim();
                     listado.Add(registro);
                 }
                 return listado;

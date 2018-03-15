@@ -43,7 +43,7 @@ namespace Presentacion
             cargarData(0,"");
             foreach (DataGridViewRow Row in dgvListadoProveedores.Rows)
             {
-                int valor = (int)Row.Cells["IDPROV"].Value;
+                int valor = (int)Row.Cells["IDPROVE"].Value;
                 if (valor == dato)
                 {
                     int puntero = (int)Row.Index;
@@ -147,7 +147,7 @@ namespace Presentacion
                     }
                     frmManProveedoresAnadir f = new frmManProveedoresAnadir(vBoton);
                     f.pasado += new frmManProveedoresAnadir.pasar(ejecutar);
-                    f.ProveedorCodigo = (int)dgvListadoProveedores.CurrentRow.Cells["IDPROV"].Value;
+                    f.ProveedorCodigo = (int)dgvListadoProveedores.CurrentRow.Cells["IDPROVE"].Value;
                     f.MdiParent = this.MdiParent;
                     f.Show();
                 }
@@ -183,7 +183,7 @@ namespace Presentacion
                     }
                     frmManProveedoresAnadir f = new frmManProveedoresAnadir(vBoton);
                     f.pasado += new frmManProveedoresAnadir.pasar(ejecutar);
-                    f.ProveedorCodigo = (int)dgvListadoProveedores.CurrentRow.Cells["IDPROV"].Value;
+                    f.ProveedorCodigo = (int)dgvListadoProveedores.CurrentRow.Cells["IDPROVE"].Value;
                     f.MdiParent = this.MdiParent;
                     f.Show();
                 }

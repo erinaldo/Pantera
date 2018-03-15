@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmProcSalidaProductosAnadir : Form
@@ -23,7 +24,22 @@ namespace Presentacion
             this.vBoton = vBoton;
         }
         string vBoton;
-     
+
+        /*INICIO :: PRUEBA SOLO NUMEROS*/
+        
+
+        private void textBox1_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;// Convierto el sender a texto
+            utilidades.ValidarNumero(ref textboxusado, e);
+        }
+       
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.solonumeros(ref textboxusado, e);// Llamamos a nuestro método.
+        }   
+        /*FIN :: PRUEBA SOLO NUMEROS*/
 
         private void frmProcSalidaProductosAnadir_Load(object sender, EventArgs e)
         {
@@ -155,17 +171,7 @@ namespace Presentacion
         private void BuscaProveedor(string ruc)
         {
             proveedor registro = proveedorNE.ProveedorBusquedaRuc(ruc);
-            if (registro != null)
-            {
-                //txtProvnombre.Text = registro.razon;
-                txtidprov.Text = registro.p_inidcodigoclie.ToString();
-            }
-            else
-            {
-                //txtProvnombre.Text = "";
-                txtidprov.Text = "";
-
-            }
+           
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -266,12 +272,12 @@ namespace Presentacion
                         registrosMovi.valedet.nucantidad,
                         registrosMovi.valedet.chmedida,
                         registrosMovi.valedet.chnombrecompuesto.ToString(),
-                        string.Format("{0:0,0.00}", decimal.Round(registrosMovi.valedet.nucosto, 2).ToString()),
-                        string.Format("{0:0,0.00}", decimal.Round(registrosMovi.valedet.nutotal, 2).ToString()));
+                        registrosMovi.valedet.nucosto,
+                        registrosMovi.valedet.nutotal);
                         suma += registrosMovi.valedet.nutotal;
                     }
                 }
-                txtTotal.Text = string.Format("{0:0,0.00}", decimal.Round(suma, 2).ToString()); 
+                txtTotal.Text = string.Format("{0:0,0.00}", suma); 
             }
             else
             {
@@ -445,8 +451,7 @@ namespace Presentacion
         private bool ValdiarCabeceramovimiento()
         {
             bool flat = false;
-            if (txtidprov.Text.Length > 0)
-            {
+          
                 if (sesion.movprodaccion != null)
                 {
                     int i = 0;
@@ -471,11 +476,7 @@ namespace Presentacion
                 {
                     MessageBox.Show("Lista Vacia", "Mensaje de Sistema", MessageBoxButtons.OK);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Ingresar proveedor", "Mensaje de Sistema", MessageBoxButtons.OK);
-            }
+           
             return flat;
         }
         private void GrabarMovimiento()
@@ -491,7 +492,7 @@ namespace Presentacion
             registrosCabecera.p_inidcorrevale = txtNroVale.Text;
             registrosCabecera.chvalefecha = mskfechareg.Text;
             registrosCabecera.p_inidtipomoneda = (int)cboMoneda.SelectedValue;
-            registrosCabecera.p_inidproveedor = int.Parse(txtidprov.Text);
+            registrosCabecera.p_inidproveedor = 0;
             //registrosCabecera.chguiaremision = txtGuiaRem.Text;
             //registrosCabecera.chboletafactura = txtFacBol.Text;
             registrosCabecera.p_inidtipomoviemiento = (int)cboTipoMov.SelectedValue;
@@ -585,7 +586,7 @@ namespace Presentacion
             registrosCabecera.p_inidcorrevale = txtNroVale.Text;
             registrosCabecera.chvalefecha = mskfechareg.Text;
             registrosCabecera.p_inidtipomoneda = (int)cboMoneda.SelectedValue;
-            registrosCabecera.p_inidproveedor = int.Parse(txtidprov.Text);
+            registrosCabecera.p_inidproveedor = 0;
             //registrosCabecera.chguiaremision = txtGuiaRem.Text;
             //registrosCabecera.chboletafactura = txtFacBol.Text;
             registrosCabecera.p_inidtipomoviemiento = (int)cboTipoMov.SelectedValue;
@@ -698,6 +699,8 @@ namespace Presentacion
                 e.Handled = false;
 
             }
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 20);
         }
 
         private void txtCref1_TextChanged(object sender, EventArgs e)
@@ -724,6 +727,12 @@ namespace Presentacion
             f.pasadoproveedor += new frmBusquedaProveedor.pasarproveedor(PonerProveedor);
             f.MdiParent = this.MdiParent;
             f.Show();
+        }
+
+        private void txtobs_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e,255);
         }
     }
 }

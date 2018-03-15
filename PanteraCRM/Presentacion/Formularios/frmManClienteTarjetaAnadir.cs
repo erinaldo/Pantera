@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmManClienteTarjetaAnadir : Form
@@ -116,6 +117,12 @@ namespace Presentacion
             {
                 dgvListasTarjetas.Rows.Add("", "", Registros.chtarjeta, Registros.fechavencimiento, "");
             }
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 12);
         }
     }
 }

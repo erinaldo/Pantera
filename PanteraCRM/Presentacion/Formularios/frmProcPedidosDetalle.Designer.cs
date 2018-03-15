@@ -82,6 +82,7 @@
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 0;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             this.txtCodigo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtCodigo_MouseDoubleClick);
             // 
             // groupBox1
@@ -205,6 +206,7 @@
             this.txtCant.TextChanged += new System.EventHandler(this.txtCant_TextChanged);
             this.txtCant.Enter += new System.EventHandler(this.txtCant_Enter);
             this.txtCant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCant_KeyPress);
+            this.txtCant.Validated += new System.EventHandler(this.txtCant_Validated);
             // 
             // txtDesc2
             // 
@@ -216,6 +218,7 @@
             this.txtDesc2.TextChanged += new System.EventHandler(this.txtDesc2_TextChanged);
             this.txtDesc2.Enter += new System.EventHandler(this.txtDesc2_Enter);
             this.txtDesc2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesc2_KeyPress);
+            this.txtDesc2.Validated += new System.EventHandler(this.txtDesc2_Validated);
             // 
             // txtDesc1
             // 
@@ -227,6 +230,7 @@
             this.txtDesc1.TextChanged += new System.EventHandler(this.txtDesc1_TextChanged);
             this.txtDesc1.Enter += new System.EventHandler(this.txtDesc1_Enter);
             this.txtDesc1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesc1_KeyPress);
+            this.txtDesc1.Validated += new System.EventHandler(this.txtDesc1_Validated);
             // 
             // txtStock
             // 

@@ -166,6 +166,7 @@
             this.txtRazon.Name = "txtRazon";
             this.txtRazon.Size = new System.Drawing.Size(392, 20);
             this.txtRazon.TabIndex = 12;
+            this.txtRazon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRazon_KeyPress);
             // 
             // txtNombre
             // 
@@ -174,6 +175,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(392, 20);
             this.txtNombre.TabIndex = 11;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // groupBox5
             // 
@@ -226,6 +228,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(178, 20);
             this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label4
             // 
@@ -243,6 +246,7 @@
             this.txtNombreVia.Name = "txtNombreVia";
             this.txtNombreVia.Size = new System.Drawing.Size(178, 20);
             this.txtNombreVia.TabIndex = 2;
+            this.txtNombreVia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreVia_KeyPress);
             // 
             // label6
             // 
@@ -342,6 +346,7 @@
             this.txtInterior.Name = "txtInterior";
             this.txtInterior.Size = new System.Drawing.Size(178, 20);
             this.txtInterior.TabIndex = 4;
+            this.txtInterior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterior_KeyPress);
             // 
             // txtNumeroVia
             // 
@@ -350,6 +355,7 @@
             this.txtNumeroVia.Name = "txtNumeroVia";
             this.txtNumeroVia.Size = new System.Drawing.Size(164, 20);
             this.txtNumeroVia.TabIndex = 3;
+            this.txtNumeroVia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroVia_KeyPress);
             // 
             // label21
             // 
@@ -376,6 +382,7 @@
             this.txtNombreZona.Name = "txtNombreZona";
             this.txtNombreZona.Size = new System.Drawing.Size(178, 20);
             this.txtNombreZona.TabIndex = 6;
+            this.txtNombreZona.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreZona_KeyPress);
             // 
             // cboPais
             // 
@@ -438,6 +445,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(440, 20);
             this.txtDireccion.TabIndex = 0;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // label26
             // 

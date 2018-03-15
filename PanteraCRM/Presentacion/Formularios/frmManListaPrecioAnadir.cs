@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Entidades;
 using Negocios;
 using System.Globalization;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmManListaPrecioAnadir : Form
@@ -78,7 +79,7 @@ namespace Presentacion
                 this.Text = "MODIFICAR PRECIO";
                 txtCodigo.Text = tmpProducto.chcodigoproducto.ToString();
                 txtDescripcion.Text = tmpProducto.chnombrecompuesto;
-                txtCantidad.Text =decimal.Round( decimal.Parse(tmpProducto.nuprecio.ToString()),2).ToString();
+                txtCantidad.Text = string.Format("{0:0,0.00}", tmpProducto.nuprecio.ToString("N2"));
                 txtCantidad.Focus();
                 txtIdproducto.Text = tmpProducto.p_inidproducto.ToString();
                 CambiarForma(txtCodigo);
@@ -91,7 +92,7 @@ namespace Presentacion
                 this.Text = "VER PRECIO";
                 txtCodigo.Text = tmpProducto.chcodigoproducto.ToString();
                 txtDescripcion.Text = tmpProducto.chnombrecompuesto;
-                txtCantidad.Text = tmpProducto.nuprecio.ToString();
+                txtCantidad.Text = string.Format("{0:0,0.00}", tmpProducto.nuprecio.ToString("N2"));
                 txtIdproducto.Text = tmpProducto.p_inidproducto.ToString();
                 CambiarForma(txtCodigo);
                 CambiarForma(txtCantidad);
@@ -131,31 +132,16 @@ namespace Presentacion
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 8)
-            {
-                e.Handled = false;
-                return;
-            }
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txtCantidad.Text.Length; i++)
-            {
-                if (txtCantidad.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    e.Handled = true;
-                    return;
-                }
-            }
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
-                e.Handled = true;
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.solonumeros(ref textboxusado, e);
         }
+
+        private void txtCantidad_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.ValidarNumero(ref textboxusado, e);
+        }
+
+        
     }
 }

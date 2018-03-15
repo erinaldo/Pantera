@@ -57,6 +57,11 @@ namespace Datos
             return conexion.executeScalar("fn_serie_detalle_falsear", CommandType.StoredProcedure,   new parametro("in_p_inidmovimientod", parametro), new parametro("in_estado", estado));
 
         }
+        public static int SeriesFalsearPedido(int parametro, bool estado)
+        {
+            return conexion.executeScalar("fn_serie_detalle_falsear_codigo", CommandType.StoredProcedure, new parametro("in_p_inidmovimientod", parametro), new parametro("in_estado", estado));
+
+        }
         public static int SeriesFalsearCodigo(int parametro)
         {
             return conexion.executeScalar("fn_serie_detalle_falsear_codigo", CommandType.StoredProcedure, new parametro("in_p_inidvaledetalle", parametro));

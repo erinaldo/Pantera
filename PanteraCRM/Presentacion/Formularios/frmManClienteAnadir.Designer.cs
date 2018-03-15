@@ -225,6 +225,7 @@
             this.txtApeMat.Name = "txtApeMat";
             this.txtApeMat.Size = new System.Drawing.Size(151, 20);
             this.txtApeMat.TabIndex = 1;
+            this.txtApeMat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApeMat_KeyPress);
             // 
             // txtNombres
             // 
@@ -233,6 +234,7 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(406, 20);
             this.txtNombres.TabIndex = 2;
+            this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // label24
             // 
@@ -259,6 +261,7 @@
             this.txtApePat.Name = "txtApePat";
             this.txtApePat.Size = new System.Drawing.Size(158, 20);
             this.txtApePat.TabIndex = 0;
+            this.txtApePat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApePat_KeyPress);
             // 
             // tbEmpresa
             // 
@@ -305,6 +308,7 @@
             this.txtNombreComercial.Name = "txtNombreComercial";
             this.txtNombreComercial.Size = new System.Drawing.Size(406, 20);
             this.txtNombreComercial.TabIndex = 0;
+            this.txtNombreComercial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreComercial_KeyPress);
             // 
             // label6
             // 
@@ -322,6 +326,7 @@
             this.txtRazon.Name = "txtRazon";
             this.txtRazon.Size = new System.Drawing.Size(406, 20);
             this.txtRazon.TabIndex = 1;
+            this.txtRazon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRazon_KeyPress);
             // 
             // lbRazon
             // 
@@ -457,6 +462,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(178, 20);
             this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label12
             // 
@@ -474,6 +480,7 @@
             this.txtNombreVia.Name = "txtNombreVia";
             this.txtNombreVia.Size = new System.Drawing.Size(178, 20);
             this.txtNombreVia.TabIndex = 2;
+            this.txtNombreVia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreVia_KeyPress);
             // 
             // label11
             // 
@@ -574,6 +581,7 @@
             this.txtInterior.Name = "txtInterior";
             this.txtInterior.Size = new System.Drawing.Size(178, 20);
             this.txtInterior.TabIndex = 4;
+            this.txtInterior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterior_KeyPress);
             // 
             // txtNumeroVia
             // 
@@ -582,6 +590,7 @@
             this.txtNumeroVia.Name = "txtNumeroVia";
             this.txtNumeroVia.Size = new System.Drawing.Size(164, 20);
             this.txtNumeroVia.TabIndex = 3;
+            this.txtNumeroVia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroVia_KeyPress);
             // 
             // label18
             // 
@@ -608,6 +617,7 @@
             this.txtNombreZona.Name = "txtNombreZona";
             this.txtNombreZona.Size = new System.Drawing.Size(178, 20);
             this.txtNombreZona.TabIndex = 6;
+            this.txtNombreZona.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreZona_KeyPress);
             // 
             // cboPais
             // 
@@ -670,6 +680,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(440, 20);
             this.txtDireccion.TabIndex = 0;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // label23
             // 
@@ -736,6 +747,7 @@
             this.txtLicencia.Name = "txtLicencia";
             this.txtLicencia.Size = new System.Drawing.Size(131, 20);
             this.txtLicencia.TabIndex = 0;
+            this.txtLicencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLicencia_KeyPress);
             // 
             // label8
             // 

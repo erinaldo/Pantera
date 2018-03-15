@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Entidades;
 using System.Globalization;
 using Negocios;
-
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmManProductoAnadir : Form
@@ -270,10 +270,7 @@ namespace Presentacion
             }
         }
 
-        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
+        
 
         private void btnGrabar_Click_1(object sender, EventArgs e)
         {
@@ -437,7 +434,17 @@ namespace Presentacion
             }
             return flatvalidacampo;
         }
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 15);
+        }
 
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e, 15);
+        }
 
         //private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
         //{

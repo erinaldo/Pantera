@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmProcPedidosDetalle : Form
@@ -221,13 +222,7 @@ namespace Presentacion
                 txtCodigo.Text = f.chcodigoproducto;
             }
         }
-        private void txtCant_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
-            {
-                e.Handled = true;
-            }            
-        }
+        
         private void txtCant_TextChanged(object sender, EventArgs e)
         {
             int cantidad = 0;
@@ -250,7 +245,7 @@ namespace Presentacion
             }
             if (txtCant.Text.Length > 0)
             {
-                cantidad = int.Parse(txtCant.Text);
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCant.Text)); 
             }
             if (txtStock.Text.Length > 0)
             {
@@ -327,81 +322,7 @@ namespace Presentacion
             }
             txtPrecioVenta.Text = decimal.Round((preciounitario * (1 - (desc1 / 100)) * (1 - (desc2 / 100))), 2).ToString();
         }
-        private void txtDesc1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 8)
-            {
-                e.Handled = false;
-                return;
-            }
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txtDesc1.Text.Length; i++)
-            {
-                if (txtDesc1.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    if (txtDesc1.SelectionLength > 0)
-                    {
-                        if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
-                            e.Handled = false;
-                        return;
-
-                    }
-                    else
-                    {
-                        e.Handled = true;
-                        return;
-                    }
-                }
-            }
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
-                e.Handled = true;
-        }
-        private void txtDesc2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 8)
-            {
-                e.Handled = false;
-                return;
-            }
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txtDesc2.Text.Length; i++)
-            {
-                if (txtDesc2.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    if (txtDesc2.SelectionLength > 0)
-                    {
-                        if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
-                            e.Handled = false;
-                        return;
-                    }
-                    else
-                    {
-                        e.Handled = true;
-                        return;
-                    }
-                }
-            }
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
-                e.Handled = true;
-        }
+        
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
@@ -528,8 +449,7 @@ namespace Presentacion
             int cantidad = 0;
             if (txtCant.Text.Length > 0)
             {
-                cantidad = int.Parse(txtCant.Text);
-
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCant.Text));
             }
 
             if (decimal.Parse(txtPreUnit.Text) > 0)
@@ -612,5 +532,45 @@ namespace Presentacion
             }
             txtImporte.Text = (precioventa * cantidad).ToString();
         }
+        /*INICIO ::*/
+        private void txtDesc1_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.ValidarNumero(ref textboxusado, e);
+        }
+
+        private void txtDesc2_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.ValidarNumero(ref textboxusado, e);
+        }
+
+        private void txtCant_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.ValidarNumero(ref textboxusado, e);
+        }
+        private void txtDesc1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.solonumeros(ref textboxusado, e);
+        }
+        private void txtDesc2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.solonumeros(ref textboxusado, e);
+        }
+        private void txtCant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.solonumeros(ref textboxusado, e);
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.LogitudDeCampo(ref textboxusado, e,20);
+        }
+        /*FIN ::*/
     }
 }

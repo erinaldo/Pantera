@@ -33,6 +33,11 @@ namespace Negocios
         {
             return serieDL.SeriesFalsear(parametro,estado);
         }
+        public static int SeriesFalsearPedido(int parametro, bool estado)
+        {
+            return serieDL.SeriesFalsearPedido(parametro, estado);
+        }
+        
         public static int SeriesFalsearCodigo(int parametro)
         {
             return serieDL.SeriesFalsearCodigo(parametro);

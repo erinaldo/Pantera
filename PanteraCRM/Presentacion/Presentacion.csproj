@@ -515,8 +515,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Programas\basicas.cs" />
-    <Compile Include="Programas\converntirNenL.cs" />
+    <Compile Include="Programas\converntirNenL.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Programas\sesion.cs" />
+    <Compile Include="Programas\utilidades.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reportes\crearTicket.cs" />
     <Compile Include="Reportes\CrpFacturacion.cs">

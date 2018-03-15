@@ -82,38 +82,18 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            int flat;
             switch (this.vBoton)
             {
                 case "M":
-                    int p_inidserie;
-                    string chinforme, chinformeobs, chinformefecha;
-                    bool boexhibicion;
-                    p_inidserie = tmpProductoSerie.p_inidserie;
-                    chinforme = txtDocumento.Text;
-                    chinformeobs = txtObservacion.Text;
-                    chinformefecha = txtFecha.Text;
-                    boexhibicion = ckbExhibicion.Checked;
-                    int cantidad = 0;
-                    if (boexhibicion)
+
+                    if (ValidarCampos())
                     {
-                        cantidad = 1;
-                    }else
-                    {
-                        cantidad = -1;
-                    }
-                    int entero = almacenNE.CambiarSaldoComprometido(sesion.SessionGlobal.p_inidalmacen, tmpProductoSerie.p_inidproducto, cantidad);
-                    flat = exhibicionNE.ExibicionIngresar(p_inidserie, chinforme, chinformeobs, chinformefecha, boexhibicion);
-                    if (flat <= 0)
-                    {
-                        MessageBox.Show("Error en el Ingreso", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                        return;
+                        GrabarIngreso();
                     }
                     else
                     {
-                        pasado(flat);
+                        return;
                     }
-
 
                     break;
                 case "V":
@@ -122,8 +102,71 @@ namespace Presentacion
                 default:
                     break;
             }
-            this.Dispose();
+            this.Dispose();            
+        }
+        private bool ValidarCampos()
+        {
+            bool flat = false;
+            if (ckbExhibicion.Checked == true)
+            {
+                if (txtDocumento.Text.Length > 0)
+                {
+                    if (txtObservacion.Text.Length > 0)
+                    {
+                        flat = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Observacion vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        txtObservacion.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nro. Informe/Solicitud vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                    txtDocumento.Focus();
+                }
+            }
+            else
+            {
+                flat = true;
+            }
             
+            return flat;
+
+        }
+        private void GrabarIngreso()
+        {
+
+            int flat;
+            int p_inidserie;
+            string chinforme, chinformeobs, chinformefecha;
+            bool boexhibicion;
+            p_inidserie = tmpProductoSerie.p_inidserie;
+            chinforme = txtDocumento.Text;
+            chinformeobs = txtObservacion.Text;
+            chinformefecha = txtFecha.Text;
+            boexhibicion = ckbExhibicion.Checked;
+            int cantidad = 0;
+            if (boexhibicion)
+            {
+                cantidad = 1;
+            }
+            else
+            {
+                cantidad = -1;
+            }
+            int entero = almacenNE.CambiarSaldoComprometido(sesion.SessionGlobal.p_inidalmacen, tmpProductoSerie.p_inidproducto, cantidad);
+            flat = exhibicionNE.ExibicionIngresar(p_inidserie, chinforme, chinformeobs, chinformefecha, boexhibicion);
+            if (flat <= 0)
+            {
+                MessageBox.Show("Error en el Ingreso", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                pasado(flat);
+            }
         }
     }
 }
