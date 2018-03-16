@@ -351,6 +351,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmManVariosAnadir";
+            this.ShowInTaskbar = false;
             this.Text = "VARIOS AÑADIR";
             this.Load += new System.EventHandler(this.frmManVariosAnadir_Load);
             this.groupBox1.ResumeLayout(false);

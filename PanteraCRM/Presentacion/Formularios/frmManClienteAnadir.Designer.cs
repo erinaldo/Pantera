@@ -793,6 +793,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmManClienteAnadir";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR CLIENTE";
             this.Load += new System.EventHandler(this.frmManClienteAnadir_Load);

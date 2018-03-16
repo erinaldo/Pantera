@@ -279,6 +279,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmManListaPrecioPrincipal";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LISTAS DE PRECIOS";
             this.Load += new System.EventHandler(this.frmManListaPrecioPrincipal_Load);

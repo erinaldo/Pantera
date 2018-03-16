@@ -141,14 +141,14 @@ namespace Presentacion
                 //int item = Convert.ToInt32(nodo.Name);
                 if (perfildetalleNE.validarModulo(sesion.SessionGlobal.p_inidperfil, Convert.ToInt32(nodo.Name)) == 1)
                 {
-                    Form existe = null;
-                    existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == forumlario).SingleOrDefault<Form>();
+                    //Form existe = null;
+                    //existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == forumlario).SingleOrDefault<Form>();
 
-                    if (existe != null)
-                    {
-                        existe.BringToFront();
-                        return;
-                    }
+                    //if (existe != null)
+                    //{
+                    //    existe.BringToFront();
+                    //    return;
+                    //}
                     if (frm != null)
                     {
                         //frm.MdiParent = this.MdiParent;
@@ -202,8 +202,8 @@ namespace Presentacion
             if (flat == 0)
             {
                 frmTipoDeCambio f = new frmTipoDeCambio();
-                f.MdiParent = this.MdiParent;
-                 f.Show();
+                //f.MdiParent = this.MdiParent;
+                 f.ShowDialog();
                
             }
             // mostrar la ventana si hace falta

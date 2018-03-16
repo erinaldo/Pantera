@@ -156,6 +156,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmManListaPrecioAnadir";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR PRECIO A PRODUCTO";
             this.Load += new System.EventHandler(this.frmManListaPrecioAnadir_Load);

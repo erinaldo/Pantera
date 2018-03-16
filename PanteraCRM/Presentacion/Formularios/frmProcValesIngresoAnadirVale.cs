@@ -184,17 +184,17 @@ namespace Presentacion
                 string vBoton = "A";
                 if (basicas.validarAcceso(vBoton))
                 {
-                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSeriesAnadir);
-                    if (frm != null)
-                    {
-                        frm.BringToFront();
-                        return;
-                    }
+                    //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSeriesAnadir);
+                    //if (frm != null)
+                    //{
+                    //    frm.BringToFront();
+                    //    return;
+                    //}
                     frmProcSeriesAnadir f = new frmProcSeriesAnadir(vBoton);
                     f.p_inidproducto = dgvListaValeDetalle.RowCount + 1;                    
                     f.Cargado += new frmProcSeriesAnadir.CargarTabla(CargarTabla);
-                    f.MdiParent = this.MdiParent;
-                    f.Show();
+                    //f.MdiParent = this.MdiParent;
+                    f.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -520,8 +520,8 @@ namespace Presentacion
             f.p_inidproducto = (int)dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value;
             //MessageBox.Show(dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
             f.Cargado += new frmProcSeriesAnadir.CargarTabla(CargarTabla);
-            f.MdiParent = this.MdiParent;
-            f.Show();
+            //f.MdiParent = this.MdiParent;
+            f.ShowDialog();
             //DialogResult res = f.ShowDialog();
             //if (res == DialogResult.OK)
             //{

@@ -130,5 +130,10 @@ namespace Presentacion
             string parametro = txtParametro.Text;
             cargarData(0,parametro);
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

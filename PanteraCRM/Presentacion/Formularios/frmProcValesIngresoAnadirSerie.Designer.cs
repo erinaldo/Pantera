@@ -511,6 +511,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcSeriesAnadir";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR SERIES";
             this.Load += new System.EventHandler(this.frmProcSeriesAnadir_Load);

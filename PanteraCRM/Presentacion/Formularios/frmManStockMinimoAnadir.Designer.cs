@@ -170,6 +170,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmManStockMinimoAnadir";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR STOCK MINIMO";
             this.Load += new System.EventHandler(this.frmManStockMinimoAnadir_Load);

@@ -216,11 +216,12 @@ namespace Presentacion
         private void txtCodigo_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             frmBusquedaProductoGeneral f = new frmBusquedaProductoGeneral();
-            DialogResult res = f.ShowDialog();
-            if (res == DialogResult.OK)
-            {                
-                txtCodigo.Text = f.chcodigoproducto;
-            }
+            f.Cargado += new frmBusquedaProductoGeneral.CargarTabla(PonerTexto);
+            f.ShowDialog();
+        }
+        private void PonerTexto(string codigo)
+        {
+            txtCodigo.Text = codigo;
         }
         
         private void txtCant_TextChanged(object sender, EventArgs e)

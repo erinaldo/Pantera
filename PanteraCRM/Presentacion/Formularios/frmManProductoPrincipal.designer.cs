@@ -449,6 +449,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmManProductoPrincipal";
+            this.ShowInTaskbar = false;
             this.Text = "MANTENIMIENTO DE PRODUCTOS";
             this.Load += new System.EventHandler(this.frmManProductoPrincipal_Load);
             this.groupBox1.ResumeLayout(false);

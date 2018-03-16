@@ -54,12 +54,12 @@ namespace Presentacion
                         MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                         return;
                     }
-                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcKardexProductoDetalle);
-                    if (frm != null)
-                    {
-                        frm.BringToFront();
-                        return;
-                    }
+                    //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcKardexProductoDetalle);
+                    //if (frm != null)
+                    //{
+                    //    frm.BringToFront();
+                    //    return;
+                    //}
                     frmProcKardexProductoDetalle f = new frmProcKardexProductoDetalle();
                     productobuscado ProdBusca = new productobuscado();
                     ProdBusca.p_inidproducto = (int)dgvListaPrecios.CurrentRow.Cells["IDPRODUCTO"].Value;
@@ -68,8 +68,8 @@ namespace Presentacion
                     ProdBusca.chunidadmedidaproducto = dgvListaPrecios.CurrentRow.Cells["CHMEDIDA"].Value.ToString();
                     f.ProductoBuscado = ProdBusca;
                     //f.pasado += new frmManProductoAnadir.pasar(ejecutar);
-                    f.MdiParent = this.MdiParent;
-                    f.Show();
+                    //f.MdiParent = this.MdiParent;
+                    f.ShowDialog();
                 }
                 else
                 {

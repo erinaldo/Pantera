@@ -252,6 +252,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmManVariosPrincipal";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MANTENIMIENTOS VARIOS";
             this.Load += new System.EventHandler(this.frmManVariosPrincipal_Load);

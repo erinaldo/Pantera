@@ -1125,6 +1125,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcPedidosCabecera";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR PEDIDO";
             this.Load += new System.EventHandler(this.frmProcPedidosPedidosCabecera_Load);

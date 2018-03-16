@@ -96,30 +96,29 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(154, 400);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 66);
+            this.groupBox1.Size = new System.Drawing.Size(363, 54);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             // 
             // btnImprimir
             // 
             this.btnImprimir.BackColor = System.Drawing.SystemColors.Window;
-            this.btnImprimir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.Location = new System.Drawing.Point(182, 19);
+            this.btnImprimir.Location = new System.Drawing.Point(186, 16);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(73, 35);
+            this.btnImprimir.Size = new System.Drawing.Size(80, 28);
             this.btnImprimir.TabIndex = 13;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnModificar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(10, 19);
+            this.btnModificar.Location = new System.Drawing.Point(8, 16);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(73, 35);
+            this.btnModificar.Size = new System.Drawing.Size(80, 28);
             this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -128,11 +127,10 @@
             // btnVer
             // 
             this.btnVer.BackColor = System.Drawing.SystemColors.Window;
-            this.btnVer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(95, 19);
+            this.btnVer.Location = new System.Drawing.Point(97, 16);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(73, 35);
+            this.btnVer.Size = new System.Drawing.Size(80, 28);
             this.btnVer.TabIndex = 10;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
@@ -143,9 +141,9 @@
             this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(277, 19);
+            this.btnSalir.Location = new System.Drawing.Point(275, 16);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(73, 35);
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
             this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -315,6 +313,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcSeparacionExhibicionPrincipal";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SEPARACION PARA EXHIBICION";
             this.Load += new System.EventHandler(this.frmProcSeparacionexhibicionPrincipal_Load);

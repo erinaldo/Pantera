@@ -251,6 +251,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmBusquedaProductoGeneral";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BUSQUEDA DE PRODUCTO";
             this.Load += new System.EventHandler(this.frmBusquedaProductoGeneral_Load);

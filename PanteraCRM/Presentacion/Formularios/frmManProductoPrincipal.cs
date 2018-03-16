@@ -28,14 +28,12 @@ namespace Presentacion
                 vBoton = "A";
                 if (basicas.validarAcceso(vBoton))
                 {
-                    //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProductoAnadir);
-
-
-                    //if (frm != null)
-                    //{
-                    //    frm.BringToFront();
-                    //    return;
-                    //}
+                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProductoAnadir);
+                    if (frm != null)
+                    {
+                        frm.BringToFront();
+                        return;
+                    }
                     frmManProductoAnadir f = new frmManProductoAnadir(vBoton);
                     f.pasado += new frmManProductoAnadir.pasar(ejecutar);                  
                     f.ShowDialog();

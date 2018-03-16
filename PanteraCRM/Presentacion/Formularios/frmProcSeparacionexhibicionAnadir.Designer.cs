@@ -286,6 +286,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcSeparacionexhibicionAnadir";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR EXHIBICION";
             this.Load += new System.EventHandler(this.frmProcSeparacionexhibicionAnadir_Load);

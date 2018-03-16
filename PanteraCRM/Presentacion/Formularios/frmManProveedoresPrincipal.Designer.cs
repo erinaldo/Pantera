@@ -277,6 +277,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmManProveedoresPrincipal";
+            this.ShowInTaskbar = false;
             this.Text = "MANTENIMIENTO DE PROVEEDORES";
             this.Load += new System.EventHandler(this.frmManProveedoresPrincipal_Load);
             this.groupBox1.ResumeLayout(false);

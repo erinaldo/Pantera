@@ -450,8 +450,7 @@ namespace Presentacion
 
         private void txtcodprod_DoubleClick(object sender, EventArgs e)
         {
-            frmBusquedaProductoGeneral f = new frmBusquedaProductoGeneral();
-            
+            frmBusquedaProductoGeneral f = new frmBusquedaProductoGeneral();            
             f.Cargado += new frmBusquedaProductoGeneral.CargarTabla(PonerCodigo);
             f.ShowDialog();
         }

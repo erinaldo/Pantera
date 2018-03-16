@@ -218,6 +218,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmManClienteTarjetaAnadir";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR TARJETA DE PROPIEDAD";
             this.Load += new System.EventHandler(this.frmManClienteTarjetaAnadir_Load);

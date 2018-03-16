@@ -402,6 +402,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcValesIngresoPrincipal";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VALES DE INGRESO";
             this.Load += new System.EventHandler(this.frmProcValesIngresoPrincipal_Load);

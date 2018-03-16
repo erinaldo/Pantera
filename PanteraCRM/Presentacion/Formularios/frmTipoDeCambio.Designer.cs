@@ -176,7 +176,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(270, 149);
-            this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnGrabar);
@@ -185,6 +184,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmTipoDeCambio";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR TIPO DE CAMBIO";
             this.Load += new System.EventHandler(this.frmTipoDeCambio_Load);

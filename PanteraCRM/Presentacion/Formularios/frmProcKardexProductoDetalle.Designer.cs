@@ -366,6 +366,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcKardexProductoDetalle";
+            this.ShowInTaskbar = false;
             this.Text = "MOVIMIENTO DE PRODUCTOS";
             this.Load += new System.EventHandler(this.frmProcKardexProductoDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaKardex)).EndInit();

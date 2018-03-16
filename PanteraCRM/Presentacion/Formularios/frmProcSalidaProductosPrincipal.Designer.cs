@@ -429,6 +429,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcSalidaProductosPrincipal";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VALES DE SALIDA";
             this.Load += new System.EventHandler(this.frmProcSalidaProductosPrincipal_Load);

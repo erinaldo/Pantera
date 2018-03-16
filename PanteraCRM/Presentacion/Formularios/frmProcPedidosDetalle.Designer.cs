@@ -420,6 +420,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcPedidosDetalle";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR DETALLE";
             this.Load += new System.EventHandler(this.frmProcPedidosPedidosDetalle_Load);

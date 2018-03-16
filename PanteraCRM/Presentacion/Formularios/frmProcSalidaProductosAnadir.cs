@@ -236,16 +236,16 @@ namespace Presentacion
 
                 if (basicas.validarAcceso(vBoton))
                 {
-                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadirDetalle);
-                    if (frm != null)
-                    {
-                        frm.BringToFront();
-                        return;
-                    }
+                    //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadirDetalle);
+                    //if (frm != null)
+                    //{
+                    //    frm.BringToFront();
+                    //    return;
+                    //}
                     frmProcSalidaProductosAnadirDetalle f = new frmProcSalidaProductosAnadirDetalle(vBoton);
                     f.pasadoDetalle += new frmProcSalidaProductosAnadirDetalle.pasarDetalleAnadido(CargarDatosSession);
-                    f.MdiParent = this.MdiParent;
-                    f.Show();
+                    //f.MdiParent = this.MdiParent;
+                    f.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -367,19 +367,19 @@ namespace Presentacion
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadirDetalle);
-            if (frm != null)
-            {
-                frm.BringToFront();
-                return;
-            }
+            //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSalidaProductosAnadirDetalle);
+            //if (frm != null)
+            //{
+            //    frm.BringToFront();
+            //    return;
+            //}
             frmProcSalidaProductosAnadirDetalle f = new frmProcSalidaProductosAnadirDetalle(vBoton);
             // f.pasado += new frmProcSeriesAnadir.pasar(ejecutar);            
              f.orden = (int)dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value;
             //MessageBox.Show(dgvListaValeDetalle.CurrentRow.Cells["IDITEM"].Value.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
             f.pasadoDetalle += new frmProcSalidaProductosAnadirDetalle.pasarDetalleAnadido(CargarDatosSession);
-            f.MdiParent = this.MdiParent;
-            f.Show();
+            //f.MdiParent = this.MdiParent;
+            f.ShowDialog();
             //DialogResult res = f.ShowDialog();
             //if (res == DialogResult.OK)
             //{

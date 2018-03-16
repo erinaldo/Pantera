@@ -279,6 +279,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcKardexProductoPrincipal";
+            this.ShowInTaskbar = false;
             this.Text = "KARDEX DE PRODUCTOS";
             this.Load += new System.EventHandler(this.frmProcKardexProductoPrincipal_Load);
             this.groupBox2.ResumeLayout(false);

@@ -63,8 +63,8 @@ namespace Presentacion
                     frmProcPedidosDetalle f = new frmProcPedidosDetalle(vBoton);
                     f.ListadoValidarG = listado;                    
                     f.PasadoDetalle += new frmProcPedidosDetalle.PasarDetalle(CargarTablaDetalle);
-                    f.MdiParent = this.MdiParent;
-                    f.Show();
+                    //f.MdiParent = this.MdiParent;
+                    f.ShowDialog();
                 }
                 else
                 {
@@ -725,16 +725,16 @@ namespace Presentacion
         }
         private void txtCodigoCliente_DoubleClick(object sender, EventArgs e)
         {
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmBusClientePrincipal);
-            if (frm != null)
-            {
-                frm.BringToFront();
-                return;
-            }
+            //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmBusClientePrincipal);
+            //if (frm != null)
+            //{
+            //    frm.BringToFront();
+            //    return;
+            //}
             frmBusClientePrincipal f = new frmBusClientePrincipal();
             f.Pasado += new frmBusClientePrincipal.PasarClienteCodigo(PonerCodigocliente);
-            f.MdiParent = this.MdiParent;
-            f.Show();
+            //f.MdiParent = this.MdiParent;
+            f.ShowDialog();
         }
         private void PonerCodigocliente(string codigo)
         {
