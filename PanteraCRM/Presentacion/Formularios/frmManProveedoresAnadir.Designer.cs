@@ -92,7 +92,7 @@
             this.btnSalir.Location = new System.Drawing.Point(93, 13);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 10;
+            this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -104,7 +104,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(4, 13);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 9;
+            this.btnGrabar.TabIndex = 0;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -138,7 +138,7 @@
             this.TXTRUC.Location = new System.Drawing.Point(122, 64);
             this.TXTRUC.Name = "TXTRUC";
             this.TXTRUC.Size = new System.Drawing.Size(173, 20);
-            this.TXTRUC.TabIndex = 16;
+            this.TXTRUC.TabIndex = 2;
             this.TXTRUC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXTRUC_KeyPress);
             // 
             // lbRazon
@@ -165,7 +165,7 @@
             this.txtRazon.Location = new System.Drawing.Point(122, 38);
             this.txtRazon.Name = "txtRazon";
             this.txtRazon.Size = new System.Drawing.Size(392, 20);
-            this.txtRazon.TabIndex = 12;
+            this.txtRazon.TabIndex = 1;
             this.txtRazon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRazon_KeyPress);
             // 
             // txtNombre
@@ -174,7 +174,7 @@
             this.txtNombre.Location = new System.Drawing.Point(122, 13);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(392, 20);
-            this.txtNombre.TabIndex = 11;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // groupBox5
@@ -475,6 +475,7 @@
             this.Name = "frmManProveedoresAnadir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR PROVEEDOR";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmManProveedoresAnadir_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

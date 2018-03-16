@@ -14,6 +14,7 @@ using System.Globalization;
 using System.Collections;
 using System.Reflection;
 
+using siempreEncima_cs.elGuille.Util;
 namespace Presentacion
 {
     public partial class frmMenu : Form
@@ -150,9 +151,11 @@ namespace Presentacion
                     }
                     if (frm != null)
                     {
-                        frm.MdiParent = this.MdiParent;
-                        frm.Show();
+                        //frm.MdiParent = this.MdiParent;
+                        frm.ShowDialog();
+                        //WinAPI.SiempreEncima(frm.Handle.ToInt32());
                     }
+                    //frm.ShowDialog();
                 }
                 else MessageBox.Show("Usted no tiene acceso a este módulo" + Convert.ToInt32(nodo.Name));
 

@@ -113,12 +113,12 @@ namespace Presentacion
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManListaPrecioAnadir);
-            if (frm != null)
-            {
-                frm.BringToFront();
-                return;
-            }
+            //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManListaPrecioAnadir);
+            //if (frm != null)
+            //{
+            //    frm.BringToFront();
+            //    return;
+            //}
             frmManListaPrecioAnadir f = new frmManListaPrecioAnadir(vBoton);
             f.pasado += new frmManListaPrecioAnadir.pasar(ejecutar);
             f.tmpProducto = new productobuscado();
@@ -126,8 +126,8 @@ namespace Presentacion
             f.tmpProducto.chnombrecompuesto = (string)dgvListaPrecios.CurrentRow.Cells["CHDESCRIPCION"].Value;
             f.tmpProducto.nuprecio = (decimal)dgvListaPrecios.CurrentRow.Cells["CHPRECIO"].Value;
             f.tmpProducto.chcodigoproducto = (string)(dgvListaPrecios.CurrentRow.Cells["CHCODIGO"].Value);
-            f.MdiParent = this.MdiParent;
-            f.Show();
+            //f.MdiParent = this.MdiParent;
+            f.ShowDialog();
         }
 
         private void btnVer_Click(object sender, EventArgs e)

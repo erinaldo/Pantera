@@ -28,16 +28,16 @@ namespace Presentacion
                 
                 if (basicas.validarAcceso(vBoton))
                 {
-                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
-                    if (frm != null)
-                    {
-                        frm.BringToFront();
-                        return;
-                    }
+                    //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
+                    //if (frm != null)
+                    //{
+                    //    frm.BringToFront();
+                    //    return;
+                    //}
                     frmProcIngresoValesAnadir f = new frmProcIngresoValesAnadir(vBoton);
                     f.pasado += new frmProcIngresoValesAnadir.pasar(ejecutar);
-                    f.MdiParent = this.MdiParent;
-                    f.Show();
+                    //f.MdiParent = this.MdiParent;
+                    f.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -105,17 +105,17 @@ namespace Presentacion
                         MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                         return;
                     }
-                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
-                    if (frm != null)
-                    {
-                        frm.BringToFront();
-                        return;
-                    }
+                    //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
+                    //if (frm != null)
+                    //{
+                    //    frm.BringToFront();
+                    //    return;
+                    //}
                     frmProcIngresoValesAnadir f = new frmProcIngresoValesAnadir(vBoton);                    
                     f.codigoMovimiento =(int)dgvVales.CurrentRow.Cells["IDVALEC"].Value;
-                    f.MdiParent = this.MdiParent;
+                    //f.MdiParent = this.MdiParent;
                     f.pasado += new frmProcIngresoValesAnadir.pasar(ejecutar);
-                    f.Show();
+                    f.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -137,17 +137,17 @@ namespace Presentacion
                         MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                         return;
                     }
-                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
-                    if (frm != null)
-                    {
-                        frm.BringToFront();
-                        return;
-                    }
+                    //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcIngresoValesAnadir);
+                    //if (frm != null)
+                    //{
+                    //    frm.BringToFront();
+                    //    return;
+                    //}
                     frmProcIngresoValesAnadir f = new frmProcIngresoValesAnadir(vBoton);
                     f.pasado += new frmProcIngresoValesAnadir.pasar(ejecutar);
                     f.codigoMovimiento = (int)dgvVales.CurrentRow.Cells["IDVALEC"].Value;
-                    f.MdiParent = this.MdiParent;
-                    f.Show();
+                   // f.MdiParent = this.MdiParent;
+                    f.ShowDialog();
                 }
             }
             catch (Exception ex)

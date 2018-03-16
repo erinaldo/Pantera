@@ -89,12 +89,12 @@ namespace Presentacion
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManStockMinimoAnadir);
-            if (frm != null)
-            {
-                frm.BringToFront();
-                return;
-            }
+            //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManStockMinimoAnadir);
+            //if (frm != null)
+            //{
+            //    frm.BringToFront();
+            //    return;
+            //}
             frmManStockMinimoAnadir f = new frmManStockMinimoAnadir(vBoton);
             f.pasado += new frmManStockMinimoAnadir.pasar(ejecutar);
             f.tmpsaldoalmacen = new saldoalmacen();
@@ -102,8 +102,8 @@ namespace Presentacion
             f.tmpsaldoalmacen.chcodigo = (string)dgvListaSotck.CurrentRow.Cells["CHCODIGO"].Value; 
             f.tmpsaldoalmacen.chnombrecompuesto = (string)dgvListaSotck.CurrentRow.Cells["CHDESCRIPCION"].Value;
             f.tmpsaldoalmacen.nustockminima= (decimal)dgvListaSotck.CurrentRow.Cells["CHSTOCK"].Value;
-            f.MdiParent = this.MdiParent;
-            f.Show();
+            //f.MdiParent = this.MdiParent;
+            f.ShowDialog();
         }
 
         private void btnVer_Click(object sender, EventArgs e)

@@ -350,7 +350,7 @@ namespace Presentacion
         {
             frmBusquedaProductoGeneral f = new frmBusquedaProductoGeneral();
             f.Cargado += new frmBusquedaProductoGeneral.CargarTabla(CargarCodigo);
-            f.MdiParent = this.MdiParent;
+            //f.MdiParent = this.MdiParent;
             f.Show();
             
         }
@@ -380,8 +380,11 @@ namespace Presentacion
         }
         private void txtCant_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox textboxusado = (TextBox)sender;
-            utilidades.solonumeros(ref textboxusado, e);
+            if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
+            {
+                e.Handled = true;
+
+            }
         }
 
         private void txtCant_TextChanged(object sender, EventArgs e)
@@ -395,7 +398,7 @@ namespace Presentacion
             }
             if (txtStock.Text.Length > 0)
             {
-                stock = int.Parse(txtStock.Text);
+                stock = Decimal.ToInt32(decimal.Parse(txtStock.Text));
             }
             if (txtPreComp.Text.Length > 0)
             {

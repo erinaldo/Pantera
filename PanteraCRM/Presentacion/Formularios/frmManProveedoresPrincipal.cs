@@ -68,16 +68,16 @@ namespace Presentacion
                 vBoton = "A";
                 if (basicas.validarAcceso(vBoton))
                 {
-                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProveedoresAnadir);
-                    if (frm != null)
-                    {
-                        frm.BringToFront();
-                        return;
-                    }
+                    //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProveedoresAnadir);
+                    //if (frm != null)
+                    //{
+                    //    frm.BringToFront();
+                    //    return;
+                    //}
                     frmManProveedoresAnadir f = new frmManProveedoresAnadir(vBoton);
                     f.pasado += new frmManProveedoresAnadir.pasar(ejecutar);
-                    f.MdiParent = this.MdiParent;
-                    f.Show();
+                    //f.MdiParent = this.MdiParent;
+                    f.ShowDialog();
                 }
                 else
                 {
@@ -139,17 +139,17 @@ namespace Presentacion
                         MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                         return;
                     }
-                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProveedoresAnadir);
-                    if (frm != null)
-                    {
-                        frm.BringToFront();
-                        return;
-                    }
+                    //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProveedoresAnadir);
+                    //if (frm != null)
+                    //{
+                    //    frm.BringToFront();
+                    //    return;
+                    //}
                     frmManProveedoresAnadir f = new frmManProveedoresAnadir(vBoton);
                     f.pasado += new frmManProveedoresAnadir.pasar(ejecutar);
                     f.ProveedorCodigo = (int)dgvListadoProveedores.CurrentRow.Cells["IDPROVE"].Value;
-                    f.MdiParent = this.MdiParent;
-                    f.Show();
+                    //f.MdiParent = this.MdiParent;
+                    f.ShowDialog();
                 }
                 else
                 {
@@ -175,17 +175,17 @@ namespace Presentacion
                         MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                         return;
                     }
-                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProveedoresAnadir);
-                    if (frm != null)
-                    {
-                        frm.BringToFront();
-                        return;
-                    }
+                    //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProveedoresAnadir);
+                    //if (frm != null)
+                    //{
+                    //    frm.BringToFront();
+                    //    return;
+                    //}
                     frmManProveedoresAnadir f = new frmManProveedoresAnadir(vBoton);
                     f.pasado += new frmManProveedoresAnadir.pasar(ejecutar);
                     f.ProveedorCodigo = (int)dgvListadoProveedores.CurrentRow.Cells["IDPROVE"].Value;
-                    f.MdiParent = this.MdiParent;
-                    f.Show();
+                    //f.MdiParent = this.MdiParent;
+                    f.ShowDialog();
                 }
                 else
                 {

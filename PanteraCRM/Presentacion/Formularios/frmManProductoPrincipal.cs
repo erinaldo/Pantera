@@ -9,7 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Presentacion.Programas;
+using siempreEncima_cs.elGuille.Util;
 namespace Presentacion
 {
     public partial class frmManProductoPrincipal : Form
@@ -27,16 +28,18 @@ namespace Presentacion
                 vBoton = "A";
                 if (basicas.validarAcceso(vBoton))
                 {
-                    Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProductoAnadir);
-                    if (frm != null)
-                    {
-                        frm.BringToFront();
-                        return;
-                    }
+                    //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProductoAnadir);
+
+
+                    //if (frm != null)
+                    //{
+                    //    frm.BringToFront();
+                    //    return;
+                    //}
                     frmManProductoAnadir f = new frmManProductoAnadir(vBoton);
-                    f.pasado += new frmManProductoAnadir.pasar(ejecutar);
-                    f.MdiParent = this.MdiParent;
-                    f.Show();
+                    f.pasado += new frmManProductoAnadir.pasar(ejecutar);                  
+                    f.ShowDialog();
+                    //WinAPI.SiempreEncima(f.Handle.ToInt32());
                 }
                 else
                 {
@@ -108,12 +111,12 @@ namespace Presentacion
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProductoAnadir);
-            if (frm != null)
-            {
-                frm.BringToFront();
-                return;
-            }
+            //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProductoAnadir);
+            //if (frm != null)
+            //{
+            //    frm.BringToFront();
+            //    return;
+            //}
             frmManProductoAnadir f = new frmManProductoAnadir(vBoton);
             f.pasado += new frmManProductoAnadir.pasar(ejecutar);
             f.tmpProducto = new producto();
@@ -130,8 +133,8 @@ namespace Presentacion
             f.tmpProducto.chcodigoproducto = (string)(dvgProducto.CurrentRow.Cells["CODPRODUCTO"].Value);
             f.tmpProducto.chfechacreacion = (string)(dvgProducto.CurrentRow.Cells["CHFECHA"].Value);
             f.tmpProducto.req_serie = (bool)(dvgProducto.CurrentRow.Cells["IDCHECK"].Value);
-            f.MdiParent = this.MdiParent;
-            f.Show();
+            //f.MdiParent = this.MdiParent;
+            f.ShowDialog();
         }
 
         private void btnVer_Click(object sender, EventArgs e)

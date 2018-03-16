@@ -85,17 +85,20 @@
             this.txtCantidad.Location = new System.Drawing.Point(67, 50);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(69, 20);
-            this.txtCantidad.TabIndex = 8;
+            this.txtCantidad.TabIndex = 1;
             this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             this.txtCantidad.Validated += new System.EventHandler(this.txtCantidad_Validated);
             // 
             // txtIdproducto
             // 
+            this.txtIdproducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtIdproducto.ForeColor = System.Drawing.Color.Blue;
             this.txtIdproducto.Location = new System.Drawing.Point(151, 50);
             this.txtIdproducto.Name = "txtIdproducto";
             this.txtIdproducto.Size = new System.Drawing.Size(100, 20);
-            this.txtIdproducto.TabIndex = 7;
+            this.txtIdproducto.TabIndex = 2;
+            this.txtIdproducto.TabStop = false;
             this.txtIdproducto.Visible = false;
             // 
             // txtCodigo
@@ -104,7 +107,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(52, 13);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(84, 20);
-            this.txtCodigo.TabIndex = 5;
+            this.txtCodigo.TabIndex = 0;
             // 
             // label2
             // 

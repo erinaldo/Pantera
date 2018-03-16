@@ -64,7 +64,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 7);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(679, 43);
-            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // label1
@@ -95,7 +95,7 @@
             this.groupBox1.Location = new System.Drawing.Point(216, 406);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(260, 49);
-            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // btnImprimir
@@ -105,7 +105,7 @@
             this.btnImprimir.Location = new System.Drawing.Point(89, 14);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(80, 28);
-            this.btnImprimir.TabIndex = 13;
+            this.btnImprimir.TabIndex = 1;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
@@ -117,7 +117,7 @@
             this.btnVer.Location = new System.Drawing.Point(6, 14);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(80, 28);
-            this.btnVer.TabIndex = 10;
+            this.btnVer.TabIndex = 0;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
@@ -130,7 +130,7 @@
             this.btnSalir.Location = new System.Drawing.Point(172, 14);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -178,8 +178,9 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaPrecios.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvListaPrecios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPrecios.Size = new System.Drawing.Size(679, 344);
-            this.dgvListaPrecios.TabIndex = 19;
+            this.dgvListaPrecios.TabIndex = 1;
             // 
             // IDPRODUCTO
             // 

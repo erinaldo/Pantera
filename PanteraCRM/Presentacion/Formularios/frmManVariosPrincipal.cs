@@ -96,17 +96,17 @@ namespace Presentacion
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManVariosAnadir);
-            if (frm != null)
-            {
-                frm.BringToFront();
-                return;
-            }
+            //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManVariosAnadir);
+            //if (frm != null)
+            //{
+            //    frm.BringToFront();
+            //    return;
+            //}
             frmManVariosAnadir f = new frmManVariosAnadir(vBoton);
             f.Maestrocodigo = (int)dgvListaCabecera.CurrentRow.Cells["IDMAESTRO"].Value;
-            f.MdiParent = this.MdiParent;
+            //f.MdiParent = this.MdiParent;
             f.pasado += new frmManVariosAnadir.pasar(ejecutar);
-            f.Show();
+            f.ShowDialog();
         }
 
         private void btnVer_Click(object sender, EventArgs e)

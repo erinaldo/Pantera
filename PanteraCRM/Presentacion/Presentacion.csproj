@@ -513,6 +513,7 @@
     <Compile Include="Formularios\PrincipalOpcional.Designer.cs">
       <DependentUpon>PrincipalOpcional.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\utilidades.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Programas\basicas.cs" />
     <Compile Include="Programas\converntirNenL.cs">

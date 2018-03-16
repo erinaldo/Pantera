@@ -85,7 +85,6 @@
             // btnAnular
             // 
             this.btnAnular.BackColor = System.Drawing.SystemColors.Window;
-            this.btnAnular.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnular.Location = new System.Drawing.Point(348, 12);
             this.btnAnular.Name = "btnAnular";
@@ -98,7 +97,6 @@
             // btnAnadir
             // 
             this.btnAnadir.BackColor = System.Drawing.SystemColors.Window;
-            this.btnAnadir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnadir.Location = new System.Drawing.Point(4, 12);
             this.btnAnadir.Name = "btnAnadir";
@@ -111,7 +109,6 @@
             // btnImprimir
             // 
             this.btnImprimir.BackColor = System.Drawing.SystemColors.Window;
-            this.btnImprimir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Location = new System.Drawing.Point(262, 12);
             this.btnImprimir.Name = "btnImprimir";
@@ -124,7 +121,6 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnModificar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.Location = new System.Drawing.Point(90, 12);
             this.btnModificar.Name = "btnModificar";
@@ -137,7 +133,6 @@
             // btnVer
             // 
             this.btnVer.BackColor = System.Drawing.SystemColors.Window;
-            this.btnVer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.Location = new System.Drawing.Point(176, 12);
             this.btnVer.Name = "btnVer";

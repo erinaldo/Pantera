@@ -79,7 +79,7 @@
             this.button1.Location = new System.Drawing.Point(265, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 28);
-            this.button1.TabIndex = 13;
+            this.button1.TabIndex = 3;
             this.button1.Text = "&Imprimir";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -92,7 +92,7 @@
             this.btnSalir.Location = new System.Drawing.Point(349, 14);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -104,7 +104,7 @@
             this.btnVer.Location = new System.Drawing.Point(178, 14);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(80, 28);
-            this.btnVer.TabIndex = 10;
+            this.btnVer.TabIndex = 2;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
@@ -116,7 +116,7 @@
             this.btnModificar.Location = new System.Drawing.Point(93, 14);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(80, 28);
-            this.btnModificar.TabIndex = 9;
+            this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -129,7 +129,7 @@
             this.btnAnadir.Location = new System.Drawing.Point(6, 14);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(80, 28);
-            this.btnAnadir.TabIndex = 8;
+            this.btnAnadir.TabIndex = 0;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
@@ -152,7 +152,7 @@
             this.groupBox1.Location = new System.Drawing.Point(165, 453);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(434, 49);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // dvgProducto
@@ -193,8 +193,9 @@
             this.dvgProducto.Name = "dvgProducto";
             this.dvgProducto.ReadOnly = true;
             this.dvgProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dvgProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgProducto.Size = new System.Drawing.Size(742, 392);
-            this.dvgProducto.TabIndex = 2;
+            this.dvgProducto.TabIndex = 1;
             // 
             // IDPRODUCTO
             // 
@@ -427,7 +428,7 @@
             this.txtParametro.Location = new System.Drawing.Point(70, 17);
             this.txtParametro.Name = "txtParametro";
             this.txtParametro.Size = new System.Drawing.Size(666, 20);
-            this.txtParametro.TabIndex = 1;
+            this.txtParametro.TabIndex = 0;
             this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
             // 
             // frmManProductoPrincipal
@@ -448,7 +449,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmManProductoPrincipal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MANTENIMIENTO DE PRODUCTOS";
             this.Load += new System.EventHandler(this.frmManProductoPrincipal_Load);
             this.groupBox1.ResumeLayout(false);

@@ -87,7 +87,7 @@
             this.dgvListaCabecera.ReadOnly = true;
             this.dgvListaCabecera.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaCabecera.Size = new System.Drawing.Size(647, 343);
-            this.dgvListaCabecera.TabIndex = 24;
+            this.dgvListaCabecera.TabIndex = 1;
             // 
             // IDMAESTRO
             // 
@@ -156,7 +156,7 @@
             this.groupBox1.Location = new System.Drawing.Point(160, 399);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(357, 55);
-            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // btnImprimir
@@ -214,7 +214,7 @@
             this.groupBox2.Location = new System.Drawing.Point(15, 1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(647, 43);
-            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // label1
@@ -237,10 +237,11 @@
             // 
             // frmManVariosPrincipal
             // 
-            this.AcceptButton = this.btnSalir;
+            this.AcceptButton = this.btnModificar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(676, 467);
             this.Controls.Add(this.dgvListaCabecera);
             this.Controls.Add(this.groupBox1);

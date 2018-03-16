@@ -191,6 +191,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaSotck.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvListaSotck.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaSotck.Size = new System.Drawing.Size(647, 335);
             this.dgvListaSotck.TabIndex = 2;
             // 

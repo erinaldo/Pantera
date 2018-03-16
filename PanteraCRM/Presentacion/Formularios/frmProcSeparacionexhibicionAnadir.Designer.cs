@@ -223,7 +223,7 @@
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(89, 20);
-            this.txtFecha.TabIndex = 11;
+            this.txtFecha.TabIndex = 3;
             this.txtFecha.ValidatingType = typeof(System.DateTime);
             // 
             // txtObservacion
@@ -232,7 +232,7 @@
             this.txtObservacion.Location = new System.Drawing.Point(86, 67);
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.Size = new System.Drawing.Size(503, 20);
-            this.txtObservacion.TabIndex = 10;
+            this.txtObservacion.TabIndex = 2;
             // 
             // txtDocumento
             // 
@@ -240,7 +240,7 @@
             this.txtDocumento.Location = new System.Drawing.Point(129, 32);
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(168, 20);
-            this.txtDocumento.TabIndex = 9;
+            this.txtDocumento.TabIndex = 0;
             // 
             // label7
             // 

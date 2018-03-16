@@ -451,13 +451,13 @@ namespace Presentacion
         private void txtcodprod_DoubleClick(object sender, EventArgs e)
         {
             frmBusquedaProductoGeneral f = new frmBusquedaProductoGeneral();
-            DialogResult res = f.ShowDialog();
-            if (res == DialogResult.OK)
-            {
-                
-                txtcodprod.Text = f.chcodigoproducto;
-
-            }
+            
+            f.Cargado += new frmBusquedaProductoGeneral.CargarTabla(PonerCodigo);
+            f.ShowDialog();
+        }
+        private void PonerCodigo(string codigo)
+        {
+            txtcodprod.Text = codigo;
         }
         public void buscaProducto(string parametro)
         {
@@ -631,8 +631,11 @@ namespace Presentacion
         /*INICIO :: */
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox textboxusado = (TextBox)sender;
-            utilidades.solonumeros(ref textboxusado, e);
+            if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
+            {
+                e.Handled = true;
+
+            }
         }
         private void txtprecio_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -644,8 +647,6 @@ namespace Presentacion
 
         private void txtCantidad_Validated(object sender, EventArgs e)
         {
-            TextBox textboxusado = (TextBox)sender;
-            utilidades.ValidarNumero(ref textboxusado, e);
         }
 
         private void txtprecio_Validated(object sender, EventArgs e)
@@ -672,6 +673,10 @@ namespace Presentacion
             TextBox textboxusado = (TextBox)sender;
             utilidades.LogitudDeCampo(ref textboxusado, e, 20);
         }
+
+
+
+
 
 
         /*FIN :: */

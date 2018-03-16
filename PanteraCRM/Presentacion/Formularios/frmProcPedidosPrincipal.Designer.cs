@@ -135,7 +135,7 @@
             this.btnAnular.Location = new System.Drawing.Point(348, 9);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(80, 28);
-            this.btnAnular.TabIndex = 5;
+            this.btnAnular.TabIndex = 4;
             this.btnAnular.Text = "&Anular";
             this.btnAnular.UseVisualStyleBackColor = false;
             this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
@@ -146,7 +146,7 @@
             this.btnImprimir.Location = new System.Drawing.Point(262, 9);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(80, 28);
-            this.btnImprimir.TabIndex = 4;
+            this.btnImprimir.TabIndex = 3;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
@@ -158,7 +158,7 @@
             this.btnSalir.Location = new System.Drawing.Point(434, 9);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 6;
+            this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.button4_Click);
@@ -169,7 +169,7 @@
             this.btnVer.Location = new System.Drawing.Point(176, 9);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(80, 28);
-            this.btnVer.TabIndex = 3;
+            this.btnVer.TabIndex = 2;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
@@ -180,7 +180,7 @@
             this.btnModificar.Location = new System.Drawing.Point(90, 9);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(80, 28);
-            this.btnModificar.TabIndex = 2;
+            this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -227,7 +227,6 @@
             this.CHCORRELATIVO.HeaderText = "N° PEDIDO";
             this.CHCORRELATIVO.Name = "CHCORRELATIVO";
             this.CHCORRELATIVO.ReadOnly = true;
-            this.CHCORRELATIVO.Width = 80;
             // 
             // CHFECHA
             // 

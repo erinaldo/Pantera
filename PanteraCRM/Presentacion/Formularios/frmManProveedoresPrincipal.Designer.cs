@@ -66,7 +66,7 @@
             this.groupBox1.Location = new System.Drawing.Point(104, 400);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(456, 54);
-            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // btnAnadir
@@ -76,7 +76,7 @@
             this.btnAnadir.Location = new System.Drawing.Point(8, 17);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(80, 28);
-            this.btnAnadir.TabIndex = 8;
+            this.btnAnadir.TabIndex = 1;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
@@ -88,7 +88,7 @@
             this.btnImprimir.Location = new System.Drawing.Point(278, 17);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(80, 28);
-            this.btnImprimir.TabIndex = 13;
+            this.btnImprimir.TabIndex = 4;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
@@ -100,7 +100,7 @@
             this.btnModificar.Location = new System.Drawing.Point(98, 17);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(80, 28);
-            this.btnModificar.TabIndex = 9;
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -112,7 +112,7 @@
             this.btnVer.Location = new System.Drawing.Point(188, 17);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(80, 28);
-            this.btnVer.TabIndex = 10;
+            this.btnVer.TabIndex = 3;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
@@ -125,7 +125,7 @@
             this.btnSalir.Location = new System.Drawing.Point(368, 17);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -137,7 +137,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(647, 43);
-            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // label1
@@ -192,8 +192,9 @@
             this.dgvListadoProveedores.Location = new System.Drawing.Point(12, 51);
             this.dgvListadoProveedores.Name = "dgvListadoProveedores";
             this.dgvListadoProveedores.ReadOnly = true;
+            this.dgvListadoProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListadoProveedores.Size = new System.Drawing.Size(647, 343);
-            this.dgvListadoProveedores.TabIndex = 19;
+            this.dgvListadoProveedores.TabIndex = 1;
             // 
             // IDPROVE
             // 
@@ -225,6 +226,7 @@
             this.TIPODOCU.HeaderText = "TIPO DOCUMENTO";
             this.TIPODOCU.Name = "TIPODOCU";
             this.TIPODOCU.ReadOnly = true;
+            this.TIPODOCU.Width = 140;
             // 
             // NRODOCU
             // 
@@ -232,7 +234,6 @@
             this.NRODOCU.HeaderText = "N° DOCUMENTO";
             this.NRODOCU.Name = "NRODOCU";
             this.NRODOCU.ReadOnly = true;
-            this.NRODOCU.Width = 80;
             // 
             // CHDIRECCION
             // 

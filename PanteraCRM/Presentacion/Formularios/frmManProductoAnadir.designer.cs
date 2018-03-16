@@ -414,8 +414,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmManProductoAnadir";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AÑADIR PRODUCTO";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmManProductoAnadir_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

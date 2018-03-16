@@ -91,8 +91,9 @@
             this.dgvListaPrecios.Location = new System.Drawing.Point(12, 57);
             this.dgvListaPrecios.Name = "dgvListaPrecios";
             this.dgvListaPrecios.ReadOnly = true;
+            this.dgvListaPrecios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPrecios.Size = new System.Drawing.Size(647, 335);
-            this.dgvListaPrecios.TabIndex = 0;
+            this.dgvListaPrecios.TabIndex = 1;
             // 
             // IDPRODUCTO
             // 
@@ -237,7 +238,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(647, 48);
-            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtParametro
@@ -246,7 +247,7 @@
             this.txtParametro.Location = new System.Drawing.Point(67, 17);
             this.txtParametro.Name = "txtParametro";
             this.txtParametro.Size = new System.Drawing.Size(574, 20);
-            this.txtParametro.TabIndex = 16;
+            this.txtParametro.TabIndex = 0;
             this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
             // 
             // groupBox2
@@ -258,7 +259,7 @@
             this.groupBox2.Location = new System.Drawing.Point(151, 401);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(368, 50);
-            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
             // frmManListaPrecioPrincipal

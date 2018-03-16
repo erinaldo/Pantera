@@ -58,10 +58,10 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtidcodigo = new System.Windows.Forms.TextBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.mskFecha = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtsubtotal = new System.Windows.Forms.TextBox();
@@ -372,18 +372,6 @@
             this.txtidcodigo.TabIndex = 10;
             this.txtidcodigo.Visible = false;
             // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(63, 46);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(38, 20);
-            this.txtCantidad.TabIndex = 2;
-            this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
-            this.txtCantidad.Enter += new System.EventHandler(this.txtCantidad_Enter);
-            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
-            this.txtCantidad.Validated += new System.EventHandler(this.txtCantidad_Validated);
-            // 
             // mskFecha
             // 
             this.mskFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(210)))));
@@ -408,6 +396,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtsubtotal);
@@ -415,7 +404,6 @@
             this.groupBox1.Controls.Add(this.txtMedida);
             this.groupBox1.Controls.Add(this.txtNombreconpuesto);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtcodprod);
             this.groupBox1.Location = new System.Drawing.Point(12, 1);
@@ -423,6 +411,17 @@
             this.groupBox1.Size = new System.Drawing.Size(560, 84);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.CausesValidation = false;
+            this.txtCantidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCantidad.Location = new System.Drawing.Point(63, 46);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(38, 20);
+            this.txtCantidad.TabIndex = 19;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // label7
             // 
@@ -544,7 +543,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtidcodigo;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.MaskedTextBox mskFecha;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label txtfecfabri;
@@ -566,5 +564,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHINFORME;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHINFORMEFECHA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHINFORMEOBS;
+        private System.Windows.Forms.TextBox txtCantidad;
     }
 }

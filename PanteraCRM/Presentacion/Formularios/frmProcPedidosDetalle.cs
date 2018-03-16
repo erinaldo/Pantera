@@ -109,7 +109,7 @@ namespace Presentacion
                 }
                 txtDescripcion.Text = ProductoG.chnombrecompuesto;
                 txtImporte.Text = "0.00";
-                txtPreUnit.Text = ProductoG.nuprecio.ToString();
+                txtPreUnit.Text = string.Format("{0:0,0.00}", ProductoG.nuprecio.ToString("N2"));
                 txtMedida.Text = ProductoG.chunidadmedidaproducto;
                 dgvListaProdSeries.Rows.Clear();
                 cargarData(0, ProductoG.p_inidproducto);
@@ -284,7 +284,7 @@ namespace Presentacion
             }
             if (txtCant.Text.Length > 0)
             {
-                cantidad = int.Parse(txtCant.Text);
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCant.Text));
             }
             if (txtStock.Text.Length > 0)
             {
@@ -314,7 +314,7 @@ namespace Presentacion
             }
             if (txtCant.Text.Length > 0)
             {
-                cantidad = int.Parse(txtCant.Text);
+                cantidad = Decimal.ToInt32(decimal.Parse(txtCant.Text));
             }
             if (txtStock.Text.Length > 0)
             {
@@ -547,8 +547,6 @@ namespace Presentacion
 
         private void txtCant_Validated(object sender, EventArgs e)
         {
-            TextBox textboxusado = (TextBox)sender;
-            utilidades.ValidarNumero(ref textboxusado, e);
         }
         private void txtDesc1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -562,8 +560,11 @@ namespace Presentacion
         }
         private void txtCant_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox textboxusado = (TextBox)sender;
-            utilidades.solonumeros(ref textboxusado, e);
+            if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
+            {
+                e.Handled = true;
+
+            }
         }
 
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)

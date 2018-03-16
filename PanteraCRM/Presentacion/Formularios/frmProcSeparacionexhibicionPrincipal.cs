@@ -55,12 +55,12 @@ namespace Presentacion
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSeparacionexhibicionAnadir);
-            if (frm != null)
-            {
-                frm.BringToFront();
-                return;
-            }
+            //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcSeparacionexhibicionAnadir);
+            //if (frm != null)
+            //{
+            //    frm.BringToFront();
+            //    return;
+            //}
             frmProcSeparacionexhibicionAnadir f = new frmProcSeparacionexhibicionAnadir(vBoton);
             f.pasado += new frmProcSeparacionexhibicionAnadir.pasar(ejecutar);
             f.tmpProductoSerie = new productoserie();
@@ -76,8 +76,8 @@ namespace Presentacion
             f.tmpProductoSerie.chinformefecha = (string)dgvListaExhibicion.CurrentRow.Cells["CHINFORMEFECHA"].Value;
             f.tmpProductoSerie.chcodigo = (string)dgvListaExhibicion.CurrentRow.Cells["CHCODIGOSERIE"].Value;
             f.tmpProductoSerie.identificador = (string)dgvListaExhibicion.CurrentRow.Cells["CHIDENTIFICADOR"].Value;
-            f.MdiParent = this.MdiParent;
-            f.Show();
+            //f.MdiParent = this.MdiParent;
+            f.ShowDialog();
         }
         public void cargarData(int registro,string parametro)
         {
