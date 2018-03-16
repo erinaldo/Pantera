@@ -16,7 +16,7 @@ namespace Presentacion.Reportes
     {
 
         public CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt = new CrystalDecisions.CrystalReports.Engine.ReportDocument();
-        internal string  codigopedido;
+        internal string codigopedido;
         internal string tipocomprobante;
         internal int p_inidcodigopedido;
         public FrmReporte()
@@ -28,14 +28,14 @@ namespace Presentacion.Reportes
         {
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
-            this.CrpViewer.ReportSource = Rpt;            
-            CargarDatosCorrelativos();
+            this.CrpViewer.ReportSource = Rpt;
+            CargarDatosCorrelativos(tipocomprobante);
         }
-        private void CargarDatosCorrelativos()
+        private void CargarDatosCorrelativos(string tipocomprobante1)
         {
             txtfecha.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
             txtCorrePedi.Text = codigopedido;
-            if (tipocomprobante == "BV")
+            if (tipocomprobante1 == "BV")
             {
                 lblCorrePrimario.Text = "BV";
                 txtCorrePrimario.Text = generarCodigoNE.ObtenerCorrelativoBoleta(sesion.SessionGlobal.p_inidpuntoventa);
@@ -46,7 +46,7 @@ namespace Presentacion.Reportes
             }
             else
             {
-                if (tipocomprobante == "FC")
+                if (tipocomprobante1 == "FC")
                 {
                     lblCorrePrimario.Text = "FC";
                     txtCorrePrimario.Text = generarCodigoNE.ObtenercorrelativoFactura(sesion.SessionGlobal.p_inidpuntoventa);
@@ -57,7 +57,7 @@ namespace Presentacion.Reportes
                 }
                 else
                 {
-                    if (tipocomprobante == "FG")
+                    if (tipocomprobante1 == "FG")
                     {
                         lblCorrePrimario.Text = "FC";
                         txtCorrePrimario.Text = generarCodigoNE.ObtenercorrelativoFactura(sesion.SessionGlobal.p_inidpuntoventa);
@@ -66,7 +66,7 @@ namespace Presentacion.Reportes
                     }
                     else
                     {
-                        if (tipocomprobante == "BG")
+                        if (tipocomprobante1 == "BG")
                         {
                             lblCorrePrimario.Text = "BV";
                             txtCorrePrimario.Text = generarCodigoNE.ObtenerCorrelativoBoleta(sesion.SessionGlobal.p_inidpuntoventa);
@@ -75,7 +75,7 @@ namespace Presentacion.Reportes
                         }
                         else
                         {
-                            if (tipocomprobante == "GR")
+                            if (tipocomprobante1 == "GR")
                             {
                                 lblCorrePrimario.Visible = false;
                                 txtCorrePrimario.Visible = false;
@@ -87,7 +87,7 @@ namespace Presentacion.Reportes
                             }
                             else
                             {
-                                if (tipocomprobante == "NV")
+                                if (tipocomprobante1 == "NV")
                                 {
                                     lblCorrePrimario.Text = "NV";
                                     txtCorrePrimario.Text = generarCodigoNE.ObtenerCorrelativoNotaVenta(sesion.SessionGlobal.p_inidpuntoventa);

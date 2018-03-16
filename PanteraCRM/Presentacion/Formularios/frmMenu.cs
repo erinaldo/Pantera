@@ -14,7 +14,6 @@ using System.Globalization;
 using System.Collections;
 using System.Reflection;
 
-using siempreEncima_cs.elGuille.Util;
 namespace Presentacion
 {
     public partial class frmMenu : Form

@@ -37,12 +37,16 @@ namespace Negocios
         {
             return pedidoDL.CabeceraCambiarEstado(parametro,codigo);
         }
-        /**/
+        /*INICIO :: INGRESO COMPROBANTES FACTURADOS*/
         public static int IngresoComprobantesGenerado(pedidoguicomp registros)
         {
             return pedidoDL.IngresoComprobantesGenerado(registros);
         }
-        /**/
+        public static pedidoguicomp BuscarComprobantesFacturados(string registros,string parametro)
+        {
+            return pedidoDL.BuscarComprobantesFacturados(registros, parametro);
+        }
+        /*FIN :: INGRESO COMPROBANTES FACTURADOS*/
 
     }
 }

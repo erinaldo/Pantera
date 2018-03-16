@@ -9,42 +9,44 @@ namespace Presentacion.Programas
 {
     public abstract class utilidades
     {
-     
-        public  class WinAPI
+        public static void SetTextBoxSelectAll(TextBox txtbox)
         {
-            // Constantes para SetWindowsPos
-            //   Valores de wFlags
-            const int SWP_NOSIZE = 0x1;
-            const int SWP_NOMOVE = 0x2;
-            const int SWP_NOACTIVATE = 0x10;
-            const int wFlags = SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE;
-            //   Valores de hwndInsertAfter
-            const int HWND_TOPMOST = -1;
-            const int HWND_NOTOPMOST = -2;
-            //
-            /// <summary>
-            /// Para mantener la ventana siempre visible
-            /// </summary>
-            /// <remarks>No utilizamos el valor devuelto</remarks>
-            [DllImport("user32.DLL")]
-            private extern static void SetWindowPos(
-                int hWnd, int hWndInsertAfter,
-                int X, int Y,
-                int cx, int cy,
-                int wFlags);
-
-            public static void SiempreEncima(int handle)
+            txtbox.SelectionStart = 0;
+            txtbox.SelectionLength = txtbox.Text.Length;
+        }
+        public static void ValidarCampoDocumento(ref TextBox textboxusado, EventArgs e)
+        {
+            if (!esnumero(textboxusado.Text))
             {
-                SetWindowPos(handle, HWND_TOPMOST, 0, 0, 0, 0, wFlags);
+                textboxusado.Text = string.Empty;
             }
-
-            public static void NoSiempreEncima(int handle)
+            else
             {
-                SetWindowPos(handle, HWND_NOTOPMOST, 0, 0, 0, 0, wFlags);
+                textboxusado.Text = DevovlerCadenaLLena(textboxusado.Text);
             }
         }
-    
-    public static bool esnumero(string comprueba)
+        private static string DevovlerCadenaLLena(string cadena)
+        {
+            return Reverse(Reverse("0000000000" + cadena).Substring(0, 10));
+        }
+        private static string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+        public static void ValidarNroDocumento(ref TextBox textboxusado, EventArgs e)
+        {
+            if (!esnumero(textboxusado.Text))
+            {
+                textboxusado.Text = "0.00";
+            }
+            else
+            {
+                textboxusado.Text = string.Format("{0:0,0.00}", Convert.ToDecimal(textboxusado.Text).ToString("N2"));
+            }
+        }
+        public static bool esnumero(string comprueba)
         {
 
             double Numero; // Necesario pero nosotros no lo utilizamos
@@ -53,6 +55,7 @@ namespace Presentacion.Programas
             return Double.TryParse(comprueba, System.Globalization.NumberStyles.Any, System.Globalization.NumberFormatInfo.InvariantInfo, out Numero);
 
         }
+
         public static void ValidarNumero(ref TextBox textboxusado, EventArgs e)
         {
             if (!esnumero(textboxusado.Text))

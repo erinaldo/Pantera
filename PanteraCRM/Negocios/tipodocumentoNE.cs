@@ -13,6 +13,11 @@ namespace Negocios
         {
             return tipodocumentoDL.ListarTipoDocumentosVenta();
         }
+        public static List<tipodocumento> ListarTipoDocumentosVentaParametro(bool parametro)
+        {
+            return tipodocumentoDL.ListarTipoDocumentosVentaParametro(parametro);
+        }
+        
         public static tipodocumento documentoVentaBusquedacodigo(int codigo)
         {
             return tipodocumentoDL.documentoVentaBusquedacodigo(codigo);

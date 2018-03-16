@@ -183,7 +183,7 @@ namespace Presentacion
             {
                 foreach (tipocambio obj2 in listado2)
                 {
-                    txtTipoCambio.Text = "" + obj2.nucambioventa;
+                    txtTipoCambio.Text = string.Format("{0:0,0.00}", obj2.nucambioventa.ToString("N2")); ;
                 }
 
             }
@@ -359,11 +359,62 @@ namespace Presentacion
             sesion.pedidodetallecontenido = null;
            this.Dispose();
         }
+        internal string correlativo;
+        internal string nombrecompro;
+        private void CargarDatosCorrelativos(string tipocomprobante1)
+        {
+            switch (tipocomprobante1)
+            {
+                case "BV":
+                    {
+
+                        correlativo = "BOLETA DE VENTA";
+                        nombrecompro = generarCodigoNE.ObtenerCorrelativoBoleta(sesion.SessionGlobal.p_inidpuntoventa);
+                    }
+                    break;
+                case "FC":
+                    {
+
+                        correlativo = "FACTURA";
+                        nombrecompro = generarCodigoNE.ObtenercorrelativoFactura(sesion.SessionGlobal.p_inidpuntoventa);
+                    }
+                    break;
+                case "FG":
+                    {
+
+                        correlativo = "FACTURA";
+                        nombrecompro = generarCodigoNE.ObtenercorrelativoFactura(sesion.SessionGlobal.p_inidpuntoventa);
+                    }
+                    break;
+                case "BG":
+                    {
+
+                        correlativo = "BOLETA DE VENTA";
+                        nombrecompro = generarCodigoNE.ObtenercorrelativoFactura(sesion.SessionGlobal.p_inidpuntoventa);
+                    }
+                    break;
+                case "GR":
+                    {
+
+                        correlativo = "NOTA DE VENTA";
+                        nombrecompro = generarCodigoNE.ObtenerCorrelativoGuia(sesion.SessionGlobal.p_inidpuntoventa);
+                    }
+                    break;
+                case "NV":
+                    {
+
+                        correlativo = "NOTA DE VENTA";
+                        nombrecompro = generarCodigoNE.ObtenerCorrelativoNotaVenta(sesion.SessionGlobal.p_inidpuntoventa);
+                    }
+                    break;
+            }
+        }
         private void MostrarVistaImpresion()
         {
             Reportes.FrmReporte f = new Reportes.FrmReporte();
             f.tipocomprobante = cboTipoDocu.Text;
             f.codigopedido = txtNroPedido.Text;
+            CargarDatosCorrelativos(cboTipoDocu.Text);
             f.p_inidcodigopedido = CodigoCabecera;
             CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt1;
             DataSet Dts = new DtsPedidos();
@@ -387,8 +438,8 @@ namespace Presentacion
                 txtVencLicencia.Text,
                 cboTarjeta.Text,
                 txtFechaVenciTarjeta.Text,
-                cboTipoDocu.Text,
-                "003-0001",
+                correlativo,
+                nombrecompro,
                 basicas.Convertir(cadenatotol.ToString(),true),
                 //txtValVenta.Text,
                 string.Format("{0:0,0.00}", decimal.Parse(txtValVenta.Text)),

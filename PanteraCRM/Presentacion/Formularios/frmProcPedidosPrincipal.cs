@@ -14,6 +14,8 @@ namespace Presentacion
 {
     public partial class frmProcPedidosPrincipal : Form
     {
+        internal string correlativo = "";
+        internal string nombrecompro = "";
         public frmProcPedidosPrincipal()
         {
             InitializeComponent();
@@ -295,6 +297,54 @@ namespace Presentacion
                 }
             }
         }
+        private void CargarDatosCorrelativos(string tipocomprobante1)
+        {
+            switch (tipocomprobante1)
+            {
+                case "BV":
+                    {
+
+                        correlativo = "BOLETA DE VENTA";
+                        nombrecompro = generarCodigoNE.ObtenerCorrelativoBoleta(sesion.SessionGlobal.p_inidpuntoventa);
+                    }
+                    break;
+                case "FC":
+                    {
+
+                        correlativo = "FACTURA";
+                        nombrecompro = generarCodigoNE.ObtenercorrelativoFactura(sesion.SessionGlobal.p_inidpuntoventa);
+                    }
+                    break;
+                case "FG":
+                    {
+
+                        correlativo = "FACTURA";
+                        nombrecompro = generarCodigoNE.ObtenercorrelativoFactura(sesion.SessionGlobal.p_inidpuntoventa);
+                    }
+                    break;
+                case "BG":
+                    {
+
+                        correlativo = "BOLETA DE VENTA";
+                        nombrecompro = generarCodigoNE.ObtenercorrelativoFactura(sesion.SessionGlobal.p_inidpuntoventa);
+                    }
+                    break;
+                case "GR":
+                    {
+
+                        correlativo = "NOTA DE VENTA";
+                        nombrecompro = generarCodigoNE.ObtenerCorrelativoGuia(sesion.SessionGlobal.p_inidpuntoventa);
+                    }
+                    break;
+                case "NV":
+                    {
+
+                        correlativo = "NOTA DE VENTA";
+                        nombrecompro = generarCodigoNE.ObtenerCorrelativoNotaVenta(sesion.SessionGlobal.p_inidpuntoventa);
+                    }
+                    break;
+            }
+        }
         private void CargarDatosCabecera(int CodigoPedidoCabecera)
         {
             pedidocabecera pedCab = pedidoNE.PedidoCabeceraBusquedaCodigo(CodigoPedidoCabecera);
@@ -334,6 +384,7 @@ namespace Presentacion
                 }
             }
             f.tipocomprobante = tipocodicmento;
+            CargarDatosCorrelativos(tipocodicmento);
             f.codigopedido = pedCab.chcodigopedido;
             f.p_inidcodigopedido = CodigoPedidoCabecera;
             CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt1;
@@ -357,8 +408,9 @@ namespace Presentacion
                 LicenciaG.fechavencimiento,
                 tarjeta,
                 vencimiento,
-                tipocodicmento,
-                "003-0001",
+
+                 correlativo,
+            nombrecompro,
                 basicas.Convertir(pedCab.nutotalventamonnacional.ToString(),true),
                 //txtValVenta.Text,
                 string.Format("{0:0,0.00}", pedCab.nuventainafectamonnacional),

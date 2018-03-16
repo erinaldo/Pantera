@@ -83,6 +83,24 @@ namespace Datos
               );
          
         }
+        
+            public static pedidoguicomp BuscarComprobantesFacturados(string registros, string parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_pedidofact_busqueda", CommandType.StoredProcedure, new parametro("in_parametro", registros), new parametro("in_codigo", parametro)))
+            {
+                pedidoguicomp registro = new pedidoguicomp();
+                while (datareader.Read())
+                {
+                    registro.p_inidpedidoguicomp = Convert.ToInt32(datareader["p_inidpedidoguicomp"]);
+                    registro.chcodigopedido = Convert.ToString(datareader["chcodigopedido"]).Trim();
+                    registro.chguiaremision = Convert.ToString(datareader["chguiaremision"]).Trim();
+                    registro.chcomprobante = Convert.ToString(datareader["chcomprobante"]).Trim();
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                }
+                return registro;
+            }
+
+        }
         public static int IngresoComprobantesGenerado(pedidoguicomp registros)
         {
             return conexion.executeScalar("fn_pedidoguicomp_ingresar",

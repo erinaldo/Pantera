@@ -279,6 +279,12 @@
     <Compile Include="Formularios\frmManVariosPrincipal.Designer.cs">
       <DependentUpon>frmManVariosPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmProcCancelacionCuentasDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcCancelacionCuentasDetalle.Designer.cs">
+      <DependentUpon>frmProcCancelacionCuentasDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmProcCancelacionCuentasPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +302,12 @@
     </Compile>
     <Compile Include="Formularios\frmProcKardexProductoDetalle.Designer.cs">
       <DependentUpon>frmProcKardexProductoDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProcNotaCrediDevModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcNotaCrediDevModificar.Designer.cs">
+      <DependentUpon>frmProcNotaCrediDevModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmProcPedidosCabecera.cs">
       <SubType>Form</SubType>
@@ -513,7 +525,6 @@
     <Compile Include="Formularios\PrincipalOpcional.Designer.cs">
       <DependentUpon>PrincipalOpcional.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\utilidades.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Programas\basicas.cs" />
     <Compile Include="Programas\converntirNenL.cs">
@@ -673,6 +684,9 @@
     <EmbeddedResource Include="Formularios\frmManVariosPrincipal.resx">
       <DependentUpon>frmManVariosPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcCancelacionCuentasDetalle.resx">
+      <DependentUpon>frmProcCancelacionCuentasDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcCancelacionCuentasPrincipal.resx">
       <DependentUpon>frmProcCancelacionCuentasPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -684,6 +698,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcKardexProductoPrincipal.resx">
       <DependentUpon>frmProcKardexProductoPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcNotaCrediDevModificar.resx">
+      <DependentUpon>frmProcNotaCrediDevModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcNotaCrediDevPrincipal.resx">
       <DependentUpon>frmProcNotaCrediDevPrincipal.cs</DependentUpon>

@@ -711,3 +711,5 @@ C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Prese
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmRepoVentasPrincipal.resources
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmSecuUsuariosPrincipal.resources
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Reportes.FrmReportesM.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.Formularios.frmProcCancelacionCuentasDetalle.resources
+C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaCrediDevModificar.resources

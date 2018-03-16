@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion.Programas;
-using siempreEncima_cs.elGuille.Util;
 namespace Presentacion
 {
     public partial class frmManProductoPrincipal : Form
