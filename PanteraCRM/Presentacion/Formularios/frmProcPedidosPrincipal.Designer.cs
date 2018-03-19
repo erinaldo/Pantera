@@ -49,11 +49,11 @@
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnVer = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -221,28 +221,6 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.button4_Click);
             // 
-            // btnVer
-            // 
-            this.btnVer.BackColor = System.Drawing.Color.White;
-            this.btnVer.Location = new System.Drawing.Point(176, 9);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(80, 28);
-            this.btnVer.TabIndex = 2;
-            this.btnVer.Text = "&Ver";
-            this.btnVer.UseVisualStyleBackColor = false;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(90, 9);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(80, 28);
-            this.btnModificar.TabIndex = 1;
-            this.btnModificar.Text = "&Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label1);
@@ -270,6 +248,28 @@
             this.txtParametro.Size = new System.Drawing.Size(734, 20);
             this.txtParametro.TabIndex = 0;
             this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.White;
+            this.btnModificar.Location = new System.Drawing.Point(90, 9);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(80, 28);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "&Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackColor = System.Drawing.Color.White;
+            this.btnVer.Location = new System.Drawing.Point(176, 9);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(80, 28);
+            this.btnVer.TabIndex = 2;
+            this.btnVer.Text = "&Ver";
+            this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // frmProcPedidosPrincipal
             // 
@@ -306,8 +306,6 @@
         private System.Windows.Forms.DataGridView dgvPedidos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnVer;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -320,5 +318,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHDOC;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHTOTAL;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHESTADO;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

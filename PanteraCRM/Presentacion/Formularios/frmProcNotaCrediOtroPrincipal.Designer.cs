@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcNotaCrediOtroPrincipal));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnGrabar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -42,7 +42,11 @@
             this.txtIgv = new System.Windows.Forms.TextBox();
             this.txtxDesc = new System.Windows.Forms.TextBox();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
+            this.btnGrabar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.cboTipdoc = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,10 +66,6 @@
             this.txtFecha = new System.Windows.Forms.MaskedTextBox();
             this.txtNotaCorrelativo = new System.Windows.Forms.TextBox();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -92,30 +92,22 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             // 
-            // btnGrabar
+            // label16
             // 
-            this.btnGrabar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(6, 12);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 4;
-            this.btnGrabar.Text = "&Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = false;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(8, 16);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 13);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Descripción:";
             // 
-            // btnSalir
+            // richTextBox1
             // 
-            this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
-            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(92, 12);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 5;
-            this.btnSalir.Text = "&Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            this.richTextBox1.Location = new System.Drawing.Point(11, 41);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(714, 93);
+            this.richTextBox1.TabIndex = 25;
+            this.richTextBox1.Text = "";
             // 
             // label14
             // 
@@ -227,6 +219,31 @@
             this.txtSubTotal.TabStop = false;
             this.txtSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // btnGrabar
+            // 
+            this.btnGrabar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.Location = new System.Drawing.Point(6, 12);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(80, 28);
+            this.btnGrabar.TabIndex = 4;
+            this.btnGrabar.Text = "&Grabar";
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(92, 12);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
+            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox1);
@@ -255,6 +272,23 @@
             this.groupBox1.Size = new System.Drawing.Size(739, 107);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(632, 75);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 21;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(588, 78);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Dsc. %";
             // 
             // cboTipdoc
             // 
@@ -447,40 +481,6 @@
             this.txtNroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDocumento_KeyPress);
             this.txtNroDocumento.Validated += new System.EventHandler(this.txtNroDocumento_Validated);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(588, 78);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Dsc. %";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(632, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 21;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(11, 41);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(714, 93);
-            this.richTextBox1.TabIndex = 25;
-            this.richTextBox1.Text = "";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(8, 16);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 13);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Descripción:";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnGrabar);
@@ -493,9 +493,11 @@
             // 
             // frmProcNotaCrediOtroPrincipal
             // 
+            this.AcceptButton = this.btnGrabar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(768, 369);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

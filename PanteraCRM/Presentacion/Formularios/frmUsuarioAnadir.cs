@@ -32,11 +32,11 @@ namespace Presentacion
                     //frmUsuario.cargarData(1);
                     tmpUsuario = new usuario();
                     tmpUsuario.nombre = txtNombre.Text;
-                    tmpUsuario.login = txtLogin.Text;
-                    tmpUsuario.clave = txtClave.Text;
-                    tmpUsuario.idperfil = (int) cboPerfil.SelectedValue;
-                    tmpUsuario.estadousuario = chkEstado.Checked;
-                    varIdUsuario = usuarioNE.usuarioInsertar(tmpUsuario);
+                    //tmpUsuario.login = txtLogin.Text;
+                    //tmpUsuario.clave = txtClave.Text;
+                    //tmpUsuario.idperfil = (int) cboPerfil.SelectedValue;
+                    //tmpUsuario.estadousuario = chkEstado.Checked;
+                    varIdUsuario = 0;// usuarioNE.usuarioInsertar(tmpUsuario);
                     if (varIdUsuario <= 0)
                     {
                         MessageBox.Show("Registro errado, validar");
@@ -49,11 +49,11 @@ namespace Presentacion
                     break;
                 case "M":
                     tmpUsuario.nombre = txtNombre.Text;
-                    tmpUsuario.login = txtLogin.Text;
-                    tmpUsuario.clave = txtClave.Text;
-                    tmpUsuario.idperfil = (int)cboPerfil.SelectedValue;
-                    tmpUsuario.estadousuario = chkEstado.Checked;
-                    varIdUsuario = usuarioNE.usuarioActualizar(tmpUsuario);
+                    //tmpUsuario.login = txtLogin.Text;
+                    //tmpUsuario.clave = txtClave.Text;
+                    //tmpUsuario.idperfil = (int)cboPerfil.SelectedValue;
+                    //tmpUsuario.estadousuario = chkEstado.Checked;
+                    varIdUsuario = 0;// usuarioNE.usuarioActualizar(tmpUsuario);
                     if (varIdUsuario <= 0)
                     {
                         MessageBox.Show("Registro errado, validar");
@@ -93,22 +93,22 @@ namespace Presentacion
                 if (this.vBoton == "M")
                 {
                     this.Text = "MODIFICAR USUARIO";
-                    txtNombre.Text = tmpUsuario.nombre;
-                    txtLogin.Text = tmpUsuario.login;
-                    txtClave.Text = tmpUsuario.clave;
-                    cboPerfil.SelectedValue = tmpUsuario.idperfil;
-                    chkEstado.Checked = tmpUsuario.estadousuario;
+                    //txtNombre.Text = tmpUsuario.nombre;
+                    //txtLogin.Text = tmpUsuario.login;
+                    //txtClave.Text = tmpUsuario.clave;
+                    //cboPerfil.SelectedValue = tmpUsuario.idperfil;
+                    //chkEstado.Checked = tmpUsuario.estadousuario;
                 }
                 else
                    if(this.vBoton == "V")
                     {
                         this.Text = "VER USUARIO";
-                        txtNombre.Text = tmpUsuario.nombre;
-                        txtLogin.Text = tmpUsuario.login;
-                        txtClave.Text = tmpUsuario.clave;
-                        cboPerfil.SelectedValue = tmpUsuario.idperfil;
-                        chkEstado.Checked = tmpUsuario.estadousuario;
-                        btnGrabar.Enabled = false;
+                        //txtNombre.Text = tmpUsuario.nombre;
+                        //txtLogin.Text = tmpUsuario.login;
+                        //txtClave.Text = tmpUsuario.clave;
+                        //cboPerfil.SelectedValue = tmpUsuario.idperfil;
+                        //chkEstado.Checked = tmpUsuario.estadousuario;
+                        //btnGrabar.Enabled = false;
                     }
                 }
 

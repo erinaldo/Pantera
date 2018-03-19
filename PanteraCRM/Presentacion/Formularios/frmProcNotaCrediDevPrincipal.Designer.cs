@@ -55,6 +55,8 @@
             this.NUIMPORTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -87,8 +89,6 @@
             this.txtFecha = new System.Windows.Forms.MaskedTextBox();
             this.txtNotaCorrelativo = new System.Windows.Forms.TextBox();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPedidoDetalle)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -298,6 +298,30 @@
             this.IDSERIE.Name = "IDSERIE";
             this.IDSERIE.ReadOnly = true;
             this.IDSERIE.Visible = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(92, 199);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(80, 28);
+            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Text = "&Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(6, 199);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(80, 28);
+            this.btnModificar.TabIndex = 2;
+            this.btnModificar.Text = "&Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnGrabar
             // 
@@ -651,30 +675,6 @@
             this.txtNroDocumento.Enter += new System.EventHandler(this.txtNroDocumento_Enter);
             this.txtNroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDocumento_KeyPress);
             this.txtNroDocumento.Validated += new System.EventHandler(this.txtNroDocumento_Validated);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(6, 199);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(80, 28);
-            this.btnModificar.TabIndex = 2;
-            this.btnModificar.Text = "&Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(92, 199);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(80, 28);
-            this.btnEliminar.TabIndex = 3;
-            this.btnEliminar.Text = "&Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmProcNotaCrediDevPrincipal
             // 

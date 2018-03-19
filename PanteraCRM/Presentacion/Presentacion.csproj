@@ -165,6 +165,18 @@
     <Compile Include="Formularios\frmConsCobranzaDocuVentaPrincipal.Designer.cs">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmConsEstadoCuentaDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConsEstadoCuentaDetalle.Designer.cs">
+      <DependentUpon>frmConsEstadoCuentaDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmConsVentasDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConsVentasDetalle.Designer.cs">
+      <DependentUpon>frmConsVentasDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmFondo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -624,8 +636,14 @@
     <EmbeddedResource Include="Formularios\frmConsCuentasCobrarPrincipal.resx">
       <DependentUpon>frmConsCuentasCobrarPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConsEstadoCuentaDetalle.resx">
+      <DependentUpon>frmConsEstadoCuentaDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsEstadoCuentaPrincipal.resx">
       <DependentUpon>frmConsEstadoCuentaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConsVentasDetalle.resx">
+      <DependentUpon>frmConsVentasDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsVentasPrincipal.resx">
       <DependentUpon>frmConsVentasPrincipal.cs</DependentUpon>

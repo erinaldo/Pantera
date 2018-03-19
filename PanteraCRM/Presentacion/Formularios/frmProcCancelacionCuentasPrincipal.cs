@@ -28,5 +28,11 @@ namespace Presentacion
         {
             this.Dispose();
         }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            frmProcCancelacionCuentasDetalle f = new frmProcCancelacionCuentasDetalle();
+            f.ShowDialog();
+        }
     }
 }

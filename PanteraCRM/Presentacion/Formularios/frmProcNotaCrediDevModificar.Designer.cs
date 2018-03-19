@@ -282,7 +282,7 @@
             // 
             this.groupBox3.Controls.Add(this.btnGrabar);
             this.groupBox3.Controls.Add(this.btnSalir);
-            this.groupBox3.Location = new System.Drawing.Point(245, 134);
+            this.groupBox3.Location = new System.Drawing.Point(245, 129);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(178, 47);
             this.groupBox3.TabIndex = 21;
@@ -320,7 +320,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(668, 190);
+            this.ClientSize = new System.Drawing.Size(668, 182);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

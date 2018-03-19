@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class frmConsCobranzaDocuVentaPrincipal : Form
+    public partial class frmConsEstadoCuentaDetalle : Form
     {
-        public frmConsCobranzaDocuVentaPrincipal()
+        public frmConsEstadoCuentaDetalle()
         {
             InitializeComponent();
         }
 
-        private void frmConsCobranzaDocuVentaPrincipal_Load(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void frmConsEstadoCuentaDetalle_Load(object sender, EventArgs e)
         {
 
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;

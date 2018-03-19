@@ -142,6 +142,19 @@ namespace Presentacion
             }
             CargarTablaDetalle();
         }
+        private void PonerVendedor(int codigo)
+        {
+            usuario usuario = usuarioNE.buscarPorCodigo(codigo);
+            persona Persona = personaNE.PersonaBusquedaCodigo(usuario.p_inidpersona);
+            if (Persona.p_inidpersona != 0)
+            {
+                txtVendedor.Text = Persona.chapellidopaterno + " " + Persona.chapellidomaterno + ", " + Persona.chnombres;
+            }
+            else
+            {
+                txtVendedor.Text = "NO ENCONTRADO";
+            }            
+        }
         private void ValidarComprobante()
         {
             if (cboTipdoc.Text == "FC")
@@ -151,6 +164,10 @@ namespace Presentacion
             }else if (cboTipdoc.Text == "BV")
             {
                 busquedaDocumento("B");
+            }
+            else
+            {
+                busquedaDocumento("NV");
             }
         }
         internal pedidoguicomp PedidoFacturado = null;
@@ -192,6 +209,7 @@ namespace Presentacion
             Mcliente Registroscliente = clienteNE.ClienteBusquedaCodigo(pedCab.p_inidcliente);
             BuscarClienteCodigo(Registroscliente.chcodigocliente);
             txtFechaCompro.Text = pedCab.chfechapedido;
+            PonerVendedor(pedCab.p_inidusuarioinsert);
             CargarTablaDetalle();
         }
 
@@ -300,5 +318,7 @@ namespace Presentacion
                 btnGrabar.Enabled = false;
             }
         }
+
+
     }
 }

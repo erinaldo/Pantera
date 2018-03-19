@@ -29,22 +29,22 @@ namespace Negocios
                 throw;
             }
         }
-        public static usuariosesion buscarPorCodigo(int idusuario)
+        public static usuario buscarPorCodigo(int idusuario)
         {
             return usuarioDL.buscarPorCodigo(idusuario);
         }
-        public static List<usuario> usuarioListar()
-        {
-            return usuarioDL.usuarioListar();
-        }
-        public static int usuarioInsertar(usuario usuario)
-        {
-            return usuarioDL.usuarioInsertar(usuario);
-        }
-        public static int usuarioActualizar(usuario usuario)
-        {
-            return usuarioDL.usuarioActualizar(usuario);
-        }
+        //public static List<usuario> usuarioListar()
+        //{
+        //    return usuarioDL.usuarioListar();
+        //}
+        //public static int usuarioInsertar(usuario usuario)
+        //{
+        //    return usuarioDL.usuarioInsertar(usuario);
+        //}
+        //public static int usuarioActualizar(usuario usuario)
+        //{
+        //    return usuarioDL.usuarioActualizar(usuario);
+        //}
     }
     
 }

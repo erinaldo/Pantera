@@ -37,11 +37,12 @@ namespace Presentacion
             txtDesc1.Text = string.Format("{0:0,0.00}", PedidoDetalleContenido.pedidodetalle.nuporcentajedesc1.ToString("N2")); 
             txtDesc2.Text = string.Format("{0:0,0.00}", PedidoDetalleContenido.pedidodetalle.nuporcentajedesc2.ToString("N2"));
             txtPreUnit.Text = string.Format("{0:0,0.00}", PedidoDetalleContenido.pedidodetalle.nuprecioproducto.ToString("N2"));
-            txtStock.Text = PedidoDetalleContenido.pedidodetalle.nucantidad.ToString();
-            txtCant.Text = PedidoDetalleContenido.pedidodetalle.nucantidad.ToString();
+            txtStock.Text = PedidoDetalleContenido.pedidodetalle.nucantidad.ToString();            
             txtMedida.Text = PedidoDetalleContenido.productoparaventa.chunidadmedidaproducto;
+            txtCant.Text = PedidoDetalleContenido.pedidodetalle.nucantidad.ToString();
+           
         }
-
+    
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();

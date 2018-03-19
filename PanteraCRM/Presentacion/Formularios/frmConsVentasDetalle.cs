@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class frmConsVentasPrincipal : Form
+    public partial class frmConsVentasDetalle : Form
     {
-        public frmConsVentasPrincipal()
+        public frmConsVentasDetalle()
         {
             InitializeComponent();
         }
@@ -20,12 +20,6 @@ namespace Presentacion
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-        private void btnVer_Click(object sender, EventArgs e)
-        {
-            frmConsVentasDetalle f = new frmConsVentasDetalle();
-            f.ShowDialog();
         }
     }
 }

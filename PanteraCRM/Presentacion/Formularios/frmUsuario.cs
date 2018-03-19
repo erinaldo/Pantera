@@ -29,7 +29,7 @@ namespace Presentacion
         }
         public void cargarData()
         {
-            List<usuario> listado = usuarioNE.usuarioListar();
+            List<usuario> listado = null;// usuarioNE.usuarioListar();
             dgvUsuario.DataSource = listado;
         }
         private void cmdAnadir_Click(object sender, EventArgs e)
@@ -90,12 +90,12 @@ namespace Presentacion
             frmUsuarioAnadir f = new frmUsuarioAnadir(vBoton);
             f.pasado += new frmUsuarioAnadir.pasar(ejecutar);
             f.tmpUsuario = new usuario();
-            f.tmpUsuario.idusuario = (int)dgvUsuario.CurrentRow.Cells[0].Value;
-            f.tmpUsuario.nombre = (string)(dgvUsuario.CurrentRow.Cells[1].Value);
-            f.tmpUsuario.login = (string)(dgvUsuario.CurrentRow.Cells[2].Value);
-            f.tmpUsuario.clave = (string)(dgvUsuario.CurrentRow.Cells[3].Value);
-            f.tmpUsuario.estadousuario = (bool)(dgvUsuario.CurrentRow.Cells[4].Value);
-            f.tmpUsuario.idperfil = (int)(dgvUsuario.CurrentRow.Cells[5].Value);
+            //f.tmpUsuario.idusuario = (int)dgvUsuario.CurrentRow.Cells[0].Value;
+            //f.tmpUsuario.nombre = (string)(dgvUsuario.CurrentRow.Cells[1].Value);
+            //f.tmpUsuario.login = (string)(dgvUsuario.CurrentRow.Cells[2].Value);
+            //f.tmpUsuario.clave = (string)(dgvUsuario.CurrentRow.Cells[3].Value);
+            //f.tmpUsuario.estadousuario = (bool)(dgvUsuario.CurrentRow.Cells[4].Value);
+            //f.tmpUsuario.idperfil = (int)(dgvUsuario.CurrentRow.Cells[5].Value);
             f.ShowDialog();
 
         }
@@ -116,9 +116,9 @@ namespace Presentacion
             Reportes.FrmReporte f = new Reportes.FrmReporte();
             CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt1;
             DataSet Dts = new DtsUsuario();
-            List<usuario> listado = usuarioNE.usuarioListar();
+            List<usuario> listado = null;// usuarioNE.usuarioListar();
             foreach (usuario x in listado) {
-                Dts.Tables["TUsuario"].LoadDataRow(new object[] { x.idusuario, x.nombre }, true);
+                Dts.Tables["TUsuario"].LoadDataRow(new object[] { x.p_inidperfil, x.nombre }, true);
                 Dts.AcceptChanges();
             }
             Rpt1 = new Reportes.CrpUsuario();

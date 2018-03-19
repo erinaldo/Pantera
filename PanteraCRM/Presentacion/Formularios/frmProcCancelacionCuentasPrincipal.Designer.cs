@@ -39,6 +39,10 @@
             this.btnVer = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.IDCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHRAZON = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -50,7 +54,7 @@
             this.groupBox2.Controls.Add(this.txtParametro);
             this.groupBox2.Location = new System.Drawing.Point(12, 1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(647, 43);
+            this.groupBox2.Size = new System.Drawing.Size(677, 43);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             // 
@@ -68,7 +72,7 @@
             this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtParametro.Location = new System.Drawing.Point(67, 15);
             this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(574, 20);
+            this.txtParametro.Size = new System.Drawing.Size(604, 20);
             this.txtParametro.TabIndex = 0;
             // 
             // groupBox1
@@ -77,7 +81,7 @@
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(246, 399);
+            this.groupBox1.Location = new System.Drawing.Point(261, 399);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(178, 48);
             this.groupBox1.TabIndex = 19;
@@ -93,6 +97,7 @@
             this.btnVer.TabIndex = 10;
             this.btnVer.Text = "&Ver Cuentas";
             this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // btnSalir
             // 
@@ -109,6 +114,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -119,6 +126,11 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDCLIENTE,
+            this.CHCODIGO,
+            this.CHRAZON,
+            this.CHSITUACION});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,6 +141,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(12, 50);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -137,8 +150,38 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(647, 343);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(677, 343);
             this.dataGridView1.TabIndex = 21;
+            // 
+            // IDCLIENTE
+            // 
+            this.IDCLIENTE.HeaderText = "IDCLIENTE";
+            this.IDCLIENTE.Name = "IDCLIENTE";
+            this.IDCLIENTE.ReadOnly = true;
+            this.IDCLIENTE.Visible = false;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 80;
+            // 
+            // CHRAZON
+            // 
+            this.CHRAZON.HeaderText = "RAZON SOCIAL";
+            this.CHRAZON.Name = "CHRAZON";
+            this.CHRAZON.ReadOnly = true;
+            this.CHRAZON.Width = 500;
+            // 
+            // CHSITUACION
+            // 
+            this.CHSITUACION.HeaderText = "SITUACION";
+            this.CHSITUACION.Name = "CHSITUACION";
+            this.CHSITUACION.ReadOnly = true;
+            this.CHSITUACION.Width = 80;
             // 
             // frmProcCancelacionCuentasPrincipal
             // 
@@ -147,7 +190,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(671, 461);
+            this.ClientSize = new System.Drawing.Size(701, 461);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -157,6 +200,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcCancelacionCuentasPrincipal";
+            this.ShowInTaskbar = false;
             this.Text = "CUENTAS POR CANCELAR";
             this.Load += new System.EventHandler(this.frmProcCancelacionCuentasPrincipal_Load);
             this.groupBox2.ResumeLayout(false);
@@ -176,5 +220,9 @@
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHRAZON;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHSITUACION;
     }
 }
