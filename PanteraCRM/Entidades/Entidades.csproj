@@ -69,6 +69,9 @@
     <Compile Include="movimientoproductod.cs" />
     <Compile Include="movimientoproductoaccion.cs" />
     <Compile Include="movimientoproductoc.cs" />
+    <Compile Include="notacreditocabecera.cs" />
+    <Compile Include="notacreditodetalle.cs" />
+    <Compile Include="notadebito.cs" />
     <Compile Include="pedidocabecera.cs" />
     <Compile Include="pedidodetalle.cs" />
     <Compile Include="pedidodetallecontenido.cs" />
@@ -89,6 +92,8 @@
     <Compile Include="proveedorjuridico.cs" />
     <Compile Include="puntoventa.cs" />
     <Compile Include="puntoventasesion.cs" />
+    <Compile Include="Registroguia.cs" />
+    <Compile Include="RegistroVenta.cs" />
     <Compile Include="saldoalmacen.cs" />
     <Compile Include="serie.cs" />
     <Compile Include="seriebuscada.cs" />

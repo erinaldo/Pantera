@@ -56,6 +56,17 @@ namespace Presentacion.Programas
 
         }
 
+        public static void ValidarNumeroMascara(ref MaskedTextBox textboxusado, EventArgs e)
+        {
+            if (!esnumero(textboxusado.Text))
+            {
+                textboxusado.Text = "0.00";
+            }
+            else
+            {
+                textboxusado.Text = string.Format("{0:0,0.00}", Convert.ToDecimal(textboxusado.Text).ToString("N2"));
+            }
+        }
         public static void ValidarNumero(ref TextBox textboxusado, EventArgs e)
         {
             if (!esnumero(textboxusado.Text))

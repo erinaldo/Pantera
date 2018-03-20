@@ -22,6 +22,7 @@ namespace Presentacion
         internal empresas EmpresaG;
         internal persona PersonaG;
         internal List<tarjetapropiedad> ListaTarjetasdePropiedad;
+        internal List<licencia> ListaLicencias;
         public delegate void pasar(int varreg);
         public event pasar pasado;
         public frmManClienteAnadir(string vBoton)
@@ -68,7 +69,10 @@ namespace Presentacion
             if (vBoton == "A")
             {
                 txtcantidadtarjetas.Text = "0";
-            }else
+                txtCantidadLicencias.Text = "0";
+                CargarDatosCabecera();
+            }
+            else
             {
                 if (vBoton == "M")
                 {
@@ -98,15 +102,25 @@ namespace Presentacion
                         CambiarForma(txtNombres);
                         
                         CambiarForma(txtUbigeo);
-                        CambiarForma(txtLicencia);
-                        txtVenciLicencia.ReadOnly = true;
-                        txtVenciLicencia.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-                        txtVenciLicencia.ForeColor = Color.Blue;
-                        txtVenciLicencia.TabStop = false;
                         CambiarForma(txtcantidadtarjetas);
                         btnGrabar.Enabled = false;
                     }
                 }
+            }
+        }
+        private void CargarDatosCabecera()
+        {
+            if (tabControl.SelectedIndex == 0)
+            {
+
+                lblLicencia.Text = "Cantidad de Licencias";
+                btnListaLicencias.Text = "Lista de Licencias";
+            }
+            else
+            {
+
+                lblLicencia.Text = "Cantidad de Resoluciones Directoral";
+                btnListaLicencias.Text = "Lista de Resoluciones";
             }
         }
         private void CambiarForma(TextBox texbox)
@@ -169,7 +183,7 @@ namespace Presentacion
         {
             ClienteGeneral = clienteNE.ClienteBusquedaCodigo(codigoCliente);
 
-            LicenciaG = clienteNE.LicenciaBusquedaCodigo(codigoCliente);
+            ListaLicencias = clienteNE.LicenciaBusquedaCodigo(codigoCliente);
             ListaTarjetasdePropiedad = clienteNE.TarjetaPropiedadBusquedaCodigo(codigoCliente);
 
             txtDireccion.Text = ClienteGeneral.chdireccionenvio;
@@ -201,6 +215,8 @@ namespace Presentacion
                 txtDireccion.Text = EmpresaG.chdirecfiscal;
                 txtNombreComercial.Text = EmpresaG.chnombrecomercial;
                 txtUbigeo.Text = EmpresaG.p_inidubigeo.ToString();
+                lblLicencia.Text = "Cantidad de Resolución Directoral";
+                btnListaLicencias.Text = "Lista de Resoluciones";
             }
             else
             {
@@ -223,13 +239,14 @@ namespace Presentacion
                 txtTelefono.Text = PersonaG.chtelefono;
                 txtDireccion.Text = PersonaG.chdireccion;
 
+                lblLicencia.Text = "Cantidad de Licencias";
+                btnListaLicencias.Text = "Lista de Licencias";
 
                 txtUbigeo.Text = PersonaG.p_inidubigeo.ToString();
                 cboTipoDocu.SelectedValue = PersonaG.p_inidtipodocumento;
             }
-
-            txtLicencia.Text = LicenciaG.chlicencia;
-            txtVenciLicencia.Text = LicenciaG.fechavencimiento;
+            
+            txtCantidadLicencias.Text = ListaLicencias.Count.ToString();
             txtcantidadtarjetas.Text = ListaTarjetasdePropiedad.Count.ToString();
         }
         private bool ValidarCamposIndependientes()
@@ -403,10 +420,9 @@ namespace Presentacion
         private bool ValidarCamposGenerales()
         {
             bool flat = false;
-            if (txtLicencia.Text.Length > 0)
+            if (int.Parse(txtCantidadLicencias.Text) > 0)
             {
-                if (txtVenciLicencia.Text.Length > 0)
-                {
+               
                     if (int.Parse(txtcantidadtarjetas.Text) > 0)
                     {
                         if (txtDireccion.Text.Length > 0)
@@ -470,18 +486,12 @@ namespace Presentacion
                     else
                     {
                         MessageBox.Show("Añada almenos una Tarjeta de propiedad", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Fecha de vencimiento de licencia vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                    txtVenciLicencia.Focus();
-                }
+                    }                
             }
             else
             {
-                MessageBox.Show("Licencia vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                txtLicencia.Focus();
+                MessageBox.Show(btnListaLicencias.Text+ " vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                txtCantidadLicencias.Focus();
             }
             return flat;
         }
@@ -565,12 +575,14 @@ namespace Presentacion
                 clienteNE.ClienteNaturalIngresar(NaturalRegistros);
             }
 
-            licencia LicenciaRegistros = new licencia();
-            LicenciaRegistros.p_inidcliente = codigocliente;
-            LicenciaRegistros.chlicencia = txtLicencia.Text;
-            LicenciaRegistros.fechavencimiento = txtVenciLicencia.Text;
-            LicenciaRegistros.estado = true;
-            clienteNE.LicenciaIngresar(LicenciaRegistros);
+            
+            foreach (licencia Registros in ListaLicencias)
+            {
+                Registros.p_inidcliente = codigocliente;
+                Registros.estado = true;
+                clienteNE.LicenciaIngresar(Registros);
+            }
+            
             foreach (tarjetapropiedad Registros in ListaTarjetasdePropiedad)
             {
                 Registros.p_inidcliente = codigocliente;
@@ -648,20 +660,27 @@ namespace Presentacion
                 //modificar emprsa
                 codigopersona = personaNE.PersonaModificar(PersonaRegistro);
             }
-            licencia LicenciaRegistros = new licencia();
-            LicenciaRegistros.p_inidlicencia = LicenciaG.p_inidlicencia;
-            LicenciaRegistros.p_inidcliente = codigocliente;
-            LicenciaRegistros.chlicencia = txtLicencia.Text;
-            LicenciaRegistros.fechavencimiento = txtVenciLicencia.Text;
-            LicenciaRegistros.estado = true;
-            //modificar licencia
-            clienteNE.LicenciaModificar(LicenciaRegistros);
+            
+
+            List<licencia> Listass = clienteNE.LicenciaBusquedaCodigo(codigoCliente);
+            foreach (licencia Registros in Listass)
+            {
+                clienteNE.TarjetaFalsear(Registros.p_inidcliente);
+            }
+            // ingresar tarjeta
+            foreach (licencia Registros in ListaLicencias)
+            {
+                Registros.p_inidcliente = codigocliente;
+                Registros.estado = true;
+                clienteNE.LicenciaIngresar(Registros);
+            }
+
             //MessageBox.Show("E: "+con, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
             // falsear tarjeta
             List<tarjetapropiedad> Listas = clienteNE.TarjetaPropiedadBusquedaCodigo(codigoCliente); 
             foreach (tarjetapropiedad Registros in Listas)
             {                
-                clienteNE.TarjetaFalsear(Registros.p_inidtarjeta);
+                clienteNE.LicenciaFalsear(Registros.p_inidtarjeta);
             }
             // ingresar tarjeta
             foreach (tarjetapropiedad Registros in ListaTarjetasdePropiedad)
@@ -670,9 +689,7 @@ namespace Presentacion
                 Registros.estado = true;
                 clienteNE.TarjetaIngresar(Registros);
             }
-
             pasado(codigocliente);
-
         }
 
         private void txtUbigeo_TextChanged(object sender, EventArgs e)
@@ -711,24 +728,15 @@ namespace Presentacion
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManClienteTarjetaAnadir);
-            if (frm != null)
-            {
-                frm.BringToFront();
-                return;
-            }
+        {            
             frmManClienteTarjetaAnadir f = new frmManClienteTarjetaAnadir(vBoton);
             f.pasado += new frmManClienteTarjetaAnadir.PasarListaTarjetas(ejecutar);
-            f.pasadocantidad += new frmManClienteTarjetaAnadir.pasarcantidad(ponerCantidad);
-            
+            f.pasadocantidad += new frmManClienteTarjetaAnadir.pasarcantidad(ponerCantidad);            
             if (int.Parse(txtcantidadtarjetas.Text) > 0)
             {               
                 f.ListaTarjetadeProiedadG = ListaTarjetasdePropiedad;             
             }
-            f.MdiParent = this.MdiParent;
-            f.Show();
-
+            f.ShowDialog();
         }
         private void ejecutar(List<tarjetapropiedad> ListaRegistros)
         {
@@ -737,6 +745,10 @@ namespace Presentacion
         private void ponerCantidad(int cantidad)
         {
             txtcantidadtarjetas.Text = cantidad.ToString();
+        }
+        private void ponerCantidad2(int cantidad)
+        {
+            txtCantidadLicencias.Text = cantidad.ToString();
         }
 
         private void txtNroDocumento_KeyPress(object sender, KeyPressEventArgs e)
@@ -981,6 +993,37 @@ namespace Presentacion
         {
             TextBox textboxusado = (TextBox)sender;
             utilidades.LogitudDeCampo(ref textboxusado, e, 150);
+        }
+        private void ejecutar2(List<licencia> ListaRegistros)
+        {
+            ListaLicencias = ListaRegistros;
+        }
+        private void btnListaLicencias_Click(object sender, EventArgs e)
+        {
+            frmManClienteLicenciaAnadir f = new frmManClienteLicenciaAnadir(vBoton);
+            f.pasado += new frmManClienteLicenciaAnadir.PasarLicencias(ejecutar2);
+            f.pasadocantidad += new frmManClienteLicenciaAnadir.pasarcantidad(ponerCantidad2);
+            if (int.Parse(txtCantidadLicencias.Text) > 0)
+            {
+                f.ListaLicenciasG = ListaLicencias;
+            }
+            f.ShowDialog();
+        }
+
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl.SelectedIndex == 0)
+            {
+
+                lblLicencia.Text = "Cantidad de Licencias";
+                btnListaLicencias.Text = "Lista de Licencias";
+            }
+            else
+            {
+
+                lblLicencia.Text = "Cantidad de Resoluciones";
+                btnListaLicencias.Text = "Lista de Resoluciones";
+            }
         }
     }
 }

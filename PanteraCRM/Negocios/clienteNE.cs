@@ -60,7 +60,7 @@ namespace Negocios
         {
             return clienteDL.ClienteNaturalBusquedaCodigo(codigo);
         }
-        public static licencia LicenciaBusquedaCodigo(int codigo)
+        public static List<licencia> LicenciaBusquedaCodigo(int codigo)
         {
             return clienteDL.LicenciaBusquedaCodigo(codigo);
         }
@@ -83,6 +83,10 @@ namespace Negocios
         public static int TarjetaFalsear(int registros)
         {
             return clienteDL.TarjetaFalsear(registros);
+        }
+        public static int LicenciaFalsear(int registros)
+        {
+            return clienteDL.LicenciaFalsear(registros);
         }
     }
 }

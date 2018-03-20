@@ -87,13 +87,12 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCantidadLicencias = new System.Windows.Forms.TextBox();
+            this.btnListaLicencias = new System.Windows.Forms.Button();
             this.txtcantidadtarjetas = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtLicencia = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtVenciLicencia = new System.Windows.Forms.MaskedTextBox();
+            this.lblLicencia = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tbPersona.SuspendLayout();
             this.tbEmpresa.SuspendLayout();
@@ -111,6 +110,7 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(534, 155);
             this.tabControl.TabIndex = 0;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tbPersona
             // 
@@ -693,19 +693,42 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtCantidadLicencias);
+            this.groupBox2.Controls.Add(this.btnListaLicencias);
             this.groupBox2.Controls.Add(this.txtcantidadtarjetas);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtLicencia);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtVenciLicencia);
+            this.groupBox2.Controls.Add(this.lblLicencia);
             this.groupBox2.Location = new System.Drawing.Point(12, 169);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(534, 87);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Adicionales";
+            // 
+            // txtCantidadLicencias
+            // 
+            this.txtCantidadLicencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtCantidadLicencias.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCantidadLicencias.ForeColor = System.Drawing.Color.Blue;
+            this.txtCantidadLicencias.Location = new System.Drawing.Point(152, 19);
+            this.txtCantidadLicencias.Name = "txtCantidadLicencias";
+            this.txtCantidadLicencias.ReadOnly = true;
+            this.txtCantidadLicencias.Size = new System.Drawing.Size(52, 20);
+            this.txtCantidadLicencias.TabIndex = 32;
+            this.txtCantidadLicencias.TabStop = false;
+            // 
+            // btnListaLicencias
+            // 
+            this.btnListaLicencias.BackColor = System.Drawing.SystemColors.Window;
+            this.btnListaLicencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListaLicencias.Location = new System.Drawing.Point(53, 50);
+            this.btnListaLicencias.Name = "btnListaLicencias";
+            this.btnListaLicencias.Size = new System.Drawing.Size(210, 28);
+            this.btnListaLicencias.TabIndex = 31;
+            this.btnListaLicencias.Text = "&Lista";
+            this.btnListaLicencias.UseVisualStyleBackColor = false;
+            this.btnListaLicencias.Click += new System.EventHandler(this.btnListaLicencias_Click);
             // 
             // txtcantidadtarjetas
             // 
@@ -731,24 +754,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 53);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(141, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Fecha Vencimiento Licencia";
-            // 
-            // txtLicencia
-            // 
-            this.txtLicencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLicencia.Location = new System.Drawing.Point(107, 19);
-            this.txtLicencia.Name = "txtLicencia";
-            this.txtLicencia.Size = new System.Drawing.Size(131, 20);
-            this.txtLicencia.TabIndex = 0;
-            this.txtLicencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLicencia_KeyPress);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -758,23 +763,14 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "Cantidad Tarjetas de Propiedad";
             // 
-            // label7
+            // lblLicencia
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Licencia N°";
-            // 
-            // txtVenciLicencia
-            // 
-            this.txtVenciLicencia.Location = new System.Drawing.Point(161, 50);
-            this.txtVenciLicencia.Mask = "00/00/0000";
-            this.txtVenciLicencia.Name = "txtVenciLicencia";
-            this.txtVenciLicencia.Size = new System.Drawing.Size(77, 20);
-            this.txtVenciLicencia.TabIndex = 1;
-            this.txtVenciLicencia.ValidatingType = typeof(System.DateTime);
+            this.lblLicencia.AutoSize = true;
+            this.lblLicencia.Location = new System.Drawing.Point(16, 22);
+            this.lblLicencia.Name = "lblLicencia";
+            this.lblLicencia.Size = new System.Drawing.Size(64, 13);
+            this.lblLicencia.TabIndex = 2;
+            this.lblLicencia.Text = "Cantidad de";
             // 
             // frmManClienteAnadir
             // 
@@ -851,11 +847,8 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtLicencia;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox txtVenciLicencia;
+        private System.Windows.Forms.Label lblLicencia;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cboSexo;
         private System.Windows.Forms.Label label30;
@@ -877,5 +870,7 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtcantidadtarjetas;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnListaLicencias;
+        private System.Windows.Forms.TextBox txtCantidadLicencias;
     }
 }

@@ -55,7 +55,50 @@ namespace Presentacion
         }
         private void btnGrabar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string vBoton = "G";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    DialogResult result = MessageBox.Show("¿Está seguro de Registrar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        GrabarDatosCabecera();
+                        this.Dispose();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void GrabarDatosCabecera()
+        {
+            notadebito RegistrosCabecera = new notadebito();
+            RegistrosCabecera.chcorrelativo = txtNotaCorrelativo.Text;
+            RegistrosCabecera.chfecha = txtFecha.Text;
+            RegistrosCabecera.p_inidcliente = pedCab.p_inidcliente;
+            RegistrosCabecera.p_iniddocreferencia = PedidoFacturado.p_inidpedidoguicomp;
+            RegistrosCabecera.chfechareferencia = pedCab.chfechapedido;
+            RegistrosCabecera.p_inidsituacionnota = 0;
+            RegistrosCabecera.chobservacion = string.Empty;
+            RegistrosCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+            RegistrosCabecera.p_inidusuariodelete = 0;
+            RegistrosCabecera.estado = true;            
+            int codigocabecera = notasNE.NotaDebitoIngresar(RegistrosCabecera);
+            /*GENERAR CODIGO*/
+            generarCodigoNE.GenerarCorrelativoNotaDebito(sesion.SessionGlobal.p_inidpuntoventa);
+            //GrabarDatosDetalle(codigocabecera);
         }
         private void txtNroDocumento_Enter(object sender, EventArgs e)
         {
@@ -162,7 +205,7 @@ namespace Presentacion
             BuscarClienteCodigo(Registroscliente.chcodigocliente);
             txtFechaCompro.Text = pedCab.chfechapedido;
             PonerVendedor(pedCab.p_inidusuarioinsert);
-            CargarTablaDetalle();
+            //CargarTablaDetalle();
         }
 
         private void BuscarClienteCodigo(string codigo)
@@ -194,61 +237,46 @@ namespace Presentacion
             txtSubTotal.Text = string.Empty;
             btnGrabar.Enabled = false;
         }
-        private void CargarTablaDetalle()
+       
+
+        private void txtValorTotal_TextChanged(object sender, EventArgs e)
+        {
+            TextBox TextoUsado = (TextBox)sender;
+            decimal importe = decimal.Parse(TextoUsado.Text);
+            CargarTablaDetalle(importe);
+
+        }
+        private void CargarTablaDetalle(decimal importe)
         {
             int val = 0;
             val++;
-            if (ListaPedidoContenido != null)
-            {
-                decimal importex = 0;
-                decimal preciprodx = 0;
-                int cantidadx = 0;
-                decimal preciototalx = 0;
-                decimal valorigvx = decimal.Parse("1.18");
+            
+            decimal valorigvx = decimal.Parse("1.18");
+          
+            decimal valorventax = decimal.Round(importe / valorigvx, 2);
+            txtValorVenta.Text = string.Format("{0:0,0.00}", valorventax);
+            decimal igv = importe - valorventax;
+            txtIgv.Text = string.Format("{0:0,0.00}", igv);
+            txtxDesc.Text = "0.00";
+            txtSubTotal.Text = string.Format("{0:0,0.00}", decimal.Round(valorventax, 2));
+        }
 
-                foreach (pedidodetallecontenido obj in ListaPedidoContenido)
-                {
-                    //producto productoM = productoNE.
-                    string nombrecompuesto = obj.productoparaventa.chnombrecompuesto;
-                    string codigo = obj.productoparaventa.chcodigoproducto;
-                    int idproducto = obj.pedidodetalle.p_inidproducto;
-                    int cantidad = Decimal.ToInt32(obj.pedidodetalle.nucantidad);
-                    decimal stock = 0;// ProductoM.nustock;
-                    decimal precio = obj.pedidodetalle.nuprecioventa;
-                    decimal desc1 = obj.pedidodetalle.nuporcentajedesc1;
-                    decimal desc2 = obj.pedidodetalle.nuporcentajedesc2;
-                    decimal importe = obj.pedidodetalle.nuimportesubtotal;
-                    decimal preunit = obj.pedidodetalle.nuprecioproducto;
-                    int idserie = 0;
-                    string codigoserie = "-";
-                    if (obj.serie != null)
-                    {
-                        cantidad = 1;
-                        idserie = obj.serie.p_inidserie;
-                        codigoserie = obj.serie.chcodigoserie;
-                    }
-                    if (obj.estado == true)
-                    {
-                        //dgvListaPedidoDetalle.Rows.Add("1", "2", obj.orden, idproducto, codigo, cantidad, stock, nombrecompuesto, preunit, precio, desc1, desc2, importe, "15", idserie);
+        private void txtValorTotal_Enter(object sender, EventArgs e)
+        {
+            TextBox TextoUsado = (TextBox)sender;
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
+        }
 
-                        importex += importe;
-                        preciprodx = preunit;
-                        cantidadx = cantidad;
-                        preciototalx += (decimal.Round(cantidadx * preciprodx, 2) / valorigvx);
+        private void txtValorTotal_Validated(object sender, EventArgs e)
+        {
+            TextBox TextoUsado = (TextBox)sender;
+            utilidades.ValidarNumero(ref TextoUsado,e);
+        }
 
-
-                    }
-                }
-                txtValorTotal.Text = string.Format("{0:0,0.00}", importex);
-                decimal valorventax = decimal.Round(importex / valorigvx, 2);
-                txtValorVenta.Text = string.Format("{0:0,0.00}", valorventax);
-                decimal igv = importex - valorventax;
-                txtIgv.Text = string.Format("{0:0,0.00}", igv);
-
-                decimal tdescuentototal = decimal.Round(preciototalx - valorventax, 2);
-                txtxDesc.Text = string.Format("{0:0,0.00}", tdescuentototal);
-                txtSubTotal.Text = string.Format("{0:0,0.00}", decimal.Round(preciototalx, 2));
-            }
+        private void txtValorTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox TextoUsado = (TextBox)sender;
+            utilidades.solonumeros(ref TextoUsado,e);
         }
     }
 }

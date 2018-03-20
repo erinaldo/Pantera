@@ -755,7 +755,7 @@ namespace Presentacion
                 txtNombreCliente.Text = ClienteG.razon;
                 txtRucCliente.Text = ClienteG.nrodocumento;
                 txtPtoLlegada.Text = ClienteG.chdireccion;
-                LicenciaG = clienteNE.LicenciaBusquedaCodigo(ClienteG.p_inidcodigoclie);
+                //LicenciaG = clienteNE.LicenciaBusquedaCodigo(ClienteG.p_inidcodigoclie);
                 TarjetaG = clienteNE.TarjetaPropiedadBusquedaCodigo(ClienteG.p_inidcodigoclie);
                 txtLicencia.Text = LicenciaG.chlicencia;
                 txtVencLicencia.Text = LicenciaG.fechavencimiento;

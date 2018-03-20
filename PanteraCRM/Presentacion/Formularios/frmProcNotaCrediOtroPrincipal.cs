@@ -38,6 +38,7 @@ namespace Presentacion
             cboTipdoc.DataSource = tipodocumentoNE.ListarTipoDocumentosVentaParametro(true);
             cboTipdoc.ValueMember = "p_inidtipodocumento";
             cboTipdoc.DisplayMember = "chacrominodocumento";
+            txtNotaDescuento.Text = "00.00";
         }
 
         private void textBox2_Validated(object sender, EventArgs e)
@@ -52,9 +53,54 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string vBoton = "G";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    DialogResult result = MessageBox.Show("¿Está seguro de Registrar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        GrabarDatosCabecera();
+                        this.Dispose();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void GrabarDatosCabecera()
+        {
+            notacreditocabecera RegistrosCabecera = new notacreditocabecera();
+            RegistrosCabecera.chcorrelativo = txtNotaCorrelativo.Text;
+            RegistrosCabecera.chfechanota = txtFecha.Text;
+            RegistrosCabecera.p_inidpedido = pedCab.p_inidpedidocabecera;
+            RegistrosCabecera.p_inidcliente = pedCab.p_inidcliente;
+            RegistrosCabecera.p_iniddocreferencia = PedidoFacturado.p_inidpedidoguicomp;
+            RegistrosCabecera.chfechareferencia = pedCab.chfechapedido;
+            RegistrosCabecera.chobservacion = txtOtros.Text;
+            RegistrosCabecera.chtiponotacredito = "O";
+            RegistrosCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+            RegistrosCabecera.p_inidusuariodelete = 0;
+            RegistrosCabecera.estado = true;
+            int codigocabecera = notasNE.NotaCabeceraIngresar(RegistrosCabecera);
+            /*GENERAR CODIGO*/
+            generarCodigoNE.GenerarCorrelativoNotaCredito(sesion.SessionGlobal.p_inidpuntoventa);
+            //GrabarDatosDetalle(codigocabecera);
         }
 
+        
         private void txtNroDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBox TextoUsado = (TextBox)sender;
@@ -157,7 +203,7 @@ namespace Presentacion
             BuscarClienteCodigo(Registroscliente.chcodigocliente);
             txtFechaCompro.Text = pedCab.chfechapedido;
             PonerVendedor(pedCab.p_inidusuarioinsert);
-            CargarTablaDetalle();
+            //CargarTablaDetalle();
         }
 
         private void BuscarClienteCodigo(string codigo)
@@ -189,62 +235,58 @@ namespace Presentacion
             txtSubTotal.Text = string.Empty;
             btnGrabar.Enabled = false;
         }
+        internal decimal importeG;
+        internal decimal DescuentoG=0;
         private void CargarTablaDetalle()
         {
             int val = 0;
             val++;
+            importeG = 0;
             if (ListaPedidoContenido != null)
-            {
-                decimal importex = 0;
-                decimal preciprodx = 0;
-                int cantidadx = 0;
-                decimal preciototalx = 0;
+            {                
                 decimal valorigvx = decimal.Parse("1.18");
 
                 foreach (pedidodetallecontenido obj in ListaPedidoContenido)
                 {
-                    //producto productoM = productoNE.
-                    string nombrecompuesto = obj.productoparaventa.chnombrecompuesto;
-                    string codigo = obj.productoparaventa.chcodigoproducto;
-                    int idproducto = obj.pedidodetalle.p_inidproducto;
-                    int cantidad = Decimal.ToInt32(obj.pedidodetalle.nucantidad);
-                    decimal stock = 0;// ProductoM.nustock;
-                    decimal precio = obj.pedidodetalle.nuprecioventa;
-                    decimal desc1 = obj.pedidodetalle.nuporcentajedesc1;
-                    decimal desc2 = obj.pedidodetalle.nuporcentajedesc2;
-                    decimal importe = obj.pedidodetalle.nuimportesubtotal;
-                    decimal preunit = obj.pedidodetalle.nuprecioproducto;
-                    int idserie = 0;
-                    string codigoserie = "-";
-                    if (obj.serie != null)
-                    {
-                        cantidad = 1;
-                        idserie = obj.serie.p_inidserie;
-                        codigoserie = obj.serie.chcodigoserie;
-                    }
-                    if (obj.estado == true)
-                    {
-                        //dgvListaPedidoDetalle.Rows.Add("1", "2", obj.orden, idproducto, codigo, cantidad, stock, nombrecompuesto, preunit, precio, desc1, desc2, importe, "15", idserie);
-                        
-                            importex += importe;
-                            preciprodx = preunit;
-                            cantidadx = cantidad;
-                            preciototalx += (decimal.Round(cantidadx * preciprodx, 2) / valorigvx);
-                       
-                        
-                    }
+                    importeG += obj.pedidodetalle.nuimportesubtotal * (DescuentoG)/100;                    
                 }
-                txtValorTotal.Text = string.Format("{0:0,0.00}", importex);
-                decimal valorventax = decimal.Round(importex / valorigvx, 2);
+                txtValorTotal.Text = string.Format("{0:0,0.00}", importeG);
+                decimal valorventax = decimal.Round(importeG / valorigvx, 2);
                 txtValorVenta.Text = string.Format("{0:0,0.00}", valorventax);
-                decimal igv = importex - valorventax;
+                decimal igv = importeG - valorventax;
                 txtIgv.Text = string.Format("{0:0,0.00}", igv);
-
-                decimal tdescuentototal = decimal.Round(preciototalx - valorventax, 2);
-                txtxDesc.Text = string.Format("{0:0,0.00}", tdescuentototal);
-                txtSubTotal.Text = string.Format("{0:0,0.00}", decimal.Round(preciototalx, 2));
+                txtxDesc.Text = "0.00";
+                txtSubTotal.Text = string.Format("{0:0,0.00}", decimal.Round(valorventax, 2));
             }
         }
-      
+
+       
+
+       
+
+   
+        private void txtNotaDescuento_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            MaskedTextBox TextoUsado = (MaskedTextBox)sender;
+            decimal pordesc = 0;
+            if (TextoUsado.Text.Length > 0)
+            {
+                pordesc = decimal.Parse(TextoUsado.Text);
+            }
+            DescuentoG = pordesc;
+            CargarTablaDetalle();
+
+        }
+        private void txtNotaDescuento_Leave(object sender, EventArgs e)
+        {
+            MaskedTextBox TextoUsado = (MaskedTextBox)sender;
+            decimal pordesc = 0;
+            if (TextoUsado.Text.Length > 0)
+            {
+                pordesc = decimal.Parse(TextoUsado.Text);
+            }
+            DescuentoG = pordesc;
+            CargarTablaDetalle();
+        }      
     }
 }

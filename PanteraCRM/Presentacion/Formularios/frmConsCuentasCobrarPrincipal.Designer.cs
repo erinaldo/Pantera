@@ -38,9 +38,12 @@
             this.ClientSize = new System.Drawing.Size(675, 455);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmConsCuentasCobrarPrincipal";
             this.ShowInTaskbar = false;
             this.Text = "CONSULTA CUENTAS POR COBRAR";
+            this.Load += new System.EventHandler(this.frmConsCuentasCobrarPrincipal_Load);
             this.ResumeLayout(false);
 
         }

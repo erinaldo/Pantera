@@ -63,6 +63,7 @@
     <Compile Include="marcaDL.cs" />
     <Compile Include="modeloDL.cs" />
     <Compile Include="movimientosDL.cs" />
+    <Compile Include="notasDL.cs" />
     <Compile Include="parametro.cs" />
     <Compile Include="pedidoDL.cs" />
     <Compile Include="pedidovistaprevia.cs" />

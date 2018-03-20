@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcNotaCrediOtroPrincipal));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtOtros = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNotaDescuento = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cboTipdoc = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.richTextBox1);
+            this.groupBox2.Controls.Add(this.txtOtros);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
@@ -101,13 +101,13 @@
             this.label16.TabIndex = 22;
             this.label16.Text = "Descripción:";
             // 
-            // richTextBox1
+            // txtOtros
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(11, 41);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(714, 93);
-            this.richTextBox1.TabIndex = 25;
-            this.richTextBox1.Text = "";
+            this.txtOtros.Location = new System.Drawing.Point(11, 41);
+            this.txtOtros.Name = "txtOtros";
+            this.txtOtros.Size = new System.Drawing.Size(714, 93);
+            this.txtOtros.TabIndex = 25;
+            this.txtOtros.Text = "";
             // 
             // label14
             // 
@@ -246,7 +246,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNotaDescuento);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.cboTipdoc);
             this.groupBox1.Controls.Add(this.label15);
@@ -273,13 +273,18 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // textBox1
+            // txtNotaDescuento
             // 
-            this.textBox1.Location = new System.Drawing.Point(632, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 21;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtNotaDescuento.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.txtNotaDescuento.HideSelection = false;
+            this.txtNotaDescuento.Location = new System.Drawing.Point(632, 75);
+            this.txtNotaDescuento.Mask = "00.00";
+            this.txtNotaDescuento.Name = "txtNotaDescuento";
+            this.txtNotaDescuento.Size = new System.Drawing.Size(41, 20);
+            this.txtNotaDescuento.TabIndex = 22;
+            this.txtNotaDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtNotaDescuento.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtNotaDescuento_MaskInputRejected);
+            this.txtNotaDescuento.Leave += new System.EventHandler(this.txtNotaDescuento_Leave);
             // 
             // label9
             // 
@@ -555,10 +560,10 @@
         private System.Windows.Forms.MaskedTextBox txtFecha;
         private System.Windows.Forms.TextBox txtNotaCorrelativo;
         private System.Windows.Forms.TextBox txtNroDocumento;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtOtros;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.MaskedTextBox txtNotaDescuento;
     }
 }

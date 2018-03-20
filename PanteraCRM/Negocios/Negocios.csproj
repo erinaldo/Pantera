@@ -55,6 +55,7 @@
     <Compile Include="menuNE.cs" />
     <Compile Include="modeloNE.cs" />
     <Compile Include="movimientosNE.cs" />
+    <Compile Include="notasNE.cs" />
     <Compile Include="pedidoNE.cs" />
     <Compile Include="perfildetalleNE.cs" />
     <Compile Include="perfilNE.cs" />

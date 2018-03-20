@@ -136,21 +136,23 @@ namespace Datos
                 return registro;
             }
         }
-        public static licencia LicenciaBusquedaCodigo(int codigo)
+        public static List<licencia> LicenciaBusquedaCodigo(int codigo)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_licencia_buqueda_codigo", CommandType.StoredProcedure,
                 new parametro("in_p_inidcliente", codigo)))
             {
-                licencia registro = new licencia();
+                List<licencia> listado = new List<licencia>();
                 while (datareader.Read())
                 {
+                    licencia registro = new licencia();
                     registro.p_inidlicencia = Convert.ToInt32(datareader["p_inidlicencia"]);
                     registro.p_inidcliente = Convert.ToInt32(datareader["p_inidcliente"]);
                     registro.chlicencia = Convert.ToString(datareader["chlicencia"]).Trim();
                     registro.fechavencimiento = Convert.ToString(datareader["chfechavencimiento"]).Trim();
                     registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    listado.Add(registro);
                 }
-                return registro;
+                return listado;
             }
         }
         public static List<tarjetapropiedad> TarjetaPropiedadBusquedaCodigo(int codigo)
@@ -329,5 +331,13 @@ namespace Datos
             new parametro("in_p_inidtarjeta", registros));
 
         }
+        public static int LicenciaFalsear(int registros)
+        {
+            return conexion.executeScalar("fn_licencia_falsear",
+            CommandType.StoredProcedure,
+            new parametro("in_p_inidlicencia", registros));
+
+        }
+        
     }
 }

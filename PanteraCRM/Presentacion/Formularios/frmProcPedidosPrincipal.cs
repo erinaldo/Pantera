@@ -353,7 +353,7 @@ namespace Presentacion
             Mcliente Registroscliente = clienteNE.ClienteBusquedaCodigo(pedCab.p_inidcliente);
             clientebusqueda ClienteG = clienteNE.ClienteBusquedaCodigoSecundario(Registroscliente.chcodigocliente);
 
-            licencia LicenciaG = clienteNE.LicenciaBusquedaCodigo(ClienteG.p_inidcodigoclie);
+            licencia LicenciaG = null;// clienteNE.LicenciaBusquedaCodigo(ClienteG.p_inidcodigoclie);
             string tarjeta = "";
             string vencimiento = "";
             List<tarjetapropiedad> TarjetaG = clienteNE.TarjetaPropiedadBusquedaCodigo(ClienteG.p_inidcodigoclie);

@@ -51,9 +51,99 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string vBoton = "G";
+                if (basicas.validarAcceso(vBoton))
+                {                    
+                    DialogResult result = MessageBox.Show("¿Está seguro de Registrar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        GrabarDatosCabecera();
+                        this.Dispose();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void GrabarDatosCabecera()
+        {
+            notacreditocabecera RegistrosCabecera = new notacreditocabecera();
+            RegistrosCabecera.chcorrelativo = txtNotaCorrelativo.Text;
+            RegistrosCabecera.chfechanota = txtFecha.Text;
+            RegistrosCabecera.p_inidpedido = pedCab.p_inidpedidocabecera;
+            RegistrosCabecera.p_inidcliente = pedCab.p_inidcliente;
+            RegistrosCabecera.p_iniddocreferencia = PedidoFacturado.p_inidpedidoguicomp;
+            RegistrosCabecera.chfechareferencia = pedCab.chfechapedido;
+            RegistrosCabecera.chobservacion = string.Empty;
+            RegistrosCabecera.chtiponotacredito = "D";
+            RegistrosCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+            RegistrosCabecera.p_inidusuariodelete = 0;
+            RegistrosCabecera.estado = true;
+            int codigocabecera = notasNE.NotaCabeceraIngresar(RegistrosCabecera);
+            /*GENERAR CODIGO*/
+            generarCodigoNE.GenerarCorrelativoNotaCredito(sesion.SessionGlobal.p_inidpuntoventa);
+            GrabarDatosDetalle(codigocabecera);
         }
 
+        private void GrabarDatosDetalle(int codigoCabecera)
+        {
+            int val = 0;
+            val++;
+            if (ListaPedidoContenido != null)
+            {
+                foreach (pedidodetallecontenido obj in ListaPedidoContenido)
+                {
+                    //producto productoM = productoNE.
+                    string nombrecompuesto = obj.productoparaventa.chnombrecompuesto;
+                    string codigo = obj.productoparaventa.chcodigoproducto;
+                    int idproducto = obj.pedidodetalle.p_inidproducto;
+                    decimal cantidad = obj.pedidodetalle.nucantidad;
+                    decimal precio = obj.pedidodetalle.nuprecioventa;
+                    decimal desc1 = obj.pedidodetalle.nuporcentajedesc1;
+                    decimal desc2 = obj.pedidodetalle.nuporcentajedesc2;
+                    decimal importe = obj.pedidodetalle.nuimportesubtotal;
+                    decimal preunit = obj.pedidodetalle.nuprecioproducto;
+                    int idserie = 0;
+                    string codigoserie = "-";
+                    if (obj.serie != null)
+                    {
+                        cantidad = 1;
+                        idserie = obj.serie.p_inidserie;
+                        codigoserie = obj.serie.chcodigoserie;
+                    }
+                    if (obj.estado == true)
+                    {
+                        notacreditodetalle RegistrosDetalle = new notacreditodetalle();
+                        RegistrosDetalle.p_inidnotacreditoc = codigoCabecera;
+                        RegistrosDetalle.initem = obj.orden;
+                        RegistrosDetalle.p_inidproducto = idproducto;
+                        RegistrosDetalle.p_inidserie = idserie;
+                        RegistrosDetalle.nucantidad = cantidad;
+                        RegistrosDetalle.nuprecio = preunit;
+                        RegistrosDetalle.nudesc1 = desc1;
+                        RegistrosDetalle.nudesc2 = desc2;
+                        RegistrosDetalle.nuventa = precio;
+                        RegistrosDetalle.nuimporte = importe;
+                        RegistrosDetalle.nutotdesc = decimal.Parse(txtxDesc.Text);
+                        int codigocabecera = notasNE.NotaDetalleIngresar(RegistrosDetalle);
+                       // dgvListaPedidoDetalle.Rows.Add("1", "2", obj.orden, idproducto, codigo, cantidad, stock, nombrecompuesto, preunit, precio, desc1, desc2, importe, "15", idserie);
+                    }
+                }
+            }
+        }      
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvListaPedidoDetalle.RowCount == 0)
