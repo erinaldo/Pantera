@@ -14,6 +14,31 @@ namespace Datos
             return conexion.executeScalar("fn_movimiento_cabecera_anular", CommandType.StoredProcedure, new parametro("in_p_inidpedidocabecera", parametro), new parametro("in_p_inidcodigo", codigo));
 
         }
+        
+             public static int IngresoRegistroVenta(RegistroVenta registros)
+        {
+            return conexion.executeScalar("fn_registro_venta_ingresar",
+            CommandType.StoredProcedure,
+            //this.p_inidregistroventa = 0;
+            new parametro("in_p_inidpuntoventa", registros.p_inidpuntoventa ),
+            new parametro("in_p_inidtipodocu", registros.p_inidtipodocu),
+            new parametro("in_p_iniddocumento", registros.p_iniddocumento),
+            new parametro("in_chcodigodocu", registros.chcodigodocu),
+            new parametro("in_chfechadoc", registros.chfechadoc),
+            new parametro("in_p_inidcliente", registros.p_inidcliente),
+            new parametro("in_nucambioventa", registros.nucambioventa),
+            new parametro("in_nuimporvtaafecta", registros.nuimporvtaafecta),
+            new parametro("in_nuimportotdesc", registros.nuimportotdesc),
+            new parametro("in_nuimporttotigv", registros.nuimporttotigv),
+            new parametro("in_nuimportetotvta", registros.nuimportetotvta),
+            new parametro("in_tipomovimiento", registros.tipomovimiento),
+            new parametro("in_chfechaventa", registros.chfechaventa),
+            new parametro("in_p_inidsituacionregistro", registros.p_inidsituacionregistro),
+            new parametro("in_p_inidusuarioinsert", registros.p_inidusuarioinsert),
+            new parametro("in_p_inidusuariodelete", registros.p_inidusuariodelete),
+            new parametro("in_estado", registros.estado)
+            );
+        }
         public static int IngresoPedidoCabecera(pedidocabecera registros)
         {
             return conexion.executeScalar("fn_pedidocabecera_ingresar",
@@ -63,6 +88,26 @@ namespace Datos
                     new parametro("in_p_inidlicencia", registros.p_inidlicencia)
             );
         }
+        public static int BusquedaMaximaVendida(int cliente, string fecha)
+        {
+            return conexion.executeScalar("fn_ventamaxima_busqueda",
+            CommandType.StoredProcedure,
+                    //new parametro("in_p_inidpedidocabecera", registros.p_inidpedidocabecera),
+                    new parametro("in_p_inidcliente", cliente),
+                    new parametro("chfechaini", fecha)
+            );
+        }
+        public static int BusquedaMaximaVendida2(int cliente, string fecha)
+        {
+            return conexion.executeScalar("fn_ventamaxima_busqueda2",
+            CommandType.StoredProcedure,
+                    //new parametro("in_p_inidpedidocabecera", registros.p_inidpedidocabecera),
+                    new parametro("in_p_inidcliente", cliente),
+                    new parametro("chfechaini", fecha)
+            );
+        }
+        
+
         public static int IngresoPedidoDetalle(pedidodetalle registros)
         {
             return conexion.executeScalar("fn_pedidodetalle_ingresar",
@@ -83,8 +128,39 @@ namespace Datos
               );
          
         }
-        
-            public static pedidoguicomp BuscarComprobantesFacturados(string registros, string parametro)
+        public static List<RegistroVenta> BuscarRegistroVentasCliente(int clientecodigo)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_registroventa_busqueda", CommandType.StoredProcedure, new parametro("in_parametro", clientecodigo)))
+            {
+                List < RegistroVenta > Listado = new List<RegistroVenta>();
+                while (datareader.Read())
+                {
+                    RegistroVenta registro = new RegistroVenta();
+                    registro.p_inidregistroventa = Convert.ToInt32(datareader["p_inidregistroventa"]);
+                    registro.p_inidpuntoventa = Convert.ToInt32(datareader["p_inidpuntoventa"]);
+                    registro.p_inidtipodocu = Convert.ToInt32(datareader["p_inidtipodocu"]);
+                    registro.p_iniddocumento = Convert.ToInt32(datareader["p_iniddocumento"]);
+                    registro.chcodigodocu = Convert.ToString(datareader["chcodigodocu"]).Trim();
+                    registro.chfechadoc = Convert.ToString(datareader["chfechadoc"]).Trim();
+                    registro.p_inidcliente = Convert.ToInt32(datareader["p_inidcliente"]);
+                    registro.nucambioventa = Convert.ToDecimal(datareader["nucambioventa"]);
+                    registro.nuimporvtaafecta = Convert.ToDecimal(datareader["nuimporvtaafecta"]);
+                    registro.nuimportotdesc = Convert.ToDecimal(datareader["nuimportotdesc"]);
+                    registro.nuimporttotigv = Convert.ToDecimal(datareader["nuimporttotigv"]);
+                    registro.nuimportetotvta = Convert.ToDecimal(datareader["nuimportetotvta"]);
+                    registro.tipomovimiento = Convert.ToString(datareader["tipomovimiento"]).Trim();
+                    registro.chfechaventa = Convert.ToString(datareader["chfechaventa"]).Trim();
+                    registro.p_inidsituacionregistro = Convert.ToInt32(datareader["p_inidsituacionregistro"]);
+                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    Listado.Add(registro);
+                }
+                return Listado;
+            }
+
+        }
+        public static pedidoguicomp BuscarComprobantesFacturados(string registros, string parametro)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_pedidofact_busqueda", CommandType.StoredProcedure, new parametro("in_parametro", registros), new parametro("in_codigo", parametro)))
             {

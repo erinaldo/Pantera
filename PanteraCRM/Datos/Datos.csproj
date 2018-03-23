@@ -51,6 +51,7 @@
     <Compile Include="acesoDL.cs" />
     <Compile Include="almacenDL.cs" />
     <Compile Include="articuloDL.cs" />
+    <Compile Include="bancoDL.cs" />
     <Compile Include="clienteDL.cs" />
     <Compile Include="condicionpagoDL.cs" />
     <Compile Include="conductorDL.cs" />

@@ -18,7 +18,7 @@ namespace Presentacion
         public pedidodetalle tmppedidodetalle;
 
         internal int codigoorden;
-
+        internal int cantidadmaxima;
         public List<pedidodetalle> tmplistado;
         internal productoparaventa ProductoG;
         internal List<pedidodetalle> ListadoValidarG;
@@ -548,6 +548,20 @@ namespace Presentacion
 
         private void txtCant_Validated(object sender, EventArgs e)
         {
+            TextBox txtusado = (TextBox)sender;
+            if (ProductoG != null)
+            {
+                if (ProductoG.p_inidcategoria == 3)
+                {
+                    int ca = int.Parse(txtusado.Text);
+                    if (ca+cantidadmaxima > 600)
+                    {
+                        txtusado.Text = "0";
+                        MessageBox.Show("Cantidad maxima de municiones superada", "MENSAJE DE SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        
+                    }
+                }
+            }
         }
         private void txtDesc1_KeyPress(object sender, KeyPressEventArgs e)
         {

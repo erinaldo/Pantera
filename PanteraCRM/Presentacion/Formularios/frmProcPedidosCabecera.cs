@@ -17,7 +17,7 @@ namespace Presentacion
     {
         internal clientebusqueda ClienteG;
         internal int Transportistacodigo ;
-        internal licencia LicenciaG;
+        internal List<licencia> LicenciaG;
         internal List<tarjetapropiedad> TarjetaG;
         internal pedidodetalle PedidoG;
         internal List<pedidodetallecontenido> ListaDetalleContenidoG;
@@ -61,7 +61,8 @@ namespace Presentacion
                         }
                     }
                     frmProcPedidosDetalle f = new frmProcPedidosDetalle(vBoton);
-                    f.ListadoValidarG = listado;                    
+                    f.ListadoValidarG = listado;
+                    f.cantidadmaxima = int.Parse( txtUnidadesCompra.Text);
                     f.PasadoDetalle += new frmProcPedidosDetalle.PasarDetalle(CargarTablaDetalle);
                     //f.MdiParent = this.MdiParent;
                     f.ShowDialog();
@@ -164,7 +165,7 @@ namespace Presentacion
             cboigv.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(22);
             cboigv.ValueMember = "idmaestrodetalle";
             cboigv.DisplayMember = "nombreitem";
-
+            txtUnidadesCompra.Text = "0";
             txtNombreAlmacen.Text = sesion.SessionGlobal.chalamacen;
             txtNombreVendedor.Text = sesion.SessionGlobal.chnombrepersona;
             txtFechaActual.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
@@ -434,7 +435,7 @@ namespace Presentacion
                 sesion.SessionGlobal.chusuario,
                 txtNroPedido.Text,
                 cboCondVenta.Text,
-                txtLicencia.Text,
+                cboLicencia.Text,
                 txtVencLicencia.Text,
                 cboTarjeta.Text,
                 txtFechaVenciTarjeta.Text,
@@ -541,7 +542,15 @@ namespace Presentacion
                 MessageBox.Show("Punto de partida vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return false;
             }
-                       return flat;
+            DateTime fechaAct = DateTime.Parse(DateTime.Now.ToShortDateString().PadLeft(10, '0'));
+            DateTime fechaLic = DateTime.Parse(txtVencLicencia.Text);
+            int result = DateTime.Compare(fechaLic, fechaAct);
+            if (result < 0)
+            {
+                MessageBox.Show("Licencia vencida elija otra", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return false;
+            }
+            return flat;
         }
 
         
@@ -583,8 +592,8 @@ namespace Presentacion
             registrosPedidoCabecera.nutotalventamonnacional = decimal.Parse(txtTotVenta.Text);
 
             registrosPedidoCabecera.nuventaafectamonextra = decimal.Parse(txtSubtotal.Text);
-            registrosPedidoCabecera.nuventainafectamonextra = decimal.Parse(txtDesctot.Text);
-            registrosPedidoCabecera.nutotaldescmonextra = decimal.Parse(txtIgv.Text);
+            registrosPedidoCabecera.nuventainafectamonextra = decimal.Parse(txtSubtotal.Text);
+            registrosPedidoCabecera.nutotaldescmonextra = decimal.Parse(txtDesctot.Text);
             registrosPedidoCabecera.nutotaligvmonextra = decimal.Parse(txtIgv.Text);
             registrosPedidoCabecera.nutotalventamonextra = decimal.Parse(txtTotVenta.Text);
 
@@ -595,8 +604,8 @@ namespace Presentacion
             registrosPedidoCabecera.estado = true;
             registrosPedidoCabecera.p_inidvehiculo = (int)cboVehiculo.SelectedValue;
 
-            registrosPedidoCabecera.p_inidlicencia = (int)cboTarjeta.SelectedValue;
-            registrosPedidoCabecera.p_inidtarjeta = LicenciaG.p_inidlicencia;
+            registrosPedidoCabecera.p_inidlicencia = (int)cboLicencia.SelectedValue;
+            registrosPedidoCabecera.p_inidtarjeta = (int)cboTarjeta.SelectedValue;
             CodigoCabecera = 0;
              CodigoCabecera = pedidoNE.IngresoPedidoCabecera(registrosPedidoCabecera);
             
@@ -721,6 +730,7 @@ namespace Presentacion
                     frmProcPedidosDetalle f = new frmProcPedidosDetalle(vBoton);
                     f.ListadoValidarG = listado;
                     f.codigoorden = int.Parse(dgvListaPedidoDetalle.CurrentRow.Cells["CHITEM"].Value.ToString());
+                    f.cantidadmaxima = int.Parse(txtUnidadesCompra.Text);
                     f.PasadoDetalle += new frmProcPedidosDetalle.PasarDetalle(CargarTablaDetalle);
                     f.MdiParent = this.MdiParent;
                     f.Show();
@@ -755,36 +765,73 @@ namespace Presentacion
                 txtNombreCliente.Text = ClienteG.razon;
                 txtRucCliente.Text = ClienteG.nrodocumento;
                 txtPtoLlegada.Text = ClienteG.chdireccion;
-                //LicenciaG = clienteNE.LicenciaBusquedaCodigo(ClienteG.p_inidcodigoclie);
+                LicenciaG = clienteNE.LicenciaBusquedaCodigo(ClienteG.p_inidcodigoclie);
                 TarjetaG = clienteNE.TarjetaPropiedadBusquedaCodigo(ClienteG.p_inidcodigoclie);
-                txtLicencia.Text = LicenciaG.chlicencia;
-                txtVencLicencia.Text = LicenciaG.fechavencimiento;
+                cboLicencia.DataSource = LicenciaG;
+                cboLicencia.ValueMember = "p_inidlicencia";
+                cboLicencia.DisplayMember = "chlicencia";
                 cboTarjeta.DataSource = TarjetaG;
                 cboTarjeta.ValueMember = "p_inidtarjeta";
                 cboTarjeta.DisplayMember = "chtarjeta";
-
+                txtUnidadesCompra.Text = "";
+                btnAnadir.Enabled = true;
+                if (ClienteG.tipodocu == "RUC")
+                {
+                    CargarUnidadesCompradas(ClienteG.p_inidcodigoclie, txtFechaActual.Text);
+                }
+                else
+                {
+                    CargarUnidadesCompradas2(ClienteG.p_inidcodigoclie, txtFechaActual.Text);
+                }
+                
             }
             else
             {
+                btnAnadir.Enabled = false;
+                txtUnidadesCompra.Text = "";
                 txtNombreCliente.Text = "";
                 txtRucCliente.Text = "";
-                txtLicencia.Text = "";
+                cboLicencia.DataSource = null;
                 txtVencLicencia.Text ="";
                 cboTarjeta.DataSource = null;
                 txtPtoLlegada.Text = "";
             }
         }
+        private void CargarUnidadesCompradas(int cliente, string codigo)
+        {
+            int cantidad = 0;
+            cantidad =pedidoNE.BusquedaMaximaVendida(cliente,codigo);
+            
+            if (cantidad > 0)
+            {
+
+                txtUnidadesCompra.Text = cantidad.ToString();
+            }
+            else
+            {
+
+                txtUnidadesCompra.Text = "0";
+            }
+        }
+        private void CargarUnidadesCompradas2(int cliente, string codigo)
+        {
+            int cantidad = 0;
+            cantidad = pedidoNE.BusquedaMaximaVendida2(cliente, codigo);            
+            if (cantidad > 0)
+            {
+                txtUnidadesCompra.Text = cantidad.ToString();
+            }
+            else
+            {
+
+                txtUnidadesCompra.Text = "0";
+            }
+        }
         private void txtCodigoCliente_DoubleClick(object sender, EventArgs e)
         {
-            //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmBusClientePrincipal);
-            //if (frm != null)
-            //{
-            //    frm.BringToFront();
-            //    return;
-            //}
+           
             frmBusClientePrincipal f = new frmBusClientePrincipal();
             f.Pasado += new frmBusClientePrincipal.PasarClienteCodigo(PonerCodigocliente);
-            //f.MdiParent = this.MdiParent;
             f.ShowDialog();
         }
         private void PonerCodigocliente(string codigo)
@@ -842,5 +889,29 @@ namespace Presentacion
             TextBox textboxusado = (TextBox)sender;
             utilidades.LogitudDeCampo(ref textboxusado, e, 20);
         }
+
+        private void cboLicencia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string parametro = "";
+            if (LicenciaG != null)
+            {
+                foreach (licencia Registros in LicenciaG)
+                {
+                    if (cboLicencia.Text == Registros.chlicencia)
+                    {
+                        parametro = Registros.fechavencimiento;
+                    }
+                }
+            }
+            txtVencLicencia.Text = parametro;
+        }
+
+        private void txtUnidadesCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }  
     }
 }

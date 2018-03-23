@@ -156,6 +156,8 @@ namespace Presentacion.Reportes
                 int cc = pedidoNE.CabeceraCambiarEstado(p_inidcodigopedido, 87);
                 GenerarCorrelativosComprobante(tipocomprobante);
                 CargarDatos(p_inidcodigopedido, pedido,  guia,  compro);
+                //GenerarMovimientoSalida();
+                LimpiarDatosMemoria();
             }
         }
         private void GenerarCorrelativosComprobante(string tipocomprobante23)
@@ -244,7 +246,27 @@ namespace Presentacion.Reportes
             int codigoCabecera = movimientosNE.MovimientoProductoCabeceraIngresar(registrosCabecera);
             int gorrelativo = valeNE.GenerarCorrelativoMovimientoSalida(sesion.SessionGlobal.p_inidalmacen);
             /*FIN CABECERA*/
-
+            /* INICIO :: AGREGAR AL REGISTRO DE VENTA*/
+            RegistroVenta registrosVenta = new RegistroVenta();
+            registrosVenta.p_inidpuntoventa = sesion.SessionGlobal.p_inidpuntoventa;
+            registrosVenta.p_inidtipodocu = pedCab.p_inidtipodocumento;
+            registrosVenta.p_iniddocumento = pedCab.p_inidpedidocabecera;
+            registrosVenta.chcodigodocu = compro;
+            registrosVenta.chfechadoc = txtfecha.Text;
+            registrosVenta.p_inidcliente = pedCab.p_inidcliente;
+            registrosVenta.nucambioventa = pedCab.nuventainafectamonextra;
+            registrosVenta.nuimporvtaafecta = pedCab.nuventainafectamonnacional;
+            registrosVenta.nuimportotdesc = pedCab.nutotaldescmonnacional;
+            registrosVenta.nuimporttotigv = pedCab.nutotaligvmonnacional;
+            registrosVenta.nuimportetotvta = pedCab.nutotalventamonnacional;
+            registrosVenta.tipomovimiento = "D";
+            registrosVenta.chfechaventa = txtfecha.Text;
+            registrosVenta.p_inidsituacionregistro = 0;
+            registrosVenta.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+            registrosVenta.p_inidusuariodelete = 0;
+            registrosVenta.estado = true;
+            pedidoNE.IngresoRegistroVenta(registrosVenta);
+            /* FIN :: AGREGAR AL REGISTRO DE VENTA*/
 
 
             if (sesion.pedidodetallecontenido != null)
@@ -282,11 +304,13 @@ namespace Presentacion.Reportes
                     int cantidad2 = int.Parse("" + cantidad) * (-1);
                     almacenNE.CambiarSaldoComprometido(sesion.SessionGlobal.p_inidalmacen, obj.pedidodetalle.p_inidproducto, cantidad2);
                     int entero = almacenNE.SaldoAlmacenAdiconar(sesion.SessionGlobal.p_inidalmacen, obj.pedidodetalle.p_inidproducto, cantidad2);
-                     /*FIN*/       
-                   
-                    
+                     /*FIN*/
                 }
             }
+        }
+        private void LimpiarDatosMemoria()
+        {
+            sesion.pedidodetallecontenido = null;
         }
         private void GenerarMovimientoSalida()
         {
@@ -306,8 +330,6 @@ namespace Presentacion.Reportes
             registrosCabecera.estado = true;
             registrosCabecera.p_inidmovimiento = 19;
             //ingreso de cabecera
-
-
             registrosCabecera.chtipref1 = "";
             registrosCabecera.chref1 = "";
             registrosCabecera.chnref1 = "";
@@ -327,7 +349,6 @@ namespace Presentacion.Reportes
             int gorrelativo = valeNE.GenerarCorrelativoMovimientoSalida(sesion.SessionGlobal.p_inidalmacen);
             if (codigoCabecera <= 0 && gorrelativo <= 0)
             {
-
                 MessageBox.Show("error Cabecera", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }

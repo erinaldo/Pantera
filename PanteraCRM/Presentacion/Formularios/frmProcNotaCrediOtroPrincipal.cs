@@ -97,10 +97,31 @@ namespace Presentacion
             int codigocabecera = notasNE.NotaCabeceraIngresar(RegistrosCabecera);
             /*GENERAR CODIGO*/
             generarCodigoNE.GenerarCorrelativoNotaCredito(sesion.SessionGlobal.p_inidpuntoventa);
+            /* INICIO :: AGREGAR AL REGISTRO DE VENTA*/
+            RegistroVenta registrosVenta = new RegistroVenta();
+            registrosVenta.p_inidpuntoventa = sesion.SessionGlobal.p_inidpuntoventa;
+            registrosVenta.p_inidtipodocu = 4;
+            registrosVenta.p_iniddocumento = pedCab.p_inidpedidocabecera;
+            registrosVenta.chcodigodocu = txtNotaCorrelativo.Text;
+            registrosVenta.chfechadoc = txtFechaCompro.Text;
+            registrosVenta.p_inidcliente = pedCab.p_inidcliente;
+            registrosVenta.nucambioventa = decimal.Parse(txtTipoCambio.Text);
+            registrosVenta.nuimporvtaafecta = decimal.Parse(txtValorVenta.Text);
+            registrosVenta.nuimportotdesc = decimal.Parse(txtxDesc.Text);
+            registrosVenta.nuimporttotigv = decimal.Parse(txtIgv.Text);
+            registrosVenta.nuimportetotvta = decimal.Parse(txtValorTotal.Text);
+            registrosVenta.tipomovimiento = "H";
+            registrosVenta.chfechaventa = txtFecha.Text;
+            registrosVenta.p_inidsituacionregistro = 0;
+            registrosVenta.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+            registrosVenta.p_inidusuariodelete = 0;
+            registrosVenta.estado = true;
+            pedidoNE.IngresoRegistroVenta(registrosVenta);
+            /* FIN :: AGREGAR AL REGISTRO DE VENTA*/
             //GrabarDatosDetalle(codigocabecera);
         }
 
-        
+
         private void txtNroDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBox TextoUsado = (TextBox)sender;

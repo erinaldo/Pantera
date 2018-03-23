@@ -724,7 +724,7 @@
             this.btnListaLicencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListaLicencias.Location = new System.Drawing.Point(53, 50);
             this.btnListaLicencias.Name = "btnListaLicencias";
-            this.btnListaLicencias.Size = new System.Drawing.Size(210, 28);
+            this.btnListaLicencias.Size = new System.Drawing.Size(151, 28);
             this.btnListaLicencias.TabIndex = 31;
             this.btnListaLicencias.Text = "&Lista";
             this.btnListaLicencias.UseVisualStyleBackColor = false;

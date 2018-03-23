@@ -18,6 +18,7 @@ namespace Entidades
         public bool req_serie { get; set; }
         public int p_inidserie { get; set; }
         public string chserie { get; set; }
+        public int p_inidcategoria { get; set; }
 
         public productoparaventa()
         {
@@ -31,6 +32,7 @@ namespace Entidades
             this.req_serie = false;
             this.p_inidserie = 0;
             this.chserie = string.Empty;
+            this.p_inidcategoria = 0;
         }
     }
 }

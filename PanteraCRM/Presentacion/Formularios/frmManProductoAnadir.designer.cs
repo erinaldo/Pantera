@@ -32,7 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.ckbSerie = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.cboModelo = new System.Windows.Forms.ComboBox();
             this.cboCalibre = new System.Windows.Forms.ComboBox();
@@ -57,15 +56,18 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.txtidproducto = new System.Windows.Forms.Label();
+            this.txtUnidad = new System.Windows.Forms.TextBox();
+            this.lblUnidad = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblUnidad);
+            this.groupBox1.Controls.Add(this.txtUnidad);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.ckbSerie);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cboCategoria);
             this.groupBox1.Controls.Add(this.cboModelo);
             this.groupBox1.Controls.Add(this.cboCalibre);
@@ -108,21 +110,12 @@
             // ckbSerie
             // 
             this.ckbSerie.AutoSize = true;
-            this.ckbSerie.Location = new System.Drawing.Point(372, 178);
+            this.ckbSerie.Location = new System.Drawing.Point(423, 219);
             this.ckbSerie.Name = "ckbSerie";
-            this.ckbSerie.Size = new System.Drawing.Size(15, 14);
+            this.ckbSerie.Size = new System.Drawing.Size(96, 17);
             this.ckbSerie.TabIndex = 8;
+            this.ckbSerie.Text = "Requiere Serie";
             this.ckbSerie.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label8.Location = new System.Drawing.Point(283, 178);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 13);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Requiere Serie";
             // 
             // cboCategoria
             // 
@@ -245,6 +238,7 @@
             this.cboMedida.Name = "cboMedida";
             this.cboMedida.Size = new System.Drawing.Size(173, 21);
             this.cboMedida.TabIndex = 7;
+            this.cboMedida.SelectedIndexChanged += new System.EventHandler(this.cboMedida_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -297,7 +291,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label2.Location = new System.Drawing.Point(283, 217);
+            this.label2.Location = new System.Drawing.Point(280, 219);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 14;
@@ -330,7 +324,7 @@
             this.txtFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtFecha.ForeColor = System.Drawing.Color.Blue;
-            this.txtFecha.Location = new System.Drawing.Point(372, 214);
+            this.txtFecha.Location = new System.Drawing.Point(334, 216);
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.ReadOnly = true;
@@ -396,6 +390,31 @@
             this.txtidproducto.TabIndex = 5;
             this.txtidproducto.Visible = false;
             // 
+            // txtUnidad
+            // 
+            this.txtUnidad.BackColor = System.Drawing.Color.White;
+            this.txtUnidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnidad.ForeColor = System.Drawing.Color.Black;
+            this.txtUnidad.Location = new System.Drawing.Point(423, 177);
+            this.txtUnidad.MaxLength = 15;
+            this.txtUnidad.Name = "txtUnidad";
+            this.txtUnidad.Size = new System.Drawing.Size(96, 20);
+            this.txtUnidad.TabIndex = 25;
+            this.txtUnidad.Visible = false;
+            this.txtUnidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnidad_KeyPress);
+            // 
+            // lblUnidad
+            // 
+            this.lblUnidad.AutoSize = true;
+            this.lblUnidad.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.lblUnidad.Location = new System.Drawing.Point(280, 180);
+            this.lblUnidad.Name = "lblUnidad";
+            this.lblUnidad.Size = new System.Drawing.Size(35, 13);
+            this.lblUnidad.TabIndex = 26;
+            this.lblUnidad.Text = "Unid.";
+            this.lblUnidad.Visible = false;
+            // 
             // frmManProductoAnadir
             // 
             this.AcceptButton = this.btnGrabar;
@@ -450,9 +469,10 @@
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.Label txtidproducto;
         private System.Windows.Forms.CheckBox ckbSerie;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblUnidad;
+        private System.Windows.Forms.TextBox txtUnidad;
     }
 }

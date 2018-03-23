@@ -180,6 +180,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmBusquedaUbigeo";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BUSQUEDA UBIGEO";
             this.Load += new System.EventHandler(this.frmBusquedaUbigeo_Load);

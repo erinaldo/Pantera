@@ -299,6 +299,7 @@ namespace Presentacion
                         tmpProducto.nuprecio = decimal.Parse("0.00");
                         tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
                         tmpProducto.req_serie = ckbSerie.Checked;
+                        tmpProducto.nucantporuni = int.Parse(txtUnidad.Text);
                         varIdArticulo = productoNE.productoInsertar(tmpProducto);
                         if (varIdArticulo <= 0)
                         {
@@ -351,6 +352,7 @@ namespace Presentacion
                     tmpProducto.nuprecio = 0;
                     tmpProducto.req_serie = ckbSerie.Checked;
                     tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
+                    tmpProducto.nucantporuni = int.Parse(txtUnidad.Text);
                     varIdArticulo = productoNE.ProductoActualizar(tmpProducto);
                     if (varIdArticulo <= 0)
                     {
@@ -446,13 +448,29 @@ namespace Presentacion
             utilidades.LogitudDeCampo(ref textboxusado, e, 15);
         }
 
-        //private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if ((Int32.Parse(cboCategoria.ValueMember) != 0) && (Int32.Parse(cboTipo.ValueMember) != 0))
-        //    {
-        //        txtCodigo.Text = articuloNE.articuloObtenerNumero((int)cboTipo.SelectedValue, (int)cboCategoria.SelectedValue);
-        //    }
-        //}
+        private void cboMedida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboMedida.Text != "UNIDAD")
+            {
+                lblUnidad.Text = "Unidades Por " + cboMedida.Text;
+                lblUnidad.Visible = true;
+                txtUnidad.Visible = true;
+            }
+            else
+            {
+                lblUnidad.Text = string.Empty;
+                lblUnidad.Visible = false; 
+                txtUnidad.Visible = false;
+            }
+        }
 
+        private void txtUnidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
+            {
+                e.Handled = true;
+
+            }
+        }
     }
 }

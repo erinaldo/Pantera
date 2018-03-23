@@ -47,6 +47,7 @@
     <Compile Include="almacensesion.cs" />
     <Compile Include="articulo.cs" />
     <Compile Include="articulopresupuesto.cs" />
+    <Compile Include="banco.cs" />
     <Compile Include="categoria.cs" />
     <Compile Include="cliente.cs" />
     <Compile Include="clientebusqueda.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="proveedorjuridico.cs" />
     <Compile Include="puntoventa.cs" />
     <Compile Include="puntoventasesion.cs" />
+    <Compile Include="recibo.cs" />
     <Compile Include="Registroguia.cs" />
     <Compile Include="RegistroVenta.cs" />
     <Compile Include="saldoalmacen.cs" />

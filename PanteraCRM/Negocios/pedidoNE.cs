@@ -13,6 +13,15 @@ namespace Negocios
         {
             return pedidoDL.IngresoPedidoCabecera(registros);
         }
+        public static int BusquedaMaximaVendida(int cliente, string fecha)
+        {
+            return pedidoDL.BusquedaMaximaVendida(cliente, fecha);
+        }
+        public static int BusquedaMaximaVendida2(int cliente, string fecha)
+        {
+            return pedidoDL.BusquedaMaximaVendida2(cliente, fecha);
+        }
+        
         public static int IngresoPedidoDetalle(pedidodetalle listado)
         {
             return pedidoDL.IngresoPedidoDetalle(listado);
@@ -46,7 +55,17 @@ namespace Negocios
         {
             return pedidoDL.BuscarComprobantesFacturados(registros, parametro);
         }
+        public static List<RegistroVenta> BuscarRegistroVentasCliente(int clientecodigo)
+        {
+            return pedidoDL.BuscarRegistroVentasCliente(clientecodigo);
+        }
         /*FIN :: INGRESO COMPROBANTES FACTURADOS*/
+        /*INICIO :: PARA REGISTRO DE VENTA*/
+        public static int IngresoRegistroVenta(RegistroVenta registros)
+        {
+            return pedidoDL.IngresoRegistroVenta(registros);
+        }
+        /*FIN ::  PARA REGISTRO DE VENTA*/
 
     }
 }

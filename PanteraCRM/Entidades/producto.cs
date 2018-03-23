@@ -34,6 +34,7 @@ namespace Entidades
         public int p_inidsituacion { get; set; }
         public string chsituacion { get; set; }
         public bool req_serie { get; set; }
+        public int nucantporuni { get; set; }
         public producto()
         {
             this.p_inidproducto = 0;
@@ -62,6 +63,7 @@ namespace Entidades
             this.p_inidsituacion = 0;
             this.chsituacion = string.Empty;
             this.req_serie = false;
+            this.nucantporuni = 0;
 
         }
     }

@@ -43,6 +43,7 @@
     <Compile Include="acesoNE.cs" />
     <Compile Include="almacenNE.cs" />
     <Compile Include="articuloNE.cs" />
+    <Compile Include="bancoNE.cs" />
     <Compile Include="clienteNE.cs" />
     <Compile Include="condicionpagoNE.cs" />
     <Compile Include="conductorNE.cs" />

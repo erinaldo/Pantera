@@ -352,8 +352,17 @@ namespace Presentacion
 
             Mcliente Registroscliente = clienteNE.ClienteBusquedaCodigo(pedCab.p_inidcliente);
             clientebusqueda ClienteG = clienteNE.ClienteBusquedaCodigoSecundario(Registroscliente.chcodigocliente);
-
-            licencia LicenciaG = null;// clienteNE.LicenciaBusquedaCodigo(ClienteG.p_inidcodigoclie);
+            string licencia = "";
+            string vencimientolice = "";
+            List<licencia> LicenciaG = clienteNE.LicenciaBusquedaCodigo(ClienteG.p_inidcodigoclie);
+            foreach (licencia objLicencia in LicenciaG)
+            {
+                if (objLicencia.p_inidlicencia == pedCab.p_inidlicencia)
+                {
+                    licencia = objLicencia.chlicencia;
+                    vencimientolice = objLicencia.fechavencimiento;
+                }
+            }
             string tarjeta = "";
             string vencimiento = "";
             List<tarjetapropiedad> TarjetaG = clienteNE.TarjetaPropiedadBusquedaCodigo(ClienteG.p_inidcodigoclie);
@@ -404,8 +413,8 @@ namespace Presentacion
                 pedCab.p_inidusuarioinsert,
                 pedCab.chcodigopedido,
                 condicionpago,
-                LicenciaG.chlicencia,
-                LicenciaG.fechavencimiento,
+                licencia,
+                vencimientolice,
                 tarjeta,
                 vencimiento,
 

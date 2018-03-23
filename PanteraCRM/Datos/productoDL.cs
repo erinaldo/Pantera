@@ -169,6 +169,7 @@ namespace Datos
             new parametro("in_p_inidusuariodelete", producto.p_inidusuariodelete),
             new parametro("in_nuprecio", producto.nuprecio),
             new parametro("in_p_inidsituacion", producto.p_inidsituacion),
+            new parametro("in_nucantporuni", producto.nucantporuni),
             new parametro("in_req_serie", producto.req_serie));
 
         }
@@ -207,6 +208,7 @@ namespace Datos
             new parametro("in_nuprecio", producto.nuprecio),
             new parametro("in_p_inidsituacion", producto.p_inidsituacion),
             new parametro("in_p_inidproducto", producto.p_inidproducto),
+            new parametro("in_nucantporuni", producto.nucantporuni),
             new parametro("in_req_serie", producto.req_serie)
             );
             }
@@ -305,6 +307,8 @@ namespace Datos
                     registro.p_inidsaldoalmancen = Convert.ToInt32(datareader["p_inidsaldoalmancen"]);
                     registro.nustockactual = Convert.ToInt32(datareader["nustockactual"]);
                     registro.req_serie = Convert.ToBoolean(datareader["req_serie"]);
+                    registro.p_inidcategoria = Convert.ToInt32(datareader["p_inidcategoria"]);
+                    
                 }
                 return registro;
             }

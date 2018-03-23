@@ -39,7 +39,7 @@ namespace Presentacion
             cboSexo.ValueMember = "idmaestrodetalle";
             cboSexo.DisplayMember = "nombreitem";
 
-            cboTipoClienteE.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(18);
+            cboTipoClienteE.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(12);
             cboTipoClienteE.ValueMember = "idmaestrodetalle";
             cboTipoClienteE.DisplayMember = "nombreitem";
 
@@ -910,16 +910,10 @@ namespace Presentacion
 
         private void txtUbigeo_DoubleClick(object sender, EventArgs e)
         {
-            Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmBusquedaUbigeo);
-            if (frm != null)
-            {
-                frm.BringToFront();
-                return;
-            }
+           
             frmBusquedaUbigeo f = new frmBusquedaUbigeo();
             f.pasadoUbigeo += new frmBusquedaUbigeo.pasarUbigeo(PoneUbigeo);
-            f.MdiParent = this.MdiParent;
-            f.Show();
+            f.ShowDialog();
         }
         private void PoneUbigeo(int ubigeo)
         {
