@@ -39,6 +39,7 @@ namespace Datos
             new parametro("in_estado", registros.estado)
             );
         }
+        
         public static int IngresoPedidoCabecera(pedidocabecera registros)
         {
             return conexion.executeScalar("fn_pedidocabecera_ingresar",
@@ -387,6 +388,90 @@ namespace Datos
                 return listado;
             }
         }
-        
+        /*FUNCIONES PARA RECIBOS*/
+        public static int IngresoRecibo(recibo registros)
+        {
+            return conexion.executeScalar("fn_recibo_ingresar",
+            CommandType.StoredProcedure,
+            //new parametro("in_p_inidpuntoventa", registros.p_inidrecibo),
+            new parametro("in_p_inidpagocomprocabecera", registros.p_inidpagocomprocabecera),
+            new parametro("in_chcodigorecibo", registros.chcodigorecibo),
+            new parametro("in_chfecharecibo", registros.chfecharecibo),
+            new parametro("in_p_inidtipopago", registros.p_inidtipopago),
+            new parametro("in_nuimporterecalculo", registros.nuimporterecalculo),
+            new parametro("in_nuimporteinteres", registros.nuimporteinteres),
+            new parametro("in_p_inidcliente", registros.p_inidcliente),
+            new parametro("in_p_inidmoneda", registros.p_inidmoneda),
+            new parametro("in_p_inidbanco", registros.p_inidbanco),
+            new parametro("in_p_inidsituacionregistro", registros.p_inidsituacionregistro),
+            new parametro("in_p_inidtipomovimiento", registros.p_inidtipomovimiento),
+            new parametro("in_p_inidusuarioinsert", registros.p_inidusuarioinsert),
+            new parametro("in_p_inidurusariodelete", registros.p_inidurusariodelete),
+            new parametro("in_estado", registros.estado)
+            );
+        }
+        /*FUNCIONES PARA PLANILLA DE COBROS*/
+        public static int IngresoPlacobCabecera(placobc registros)
+        {
+            return conexion.executeScalar("fn_planillacobrosc_ingresar",
+            CommandType.StoredProcedure,
+            //new parametro("in_p_inidpagocomprocabecera", registros.p_inidplacoc),
+            new parametro("in_chcorreplacobc", registros.chcorreplacobc),
+            new parametro("in_chfecha", registros.chfecha),
+            new parametro("in_nuimporplamonenac", registros.nuimporplamonenac),
+            new parametro("in_nuimporplanomeex", registros.nuimporplanomeex),
+            new parametro("in_chreferencia", registros.chreferencia),
+            new parametro("in_p_inidusuarioinsert", registros.p_inidusuarioinsert),
+            new parametro("in_p_inidusuariodelete", registros.p_inidusuariodelete),
+            new parametro("in_estado", registros.estado)
+            );
+        }
+        public static int IngresoPlacobDetalle(placobd registros)
+        {
+            return conexion.executeScalar("fn_planillacobrosd_ingresar",
+            CommandType.StoredProcedure,
+             //new parametro("p_inidplacod", registros.p_inidplacod),
+            new parametro("in_p_inidplacoc", registros.p_inidplacoc),
+            new parametro("in_chcorreplacobc", registros.chcorreplacobc),
+            new parametro("in_chcorrerecibo", registros.chcorrerecibo),
+            new parametro("in_initem", registros.initem),
+            new parametro("in_p_inidcliente", registros.p_inidcliente),
+            new parametro("in_p_inidtipodoc", registros.p_inidtipodoc),
+            new parametro("in_chcorredocumento", registros.chcorredocumento),
+            new parametro("in_chfecha", registros.chfecha),
+            new parametro("in_nuimporpendiente", registros.nuimporpendiente),
+            new parametro("in_p_inidmoneda", registros.p_inidmoneda),
+            new parametro("in_p_inidmonedapag", registros.p_inidmonedapag),
+            new parametro("in_nuimporpagmonenac", registros.nuimporpagmonenac),
+            new parametro("in_nuimporpagmoneext", registros.nuimporpagmoneext),
+            new parametro("in_nuimporcamvta", registros.nuimporcamvta),
+            new parametro("in_p_inidtipopag", registros.p_inidtipopag),
+            new parametro("in_chobservacion", registros.chobservacion),
+            new parametro("in_p_inidtipomov", registros.p_inidtipomov),
+            new parametro("in_p_inidusuarioinsert", registros.p_inidusuarioinsert),
+            new parametro("in_p_inidusuariodelete", registros.p_inidusuariodelete),
+            new parametro("in_estado", registros.estado )
+            );
+        }
+        public static placobc PlanillacobroCabeceraBusqueda(string fecha)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_planillacobrosc_busqueda_fecha", CommandType.StoredProcedure, new parametro("in_fecha", fecha)))
+            {
+                placobc registro = new placobc();
+                while (datareader.Read())
+                {
+                    registro.p_inidplacoc = Convert.ToInt32(datareader["p_inidplacoc"]);
+                    registro.chcorreplacobc = Convert.ToString(datareader["chcorreplacobc"]).Trim();
+                    registro.chfecha = Convert.ToString(datareader["chfecha"]).Trim();
+                    registro.nuimporplamonenac = Convert.ToInt32(datareader["nuimporplamonenac"]);
+                    registro.nuimporplanomeex = Convert.ToInt32(datareader["nuimporplanomeex"]);
+                    registro.chreferencia = Convert.ToString(datareader["chreferencia"]).Trim();
+                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                }
+                return registro;
+            }
+        }
     }
 }

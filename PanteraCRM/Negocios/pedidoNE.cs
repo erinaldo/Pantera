@@ -59,13 +59,29 @@ namespace Negocios
         {
             return pedidoDL.BuscarRegistroVentasCliente(clientecodigo);
         }
-        /*FIN :: INGRESO COMPROBANTES FACTURADOS*/
         /*INICIO :: PARA REGISTRO DE VENTA*/
         public static int IngresoRegistroVenta(RegistroVenta registros)
         {
             return pedidoDL.IngresoRegistroVenta(registros);
         }
-        /*FIN ::  PARA REGISTRO DE VENTA*/
-
+        /*INCIO ::  PARA RECIBO */
+        public static int IngresoRecibo(recibo registros)
+        {
+            return pedidoDL.IngresoRecibo(registros);
+        }
+        /*INCIO ::  PARA PLANILLA DE COBROS */
+        public static int IngresoPlacobCabecera(placobc registros)
+        {
+            return pedidoDL.IngresoPlacobCabecera(registros);
+        }
+        public static int IngresoPlacobDetalle(placobd registros)
+        {
+            return pedidoDL.IngresoPlacobDetalle(registros);
+        }
+        public static placobc PlanillacobroCabeceraBusqueda(string registros)
+        {
+            return pedidoDL.PlanillacobroCabeceraBusqueda(registros);
+        }
+        
     }
 }

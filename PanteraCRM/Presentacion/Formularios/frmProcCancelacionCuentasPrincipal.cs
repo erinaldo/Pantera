@@ -64,11 +64,12 @@ namespace Presentacion
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            frmProcCancelacionCuentasDetalle f = new frmProcCancelacionCuentasDetalle();
+            frmProcCancelacionCuentasDetalle f = new frmProcCancelacionCuentasDetalle();            
             f.p_inidCliente = (int)dgvListaClientes.CurrentRow.Cells["IDCLIENTE"].Value;
             f.RazonG = dgvListaClientes.CurrentRow.Cells["CHRAZON"].Value.ToString();
             f.NroDocG = dgvListaClientes.CurrentRow.Cells["NRODOCU"].Value.ToString();
             f.codigoG = dgvListaClientes.CurrentRow.Cells["CHCODIGO"].Value.ToString();
+            f.pasado += new frmProcCancelacionCuentasDetalle.pasar(ejecutar);
             f.ShowDialog();
         }
 

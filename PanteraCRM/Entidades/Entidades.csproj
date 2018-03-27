@@ -80,6 +80,8 @@
     <Compile Include="perfil.cs" />
     <Compile Include="perfildetalle.cs" />
     <Compile Include="persona.cs" />
+    <Compile Include="placobc.cs" />
+    <Compile Include="placobd.cs" />
     <Compile Include="presupuesto.cs" />
     <Compile Include="presupuestodetalle.cs" />
     <Compile Include="producto.cs" />
