@@ -42,6 +42,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcCancelacionCuentasDetalle));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFechaCancel = new System.Windows.Forms.DateTimePicker();
             this.rbtCanje = new System.Windows.Forms.RadioButton();
             this.rbtcancela = new System.Windows.Forms.RadioButton();
             this.label18 = new System.Windows.Forms.Label();
@@ -105,7 +106,6 @@
             this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHMONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NUMONTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtFechaCancel = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentosPendientes)).BeginInit();
@@ -144,6 +144,14 @@
             this.groupBox1.Size = new System.Drawing.Size(784, 100);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // txtFechaCancel
+            // 
+            this.txtFechaCancel.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFechaCancel.Location = new System.Drawing.Point(658, 37);
+            this.txtFechaCancel.Name = "txtFechaCancel";
+            this.txtFechaCancel.Size = new System.Drawing.Size(120, 20);
+            this.txtFechaCancel.TabIndex = 23;
             // 
             // rbtCanje
             // 
@@ -360,6 +368,7 @@
             this.textBox2.ForeColor = System.Drawing.Color.Blue;
             this.textBox2.Location = new System.Drawing.Point(227, 384);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(45, 20);
             this.textBox2.TabIndex = 25;
             this.textBox2.Text = "$ US";
@@ -370,6 +379,7 @@
             this.textBox1.ForeColor = System.Drawing.Color.Blue;
             this.textBox1.Location = new System.Drawing.Point(84, 384);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(45, 20);
             this.textBox1.TabIndex = 24;
             this.textBox1.Text = "S/.";
@@ -555,6 +565,7 @@
             this.txtDesMone5.ForeColor = System.Drawing.Color.Blue;
             this.txtDesMone5.Location = new System.Drawing.Point(210, 251);
             this.txtDesMone5.Name = "txtDesMone5";
+            this.txtDesMone5.ReadOnly = true;
             this.txtDesMone5.Size = new System.Drawing.Size(45, 20);
             this.txtDesMone5.TabIndex = 16;
             // 
@@ -656,6 +667,8 @@
             this.txtInter.Size = new System.Drawing.Size(106, 20);
             this.txtInter.TabIndex = 23;
             this.txtInter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtInter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInter_KeyPress);
+            this.txtInter.Validated += new System.EventHandler(this.txtInter_Validated);
             // 
             // txtDesMone4
             // 
@@ -663,6 +676,7 @@
             this.txtDesMone4.ForeColor = System.Drawing.Color.Blue;
             this.txtDesMone4.Location = new System.Drawing.Point(130, 99);
             this.txtDesMone4.Name = "txtDesMone4";
+            this.txtDesMone4.ReadOnly = true;
             this.txtDesMone4.Size = new System.Drawing.Size(44, 20);
             this.txtDesMone4.TabIndex = 22;
             // 
@@ -673,6 +687,8 @@
             this.txtImport.Size = new System.Drawing.Size(106, 20);
             this.txtImport.TabIndex = 21;
             this.txtImport.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtImport.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImport_KeyPress);
+            this.txtImport.Validated += new System.EventHandler(this.txtImport_Validated);
             // 
             // txtDesMone3
             // 
@@ -680,6 +696,7 @@
             this.txtDesMone3.ForeColor = System.Drawing.Color.Blue;
             this.txtDesMone3.Location = new System.Drawing.Point(130, 72);
             this.txtDesMone3.Name = "txtDesMone3";
+            this.txtDesMone3.ReadOnly = true;
             this.txtDesMone3.Size = new System.Drawing.Size(44, 20);
             this.txtDesMone3.TabIndex = 20;
             // 
@@ -724,7 +741,6 @@
             this.CODTIPOS.HeaderText = "CODTIPO1";
             this.CODTIPOS.Name = "CODTIPOS";
             this.CODTIPOS.ReadOnly = true;
-            this.CODTIPOS.Visible = false;
             // 
             // CHTIPOS
             // 
@@ -782,7 +798,6 @@
             this.CODTIPO.HeaderText = "CODTIPO";
             this.CODTIPO.Name = "CODTIPO";
             this.CODTIPO.ReadOnly = true;
-            this.CODTIPO.Visible = false;
             // 
             // CHTIPO
             // 
@@ -834,14 +849,6 @@
             this.NUMONTO.Name = "NUMONTO";
             this.NUMONTO.ReadOnly = true;
             this.NUMONTO.Width = 80;
-            // 
-            // txtFechaCancel
-            // 
-            this.txtFechaCancel.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFechaCancel.Location = new System.Drawing.Point(658, 37);
-            this.txtFechaCancel.Name = "txtFechaCancel";
-            this.txtFechaCancel.Size = new System.Drawing.Size(120, 20);
-            this.txtFechaCancel.TabIndex = 23;
             // 
             // frmProcCancelacionCuentasDetalle
             // 
@@ -929,6 +936,7 @@
         private System.Windows.Forms.RadioButton rbtcancela;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker txtFechaCancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODTIPO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHTIPO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHDOC;
@@ -943,6 +951,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHFECHAS;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHMONES;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHMONTOS;
-        private System.Windows.Forms.DateTimePicker txtFechaCancel;
     }
 }

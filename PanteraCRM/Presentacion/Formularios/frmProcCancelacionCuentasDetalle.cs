@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmProcCancelacionCuentasDetalle : Form
@@ -57,7 +58,8 @@ namespace Presentacion
             cbotipoPago.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(24);
             cbotipoPago.ValueMember = "idmaestrodetalle";
             cbotipoPago.DisplayMember = "nombreitem";
-
+            txtImport.Text = "0.00";
+            txtInter.Text = "0.00";
             int index3 = cbotipoPago.FindString("PAGO EN EFECTIVO");
             cbotipoPago.SelectedIndex = index3;
             //string correlativo = generarCodigoNE.ObtenerCorrelativo(sesion.SessionGlobal.p_inidpuntoventa);
@@ -90,14 +92,29 @@ namespace Presentacion
             {
                 if ( Registros.p_inidtipodocu == 4)
                 {
-                    dgvDocumentosPendientes.Rows.Add(Registros.p_inidtipodocu,DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, "", Registros.chfechadoc, "S/.", (-1) * Registros.nuimportetotvta);
+                    decimal montoencontra = pedidoNE.BuscarDocNCCodigo(Registros.chcodigodocu);
+                    if ((Registros.nuimportetotvta - montoencontra) > 0)
+                    {
+                        dgvDocumentosPendientes.Rows.Add(Registros.p_inidtipodocu, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, "", Registros.chfechadoc, "S/.", (-1) * (Registros.nuimportetotvta - montoencontra));
+                    }
+                    
                 }
                 else
                 {
-                    dgvDocumentosPendientes.Rows.Add(Registros.p_inidtipodocu,DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, "", Registros.chfechadoc, "S/.", Registros.nuimportetotvta);
+                    decimal montoencontra = pedidoNE.BuscarMontoEncontra(Registros.p_inidtipodocu, Registros.chcodigodocu, Registros.p_inidcliente);
+                    if ((Registros.nuimportetotvta - montoencontra)>0)
+                    {
+                        dgvDocumentosPendientes.Rows.Add(Registros.p_inidtipodocu, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, "", Registros.chfechadoc, "S/.", Registros.nuimportetotvta- montoencontra);
+                    }
+                    
                 }
 
             }
+        }
+        private decimal ValidarRegistrosVentaPagados( )
+        {
+            return 1;
+
         }
         private string DevolverNombrecomprobante(int codigo)
         {
@@ -240,13 +257,12 @@ namespace Presentacion
             bool flat = true;
             return flat;
         }
-        internal string chcorreplacobG ;
         private void GrabarCabecera()
         {
             /*INGRESO PLANILLA COBROS*/
             placobc Registros = new placobc();
             Registros =  pedidoNE.PlanillacobroCabeceraBusqueda(txtfecharegi.Text);
-            if (Registros.p_inidplacoc > 0)
+            if (Registros.p_inidplacoc == 0)
             {
                 PlacobCabeceraG = new placobc();
                 PlacobCabeceraG.chcorreplacobc = "";
@@ -271,26 +287,33 @@ namespace Presentacion
             ReciboG.chcodigorecibo = txtCorrela.Text;
             ReciboG.chfecharecibo = txtfecharegi.Text;
             ReciboG.p_inidtipopago = (int)cbotipoPago.SelectedValue;
-            ReciboG.nuimporterecalculo = decimal.Parse(txtImport.Text);
-            ReciboG.nuimporteinteres = decimal.Parse(txtInter.Text);
+            ReciboG.nuimporterecalculo =decimal.Parse(txtImport.Text);
+            ReciboG.nuimporteinteres =  decimal.Parse(txtInter.Text);
             ReciboG.p_inidcliente = p_inidCliente;
             ReciboG.p_inidmoneda = (int)cboMoneda.SelectedValue;
             ReciboG.p_inidbanco = (int)cboBanco.SelectedValue;
+            ReciboG.chcheque = txtCheque.Text;
             ReciboG.p_inidsituacionregistro = (int)cbotipoPago.SelectedValue;
             if (rbtcancela.Checked) { ReciboG.p_inidtipomovimiento = 1; } else { ReciboG.p_inidtipomovimiento = 2; }
             ReciboG.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
             ReciboG.p_inidurusariodelete = 0;
             ReciboG.estado = true;
             pedidoNE.IngresoRecibo(ReciboG);
+            pedidoNE.ModificarPlanicobroCabecera(Registros.p_inidplacoc, decimal.Parse(txtImport.Text),0);
         }
         private void GrabarDetalle(int CodigoCabecera, string correlativo)
         {
-            if (dgvDocumentosSeleccionados.RowCount > 0)
+            if (rbtcancela.Checked)
             {
+                /*PARA CANCELAR*/
+                bool flat = false;
+                bool validarnegativo = true;
                 int item = 0;
-                decimal total = decimal.Parse(txtImport.Text);
+                decimal pago = decimal.Parse(txtImport.Text);
+                decimal importe = decimal.Parse(txttotalSeleccion.Text);
                 for (int i = 0; i < dgvDocumentosSeleccionados.RowCount; i++)
                 {
+                    pago -= decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString());
                     int tipopago = 0;
                     PlacobDetalleG = new placobd();
                     PlacobDetalleG.p_inidplacoc = CodigoCabecera;
@@ -301,14 +324,11 @@ namespace Presentacion
                     PlacobDetalleG.p_inidtipodoc = (int)dgvDocumentosSeleccionados.Rows[i].Cells["CODTIPOS"].Value;
                     PlacobDetalleG.chcorredocumento = dgvDocumentosSeleccionados.Rows[i].Cells["CHDOCS"].Value.ToString();
                     PlacobDetalleG.chfecha = txtFechaCancel.Text;
-                    PlacobDetalleG.nuimporpendiente = decimal.Parse(txtImport.Text); 
+                    PlacobDetalleG.nuimporpendiente = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString());
                     PlacobDetalleG.p_inidmoneda = (int)cboMoneda.SelectedValue;
                     PlacobDetalleG.p_inidmonedapag = (int)cboMoneda.SelectedValue;
-                    
-                        total = total - decimal.Parse(txtImport.Text);
-                    
-                    PlacobDetalleG.nuimporpagmonenac = total;
-                    PlacobDetalleG.nuimporpagmoneext = total * decimal.Parse(txtTipoCambio.Text);
+                    PlacobDetalleG.nuimporpagmonenac = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString());
+                    PlacobDetalleG.nuimporpagmoneext = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) * decimal.Parse(txtTipoCambio.Text);
                     PlacobDetalleG.nuimporcamvta = decimal.Parse(txtTipoCambio.Text);
                     PlacobDetalleG.p_inidtipopag = tipopago;//pendiente = 0, cancelado = 1;
                     PlacobDetalleG.chobservacion = string.Empty;
@@ -316,9 +336,109 @@ namespace Presentacion
                     PlacobDetalleG.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
                     PlacobDetalleG.p_inidusuariodelete = 0;
                     PlacobDetalleG.estado = true;
-                    int codssigo = pedidoNE.IngresoPlacobDetalle(PlacobDetalleG);
+
+
+                    if (pago >= 0)
+                    {
+                        PlacobDetalleG.p_inidtipopag = 1;
+                        flat = true;
+                    }
+                    else
+                    {
+                        flat = false;
+                        if (validarnegativo)
+                        {
+                            PlacobDetalleG.nuimporpagmonenac = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) + pago;
+                            PlacobDetalleG.nuimporpagmoneext = PlacobDetalleG.nuimporpagmonenac * decimal.Parse(txtTipoCambio.Text);
+                            PlacobDetalleG.p_inidtipopag = 0;
+                        }
+
+                    }
+                    if (flat)
+                    {
+                        int codssigo = pedidoNE.IngresoPlacobDetalle(PlacobDetalleG);
+                    }
+                    else
+                    {
+                        if (validarnegativo)
+                        {
+                            int codssigo = pedidoNE.IngresoPlacobDetalle(PlacobDetalleG);
+                            validarnegativo = false;
+                        }
+                    }
                 }
-            }            
+            }
+            else
+            {
+                /*PARA CANJEAR*/
+                decimal montoacumulado = 0;
+                decimal montodescargado = 0;
+                string correla = "";
+                string fechas = "";
+                for (int i = 0; i < dgvDocumentosSeleccionados.RowCount; i++)
+                {
+                    montoacumulado += decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString());
+                    if (dgvDocumentosSeleccionados.Rows[i].Cells["CHTIPOS"].Value.ToString() == "NC")
+                    {
+                        montodescargado += decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString())*(-1);
+                    }else
+                    {
+                        correla = dgvDocumentosSeleccionados.Rows[i].Cells["CHDOCS"].Value.ToString();
+                        fechas = dgvDocumentosSeleccionados.Rows[i].Cells["CHFECHAS"].Value.ToString(); 
+                    }
+                }
+                int tipopago = 0;
+                if (montoacumulado == 0)
+                {
+                    tipopago = 1;
+                }
+                decimal montofinal = 0;
+                    int item = 0;
+                for (int i = 0; i < dgvDocumentosSeleccionados.RowCount; i++)
+                {
+                    if (dgvDocumentosSeleccionados.Rows[i].Cells["CHTIPOS"].Value.ToString() != "NC")
+                    {
+                        PlacobDetalleG = new placobd();
+                        PlacobDetalleG.p_inidplacoc = CodigoCabecera;
+                        PlacobDetalleG.chcorreplacobc = correlativo;
+                        PlacobDetalleG.chcorrerecibo = txtCorrela.Text;
+                        PlacobDetalleG.initem = item++;
+                        PlacobDetalleG.p_inidcliente = p_inidCliente;
+                        PlacobDetalleG.p_inidtipodoc = (int)dgvDocumentosSeleccionados.Rows[i].Cells["CODTIPOS"].Value;
+                        PlacobDetalleG.chcorredocumento = dgvDocumentosSeleccionados.Rows[i].Cells["CHDOCS"].Value.ToString();
+                        PlacobDetalleG.chfecha = txtFechaCancel.Text;
+                        PlacobDetalleG.nuimporpendiente = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString());
+                        PlacobDetalleG.p_inidmoneda = (int)cboMoneda.SelectedValue;
+                        PlacobDetalleG.p_inidmonedapag = (int)cboMoneda.SelectedValue;
+                        montofinal = (montodescargado) + (decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) - montodescargado);
+                        PlacobDetalleG.nuimporpagmonenac = montofinal;
+                        PlacobDetalleG.nuimporpagmoneext = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) * decimal.Parse(txtTipoCambio.Text);
+                        PlacobDetalleG.nuimporcamvta = decimal.Parse(txtTipoCambio.Text);
+                        PlacobDetalleG.p_inidtipopag = tipopago;//pendiente = 0, cancelado = 1;
+                        PlacobDetalleG.chobservacion = string.Empty;
+                        if (rbtcancela.Checked) { PlacobDetalleG.p_inidtipomov = 1; } else { PlacobDetalleG.p_inidtipomov = 2; }
+                        PlacobDetalleG.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                        PlacobDetalleG.p_inidusuariodelete = 0;
+                        PlacobDetalleG.estado = true;
+                        int codssigo = pedidoNE.IngresoPlacobDetalle(PlacobDetalleG);
+                    }else
+                    {
+                        docnc Registrosdoc = new docnc();
+                        Registrosdoc.chcorreladoc = correla;
+                        Registrosdoc.chfechacancel = fechas;
+                        Registrosdoc.p_inidnotacredito = (int)dgvDocumentosSeleccionados.Rows[i].Cells["CODTIPOS"].Value;
+                        Registrosdoc.chcorrelanota = dgvDocumentosSeleccionados.Rows[i].Cells["CHDOCS"].Value.ToString();
+                        Registrosdoc.chfechanota = dgvDocumentosSeleccionados.Rows[i].Cells["CHFECHAS"].Value.ToString();
+                        Registrosdoc.p_inidmoneda = (int)cboMoneda.SelectedValue;
+                        Registrosdoc.nuimporcancela = montofinal;
+                        Registrosdoc.p_inidsituacion = 0;
+                        Registrosdoc.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                        Registrosdoc.p_inidusuariodelete = 0;
+                        Registrosdoc.estado = true;                        
+                        pedidoNE.IngresarDocNc(Registrosdoc);
+                    }                   
+                }
+            }     
         }
 
         private void cboMoneda_SelectedIndexChanged(object sender, EventArgs e)
@@ -400,6 +520,30 @@ namespace Presentacion
                 cboBanco.Visible = false;
                 txtCheque.Visible = false;
             }
+        }
+
+        private void txtImport_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.ValidarNumero(ref textboxusado, e);
+        }
+
+        private void txtInter_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.ValidarNumero(ref textboxusado, e);
+        }
+
+        private void txtImport_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.solonumeros(ref textboxusado, e);
+        }
+
+        private void txtInter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.solonumeros(ref textboxusado, e);
         }
 
 

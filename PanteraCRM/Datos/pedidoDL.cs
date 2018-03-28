@@ -129,38 +129,7 @@ namespace Datos
               );
          
         }
-        public static List<RegistroVenta> BuscarRegistroVentasCliente(int clientecodigo)
-        {
-            using (IDataReader datareader = conexion.executeOperation("fn_registroventa_busqueda", CommandType.StoredProcedure, new parametro("in_parametro", clientecodigo)))
-            {
-                List < RegistroVenta > Listado = new List<RegistroVenta>();
-                while (datareader.Read())
-                {
-                    RegistroVenta registro = new RegistroVenta();
-                    registro.p_inidregistroventa = Convert.ToInt32(datareader["p_inidregistroventa"]);
-                    registro.p_inidpuntoventa = Convert.ToInt32(datareader["p_inidpuntoventa"]);
-                    registro.p_inidtipodocu = Convert.ToInt32(datareader["p_inidtipodocu"]);
-                    registro.p_iniddocumento = Convert.ToInt32(datareader["p_iniddocumento"]);
-                    registro.chcodigodocu = Convert.ToString(datareader["chcodigodocu"]).Trim();
-                    registro.chfechadoc = Convert.ToString(datareader["chfechadoc"]).Trim();
-                    registro.p_inidcliente = Convert.ToInt32(datareader["p_inidcliente"]);
-                    registro.nucambioventa = Convert.ToDecimal(datareader["nucambioventa"]);
-                    registro.nuimporvtaafecta = Convert.ToDecimal(datareader["nuimporvtaafecta"]);
-                    registro.nuimportotdesc = Convert.ToDecimal(datareader["nuimportotdesc"]);
-                    registro.nuimporttotigv = Convert.ToDecimal(datareader["nuimporttotigv"]);
-                    registro.nuimportetotvta = Convert.ToDecimal(datareader["nuimportetotvta"]);
-                    registro.tipomovimiento = Convert.ToString(datareader["tipomovimiento"]).Trim();
-                    registro.chfechaventa = Convert.ToString(datareader["chfechaventa"]).Trim();
-                    registro.p_inidsituacionregistro = Convert.ToInt32(datareader["p_inidsituacionregistro"]);
-                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
-                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
-                    registro.estado = Convert.ToBoolean(datareader["estado"]);
-                    Listado.Add(registro);
-                }
-                return Listado;
-            }
-
-        }
+        
         public static pedidoguicomp BuscarComprobantesFacturados(string registros, string parametro)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_pedidofact_busqueda", CommandType.StoredProcedure, new parametro("in_parametro", registros), new parametro("in_codigo", parametro)))
@@ -388,6 +357,53 @@ namespace Datos
                 return listado;
             }
         }
+        /*PARA REGISTRO DE VENTA*/
+        public static List<RegistroVenta> BuscarRegistroVentasCliente(int clientecodigo)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_registroventa_busqueda", CommandType.StoredProcedure, new parametro("in_parametro", clientecodigo)))
+            {
+                List<RegistroVenta> Listado = new List<RegistroVenta>();
+                while (datareader.Read())
+                {
+                    RegistroVenta registro = new RegistroVenta();
+                    registro.p_inidregistroventa = Convert.ToInt32(datareader["p_inidregistroventa"]);
+                    registro.p_inidpuntoventa = Convert.ToInt32(datareader["p_inidpuntoventa"]);
+                    registro.p_inidtipodocu = Convert.ToInt32(datareader["p_inidtipodocu"]);
+                    registro.p_iniddocumento = Convert.ToInt32(datareader["p_iniddocumento"]);
+                    registro.chcodigodocu = Convert.ToString(datareader["chcodigodocu"]).Trim();
+                    registro.chfechadoc = Convert.ToString(datareader["chfechadoc"]).Trim();
+                    registro.p_inidcliente = Convert.ToInt32(datareader["p_inidcliente"]);
+                    registro.nucambioventa = Convert.ToDecimal(datareader["nucambioventa"]);
+                    registro.nuimporvtaafecta = Convert.ToDecimal(datareader["nuimporvtaafecta"]);
+                    registro.nuimportotdesc = Convert.ToDecimal(datareader["nuimportotdesc"]);
+                    registro.nuimporttotigv = Convert.ToDecimal(datareader["nuimporttotigv"]);
+                    registro.nuimportetotvta = Convert.ToDecimal(datareader["nuimportetotvta"]);
+                    registro.tipomovimiento = Convert.ToString(datareader["tipomovimiento"]).Trim();
+                    registro.chfechaventa = Convert.ToString(datareader["chfechaventa"]).Trim();
+                    registro.p_inidsituacionregistro = Convert.ToInt32(datareader["p_inidsituacionregistro"]);
+                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    Listado.Add(registro);
+                }
+                return Listado;
+            }
+
+        }
+        public static decimal BuscarMontoEncontra(int tipocomprobante, string correlativo, int cliente)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_planillacobrosd_busqueda_registros", CommandType.StoredProcedure, new parametro("tipocomprobante", tipocomprobante), new parametro("correlativo", correlativo),  new parametro("cliente", cliente)))
+            {
+                decimal monto = 0;
+                int sss = 0;
+                while (datareader.Read())
+                {
+                    monto = Convert.ToDecimal(datareader["nuimporpagmonenac"]);
+                    sss = Convert.ToInt32(datareader["p_inidcliente"]);
+                }
+                return monto;
+            }           
+        }
         /*FUNCIONES PARA RECIBOS*/
         public static int IngresoRecibo(recibo registros)
         {
@@ -407,7 +423,8 @@ namespace Datos
             new parametro("in_p_inidtipomovimiento", registros.p_inidtipomovimiento),
             new parametro("in_p_inidusuarioinsert", registros.p_inidusuarioinsert),
             new parametro("in_p_inidurusariodelete", registros.p_inidurusariodelete),
-            new parametro("in_estado", registros.estado)
+            new parametro("in_estado", registros.estado),
+            new parametro("in_chcheque", registros.chcheque)
             );
         }
         /*FUNCIONES PARA PLANILLA DE COBROS*/
@@ -471,6 +488,48 @@ namespace Datos
                     registro.estado = Convert.ToBoolean(datareader["estado"]);
                 }
                 return registro;
+            }
+        }
+        public static int ModificarPlanicobroCabecera(int codigo, decimal montomonenac, decimal montomoneex)
+        {
+            return conexion.executeScalar("fn_planillacobrosc_actualizar",
+                    CommandType.StoredProcedure,
+                    new parametro("in_p_inidplacoc", codigo),
+                    new parametro("in_nuimporplamonenac", montomonenac),
+                    new parametro("in_nuimporplanomeex", montomoneex)
+                    );
+        }
+        /*INICIO PARA COUMENTO NOTA CREDITO*/
+        public static int IngresarDocNc(docnc registros)
+        {
+            return conexion.executeScalar("fn_docnc_ingresar",
+            CommandType.StoredProcedure,
+            //this.p_iniddocnc = 0;
+            new parametro("in_chcorreladoc", registros.chcorreladoc),
+            new parametro("in_chfechacancel", registros.chfechacancel),
+            new parametro("in_p_inidnotacredito", registros.p_inidnotacredito),
+            new parametro("in_chcorrelanota", registros.chcorrelanota),
+            new parametro("in_chfechanota", registros.chfechanota),
+            new parametro("in_p_inidmoneda", registros.p_inidmoneda),
+            new parametro("in_nuimporcancela", registros.nuimporcancela),
+            new parametro("in_p_inidsituacion", registros.p_inidsituacion),
+            new parametro("in_p_inidusuarioinsert", registros.p_inidusuarioinsert),
+            new parametro("in_p_inidusuariodelete", registros.p_inidusuariodelete),
+            new parametro("in_estado", registros.estado)
+            );
+        }
+        public static decimal BuscarDocNCCodigo(string codigo)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_docnc_busqueda_registros", CommandType.StoredProcedure, new parametro("tipocomprobante", codigo)))
+            {
+                decimal monto = 0;
+                string  sss = "";
+                while (datareader.Read())
+                {
+                    monto = Convert.ToDecimal(datareader["nuimporcancela"]);
+                    sss = Convert.ToString(datareader["chcorrelanota"]);
+                }
+                return monto;
             }
         }
     }

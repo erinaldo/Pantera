@@ -55,14 +55,19 @@ namespace Negocios
         {
             return pedidoDL.BuscarComprobantesFacturados(registros, parametro);
         }
-        public static List<RegistroVenta> BuscarRegistroVentasCliente(int clientecodigo)
-        {
-            return pedidoDL.BuscarRegistroVentasCliente(clientecodigo);
-        }
+        
         /*INICIO :: PARA REGISTRO DE VENTA*/
         public static int IngresoRegistroVenta(RegistroVenta registros)
         {
             return pedidoDL.IngresoRegistroVenta(registros);
+        }
+        public static List<RegistroVenta> BuscarRegistroVentasCliente(int clientecodigo)
+        {
+            return pedidoDL.BuscarRegistroVentasCliente(clientecodigo);
+        }
+        public static decimal BuscarMontoEncontra(int tipocomprobante,string correlativo,int cliente)
+        {
+            return pedidoDL.BuscarMontoEncontra(tipocomprobante, correlativo, cliente);
         }
         /*INCIO ::  PARA RECIBO */
         public static int IngresoRecibo(recibo registros)
@@ -82,6 +87,18 @@ namespace Negocios
         {
             return pedidoDL.PlanillacobroCabeceraBusqueda(registros);
         }
-        
+        public static int ModificarPlanicobroCabecera(int codigo, decimal monenac, decimal moneex)
+        {
+            return pedidoDL.ModificarPlanicobroCabecera(codigo, monenac, moneex);
+        }
+        /*INICIO :: PARA EL DOCUMENTO NOTA CREDITO*/
+        public static int IngresarDocNc(docnc registros)
+        {
+            return pedidoDL.IngresarDocNc(registros);
+        }
+        public static decimal BuscarDocNCCodigo(string notacredito)
+        {
+            return pedidoDL.BuscarDocNCCodigo(notacredito);
+        }
     }
 }

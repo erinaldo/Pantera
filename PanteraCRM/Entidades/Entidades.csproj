@@ -53,6 +53,7 @@
     <Compile Include="clientebusqueda.cs" />
     <Compile Include="condicionpago.cs" />
     <Compile Include="conductor.cs" />
+    <Compile Include="docnc.cs" />
     <Compile Include="empresa.cs" />
     <Compile Include="empresas.cs" />
     <Compile Include="empresasesion.cs" />

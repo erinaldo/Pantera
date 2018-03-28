@@ -23,6 +23,7 @@ namespace Entidades
         public int p_inidusuarioinsert { get; set; }
         public int p_inidurusariodelete { get; set; }
         public bool estado { get; set; }
+        public string chcheque { get; set; }
         public recibo()
         {
             this.p_inidrecibo = 0;
@@ -40,6 +41,7 @@ namespace Entidades
             this.p_inidusuarioinsert = 0;
             this.p_inidurusariodelete = 0;
             this.estado = false;
+            this.chcheque = string.Empty;
         }
     }
 }
