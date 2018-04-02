@@ -41,10 +41,14 @@ namespace Negocios
         {
             return usuarioDL.UsuarioListar();
         }
-        //public static int usuarioInsertar(usuario usuario)
-        //{
-        //    return usuarioDL.usuarioInsertar(usuario);
-        //}
+        public static List<usuariomenu> UsuarioListarParametro(string parametro)
+        {
+            return usuarioDL.UsuarioListarParametro(parametro);
+        }
+        public static int UsuarioIngresar(usuariomenu usuario)
+        {
+            return usuarioDL.UsuarioIngresar(usuario);
+        }
         //public static int usuarioActualizar(usuario usuario)
         //{
         //    return usuarioDL.usuarioActualizar(usuario);

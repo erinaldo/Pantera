@@ -82,7 +82,7 @@ namespace Presentacion
                         }
                         break;
                     case "V":  // Permiso para ver
-                        if (privilegios[39] != '1')
+                        if (privilegios[40] != '1')
                         {
                             vEvalua = false;
                             throw new Exception("No cuenta con los permisos para anular");

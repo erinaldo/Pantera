@@ -132,52 +132,58 @@ namespace Presentacion
         }
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            switch (this.vBoton)
+            if (basicas.validarAcceso("G"))
             {
-                case "A":
-                    if (ValidarCamposIndependientes())
-                    {
-                        DialogResult result = MessageBox.Show("¿Está seguro de Registrar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (result == DialogResult.Yes)
+                switch (this.vBoton)
+                {
+                    case "A":
+                        if (ValidarCamposIndependientes())
                         {
-                            ClienteRegistrar();
+                            DialogResult result = MessageBox.Show("¿Está seguro de Registrar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (result == DialogResult.Yes)
+                            {
+                                ClienteRegistrar();
+                            }
+                            else
+                            {
+                                return;
+                            }
+
                         }
                         else
                         {
                             return;
                         }
 
-                    }
-                    else
-                    {
-                        return;
-                    }
-
-                    break;
-                case "M":
-                    if (ValidarCamposIndependientesModificar())
-                    {
-                        DialogResult result = MessageBox.Show("¿Está seguro de Registrar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (result == DialogResult.Yes)
+                        break;
+                    case "M":
+                        if (ValidarCamposIndependientesModificar())
                         {
-                            ClienteModificar();
+                            DialogResult result = MessageBox.Show("¿Está seguro de Registrar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (result == DialogResult.Yes)
+                            {
+                                ClienteModificar();
+                            }
+                            else
+                            {
+                                return;
+                            }
+
                         }
                         else
                         {
                             return;
                         }
-
-                    }
-                    else
-                    {
-                        return;
-                    }
-                    break;
-                default:
-                    break;
+                        break;
+                    default:
+                        break;
+                }
+                this.Dispose();
             }
-            this.Dispose();
-
+            else
+            {
+                MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
         }
         private void CargarRegistros()
         {

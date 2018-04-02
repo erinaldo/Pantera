@@ -28,31 +28,42 @@ namespace Presentacion
         {
             if (parametro == "")
             {
-                List<cliente> listado = clienteNE.clienteListar();
-                //dgvListaClientes.DataSource = listado;
+                List<usuariomenu> listado = usuarioNE.UsuarioListar();
+                CargarTabla(listado);
             }
             else
             {
-                List<cliente> listado = clienteNE.ClienteListarParametro2(parametro);
-                //dgvListaClientes.DataSource = listado;
+                List<usuariomenu> listado = usuarioNE.UsuarioListarParametro(parametro);
+                CargarTabla(listado);
+                
             }
 
 
         }
+        public void CargarTabla(List<usuariomenu> listado)
+        {
+            dgvListaUsuarios.Rows.Clear();
+           
+            foreach (usuariomenu registro in  listado)
+            {
+                persona personaRegistro = personaNE.PersonaBusquedaCodigo(registro.p_inidpersona);
+                dgvListaUsuarios.Rows.Add(registro.p_inidusuario, personaRegistro.chapellidopaterno+" "+ personaRegistro.chapellidomaterno +", "+ personaRegistro.chnombres,registro.chusuario);                
+            }
+        }
         public void ejecutar(int dato)
         {
             cargarData(0, "");
-            //foreach (DataGridViewRow Row in dgvListaClientes.Rows)
-            //{
-            //    int valor = (int)Row.Cells["IDCLIENTE"].Value;
-            //    if (valor == dato)
-            //    {
-            //        int puntero = (int)Row.Index;
-            //        //                    dgvPersona.CurrentCell = dgvPersona.Rows[puntero].Cells["IDPERSONA"];
-            //        dgvListaClientes.CurrentCell = dgvListaClientes.Rows[puntero].Cells[1];
-            //        return;
-            //    }
-            //}
+            foreach (DataGridViewRow Row in dgvListaUsuarios.Rows)
+            {
+                int valor = (int)Row.Cells["IDUSUARIO"].Value;
+                if (valor == dato)
+                {
+                    int puntero = (int)Row.Index;
+                    //                    dgvPersona.CurrentCell = dgvPersona.Rows[puntero].Cells["IDPERSONA"];
+                    dgvListaUsuarios.CurrentCell = dgvListaUsuarios.Rows[puntero].Cells[1];
+                    return;
+                }
+            }
         }
         private void btnAnadir_Click(object sender, EventArgs e)
         {
@@ -84,9 +95,9 @@ namespace Presentacion
                 vBoton = "M";
                 if (basicas.validarAcceso(vBoton))
                 {
-                    frmSecuUsuariosAnadir f = new frmSecuUsuariosAnadir(vBoton);
-                    f.pasado += new frmSecuUsuariosAnadir.pasar(ejecutar);                    
-                    f.ShowDialog();
+                    //frmSecuUsuariosAnadir f = new frmSecuUsuariosAnadir(vBoton);
+                    //f.pasado += new frmSecuUsuariosAnadir.pasar(ejecutar);                    
+                    //f.ShowDialog();
                 }
                 else
                 {
@@ -107,9 +118,9 @@ namespace Presentacion
                 vBoton = "V";
                 if (basicas.validarAcceso(vBoton))
                 {
-                    frmSecuUsuariosAnadir f = new frmSecuUsuariosAnadir(vBoton);
-                    f.pasado += new frmSecuUsuariosAnadir.pasar(ejecutar);                    
-                    f.ShowDialog();
+                    //frmSecuUsuariosAnadir f = new frmSecuUsuariosAnadir(vBoton);
+                    //f.pasado += new frmSecuUsuariosAnadir.pasar(ejecutar);                    
+                    //f.ShowDialog();
                 }
                 else
                 {
@@ -129,9 +140,9 @@ namespace Presentacion
                 vBoton = "I";
                 if (basicas.validarAcceso(vBoton))
                 {
-                    frmSecuUsuariosAnadir f = new frmSecuUsuariosAnadir(vBoton);
-                    f.pasado += new frmSecuUsuariosAnadir.pasar(ejecutar);                    
-                    f.ShowDialog();
+                    //frmSecuUsuariosAnadir f = new frmSecuUsuariosAnadir(vBoton);
+                    //f.pasado += new frmSecuUsuariosAnadir.pasar(ejecutar);                    
+                    //f.ShowDialog();
                 }
                 else
                 {

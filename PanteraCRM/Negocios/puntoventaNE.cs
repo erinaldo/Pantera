@@ -22,14 +22,15 @@ namespace Negocios
             return puntoventaDL.aumentarNumero(idpuntoventa, idtipo);
         }
 
-        public static puntoventasesion puntoventaObtenerSerie(int idalmacen,int idempresa)
+        public static List<puntoventa> PuntodeVentaListar()
         {
-            return puntoventaDL.obtenerSerie(idalmacen,idempresa);
+            return puntoventaDL.PuntodeVentaListar();
         }
-        public static DataTable listarPorEmpresa(int idempresa)
-        {
-            return puntoventaDL.listarPorEmpresa(idempresa);
-        }
+        //public static DataTable listarPorEmpresa(int idempresa)
+        //{
+        //    return puntoventaDL.listarPorEmpresa(idempresa);
+        //}
+
 
     }
 }

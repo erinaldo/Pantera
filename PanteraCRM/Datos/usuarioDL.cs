@@ -48,6 +48,28 @@ namespace Datos
                 return listado;
             }
         }
+        public static List<usuariomenu> UsuarioListarParametro(string parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_usuario_listar_parametro", CommandType.StoredProcedure, new parametro("in_parametro",parametro) ))
+            {
+                List<usuariomenu> listado = new List<usuariomenu>();
+                while (datareader.Read())
+                {
+                    usuariomenu registro = new usuariomenu();
+                    registro.p_inidusuario = Convert.ToInt32(datareader["p_inidusuario"]);
+                    registro.p_inidpersona = Convert.ToInt32(datareader["p_inidpersona"]);
+                    registro.p_inidpuntoventa = Convert.ToInt32(datareader["p_inidpuntoventa"]);
+                    registro.chclave = Convert.ToString(datareader["chclave"]).Trim();
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.p_inidperfil = Convert.ToInt32(datareader["p_inidperfil"]);
+                    registro.chusuario = Convert.ToString(datareader["chusuario"]).Trim();
+                    registro.chprivilegios = Convert.ToString(datareader["chprivilegios"]).Trim();
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+        
 
         public static usuario buscarPorLoginClave(string login, string clave)
         {
@@ -102,16 +124,20 @@ namespace Datos
         //    registro.idperfil = Convert.ToInt32(datareader["idperfil"]);
         //    return registro;
         //}
-        //public static int usuarioInsertar(usuario usuario)
-        //{
-        //        return conexion.executeScalar("fn_usuario_insertar",
-        //        CommandType.StoredProcedure,
-        //        new parametro("in_nombre", usuario.nombre),
-        //        new parametro("in_login", usuario.login),
-        //        new parametro("in_clave", usuario.clave),
-        //        new parametro("in_estadousuario", usuario.estadousuario),
-        //        new parametro("in_idperfil", usuario.idperfil));
-        //}
+        public static int UsuarioIngresar(usuariomenu usuario)
+        {
+            return conexion.executeScalar("fn_usuario_ingresar",
+            CommandType.StoredProcedure,
+            //new parametro("in_p_inidusuario", usuario.p_inidusuario),
+            new parametro("in_p_inidpersona", usuario.p_inidpersona),
+            new parametro("in_p_inidpuntoventa", usuario.p_inidpuntoventa),
+            new parametro("in_chclave", usuario.chclave),
+            new parametro("in_estado", usuario.estado),
+            new parametro("in_p_inidperfil", usuario.p_inidperfil),
+            new parametro("in_chusuario", usuario.chusuario ),
+            new parametro("in_chprivilegios", usuario.chprivilegios)
+                );
+        }
 
         //public static int usuarioActualizar(usuario usuario)
         //{

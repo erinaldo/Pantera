@@ -89,26 +89,34 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (dgvListasTarjetas.RowCount > 0)
+            if (basicas.validarAcceso("G"))
             {
-                ListaTarjetadeProiedadG = new List<tarjetapropiedad>();
-                int count = 0;
-                for (int i = 0; i < dgvListasTarjetas.RowCount; i++)
+                if (dgvListasTarjetas.RowCount > 0)
                 {
-                    tarjetapropiedad RegistrosIngresoDetalle = new tarjetapropiedad();
-                    RegistrosIngresoDetalle.chtarjeta = dgvListasTarjetas.Rows[i].Cells["CHTARJETA"].Value.ToString();
-                    RegistrosIngresoDetalle.fechavencimiento = dgvListasTarjetas.Rows[i].Cells["CHVENCIMIENTO"].Value.ToString();
-                    ListaTarjetadeProiedadG.Add(RegistrosIngresoDetalle);
-                    count++;
+                    ListaTarjetadeProiedadG = new List<tarjetapropiedad>();
+                    int count = 0;
+                    for (int i = 0; i < dgvListasTarjetas.RowCount; i++)
+                    {
+                        tarjetapropiedad RegistrosIngresoDetalle = new tarjetapropiedad();
+                        RegistrosIngresoDetalle.chtarjeta = dgvListasTarjetas.Rows[i].Cells["CHTARJETA"].Value.ToString();
+                        RegistrosIngresoDetalle.fechavencimiento = dgvListasTarjetas.Rows[i].Cells["CHVENCIMIENTO"].Value.ToString();
+                        ListaTarjetadeProiedadG.Add(RegistrosIngresoDetalle);
+                        count++;
+                    }
+                    pasado(ListaTarjetadeProiedadG);
+                    pasadocantidad(count);
+                    this.Dispose();
                 }
-                pasado(ListaTarjetadeProiedadG);
-                pasadocantidad(count);
-                this.Dispose();
+                else
+                {
+                    MessageBox.Show("Lista de Registros Vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                }
             }
             else
             {
-                MessageBox.Show("Lista de Registros Vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
             }
+           
             
         }
         private void CargarTalba()

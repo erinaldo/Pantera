@@ -274,15 +274,71 @@ namespace Presentacion
 
         private void btnGrabar_Click_1(object sender, EventArgs e)
         {
-            int varIdArticulo;
-            switch (this.vBoton)
+            if (basicas.validarAcceso("G"))
             {
-                case "A":
-                    if(validarCampos())
-                    {
-                        tmpProducto = new producto();
-                        //ATRIBUTOS PARA INGRESAR PRODUCTO
-                        //tmpProducto.p_inidproducto = 0; AUTO-GENERADO  
+                int varIdArticulo;
+                switch (this.vBoton)
+                {
+                    case "A":
+                        if (validarCampos())
+                        {
+                            tmpProducto = new producto();
+                            //ATRIBUTOS PARA INGRESAR PRODUCTO
+                            //tmpProducto.p_inidproducto = 0; AUTO-GENERADO  
+                            tmpProducto.chcodigoproducto = txtCodigo.Text;
+                            tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
+                            tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
+                            tmpProducto.p_inidunidadmedidaproducto = (int)cboMedida.SelectedValue;
+                            tmpProducto.chfechacreacion = txtFecha.Text;
+                            tmpProducto.estado = true;
+                            tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
+                            tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
+                            tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
+                            tmpProducto.chcodigoproductoantes = "";
+                            tmpProducto.chdescripcionproducto = txtNombre.Text;
+                            tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
+                            tmpProducto.p_inidusuariodelete = 0;
+                            tmpProducto.nuprecio = decimal.Parse("0.00");
+                            tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
+                            tmpProducto.req_serie = ckbSerie.Checked;
+                            tmpProducto.nucantporuni = int.Parse(txtUnidad.Text);
+                            varIdArticulo = productoNE.productoInsertar(tmpProducto);
+                            if (varIdArticulo <= 0)
+                            {
+                                MessageBox.Show("Error en el Registro", "Mensaje de Sistema", MessageBoxButtons.OK);
+                                return;
+                            }
+                            else
+                            {
+                                // MessageBox.Show("Registro Ingresado", "Mensaje de Sistema", MessageBoxButtons.OK);
+                                saldoalmacen registros = new saldoalmacen();
+                                //registros.p_inidsaldoalmancen = 0;
+                                registros.nustockactual = 0;
+                                registros.nustockcomprpmetido = 0;
+                                registros.nustockminima = 0;
+                                registros.estado = true;
+                                registros.p_inidalmacen = sesion.SessionGlobal.p_inidalmacen;
+                                registros.p_inidproducto = varIdArticulo;
+                                int verdad = productoNE.productoInsertarSaldoalamcen(registros);
+                                if (verdad <= 0)
+                                {
+                                    MessageBox.Show("Error en la creación de Stock, realizar manualmente", "Mensaje de Sistema", MessageBoxButtons.OK);
+                                }
+                                else
+                                {
+                                    pasado(varIdArticulo);
+                                }
+
+                            }
+                        }
+                        else
+                        {
+                            return;
+                        }
+
+                        break;
+                    case "M":
+                        tmpProducto.p_inidproducto = int.Parse(txtidproducto.Text);
                         tmpProducto.chcodigoproducto = txtCodigo.Text;
                         tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
                         tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
@@ -296,79 +352,31 @@ namespace Presentacion
                         tmpProducto.chdescripcionproducto = txtNombre.Text;
                         tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
                         tmpProducto.p_inidusuariodelete = 0;
-                        tmpProducto.nuprecio = decimal.Parse("0.00");
-                        tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
+                        tmpProducto.nuprecio = 0;
                         tmpProducto.req_serie = ckbSerie.Checked;
+                        tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
                         tmpProducto.nucantporuni = int.Parse(txtUnidad.Text);
-                        varIdArticulo = productoNE.productoInsertar(tmpProducto);
+                        varIdArticulo = productoNE.ProductoActualizar(tmpProducto);
                         if (varIdArticulo <= 0)
                         {
-                            MessageBox.Show("Error en el Registro", "Mensaje de Sistema", MessageBoxButtons.OK);
-                            return;
+                            MessageBox.Show("Error en la Modificación", "Mensaje de Sistema", MessageBoxButtons.OK);
+                            //MessageBox.Show("Registro con error por actualizado, validar");
                         }
                         else
                         {
-                            // MessageBox.Show("Registro Ingresado", "Mensaje de Sistema", MessageBoxButtons.OK);
-                            saldoalmacen registros = new saldoalmacen();
-                            //registros.p_inidsaldoalmancen = 0;
-                            registros.nustockactual = 0;
-                            registros.nustockcomprpmetido = 0;
-                            registros.nustockminima = 0;
-                            registros.estado = true;
-                            registros.p_inidalmacen = sesion.SessionGlobal.p_inidalmacen;
-                            registros.p_inidproducto = varIdArticulo;
-                            int verdad = productoNE.productoInsertarSaldoalamcen(registros); 
-                            if (verdad <= 0)
-                            {
-                                MessageBox.Show("Error en la creación de Stock, realizar manualmente", "Mensaje de Sistema", MessageBoxButtons.OK); 
-                            }
-                            else
-                            {
-                                pasado(varIdArticulo);
-                            }
-                            
+                            MessageBox.Show("Registro Modificado", "Mensaje de Sistema", MessageBoxButtons.OK);
+                            pasado(varIdArticulo);
                         }
-                    }else
-                    {
-                        return;
-                    }                   
-
-                    break;
-                case "M":
-                    tmpProducto.p_inidproducto = int.Parse(txtidproducto.Text);
-                    tmpProducto.chcodigoproducto = txtCodigo.Text;
-                    tmpProducto.p_inidtipoproducto = (int)cboTipo.SelectedValue;
-                    tmpProducto.p_inidmarca = (int)cboMarca.SelectedValue;
-                    tmpProducto.p_inidunidadmedidaproducto = (int)cboMedida.SelectedValue;
-                    tmpProducto.chfechacreacion = txtFecha.Text;
-                    tmpProducto.estado = true;
-                    tmpProducto.p_inidfamiliaproducto = (int)cboCategoria.SelectedValue;
-                    tmpProducto.p_inidcalibre = (int)cboCalibre.SelectedValue;
-                    tmpProducto.p_inidmodelo = (int)cboModelo.SelectedValue;
-                    tmpProducto.chcodigoproductoantes = "";
-                    tmpProducto.chdescripcionproducto = txtNombre.Text;
-                    tmpProducto.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-                    tmpProducto.p_inidusuariodelete = 0;
-                    tmpProducto.nuprecio = 0;
-                    tmpProducto.req_serie = ckbSerie.Checked;
-                    tmpProducto.p_inidsituacion = (int)cboSituacion.SelectedValue;
-                    tmpProducto.nucantporuni = int.Parse(txtUnidad.Text);
-                    varIdArticulo = productoNE.ProductoActualizar(tmpProducto);
-                    if (varIdArticulo <= 0)
-                    {
-                        MessageBox.Show("Error en la Modificación", "Mensaje de Sistema", MessageBoxButtons.OK);
-                        //MessageBox.Show("Registro con error por actualizado, validar");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Registro Modificado", "Mensaje de Sistema", MessageBoxButtons.OK);
-                        pasado(varIdArticulo);
-                    }
-                    break;
-                default:
-                    break;
+                        break;
+                    default:
+                        break;
+                }
+                this.Dispose();
             }
-            this.Dispose();
+            else
+            {
+                MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+            }           
         }
 
         private void btnSalir_Click_1(object sender, EventArgs e)

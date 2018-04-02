@@ -32,15 +32,18 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListaUsuarios = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.IDUSUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHNOMBRES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUSUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,14 +75,23 @@
             this.txtParametro.TabIndex = 0;
             this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
             // 
-            // dataGridView1
+            // dgvListaUsuarios
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(677, 343);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvListaUsuarios.AllowUserToAddRows = false;
+            this.dgvListaUsuarios.AllowUserToDeleteRows = false;
+            this.dgvListaUsuarios.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDUSUARIO,
+            this.CHNOMBRES,
+            this.CHUSUARIO});
+            this.dgvListaUsuarios.Location = new System.Drawing.Point(12, 56);
+            this.dgvListaUsuarios.Name = "dgvListaUsuarios";
+            this.dgvListaUsuarios.ReadOnly = true;
+            this.dgvListaUsuarios.RowHeadersVisible = false;
+            this.dgvListaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListaUsuarios.Size = new System.Drawing.Size(677, 343);
+            this.dgvListaUsuarios.TabIndex = 5;
             // 
             // groupBox1
             // 
@@ -157,6 +169,27 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // IDUSUARIO
+            // 
+            this.IDUSUARIO.HeaderText = "IDUSUARIO";
+            this.IDUSUARIO.Name = "IDUSUARIO";
+            this.IDUSUARIO.ReadOnly = true;
+            this.IDUSUARIO.Visible = false;
+            // 
+            // CHNOMBRES
+            // 
+            this.CHNOMBRES.HeaderText = "APELLIDOS Y NOMBRES";
+            this.CHNOMBRES.Name = "CHNOMBRES";
+            this.CHNOMBRES.ReadOnly = true;
+            this.CHNOMBRES.Width = 450;
+            // 
+            // CHUSUARIO
+            // 
+            this.CHUSUARIO.HeaderText = "USUARIO";
+            this.CHUSUARIO.Name = "CHUSUARIO";
+            this.CHUSUARIO.ReadOnly = true;
+            this.CHUSUARIO.Width = 200;
+            // 
             // frmSecuUsuariosPrincipal
             // 
             this.AcceptButton = this.btnAnadir;
@@ -166,7 +199,7 @@
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(701, 466);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvListaUsuarios);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -178,7 +211,7 @@
             this.Load += new System.EventHandler(this.frmSecuUsuariosPrincipal_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -189,12 +222,15 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtParametro;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListaUsuarios;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAnadir;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDUSUARIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHNOMBRES;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHUSUARIO;
     }
 }

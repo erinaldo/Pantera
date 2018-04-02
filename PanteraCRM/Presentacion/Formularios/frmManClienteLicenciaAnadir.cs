@@ -95,26 +95,33 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (dgvListasTarjetas.RowCount > 0)
+            if (basicas.validarAcceso("G"))
             {
-                ListaLicenciasG = new List<licencia>();
-                int count = 0;
-                for (int i = 0; i < dgvListasTarjetas.RowCount; i++)
+                if (dgvListasTarjetas.RowCount > 0)
                 {
-                    licencia RegistrosIngresoDetalle = new licencia();
-                    RegistrosIngresoDetalle.chlicencia = dgvListasTarjetas.Rows[i].Cells["CHLICENCIA"].Value.ToString();
-                    RegistrosIngresoDetalle.fechavencimiento = dgvListasTarjetas.Rows[i].Cells["CHVENCIMIENTO"].Value.ToString();
-                    ListaLicenciasG.Add(RegistrosIngresoDetalle);
-                    count++;
+                    ListaLicenciasG = new List<licencia>();
+                    int count = 0;
+                    for (int i = 0; i < dgvListasTarjetas.RowCount; i++)
+                    {
+                        licencia RegistrosIngresoDetalle = new licencia();
+                        RegistrosIngresoDetalle.chlicencia = dgvListasTarjetas.Rows[i].Cells["CHLICENCIA"].Value.ToString();
+                        RegistrosIngresoDetalle.fechavencimiento = dgvListasTarjetas.Rows[i].Cells["CHVENCIMIENTO"].Value.ToString();
+                        ListaLicenciasG.Add(RegistrosIngresoDetalle);
+                        count++;
+                    }
+                    pasado(ListaLicenciasG);
+                    pasadocantidad(count);
+                    this.Dispose();
                 }
-                pasado(ListaLicenciasG);
-                pasadocantidad(count);
-                this.Dispose();
+                else
+                {
+                    MessageBox.Show("Lista de Registros Vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                }
             }
             else
             {
-                MessageBox.Show("Lista de Registros Vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-            }
+                MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+            }            
         }
     }
 }

@@ -145,8 +145,9 @@ namespace Presentacion
                     }
                     
                 }
-                else MessageBox.Show("Usted no tiene acceso a este módulo" + Convert.ToInt32(nodo.Name));                
-            }else
+                else MessageBox.Show("Error de Acceso :: No cuenta con los permisos", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+            }
+            else
             {
                 MessageBox.Show("Error" + Convert.ToInt32(nodo.Name));
             }

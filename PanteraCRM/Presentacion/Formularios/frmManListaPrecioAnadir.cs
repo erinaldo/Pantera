@@ -32,40 +32,48 @@ namespace Presentacion
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            int varIdArticulo;
-            switch (this.vBoton)
+            if (basicas.validarAcceso("G"))
             {
-                
-                case "M":
-                    if (validarCampos())
-                    {
-                        tmpProducto = new productobuscado();
-                        //ATRIBUTOS PARA MODIFICAR PRECIO PRODUCTO
-                        tmpProducto.p_inidproducto = int.Parse(txtIdproducto.Text);
-                        tmpProducto.nuprecio = decimal.Round(decimal.Parse(txtCantidad.Text), 2);
-                        varIdArticulo = productoNE.productoPrecioInsertar(tmpProducto);
-                        if (varIdArticulo <= 0)
+                int varIdArticulo;
+                switch (this.vBoton)
+                {
+
+                    case "M":
+                        if (validarCampos())
                         {
-                            MessageBox.Show("Error en el Registro", "Mensaje de Sistema", MessageBoxButtons.OK);
-                            return;
+                            tmpProducto = new productobuscado();
+                            //ATRIBUTOS PARA MODIFICAR PRECIO PRODUCTO
+                            tmpProducto.p_inidproducto = int.Parse(txtIdproducto.Text);
+                            tmpProducto.nuprecio = decimal.Round(decimal.Parse(txtCantidad.Text), 2);
+                            varIdArticulo = productoNE.productoPrecioInsertar(tmpProducto);
+                            if (varIdArticulo <= 0)
+                            {
+                                MessageBox.Show("Error en el Registro", "Mensaje de Sistema", MessageBoxButtons.OK);
+                                return;
+                            }
+                            else
+                            {
+                                // MessageBox.Show("Registro Ingresado", "Mensaje de Sistema", MessageBoxButtons.OK);
+                                pasado(varIdArticulo);
+                            }
+
                         }
                         else
                         {
-                            // MessageBox.Show("Registro Ingresado", "Mensaje de Sistema", MessageBoxButtons.OK);
-                            pasado(varIdArticulo);
+                            return;
                         }
-                        
-                    }
-                    else
-                    {
-                        return;
-                    }
-                    
-                    break;
-                default:
-                    break;
+
+                        break;
+                    default:
+                        break;
+                }
+                this.Dispose();
             }
-            this.Dispose();
+            else
+            {
+                MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+            
         }
 
         private void frmManListaPrecioAnadir_Load(object sender, EventArgs e)
