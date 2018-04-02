@@ -18,6 +18,7 @@ namespace Entidades
         public int p_inidpersona { get; set; }
         public int p_inidperfil { get; set; }
         public bool estado { get; set; }
+        public string chprivilegios { get; set; }
         public sessionglobal()
         {
             this.p_inidpuntoventa = 0;
@@ -30,6 +31,7 @@ namespace Entidades
             this.p_inidpersona = 0;
             this.p_inidperfil = 0;
             this.estado = false;
+            this.chprivilegios = string.Empty;
         }
     }
 }

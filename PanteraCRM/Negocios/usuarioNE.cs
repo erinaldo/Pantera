@@ -33,10 +33,14 @@ namespace Negocios
         {
             return usuarioDL.buscarPorCodigo(idusuario);
         }
-        //public static List<usuario> usuarioListar()
-        //{
-        //    return usuarioDL.usuarioListar();
-        //}
+        public static List<modulos> ModulosListar()
+        {
+            return usuarioDL.ModulosListar();
+        }
+        public static List<usuariomenu> UsuarioListar()
+        {
+            return usuarioDL.UsuarioListar();
+        }
         //public static int usuarioInsertar(usuario usuario)
         //{
         //    return usuarioDL.usuarioInsertar(usuario);

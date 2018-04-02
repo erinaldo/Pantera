@@ -64,7 +64,7 @@ namespace Presentacion
             cbotipoPago.SelectedIndex = index3;
             //string correlativo = generarCodigoNE.ObtenerCorrelativo(sesion.SessionGlobal.p_inidpuntoventa);
            
-            List<tipocambio> listado2 = tipocambioNE.busquedaValorTipoCambio(txtFechaCancel.Text);
+            List<tipocambio> listado2 = tipocambioNE.busquedaValorTipoCambio(txtfecharegi.Text);
             if (listado2 != null)
             {
                 foreach (tipocambio obj2 in listado2)
@@ -233,7 +233,7 @@ namespace Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (Validacion())
+            if (!Validacion())
             {
                 DialogResult result = MessageBox.Show("¿Está seguro de Registrar los datos?", "MENSAJE DE CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
@@ -255,6 +255,54 @@ namespace Presentacion
         private bool Validacion()
         {
             bool flat = true;
+            if (rbtcancela.Checked == true)
+            {
+                if (txtCheque.Text.Length > 0 && cbotipoPago.Text != "PAGO EN EFECTIVO")
+                {
+                    if (txtImport.Text.Length > 0 && decimal.Parse(txtImport.Text) != 0)
+                    {
+                        if (txtInter.Text.Length > 0)
+                        {
+                            if ((decimal.Parse(txtImport.Text) + decimal.Parse(txtInter.Text)) <= decimal.Parse(txttotalSeleccion.Text))
+                            {
+                                flat = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("El importe a pagar excede al monto seleccionado", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Interés y comisión inválido", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Importe a pagar inválido", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("N° cheque vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                }
+            }else
+            {
+                if (decimal.Parse(txttotalSeleccion.Text) >= 0)
+                {
+                    if (dgvDocumentosSeleccionados.RowCount == 2)
+                    {
+                        flat = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falta agregar un documento", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                    }                    
+                }else
+                {
+                    MessageBox.Show("Error", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                }
+            }
             return flat;
         }
         private void GrabarCabecera()
@@ -328,8 +376,8 @@ namespace Presentacion
                     PlacobDetalleG.p_inidmoneda = (int)cboMoneda.SelectedValue;
                     PlacobDetalleG.p_inidmonedapag = (int)cboMoneda.SelectedValue;
                     PlacobDetalleG.nuimporpagmonenac = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString());
-                    PlacobDetalleG.nuimporpagmoneext = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) * decimal.Parse(txtTipoCambio.Text);
-                    PlacobDetalleG.nuimporcamvta = decimal.Parse(txtTipoCambio.Text);
+                    PlacobDetalleG.nuimporpagmoneext = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) *  decimal.Parse(txtTipoCambio.Text);
+                    PlacobDetalleG.nuimporcamvta =  decimal.Parse(txtTipoCambio.Text);
                     PlacobDetalleG.p_inidtipopag = tipopago;//pendiente = 0, cancelado = 1;
                     PlacobDetalleG.chobservacion = string.Empty;
                     if (rbtcancela.Checked) { PlacobDetalleG.p_inidtipomov = 1; } else { PlacobDetalleG.p_inidtipomov = 2; }
@@ -545,6 +593,8 @@ namespace Presentacion
             TextBox textboxusado = (TextBox)sender;
             utilidades.solonumeros(ref textboxusado, e);
         }
+
+        
 
 
 

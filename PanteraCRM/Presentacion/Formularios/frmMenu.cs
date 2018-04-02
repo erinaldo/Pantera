@@ -136,29 +136,16 @@ namespace Presentacion
             {
                 string formula = "Presentacion." + nodo.Tag.ToString().Trim();
                 string forumlario = nodo.Tag.ToString().Trim(); ;
-                Form frm = (Form)(Assembly.GetExecutingAssembly().CreateInstance(formula));
-                //int item = Convert.ToInt32(nodo.Name);
-                if (perfildetalleNE.validarModulo(sesion.SessionGlobal.p_inidperfil, Convert.ToInt32(nodo.Name)) == 1)
+                Form frm = (Form)(Assembly.GetExecutingAssembly().CreateInstance(formula));                
+                if (basicas.validarModulo(Convert.ToInt32(nodo.Name)) == 1)
                 {
-                    //Form existe = null;
-                    //existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == forumlario).SingleOrDefault<Form>();
-
-                    //if (existe != null)
-                    //{
-                    //    existe.BringToFront();
-                    //    return;
-                    //}
                     if (frm != null)
-                    {
-                        //frm.MdiParent = this.MdiParent;
+                    {                        
                         frm.ShowDialog();
-                        //WinAPI.SiempreEncima(frm.Handle.ToInt32());
                     }
-                    //frm.ShowDialog();
+                    
                 }
-                else MessageBox.Show("Usted no tiene acceso a este módulo" + Convert.ToInt32(nodo.Name));
-
-                //frm.Location = new Point(301, 0);
+                else MessageBox.Show("Usted no tiene acceso a este módulo" + Convert.ToInt32(nodo.Name));                
             }else
             {
                 MessageBox.Show("Error" + Convert.ToInt32(nodo.Name));

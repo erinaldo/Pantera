@@ -31,15 +31,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcCancelacionCuentasDetalle));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtFechaCancel = new System.Windows.Forms.DateTimePicker();
@@ -71,9 +71,23 @@
             this.txtTotalPendiente = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dgvDocumentosPendientes = new System.Windows.Forms.DataGridView();
+            this.CODTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHREN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUMONTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvDocumentosSeleccionados = new System.Windows.Forms.DataGridView();
+            this.CODTIPOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTIPOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDOCS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHRENS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFECHAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMONES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMONTOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txttotalSeleccion = new System.Windows.Forms.TextBox();
             this.txtDesMone5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -92,20 +106,6 @@
             this.lblNombre3 = new System.Windows.Forms.Label();
             this.lblNombre2 = new System.Windows.Forms.Label();
             this.lblNombre1 = new System.Windows.Forms.Label();
-            this.CODTIPOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHTIPOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHDOCS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHRENS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHFECHAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMONES = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMONTOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CODTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHDOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHREN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NUMONTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentosPendientes)).BeginInit();
@@ -151,7 +151,7 @@
             this.txtFechaCancel.Location = new System.Drawing.Point(658, 37);
             this.txtFechaCancel.Name = "txtFechaCancel";
             this.txtFechaCancel.Size = new System.Drawing.Size(120, 20);
-            this.txtFechaCancel.TabIndex = 23;
+            this.txtFechaCancel.TabIndex = 1;
             // 
             // rbtCanje
             // 
@@ -159,7 +159,7 @@
             this.rbtCanje.Location = new System.Drawing.Point(163, 70);
             this.rbtCanje.Name = "rbtCanje";
             this.rbtCanje.Size = new System.Drawing.Size(52, 17);
-            this.rbtCanje.TabIndex = 22;
+            this.rbtCanje.TabIndex = 3;
             this.rbtCanje.TabStop = true;
             this.rbtCanje.Text = "Canje";
             this.rbtCanje.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@
             this.rbtcancela.Location = new System.Drawing.Point(73, 70);
             this.rbtcancela.Name = "rbtcancela";
             this.rbtcancela.Size = new System.Drawing.Size(84, 17);
-            this.rbtcancela.TabIndex = 21;
+            this.rbtcancela.TabIndex = 2;
             this.rbtcancela.TabStop = true;
             this.rbtcancela.Text = "Cancelación";
             this.rbtcancela.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             this.cboMoneda.Location = new System.Drawing.Point(263, 39);
             this.cboMoneda.Name = "cboMoneda";
             this.cboMoneda.Size = new System.Drawing.Size(95, 21);
-            this.cboMoneda.TabIndex = 18;
+            this.cboMoneda.TabIndex = 0;
             this.cboMoneda.SelectedIndexChanged += new System.EventHandler(this.cboMoneda_SelectedIndexChanged);
             // 
             // label17
@@ -230,7 +230,7 @@
             this.cbotipoPago.Location = new System.Drawing.Point(402, 66);
             this.cbotipoPago.Name = "cbotipoPago";
             this.cbotipoPago.Size = new System.Drawing.Size(139, 21);
-            this.cbotipoPago.TabIndex = 12;
+            this.cbotipoPago.TabIndex = 4;
             this.cbotipoPago.SelectedIndexChanged += new System.EventHandler(this.cbotipoPago_SelectedIndexChanged);
             // 
             // label6
@@ -269,6 +269,7 @@
             this.txtfecharegi.Name = "txtfecharegi";
             this.txtfecharegi.Size = new System.Drawing.Size(68, 20);
             this.txtfecharegi.TabIndex = 8;
+            this.txtfecharegi.TabStop = false;
             this.txtfecharegi.ValidatingType = typeof(System.DateTime);
             // 
             // txtTipoCambio
@@ -289,8 +290,10 @@
             this.txtnroDocu.ForeColor = System.Drawing.Color.Blue;
             this.txtnroDocu.Location = new System.Drawing.Point(658, 13);
             this.txtnroDocu.Name = "txtnroDocu";
+            this.txtnroDocu.ReadOnly = true;
             this.txtnroDocu.Size = new System.Drawing.Size(120, 20);
             this.txtnroDocu.TabIndex = 6;
+            this.txtnroDocu.TabStop = false;
             // 
             // txtRazon
             // 
@@ -298,8 +301,10 @@
             this.txtRazon.ForeColor = System.Drawing.Color.Blue;
             this.txtRazon.Location = new System.Drawing.Point(263, 13);
             this.txtRazon.Name = "txtRazon";
+            this.txtRazon.ReadOnly = true;
             this.txtRazon.Size = new System.Drawing.Size(278, 20);
             this.txtRazon.TabIndex = 5;
+            this.txtRazon.TabStop = false;
             // 
             // txtCorrela
             // 
@@ -307,8 +312,10 @@
             this.txtCorrela.ForeColor = System.Drawing.Color.Blue;
             this.txtCorrela.Location = new System.Drawing.Point(52, 40);
             this.txtCorrela.Name = "txtCorrela";
+            this.txtCorrela.ReadOnly = true;
             this.txtCorrela.Size = new System.Drawing.Size(100, 20);
             this.txtCorrela.TabIndex = 4;
+            this.txtCorrela.TabStop = false;
             // 
             // txtCodigo
             // 
@@ -316,8 +323,10 @@
             this.txtCodigo.ForeColor = System.Drawing.Color.Blue;
             this.txtCodigo.Location = new System.Drawing.Point(52, 13);
             this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabStop = false;
             // 
             // label3
             // 
@@ -371,6 +380,7 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(45, 20);
             this.textBox2.TabIndex = 25;
+            this.textBox2.TabStop = false;
             this.textBox2.Text = "$ US";
             // 
             // textBox1
@@ -382,6 +392,7 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(45, 20);
             this.textBox1.TabIndex = 24;
+            this.textBox1.TabStop = false;
             this.textBox1.Text = "S/.";
             // 
             // label8
@@ -473,8 +484,66 @@
             this.dgvDocumentosPendientes.RowHeadersVisible = false;
             this.dgvDocumentosPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDocumentosPendientes.Size = new System.Drawing.Size(378, 335);
-            this.dgvDocumentosPendientes.TabIndex = 13;
+            this.dgvDocumentosPendientes.TabIndex = 0;
             this.dgvDocumentosPendientes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDocumentosPendientes_CellMouseDoubleClick);
+            // 
+            // CODTIPO
+            // 
+            this.CODTIPO.HeaderText = "CODTIPO";
+            this.CODTIPO.Name = "CODTIPO";
+            this.CODTIPO.ReadOnly = true;
+            this.CODTIPO.Visible = false;
+            // 
+            // CHTIPO
+            // 
+            this.CHTIPO.HeaderText = "TIPO";
+            this.CHTIPO.Name = "CHTIPO";
+            this.CHTIPO.ReadOnly = true;
+            this.CHTIPO.Width = 40;
+            // 
+            // CHDOC
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.CHDOC.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CHDOC.HeaderText = "N° DOC.";
+            this.CHDOC.Name = "CHDOC";
+            this.CHDOC.ReadOnly = true;
+            this.CHDOC.Width = 75;
+            // 
+            // CHREN
+            // 
+            this.CHREN.HeaderText = "REN";
+            this.CHREN.Name = "CHREN";
+            this.CHREN.ReadOnly = true;
+            this.CHREN.Width = 35;
+            // 
+            // CHFECHA
+            // 
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = "01/01/1995";
+            this.CHFECHA.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CHFECHA.HeaderText = "FECHA";
+            this.CHFECHA.Name = "CHFECHA";
+            this.CHFECHA.ReadOnly = true;
+            this.CHFECHA.Width = 80;
+            // 
+            // CHMONE
+            // 
+            this.CHMONE.HeaderText = "MONE";
+            this.CHMONE.Name = "CHMONE";
+            this.CHMONE.ReadOnly = true;
+            this.CHMONE.Width = 45;
+            // 
+            // NUMONTO
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0.00";
+            this.NUMONTO.DefaultCellStyle = dataGridViewCellStyle4;
+            this.NUMONTO.HeaderText = "MONTO";
+            this.NUMONTO.Name = "NUMONTO";
+            this.NUMONTO.ReadOnly = true;
+            this.NUMONTO.Width = 80;
             // 
             // pictureBox1
             // 
@@ -496,7 +565,7 @@
             this.groupBox3.Location = new System.Drawing.Point(408, 107);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(388, 282);
-            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
             // dgvDocumentosSeleccionados
@@ -545,202 +614,15 @@
             this.dgvDocumentosSeleccionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDocumentosSeleccionados.Size = new System.Drawing.Size(376, 197);
             this.dgvDocumentosSeleccionados.TabIndex = 23;
+            this.dgvDocumentosSeleccionados.TabStop = false;
             this.dgvDocumentosSeleccionados.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDocumentosSeleccionados_CellMouseDoubleClick);
-            // 
-            // txttotalSeleccion
-            // 
-            this.txttotalSeleccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txttotalSeleccion.ForeColor = System.Drawing.Color.Blue;
-            this.txttotalSeleccion.Location = new System.Drawing.Point(262, 251);
-            this.txttotalSeleccion.Name = "txttotalSeleccion";
-            this.txttotalSeleccion.ReadOnly = true;
-            this.txttotalSeleccion.Size = new System.Drawing.Size(120, 20);
-            this.txttotalSeleccion.TabIndex = 17;
-            this.txttotalSeleccion.TabStop = false;
-            this.txttotalSeleccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtDesMone5
-            // 
-            this.txtDesMone5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtDesMone5.ForeColor = System.Drawing.Color.Blue;
-            this.txtDesMone5.Location = new System.Drawing.Point(210, 251);
-            this.txtDesMone5.Name = "txtDesMone5";
-            this.txtDesMone5.ReadOnly = true;
-            this.txtDesMone5.Size = new System.Drawing.Size(45, 20);
-            this.txtDesMone5.TabIndex = 16;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 254);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(107, 13);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Importe Selccionado:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(85, 16);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(201, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "DOCUMENTOS SELECCIONADOS";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pictureBox2.Location = new System.Drawing.Point(6, 11);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(376, 24);
-            this.pictureBox2.TabIndex = 23;
-            this.pictureBox2.TabStop = false;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnAceptar);
-            this.groupBox4.Controls.Add(this.btnSalir);
-            this.groupBox4.Controls.Add(this.cboBanco);
-            this.groupBox4.Controls.Add(this.txtCheque);
-            this.groupBox4.Controls.Add(this.txtInter);
-            this.groupBox4.Controls.Add(this.txtDesMone4);
-            this.groupBox4.Controls.Add(this.txtImport);
-            this.groupBox4.Controls.Add(this.txtDesMone3);
-            this.groupBox4.Controls.Add(this.lblNombre4);
-            this.groupBox4.Controls.Add(this.lblNombre3);
-            this.groupBox4.Controls.Add(this.lblNombre2);
-            this.groupBox4.Controls.Add(this.lblNombre1);
-            this.groupBox4.Location = new System.Drawing.Point(408, 395);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(388, 132);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(298, 35);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(80, 28);
-            this.btnAceptar.TabIndex = 26;
-            this.btnAceptar.Text = "&Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
-            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(298, 69);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 27;
-            this.btnSalir.Text = "&Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // cboBanco
-            // 
-            this.cboBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboBanco.FormattingEnabled = true;
-            this.cboBanco.Location = new System.Drawing.Point(54, 13);
-            this.cboBanco.Name = "cboBanco";
-            this.cboBanco.Size = new System.Drawing.Size(232, 21);
-            this.cboBanco.TabIndex = 25;
-            // 
-            // txtCheque
-            // 
-            this.txtCheque.Location = new System.Drawing.Point(130, 43);
-            this.txtCheque.Name = "txtCheque";
-            this.txtCheque.Size = new System.Drawing.Size(156, 20);
-            this.txtCheque.TabIndex = 24;
-            // 
-            // txtInter
-            // 
-            this.txtInter.Location = new System.Drawing.Point(180, 98);
-            this.txtInter.Name = "txtInter";
-            this.txtInter.Size = new System.Drawing.Size(106, 20);
-            this.txtInter.TabIndex = 23;
-            this.txtInter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtInter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInter_KeyPress);
-            this.txtInter.Validated += new System.EventHandler(this.txtInter_Validated);
-            // 
-            // txtDesMone4
-            // 
-            this.txtDesMone4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtDesMone4.ForeColor = System.Drawing.Color.Blue;
-            this.txtDesMone4.Location = new System.Drawing.Point(130, 99);
-            this.txtDesMone4.Name = "txtDesMone4";
-            this.txtDesMone4.ReadOnly = true;
-            this.txtDesMone4.Size = new System.Drawing.Size(44, 20);
-            this.txtDesMone4.TabIndex = 22;
-            // 
-            // txtImport
-            // 
-            this.txtImport.Location = new System.Drawing.Point(180, 72);
-            this.txtImport.Name = "txtImport";
-            this.txtImport.Size = new System.Drawing.Size(106, 20);
-            this.txtImport.TabIndex = 21;
-            this.txtImport.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtImport.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImport_KeyPress);
-            this.txtImport.Validated += new System.EventHandler(this.txtImport_Validated);
-            // 
-            // txtDesMone3
-            // 
-            this.txtDesMone3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtDesMone3.ForeColor = System.Drawing.Color.Blue;
-            this.txtDesMone3.Location = new System.Drawing.Point(130, 72);
-            this.txtDesMone3.Name = "txtDesMone3";
-            this.txtDesMone3.ReadOnly = true;
-            this.txtDesMone3.Size = new System.Drawing.Size(44, 20);
-            this.txtDesMone3.TabIndex = 20;
-            // 
-            // lblNombre4
-            // 
-            this.lblNombre4.AutoSize = true;
-            this.lblNombre4.Location = new System.Drawing.Point(10, 108);
-            this.lblNombre4.Name = "lblNombre4";
-            this.lblNombre4.Size = new System.Drawing.Size(94, 13);
-            this.lblNombre4.TabIndex = 19;
-            this.lblNombre4.Text = "Interés y comisión:";
-            // 
-            // lblNombre3
-            // 
-            this.lblNombre3.AutoSize = true;
-            this.lblNombre3.Location = new System.Drawing.Point(10, 75);
-            this.lblNombre3.Name = "lblNombre3";
-            this.lblNombre3.Size = new System.Drawing.Size(84, 13);
-            this.lblNombre3.TabIndex = 18;
-            this.lblNombre3.Text = "Importe a pagar:";
-            // 
-            // lblNombre2
-            // 
-            this.lblNombre2.AutoSize = true;
-            this.lblNombre2.Location = new System.Drawing.Point(10, 46);
-            this.lblNombre2.Name = "lblNombre2";
-            this.lblNombre2.Size = new System.Drawing.Size(114, 13);
-            this.lblNombre2.TabIndex = 17;
-            this.lblNombre2.Text = "Nro. Cheque/Depósito";
-            // 
-            // lblNombre1
-            // 
-            this.lblNombre1.AutoSize = true;
-            this.lblNombre1.Location = new System.Drawing.Point(10, 16);
-            this.lblNombre1.Name = "lblNombre1";
-            this.lblNombre1.Size = new System.Drawing.Size(38, 13);
-            this.lblNombre1.TabIndex = 16;
-            this.lblNombre1.Text = "Banco";
             // 
             // CODTIPOS
             // 
             this.CODTIPOS.HeaderText = "CODTIPO1";
             this.CODTIPOS.Name = "CODTIPOS";
             this.CODTIPOS.ReadOnly = true;
+            this.CODTIPOS.Visible = false;
             // 
             // CHTIPOS
             // 
@@ -793,62 +675,196 @@
             this.CHMONTOS.ReadOnly = true;
             this.CHMONTOS.Width = 80;
             // 
-            // CODTIPO
+            // txttotalSeleccion
             // 
-            this.CODTIPO.HeaderText = "CODTIPO";
-            this.CODTIPO.Name = "CODTIPO";
-            this.CODTIPO.ReadOnly = true;
+            this.txttotalSeleccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txttotalSeleccion.ForeColor = System.Drawing.Color.Blue;
+            this.txttotalSeleccion.Location = new System.Drawing.Point(262, 251);
+            this.txttotalSeleccion.Name = "txttotalSeleccion";
+            this.txttotalSeleccion.ReadOnly = true;
+            this.txttotalSeleccion.Size = new System.Drawing.Size(120, 20);
+            this.txttotalSeleccion.TabIndex = 17;
+            this.txttotalSeleccion.TabStop = false;
+            this.txttotalSeleccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // CHTIPO
+            // txtDesMone5
             // 
-            this.CHTIPO.HeaderText = "TIPO";
-            this.CHTIPO.Name = "CHTIPO";
-            this.CHTIPO.ReadOnly = true;
-            this.CHTIPO.Width = 40;
+            this.txtDesMone5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtDesMone5.ForeColor = System.Drawing.Color.Blue;
+            this.txtDesMone5.Location = new System.Drawing.Point(210, 251);
+            this.txtDesMone5.Name = "txtDesMone5";
+            this.txtDesMone5.ReadOnly = true;
+            this.txtDesMone5.Size = new System.Drawing.Size(45, 20);
+            this.txtDesMone5.TabIndex = 16;
+            this.txtDesMone5.TabStop = false;
             // 
-            // CHDOC
+            // label10
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.CHDOC.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CHDOC.HeaderText = "N° DOC.";
-            this.CHDOC.Name = "CHDOC";
-            this.CHDOC.ReadOnly = true;
-            this.CHDOC.Width = 75;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 254);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(107, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Importe Selccionado:";
             // 
-            // CHREN
+            // label9
             // 
-            this.CHREN.HeaderText = "REN";
-            this.CHREN.Name = "CHREN";
-            this.CHREN.ReadOnly = true;
-            this.CHREN.Width = 35;
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(85, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(201, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "DOCUMENTOS SELECCIONADOS";
             // 
-            // CHFECHA
+            // pictureBox2
             // 
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = "01/01/1995";
-            this.CHFECHA.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CHFECHA.HeaderText = "FECHA";
-            this.CHFECHA.Name = "CHFECHA";
-            this.CHFECHA.ReadOnly = true;
-            this.CHFECHA.Width = 80;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pictureBox2.Location = new System.Drawing.Point(6, 11);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(376, 24);
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
             // 
-            // CHMONE
+            // groupBox4
             // 
-            this.CHMONE.HeaderText = "MONE";
-            this.CHMONE.Name = "CHMONE";
-            this.CHMONE.ReadOnly = true;
-            this.CHMONE.Width = 45;
+            this.groupBox4.Controls.Add(this.btnAceptar);
+            this.groupBox4.Controls.Add(this.btnSalir);
+            this.groupBox4.Controls.Add(this.cboBanco);
+            this.groupBox4.Controls.Add(this.txtCheque);
+            this.groupBox4.Controls.Add(this.txtInter);
+            this.groupBox4.Controls.Add(this.txtDesMone4);
+            this.groupBox4.Controls.Add(this.txtImport);
+            this.groupBox4.Controls.Add(this.txtDesMone3);
+            this.groupBox4.Controls.Add(this.lblNombre4);
+            this.groupBox4.Controls.Add(this.lblNombre3);
+            this.groupBox4.Controls.Add(this.lblNombre2);
+            this.groupBox4.Controls.Add(this.lblNombre1);
+            this.groupBox4.Location = new System.Drawing.Point(408, 395);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(388, 132);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
             // 
-            // NUMONTO
+            // btnAceptar
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "0.00";
-            this.NUMONTO.DefaultCellStyle = dataGridViewCellStyle4;
-            this.NUMONTO.HeaderText = "MONTO";
-            this.NUMONTO.Name = "NUMONTO";
-            this.NUMONTO.ReadOnly = true;
-            this.NUMONTO.Width = 80;
+            this.btnAceptar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Location = new System.Drawing.Point(298, 35);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(80, 28);
+            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.Text = "&Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(298, 69);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
+            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // cboBanco
+            // 
+            this.cboBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBanco.FormattingEnabled = true;
+            this.cboBanco.Location = new System.Drawing.Point(54, 13);
+            this.cboBanco.Name = "cboBanco";
+            this.cboBanco.Size = new System.Drawing.Size(232, 21);
+            this.cboBanco.TabIndex = 0;
+            // 
+            // txtCheque
+            // 
+            this.txtCheque.Location = new System.Drawing.Point(130, 43);
+            this.txtCheque.Name = "txtCheque";
+            this.txtCheque.Size = new System.Drawing.Size(156, 20);
+            this.txtCheque.TabIndex = 1;
+            // 
+            // txtInter
+            // 
+            this.txtInter.Location = new System.Drawing.Point(180, 98);
+            this.txtInter.Name = "txtInter";
+            this.txtInter.Size = new System.Drawing.Size(106, 20);
+            this.txtInter.TabIndex = 3;
+            this.txtInter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtInter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInter_KeyPress);
+            this.txtInter.Validated += new System.EventHandler(this.txtInter_Validated);
+            // 
+            // txtDesMone4
+            // 
+            this.txtDesMone4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtDesMone4.ForeColor = System.Drawing.Color.Blue;
+            this.txtDesMone4.Location = new System.Drawing.Point(130, 99);
+            this.txtDesMone4.Name = "txtDesMone4";
+            this.txtDesMone4.ReadOnly = true;
+            this.txtDesMone4.Size = new System.Drawing.Size(44, 20);
+            this.txtDesMone4.TabIndex = 22;
+            this.txtDesMone4.TabStop = false;
+            // 
+            // txtImport
+            // 
+            this.txtImport.Location = new System.Drawing.Point(180, 72);
+            this.txtImport.Name = "txtImport";
+            this.txtImport.Size = new System.Drawing.Size(106, 20);
+            this.txtImport.TabIndex = 2;
+            this.txtImport.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtImport.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImport_KeyPress);
+            this.txtImport.Validated += new System.EventHandler(this.txtImport_Validated);
+            // 
+            // txtDesMone3
+            // 
+            this.txtDesMone3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtDesMone3.ForeColor = System.Drawing.Color.Blue;
+            this.txtDesMone3.Location = new System.Drawing.Point(130, 72);
+            this.txtDesMone3.Name = "txtDesMone3";
+            this.txtDesMone3.ReadOnly = true;
+            this.txtDesMone3.Size = new System.Drawing.Size(44, 20);
+            this.txtDesMone3.TabIndex = 20;
+            this.txtDesMone3.TabStop = false;
+            // 
+            // lblNombre4
+            // 
+            this.lblNombre4.AutoSize = true;
+            this.lblNombre4.Location = new System.Drawing.Point(10, 108);
+            this.lblNombre4.Name = "lblNombre4";
+            this.lblNombre4.Size = new System.Drawing.Size(94, 13);
+            this.lblNombre4.TabIndex = 19;
+            this.lblNombre4.Text = "Interés y comisión:";
+            // 
+            // lblNombre3
+            // 
+            this.lblNombre3.AutoSize = true;
+            this.lblNombre3.Location = new System.Drawing.Point(10, 75);
+            this.lblNombre3.Name = "lblNombre3";
+            this.lblNombre3.Size = new System.Drawing.Size(84, 13);
+            this.lblNombre3.TabIndex = 18;
+            this.lblNombre3.Text = "Importe a pagar:";
+            // 
+            // lblNombre2
+            // 
+            this.lblNombre2.AutoSize = true;
+            this.lblNombre2.Location = new System.Drawing.Point(10, 46);
+            this.lblNombre2.Name = "lblNombre2";
+            this.lblNombre2.Size = new System.Drawing.Size(114, 13);
+            this.lblNombre2.TabIndex = 17;
+            this.lblNombre2.Text = "Nro. Cheque/Depósito";
+            // 
+            // lblNombre1
+            // 
+            this.lblNombre1.AutoSize = true;
+            this.lblNombre1.Location = new System.Drawing.Point(10, 16);
+            this.lblNombre1.Name = "lblNombre1";
+            this.lblNombre1.Size = new System.Drawing.Size(38, 13);
+            this.lblNombre1.TabIndex = 16;
+            this.lblNombre1.Text = "Banco";
             // 
             // frmProcCancelacionCuentasDetalle
             // 

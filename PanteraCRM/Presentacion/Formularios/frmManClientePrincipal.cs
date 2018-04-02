@@ -77,15 +77,10 @@ namespace Presentacion
                 vBoton = "A";
                 if (basicas.validarAcceso(vBoton))
                 {
-                    //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManClienteAnadir);
-                    //if (frm != null)
-                    //{
-                    //    frm.BringToFront();
-                    //    return;
-                    //}
+                   
                     frmManClienteAnadir f = new frmManClienteAnadir(vBoton);
                     f.pasado += new frmManClienteAnadir.pasar(ejecutar);
-                    f.MdiParent = this.MdiParent;
+                    
                     f.ShowDialog();
                 }
                 else

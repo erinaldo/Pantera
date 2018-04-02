@@ -66,6 +66,7 @@
     <Compile Include="Mclientenatural.cs" />
     <Compile Include="Mempresa.cs" />
     <Compile Include="menu.cs" />
+    <Compile Include="modulos.cs" />
     <Compile Include="mestrocabecera.cs" />
     <Compile Include="modelo.cs" />
     <Compile Include="movimientoproductod.cs" />

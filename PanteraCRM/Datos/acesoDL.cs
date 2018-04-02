@@ -32,6 +32,7 @@ namespace Datos
             registro.p_inidperfil = Convert.ToInt32(datareader["p_inidperfil"]);
             registro.chnombrepersona = Convert.ToString(datareader["chnombres"]).Trim();
             registro.chusuario = Convert.ToString(datareader["chusuario"]);
+            registro.chprivilegios = Convert.ToString(datareader["chprivilegios"]);
             registro.estado = Convert.ToBoolean(datareader["estado"]);
             return registro;
         }

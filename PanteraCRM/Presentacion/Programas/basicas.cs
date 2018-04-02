@@ -24,58 +24,65 @@ namespace Presentacion
             //return hash.ToString();
             return cadena;
         }
-
+        public static int validarModulo(int position)
+        {
+            var privilegios = sesion.SessionGlobal.chprivilegios.ToCharArray();
+            char a = privilegios[position - 1];
+            return int.Parse(a.ToString());
+        }
         public static bool validarAcceso(string vBoton)
         {
+            var privilegios = sesion.SessionGlobal.chprivilegios.ToCharArray();
             try
             {
                 bool vEvalua = true;
                 switch (vBoton)
                 {
                     case "A":  // Permiso para añadir
-                        if (sesion.SessionGlobal.p_inidperfil !=1)
+                        if (privilegios[34] != '1')
                         {
                             vEvalua = false;
                             throw new Exception("No cuenta con los permisos para añadir");
                         }
                         break;
                     case "M":  // Permiso para modificar
-                        if (sesion.SessionGlobal.p_inidperfil != 1)
+                        if (privilegios[35] != '1')
                         {
                             vEvalua = false;
                             throw new Exception("No cuenta con los permisos para modificar");
                         }
                         break;
-                    case "V":  // Permiso para ver
-                        if (sesion.SessionGlobal.p_inidperfil != 1)
-                        {
-                            vEvalua = false;
-                            throw new Exception("No cuenta con los permisos para anular");
-                        }
-                        break;
+                    
                     case "G":  // Permiso para grabar
-                        if (sesion.SessionGlobal.p_inidperfil != 1)
+                        if (privilegios[36] != '1')
                         {
                             vEvalua = false;
                             throw new Exception("No cuenta con los permisos para anular");
                         }
                         break;
                     case "E":  // Permiso para Eliminar
-                        if (sesion.SessionGlobal.p_inidperfil != 1)
+                        if (privilegios[37] != '1')
                         {
                             vEvalua = false;
                             throw new Exception("No cuenta con los permisos para anular");
                         }
                         break;
                     case "I":  // Permiso para imprimir
-                        if (sesion.SessionGlobal.p_inidperfil != 1)
+                        if (privilegios[38] != '1')
                         {
                             vEvalua = false;
                             throw new Exception("No cuenta con los permisos para anular");
                         }
                         break;
                     case "X":  // Permiso para exportar
-                        if (sesion.SessionGlobal.p_inidperfil != 1)
+                        if (privilegios[39] != '1')
+                        {
+                            vEvalua = false;
+                            throw new Exception("No cuenta con los permisos para anular");
+                        }
+                        break;
+                    case "V":  // Permiso para ver
+                        if (privilegios[39] != '1')
                         {
                             vEvalua = false;
                             throw new Exception("No cuenta con los permisos para anular");

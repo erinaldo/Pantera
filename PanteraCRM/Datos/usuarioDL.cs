@@ -10,26 +10,44 @@ namespace Datos
 {
     public abstract class usuarioDL
     {
-        //public static List<usuario> usuarioListar()
-        //{
-        //    using (IDataReader datareader = conexion.executeOperation("fn_usuario_listar", CommandType.StoredProcedure))
-        //    {
-        //        List<usuario> listado = new List<usuario>();
-        //        while (datareader.Read())
-        //        {
-        //            usuario registro = new usuario();
-        //            registro.idusuario = Convert.ToInt32(datareader["idusuario"]);
-        //            registro.nombre = Convert.ToString(datareader["nombre"]).Trim();
-        //            registro.login = Convert.ToString(datareader["login"]).Trim();
-        //            registro.clave = Convert.ToString(datareader["clave"]).Trim();
-        //            registro.estadousuario = Convert.ToBoolean(datareader["estadousuario"]);
-        //            registro.idperfil = Convert.ToInt32(datareader["idperfil"]);
-        //            registro.descripcion = Convert.ToString(datareader["descripcion"]);
-        //            listado.Add(registro);
-        //        }
-        //        return listado;
-        //    }
-        //}
+        public static List<modulos> ModulosListar()
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_modulos_listar", CommandType.StoredProcedure))
+            {
+                List<modulos> listado = new List<modulos>();
+                while (datareader.Read())
+                {
+                    modulos registro = new modulos();
+                    registro.p_inidmenu = Convert.ToInt32(datareader["p_inidmenu"]);
+                    registro.chcodigomenu = Convert.ToInt32(datareader["chcodigomenu"]);
+                    registro.chdescripcionmenu = Convert.ToString(datareader["chdescripcionmenu"]).Trim();
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+        public static List<usuariomenu> UsuarioListar()
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_usuario_listar", CommandType.StoredProcedure))
+            {
+                List<usuariomenu> listado = new List<usuariomenu>();
+                while (datareader.Read())
+                {
+                    usuariomenu registro = new usuariomenu();
+                    registro.p_inidusuario = Convert.ToInt32(datareader["p_inidusuario"]);
+                    registro.p_inidpersona = Convert.ToInt32(datareader["p_inidpersona"]);
+                    registro.p_inidpuntoventa = Convert.ToInt32(datareader["p_inidpuntoventa"]);
+                    registro.chclave = Convert.ToString(datareader["chclave"]).Trim();
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.p_inidperfil = Convert.ToInt32(datareader["p_inidperfil"]);
+                    registro.chusuario = Convert.ToString(datareader["chusuario"]).Trim();
+                    registro.chprivilegios = Convert.ToString(datareader["chprivilegios"]).Trim();
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
 
         public static usuario buscarPorLoginClave(string login, string clave)
         {

@@ -98,6 +98,7 @@
             this.dgvListaClientes.Location = new System.Drawing.Point(12, 50);
             this.dgvListaClientes.Name = "dgvListaClientes";
             this.dgvListaClientes.ReadOnly = true;
+            this.dgvListaClientes.RowHeadersVisible = false;
             this.dgvListaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaClientes.Size = new System.Drawing.Size(647, 344);
             this.dgvListaClientes.TabIndex = 2;
