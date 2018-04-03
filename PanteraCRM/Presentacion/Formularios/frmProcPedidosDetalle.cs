@@ -553,9 +553,16 @@ namespace Presentacion
             {
                 if (ProductoG.p_inidcategoria == 3)
                 {
-                    int ca = int.Parse(txtusado.Text);
-                    if (ca+cantidadmaxima > 600)
+                    int ca = 0;
+                    if (txtusado.Text.Length > 0)
                     {
+                        ca= int.Parse(txtusado.Text);
+                    }
+                
+                    
+                    if (ca + cantidadmaxima > 12)
+                    {
+                       
                         txtusado.Text = "0";
                         MessageBox.Show("Cantidad maxima de municiones superada", "MENSAJE DE SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         

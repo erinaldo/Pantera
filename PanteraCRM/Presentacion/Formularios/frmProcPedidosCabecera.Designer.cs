@@ -127,16 +127,16 @@
             this.label29 = new System.Windows.Forms.Label();
             this.txtFechaVenciTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.cbkValLicencia = new System.Windows.Forms.CheckBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtvencitarjeta = new System.Windows.Forms.DateTimePicker();
+            this.txtvencialicencia = new System.Windows.Forms.DateTimePicker();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtcodigotarjeta = new System.Windows.Forms.TextBox();
+            this.txtcodigolicencia = new System.Windows.Forms.TextBox();
+            this.cbkValTarjeta = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -663,9 +663,9 @@
             this.groupBox3.Controls.Add(this.txtSubtotal);
             this.groupBox3.Controls.Add(this.dgvListaPedidoDetalle);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.groupBox3.Location = new System.Drawing.Point(11, 421);
+            this.groupBox3.Location = new System.Drawing.Point(11, 389);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(833, 249);
+            this.groupBox3.Size = new System.Drawing.Size(833, 281);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
@@ -674,7 +674,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Location = new System.Drawing.Point(747, 173);
+            this.btnSalir.Location = new System.Drawing.Point(747, 200);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
             this.btnSalir.TabIndex = 5;
@@ -685,7 +685,7 @@
             // btnGrabar
             // 
             this.btnGrabar.BackColor = System.Drawing.Color.White;
-            this.btnGrabar.Location = new System.Drawing.Point(661, 173);
+            this.btnGrabar.Location = new System.Drawing.Point(661, 200);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
             this.btnGrabar.TabIndex = 4;
@@ -696,7 +696,7 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(183, 173);
+            this.btnEliminar.Location = new System.Drawing.Point(183, 200);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(80, 28);
             this.btnEliminar.TabIndex = 3;
@@ -707,7 +707,7 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(96, 173);
+            this.btnModificar.Location = new System.Drawing.Point(96, 200);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(80, 28);
             this.btnModificar.TabIndex = 2;
@@ -719,7 +719,7 @@
             // 
             this.btnAnadir.BackColor = System.Drawing.Color.White;
             this.btnAnadir.Enabled = false;
-            this.btnAnadir.Location = new System.Drawing.Point(9, 173);
+            this.btnAnadir.Location = new System.Drawing.Point(9, 200);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(80, 28);
             this.btnAnadir.TabIndex = 1;
@@ -731,7 +731,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(705, 206);
+            this.label26.Location = new System.Drawing.Point(705, 233);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(95, 13);
             this.label26.TabIndex = 26;
@@ -741,7 +741,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(534, 206);
+            this.label25.Location = new System.Drawing.Point(534, 233);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(40, 13);
             this.label25.TabIndex = 25;
@@ -751,7 +751,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(363, 206);
+            this.label24.Location = new System.Drawing.Point(363, 233);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(77, 13);
             this.label24.TabIndex = 24;
@@ -761,7 +761,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(192, 206);
+            this.label23.Location = new System.Drawing.Point(192, 233);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(73, 13);
             this.label23.TabIndex = 23;
@@ -771,7 +771,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(21, 206);
+            this.label22.Location = new System.Drawing.Point(21, 233);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(62, 13);
             this.label22.TabIndex = 22;
@@ -782,7 +782,7 @@
             this.txtTotVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtTotVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotVenta.ForeColor = System.Drawing.Color.Blue;
-            this.txtTotVenta.Location = new System.Drawing.Point(708, 222);
+            this.txtTotVenta.Location = new System.Drawing.Point(708, 249);
             this.txtTotVenta.Name = "txtTotVenta";
             this.txtTotVenta.ReadOnly = true;
             this.txtTotVenta.Size = new System.Drawing.Size(100, 20);
@@ -795,7 +795,7 @@
             this.txtIgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtIgv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIgv.ForeColor = System.Drawing.Color.Blue;
-            this.txtIgv.Location = new System.Drawing.Point(537, 222);
+            this.txtIgv.Location = new System.Drawing.Point(537, 249);
             this.txtIgv.Name = "txtIgv";
             this.txtIgv.ReadOnly = true;
             this.txtIgv.Size = new System.Drawing.Size(100, 20);
@@ -808,7 +808,7 @@
             this.txtValVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtValVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValVenta.ForeColor = System.Drawing.Color.Blue;
-            this.txtValVenta.Location = new System.Drawing.Point(366, 222);
+            this.txtValVenta.Location = new System.Drawing.Point(366, 249);
             this.txtValVenta.Name = "txtValVenta";
             this.txtValVenta.ReadOnly = true;
             this.txtValVenta.Size = new System.Drawing.Size(100, 20);
@@ -821,7 +821,7 @@
             this.txtDesctot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtDesctot.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDesctot.ForeColor = System.Drawing.Color.Blue;
-            this.txtDesctot.Location = new System.Drawing.Point(195, 222);
+            this.txtDesctot.Location = new System.Drawing.Point(195, 249);
             this.txtDesctot.Name = "txtDesctot";
             this.txtDesctot.ReadOnly = true;
             this.txtDesctot.Size = new System.Drawing.Size(100, 20);
@@ -834,7 +834,7 @@
             this.txtSubtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubtotal.ForeColor = System.Drawing.Color.Blue;
-            this.txtSubtotal.Location = new System.Drawing.Point(24, 222);
+            this.txtSubtotal.Location = new System.Drawing.Point(24, 249);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.ReadOnly = true;
             this.txtSubtotal.Size = new System.Drawing.Size(100, 20);
@@ -869,7 +869,7 @@
             this.dgvListaPedidoDetalle.Name = "dgvListaPedidoDetalle";
             this.dgvListaPedidoDetalle.ReadOnly = true;
             this.dgvListaPedidoDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaPedidoDetalle.Size = new System.Drawing.Size(817, 148);
+            this.dgvListaPedidoDetalle.Size = new System.Drawing.Size(817, 175);
             this.dgvListaPedidoDetalle.TabIndex = 0;
             // 
             // IDPEDIDODETALLE
@@ -1145,36 +1145,36 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.checkBox2);
+            this.groupBox5.Controls.Add(this.cbkValLicencia);
             this.groupBox5.Controls.Add(this.label35);
             this.groupBox5.Controls.Add(this.label34);
-            this.groupBox5.Controls.Add(this.dateTimePicker2);
-            this.groupBox5.Controls.Add(this.dateTimePicker1);
+            this.groupBox5.Controls.Add(this.txtvencitarjeta);
+            this.groupBox5.Controls.Add(this.txtvencialicencia);
             this.groupBox5.Controls.Add(this.label33);
             this.groupBox5.Controls.Add(this.label32);
-            this.groupBox5.Controls.Add(this.textBox2);
-            this.groupBox5.Controls.Add(this.textBox1);
-            this.groupBox5.Controls.Add(this.checkBox1);
+            this.groupBox5.Controls.Add(this.txtcodigotarjeta);
+            this.groupBox5.Controls.Add(this.txtcodigolicencia);
+            this.groupBox5.Controls.Add(this.cbkValTarjeta);
             this.groupBox5.Location = new System.Drawing.Point(12, 300);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(831, 115);
+            this.groupBox5.Size = new System.Drawing.Size(831, 83);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             // 
-            // checkBox2
+            // cbkValLicencia
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(11, 22);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(173, 17);
-            this.checkBox2.TabIndex = 28;
-            this.checkBox2.Text = "Validacion Licencia SUCAMEC";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbkValLicencia.AutoSize = true;
+            this.cbkValLicencia.Location = new System.Drawing.Point(11, 22);
+            this.cbkValLicencia.Name = "cbkValLicencia";
+            this.cbkValLicencia.Size = new System.Drawing.Size(173, 17);
+            this.cbkValLicencia.TabIndex = 28;
+            this.cbkValLicencia.Text = "Validacion Licencia SUCAMEC";
+            this.cbkValLicencia.UseVisualStyleBackColor = true;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(446, 49);
+            this.label35.Location = new System.Drawing.Point(572, 49);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(98, 13);
             this.label35.TabIndex = 27;
@@ -1183,32 +1183,32 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(446, 20);
+            this.label34.Location = new System.Drawing.Point(572, 23);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(98, 13);
             this.label34.TabIndex = 26;
             this.label34.Text = "Fecha Vencimiento";
             // 
-            // dateTimePicker2
+            // txtvencitarjeta
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(557, 46);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker2.TabIndex = 25;
+            this.txtvencitarjeta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtvencitarjeta.Location = new System.Drawing.Point(676, 46);
+            this.txtvencitarjeta.Name = "txtvencitarjeta";
+            this.txtvencitarjeta.Size = new System.Drawing.Size(100, 20);
+            this.txtvencitarjeta.TabIndex = 25;
             // 
-            // dateTimePicker1
+            // txtvencialicencia
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(557, 17);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker1.TabIndex = 24;
+            this.txtvencialicencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtvencialicencia.Location = new System.Drawing.Point(676, 20);
+            this.txtvencialicencia.Name = "txtvencialicencia";
+            this.txtvencialicencia.Size = new System.Drawing.Size(100, 20);
+            this.txtvencialicencia.TabIndex = 24;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(205, 49);
+            this.label33.Location = new System.Drawing.Point(264, 49);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(55, 13);
             this.label33.TabIndex = 23;
@@ -1217,37 +1217,37 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(205, 20);
+            this.label32.Location = new System.Drawing.Point(264, 23);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(62, 13);
             this.label32.TabIndex = 22;
             this.label32.Text = "N° Licencia";
             // 
-            // textBox2
+            // txtcodigotarjeta
             // 
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Location = new System.Drawing.Point(282, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtcodigotarjeta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtcodigotarjeta.Location = new System.Drawing.Point(338, 46);
+            this.txtcodigotarjeta.Name = "txtcodigotarjeta";
+            this.txtcodigotarjeta.Size = new System.Drawing.Size(146, 20);
+            this.txtcodigotarjeta.TabIndex = 7;
             // 
-            // textBox1
+            // txtcodigolicencia
             // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Location = new System.Drawing.Point(282, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtcodigolicencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtcodigolicencia.Location = new System.Drawing.Point(338, 20);
+            this.txtcodigolicencia.Name = "txtcodigolicencia";
+            this.txtcodigolicencia.Size = new System.Drawing.Size(146, 20);
+            this.txtcodigolicencia.TabIndex = 6;
             // 
-            // checkBox1
+            // cbkValTarjeta
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(9, 92);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(173, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Validacion Licencia SUCAMEC";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbkValTarjeta.AutoSize = true;
+            this.cbkValTarjeta.Location = new System.Drawing.Point(11, 48);
+            this.cbkValTarjeta.Name = "cbkValTarjeta";
+            this.cbkValTarjeta.Size = new System.Drawing.Size(166, 17);
+            this.cbkValTarjeta.TabIndex = 0;
+            this.cbkValTarjeta.Text = "Validacion Tarjeta SUCAMEC";
+            this.cbkValTarjeta.UseVisualStyleBackColor = true;
             // 
             // frmProcPedidosCabecera
             // 
@@ -1378,17 +1378,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDSERIE;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker txtvencitarjeta;
+        private System.Windows.Forms.DateTimePicker txtvencialicencia;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtcodigotarjeta;
+        private System.Windows.Forms.TextBox txtcodigolicencia;
+        private System.Windows.Forms.CheckBox cbkValTarjeta;
         private System.Windows.Forms.ComboBox cboLicencia;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtUnidadesCompra;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox cbkValLicencia;
     }
 }

@@ -85,6 +85,7 @@ namespace Presentacion
                 //int index4 = cboTipo.FindString("--NUEVO TIPO--");
                 //cboTipo.SelectedIndex = index4;
                 //cboTipo.Text = "--ELEGIR--";
+                txtUnidad.Text = "0";
 
             }
             else

@@ -352,28 +352,8 @@ namespace Presentacion
 
             Mcliente Registroscliente = clienteNE.ClienteBusquedaCodigo(pedCab.p_inidcliente);
             clientebusqueda ClienteG = clienteNE.ClienteBusquedaCodigoSecundario(Registroscliente.chcodigocliente);
-            string licencia = "";
-            string vencimientolice = "";
-            List<licencia> LicenciaG = clienteNE.LicenciaBusquedaCodigo(ClienteG.p_inidcodigoclie);
-            foreach (licencia objLicencia in LicenciaG)
-            {
-                if (objLicencia.p_inidlicencia == pedCab.p_inidlicencia)
-                {
-                    licencia = objLicencia.chlicencia;
-                    vencimientolice = objLicencia.fechavencimiento;
-                }
-            }
-            string tarjeta = "";
-            string vencimiento = "";
-            List<tarjetapropiedad> TarjetaG = clienteNE.TarjetaPropiedadBusquedaCodigo(ClienteG.p_inidcodigoclie);
-            foreach (tarjetapropiedad objTarjeta in TarjetaG)
-            {
-                if (objTarjeta.p_inidtarjeta == pedCab.p_inidtarjeta)
-                {
-                    tarjeta = objTarjeta.chtarjeta;
-                    vencimiento = objTarjeta.fechavencimiento;
-                }
-            }
+            
+          
             Reportes.FrmReporte f = new Reportes.FrmReporte();
             string tipocodicmento = "";
             foreach (tipodocumento objTipodic in ListaTipdoc)
@@ -413,10 +393,10 @@ namespace Presentacion
                 pedCab.p_inidusuarioinsert,
                 pedCab.chcodigopedido,
                 condicionpago,
-                licencia,
-                vencimientolice,
-                tarjeta,
-                vencimiento,
+                pedCab.codigolicencia,
+                pedCab.vencilicencia,
+                pedCab.codigotarjeta,
+                pedCab.vencitarjeta,
 
                  correlativo,
             nombrecompro,

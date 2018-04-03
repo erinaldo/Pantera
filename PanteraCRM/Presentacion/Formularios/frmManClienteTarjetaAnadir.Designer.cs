@@ -39,11 +39,11 @@
             this.btnAnadir = new System.Windows.Forms.Button();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtFechVenci = new System.Windows.Forms.MaskedTextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
+            this.txtFechVenci = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListasTarjetas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -103,10 +103,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtFechVenci);
             this.groupBox1.Controls.Add(this.btnAnadir);
             this.groupBox1.Controls.Add(this.btnQuitar);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtFechVenci);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(14, 12);
@@ -147,16 +147,6 @@
             this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Fecha Vencimiento";
-            // 
-            // txtFechVenci
-            // 
-            this.txtFechVenci.Location = new System.Drawing.Point(133, 39);
-            this.txtFechVenci.Mask = "00/00/0000";
-            this.txtFechVenci.Name = "txtFechVenci";
-            this.txtFechVenci.Size = new System.Drawing.Size(74, 20);
-            this.txtFechVenci.TabIndex = 1;
-            this.txtFechVenci.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtFechVenci.ValidatingType = typeof(System.DateTime);
             // 
             // txtCodigo
             // 
@@ -201,6 +191,14 @@
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
+            // txtFechVenci
+            // 
+            this.txtFechVenci.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFechVenci.Location = new System.Drawing.Point(133, 36);
+            this.txtFechVenci.Name = "txtFechVenci";
+            this.txtFechVenci.Size = new System.Drawing.Size(161, 20);
+            this.txtFechVenci.TabIndex = 4;
+            // 
             // frmManClienteTarjetaAnadir
             // 
             this.AcceptButton = this.btnGrabar;
@@ -234,7 +232,6 @@
         private System.Windows.Forms.DataGridView dgvListasTarjetas;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox txtFechVenci;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDTARJETA;
@@ -246,5 +243,6 @@
         private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.DateTimePicker txtFechVenci;
     }
 }

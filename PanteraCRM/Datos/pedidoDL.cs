@@ -86,7 +86,13 @@ namespace Datos
                     new parametro("in_estado", registros.estado),
                     new parametro("in_p_inidvehiculo", registros.p_inidvehiculo),
                     new parametro("in_p_inidtarjeta", registros.p_inidtarjeta),
-                    new parametro("in_p_inidlicencia", registros.p_inidlicencia)
+                    new parametro("in_p_inidlicencia", registros.p_inidlicencia),
+            new parametro("in_chcodigotarjeta", registros.codigotarjeta),
+            new parametro("in_chvencitarjeta", registros.vencitarjeta),
+            new parametro("in_chcodigolicencia", registros.codigolicencia),
+            new parametro("in_chvencilicencia", registros.vencilicencia),
+            new parametro("in_bolicencia", registros.bolicencia),
+            new parametro("in_botarjeta", registros.botarjeta)
             );
         }
         public static int BusquedaMaximaVendida(int cliente, string fecha)
@@ -297,6 +303,14 @@ namespace Datos
                     registro.p_inidvehiculo = Convert.ToInt32(datareader["p_inidvehiculo"]);
                     registro.p_inidlicencia = Convert.ToInt32(datareader["p_inidlicencia"]);
                     registro.p_inidtarjeta = Convert.ToInt32(datareader["p_inidtarjeta"]);
+
+                    registro.codigotarjeta = Convert.ToString(datareader["chcodigotarjeta"]).Trim();
+                    registro.vencitarjeta = Convert.ToString(datareader["chvencitarjeta"]).Trim();
+                    registro.codigolicencia = Convert.ToString(datareader["chcodigolicencia"]).Trim();
+
+                    registro.vencilicencia = Convert.ToString(datareader["chvencilicencia"]).Trim();
+                    registro.bolicencia = Convert.ToBoolean(datareader["bolicencia"]);
+                    registro.botarjeta = Convert.ToBoolean(datareader["botarjeta"]);
                 }
                 return registro;
             }

@@ -416,7 +416,6 @@ C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Entid
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Negocios.pdb
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Npgsql.xml
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\bin\Debug\Datos.pdb
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.exe
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Rufigas CRM.pdb
@@ -717,3 +716,9 @@ C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\P
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmConsVentasDetalle.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManClienteLicenciaAnadir.resources
 C:\Users\Desarrollo\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmSecuUsuariosAnadir.resources
+C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmConsEstadoCuentaDetalle.resources
+C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmConsVentasDetalle.resources
+C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmManClienteLicenciaAnadir.resources
+C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcCancelacionCuentasDetalle.resources
+C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmProcNotaCrediDevModificar.resources
+C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Presentacion\obj\Debug\Presentacion.frmSecuUsuariosAnadir.resources

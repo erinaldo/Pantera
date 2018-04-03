@@ -106,7 +106,6 @@ C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Negocios\bin\Debug\Newtonsof
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Negocios\bin\Debug\Datos.pdb
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Negocios\bin\Debug\Entidades.pdb
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Negocios\bin\Debug\Npgsql.xml
-C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Negocios\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Negocios\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Negocios\obj\Debug\Negocios.dll
 C:\Users\Junior\Documents\GitHub\Pantera\PanteraCRM\Negocios\obj\Debug\Negocios.pdb

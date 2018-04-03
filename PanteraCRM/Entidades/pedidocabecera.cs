@@ -51,6 +51,12 @@ namespace Entidades
         public int p_inidvehiculo { get; set; }
         public int p_inidlicencia { get; set; }
         public int p_inidtarjeta { get; set; }
+        public string codigotarjeta { get; set; }
+        public string vencitarjeta { get; set; }
+        public string codigolicencia { get; set; }
+        public string vencilicencia { get; set; }
+        public bool botarjeta { get; set; }
+        public bool bolicencia { get; set; }
         public pedidocabecera()
         {
             this.p_inidpedidocabecera = 0;
@@ -96,6 +102,12 @@ namespace Entidades
             this.p_inidvehiculo = 0;
             this.p_inidlicencia = 0;
             this.p_inidtarjeta = 0;
-    }
+            this.codigotarjeta = string.Empty;
+            this.vencitarjeta = string.Empty;
+            this.codigolicencia = string.Empty;
+            this.vencilicencia = string.Empty;
+            this.bolicencia = false;
+            this.botarjeta = false;
+        }
     }
 }

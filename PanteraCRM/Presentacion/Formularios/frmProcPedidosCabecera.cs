@@ -435,10 +435,10 @@ namespace Presentacion
                 sesion.SessionGlobal.chusuario,
                 txtNroPedido.Text,
                 cboCondVenta.Text,
-                cboLicencia.Text,
-                txtVencLicencia.Text,
-                cboTarjeta.Text,
-                txtFechaVenciTarjeta.Text,
+                txtcodigolicencia.Text,
+                txtvencialicencia.Text,
+                txtcodigotarjeta.Text,
+                txtvencitarjeta.Text,
                 correlativo,
                 nombrecompro,
                 basicas.Convertir(cadenatotol.ToString(),true),
@@ -550,6 +550,26 @@ namespace Presentacion
                 MessageBox.Show("Licencia vencida elija otra", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return false;
             }
+            if (cbkValLicencia.Checked != true)
+            {
+                MessageBox.Show("Validar Licencia", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return false;
+            }
+            if (cbkValTarjeta.Checked != true)
+            {
+                MessageBox.Show("Validar Tarjeta", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return false;
+            }
+            if (txtcodigolicencia.Text.Length <= 0)
+            {
+                MessageBox.Show("Validar código de licencia", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return false;
+            }
+            if (txtcodigotarjeta.Text.Length <= 0)
+            {
+                MessageBox.Show("Validar código de tarjeta", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return false;
+            }
             return flat;
         }
 
@@ -606,6 +626,13 @@ namespace Presentacion
 
             registrosPedidoCabecera.p_inidlicencia = (int)cboLicencia.SelectedValue;
             registrosPedidoCabecera.p_inidtarjeta = (int)cboTarjeta.SelectedValue;
+
+            registrosPedidoCabecera.codigotarjeta = txtcodigotarjeta.Text;
+            registrosPedidoCabecera.vencitarjeta = txtvencitarjeta.Text;
+            registrosPedidoCabecera.codigolicencia = txtcodigolicencia.Text;
+            registrosPedidoCabecera.vencilicencia = txtvencialicencia.Text;
+            registrosPedidoCabecera.bolicencia = cbkValLicencia.Checked;
+            registrosPedidoCabecera.botarjeta = cbkValTarjeta.Checked;
             CodigoCabecera = 0;
              CodigoCabecera = pedidoNE.IngresoPedidoCabecera(registrosPedidoCabecera);
             
