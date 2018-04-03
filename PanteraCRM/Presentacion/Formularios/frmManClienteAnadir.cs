@@ -958,6 +958,11 @@ namespace Presentacion
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
+            {
+                e.Handled = true;
+
+            }
             TextBox textboxusado = (TextBox)sender;
             utilidades.LogitudDeCampo(ref textboxusado, e, 9);
         }
@@ -1025,5 +1030,7 @@ namespace Presentacion
                 btnListaLicencias.Text = "Lista de Resoluciones";
             }
         }
+
+       
     }
 }

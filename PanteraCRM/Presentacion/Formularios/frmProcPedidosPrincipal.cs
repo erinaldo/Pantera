@@ -353,7 +353,30 @@ namespace Presentacion
             Mcliente Registroscliente = clienteNE.ClienteBusquedaCodigo(pedCab.p_inidcliente);
             clientebusqueda ClienteG = clienteNE.ClienteBusquedaCodigoSecundario(Registroscliente.chcodigocliente);
             
-          
+            
+            string licenciaaaa = "";
+            string fechavencilli = "";
+            List <licencia> LicenciaG = clienteNE.LicenciaBusquedaCodigo(ClienteG.p_inidcodigoclie);
+            foreach (licencia aa in LicenciaG)
+            {
+                if (aa.p_inidlicencia == pedCab.p_inidlicencia)
+                {
+                    licenciaaaa= aa.chlicencia;
+                    fechavencilli = aa.fechavencimiento;
+                }
+            }
+            string rd = "";
+            string vencird = "";
+            if (ClienteG.tipodocu == "RUC")
+            {
+                rd = licenciaaaa;
+                vencird = fechavencilli;
+            }
+            else
+            {
+                rd = "";
+                vencird = "";
+            }
             Reportes.FrmReporte f = new Reportes.FrmReporte();
             string tipocodicmento = "";
             foreach (tipodocumento objTipodic in ListaTipdoc)
@@ -411,7 +434,7 @@ namespace Presentacion
                 string.Format("{0:0,0.00}", pedCab.nutotalventamonnacional),
                 //txtTotVenta.Text,
                 sesion.SessionGlobal.chpuntoventa,
-                "10717767603"
+                "10717767603",rd,vencird
             }, true);
             CargarDatosDetalle(CodigoPedidoCabecera);
             Dts.AcceptChanges();

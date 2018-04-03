@@ -412,6 +412,19 @@ namespace Presentacion
         }
         private void MostrarVistaImpresion()
         {
+            string rd = "";
+            string vencird = "";
+            if (ClienteG.tipodocu=="RUC")
+            {
+                rd = cboLicencia.Text;
+                vencird = txtVencLicencia.Text;
+            }
+            else
+            {
+                rd = "";
+                vencird = "";
+            }
+
             Reportes.FrmReporte f = new Reportes.FrmReporte();
             f.tipocomprobante = cboTipoDocu.Text;
             f.codigopedido = txtNroPedido.Text;
@@ -452,7 +465,7 @@ namespace Presentacion
                 string.Format("{0:0,0.00}", decimal.Parse(txtTotVenta.Text)),
                 //txtTotVenta.Text,
                 sesion.SessionGlobal.chpuntoventa,
-                "10717767603"
+                "10717767603",rd,vencird
             }, true);
             Dts.AcceptChanges();
             if (sesion.pedidodetallecontenido != null)
@@ -805,10 +818,12 @@ namespace Presentacion
                 if (ClienteG.tipodocu == "RUC")
                 {
                     CargarUnidadesCompradas(ClienteG.p_inidcodigoclie, txtFechaActual.Text);
+                    lblLicencia.Text = "N° R.D.";
                 }
                 else
                 {
                     CargarUnidadesCompradas2(ClienteG.p_inidcodigoclie, txtFechaActual.Text);
+                    lblLicencia.Text = "N° Licencia";
                 }
                 
             }

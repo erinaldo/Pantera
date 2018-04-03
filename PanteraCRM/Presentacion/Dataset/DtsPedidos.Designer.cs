@@ -368,6 +368,10 @@ namespace Presentacion.Dataset {
             
             private global::System.Data.DataColumn columnempresaruc;
             
+            private global::System.Data.DataColumn columnresololucion;
+            
+            private global::System.Data.DataColumn columnvencird;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public cabeceraDataTable() {
@@ -619,6 +623,22 @@ namespace Presentacion.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn resololucionColumn {
+                get {
+                    return this.columnresololucion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn vencirdColumn {
+                get {
+                    return this.columnvencird;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -681,7 +701,9 @@ namespace Presentacion.Dataset {
                         string igv, 
                         string importetotal, 
                         string empresarazon, 
-                        string empresaruc) {
+                        string empresaruc, 
+                        string resololucion, 
+                        string vencird) {
                 cabeceraRow rowcabeceraRow = ((cabeceraRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         clientenombre,
@@ -710,7 +732,9 @@ namespace Presentacion.Dataset {
                         igv,
                         importetotal,
                         empresarazon,
-                        empresaruc};
+                        empresaruc,
+                        resololucion,
+                        vencird};
                 rowcabeceraRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcabeceraRow);
                 return rowcabeceraRow;
@@ -760,6 +784,8 @@ namespace Presentacion.Dataset {
                 this.columnimportetotal = base.Columns["importetotal"];
                 this.columnempresarazon = base.Columns["empresarazon"];
                 this.columnempresaruc = base.Columns["empresaruc"];
+                this.columnresololucion = base.Columns["resololucion"];
+                this.columnvencird = base.Columns["vencird"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -819,6 +845,10 @@ namespace Presentacion.Dataset {
                 base.Columns.Add(this.columnempresarazon);
                 this.columnempresaruc = new global::System.Data.DataColumn("empresaruc", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnempresaruc);
+                this.columnresololucion = new global::System.Data.DataColumn("resololucion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnresololucion);
+                this.columnvencird = new global::System.Data.DataColumn("vencird", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvencird);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1780,6 +1810,38 @@ namespace Presentacion.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string resololucion {
+                get {
+                    try {
+                        return ((string)(this[this.tablecabecera.resololucionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'resololucion\' de la tabla \'cabecera\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecabecera.resololucionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string vencird {
+                get {
+                    try {
+                        return ((string)(this[this.tablecabecera.vencirdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'vencird\' de la tabla \'cabecera\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecabecera.vencirdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsclientenombreNull() {
                 return this.IsNull(this.tablecabecera.clientenombreColumn);
             }
@@ -2100,6 +2162,30 @@ namespace Presentacion.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetempresarucNull() {
                 this[this.tablecabecera.empresarucColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsresololucionNull() {
+                return this.IsNull(this.tablecabecera.resololucionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetresololucionNull() {
+                this[this.tablecabecera.resololucionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsvencirdNull() {
+                return this.IsNull(this.tablecabecera.vencirdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetvencirdNull() {
+                this[this.tablecabecera.vencirdColumn] = global::System.Convert.DBNull;
             }
         }
         

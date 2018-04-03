@@ -19,7 +19,7 @@ namespace Entidades
         public int p_inidserie { get; set; }
         public string chserie { get; set; }
         public int p_inidcategoria { get; set; }
-
+        public int cantporunid { get; set; }
         public productoparaventa()
         {
             this.p_inidproducto = 0;
@@ -33,6 +33,7 @@ namespace Entidades
             this.p_inidserie = 0;
             this.chserie = string.Empty;
             this.p_inidcategoria = 0;
+            this.cantporunid = 0;
         }
     }
 }

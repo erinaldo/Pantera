@@ -298,7 +298,7 @@ namespace Datos
                 productoparaventa registro = new productoparaventa();
                 while (datareader.Read())
                 {
-                   
+
                     registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
                     registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]).Trim();
                     registro.chnombrecompuesto = Convert.ToString(datareader["chnombrecompuesto"]).Trim();
@@ -308,7 +308,8 @@ namespace Datos
                     registro.nustockactual = Convert.ToInt32(datareader["nustockactual"]);
                     registro.req_serie = Convert.ToBoolean(datareader["req_serie"]);
                     registro.p_inidcategoria = Convert.ToInt32(datareader["p_inidcategoria"]);
-                    
+                    registro.cantporunid = Convert.ToInt32(datareader["nucantporuni"]);
+
                 }
                 return registro;
             }

@@ -558,11 +558,10 @@ namespace Presentacion
                     {
                         ca= int.Parse(txtusado.Text);
                     }
-                
+                    int para = 600;
                     
-                    if (ca + cantidadmaxima > 12)
-                    {
-                       
+                    if (((ca*ProductoG.cantporunid) + cantidadmaxima ) > para)
+                    {                       
                         txtusado.Text = "0";
                         MessageBox.Show("Cantidad maxima de municiones superada", "MENSAJE DE SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         
