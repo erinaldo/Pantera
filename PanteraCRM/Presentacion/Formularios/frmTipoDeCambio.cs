@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmTipoDeCambio : Form
@@ -34,82 +35,15 @@ namespace Presentacion
 
         private void txtCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (8 == Convert.ToInt32(e.KeyChar))
-            {
-                e.Handled = false;
-                return;
-            }
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txtCompra.Text.Length; i++)
-            {
-                if (txtCompra.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    if (txtCompra.SelectionLength > 0)
-                    {
-                        if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
-                            e.Handled = false;
-                        return;
-                    }
-                    else
-                    {
-                        e.Handled = true;
-                        return;
-                    }                    
-                }
-            }
-           
-            if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
-                e.Handled = false;
-            else if (Convert.ToInt32(e.KeyChar) == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
-                e.Handled = true;
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.solonumeros(ref textboxusado, e);
         }
 
         private void txtVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (8 == Convert.ToInt32(e.KeyChar))
-            {
-                e.Handled = false;
-                return;
-            }
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txtVenta.Text.Length; i++)
-            {
-                if (txtVenta.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    if (txtVenta.SelectionLength > 0)
-                    {
-                        if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
-                            e.Handled = false;
-                        return;
-
-                    }
-                    else
-                    {
-                        e.Handled = true;
-                        return;
-                    }
-                }
-            }
-            
-            if (Convert.ToInt32(e.KeyChar) >= 48 && Convert.ToInt32(e.KeyChar) <= 57)
-                e.Handled = false;
-            else if (Convert.ToInt32(e.KeyChar) == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
-                e.Handled = true;
-        }
+        TextBox textboxusado = (TextBox)sender;
+        utilidades.solonumeros(ref textboxusado, e);
+    }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -180,6 +114,18 @@ namespace Presentacion
         private void txtVenta_Enter(object sender, EventArgs e)
         {
             txtVenta.SelectAll();
+        }
+
+        private void txtCompra_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.ValidarNumero(ref textboxusado, e);
+        }
+
+        private void txtVenta_Validated(object sender, EventArgs e)
+        {
+            TextBox textboxusado = (TextBox)sender;
+            utilidades.ValidarNumero(ref textboxusado, e);
         }
     }
 }

@@ -99,6 +99,7 @@
             this.txtVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtVenta.Enter += new System.EventHandler(this.txtVenta_Enter);
             this.txtVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVenta_KeyPress);
+            this.txtVenta.Validated += new System.EventHandler(this.txtVenta_Validated);
             // 
             // label4
             // 
@@ -136,6 +137,7 @@
             this.txtCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCompra.Enter += new System.EventHandler(this.txtCompra_Enter);
             this.txtCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompra_KeyPress);
+            this.txtCompra.Validated += new System.EventHandler(this.txtCompra_Validated);
             // 
             // btnGrabar
             // 

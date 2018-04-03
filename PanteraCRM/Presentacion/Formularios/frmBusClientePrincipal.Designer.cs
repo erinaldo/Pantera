@@ -96,7 +96,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaclientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListaclientes.Size = new System.Drawing.Size(638, 148);
-            this.dgvListaclientes.TabIndex = 0;
+            this.dgvListaclientes.TabIndex = 1;
             // 
             // IDCLIENTE
             // 
@@ -169,7 +169,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(638, 45);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtParametroBusqueda
@@ -178,7 +178,7 @@
             this.txtParametroBusqueda.Location = new System.Drawing.Point(67, 16);
             this.txtParametroBusqueda.Name = "txtParametroBusqueda";
             this.txtParametroBusqueda.Size = new System.Drawing.Size(565, 20);
-            this.txtParametroBusqueda.TabIndex = 1;
+            this.txtParametroBusqueda.TabIndex = 0;
             this.txtParametroBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
@@ -198,7 +198,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(6, 11);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 14;
+            this.btnGrabar.TabIndex = 0;
             this.btnGrabar.Text = "&Seleccionar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -210,7 +210,7 @@
             this.btnSalir.Location = new System.Drawing.Point(178, 11);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 15;
+            this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -223,7 +223,7 @@
             this.groupBox2.Location = new System.Drawing.Point(198, 208);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(266, 44);
-            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
             // btnAgregar
@@ -234,7 +234,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(92, 10);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(80, 28);
-            this.btnAgregar.TabIndex = 16;
+            this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "&Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);

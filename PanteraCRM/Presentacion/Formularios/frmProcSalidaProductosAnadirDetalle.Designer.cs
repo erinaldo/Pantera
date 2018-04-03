@@ -301,7 +301,7 @@
             this.txtCant.Location = new System.Drawing.Point(61, 66);
             this.txtCant.Name = "txtCant";
             this.txtCant.Size = new System.Drawing.Size(39, 20);
-            this.txtCant.TabIndex = 3;
+            this.txtCant.TabIndex = 1;
             this.txtCant.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCant.TextChanged += new System.EventHandler(this.txtCant_TextChanged);
             this.txtCant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCant_KeyPress);
@@ -312,7 +312,7 @@
             this.txtPreComp.Location = new System.Drawing.Point(318, 66);
             this.txtPreComp.Name = "txtPreComp";
             this.txtPreComp.Size = new System.Drawing.Size(100, 20);
-            this.txtPreComp.TabIndex = 1;
+            this.txtPreComp.TabIndex = 2;
             this.txtPreComp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPreComp.TextChanged += new System.EventHandler(this.txtPreComp_TextChanged);
             this.txtPreComp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreComp_KeyPress);

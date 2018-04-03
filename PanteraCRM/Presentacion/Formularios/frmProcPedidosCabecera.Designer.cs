@@ -207,7 +207,7 @@
             this.cboTipoDocu.Location = new System.Drawing.Point(512, 14);
             this.cboTipoDocu.Name = "cboTipoDocu";
             this.cboTipoDocu.Size = new System.Drawing.Size(98, 21);
-            this.cboTipoDocu.TabIndex = 0;
+            this.cboTipoDocu.TabIndex = 1;
             // 
             // cboTraslado
             // 
@@ -274,7 +274,7 @@
             this.cboigv.Location = new System.Drawing.Point(512, 66);
             this.cboigv.Name = "cboigv";
             this.cboigv.Size = new System.Drawing.Size(59, 21);
-            this.cboigv.TabIndex = 26;
+            this.cboigv.TabIndex = 4;
             // 
             // txtTipoCambio
             // 
@@ -350,7 +350,7 @@
             this.cboCondVenta.Location = new System.Drawing.Point(267, 14);
             this.cboCondVenta.Name = "cboCondVenta";
             this.cboCondVenta.Size = new System.Drawing.Size(162, 21);
-            this.cboCondVenta.TabIndex = 5;
+            this.cboCondVenta.TabIndex = 0;
             // 
             // txtNombreVendedor
             // 
@@ -372,7 +372,7 @@
             this.txtordcomp.Location = new System.Drawing.Point(82, 67);
             this.txtordcomp.Name = "txtordcomp";
             this.txtordcomp.Size = new System.Drawing.Size(109, 20);
-            this.txtordcomp.TabIndex = 4;
+            this.txtordcomp.TabIndex = 3;
             this.txtordcomp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtordcomp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtordcomp_KeyPress);
             // 
@@ -412,7 +412,7 @@
             this.txtCodigoCliente.Location = new System.Drawing.Point(81, 19);
             this.txtCodigoCliente.Name = "txtCodigoCliente";
             this.txtCodigoCliente.Size = new System.Drawing.Size(109, 20);
-            this.txtCodigoCliente.TabIndex = 13;
+            this.txtCodigoCliente.TabIndex = 0;
             this.txtCodigoCliente.TabStop = false;
             this.txtCodigoCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCodigoCliente.TextChanged += new System.EventHandler(this.txtCodigoCliente_TextChanged);
@@ -491,7 +491,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 192);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(832, 102);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Transportista";
             // 
@@ -502,7 +502,7 @@
             this.txtfechaInicio.Location = new System.Drawing.Point(720, 20);
             this.txtfechaInicio.Name = "txtfechaInicio";
             this.txtfechaInicio.Size = new System.Drawing.Size(105, 20);
-            this.txtfechaInicio.TabIndex = 25;
+            this.txtfechaInicio.TabIndex = 0;
             // 
             // label21
             // 
@@ -519,7 +519,7 @@
             this.txtPtoLlegada.Location = new System.Drawing.Point(482, 72);
             this.txtPtoLlegada.Name = "txtPtoLlegada";
             this.txtPtoLlegada.Size = new System.Drawing.Size(344, 20);
-            this.txtPtoLlegada.TabIndex = 7;
+            this.txtPtoLlegada.TabIndex = 5;
             this.txtPtoLlegada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPtoLlegada_KeyPress);
             // 
             // txtPtoPartida
@@ -528,7 +528,7 @@
             this.txtPtoPartida.Location = new System.Drawing.Point(78, 72);
             this.txtPtoPartida.Name = "txtPtoPartida";
             this.txtPtoPartida.Size = new System.Drawing.Size(328, 20);
-            this.txtPtoPartida.TabIndex = 6;
+            this.txtPtoPartida.TabIndex = 4;
             this.txtPtoPartida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPtoPartida_KeyPress);
             // 
             // label20
@@ -555,7 +555,7 @@
             this.txtObs.Location = new System.Drawing.Point(483, 46);
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(342, 20);
-            this.txtObs.TabIndex = 5;
+            this.txtObs.TabIndex = 3;
             this.txtObs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtObs_KeyPress);
             // 
             // label18
@@ -574,7 +574,7 @@
             this.cboVehiculo.Location = new System.Drawing.Point(78, 45);
             this.cboVehiculo.Name = "cboVehiculo";
             this.cboVehiculo.Size = new System.Drawing.Size(113, 21);
-            this.cboVehiculo.TabIndex = 2;
+            this.cboVehiculo.TabIndex = 1;
             // 
             // label17
             // 
@@ -592,7 +592,7 @@
             this.cboNombreConductor.Location = new System.Drawing.Point(267, 45);
             this.cboNombreConductor.Name = "cboNombreConductor";
             this.cboNombreConductor.Size = new System.Drawing.Size(139, 21);
-            this.cboNombreConductor.TabIndex = 1;
+            this.cboNombreConductor.TabIndex = 2;
             // 
             // label16
             // 
@@ -632,6 +632,7 @@
             this.txtRucTrans.ForeColor = System.Drawing.Color.Blue;
             this.txtRucTrans.Location = new System.Drawing.Point(78, 19);
             this.txtRucTrans.Name = "txtRucTrans";
+            this.txtRucTrans.ReadOnly = true;
             this.txtRucTrans.Size = new System.Drawing.Size(113, 20);
             this.txtRucTrans.TabIndex = 0;
             // 
@@ -666,7 +667,7 @@
             this.groupBox3.Location = new System.Drawing.Point(11, 389);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(833, 281);
-            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
@@ -868,6 +869,7 @@
             this.dgvListaPedidoDetalle.Location = new System.Drawing.Point(9, 19);
             this.dgvListaPedidoDetalle.Name = "dgvListaPedidoDetalle";
             this.dgvListaPedidoDetalle.ReadOnly = true;
+            this.dgvListaPedidoDetalle.RowHeadersVisible = false;
             this.dgvListaPedidoDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPedidoDetalle.Size = new System.Drawing.Size(817, 175);
             this.dgvListaPedidoDetalle.TabIndex = 0;
@@ -1017,7 +1019,7 @@
             this.cboTarjeta.Location = new System.Drawing.Point(389, 48);
             this.cboTarjeta.Name = "cboTarjeta";
             this.cboTarjeta.Size = new System.Drawing.Size(119, 21);
-            this.cboTarjeta.TabIndex = 26;
+            this.cboTarjeta.TabIndex = 2;
             this.cboTarjeta.SelectedIndexChanged += new System.EventHandler(this.cboTarjeta_SelectedIndexChanged);
             // 
             // label27
@@ -1059,7 +1061,7 @@
             this.groupBox4.Location = new System.Drawing.Point(13, 111);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(830, 81);
-            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Datos de Cliente";
             // 
@@ -1092,7 +1094,7 @@
             this.cboLicencia.Location = new System.Drawing.Point(81, 49);
             this.cboLicencia.Name = "cboLicencia";
             this.cboLicencia.Size = new System.Drawing.Size(109, 21);
-            this.cboLicencia.TabIndex = 34;
+            this.cboLicencia.TabIndex = 1;
             this.cboLicencia.SelectedIndexChanged += new System.EventHandler(this.cboLicencia_SelectedIndexChanged);
             // 
             // label30
@@ -1158,7 +1160,7 @@
             this.groupBox5.Location = new System.Drawing.Point(12, 300);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(831, 83);
-            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             // 
             // cbkValLicencia
@@ -1167,7 +1169,7 @@
             this.cbkValLicencia.Location = new System.Drawing.Point(11, 22);
             this.cbkValLicencia.Name = "cbkValLicencia";
             this.cbkValLicencia.Size = new System.Drawing.Size(173, 17);
-            this.cbkValLicencia.TabIndex = 28;
+            this.cbkValLicencia.TabIndex = 0;
             this.cbkValLicencia.Text = "Validacion Licencia SUCAMEC";
             this.cbkValLicencia.UseVisualStyleBackColor = true;
             // 
@@ -1195,7 +1197,7 @@
             this.txtvencitarjeta.Location = new System.Drawing.Point(676, 46);
             this.txtvencitarjeta.Name = "txtvencitarjeta";
             this.txtvencitarjeta.Size = new System.Drawing.Size(100, 20);
-            this.txtvencitarjeta.TabIndex = 25;
+            this.txtvencitarjeta.TabIndex = 5;
             // 
             // txtvencialicencia
             // 
@@ -1203,7 +1205,7 @@
             this.txtvencialicencia.Location = new System.Drawing.Point(676, 20);
             this.txtvencialicencia.Name = "txtvencialicencia";
             this.txtvencialicencia.Size = new System.Drawing.Size(100, 20);
-            this.txtvencialicencia.TabIndex = 24;
+            this.txtvencialicencia.TabIndex = 2;
             // 
             // label33
             // 
@@ -1229,7 +1231,7 @@
             this.txtcodigotarjeta.Location = new System.Drawing.Point(338, 46);
             this.txtcodigotarjeta.Name = "txtcodigotarjeta";
             this.txtcodigotarjeta.Size = new System.Drawing.Size(146, 20);
-            this.txtcodigotarjeta.TabIndex = 7;
+            this.txtcodigotarjeta.TabIndex = 4;
             // 
             // txtcodigolicencia
             // 
@@ -1237,7 +1239,7 @@
             this.txtcodigolicencia.Location = new System.Drawing.Point(338, 20);
             this.txtcodigolicencia.Name = "txtcodigolicencia";
             this.txtcodigolicencia.Size = new System.Drawing.Size(146, 20);
-            this.txtcodigolicencia.TabIndex = 6;
+            this.txtcodigolicencia.TabIndex = 1;
             // 
             // cbkValTarjeta
             // 
@@ -1245,7 +1247,7 @@
             this.cbkValTarjeta.Location = new System.Drawing.Point(11, 48);
             this.cbkValTarjeta.Name = "cbkValTarjeta";
             this.cbkValTarjeta.Size = new System.Drawing.Size(166, 17);
-            this.cbkValTarjeta.TabIndex = 0;
+            this.cbkValTarjeta.TabIndex = 3;
             this.cbkValTarjeta.Text = "Validacion Tarjeta SUCAMEC";
             this.cbkValTarjeta.UseVisualStyleBackColor = true;
             // 

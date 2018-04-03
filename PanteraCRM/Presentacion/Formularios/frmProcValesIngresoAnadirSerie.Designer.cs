@@ -90,7 +90,7 @@
             this.txtcodprod.Location = new System.Drawing.Point(63, 13);
             this.txtcodprod.Name = "txtcodprod";
             this.txtcodprod.Size = new System.Drawing.Size(106, 20);
-            this.txtcodprod.TabIndex = 1;
+            this.txtcodprod.TabIndex = 0;
             this.txtcodprod.TextChanged += new System.EventHandler(this.txtcodprod_TextChanged);
             this.txtcodprod.DoubleClick += new System.EventHandler(this.txtcodprod_DoubleClick);
             // 
@@ -419,7 +419,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(63, 46);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(38, 20);
-            this.txtCantidad.TabIndex = 19;
+            this.txtCantidad.TabIndex = 1;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
@@ -460,7 +460,7 @@
             this.txtprecio.Location = new System.Drawing.Point(265, 46);
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(100, 20);
-            this.txtprecio.TabIndex = 3;
+            this.txtprecio.TabIndex = 2;
             this.txtprecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtprecio.TextChanged += new System.EventHandler(this.txtprecio_TextChanged);
             this.txtprecio.Enter += new System.EventHandler(this.txtprecio_Enter);
