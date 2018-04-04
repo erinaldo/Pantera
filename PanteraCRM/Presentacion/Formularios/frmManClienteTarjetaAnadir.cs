@@ -32,7 +32,8 @@ namespace Presentacion
             if (ValidarCampos())
             {
                 string tarjeta = txtCodigo.Text;
-                string fecha = txtFechVenci.Text;
+                DateTime dt1 = DateTime.Parse(txtFechVenci.Text);
+                string fecha = dt1.ToString("dd/MM/yyyy");
                 dgvListasTarjetas.Rows.Add("", "", tarjeta, fecha, "");
                 txtCodigo.Text = "";
                 txtFechVenci.Text = "";

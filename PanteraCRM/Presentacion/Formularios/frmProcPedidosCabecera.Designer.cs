@@ -497,7 +497,7 @@
             // 
             // txtfechaInicio
             // 
-            this.txtfechaInicio.CustomFormat = "";
+            this.txtfechaInicio.CustomFormat = "dd/MM/yyyy";
             this.txtfechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtfechaInicio.Location = new System.Drawing.Point(720, 20);
             this.txtfechaInicio.Name = "txtfechaInicio";
@@ -678,7 +678,7 @@
             this.btnSalir.Location = new System.Drawing.Point(747, 200);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -689,7 +689,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(661, 200);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 4;
+            this.btnGrabar.TabIndex = 3;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -700,7 +700,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(183, 200);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(80, 28);
-            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -711,7 +711,7 @@
             this.btnModificar.Location = new System.Drawing.Point(96, 200);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(80, 28);
-            this.btnModificar.TabIndex = 2;
+            this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -723,7 +723,7 @@
             this.btnAnadir.Location = new System.Drawing.Point(9, 200);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(80, 28);
-            this.btnAnadir.TabIndex = 1;
+            this.btnAnadir.TabIndex = 0;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
@@ -1193,6 +1193,7 @@
             // 
             // txtvencitarjeta
             // 
+            this.txtvencitarjeta.CustomFormat = "dd/MM/yyyy";
             this.txtvencitarjeta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtvencitarjeta.Location = new System.Drawing.Point(676, 46);
             this.txtvencitarjeta.Name = "txtvencitarjeta";
@@ -1201,6 +1202,7 @@
             // 
             // txtvencialicencia
             // 
+            this.txtvencialicencia.CustomFormat = "dd/MM/yyyy";
             this.txtvencialicencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtvencialicencia.Location = new System.Drawing.Point(676, 20);
             this.txtvencialicencia.Name = "txtvencialicencia";

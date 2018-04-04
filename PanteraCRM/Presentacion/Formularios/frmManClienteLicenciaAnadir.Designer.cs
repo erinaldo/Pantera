@@ -55,7 +55,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(79, 290);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 5;
+            this.btnGrabar.TabIndex = 0;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -68,7 +68,7 @@
             this.btnSalir.Location = new System.Drawing.Point(165, 290);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 7;
+            this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -84,16 +84,16 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(300, 118);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtFechVenci
             // 
             this.txtFechVenci.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFechVenci.Location = new System.Drawing.Point(194, 42);
+            this.txtFechVenci.Location = new System.Drawing.Point(110, 42);
             this.txtFechVenci.Name = "txtFechVenci";
-            this.txtFechVenci.Size = new System.Drawing.Size(100, 20);
-            this.txtFechVenci.TabIndex = 4;
+            this.txtFechVenci.Size = new System.Drawing.Size(184, 20);
+            this.txtFechVenci.TabIndex = 1;
             // 
             // btnAnadir
             // 
@@ -122,7 +122,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 42);
+            this.label2.Location = new System.Drawing.Point(6, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 3;
@@ -131,9 +131,9 @@
             // txtCodigo
             // 
             this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigo.Location = new System.Drawing.Point(74, 13);
+            this.txtCodigo.Location = new System.Drawing.Point(110, 13);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(220, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(184, 20);
             this.txtCodigo.TabIndex = 0;
             // 
             // label1

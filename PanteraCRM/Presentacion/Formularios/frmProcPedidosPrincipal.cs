@@ -191,18 +191,11 @@ namespace Presentacion
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProcPedidosCabecera);
-            //if (frm != null)
-            //{
-            //    frm.BringToFront();
-            //    return;
-            //}
             if (dgvPedidos.CurrentRow.Cells["CHESTADO"].Value.ToString() == "ACTIVO")
             {
                 frmProcPedidosCabecera f = new frmProcPedidosCabecera(vBoton);
                 f.PasadoCabecera += new frmProcPedidosCabecera.PasarCabecera(ejecutar);
                 f.CodigoPedidoCabecera = (int)dgvPedidos.CurrentRow.Cells["IDPEDIDO"].Value;
-                //f.MdiParent = this.MdiParent;
                 f.ShowDialog();
             }
             else

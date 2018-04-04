@@ -716,7 +716,6 @@
             this.txtCantidadLicencias.ReadOnly = true;
             this.txtCantidadLicencias.Size = new System.Drawing.Size(52, 20);
             this.txtCantidadLicencias.TabIndex = 32;
-            this.txtCantidadLicencias.TabStop = false;
             // 
             // btnListaLicencias
             // 
@@ -725,7 +724,7 @@
             this.btnListaLicencias.Location = new System.Drawing.Point(53, 50);
             this.btnListaLicencias.Name = "btnListaLicencias";
             this.btnListaLicencias.Size = new System.Drawing.Size(151, 28);
-            this.btnListaLicencias.TabIndex = 31;
+            this.btnListaLicencias.TabIndex = 0;
             this.btnListaLicencias.Text = "&Lista";
             this.btnListaLicencias.UseVisualStyleBackColor = false;
             this.btnListaLicencias.Click += new System.EventHandler(this.btnListaLicencias_Click);
@@ -740,7 +739,6 @@
             this.txtcantidadtarjetas.ReadOnly = true;
             this.txtcantidadtarjetas.Size = new System.Drawing.Size(52, 20);
             this.txtcantidadtarjetas.TabIndex = 30;
-            this.txtcantidadtarjetas.TabStop = false;
             // 
             // button1
             // 
@@ -749,7 +747,7 @@
             this.button1.Location = new System.Drawing.Point(336, 50);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 28);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 1;
             this.button1.Text = "&Lista de Tarjetas";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);

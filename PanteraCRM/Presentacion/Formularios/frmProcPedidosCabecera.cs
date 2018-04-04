@@ -11,6 +11,8 @@ using Entidades;
 using Negocios;
 using Presentacion.Dataset;
 using Presentacion.Programas;
+using System.Globalization;
+
 namespace Presentacion
 {
     public partial class frmProcPedidosCabecera : Form
@@ -590,13 +592,11 @@ namespace Presentacion
         private void PedidoRegistrar()
         {
             decimal valortipocambio = decimal.Parse(txtTipoCambio.Text);
-            //MessageBox.Show("Pedido registrado", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
             pedidocabecera registrosPedidoCabecera = new pedidocabecera();
-            //registrosPedidoCabecera.p_inidpedidocabecera = 0;
             registrosPedidoCabecera.p_inidpuntoventa = sesion.SessionGlobal.p_inidpuntoventa;
             registrosPedidoCabecera.chcodigopedido = txtNroPedido.Text;
-            registrosPedidoCabecera.chfechapedido = txtFechaActual.Text;
-            registrosPedidoCabecera.tmhorapedido = "";
+            registrosPedidoCabecera.chfechapedido = txtFechaActual.Text; 
+            registrosPedidoCabecera.tmhorapedido = DateTime.Now.ToLongTimeString();
             registrosPedidoCabecera.p_inidtipodocumento = (int)cboTipoDocu.SelectedValue;
             registrosPedidoCabecera.p_inidcliente = ClienteG.p_inidcodigoclie;
             registrosPedidoCabecera.p_inmotivotransaccion = (int)cboCondVenta.SelectedValue;
@@ -607,11 +607,12 @@ namespace Presentacion
             registrosPedidoCabecera.p_inidtransportista = Transportistacodigo;
             registrosPedidoCabecera.p_inidconductor = (int)cboNombreConductor.SelectedValue;
             registrosPedidoCabecera.chplacavehiculo = cboVehiculo.Text;
-            registrosPedidoCabecera.chfechainiciotransporte = txtfechaInicio.Text;
+            DateTime dt1 = DateTime.Parse(txtfechaInicio.Text);
+            registrosPedidoCabecera.chfechainiciotransporte = dt1.ToString("dd/MM/yyyy");
             registrosPedidoCabecera.chpuntopartida = txtPtoPartida.Text;
             registrosPedidoCabecera.chpuntollegada = txtPtoLlegada.Text;
             registrosPedidoCabecera.nuventaafectamonnacional = 0;
-            registrosPedidoCabecera.chmotivotransaccion ="";
+            registrosPedidoCabecera.chmotivotransaccion = "";
             registrosPedidoCabecera.p_inidmoneda = 0;
             registrosPedidoCabecera.p_inidigv = (int)cboigv.SelectedValue;
             registrosPedidoCabecera.boafectoigv = true;
@@ -633,7 +634,6 @@ namespace Presentacion
             registrosPedidoCabecera.p_inidsituacionpedido = 85;
             registrosPedidoCabecera.chobservacion = txtObs.Text;
             registrosPedidoCabecera.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
-            //registrosPedidoCabecera.p_inidusuariodelete = 0;
             registrosPedidoCabecera.estado = true;
             registrosPedidoCabecera.p_inidvehiculo = (int)cboVehiculo.SelectedValue;
 
@@ -641,17 +641,18 @@ namespace Presentacion
             registrosPedidoCabecera.p_inidtarjeta = (int)cboTarjeta.SelectedValue;
 
             registrosPedidoCabecera.codigotarjeta = txtcodigotarjeta.Text;
-            registrosPedidoCabecera.vencitarjeta = txtvencitarjeta.Text;
+            DateTime dt2 = DateTime.Parse(txtvencialicencia.Text);
+            registrosPedidoCabecera.vencitarjeta = dt2.ToString("dd/MM/yyyy");
             registrosPedidoCabecera.codigolicencia = txtcodigolicencia.Text;
-            registrosPedidoCabecera.vencilicencia = txtvencialicencia.Text;
+            DateTime dt3 = DateTime.Parse(txtvencitarjeta.Text);
+            registrosPedidoCabecera.vencilicencia = dt3.ToString("dd/MM/yyyy");
             registrosPedidoCabecera.bolicencia = cbkValLicencia.Checked;
             registrosPedidoCabecera.botarjeta = cbkValTarjeta.Checked;
             CodigoCabecera = 0;
-             CodigoCabecera = pedidoNE.IngresoPedidoCabecera(registrosPedidoCabecera);
+            CodigoCabecera = pedidoNE.IngresoPedidoCabecera(registrosPedidoCabecera);
             
             if (sesion.pedidodetallecontenido != null)
             {
-                //dgvListaPedidoDetalle.Rows.Clear();
                 foreach (pedidodetallecontenido obj in sesion.pedidodetallecontenido)
                 {
                     int codigodetalle = 0;
@@ -954,6 +955,13 @@ namespace Presentacion
             {
                 e.Handled = true;
             }
-        }  
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Parse(txtvencialicencia.Text);
+            MessageBox.Show("Debe seleccionar un registro " + dt.ToString("dd/MM/yyyy") + "" + DateTime.Now.ToLongTimeString() + " " + txtvencialicencia.Text + " " + txtFechaActual.Text, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+
+        }
     }
 }

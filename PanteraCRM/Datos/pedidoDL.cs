@@ -307,7 +307,6 @@ namespace Datos
                     registro.codigotarjeta = Convert.ToString(datareader["chcodigotarjeta"]).Trim();
                     registro.vencitarjeta = Convert.ToString(datareader["chvencitarjeta"]).Trim();
                     registro.codigolicencia = Convert.ToString(datareader["chcodigolicencia"]).Trim();
-
                     registro.vencilicencia = Convert.ToString(datareader["chvencilicencia"]).Trim();
                     registro.bolicencia = Convert.ToBoolean(datareader["bolicencia"]);
                     registro.botarjeta = Convert.ToBoolean(datareader["botarjeta"]);

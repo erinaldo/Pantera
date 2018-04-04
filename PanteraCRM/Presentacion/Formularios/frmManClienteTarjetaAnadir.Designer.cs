@@ -36,6 +36,7 @@
             this.CHVENCIMIENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFechVenci = new System.Windows.Forms.DateTimePicker();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
-            this.txtFechVenci = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListasTarjetas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +115,14 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // txtFechVenci
+            // 
+            this.txtFechVenci.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFechVenci.Location = new System.Drawing.Point(133, 36);
+            this.txtFechVenci.Name = "txtFechVenci";
+            this.txtFechVenci.Size = new System.Drawing.Size(161, 20);
+            this.txtFechVenci.TabIndex = 1;
+            // 
             // btnAnadir
             // 
             this.btnAnadir.BackColor = System.Drawing.SystemColors.Window;
@@ -174,7 +182,7 @@
             this.btnSalir.Location = new System.Drawing.Point(167, 299);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 3;
+            this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -186,18 +194,10 @@
             this.btnGrabar.Location = new System.Drawing.Point(81, 299);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 2;
+            this.btnGrabar.TabIndex = 0;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
-            // 
-            // txtFechVenci
-            // 
-            this.txtFechVenci.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFechVenci.Location = new System.Drawing.Point(133, 36);
-            this.txtFechVenci.Name = "txtFechVenci";
-            this.txtFechVenci.Size = new System.Drawing.Size(161, 20);
-            this.txtFechVenci.TabIndex = 4;
             // 
             // frmManClienteTarjetaAnadir
             // 
