@@ -29,27 +29,32 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsCobranzaDocuVentaPrincipal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtRazon = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtDesc1 = new System.Windows.Forms.TextBox();
+            this.txtImporte = new System.Windows.Forms.TextBox();
+            this.txtMoneda = new System.Windows.Forms.TextBox();
+            this.txtFecha = new System.Windows.Forms.MaskedTextBox();
+            this.cboTipoDoc = new System.Windows.Forms.ComboBox();
+            this.txtCodDocu = new System.Windows.Forms.TextBox();
+            this.txtNroDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTipDoc = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnProcesar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPlanilla = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -57,27 +62,33 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.CODPLANILLA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODRECIBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUIMPORT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTIPREF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHNUMREF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanilla)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txtRazon);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.txtDesc1);
+            this.groupBox1.Controls.Add(this.txtImporte);
+            this.groupBox1.Controls.Add(this.txtMoneda);
+            this.groupBox1.Controls.Add(this.txtFecha);
+            this.groupBox1.Controls.Add(this.cboTipoDoc);
+            this.groupBox1.Controls.Add(this.txtCodDocu);
+            this.groupBox1.Controls.Add(this.txtNroDoc);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblTipDoc);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Location = new System.Drawing.Point(10, 2);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -87,17 +98,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // textBox8
+            // txtRazon
             // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox8.ForeColor = System.Drawing.Color.Blue;
-            this.textBox8.Location = new System.Drawing.Point(256, 55);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(393, 20);
-            this.textBox8.TabIndex = 14;
-            this.textBox8.TabStop = false;
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRazon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtRazon.ForeColor = System.Drawing.Color.Blue;
+            this.txtRazon.Location = new System.Drawing.Point(256, 55);
+            this.txtRazon.Name = "txtRazon";
+            this.txtRazon.ReadOnly = true;
+            this.txtRazon.Size = new System.Drawing.Size(393, 20);
+            this.txtRazon.TabIndex = 14;
+            this.txtRazon.TabStop = false;
             // 
             // label7
             // 
@@ -126,68 +136,71 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Importe";
             // 
-            // textBox3
+            // txtImporte
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox3.ForeColor = System.Drawing.Color.Blue;
-            this.textBox3.Location = new System.Drawing.Point(587, 23);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(62, 20);
-            this.textBox3.TabIndex = 10;
-            this.textBox3.TabStop = false;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtImporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtImporte.ForeColor = System.Drawing.Color.Blue;
+            this.txtImporte.Location = new System.Drawing.Point(587, 23);
+            this.txtImporte.Name = "txtImporte";
+            this.txtImporte.ReadOnly = true;
+            this.txtImporte.Size = new System.Drawing.Size(62, 20);
+            this.txtImporte.TabIndex = 10;
+            this.txtImporte.TabStop = false;
+            this.txtImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox2
+            // txtMoneda
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox2.ForeColor = System.Drawing.Color.Blue;
-            this.textBox2.Location = new System.Drawing.Point(550, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(31, 20);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.TabStop = false;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMoneda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtMoneda.ForeColor = System.Drawing.Color.Blue;
+            this.txtMoneda.Location = new System.Drawing.Point(550, 23);
+            this.txtMoneda.Name = "txtMoneda";
+            this.txtMoneda.ReadOnly = true;
+            this.txtMoneda.Size = new System.Drawing.Size(31, 20);
+            this.txtMoneda.TabIndex = 9;
+            this.txtMoneda.TabStop = false;
+            this.txtMoneda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // maskedTextBox1
+            // txtFecha
             // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.Blue;
-            this.maskedTextBox1.Location = new System.Drawing.Point(363, 24);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.ReadOnly = true;
-            this.maskedTextBox1.Size = new System.Drawing.Size(66, 20);
-            this.maskedTextBox1.TabIndex = 8;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.txtFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtFecha.ForeColor = System.Drawing.Color.Blue;
+            this.txtFecha.Location = new System.Drawing.Point(363, 24);
+            this.txtFecha.Mask = "00/00/0000";
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.ReadOnly = true;
+            this.txtFecha.Size = new System.Drawing.Size(66, 20);
+            this.txtFecha.TabIndex = 8;
+            this.txtFecha.ValidatingType = typeof(System.DateTime);
             // 
-            // comboBox1
+            // cboTipoDoc
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(63, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(58, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cboTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoDoc.FormattingEnabled = true;
+            this.cboTipoDoc.Location = new System.Drawing.Point(63, 23);
+            this.cboTipoDoc.Name = "cboTipoDoc";
+            this.cboTipoDoc.Size = new System.Drawing.Size(58, 21);
+            this.cboTipoDoc.TabIndex = 7;
             // 
-            // textBox1
+            // txtCodDocu
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtCodDocu.Location = new System.Drawing.Point(127, 23);
+            this.txtCodDocu.Name = "txtCodDocu";
+            this.txtCodDocu.Size = new System.Drawing.Size(100, 20);
+            this.txtCodDocu.TabIndex = 6;
+            this.txtCodDocu.Enter += new System.EventHandler(this.txtCodDocu_Enter);
+            this.txtCodDocu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodDocu_KeyPress);
+            this.txtCodDocu.Validated += new System.EventHandler(this.txtCodDocu_Validated);
             // 
-            // txtDesc1
+            // txtNroDoc
             // 
-            this.txtDesc1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtDesc1.ForeColor = System.Drawing.Color.Blue;
-            this.txtDesc1.Location = new System.Drawing.Point(63, 55);
-            this.txtDesc1.Name = "txtDesc1";
-            this.txtDesc1.ReadOnly = true;
-            this.txtDesc1.Size = new System.Drawing.Size(100, 20);
-            this.txtDesc1.TabIndex = 5;
-            this.txtDesc1.TabStop = false;
-            this.txtDesc1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtNroDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtNroDoc.ForeColor = System.Drawing.Color.Blue;
+            this.txtNroDoc.Location = new System.Drawing.Point(63, 55);
+            this.txtNroDoc.Name = "txtNroDoc";
+            this.txtNroDoc.ReadOnly = true;
+            this.txtNroDoc.Size = new System.Drawing.Size(100, 20);
+            this.txtNroDoc.TabIndex = 5;
+            this.txtNroDoc.TabStop = false;
             // 
             // label1
             // 
@@ -198,14 +211,14 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Doc. Vta.";
             // 
-            // label2
+            // lblTipDoc
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "R.U.C";
+            this.lblTipDoc.AutoSize = true;
+            this.lblTipDoc.Location = new System.Drawing.Point(6, 58);
+            this.lblTipDoc.Name = "lblTipDoc";
+            this.lblTipDoc.Size = new System.Drawing.Size(36, 13);
+            this.lblTipDoc.TabIndex = 4;
+            this.lblTipDoc.Text = "R.U.C";
             // 
             // groupBox4
             // 
@@ -229,6 +242,7 @@
             this.btnProcesar.TabIndex = 13;
             this.btnProcesar.Text = "&Procesar";
             this.btnProcesar.UseVisualStyleBackColor = false;
+            this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
             // 
             // btnSalir
             // 
@@ -244,7 +258,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvPlanilla);
             this.groupBox2.Location = new System.Drawing.Point(10, 95);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
@@ -253,9 +267,11 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // dataGridView1
+            // dgvPlanilla
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPlanilla.AllowUserToAddRows = false;
+            this.dgvPlanilla.AllowUserToDeleteRows = false;
+            this.dgvPlanilla.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -263,28 +279,38 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(755, 256);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvPlanilla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPlanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPlanilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CODPLANILLA,
+            this.CHFECHA,
+            this.CODRECIBO,
+            this.NUIMPORT,
+            this.CHTIPREF,
+            this.CHNUMREF});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPlanilla.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvPlanilla.Location = new System.Drawing.Point(6, 13);
+            this.dgvPlanilla.Name = "dgvPlanilla";
+            this.dgvPlanilla.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlanilla.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvPlanilla.RowHeadersVisible = false;
+            this.dgvPlanilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPlanilla.Size = new System.Drawing.Size(755, 256);
+            this.dgvPlanilla.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -368,6 +394,56 @@
             this.textBox4.TabStop = false;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // CODPLANILLA
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
+            this.CODPLANILLA.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CODPLANILLA.HeaderText = "PLANILLA";
+            this.CODPLANILLA.Name = "CODPLANILLA";
+            this.CODPLANILLA.ReadOnly = true;
+            // 
+            // CHFECHA
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
+            this.CHFECHA.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CHFECHA.HeaderText = "FECHA";
+            this.CHFECHA.Name = "CHFECHA";
+            this.CHFECHA.ReadOnly = true;
+            // 
+            // CODRECIBO
+            // 
+            this.CODRECIBO.HeaderText = "RECIBO";
+            this.CODRECIBO.Name = "CODRECIBO";
+            this.CODRECIBO.ReadOnly = true;
+            // 
+            // NUIMPORT
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0.00";
+            this.NUIMPORT.DefaultCellStyle = dataGridViewCellStyle4;
+            this.NUIMPORT.HeaderText = "IMPORTE";
+            this.NUIMPORT.Name = "NUIMPORT";
+            this.NUIMPORT.ReadOnly = true;
+            // 
+            // CHTIPREF
+            // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(232)))));
+            this.CHTIPREF.DefaultCellStyle = dataGridViewCellStyle5;
+            this.CHTIPREF.HeaderText = "TIP. REF.";
+            this.CHTIPREF.Name = "CHTIPREF";
+            this.CHTIPREF.ReadOnly = true;
+            this.CHTIPREF.Width = 160;
+            // 
+            // CHNUMREF
+            // 
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(232)))));
+            this.CHNUMREF.DefaultCellStyle = dataGridViewCellStyle6;
+            this.CHNUMREF.HeaderText = "NRO. REF.";
+            this.CHNUMREF.Name = "CHNUMREF";
+            this.CHNUMREF.ReadOnly = true;
+            this.CHNUMREF.Width = 160;
+            // 
             // frmConsCobranzaDocuVentaPrincipal
             // 
             this.AcceptButton = this.btnProcesar;
@@ -393,7 +469,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanilla)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -406,26 +482,32 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTipDoc;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtDesc1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtImporte;
+        private System.Windows.Forms.TextBox txtMoneda;
+        private System.Windows.Forms.MaskedTextBox txtFecha;
+        private System.Windows.Forms.ComboBox cboTipoDoc;
+        private System.Windows.Forms.TextBox txtCodDocu;
+        private System.Windows.Forms.TextBox txtNroDoc;
+        private System.Windows.Forms.DataGridView dgvPlanilla;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtRazon;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnProcesar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODPLANILLA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHFECHA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODRECIBO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NUIMPORT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHTIPREF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHNUMREF;
     }
 }

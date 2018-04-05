@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Entidades;
+using Negocios;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmConsCobranzaDocuVentaPrincipal : Form
@@ -19,9 +21,121 @@ namespace Presentacion
 
         private void frmConsCobranzaDocuVentaPrincipal_Load(object sender, EventArgs e)
         {
-
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
             this.Left = (Screen.PrimaryScreen.Bounds.Width - DesktopBounds.Width) / 2;
+            CargarDatos();
+        }
+        public void CargarDatos()
+        {
+            cboTipoDoc.DataSource = tipodocumentoNE.ListarTipoDocumentosVentaParametro(true);
+            cboTipoDoc.ValueMember = "p_inidtipodocumento";
+            cboTipoDoc.DisplayMember = "chacrominodocumento";
+        }
+        public void ValidarComprobante()
+        {
+            if (cboTipoDoc.Text == "FC")
+            {
+                busquedaDocumento("F");
+
+            }
+            else if (cboTipoDoc.Text == "BV")
+            {
+                busquedaDocumento("B");
+            }
+            else
+            {
+                busquedaDocumento("NV");
+            }
+        }
+        internal pedidoguicomp PedidoFacturado = null;
+        public void busquedaDocumento(string parametro)
+        {
+            PedidoFacturado = pedidoNE.BuscarComprobantesFacturados(parametro, txtCodDocu.Text);
+
+           
+            if (PedidoFacturado.p_inidpedidoguicomp != 0)
+            {
+                CargarDatosCabecera(PedidoFacturado.p_inidpedidoguicomp);
+            }
+            else
+            {
+                BalquearCampos();
+
+            }
+        }
+        internal pedidocabecera pedCab;
+        public void CargarDatosCabecera(int codigo)
+        {
+            pedCab = pedidoNE.PedidoCabeceraBusquedaCodigo(codigo);          
+            Mcliente Registroscliente = clienteNE.ClienteBusquedaCodigo(pedCab.p_inidcliente);
+            BuscarClienteCodigo(Registroscliente.chcodigocliente);
+            txtFecha.Text = pedCab.chfechapedido;
+            txtMoneda.Text = "S/.";
+            txtImporte.Text = pedCab.nutotalventamonnacional.ToString("N2");
+            
+        }
+
+        public void BuscarClienteCodigo(string codigo)
+        {
+            clientebusqueda ClienteG = clienteNE.ClienteBusquedaCodigoSecundario(codigo);            
+            if (ClienteG != null)
+            {
+                lblTipDoc.Text = ClienteG.tipodocu;
+                txtNroDoc.Text = ClienteG.nrodocumento;
+                txtRazon.Text = ClienteG.razon;
+            }
+        }
+        public void BalquearCampos()
+        {
+
+            dgvPlanilla.Rows.Clear();
+            txtFecha.Text = string.Empty;
+            txtMoneda.Text = string.Empty;
+            txtImporte.Text = string.Empty;
+            txtNroDoc.Text = string.Empty;
+            txtRazon.Text = string.Empty;
+        }
+        private void txtCodDocu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox TextoUsado = (TextBox)sender;
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (TextoUsado.Text.Length >= 10)
+            {
+                e.Handled = true;
+            }
+            if (TextoUsado.SelectionLength > 0)
+            {
+                e.Handled = false;
+            }
+            if (e.KeyChar == (char)8)
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txtCodDocu_Validated(object sender, EventArgs e)
+        {
+            TextBox TextoUsado = (TextBox)sender;
+            utilidades.ValidarCampoDocumento(ref TextoUsado, e);
+            ValidarComprobante();
+        }
+
+        private void txtCodDocu_Enter(object sender, EventArgs e)
+        {
+
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
+        }
+
+        private void btnProcesar_Click(object sender, EventArgs e)
+        {
+            List<placobd> a = pedidoNE.PlanillacobroDetalleBusqueda("a");
+        }
+        public void cargarTabla()
+        {
+
         }
     }
 }
