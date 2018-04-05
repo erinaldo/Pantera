@@ -61,6 +61,14 @@ namespace Negocios
         {
             return pedidoDL.IngresoRegistroVenta(registros);
         }
+        public static List<RegistroVenta> RegistroVentasListar()
+        {
+            return pedidoDL.RegistroVentasListar();
+        }
+        public static List<RegistroVenta> RegistroVentasListarParametro(string parametro)
+        {
+            return pedidoDL.RegistroVentasListarParametro(parametro);
+        }
         public static List<RegistroVenta> BuscarRegistroVentasCliente(int clientecodigo)
         {
             return pedidoDL.BuscarRegistroVentasCliente(clientecodigo);
@@ -68,6 +76,10 @@ namespace Negocios
         public static decimal BuscarMontoEncontra(int tipocomprobante,string correlativo,int cliente)
         {
             return pedidoDL.BuscarMontoEncontra(tipocomprobante, correlativo, cliente);
+        }
+        public static int RegistroVentaPagar(int codigo,string fecha,int estado,string hora)
+        {
+            return pedidoDL.RegistroVentaPagar(codigo, fecha,  estado,  hora);
         }
         /*INCIO ::  PARA RECIBO */
         public static int IngresoRecibo(recibo registros)

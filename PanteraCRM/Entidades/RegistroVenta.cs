@@ -26,6 +26,9 @@ namespace Entidades
         public int p_inidusuarioinsert { get; set; }
         public int p_inidusuariodelete { get; set; }
         public bool estado { get; set; }
+        public string chfechapago { get; set; }
+        public int chestadopago { get; set; }
+        public string chhorapago { get; set; }
         public RegistroVenta()
         {
             this.p_inidregistroventa = 0;
@@ -46,6 +49,9 @@ namespace Entidades
             this.p_inidusuarioinsert = 0;
             this.p_inidusuariodelete = 0;
             this.estado = false;
-        }
+            this.chfechapago = string.Empty;
+            this.chestadopago = 0;
+            this.chhorapago = string.Empty;
+    }
     }
 }

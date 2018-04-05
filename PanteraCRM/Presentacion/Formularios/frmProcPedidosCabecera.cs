@@ -567,22 +567,22 @@ namespace Presentacion
             }
             if (cbkValLicencia.Checked != true)
             {
-                MessageBox.Show("Validar Licencia", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                MessageBox.Show("Validar Licencia en la SUCAMEC", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return false;
             }
             if (cbkValTarjeta.Checked != true)
             {
-                MessageBox.Show("Validar Tarjeta", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                MessageBox.Show("Validar Tarjeta en la SUCAMEC", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return false;
             }
             if (txtcodigolicencia.Text.Length <= 0)
             {
-                MessageBox.Show("Validar código de licencia", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                MessageBox.Show("Nro licencia vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return false;
             }
             if (txtcodigotarjeta.Text.Length <= 0)
             {
-                MessageBox.Show("Validar código de tarjeta", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                MessageBox.Show("Nro tarjeta vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return false;
             }
             return flat;

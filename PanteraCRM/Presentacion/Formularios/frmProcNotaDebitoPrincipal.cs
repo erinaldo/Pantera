@@ -263,7 +263,12 @@ namespace Presentacion
         private void txtValorTotal_TextChanged(object sender, EventArgs e)
         {
             TextBox TextoUsado = (TextBox)sender;
-            decimal importe = decimal.Parse(TextoUsado.Text);
+            decimal importe = 0;
+            if (TextoUsado.Text.Length > 0)
+            {
+                importe = decimal.Parse(TextoUsado.Text);
+            }
+            
             CargarTablaDetalle(importe);
 
         }

@@ -95,7 +95,7 @@ namespace Presentacion
                     decimal montoencontra = pedidoNE.BuscarDocNCCodigo(Registros.chcodigodocu);
                     if ((Registros.nuimportetotvta - montoencontra) > 0)
                     {
-                        dgvDocumentosPendientes.Rows.Add(Registros.p_inidtipodocu, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, "", Registros.chfechadoc, "S/.", (-1) * (Registros.nuimportetotvta - montoencontra));
+                        dgvDocumentosPendientes.Rows.Add(Registros.p_inidregistroventa ,Registros.p_inidtipodocu, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, "", Registros.chfechadoc, "S/.", (-1) * (Registros.nuimportetotvta - montoencontra));
                     }
                     
                 }
@@ -104,7 +104,7 @@ namespace Presentacion
                     decimal montoencontra = pedidoNE.BuscarMontoEncontra(Registros.p_inidtipodocu, Registros.chcodigodocu, Registros.p_inidcliente);
                     if ((Registros.nuimportetotvta - montoencontra)>0)
                     {
-                        dgvDocumentosPendientes.Rows.Add(Registros.p_inidtipodocu, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, "", Registros.chfechadoc, "S/.", Registros.nuimportetotvta- montoencontra);
+                        dgvDocumentosPendientes.Rows.Add(Registros.p_inidregistroventa,Registros.p_inidtipodocu, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, "", Registros.chfechadoc, "S/.", Registros.nuimportetotvta- montoencontra);
                     }
                     
                 }
@@ -129,6 +129,7 @@ namespace Presentacion
                 if (dgvDocumentosPendientes.CurrentRow.Cells["CHTIPO"].Value.ToString() != "NC")
                 {
                     dgvDocumentosSeleccionados.Rows.Add(
+                        dgvDocumentosPendientes.CurrentRow.Cells["CODVTA"].Value,
                         dgvDocumentosPendientes.CurrentRow.Cells["CODTIPO"].Value,
                                 dgvDocumentosPendientes.CurrentRow.Cells["CHTIPO"].Value,
                                 dgvDocumentosPendientes.CurrentRow.Cells["CHDOC"].Value,
@@ -152,6 +153,7 @@ namespace Presentacion
                     if (validacionNC)
                     {
                         dgvDocumentosSeleccionados.Rows.Add(
+                            dgvDocumentosPendientes.CurrentRow.Cells["CODVTA"].Value,
                             dgvDocumentosPendientes.CurrentRow.Cells["CODTIPO"].Value,
                                     dgvDocumentosPendientes.CurrentRow.Cells["CHTIPO"].Value,
                                     dgvDocumentosPendientes.CurrentRow.Cells["CHDOC"].Value,
@@ -173,6 +175,7 @@ namespace Presentacion
                     if (validacionCV)
                     {
                         dgvDocumentosSeleccionados.Rows.Add(
+                            dgvDocumentosPendientes.CurrentRow.Cells["CODVTA"].Value,
                             dgvDocumentosPendientes.CurrentRow.Cells["CODTIPO"].Value,
                                     dgvDocumentosPendientes.CurrentRow.Cells["CHTIPO"].Value,
                                     dgvDocumentosPendientes.CurrentRow.Cells["CHDOC"].Value,
@@ -245,12 +248,12 @@ namespace Presentacion
                 {
                     return;
                 }
-
             }
             else
             {
                 return;
             }
+            this.Dispose();
         }
         private bool Validacion()
         {
@@ -357,12 +360,21 @@ namespace Presentacion
                 bool flat = false;
                 bool validarnegativo = true;
                 int item = 0;
+                int codventa = 0;
                 decimal pago = decimal.Parse(txtImport.Text);
                 decimal importe = decimal.Parse(txttotalSeleccion.Text);
                 for (int i = 0; i < dgvDocumentosSeleccionados.RowCount; i++)
                 {
+                    codventa = (int)dgvDocumentosSeleccionados.Rows[i].Cells["CODVTAS"].Value;
                     pago -= decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString());
                     int tipopago = 0;
+                    if (pago >= 0)
+                    {
+                        tipopago = 1;
+                    }else
+                    {
+                        tipopago = 0;
+                    }
                     PlacobDetalleG = new placobd();
                     PlacobDetalleG.p_inidplacoc = CodigoCabecera;
                     PlacobDetalleG.chcorreplacobc = correlativo;
@@ -376,8 +388,8 @@ namespace Presentacion
                     PlacobDetalleG.p_inidmoneda = (int)cboMoneda.SelectedValue;
                     PlacobDetalleG.p_inidmonedapag = (int)cboMoneda.SelectedValue;
                     PlacobDetalleG.nuimporpagmonenac = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString());
-                    PlacobDetalleG.nuimporpagmoneext = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) *  decimal.Parse(txtTipoCambio.Text);
-                    PlacobDetalleG.nuimporcamvta =  decimal.Parse(txtTipoCambio.Text);
+                    PlacobDetalleG.nuimporpagmoneext = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) * decimal.Parse(txtTipoCambio.Text);
+                    PlacobDetalleG.nuimporcamvta = decimal.Parse(txtTipoCambio.Text);
                     PlacobDetalleG.p_inidtipopag = tipopago;//pendiente = 0, cancelado = 1;
                     PlacobDetalleG.chobservacion = string.Empty;
                     if (rbtcancela.Checked) { PlacobDetalleG.p_inidtipomov = 1; } else { PlacobDetalleG.p_inidtipomov = 2; }
@@ -389,6 +401,7 @@ namespace Presentacion
                     if (pago >= 0)
                     {
                         PlacobDetalleG.p_inidtipopag = 1;
+                        
                         flat = true;
                     }
                     else
@@ -404,7 +417,9 @@ namespace Presentacion
                     }
                     if (flat)
                     {
-                        int codssigo = pedidoNE.IngresoPlacobDetalle(PlacobDetalleG);
+                        int codssigo = pedidoNE.IngresoPlacobDetalle(PlacobDetalleG); 
+                        int car = pedidoNE.RegistroVentaPagar(codventa, "" + DateTime.Now.ToShortDateString().PadLeft(10, '0'), tipopago, "" + DateTime.Now.ToLongTimeString());
+                        //MessageBox.Show("Error " + DateTime.Now.ToShortDateString().PadLeft(10, '0'), "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                     }
                     else
                     {
@@ -412,6 +427,10 @@ namespace Presentacion
                         {
                             int codssigo = pedidoNE.IngresoPlacobDetalle(PlacobDetalleG);
                             validarnegativo = false;
+                            int car = pedidoNE.RegistroVentaPagar(codventa, "" + DateTime.Now.ToShortDateString().PadLeft(10, '0'), tipopago, "" + DateTime.Now.ToLongTimeString());
+                            
+                                //MessageBox.Show("Error "+ DateTime.Now.ToShortDateString().PadLeft(10, '0'), "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                            
                         }
                     }
                 }
@@ -428,17 +447,21 @@ namespace Presentacion
                     montoacumulado += decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString());
                     if (dgvDocumentosSeleccionados.Rows[i].Cells["CHTIPOS"].Value.ToString() == "NC")
                     {
-                        montodescargado += decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString())*(-1);
-                    }else
+                        montodescargado += decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) * (-1);
+                    } else
                     {
                         correla = dgvDocumentosSeleccionados.Rows[i].Cells["CHDOCS"].Value.ToString();
-                        fechas = dgvDocumentosSeleccionados.Rows[i].Cells["CHFECHAS"].Value.ToString(); 
+                        fechas = dgvDocumentosSeleccionados.Rows[i].Cells["CHFECHAS"].Value.ToString();
                     }
                 }
+                int codventa =0;
                 int tipopago = 0;
                 if (montoacumulado == 0)
                 {
-                    tipopago = 1;
+                    tipopago = 2;//canjeado completo
+                }else
+                {
+                    tipopago = 3; // canjeado parcial
                 }
                 decimal montofinal = 0;
                     int item = 0;
@@ -446,6 +469,7 @@ namespace Presentacion
                 {
                     if (dgvDocumentosSeleccionados.Rows[i].Cells["CHTIPOS"].Value.ToString() != "NC")
                     {
+                        codventa = (int)dgvDocumentosSeleccionados.Rows[i].Cells["CODVTAS"].Value;
                         PlacobDetalleG = new placobd();
                         PlacobDetalleG.p_inidplacoc = CodigoCabecera;
                         PlacobDetalleG.chcorreplacobc = correlativo;
@@ -469,7 +493,11 @@ namespace Presentacion
                         PlacobDetalleG.p_inidusuariodelete = 0;
                         PlacobDetalleG.estado = true;
                         int codssigo = pedidoNE.IngresoPlacobDetalle(PlacobDetalleG);
-                    }else
+                       pedidoNE.RegistroVentaPagar(codventa, ""+DateTime.Now.ToShortDateString().PadLeft(10, '0'), tipopago,""+ DateTime.Now.ToLongTimeString());
+                        
+                        
+                    }
+                    else
                     {
                         docnc Registrosdoc = new docnc();
                         Registrosdoc.chcorreladoc = correla;

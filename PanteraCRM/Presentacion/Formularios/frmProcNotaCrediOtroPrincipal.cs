@@ -39,6 +39,19 @@ namespace Presentacion
             cboTipdoc.ValueMember = "p_inidtipodocumento";
             cboTipdoc.DisplayMember = "chacrominodocumento";
             txtNotaDescuento.Text = "00.00";
+            List<tipocambio> listado2 = tipocambioNE.busquedaValorTipoCambio(txtFecha.Text);
+            if (listado2 != null)
+            {
+                foreach (tipocambio obj2 in listado2)
+                {
+                    txtTipoCambio.Text = string.Format("{0:0,0.00}", obj2.nucambioventa.ToString("N2")); ;
+                }
+
+            }
+            else
+            {
+                txtTipoCambio.Text = "0.00";
+            }
         }
 
         private void textBox2_Validated(object sender, EventArgs e)

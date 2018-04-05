@@ -31,12 +31,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -71,23 +71,9 @@
             this.txtTotalPendiente = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dgvDocumentosPendientes = new System.Windows.Forms.DataGridView();
-            this.CODTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHDOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHREN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NUMONTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvDocumentosSeleccionados = new System.Windows.Forms.DataGridView();
-            this.CODTIPOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHTIPOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHDOCS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHRENS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHFECHAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMONES = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMONTOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txttotalSeleccion = new System.Windows.Forms.TextBox();
             this.txtDesMone5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -106,6 +92,22 @@
             this.lblNombre3 = new System.Windows.Forms.Label();
             this.lblNombre2 = new System.Windows.Forms.Label();
             this.lblNombre1 = new System.Windows.Forms.Label();
+            this.CODVTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHREN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUMONTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODVTAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODTIPOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTIPOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDOCS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHRENS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFECHAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMONES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMONTOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentosPendientes)).BeginInit();
@@ -454,6 +456,7 @@
             this.dgvDocumentosPendientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDocumentosPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDocumentosPendientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CODVTA,
             this.CODTIPO,
             this.CHTIPO,
             this.CHDOC,
@@ -486,64 +489,6 @@
             this.dgvDocumentosPendientes.Size = new System.Drawing.Size(378, 335);
             this.dgvDocumentosPendientes.TabIndex = 0;
             this.dgvDocumentosPendientes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDocumentosPendientes_CellMouseDoubleClick);
-            // 
-            // CODTIPO
-            // 
-            this.CODTIPO.HeaderText = "CODTIPO";
-            this.CODTIPO.Name = "CODTIPO";
-            this.CODTIPO.ReadOnly = true;
-            this.CODTIPO.Visible = false;
-            // 
-            // CHTIPO
-            // 
-            this.CHTIPO.HeaderText = "TIPO";
-            this.CHTIPO.Name = "CHTIPO";
-            this.CHTIPO.ReadOnly = true;
-            this.CHTIPO.Width = 40;
-            // 
-            // CHDOC
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.CHDOC.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CHDOC.HeaderText = "N° DOC.";
-            this.CHDOC.Name = "CHDOC";
-            this.CHDOC.ReadOnly = true;
-            this.CHDOC.Width = 75;
-            // 
-            // CHREN
-            // 
-            this.CHREN.HeaderText = "REN";
-            this.CHREN.Name = "CHREN";
-            this.CHREN.ReadOnly = true;
-            this.CHREN.Width = 35;
-            // 
-            // CHFECHA
-            // 
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = "01/01/1995";
-            this.CHFECHA.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CHFECHA.HeaderText = "FECHA";
-            this.CHFECHA.Name = "CHFECHA";
-            this.CHFECHA.ReadOnly = true;
-            this.CHFECHA.Width = 80;
-            // 
-            // CHMONE
-            // 
-            this.CHMONE.HeaderText = "MONE";
-            this.CHMONE.Name = "CHMONE";
-            this.CHMONE.ReadOnly = true;
-            this.CHMONE.Width = 45;
-            // 
-            // NUMONTO
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "0.00";
-            this.NUMONTO.DefaultCellStyle = dataGridViewCellStyle4;
-            this.NUMONTO.HeaderText = "MONTO";
-            this.NUMONTO.Name = "NUMONTO";
-            this.NUMONTO.ReadOnly = true;
-            this.NUMONTO.Width = 80;
             // 
             // pictureBox1
             // 
@@ -583,6 +528,7 @@
             this.dgvDocumentosSeleccionados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDocumentosSeleccionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDocumentosSeleccionados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CODVTAS,
             this.CODTIPOS,
             this.CHTIPOS,
             this.CHDOCS,
@@ -616,64 +562,6 @@
             this.dgvDocumentosSeleccionados.TabIndex = 23;
             this.dgvDocumentosSeleccionados.TabStop = false;
             this.dgvDocumentosSeleccionados.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDocumentosSeleccionados_CellMouseDoubleClick);
-            // 
-            // CODTIPOS
-            // 
-            this.CODTIPOS.HeaderText = "CODTIPO1";
-            this.CODTIPOS.Name = "CODTIPOS";
-            this.CODTIPOS.ReadOnly = true;
-            this.CODTIPOS.Visible = false;
-            // 
-            // CHTIPOS
-            // 
-            this.CHTIPOS.HeaderText = "TIPO";
-            this.CHTIPOS.Name = "CHTIPOS";
-            this.CHTIPOS.ReadOnly = true;
-            this.CHTIPOS.Width = 40;
-            // 
-            // CHDOCS
-            // 
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.CHDOCS.DefaultCellStyle = dataGridViewCellStyle8;
-            this.CHDOCS.HeaderText = "N° DOC.";
-            this.CHDOCS.Name = "CHDOCS";
-            this.CHDOCS.ReadOnly = true;
-            this.CHDOCS.Width = 75;
-            // 
-            // CHRENS
-            // 
-            this.CHRENS.HeaderText = "REN";
-            this.CHRENS.Name = "CHRENS";
-            this.CHRENS.ReadOnly = true;
-            this.CHRENS.Width = 35;
-            // 
-            // CHFECHAS
-            // 
-            dataGridViewCellStyle9.Format = "d";
-            dataGridViewCellStyle9.NullValue = "01/01/1995";
-            this.CHFECHAS.DefaultCellStyle = dataGridViewCellStyle9;
-            this.CHFECHAS.HeaderText = "FECHA";
-            this.CHFECHAS.Name = "CHFECHAS";
-            this.CHFECHAS.ReadOnly = true;
-            this.CHFECHAS.Width = 80;
-            // 
-            // CHMONES
-            // 
-            this.CHMONES.HeaderText = "MONE";
-            this.CHMONES.Name = "CHMONES";
-            this.CHMONES.ReadOnly = true;
-            this.CHMONES.Width = 45;
-            // 
-            // CHMONTOS
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = "0.00";
-            this.CHMONTOS.DefaultCellStyle = dataGridViewCellStyle10;
-            this.CHMONTOS.HeaderText = "MONTO";
-            this.CHMONTOS.Name = "CHMONTOS";
-            this.CHMONTOS.ReadOnly = true;
-            this.CHMONTOS.Width = 80;
             // 
             // txttotalSeleccion
             // 
@@ -866,6 +754,136 @@
             this.lblNombre1.TabIndex = 16;
             this.lblNombre1.Text = "Banco";
             // 
+            // CODVTA
+            // 
+            this.CODVTA.HeaderText = "CODVTA";
+            this.CODVTA.Name = "CODVTA";
+            this.CODVTA.ReadOnly = true;
+            this.CODVTA.Visible = false;
+            // 
+            // CODTIPO
+            // 
+            this.CODTIPO.HeaderText = "CODTIPO";
+            this.CODTIPO.Name = "CODTIPO";
+            this.CODTIPO.ReadOnly = true;
+            this.CODTIPO.Visible = false;
+            // 
+            // CHTIPO
+            // 
+            this.CHTIPO.HeaderText = "TIPO";
+            this.CHTIPO.Name = "CHTIPO";
+            this.CHTIPO.ReadOnly = true;
+            this.CHTIPO.Width = 40;
+            // 
+            // CHDOC
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.CHDOC.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CHDOC.HeaderText = "N° DOC.";
+            this.CHDOC.Name = "CHDOC";
+            this.CHDOC.ReadOnly = true;
+            this.CHDOC.Width = 75;
+            // 
+            // CHREN
+            // 
+            this.CHREN.HeaderText = "REN";
+            this.CHREN.Name = "CHREN";
+            this.CHREN.ReadOnly = true;
+            this.CHREN.Width = 35;
+            // 
+            // CHFECHA
+            // 
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = "01/01/1995";
+            this.CHFECHA.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CHFECHA.HeaderText = "FECHA";
+            this.CHFECHA.Name = "CHFECHA";
+            this.CHFECHA.ReadOnly = true;
+            this.CHFECHA.Width = 80;
+            // 
+            // CHMONE
+            // 
+            this.CHMONE.HeaderText = "MONE";
+            this.CHMONE.Name = "CHMONE";
+            this.CHMONE.ReadOnly = true;
+            this.CHMONE.Width = 45;
+            // 
+            // NUMONTO
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0.00";
+            this.NUMONTO.DefaultCellStyle = dataGridViewCellStyle4;
+            this.NUMONTO.HeaderText = "MONTO";
+            this.NUMONTO.Name = "NUMONTO";
+            this.NUMONTO.ReadOnly = true;
+            this.NUMONTO.Width = 80;
+            // 
+            // CODVTAS
+            // 
+            this.CODVTAS.HeaderText = "CODVTAS";
+            this.CODVTAS.Name = "CODVTAS";
+            this.CODVTAS.ReadOnly = true;
+            this.CODVTAS.Visible = false;
+            // 
+            // CODTIPOS
+            // 
+            this.CODTIPOS.HeaderText = "CODTIPO1";
+            this.CODTIPOS.Name = "CODTIPOS";
+            this.CODTIPOS.ReadOnly = true;
+            this.CODTIPOS.Visible = false;
+            // 
+            // CHTIPOS
+            // 
+            this.CHTIPOS.HeaderText = "TIPO";
+            this.CHTIPOS.Name = "CHTIPOS";
+            this.CHTIPOS.ReadOnly = true;
+            this.CHTIPOS.Width = 40;
+            // 
+            // CHDOCS
+            // 
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.CHDOCS.DefaultCellStyle = dataGridViewCellStyle8;
+            this.CHDOCS.HeaderText = "N° DOC.";
+            this.CHDOCS.Name = "CHDOCS";
+            this.CHDOCS.ReadOnly = true;
+            this.CHDOCS.Width = 75;
+            // 
+            // CHRENS
+            // 
+            this.CHRENS.HeaderText = "REN";
+            this.CHRENS.Name = "CHRENS";
+            this.CHRENS.ReadOnly = true;
+            this.CHRENS.Width = 35;
+            // 
+            // CHFECHAS
+            // 
+            dataGridViewCellStyle9.Format = "d";
+            dataGridViewCellStyle9.NullValue = "01/01/1995";
+            this.CHFECHAS.DefaultCellStyle = dataGridViewCellStyle9;
+            this.CHFECHAS.HeaderText = "FECHA";
+            this.CHFECHAS.Name = "CHFECHAS";
+            this.CHFECHAS.ReadOnly = true;
+            this.CHFECHAS.Width = 80;
+            // 
+            // CHMONES
+            // 
+            this.CHMONES.HeaderText = "MONE";
+            this.CHMONES.Name = "CHMONES";
+            this.CHMONES.ReadOnly = true;
+            this.CHMONES.Width = 45;
+            // 
+            // CHMONTOS
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = "0.00";
+            this.CHMONTOS.DefaultCellStyle = dataGridViewCellStyle10;
+            this.CHMONTOS.HeaderText = "MONTO";
+            this.CHMONTOS.Name = "CHMONTOS";
+            this.CHMONTOS.ReadOnly = true;
+            this.CHMONTOS.Width = 80;
+            // 
             // frmProcCancelacionCuentasDetalle
             // 
             this.AcceptButton = this.btnAceptar;
@@ -953,6 +971,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker txtFechaCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODVTA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODTIPO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHTIPO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHDOC;
@@ -960,6 +979,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHFECHA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHMONE;
         private System.Windows.Forms.DataGridViewTextBoxColumn NUMONTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODVTAS;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODTIPOS;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHTIPOS;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHDOCS;
