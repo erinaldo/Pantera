@@ -213,6 +213,7 @@
             // 
             // NUIMPORTE
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle4.Format = "N2";
             dataGridViewCellStyle4.NullValue = "0.00";
             this.NUIMPORTE.DefaultCellStyle = dataGridViewCellStyle4;

@@ -54,8 +54,15 @@ namespace Presentacion
             dgvListaRegistros.Rows.Clear();
             foreach (RegistroVenta Registros in RegistroVenta)
             {
-                DevolverDatosCliente(Registros.p_inidcliente);
-                dgvListaRegistros.Rows.Add(Registros.p_inidregistroventa, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, codigocliente, nombrecliente, Registros.chfechadoc, Registros.nuimportetotvta, DevolverEstado(Registros.chestadopago));              
+                if (Registros.p_inidtipodocu != 4)
+                {
+                    if (Registros.p_inidtipodocu != 5)
+                    {
+                        DevolverDatosCliente(Registros.p_inidcliente);
+                        dgvListaRegistros.Rows.Add(Registros.p_inidregistroventa, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, codigocliente, nombrecliente, Registros.chfechadoc, Registros.nuimportetotvta, DevolverEstado(Registros.chestadopago));
+                    }
+                    
+                }
 
             }
         }

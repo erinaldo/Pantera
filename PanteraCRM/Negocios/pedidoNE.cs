@@ -69,6 +69,11 @@ namespace Negocios
         {
             return pedidoDL.RegistroVentasListarParametro(parametro);
         }
+        //public static List<RegistroVenta> RegistroVentasListarCodigo(int parametro)
+        //{
+        //    return pedidoDL.RegistroVentasListarCodigo(parametro);
+        //}
+        
         public static List<RegistroVenta> BuscarRegistroVentasCliente(int clientecodigo)
         {
             return pedidoDL.BuscarRegistroVentasCliente(clientecodigo);

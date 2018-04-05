@@ -37,10 +37,18 @@
             this.btnProdVend = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAnadir = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListaClientes = new System.Windows.Forms.DataGridView();
+            this.IDCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHRAZON = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIPODOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NRODOCU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDIRECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTIPOCLIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -69,6 +77,7 @@
             this.txtParametro.Name = "txtParametro";
             this.txtParametro.Size = new System.Drawing.Size(604, 20);
             this.txtParametro.TabIndex = 0;
+            this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
             // 
             // groupBox1
             // 
@@ -125,14 +134,93 @@
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
-            // dataGridView1
+            // dgvListaClientes
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 51);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(677, 353);
-            this.dataGridView1.TabIndex = 25;
+            this.dgvListaClientes.AllowUserToAddRows = false;
+            this.dgvListaClientes.AllowUserToDeleteRows = false;
+            this.dgvListaClientes.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDCLIENTE,
+            this.CHCODIGO,
+            this.CHRAZON,
+            this.TIPODOCU,
+            this.NRODOCU,
+            this.CHDIRECCION,
+            this.CHTIPOCLIE,
+            this.CHTELEFONO});
+            this.dgvListaClientes.Location = new System.Drawing.Point(12, 51);
+            this.dgvListaClientes.Name = "dgvListaClientes";
+            this.dgvListaClientes.ReadOnly = true;
+            this.dgvListaClientes.RowHeadersVisible = false;
+            this.dgvListaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListaClientes.Size = new System.Drawing.Size(677, 344);
+            this.dgvListaClientes.TabIndex = 25;
+            // 
+            // IDCLIENTE
+            // 
+            this.IDCLIENTE.DataPropertyName = "p_inidcodigoclie";
+            this.IDCLIENTE.HeaderText = "IDCLIENTE";
+            this.IDCLIENTE.Name = "IDCLIENTE";
+            this.IDCLIENTE.ReadOnly = true;
+            this.IDCLIENTE.Visible = false;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.DataPropertyName = "chcodigo";
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 60;
+            // 
+            // CHRAZON
+            // 
+            this.CHRAZON.DataPropertyName = "razon";
+            this.CHRAZON.HeaderText = "RAZON SOCIAL";
+            this.CHRAZON.Name = "CHRAZON";
+            this.CHRAZON.ReadOnly = true;
+            this.CHRAZON.Width = 350;
+            // 
+            // TIPODOCU
+            // 
+            this.TIPODOCU.DataPropertyName = "tipodocu";
+            this.TIPODOCU.HeaderText = "TIPO DOCUMENTO";
+            this.TIPODOCU.Name = "TIPODOCU";
+            this.TIPODOCU.ReadOnly = true;
+            this.TIPODOCU.Width = 140;
+            // 
+            // NRODOCU
+            // 
+            this.NRODOCU.DataPropertyName = "nrodocumento";
+            this.NRODOCU.HeaderText = "N° DOCUMENTO";
+            this.NRODOCU.Name = "NRODOCU";
+            this.NRODOCU.ReadOnly = true;
+            // 
+            // CHDIRECCION
+            // 
+            this.CHDIRECCION.DataPropertyName = "chdireccion";
+            this.CHDIRECCION.HeaderText = "DIRECCION";
+            this.CHDIRECCION.Name = "CHDIRECCION";
+            this.CHDIRECCION.ReadOnly = true;
+            this.CHDIRECCION.Visible = false;
+            this.CHDIRECCION.Width = 200;
+            // 
+            // CHTIPOCLIE
+            // 
+            this.CHTIPOCLIE.DataPropertyName = "tipoclie";
+            this.CHTIPOCLIE.HeaderText = "TIPO CLIENTE";
+            this.CHTIPOCLIE.Name = "CHTIPOCLIE";
+            this.CHTIPOCLIE.ReadOnly = true;
+            this.CHTIPOCLIE.Visible = false;
+            // 
+            // CHTELEFONO
+            // 
+            this.CHTELEFONO.DataPropertyName = "telefono";
+            this.CHTELEFONO.HeaderText = "TELEFONO";
+            this.CHTELEFONO.Name = "CHTELEFONO";
+            this.CHTELEFONO.ReadOnly = true;
+            this.CHTELEFONO.Visible = false;
+            this.CHTELEFONO.Width = 80;
             // 
             // frmConsEstadoCuentaPrincipal
             // 
@@ -142,7 +230,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(703, 465);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvListaClientes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -156,7 +244,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaClientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,6 +258,14 @@
         private System.Windows.Forms.Button btnProdVend;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAnadir;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListaClientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHCODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHRAZON;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TIPODOCU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NRODOCU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHDIRECCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHTIPOCLIE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHTELEFONO;
     }
 }

@@ -397,6 +397,9 @@ namespace Datos
                     registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
                     registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
                     registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.chfechapago = Convert.ToString(datareader["chfechapago"]).Trim();
+                    registro.chestadopago = Convert.ToInt32(datareader["chestadopago"]);
+                    registro.chhorapago = Convert.ToString(datareader["chhorapago"]).Trim();
                     Listado.Add(registro);
                 }
                 return Listado;
