@@ -43,7 +43,11 @@ namespace Datos
         {
             return conexion.executeScalarStr("fn_correlativo_notaventa", CommandType.StoredProcedure, new parametro("in_parametro", parametro));
         }
-        /* FIN :: OBTENER CORRELATIVOS DE COMPROBANTES*/
+        /* INICIO :: OBTENER CORRELATIVOS DE RECIBOS*/
+        public static string ObtenerCorrelativoRecibo()
+        {
+            return conexion.executeScalarStr("fn_correlativo_recibo", CommandType.StoredProcedure);
+        }
         /*INICIO :: GENERAR CODIGOS COMPROBANTES*/
         public static int GenerarCorrelativoFactura(int parametro)
         {

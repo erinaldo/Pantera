@@ -55,19 +55,20 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvPlanilla = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtMone2 = new System.Windows.Forms.TextBox();
+            this.txtSaldo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMone = new System.Windows.Forms.TextBox();
+            this.txtCancela = new System.Windows.Forms.TextBox();
+            this.CODIPLANILLA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODPLANILLA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODRECIBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NUIMPORT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHTIPREF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHNUMREF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -283,6 +284,7 @@
             this.dgvPlanilla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPlanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlanilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CODIPLANILLA,
             this.CODPLANILLA,
             this.CHFECHA,
             this.CODRECIBO,
@@ -312,6 +314,95 @@
             this.dgvPlanilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlanilla.Size = new System.Drawing.Size(755, 256);
             this.dgvPlanilla.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtMone2);
+            this.groupBox3.Controls.Add(this.txtSaldo);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.txtMone);
+            this.groupBox3.Controls.Add(this.txtCancela);
+            this.groupBox3.Location = new System.Drawing.Point(10, 369);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(767, 62);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            // 
+            // txtMone2
+            // 
+            this.txtMone2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtMone2.ForeColor = System.Drawing.Color.Blue;
+            this.txtMone2.Location = new System.Drawing.Point(472, 22);
+            this.txtMone2.Name = "txtMone2";
+            this.txtMone2.ReadOnly = true;
+            this.txtMone2.Size = new System.Drawing.Size(30, 20);
+            this.txtMone2.TabIndex = 16;
+            this.txtMone2.TabStop = false;
+            this.txtMone2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtSaldo
+            // 
+            this.txtSaldo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtSaldo.ForeColor = System.Drawing.Color.Blue;
+            this.txtSaldo.Location = new System.Drawing.Point(508, 22);
+            this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.ReadOnly = true;
+            this.txtSaldo.Size = new System.Drawing.Size(101, 20);
+            this.txtSaldo.TabIndex = 15;
+            this.txtSaldo.TabStop = false;
+            this.txtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(127, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Total Cancelado";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(432, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Saldo";
+            // 
+            // txtMone
+            // 
+            this.txtMone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtMone.ForeColor = System.Drawing.Color.Blue;
+            this.txtMone.Location = new System.Drawing.Point(218, 22);
+            this.txtMone.Name = "txtMone";
+            this.txtMone.ReadOnly = true;
+            this.txtMone.Size = new System.Drawing.Size(30, 20);
+            this.txtMone.TabIndex = 7;
+            this.txtMone.TabStop = false;
+            this.txtMone.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtCancela
+            // 
+            this.txtCancela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtCancela.ForeColor = System.Drawing.Color.Blue;
+            this.txtCancela.Location = new System.Drawing.Point(254, 22);
+            this.txtCancela.Name = "txtCancela";
+            this.txtCancela.ReadOnly = true;
+            this.txtCancela.Size = new System.Drawing.Size(101, 20);
+            this.txtCancela.TabIndex = 6;
+            this.txtCancela.TabStop = false;
+            this.txtCancela.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // CODIPLANILLA
+            // 
+            this.CODIPLANILLA.HeaderText = "CODIPLANILLA";
+            this.CODIPLANILLA.Name = "CODIPLANILLA";
+            this.CODIPLANILLA.ReadOnly = true;
+            this.CODIPLANILLA.Visible = false;
             // 
             // CODPLANILLA
             // 
@@ -362,88 +453,6 @@
             this.CHNUMREF.Name = "CHNUMREF";
             this.CHNUMREF.ReadOnly = true;
             this.CHNUMREF.Width = 160;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Location = new System.Drawing.Point(10, 369);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(767, 62);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox6.ForeColor = System.Drawing.Color.Blue;
-            this.textBox6.Location = new System.Drawing.Point(472, 22);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(30, 20);
-            this.textBox6.TabIndex = 16;
-            this.textBox6.TabStop = false;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox7.ForeColor = System.Drawing.Color.Blue;
-            this.textBox7.Location = new System.Drawing.Point(508, 22);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(60, 20);
-            this.textBox7.TabIndex = 15;
-            this.textBox7.TabStop = false;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(127, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Total Cancelado";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(432, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Saldo";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox5.ForeColor = System.Drawing.Color.Blue;
-            this.textBox5.Location = new System.Drawing.Point(218, 22);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(30, 20);
-            this.textBox5.TabIndex = 7;
-            this.textBox5.TabStop = false;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.textBox4.ForeColor = System.Drawing.Color.Blue;
-            this.textBox4.Location = new System.Drawing.Point(254, 22);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(60, 20);
-            this.textBox4.TabIndex = 6;
-            this.textBox4.TabStop = false;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // frmConsCobranzaDocuVentaPrincipal
             // 
@@ -496,14 +505,15 @@
         private System.Windows.Forms.DataGridView dgvPlanilla;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtMone;
+        private System.Windows.Forms.TextBox txtCancela;
         private System.Windows.Forms.TextBox txtRazon;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnProcesar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtMone2;
+        private System.Windows.Forms.TextBox txtSaldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODIPLANILLA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODPLANILLA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHFECHA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODRECIBO;

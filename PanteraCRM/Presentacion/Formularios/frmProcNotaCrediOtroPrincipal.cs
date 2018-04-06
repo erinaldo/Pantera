@@ -293,11 +293,6 @@ namespace Presentacion
                 txtSubTotal.Text = string.Format("{0:0,0.00}", decimal.Round(valorventax, 2));
             }
         }
-
-       
-
-       
-
    
         private void txtNotaDescuento_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {

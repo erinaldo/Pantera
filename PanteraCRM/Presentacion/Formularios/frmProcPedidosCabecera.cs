@@ -164,10 +164,16 @@ namespace Presentacion
             cboCondVenta.DataSource = condicionpagoNE.ListaCondicionPago();
             cboCondVenta.ValueMember = "p_inidcondicionpago";
             cboCondVenta.DisplayMember = "chnombrepago";
-            cboigv.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(22);
+
+           List<maestrodetalle> Listaamesntro = maestrodetalleNE.buscarPorCodigoMaestro(22);
             cboigv.ValueMember = "idmaestrodetalle";
             cboigv.DisplayMember = "nombreitem";
+            foreach (maestrodetalle a in Listaamesntro)
+            {
+                txtimpuso.Text = "";
+            }
             txtUnidadesCompra.Text = "0";
+
             txtNombreAlmacen.Text = sesion.SessionGlobal.chalamacen;
             txtNombreVendedor.Text = sesion.SessionGlobal.chnombrepersona;
             txtFechaActual.Text = DateTime.Now.ToShortDateString().PadLeft(10, '0');
@@ -186,7 +192,7 @@ namespace Presentacion
             {
                 foreach (tipocambio obj2 in listado2)
                 {
-                    txtTipoCambio.Text = string.Format("{0:0,0.00}", obj2.nucambioventa.ToString("N2")); ;
+                    txtTipoCambio.Text = obj2.nucambioventa.ToString("N2") ;
                 }
 
             }
@@ -203,6 +209,14 @@ namespace Presentacion
                 txtTotVenta.Text = "0.00";
                 txtDesc.Text = "0.00";
                 txtTipoCambio.Text = "0.00";
+                lblLicen.Enabled = false;
+                lblTarjet.Enabled = false;
+                txtcodigolicencia.Enabled = false;
+                txtcodigotarjeta.Enabled = false;
+                lblfehcavencitarje.Enabled = false;
+                lblFechavencilicen.Enabled = false;
+                txtvencialicencia.Enabled = false;
+                txtvencitarjeta.Enabled = false;
             }
             else
             {
@@ -820,11 +834,27 @@ namespace Presentacion
                 {
                     CargarUnidadesCompradas(ClienteG.p_inidcodigoclie, txtFechaActual.Text);
                     lblLicencia.Text = "N° R.D.";
+                    lblLicen.Enabled = true;
+                    lblTarjet.Enabled = true;
+                    txtcodigolicencia.Enabled = true;
+                    txtcodigotarjeta.Enabled = true;
+                    lblfehcavencitarje.Enabled = true;
+                    lblFechavencilicen.Enabled = true;
+                    txtvencialicencia.Enabled = true;
+                    txtvencitarjeta.Enabled = true;
                 }
                 else
                 {
                     CargarUnidadesCompradas2(ClienteG.p_inidcodigoclie, txtFechaActual.Text);
                     lblLicencia.Text = "N° Licencia";
+                    lblLicen.Enabled = false;
+                    lblTarjet.Enabled = false;
+                    txtcodigolicencia.Enabled = false;
+                    txtcodigotarjeta.Enabled = false;
+                    lblfehcavencitarje.Enabled = false;
+                    lblFechavencilicen.Enabled = false;
+                    txtvencialicencia.Enabled = false;
+                    txtvencitarjeta.Enabled = false;
                 }
                 
             }
@@ -962,6 +992,16 @@ namespace Presentacion
             DateTime dt = DateTime.Parse(txtvencialicencia.Text);
             MessageBox.Show("Debe seleccionar un registro " + dt.ToString("dd/MM/yyyy") + "" + DateTime.Now.ToLongTimeString() + " " + txtvencialicencia.Text + " " + txtFechaActual.Text, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
 
+        }
+
+        private void txtCodigoCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (13 == Convert.ToInt32(e.KeyChar))
+            {
+                frmBusClientePrincipal f = new frmBusClientePrincipal();
+                f.Pasado += new frmBusClientePrincipal.PasarClienteCodigo(PonerCodigocliente);
+                f.ShowDialog();
+            }
         }
     }
 }

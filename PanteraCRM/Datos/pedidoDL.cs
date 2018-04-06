@@ -586,34 +586,34 @@ namespace Datos
                 return registro;
             }
         }
-        public static List< placobd > PlanillacobroDetalleBusqueda(string fecha)
+        public static List< placobd > PlanillacobroDetalleBusqueda(string codigo,int tipo)
         {
-            using (IDataReader datareader = conexion.executeOperation("fn_planillacobrosc_busqueda_fecha", CommandType.StoredProcedure, new parametro("in_fecha", fecha)))
+            using (IDataReader datareader = conexion.executeOperation("fn_planillacobrosd_busqueda_codigo", CommandType.StoredProcedure, new parametro("in_parametro", codigo), new parametro("in_parametro2", tipo)))
             {
                 List<placobd> listado = new List<placobd>();
                 while (datareader.Read())
                 {
                     placobd registro = new placobd();
-                    registro.p_inidplacod = Convert.ToInt32(datareader["p_inidplacoc"]);
+                    registro.p_inidplacod = Convert.ToInt32(datareader["p_inidplacod"]);
                     registro.p_inidplacoc = Convert.ToInt32(datareader["p_inidplacoc"]);
                     registro.chcorreplacobc = Convert.ToString(datareader["chcorreplacobc"]).Trim();
-                    registro.chcorrerecibo = Convert.ToString(datareader["chcorreplacobc"]).Trim();
-                    registro.initem = Convert.ToInt32(datareader["p_inidplacoc"]);
-                    registro.p_inidcliente = Convert.ToInt32(datareader["p_inidplacoc"]);
-                    registro.p_inidtipodoc = Convert.ToInt32(datareader["p_inidplacoc"]);
-                    registro.chcorredocumento = Convert.ToString(datareader["chcorreplacobc"]).Trim();
-                    registro.chfecha = Convert.ToString(datareader["chcorreplacobc"]).Trim();
-                    registro.nuimporpendiente = Convert.ToInt32(datareader["p_inidplacoc"]);
-                    registro.p_inidmoneda = Convert.ToInt32(datareader["p_inidplacoc"]);
-                    registro.p_inidmonedapag = Convert.ToInt32(datareader["p_inidplacoc"]);
-                    registro.nuimporpagmonenac = Convert.ToDecimal(datareader["p_inidplacoc"]);
-                    registro.nuimporpagmoneext = Convert.ToDecimal(datareader["p_inidplacoc"]);
-                    registro.nuimporcamvta = Convert.ToDecimal(datareader["p_inidplacoc"]);
-                    registro.p_inidtipopag = Convert.ToInt32(datareader["p_inidplacoc"]);
-                    registro.chobservacion = Convert.ToString(datareader["chcorreplacobc"]).Trim();
-                    registro.p_inidtipomov = Convert.ToInt32(datareader["p_inidplacoc"]);
-                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidplacoc"]);
-                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidplacoc"]);
+                    registro.chcorrerecibo = Convert.ToString(datareader["chcorrerecibo"]).Trim();
+                    registro.initem = Convert.ToInt32(datareader["initem"]);
+                    registro.p_inidcliente = Convert.ToInt32(datareader["p_inidcliente"]);
+                    registro.p_inidtipodoc = Convert.ToInt32(datareader["p_inidtipodoc"]);
+                    registro.chcorredocumento = Convert.ToString(datareader["chcorredocumento"]).Trim();
+                    registro.chfecha = Convert.ToString(datareader["chfecha"]).Trim();
+                    registro.nuimporpendiente = Convert.ToInt32(datareader["nuimporpendiente"]);
+                    registro.p_inidmoneda = Convert.ToInt32(datareader["p_inidmoneda"]);
+                    registro.p_inidmonedapag = Convert.ToInt32(datareader["p_inidmonedapag"]);
+                    registro.nuimporpagmonenac = Convert.ToDecimal(datareader["nuimporpagmonenac"]);
+                    registro.nuimporpagmoneext = Convert.ToDecimal(datareader["nuimporpagmoneext"]);
+                    registro.nuimporcamvta = Convert.ToDecimal(datareader["nuimporcamvta"]);
+                    registro.p_inidtipopag = Convert.ToInt32(datareader["p_inidtipopag"]);
+                    registro.chobservacion = Convert.ToString(datareader["chobservacion"]).Trim();
+                    registro.p_inidtipomov = Convert.ToInt32(datareader["p_inidtipomov"]);
+                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
                     registro.estado = Convert.ToBoolean(datareader["estado"]);
                     
                     listado.Add(registro);
@@ -621,6 +621,7 @@ namespace Datos
                 return listado;
             }
         }
+
         public static int ModificarPlanicobroCabecera(int codigo, decimal montomonenac, decimal montomoneex)
         {
             return conexion.executeScalar("fn_planillacobrosc_actualizar",

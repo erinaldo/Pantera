@@ -94,6 +94,10 @@ namespace Presentacion
             txtImporte.Text = string.Empty;
             txtNroDoc.Text = string.Empty;
             txtRazon.Text = string.Empty;
+            txtMone.Text = string.Empty;
+            txtMone2.Text = string.Empty;
+            txtCancela.Text = string.Empty;
+            txtSaldo.Text = string.Empty;
         }
         private void txtCodDocu_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -131,7 +135,36 @@ namespace Presentacion
 
         private void btnProcesar_Click(object sender, EventArgs e)
         {
-            List<placobd> a = pedidoNE.PlanillacobroDetalleBusqueda("a");
+            decimal pagado = 0;
+            if (PedidoFacturado.p_inidpedidoguicomp != 0)
+            {
+                List<placobd> ListaPlanila = pedidoNE.PlanillacobroDetalleBusqueda(txtCodDocu.Text, (int)cboTipoDoc.SelectedValue);
+                if (ListaPlanila.Count > 0)
+                {
+                    foreach (placobd Resgitros in ListaPlanila)
+                    {
+                        string ref1="";
+                        string ref2="";
+                        if (Resgitros.chobservacion != "")
+                        {
+                            var con = Resgitros.chobservacion.Split('|');
+                            ref1 = con[0];
+                            ref2 = con[1];
+                        }                        
+                        dgvPlanilla.Rows.Add(Resgitros.p_inidplacod, Resgitros.chcorreplacobc, Resgitros.chfecha, Resgitros.chcorrerecibo, Resgitros.nuimporpagmonenac, ref1, ref2);
+                        pagado += Resgitros.nuimporpagmonenac;
+                    }
+                }
+                txtMone.Text = "S/.";
+                txtCancela.Text = pagado.ToString("N2");
+                txtMone2.Text = "S/.";
+                txtSaldo.Text = (pedCab.nutotalventamonnacional - pagado).ToString("N2");
+            }
+            else
+            {
+
+            }
+
         }
         public void cargarTabla()
         {

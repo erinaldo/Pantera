@@ -67,6 +67,10 @@ namespace Negocios
             return generarCodigoDL.GenerarCorrelativoNotaVenta(parametro);
         }
 
-        /*FIN :: GENERAR CORRELATIVOS COMPROBANTES*/
+        /*INICIO :: OBTENER CORRELATIVOS RECIBO*/
+        public static string ObtenerCorrelativoRecibo()
+        {
+            return generarCodigoDL.ObtenerCorrelativoRecibo();
+        }
     }
 }

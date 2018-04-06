@@ -454,7 +454,7 @@ namespace Presentacion
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBox textboxusado = (TextBox)sender;
-            utilidades.LogitudDeCampo(ref textboxusado, e, 15);
+            utilidades.LogitudDeCampo(ref textboxusado, e, 80);
         }
 
         private void cboMedida_SelectedIndexChanged(object sender, EventArgs e)

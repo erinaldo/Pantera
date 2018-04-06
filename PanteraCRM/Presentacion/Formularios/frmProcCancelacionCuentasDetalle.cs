@@ -62,8 +62,8 @@ namespace Presentacion
             txtInter.Text = "0.00";
             int index3 = cbotipoPago.FindString("PAGO EN EFECTIVO");
             cbotipoPago.SelectedIndex = index3;
-            //string correlativo = generarCodigoNE.ObtenerCorrelativo(sesion.SessionGlobal.p_inidpuntoventa);
-           
+            string correlativo = generarCodigoNE.ObtenerCorrelativoRecibo();
+            txtCorrela.Text = correlativo;
             List<tipocambio> listado2 = tipocambioNE.busquedaValorTipoCambio(txtfecharegi.Text);
             if (listado2 != null)
             {
@@ -335,6 +335,7 @@ namespace Presentacion
             }
             return flat;
         }
+        internal string Observacion = "";
         private void GrabarCabecera()
         {
             /*INGRESO PLANILLA COBROS*/
@@ -410,7 +411,8 @@ namespace Presentacion
                     PlacobDetalleG.p_inidcliente = p_inidCliente;
                     PlacobDetalleG.p_inidtipodoc = (int)dgvDocumentosSeleccionados.Rows[i].Cells["CODTIPOS"].Value;
                     PlacobDetalleG.chcorredocumento = dgvDocumentosSeleccionados.Rows[i].Cells["CHDOCS"].Value.ToString();
-                    PlacobDetalleG.chfecha = txtFechaCancel.Text;
+                    DateTime dt1 = DateTime.Parse(txtFechaCancel.Text);
+                    PlacobDetalleG.chfecha = dt1.ToString("dd/MM/yyyy");
                     PlacobDetalleG.nuimporpendiente = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString());
                     PlacobDetalleG.p_inidmoneda = (int)cboMoneda.SelectedValue;
                     PlacobDetalleG.p_inidmonedapag = (int)cboMoneda.SelectedValue;
@@ -475,6 +477,8 @@ namespace Presentacion
                     if (dgvDocumentosSeleccionados.Rows[i].Cells["CHTIPOS"].Value.ToString() == "NC")
                     {
                         montodescargado += decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) * (-1);
+                        Observacion += dgvDocumentosSeleccionados.Rows[i].Cells["CHTIPOS"].Value.ToString();
+                        Observacion += "|"+dgvDocumentosSeleccionados.Rows[i].Cells["CHDOCS"].Value.ToString();
                     } else
                     {
                         correla = dgvDocumentosSeleccionados.Rows[i].Cells["CHDOCS"].Value.ToString();
@@ -505,16 +509,17 @@ namespace Presentacion
                         PlacobDetalleG.p_inidcliente = p_inidCliente;
                         PlacobDetalleG.p_inidtipodoc = (int)dgvDocumentosSeleccionados.Rows[i].Cells["CODTIPOS"].Value;
                         PlacobDetalleG.chcorredocumento = dgvDocumentosSeleccionados.Rows[i].Cells["CHDOCS"].Value.ToString();
-                        PlacobDetalleG.chfecha = txtFechaCancel.Text;
+                        DateTime dt1 = DateTime.Parse(txtFechaCancel.Text);
+                        PlacobDetalleG.chfecha = dt1.ToString("dd/MM/yyyy");
                         PlacobDetalleG.nuimporpendiente = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString());
                         PlacobDetalleG.p_inidmoneda = (int)cboMoneda.SelectedValue;
                         PlacobDetalleG.p_inidmonedapag = (int)cboMoneda.SelectedValue;
-                        montofinal = (montodescargado) + (decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) - montodescargado);
+                        montofinal = (decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) - montodescargado);
                         PlacobDetalleG.nuimporpagmonenac = montofinal;
                         PlacobDetalleG.nuimporpagmoneext = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) * decimal.Parse(txtTipoCambio.Text);
                         PlacobDetalleG.nuimporcamvta = decimal.Parse(txtTipoCambio.Text);
                         PlacobDetalleG.p_inidtipopag = tipopago;//pendiente = 0, cancelado = 1;
-                        PlacobDetalleG.chobservacion = string.Empty;
+                        PlacobDetalleG.chobservacion = Observacion;
                         if (rbtcancela.Checked) { PlacobDetalleG.p_inidtipomov = 1; } else { PlacobDetalleG.p_inidtipomov = 2; }
                         PlacobDetalleG.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
                         PlacobDetalleG.p_inidusuariodelete = 0;
@@ -533,7 +538,7 @@ namespace Presentacion
                         Registrosdoc.chcorrelanota = dgvDocumentosSeleccionados.Rows[i].Cells["CHDOCS"].Value.ToString();
                         Registrosdoc.chfechanota = dgvDocumentosSeleccionados.Rows[i].Cells["CHFECHAS"].Value.ToString();
                         Registrosdoc.p_inidmoneda = (int)cboMoneda.SelectedValue;
-                        Registrosdoc.nuimporcancela = montofinal;
+                        Registrosdoc.nuimporcancela = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) * (-1);
                         Registrosdoc.p_inidsituacion = 0;
                         Registrosdoc.p_inidusuarioinsert = sesion.SessionGlobal.p_inidusuario;
                         Registrosdoc.p_inidusuariodelete = 0;
