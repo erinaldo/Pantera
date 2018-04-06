@@ -110,6 +110,7 @@
             this.txtruc.ReadOnly = true;
             this.txtruc.Size = new System.Drawing.Size(225, 20);
             this.txtruc.TabIndex = 3;
+            this.txtruc.TabStop = false;
             // 
             // txtRazon
             // 
@@ -120,6 +121,7 @@
             this.txtRazon.ReadOnly = true;
             this.txtRazon.Size = new System.Drawing.Size(634, 20);
             this.txtRazon.TabIndex = 2;
+            this.txtRazon.TabStop = false;
             // 
             // txtCodigo
             // 
@@ -130,15 +132,16 @@
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(114, 20);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TabStop = false;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnExcel);
             this.groupBox3.Controls.Add(this.btnSalir);
-            this.groupBox3.Location = new System.Drawing.Point(200, 374);
+            this.groupBox3.Location = new System.Drawing.Point(277, 374);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(179, 43);
-            this.groupBox3.TabIndex = 25;
+            this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 
             // btnExcel
@@ -147,7 +150,7 @@
             this.btnExcel.Location = new System.Drawing.Point(7, 10);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(80, 28);
-            this.btnExcel.TabIndex = 4;
+            this.btnExcel.TabIndex = 1;
             this.btnExcel.Text = "&Excel";
             this.btnExcel.UseVisualStyleBackColor = false;
             // 
@@ -158,7 +161,7 @@
             this.btnSalir.Location = new System.Drawing.Point(93, 10);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -184,7 +187,8 @@
             this.dgvListaRegistros.RowHeadersVisible = false;
             this.dgvListaRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaRegistros.Size = new System.Drawing.Size(707, 275);
-            this.dgvListaRegistros.TabIndex = 29;
+            this.dgvListaRegistros.TabIndex = 0;
+            this.dgvListaRegistros.TabStop = false;
             // 
             // CODREGVTA
             // 

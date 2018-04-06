@@ -73,7 +73,7 @@
             this.label1.Location = new System.Drawing.Point(6, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Búsqueda";
             // 
             // txtParametro
@@ -96,7 +96,7 @@
             this.groupBox1.Location = new System.Drawing.Point(143, 393);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(370, 53);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // btnImprimir
@@ -191,6 +191,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaSotck.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvListaSotck.RowHeadersVisible = false;
             this.dgvListaSotck.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaSotck.Size = new System.Drawing.Size(647, 335);
             this.dgvListaSotck.TabIndex = 2;

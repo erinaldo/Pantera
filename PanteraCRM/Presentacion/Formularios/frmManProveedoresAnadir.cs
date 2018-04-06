@@ -478,5 +478,14 @@ namespace Presentacion
             TextBox textboxusado = (TextBox)sender;
             utilidades.LogitudDeCampo(ref textboxusado, e, 9);
         }
+
+        private void txtUbigeo_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !(8 == Convert.ToInt32(e.KeyChar)))
+            {
+                e.Handled = true;
+
+            }
+        }
     }
 }

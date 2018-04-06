@@ -295,7 +295,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(3, 9);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 32;
+            this.btnGrabar.TabIndex = 0;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -307,7 +307,7 @@
             this.btnSalir.Location = new System.Drawing.Point(83, 9);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 33;
+            this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -328,9 +328,11 @@
             this.IDSERIE});
             this.dgvListaProdSeries.Location = new System.Drawing.Point(12, 144);
             this.dgvListaProdSeries.Name = "dgvListaProdSeries";
+            this.dgvListaProdSeries.RowHeadersVisible = false;
             this.dgvListaProdSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaProdSeries.Size = new System.Drawing.Size(639, 166);
             this.dgvListaProdSeries.TabIndex = 34;
+            this.dgvListaProdSeries.TabStop = false;
             // 
             // REQSERIE
             // 
@@ -400,7 +402,7 @@
             this.groupBox2.Location = new System.Drawing.Point(248, 316);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(166, 41);
-            this.groupBox2.TabIndex = 36;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
             // frmProcPedidosDetalle

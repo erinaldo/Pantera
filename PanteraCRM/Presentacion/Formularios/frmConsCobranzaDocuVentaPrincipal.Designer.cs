@@ -55,6 +55,12 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvPlanilla = new System.Windows.Forms.DataGridView();
+            this.CODPLANILLA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODRECIBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUIMPORT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHTIPREF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHNUMREF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -62,12 +68,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.CODPLANILLA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CODRECIBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NUIMPORT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHTIPREF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHNUMREF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -170,6 +170,7 @@
             this.txtFecha.ReadOnly = true;
             this.txtFecha.Size = new System.Drawing.Size(66, 20);
             this.txtFecha.TabIndex = 8;
+            this.txtFecha.TabStop = false;
             this.txtFecha.ValidatingType = typeof(System.DateTime);
             // 
             // cboTipoDoc
@@ -179,14 +180,14 @@
             this.cboTipoDoc.Location = new System.Drawing.Point(63, 23);
             this.cboTipoDoc.Name = "cboTipoDoc";
             this.cboTipoDoc.Size = new System.Drawing.Size(58, 21);
-            this.cboTipoDoc.TabIndex = 7;
+            this.cboTipoDoc.TabIndex = 0;
             // 
             // txtCodDocu
             // 
             this.txtCodDocu.Location = new System.Drawing.Point(127, 23);
             this.txtCodDocu.Name = "txtCodDocu";
             this.txtCodDocu.Size = new System.Drawing.Size(100, 20);
-            this.txtCodDocu.TabIndex = 6;
+            this.txtCodDocu.TabIndex = 1;
             this.txtCodDocu.Enter += new System.EventHandler(this.txtCodDocu_Enter);
             this.txtCodDocu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodDocu_KeyPress);
             this.txtCodDocu.Validated += new System.EventHandler(this.txtCodDocu_Validated);
@@ -229,7 +230,7 @@
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Size = new System.Drawing.Size(88, 75);
-            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             // 
             // btnProcesar
@@ -239,7 +240,7 @@
             this.btnProcesar.Location = new System.Drawing.Point(4, 10);
             this.btnProcesar.Name = "btnProcesar";
             this.btnProcesar.Size = new System.Drawing.Size(80, 28);
-            this.btnProcesar.TabIndex = 13;
+            this.btnProcesar.TabIndex = 0;
             this.btnProcesar.Text = "&Procesar";
             this.btnProcesar.UseVisualStyleBackColor = false;
             this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
@@ -252,7 +253,7 @@
             this.btnSalir.Location = new System.Drawing.Point(4, 43);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 14;
+            this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             // 
@@ -311,6 +312,56 @@
             this.dgvPlanilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlanilla.Size = new System.Drawing.Size(755, 256);
             this.dgvPlanilla.TabIndex = 0;
+            // 
+            // CODPLANILLA
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
+            this.CODPLANILLA.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CODPLANILLA.HeaderText = "PLANILLA";
+            this.CODPLANILLA.Name = "CODPLANILLA";
+            this.CODPLANILLA.ReadOnly = true;
+            // 
+            // CHFECHA
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
+            this.CHFECHA.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CHFECHA.HeaderText = "FECHA";
+            this.CHFECHA.Name = "CHFECHA";
+            this.CHFECHA.ReadOnly = true;
+            // 
+            // CODRECIBO
+            // 
+            this.CODRECIBO.HeaderText = "RECIBO";
+            this.CODRECIBO.Name = "CODRECIBO";
+            this.CODRECIBO.ReadOnly = true;
+            // 
+            // NUIMPORT
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0.00";
+            this.NUIMPORT.DefaultCellStyle = dataGridViewCellStyle4;
+            this.NUIMPORT.HeaderText = "IMPORTE";
+            this.NUIMPORT.Name = "NUIMPORT";
+            this.NUIMPORT.ReadOnly = true;
+            // 
+            // CHTIPREF
+            // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(232)))));
+            this.CHTIPREF.DefaultCellStyle = dataGridViewCellStyle5;
+            this.CHTIPREF.HeaderText = "TIP. REF.";
+            this.CHTIPREF.Name = "CHTIPREF";
+            this.CHTIPREF.ReadOnly = true;
+            this.CHTIPREF.Width = 160;
+            // 
+            // CHNUMREF
+            // 
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(232)))));
+            this.CHNUMREF.DefaultCellStyle = dataGridViewCellStyle6;
+            this.CHNUMREF.HeaderText = "NRO. REF.";
+            this.CHNUMREF.Name = "CHNUMREF";
+            this.CHNUMREF.ReadOnly = true;
+            this.CHNUMREF.Width = 160;
             // 
             // groupBox3
             // 
@@ -393,56 +444,6 @@
             this.textBox4.TabIndex = 6;
             this.textBox4.TabStop = false;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // CODPLANILLA
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
-            this.CODPLANILLA.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CODPLANILLA.HeaderText = "PLANILLA";
-            this.CODPLANILLA.Name = "CODPLANILLA";
-            this.CODPLANILLA.ReadOnly = true;
-            // 
-            // CHFECHA
-            // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
-            this.CHFECHA.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CHFECHA.HeaderText = "FECHA";
-            this.CHFECHA.Name = "CHFECHA";
-            this.CHFECHA.ReadOnly = true;
-            // 
-            // CODRECIBO
-            // 
-            this.CODRECIBO.HeaderText = "RECIBO";
-            this.CODRECIBO.Name = "CODRECIBO";
-            this.CODRECIBO.ReadOnly = true;
-            // 
-            // NUIMPORT
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "0.00";
-            this.NUIMPORT.DefaultCellStyle = dataGridViewCellStyle4;
-            this.NUIMPORT.HeaderText = "IMPORTE";
-            this.NUIMPORT.Name = "NUIMPORT";
-            this.NUIMPORT.ReadOnly = true;
-            // 
-            // CHTIPREF
-            // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(232)))));
-            this.CHTIPREF.DefaultCellStyle = dataGridViewCellStyle5;
-            this.CHTIPREF.HeaderText = "TIP. REF.";
-            this.CHTIPREF.Name = "CHTIPREF";
-            this.CHTIPREF.ReadOnly = true;
-            this.CHTIPREF.Width = 160;
-            // 
-            // CHNUMREF
-            // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(232)))));
-            this.CHNUMREF.DefaultCellStyle = dataGridViewCellStyle6;
-            this.CHNUMREF.HeaderText = "NRO. REF.";
-            this.CHNUMREF.Name = "CHNUMREF";
-            this.CHNUMREF.ReadOnly = true;
-            this.CHNUMREF.Width = 160;
             // 
             // frmConsCobranzaDocuVentaPrincipal
             // 

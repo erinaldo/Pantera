@@ -76,7 +76,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(647, 43);
-            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // label1
@@ -85,7 +85,7 @@
             this.label1.Location = new System.Drawing.Point(6, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Busqueda";
             // 
             // txtParametro
@@ -152,8 +152,11 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVales.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvVales.RowHeadersVisible = false;
+            this.dgvVales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVales.Size = new System.Drawing.Size(647, 344);
-            this.dgvVales.TabIndex = 21;
+            this.dgvVales.TabIndex = 1;
+            this.dgvVales.TabStop = false;
             // 
             // IDVALEC
             // 
@@ -336,7 +339,7 @@
             this.groupBox1.Location = new System.Drawing.Point(78, 400);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(514, 42);
-            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // btnAnular

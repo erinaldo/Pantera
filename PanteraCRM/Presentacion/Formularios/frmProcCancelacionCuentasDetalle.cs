@@ -260,7 +260,38 @@ namespace Presentacion
             bool flat = true;
             if (rbtcancela.Checked == true)
             {
-                if (txtCheque.Text.Length > 0 && cbotipoPago.Text != "PAGO EN EFECTIVO")
+                if (cbotipoPago.Text != "PAGO EN EFECTIVO")
+                {
+                    if (txtCheque.Text.Length  > 0)
+                    {
+                        if (txtImport.Text.Length > 0 && decimal.Parse(txtImport.Text) != 0)
+                        {
+                            if (txtInter.Text.Length > 0)
+                            {
+                                if ((decimal.Parse(txtImport.Text) + decimal.Parse(txtInter.Text)) <= decimal.Parse(txttotalSeleccion.Text))
+                                {
+                                    flat = false;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("El importe a pagar excede al monto seleccionado", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Interés y comisión inválido", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Importe a pagar inválido", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                        }
+                    }else
+                    {
+                        MessageBox.Show("Cheque vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                    }
+                }
+                else
                 {
                     if (txtImport.Text.Length > 0 && decimal.Parse(txtImport.Text) != 0)
                     {
@@ -284,10 +315,6 @@ namespace Presentacion
                     {
                         MessageBox.Show("Importe a pagar inválido", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("N° cheque vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 }
             }else
             {

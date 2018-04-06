@@ -65,7 +65,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(647, 43);
-            this.groupBox2.TabIndex = 23;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // label1
@@ -74,7 +74,7 @@
             this.label1.Location = new System.Drawing.Point(6, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Busqueda";
             // 
             // txtParametro
@@ -97,7 +97,7 @@
             this.groupBox1.Location = new System.Drawing.Point(154, 400);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(363, 54);
-            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // btnImprimir
@@ -107,7 +107,7 @@
             this.btnImprimir.Location = new System.Drawing.Point(186, 16);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(80, 28);
-            this.btnImprimir.TabIndex = 13;
+            this.btnImprimir.TabIndex = 2;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
@@ -119,7 +119,7 @@
             this.btnModificar.Location = new System.Drawing.Point(8, 16);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(80, 28);
-            this.btnModificar.TabIndex = 9;
+            this.btnModificar.TabIndex = 0;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -131,7 +131,7 @@
             this.btnVer.Location = new System.Drawing.Point(97, 16);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(80, 28);
-            this.btnVer.TabIndex = 10;
+            this.btnVer.TabIndex = 1;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
@@ -144,7 +144,7 @@
             this.btnSalir.Location = new System.Drawing.Point(275, 16);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -195,8 +195,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaExhibicion.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvListaExhibicion.RowHeadersVisible = false;
+            this.dgvListaExhibicion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaExhibicion.Size = new System.Drawing.Size(647, 344);
-            this.dgvListaExhibicion.TabIndex = 25;
+            this.dgvListaExhibicion.TabIndex = 1;
             // 
             // IDPRODUCTO
             // 

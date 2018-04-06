@@ -38,6 +38,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcPedidosPrincipal));
             this.btnAnadir = new System.Windows.Forms.Button();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.TextBox();
             this.IDPEDIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCORRELATIVO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,15 +54,6 @@
             this.CHDOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAnular = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtParametro = new System.Windows.Forms.TextBox();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnVer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -111,9 +111,108 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvPedidos.RowHeadersVisible = false;
             this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedidos.Size = new System.Drawing.Size(807, 452);
             this.dgvPedidos.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnAnular);
+            this.groupBox1.Controls.Add(this.btnImprimir);
+            this.groupBox1.Controls.Add(this.btnSalir);
+            this.groupBox1.Controls.Add(this.btnVer);
+            this.groupBox1.Controls.Add(this.btnModificar);
+            this.groupBox1.Controls.Add(this.btnAnadir);
+            this.groupBox1.Location = new System.Drawing.Point(156, 508);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(518, 43);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            // 
+            // btnAnular
+            // 
+            this.btnAnular.BackColor = System.Drawing.Color.White;
+            this.btnAnular.Location = new System.Drawing.Point(348, 9);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(80, 28);
+            this.btnAnular.TabIndex = 4;
+            this.btnAnular.Text = "&Anular";
+            this.btnAnular.UseVisualStyleBackColor = false;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(262, 9);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(80, 28);
+            this.btnImprimir.TabIndex = 3;
+            this.btnImprimir.Text = "&Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.White;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Location = new System.Drawing.Point(434, 9);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
+            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackColor = System.Drawing.Color.White;
+            this.btnVer.Location = new System.Drawing.Point(176, 9);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(80, 28);
+            this.btnVer.TabIndex = 2;
+            this.btnVer.Text = "&Ver";
+            this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.White;
+            this.btnModificar.Location = new System.Drawing.Point(90, 9);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(80, 28);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "&Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtParametro);
+            this.groupBox2.Location = new System.Drawing.Point(12, 1);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(807, 43);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Busqueda";
+            // 
+            // txtParametro
+            // 
+            this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtParametro.Location = new System.Drawing.Point(67, 15);
+            this.txtParametro.Name = "txtParametro";
+            this.txtParametro.Size = new System.Drawing.Size(734, 20);
+            this.txtParametro.TabIndex = 0;
+            this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
             // 
             // IDPEDIDO
             // 
@@ -173,104 +272,6 @@
             this.CHESTADO.ReadOnly = true;
             this.CHESTADO.Width = 80;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnAnular);
-            this.groupBox1.Controls.Add(this.btnImprimir);
-            this.groupBox1.Controls.Add(this.btnSalir);
-            this.groupBox1.Controls.Add(this.btnVer);
-            this.groupBox1.Controls.Add(this.btnModificar);
-            this.groupBox1.Controls.Add(this.btnAnadir);
-            this.groupBox1.Location = new System.Drawing.Point(156, 508);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(518, 43);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.BackColor = System.Drawing.Color.White;
-            this.btnAnular.Location = new System.Drawing.Point(348, 9);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(80, 28);
-            this.btnAnular.TabIndex = 4;
-            this.btnAnular.Text = "&Anular";
-            this.btnAnular.UseVisualStyleBackColor = false;
-            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.BackColor = System.Drawing.Color.White;
-            this.btnImprimir.Location = new System.Drawing.Point(262, 9);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(80, 28);
-            this.btnImprimir.TabIndex = 3;
-            this.btnImprimir.Text = "&Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.White;
-            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Location = new System.Drawing.Point(434, 9);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 5;
-            this.btnSalir.Text = "&Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtParametro);
-            this.groupBox2.Location = new System.Drawing.Point(12, 1);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(807, 43);
-            this.groupBox2.TabIndex = 19;
-            this.groupBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Busqueda";
-            // 
-            // txtParametro
-            // 
-            this.txtParametro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtParametro.Location = new System.Drawing.Point(67, 15);
-            this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(734, 20);
-            this.txtParametro.TabIndex = 0;
-            this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(90, 9);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(80, 28);
-            this.btnModificar.TabIndex = 1;
-            this.btnModificar.Text = "&Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnVer
-            // 
-            this.btnVer.BackColor = System.Drawing.Color.White;
-            this.btnVer.Location = new System.Drawing.Point(176, 9);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(80, 28);
-            this.btnVer.TabIndex = 2;
-            this.btnVer.Text = "&Ver";
-            this.btnVer.UseVisualStyleBackColor = false;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
-            // 
             // frmProcPedidosPrincipal
             // 
             this.AcceptButton = this.btnAnadir;
@@ -311,6 +312,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtParametro;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPEDIDO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHCORRELATIVO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHFECHA;
@@ -318,7 +321,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHDOC;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHTOTAL;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHESTADO;
-        private System.Windows.Forms.Button btnVer;
-        private System.Windows.Forms.Button btnModificar;
     }
 }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManProductoAnadir));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblUnidad = new System.Windows.Forms.Label();
+            this.txtUnidad = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.ckbSerie = new System.Windows.Forms.CheckBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
@@ -56,8 +58,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.txtidproducto = new System.Windows.Forms.Label();
-            this.txtUnidad = new System.Windows.Forms.TextBox();
-            this.lblUnidad = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +97,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Producto";
             // 
+            // lblUnidad
+            // 
+            this.lblUnidad.AutoSize = true;
+            this.lblUnidad.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.lblUnidad.Location = new System.Drawing.Point(280, 180);
+            this.lblUnidad.Name = "lblUnidad";
+            this.lblUnidad.Size = new System.Drawing.Size(35, 13);
+            this.lblUnidad.TabIndex = 26;
+            this.lblUnidad.Text = "Unid.";
+            this.lblUnidad.Visible = false;
+            // 
+            // txtUnidad
+            // 
+            this.txtUnidad.BackColor = System.Drawing.Color.White;
+            this.txtUnidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnidad.ForeColor = System.Drawing.Color.Black;
+            this.txtUnidad.Location = new System.Drawing.Point(423, 177);
+            this.txtUnidad.MaxLength = 15;
+            this.txtUnidad.Name = "txtUnidad";
+            this.txtUnidad.Size = new System.Drawing.Size(96, 20);
+            this.txtUnidad.TabIndex = 8;
+            this.txtUnidad.Visible = false;
+            this.txtUnidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnidad_KeyPress);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -113,7 +138,7 @@
             this.ckbSerie.Location = new System.Drawing.Point(423, 219);
             this.ckbSerie.Name = "ckbSerie";
             this.ckbSerie.Size = new System.Drawing.Size(96, 17);
-            this.ckbSerie.TabIndex = 8;
+            this.ckbSerie.TabIndex = 10;
             this.ckbSerie.Text = "Requiere Serie";
             this.ckbSerie.UseVisualStyleBackColor = true;
             // 
@@ -389,31 +414,6 @@
             this.txtidproducto.Size = new System.Drawing.Size(0, 13);
             this.txtidproducto.TabIndex = 5;
             this.txtidproducto.Visible = false;
-            // 
-            // txtUnidad
-            // 
-            this.txtUnidad.BackColor = System.Drawing.Color.White;
-            this.txtUnidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnidad.ForeColor = System.Drawing.Color.Black;
-            this.txtUnidad.Location = new System.Drawing.Point(423, 177);
-            this.txtUnidad.MaxLength = 15;
-            this.txtUnidad.Name = "txtUnidad";
-            this.txtUnidad.Size = new System.Drawing.Size(96, 20);
-            this.txtUnidad.TabIndex = 25;
-            this.txtUnidad.Visible = false;
-            this.txtUnidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnidad_KeyPress);
-            // 
-            // lblUnidad
-            // 
-            this.lblUnidad.AutoSize = true;
-            this.lblUnidad.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.lblUnidad.Location = new System.Drawing.Point(280, 180);
-            this.lblUnidad.Name = "lblUnidad";
-            this.lblUnidad.Size = new System.Drawing.Size(35, 13);
-            this.lblUnidad.TabIndex = 26;
-            this.lblUnidad.Text = "Unid.";
-            this.lblUnidad.Visible = false;
             // 
             // frmManProductoAnadir
             // 

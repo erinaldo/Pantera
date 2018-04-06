@@ -21,5 +21,10 @@ namespace Presentacion
         {
             this.Dispose();
         }
+
+        private void frmConsVentasDetalle_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

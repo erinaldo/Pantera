@@ -58,7 +58,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(677, 43);
-            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // label1
@@ -67,7 +67,7 @@
             this.label1.Location = new System.Drawing.Point(6, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Busqueda";
             // 
             // txtParametro
@@ -88,7 +88,7 @@
             this.groupBox1.Location = new System.Drawing.Point(178, 410);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(347, 43);
-            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // btnExcel
@@ -97,7 +97,7 @@
             this.btnExcel.Location = new System.Drawing.Point(177, 10);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(80, 28);
-            this.btnExcel.TabIndex = 4;
+            this.btnExcel.TabIndex = 2;
             this.btnExcel.Text = "&Excel";
             this.btnExcel.UseVisualStyleBackColor = false;
             // 
@@ -107,7 +107,7 @@
             this.btnProdVend.Location = new System.Drawing.Point(91, 10);
             this.btnProdVend.Name = "btnProdVend";
             this.btnProdVend.Size = new System.Drawing.Size(80, 28);
-            this.btnProdVend.TabIndex = 3;
+            this.btnProdVend.TabIndex = 1;
             this.btnProdVend.Text = "&Prod. Vend.";
             this.btnProdVend.UseVisualStyleBackColor = false;
             // 
@@ -118,7 +118,7 @@
             this.btnSalir.Location = new System.Drawing.Point(263, 10);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
@@ -155,7 +155,7 @@
             this.dgvListaClientes.RowHeadersVisible = false;
             this.dgvListaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaClientes.Size = new System.Drawing.Size(677, 344);
-            this.dgvListaClientes.TabIndex = 25;
+            this.dgvListaClientes.TabIndex = 1;
             // 
             // IDCLIENTE
             // 

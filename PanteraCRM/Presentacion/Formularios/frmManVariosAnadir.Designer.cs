@@ -247,6 +247,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvListaDetalle.RowHeadersVisible = false;
             this.dgvListaDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaDetalle.Size = new System.Drawing.Size(345, 153);
             this.dgvListaDetalle.TabIndex = 2;

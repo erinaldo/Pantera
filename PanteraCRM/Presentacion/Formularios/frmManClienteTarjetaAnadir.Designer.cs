@@ -63,9 +63,10 @@
             this.dgvListasTarjetas.Location = new System.Drawing.Point(14, 136);
             this.dgvListasTarjetas.Name = "dgvListasTarjetas";
             this.dgvListasTarjetas.ReadOnly = true;
+            this.dgvListasTarjetas.RowHeadersVisible = false;
             this.dgvListasTarjetas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListasTarjetas.Size = new System.Drawing.Size(300, 153);
-            this.dgvListasTarjetas.TabIndex = 2;
+            this.dgvListasTarjetas.TabIndex = 1;
             // 
             // IDTARJETA
             // 
@@ -182,7 +183,7 @@
             this.btnSalir.Location = new System.Drawing.Point(167, 299);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 1;
+            this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -194,7 +195,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(81, 299);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 0;
+            this.btnGrabar.TabIndex = 2;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);

@@ -48,7 +48,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(202, 107);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 13;
+            this.btnGrabar.TabIndex = 1;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -61,7 +61,7 @@
             this.btnSalir.Location = new System.Drawing.Point(288, 107);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 14;
+            this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -77,7 +77,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(547, 83);
-            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtCantidad
@@ -129,6 +129,7 @@
             this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.Size = new System.Drawing.Size(399, 20);
             this.txtDescripcion.TabIndex = 2;
+            this.txtDescripcion.TabStop = false;
             // 
             // label1
             // 

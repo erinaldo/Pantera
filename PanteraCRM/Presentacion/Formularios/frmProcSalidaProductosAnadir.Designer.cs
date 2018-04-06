@@ -45,14 +45,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvListaValeDetalle = new System.Windows.Forms.DataGridView();
-            this.IDITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCOSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHSUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboMoneda = new System.Windows.Forms.ComboBox();
             this.mskfechareg = new System.Windows.Forms.MaskedTextBox();
@@ -88,6 +80,14 @@
             this.lblNref4 = new System.Windows.Forms.Label();
             this.lblNref3 = new System.Windows.Forms.Label();
             this.lblNref2 = new System.Windows.Forms.Label();
+            this.IDITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCOSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaValeDetalle)).BeginInit();
@@ -130,7 +130,7 @@
             this.groupBox4.Location = new System.Drawing.Point(11, 391);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(503, 48);
-            this.groupBox4.TabIndex = 25;
+            this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             // 
             // btnVer
@@ -212,7 +212,7 @@
             this.groupBox3.Location = new System.Drawing.Point(12, 185);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(679, 200);
-            this.groupBox3.TabIndex = 24;
+            this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
             // dgvListaValeDetalle
@@ -257,73 +257,11 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaValeDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvListaValeDetalle.RowHeadersVisible = false;
+            this.dgvListaValeDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaValeDetalle.Size = new System.Drawing.Size(662, 181);
             this.dgvListaValeDetalle.TabIndex = 0;
-            // 
-            // IDITEM
-            // 
-            this.IDITEM.HeaderText = "ITEM";
-            this.IDITEM.Name = "IDITEM";
-            this.IDITEM.ReadOnly = true;
-            this.IDITEM.Visible = false;
-            this.IDITEM.Width = 40;
-            // 
-            // IDPRODUCTO
-            // 
-            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
-            this.IDPRODUCTO.Name = "IDPRODUCTO";
-            this.IDPRODUCTO.ReadOnly = true;
-            this.IDPRODUCTO.Visible = false;
-            // 
-            // CHCODIGO
-            // 
-            this.CHCODIGO.HeaderText = "CODIGO";
-            this.CHCODIGO.Name = "CHCODIGO";
-            this.CHCODIGO.ReadOnly = true;
-            this.CHCODIGO.Width = 60;
-            // 
-            // CHCANTIDAD
-            // 
-            this.CHCANTIDAD.HeaderText = "CANTIDAD";
-            this.CHCANTIDAD.Name = "CHCANTIDAD";
-            this.CHCANTIDAD.ReadOnly = true;
-            this.CHCANTIDAD.Width = 70;
-            // 
-            // CHMEDIDA
-            // 
-            this.CHMEDIDA.HeaderText = "MEDIDA";
-            this.CHMEDIDA.Name = "CHMEDIDA";
-            this.CHMEDIDA.ReadOnly = true;
-            this.CHMEDIDA.Width = 60;
-            // 
-            // CHDESCRIPCION
-            // 
-            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
-            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
-            this.CHDESCRIPCION.ReadOnly = true;
-            this.CHDESCRIPCION.Width = 320;
-            // 
-            // CHCOSTO
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = "00.00";
-            this.CHCOSTO.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CHCOSTO.HeaderText = "COSTO";
-            this.CHCOSTO.Name = "CHCOSTO";
-            this.CHCOSTO.ReadOnly = true;
-            this.CHCOSTO.Width = 50;
-            // 
-            // CHSUBTOTAL
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = "00.00";
-            this.CHSUBTOTAL.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CHSUBTOTAL.HeaderText = "SUB TOTAL";
-            this.CHSUBTOTAL.Name = "CHSUBTOTAL";
-            this.CHSUBTOTAL.ReadOnly = true;
-            this.CHSUBTOTAL.Width = 60;
+            this.dgvListaValeDetalle.TabStop = false;
             // 
             // groupBox1
             // 
@@ -348,7 +286,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(679, 106);
-            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // cboMoneda
@@ -362,11 +300,15 @@
             // 
             // mskfechareg
             // 
+            this.mskfechareg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.mskfechareg.ForeColor = System.Drawing.Color.Blue;
             this.mskfechareg.Location = new System.Drawing.Point(91, 69);
             this.mskfechareg.Mask = "00/00/0000";
             this.mskfechareg.Name = "mskfechareg";
+            this.mskfechareg.ReadOnly = true;
             this.mskfechareg.Size = new System.Drawing.Size(100, 20);
-            this.mskfechareg.TabIndex = 2;
+            this.mskfechareg.TabIndex = 1;
+            this.mskfechareg.TabStop = false;
             this.mskfechareg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mskfechareg.ValidatingType = typeof(System.DateTime);
             // 
@@ -377,7 +319,7 @@
             this.cboTipoMov.Location = new System.Drawing.Point(509, 42);
             this.cboTipoMov.Name = "cboTipoMov";
             this.cboTipoMov.Size = new System.Drawing.Size(159, 21);
-            this.cboTipoMov.TabIndex = 1;
+            this.cboTipoMov.TabIndex = 0;
             this.cboTipoMov.SelectedIndexChanged += new System.EventHandler(this.cboTipoMov_SelectedIndexChanged);
             // 
             // txtobs
@@ -557,7 +499,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 113);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(679, 66);
-            this.groupBox2.TabIndex = 27;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de Referencia";
             // 
@@ -689,6 +631,70 @@
             this.lblNref2.Name = "lblNref2";
             this.lblNref2.Size = new System.Drawing.Size(0, 13);
             this.lblNref2.TabIndex = 5;
+            // 
+            // IDITEM
+            // 
+            this.IDITEM.HeaderText = "ITEM";
+            this.IDITEM.Name = "IDITEM";
+            this.IDITEM.ReadOnly = true;
+            this.IDITEM.Visible = false;
+            this.IDITEM.Width = 40;
+            // 
+            // IDPRODUCTO
+            // 
+            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
+            this.IDPRODUCTO.Name = "IDPRODUCTO";
+            this.IDPRODUCTO.ReadOnly = true;
+            this.IDPRODUCTO.Visible = false;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 60;
+            // 
+            // CHCANTIDAD
+            // 
+            this.CHCANTIDAD.HeaderText = "CANTIDAD";
+            this.CHCANTIDAD.Name = "CHCANTIDAD";
+            this.CHCANTIDAD.ReadOnly = true;
+            this.CHCANTIDAD.Width = 70;
+            // 
+            // CHMEDIDA
+            // 
+            this.CHMEDIDA.HeaderText = "MEDIDA";
+            this.CHMEDIDA.Name = "CHMEDIDA";
+            this.CHMEDIDA.ReadOnly = true;
+            this.CHMEDIDA.Width = 60;
+            // 
+            // CHDESCRIPCION
+            // 
+            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
+            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
+            this.CHDESCRIPCION.ReadOnly = true;
+            this.CHDESCRIPCION.Width = 320;
+            // 
+            // CHCOSTO
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = "00.00";
+            this.CHCOSTO.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CHCOSTO.HeaderText = "COSTO";
+            this.CHCOSTO.Name = "CHCOSTO";
+            this.CHCOSTO.ReadOnly = true;
+            this.CHCOSTO.Width = 50;
+            // 
+            // CHSUBTOTAL
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "00.00";
+            this.CHSUBTOTAL.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CHSUBTOTAL.HeaderText = "SUB TOTAL";
+            this.CHSUBTOTAL.Name = "CHSUBTOTAL";
+            this.CHSUBTOTAL.ReadOnly = true;
             // 
             // frmProcSalidaProductosAnadir
             // 

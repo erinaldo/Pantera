@@ -85,6 +85,7 @@
             this.dgvListaCabecera.Location = new System.Drawing.Point(15, 50);
             this.dgvListaCabecera.Name = "dgvListaCabecera";
             this.dgvListaCabecera.ReadOnly = true;
+            this.dgvListaCabecera.RowHeadersVisible = false;
             this.dgvListaCabecera.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaCabecera.Size = new System.Drawing.Size(647, 343);
             this.dgvListaCabecera.TabIndex = 1;
@@ -223,7 +224,7 @@
             this.label1.Location = new System.Drawing.Point(6, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Búsqueda";
             // 
             // txtParametro

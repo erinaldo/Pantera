@@ -59,8 +59,8 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(209, 227);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(180, 58);
-            this.groupBox2.TabIndex = 11;
+            this.groupBox2.Size = new System.Drawing.Size(180, 48);
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
             // btnSeleccion
@@ -70,10 +70,10 @@
             this.btnSeleccion.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnSeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSeleccion.ForeColor = System.Drawing.Color.Black;
-            this.btnSeleccion.Location = new System.Drawing.Point(11, 15);
+            this.btnSeleccion.Location = new System.Drawing.Point(7, 14);
             this.btnSeleccion.Name = "btnSeleccion";
-            this.btnSeleccion.Size = new System.Drawing.Size(75, 34);
-            this.btnSeleccion.TabIndex = 1;
+            this.btnSeleccion.Size = new System.Drawing.Size(80, 28);
+            this.btnSeleccion.TabIndex = 0;
             this.btnSeleccion.Text = "&Seleccionar";
             this.btnSeleccion.UseVisualStyleBackColor = false;
             this.btnSeleccion.Click += new System.EventHandler(this.btnSeleccion_Click);
@@ -84,10 +84,10 @@
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(92, 15);
+            this.btnSalir.Location = new System.Drawing.Point(93, 14);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 34);
-            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
+            this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -100,7 +100,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(572, 44);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtParametroBusqueda
@@ -109,7 +109,7 @@
             this.txtParametroBusqueda.Location = new System.Drawing.Point(75, 13);
             this.txtParametroBusqueda.Name = "txtParametroBusqueda";
             this.txtParametroBusqueda.Size = new System.Drawing.Size(491, 20);
-            this.txtParametroBusqueda.TabIndex = 1;
+            this.txtParametroBusqueda.TabIndex = 0;
             this.txtParametroBusqueda.TextChanged += new System.EventHandler(this.txtParametroBusqueda_TextChanged);
             // 
             // label1
@@ -139,8 +139,10 @@
             this.dgvListaProveedores.Location = new System.Drawing.Point(12, 51);
             this.dgvListaProveedores.Name = "dgvListaProveedores";
             this.dgvListaProveedores.ReadOnly = true;
+            this.dgvListaProveedores.RowHeadersVisible = false;
+            this.dgvListaProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaProveedores.Size = new System.Drawing.Size(572, 170);
-            this.dgvListaProveedores.TabIndex = 12;
+            this.dgvListaProveedores.TabIndex = 1;
             // 
             // IDPROVE
             // 
@@ -210,7 +212,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(598, 301);
+            this.ClientSize = new System.Drawing.Size(598, 287);
             this.Controls.Add(this.dgvListaProveedores);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

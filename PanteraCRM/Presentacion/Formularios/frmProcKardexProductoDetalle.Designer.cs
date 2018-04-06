@@ -114,9 +114,11 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaKardex.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvListaKardex.RowHeadersVisible = false;
             this.dgvListaKardex.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaKardex.Size = new System.Drawing.Size(688, 410);
             this.dgvListaKardex.TabIndex = 0;
+            this.dgvListaKardex.TabStop = false;
             // 
             // CHFECHA
             // 
@@ -311,7 +313,7 @@
             this.groupBox1.Location = new System.Drawing.Point(9, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(691, 89);
-            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Producto";
             // 
@@ -323,7 +325,7 @@
             this.btnSalir.Location = new System.Drawing.Point(604, 45);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 16;
+            this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -335,7 +337,7 @@
             this.btnExportar.Location = new System.Drawing.Point(518, 45);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(80, 28);
-            this.btnExportar.TabIndex = 15;
+            this.btnExportar.TabIndex = 1;
             this.btnExportar.Text = "&Exportar";
             this.btnExportar.UseVisualStyleBackColor = false;
             // 
@@ -346,7 +348,7 @@
             this.btnImprimir.Location = new System.Drawing.Point(432, 45);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(80, 28);
-            this.btnImprimir.TabIndex = 14;
+            this.btnImprimir.TabIndex = 0;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
             // 

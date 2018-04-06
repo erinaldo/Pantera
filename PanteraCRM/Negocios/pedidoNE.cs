@@ -104,6 +104,10 @@ namespace Negocios
         {
             return pedidoDL.PlanillacobroCabeceraBusqueda(registros);
         }
+        public static List<placobd> PlanillacobroDetalleBusqueda(string codigo)
+        {
+            return pedidoDL.PlanillacobroDetalleBusqueda(codigo);
+        }
         public static int ModificarPlanicobroCabecera(int codigo, decimal monenac, decimal moneex)
         {
             return pedidoDL.ModificarPlanicobroCabecera(codigo, monenac, moneex);

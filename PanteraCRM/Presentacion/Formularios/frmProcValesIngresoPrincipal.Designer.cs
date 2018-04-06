@@ -79,7 +79,7 @@
             this.groupBox1.Location = new System.Drawing.Point(76, 400);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(518, 44);
-            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // btnAnular
@@ -89,7 +89,7 @@
             this.btnAnular.Location = new System.Drawing.Point(348, 12);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(80, 28);
-            this.btnAnular.TabIndex = 14;
+            this.btnAnular.TabIndex = 4;
             this.btnAnular.Text = "&Anular";
             this.btnAnular.UseVisualStyleBackColor = false;
             this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
@@ -101,7 +101,7 @@
             this.btnAnadir.Location = new System.Drawing.Point(4, 12);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(80, 28);
-            this.btnAnadir.TabIndex = 8;
+            this.btnAnadir.TabIndex = 0;
             this.btnAnadir.Text = "&Añadir";
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
@@ -113,7 +113,7 @@
             this.btnImprimir.Location = new System.Drawing.Point(262, 12);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(80, 28);
-            this.btnImprimir.TabIndex = 13;
+            this.btnImprimir.TabIndex = 3;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
@@ -125,7 +125,7 @@
             this.btnModificar.Location = new System.Drawing.Point(90, 12);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(80, 28);
-            this.btnModificar.TabIndex = 9;
+            this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -137,7 +137,7 @@
             this.btnVer.Location = new System.Drawing.Point(176, 12);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(80, 28);
-            this.btnVer.TabIndex = 10;
+            this.btnVer.TabIndex = 2;
             this.btnVer.Text = "&Ver";
             this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
@@ -150,7 +150,7 @@
             this.btnSalir.Location = new System.Drawing.Point(434, 12);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -162,7 +162,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(647, 43);
-            this.groupBox2.TabIndex = 19;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // label1
@@ -171,7 +171,7 @@
             this.label1.Location = new System.Drawing.Point(6, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Busqueda";
             // 
             // txtParametro
@@ -214,8 +214,10 @@
             this.dgvVales.Location = new System.Drawing.Point(12, 50);
             this.dgvVales.Name = "dgvVales";
             this.dgvVales.ReadOnly = true;
+            this.dgvVales.RowHeadersVisible = false;
+            this.dgvVales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVales.Size = new System.Drawing.Size(647, 344);
-            this.dgvVales.TabIndex = 16;
+            this.dgvVales.TabIndex = 1;
             // 
             // IDVALEC
             // 

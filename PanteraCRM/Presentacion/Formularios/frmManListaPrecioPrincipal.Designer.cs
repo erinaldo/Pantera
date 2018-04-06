@@ -91,6 +91,7 @@
             this.dgvListaPrecios.Location = new System.Drawing.Point(12, 57);
             this.dgvListaPrecios.Name = "dgvListaPrecios";
             this.dgvListaPrecios.ReadOnly = true;
+            this.dgvListaPrecios.RowHeadersVisible = false;
             this.dgvListaPrecios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPrecios.Size = new System.Drawing.Size(647, 335);
             this.dgvListaPrecios.TabIndex = 1;
@@ -228,7 +229,7 @@
             this.label1.Location = new System.Drawing.Point(6, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 15;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Bsqueda";
             // 
             // groupBox1

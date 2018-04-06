@@ -50,7 +50,6 @@ namespace Presentacion
                         cargarDatos();
                         grbDatosexhi.Enabled = true;
                         txtObservacion.ReadOnly = true;
-                        txtFecha.ReadOnly = true;
                         txtDocumento.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
                         txtDocumento.ForeColor = Color.Blue;
                         txtDocumento.ReadOnly = true;
@@ -145,7 +144,9 @@ namespace Presentacion
             p_inidserie = tmpProductoSerie.p_inidserie;
             chinforme = txtDocumento.Text;
             chinformeobs = txtObservacion.Text;
-            chinformefecha = txtFecha.Text;
+
+            DateTime dt1 = DateTime.Parse(txtFecha.Text);
+            chinformefecha = dt1.ToString("dd/MM/yyyy");
             boexhibicion = ckbExhibicion.Checked;
             int cantidad = 0;
             if (boexhibicion)

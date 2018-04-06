@@ -55,7 +55,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(79, 290);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 0;
+            this.btnGrabar.TabIndex = 2;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -68,7 +68,7 @@
             this.btnSalir.Location = new System.Drawing.Point(165, 290);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 1;
+            this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -160,9 +160,10 @@
             this.dgvListasTarjetas.Location = new System.Drawing.Point(12, 127);
             this.dgvListasTarjetas.Name = "dgvListasTarjetas";
             this.dgvListasTarjetas.ReadOnly = true;
+            this.dgvListasTarjetas.RowHeadersVisible = false;
             this.dgvListasTarjetas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListasTarjetas.Size = new System.Drawing.Size(300, 153);
-            this.dgvListasTarjetas.TabIndex = 6;
+            this.dgvListasTarjetas.TabIndex = 1;
             // 
             // IDLICENCIA
             // 

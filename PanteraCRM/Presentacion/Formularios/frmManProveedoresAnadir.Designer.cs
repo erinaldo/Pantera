@@ -81,7 +81,7 @@
             this.groupBox2.Location = new System.Drawing.Point(191, 342);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(180, 49);
-            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
             // btnSalir
@@ -120,7 +120,7 @@
             this.groupBox1.Location = new System.Drawing.Point(14, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(534, 97);
-            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // label5
@@ -208,7 +208,7 @@
             this.groupBox5.Location = new System.Drawing.Point(14, 115);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(534, 221);
-            this.groupBox5.TabIndex = 18;
+            this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Datos de Dirección";
             // 
@@ -338,6 +338,7 @@
             this.txtUbigeo.TabIndex = 9;
             this.txtUbigeo.TextChanged += new System.EventHandler(this.txtUbigeo_TextChanged_1);
             this.txtUbigeo.DoubleClick += new System.EventHandler(this.txtUbigeo_DoubleClick_1);
+            this.txtUbigeo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUbigeo_KeyPress_1);
             // 
             // txtInterior
             // 

@@ -240,7 +240,8 @@ namespace Presentacion
             PersonaRegistro.chapellidopaterno = txtApePat.Text;
             PersonaRegistro.chapellidomaterno = txtApePat.Text;
             PersonaRegistro.chnombres = txtNombres.Text;
-            PersonaRegistro.chfechanacimiento = txtFechaNac.Text;
+            DateTime dt1 = DateTime.Parse(txtFechaNac.Text);
+            PersonaRegistro.chfechanacimiento = dt1.ToString("dd/MM/yyyy");
             PersonaRegistro.p_inidtiposexo = (int)cboPuntoVenta.SelectedValue;
             PersonaRegistro.chtelefono = txtTelefono.Text;
             PersonaRegistro.chdireccion = txtDireccion.Text;

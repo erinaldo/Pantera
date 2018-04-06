@@ -68,7 +68,7 @@
             this.label1.Location = new System.Drawing.Point(6, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Búsqueda";
             // 
             // txtParametro
@@ -101,7 +101,7 @@
             this.dgvListaClientes.RowHeadersVisible = false;
             this.dgvListaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaClientes.Size = new System.Drawing.Size(647, 344);
-            this.dgvListaClientes.TabIndex = 2;
+            this.dgvListaClientes.TabIndex = 1;
             // 
             // IDCLIENTE
             // 
@@ -177,7 +177,7 @@
             this.groupBox1.Location = new System.Drawing.Point(106, 400);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(458, 54);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // btnAnadir

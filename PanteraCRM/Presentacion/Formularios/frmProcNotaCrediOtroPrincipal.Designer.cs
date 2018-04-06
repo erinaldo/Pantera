@@ -89,7 +89,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 115);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(739, 191);
-            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // label16
@@ -106,7 +106,7 @@
             this.txtOtros.Location = new System.Drawing.Point(11, 41);
             this.txtOtros.Name = "txtOtros";
             this.txtOtros.Size = new System.Drawing.Size(714, 93);
-            this.txtOtros.TabIndex = 25;
+            this.txtOtros.TabIndex = 0;
             this.txtOtros.Text = "";
             // 
             // label14
@@ -226,7 +226,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(6, 12);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 4;
+            this.btnGrabar.TabIndex = 0;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -239,7 +239,7 @@
             this.btnSalir.Location = new System.Drawing.Point(92, 12);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
@@ -270,7 +270,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(739, 107);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtNotaDescuento
@@ -281,7 +281,7 @@
             this.txtNotaDescuento.Mask = "00.00";
             this.txtNotaDescuento.Name = "txtNotaDescuento";
             this.txtNotaDescuento.Size = new System.Drawing.Size(41, 20);
-            this.txtNotaDescuento.TabIndex = 22;
+            this.txtNotaDescuento.TabIndex = 2;
             this.txtNotaDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtNotaDescuento.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtNotaDescuento_MaskInputRejected);
             this.txtNotaDescuento.Leave += new System.EventHandler(this.txtNotaDescuento_Leave);
@@ -493,7 +493,7 @@
             this.groupBox3.Location = new System.Drawing.Point(296, 312);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(177, 47);
-            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
             // frmProcNotaCrediOtroPrincipal

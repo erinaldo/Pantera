@@ -42,6 +42,7 @@ namespace Presentacion
                 dgvListasTarjetas.Rows.Add("", "", tarjeta, fecha, "");
                 txtCodigo.Text = "";
                 txtFechVenci.Text = "";
+                txtCodigo.Focus();
             }
             else
             {

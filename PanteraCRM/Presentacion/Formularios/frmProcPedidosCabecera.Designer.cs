@@ -413,7 +413,6 @@
             this.txtCodigoCliente.Name = "txtCodigoCliente";
             this.txtCodigoCliente.Size = new System.Drawing.Size(109, 20);
             this.txtCodigoCliente.TabIndex = 0;
-            this.txtCodigoCliente.TabStop = false;
             this.txtCodigoCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCodigoCliente.TextChanged += new System.EventHandler(this.txtCodigoCliente_TextChanged);
             this.txtCodigoCliente.DoubleClick += new System.EventHandler(this.txtCodigoCliente_DoubleClick);
@@ -873,6 +872,7 @@
             this.dgvListaPedidoDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPedidoDetalle.Size = new System.Drawing.Size(817, 175);
             this.dgvListaPedidoDetalle.TabIndex = 0;
+            this.dgvListaPedidoDetalle.TabStop = false;
             // 
             // IDPEDIDODETALLE
             // 

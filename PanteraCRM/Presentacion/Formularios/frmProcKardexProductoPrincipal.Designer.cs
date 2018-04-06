@@ -73,7 +73,7 @@
             this.label1.Location = new System.Drawing.Point(6, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Búsqueda";
             // 
             // txtParametro
@@ -92,7 +92,7 @@
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(216, 406);
+            this.groupBox1.Location = new System.Drawing.Point(221, 406);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(260, 49);
             this.groupBox1.TabIndex = 2;
@@ -178,6 +178,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaPrecios.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvListaPrecios.RowHeadersVisible = false;
             this.dgvListaPrecios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPrecios.Size = new System.Drawing.Size(679, 344);
             this.dgvListaPrecios.TabIndex = 1;

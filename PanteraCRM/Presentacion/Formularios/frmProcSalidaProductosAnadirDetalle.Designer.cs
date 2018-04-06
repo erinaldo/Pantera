@@ -66,19 +66,19 @@
             // 
             this.groupBox2.Controls.Add(this.btnGrabar);
             this.groupBox2.Controls.Add(this.btnSalir);
-            this.groupBox2.Location = new System.Drawing.Point(248, 338);
+            this.groupBox2.Location = new System.Drawing.Point(239, 338);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(166, 41);
-            this.groupBox2.TabIndex = 39;
+            this.groupBox2.Size = new System.Drawing.Size(174, 41);
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
             // btnGrabar
             // 
             this.btnGrabar.BackColor = System.Drawing.Color.White;
-            this.btnGrabar.Location = new System.Drawing.Point(1, 9);
+            this.btnGrabar.Location = new System.Drawing.Point(6, 9);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 32;
+            this.btnGrabar.TabIndex = 0;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -87,10 +87,10 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Location = new System.Drawing.Point(83, 9);
+            this.btnSalir.Location = new System.Drawing.Point(88, 9);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 33;
+            this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -125,7 +125,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListaProdSeries.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvListaProdSeries.Location = new System.Drawing.Point(13, 166);
+            this.dgvListaProdSeries.Location = new System.Drawing.Point(13, 118);
             this.dgvListaProdSeries.Name = "dgvListaProdSeries";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -135,9 +135,11 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaProdSeries.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvListaProdSeries.RowHeadersVisible = false;
             this.dgvListaProdSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaProdSeries.Size = new System.Drawing.Size(639, 166);
+            this.dgvListaProdSeries.Size = new System.Drawing.Size(639, 214);
             this.dgvListaProdSeries.TabIndex = 38;
+            this.dgvListaProdSeries.TabStop = false;
             // 
             // REQSERIE
             // 
@@ -217,7 +219,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(639, 100);
-            this.groupBox1.TabIndex = 37;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // label2

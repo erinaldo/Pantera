@@ -65,7 +65,7 @@
             this.groupBox1.Location = new System.Drawing.Point(217, 409);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(347, 43);
-            this.groupBox1.TabIndex = 27;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // btnAnular
@@ -74,7 +74,7 @@
             this.btnAnular.Location = new System.Drawing.Point(177, 10);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(80, 28);
-            this.btnAnular.TabIndex = 4;
+            this.btnAnular.TabIndex = 2;
             this.btnAnular.Text = "&Anular";
             this.btnAnular.UseVisualStyleBackColor = false;
             // 
@@ -84,7 +84,7 @@
             this.btnImprimir.Location = new System.Drawing.Point(91, 10);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(80, 28);
-            this.btnImprimir.TabIndex = 3;
+            this.btnImprimir.TabIndex = 1;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
             // 
@@ -95,7 +95,7 @@
             this.btnSalir.Location = new System.Drawing.Point(263, 10);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -118,7 +118,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(757, 43);
-            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // label1
@@ -160,7 +160,7 @@
             this.dgvListaRegistros.RowHeadersVisible = false;
             this.dgvListaRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaRegistros.Size = new System.Drawing.Size(757, 353);
-            this.dgvListaRegistros.TabIndex = 28;
+            this.dgvListaRegistros.TabIndex = 1;
             // 
             // CODREGVTA
             // 

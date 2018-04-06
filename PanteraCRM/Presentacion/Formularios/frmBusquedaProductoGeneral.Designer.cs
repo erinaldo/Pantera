@@ -67,7 +67,7 @@
             this.textBox1.Location = new System.Drawing.Point(67, 13);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(501, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // groupBox2
@@ -79,8 +79,8 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(220, 229);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(180, 55);
-            this.groupBox2.TabIndex = 5;
+            this.groupBox2.Size = new System.Drawing.Size(177, 49);
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
             // btnSeleccion
@@ -91,10 +91,10 @@
             this.btnSeleccion.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSeleccion.ForeColor = System.Drawing.Color.Black;
-            this.btnSeleccion.Location = new System.Drawing.Point(10, 19);
+            this.btnSeleccion.Location = new System.Drawing.Point(8, 14);
             this.btnSeleccion.Name = "btnSeleccion";
             this.btnSeleccion.Size = new System.Drawing.Size(80, 28);
-            this.btnSeleccion.TabIndex = 1;
+            this.btnSeleccion.TabIndex = 0;
             this.btnSeleccion.Text = "&Seleccionar";
             this.btnSeleccion.UseVisualStyleBackColor = false;
             this.btnSeleccion.Click += new System.EventHandler(this.btnSeleccion_Click);
@@ -105,10 +105,10 @@
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(91, 19);
+            this.btnSalir.Location = new System.Drawing.Point(89, 14);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 2;
+            this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -148,8 +148,10 @@
             this.dgvBusqueda.Location = new System.Drawing.Point(12, 50);
             this.dgvBusqueda.Name = "dgvBusqueda";
             this.dgvBusqueda.ReadOnly = true;
+            this.dgvBusqueda.RowHeadersVisible = false;
+            this.dgvBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBusqueda.Size = new System.Drawing.Size(574, 173);
-            this.dgvBusqueda.TabIndex = 6;
+            this.dgvBusqueda.TabIndex = 1;
             // 
             // IDPRODUCTO
             // 
@@ -231,7 +233,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(574, 42);
-            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // frmBusquedaProductoGeneral

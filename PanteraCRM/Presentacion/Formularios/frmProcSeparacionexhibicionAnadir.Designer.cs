@@ -43,12 +43,12 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.grbDatosexhi = new System.Windows.Forms.GroupBox();
-            this.txtFecha = new System.Windows.Forms.MaskedTextBox();
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grbDatosexhi.SuspendLayout();
@@ -78,7 +78,7 @@
             this.ckbExhibicion.Location = new System.Drawing.Point(356, 76);
             this.ckbExhibicion.Name = "ckbExhibicion";
             this.ckbExhibicion.Size = new System.Drawing.Size(90, 17);
-            this.ckbExhibicion.TabIndex = 8;
+            this.ckbExhibicion.TabIndex = 0;
             this.ckbExhibicion.Text = "En Exhibicion";
             this.ckbExhibicion.UseVisualStyleBackColor = true;
             this.ckbExhibicion.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -93,6 +93,7 @@
             this.txtidentificador.ReadOnly = true;
             this.txtidentificador.Size = new System.Drawing.Size(100, 20);
             this.txtidentificador.TabIndex = 7;
+            this.txtidentificador.TabStop = false;
             // 
             // txtSerie
             // 
@@ -105,6 +106,7 @@
             this.txtSerie.ReadOnly = true;
             this.txtSerie.Size = new System.Drawing.Size(100, 20);
             this.txtSerie.TabIndex = 6;
+            this.txtSerie.TabStop = false;
             // 
             // label4
             // 
@@ -125,6 +127,7 @@
             this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.Size = new System.Drawing.Size(474, 20);
             this.txtDescripcion.TabIndex = 4;
+            this.txtDescripcion.TabStop = false;
             // 
             // txtCodigo
             // 
@@ -136,6 +139,7 @@
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabStop = false;
             // 
             // label3
             // 
@@ -173,7 +177,7 @@
             this.groupBox2.Location = new System.Drawing.Point(217, 303);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(184, 53);
-            this.groupBox2.TabIndex = 23;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
             // btnGrabar
@@ -183,7 +187,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(9, 16);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 8;
+            this.btnGrabar.TabIndex = 0;
             this.btnGrabar.Text = "&Grabar";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -196,7 +200,7 @@
             this.btnSalir.Location = new System.Drawing.Point(95, 16);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -217,22 +221,13 @@
             this.grbDatosexhi.TabStop = false;
             this.grbDatosexhi.Text = "Datos de Exhibicion";
             // 
-            // txtFecha
-            // 
-            this.txtFecha.Location = new System.Drawing.Point(86, 104);
-            this.txtFecha.Mask = "00/00/0000";
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(89, 20);
-            this.txtFecha.TabIndex = 3;
-            this.txtFecha.ValidatingType = typeof(System.DateTime);
-            // 
             // txtObservacion
             // 
             this.txtObservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObservacion.Location = new System.Drawing.Point(86, 67);
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.Size = new System.Drawing.Size(503, 20);
-            this.txtObservacion.TabIndex = 2;
+            this.txtObservacion.TabIndex = 1;
             // 
             // txtDocumento
             // 
@@ -268,6 +263,14 @@
             this.label5.Size = new System.Drawing.Size(110, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Nro. Informe/Solicitud";
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFecha.Location = new System.Drawing.Point(86, 107);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(92, 20);
+            this.txtFecha.TabIndex = 2;
             // 
             // frmProcSeparacionexhibicionAnadir
             // 
@@ -315,11 +318,11 @@
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.GroupBox grbDatosexhi;
-        private System.Windows.Forms.MaskedTextBox txtFecha;
         private System.Windows.Forms.TextBox txtObservacion;
         private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker txtFecha;
     }
 }
