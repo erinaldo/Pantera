@@ -328,6 +328,12 @@
     <Compile Include="Formularios\frmProcNotaCrediDevModificar.Designer.cs">
       <DependentUpon>frmProcNotaCrediDevModificar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmProcPedidoPermitir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcPedidoPermitir.Designer.cs">
+      <DependentUpon>frmProcPedidoPermitir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmProcPedidosCabecera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -744,6 +750,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcNotaDebitoPrincipal.resx">
       <DependentUpon>frmProcNotaDebitoPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcPedidoPermitir.resx">
+      <DependentUpon>frmProcPedidoPermitir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProcPedidosCabecera.resx">
       <DependentUpon>frmProcPedidosCabecera.cs</DependentUpon>

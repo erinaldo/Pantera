@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmProcSeparacionexhibicionAnadir : Form
@@ -168,6 +169,11 @@ namespace Presentacion
             {
                 pasado(flat);
             }
+        }
+
+        private void txtDocumento_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
         }
     }
 }

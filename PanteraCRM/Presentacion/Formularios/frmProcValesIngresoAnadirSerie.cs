@@ -673,6 +673,11 @@ namespace Presentacion
             utilidades.LogitudDeCampo(ref textboxusado, e, 20);
         }
 
+        private void txtcodprod_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
+        }
+
 
 
 

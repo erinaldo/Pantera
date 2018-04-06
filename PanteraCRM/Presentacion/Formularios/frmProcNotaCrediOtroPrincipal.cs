@@ -316,6 +316,11 @@ namespace Presentacion
             }
             DescuentoG = pordesc;
             CargarTablaDetalle();
-        }      
+        }
+
+        private void txtNotaDescuento_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
+        }
     }
 }

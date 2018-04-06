@@ -487,5 +487,10 @@ namespace Presentacion
 
             }
         }
+
+        private void txtNombre_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
+        }
     }
 }

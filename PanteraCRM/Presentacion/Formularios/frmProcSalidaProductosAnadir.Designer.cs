@@ -45,6 +45,14 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvListaValeDetalle = new System.Windows.Forms.DataGridView();
+            this.IDITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCOSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboMoneda = new System.Windows.Forms.ComboBox();
             this.mskfechareg = new System.Windows.Forms.MaskedTextBox();
@@ -80,14 +88,6 @@
             this.lblNref4 = new System.Windows.Forms.Label();
             this.lblNref3 = new System.Windows.Forms.Label();
             this.lblNref2 = new System.Windows.Forms.Label();
-            this.IDITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHMEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCOSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHSUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaValeDetalle)).BeginInit();
@@ -263,6 +263,70 @@
             this.dgvListaValeDetalle.TabIndex = 0;
             this.dgvListaValeDetalle.TabStop = false;
             // 
+            // IDITEM
+            // 
+            this.IDITEM.HeaderText = "ITEM";
+            this.IDITEM.Name = "IDITEM";
+            this.IDITEM.ReadOnly = true;
+            this.IDITEM.Visible = false;
+            this.IDITEM.Width = 40;
+            // 
+            // IDPRODUCTO
+            // 
+            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
+            this.IDPRODUCTO.Name = "IDPRODUCTO";
+            this.IDPRODUCTO.ReadOnly = true;
+            this.IDPRODUCTO.Visible = false;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 60;
+            // 
+            // CHCANTIDAD
+            // 
+            this.CHCANTIDAD.HeaderText = "CANTIDAD";
+            this.CHCANTIDAD.Name = "CHCANTIDAD";
+            this.CHCANTIDAD.ReadOnly = true;
+            this.CHCANTIDAD.Width = 70;
+            // 
+            // CHMEDIDA
+            // 
+            this.CHMEDIDA.HeaderText = "MEDIDA";
+            this.CHMEDIDA.Name = "CHMEDIDA";
+            this.CHMEDIDA.ReadOnly = true;
+            this.CHMEDIDA.Width = 60;
+            // 
+            // CHDESCRIPCION
+            // 
+            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
+            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
+            this.CHDESCRIPCION.ReadOnly = true;
+            this.CHDESCRIPCION.Width = 320;
+            // 
+            // CHCOSTO
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = "00.00";
+            this.CHCOSTO.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CHCOSTO.HeaderText = "COSTO";
+            this.CHCOSTO.Name = "CHCOSTO";
+            this.CHCOSTO.ReadOnly = true;
+            this.CHCOSTO.Width = 50;
+            // 
+            // CHSUBTOTAL
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "00.00";
+            this.CHSUBTOTAL.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CHSUBTOTAL.HeaderText = "SUB TOTAL";
+            this.CHSUBTOTAL.Name = "CHSUBTOTAL";
+            this.CHSUBTOTAL.ReadOnly = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cboMoneda);
@@ -329,6 +393,7 @@
             this.txtobs.Name = "txtobs";
             this.txtobs.Size = new System.Drawing.Size(159, 20);
             this.txtobs.TabIndex = 4;
+            this.txtobs.Enter += new System.EventHandler(this.txtobs_Enter);
             this.txtobs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtobs_KeyPress);
             // 
             // txtAlmacen
@@ -558,6 +623,7 @@
             this.txtCref5.Name = "txtCref5";
             this.txtCref5.Size = new System.Drawing.Size(80, 20);
             this.txtCref5.TabIndex = 4;
+            this.txtCref5.Enter += new System.EventHandler(this.txtobs_Enter);
             this.txtCref5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCref1_KeyPress);
             // 
             // txtCref2
@@ -568,6 +634,7 @@
             this.txtCref2.Name = "txtCref2";
             this.txtCref2.Size = new System.Drawing.Size(80, 20);
             this.txtCref2.TabIndex = 1;
+            this.txtCref2.Enter += new System.EventHandler(this.txtobs_Enter);
             this.txtCref2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCref1_KeyPress);
             // 
             // lblNref1
@@ -588,6 +655,7 @@
             this.txtCref1.TabIndex = 0;
             this.txtCref1.TextChanged += new System.EventHandler(this.txtCref1_TextChanged);
             this.txtCref1.DoubleClick += new System.EventHandler(this.txtCref1_DoubleClick);
+            this.txtCref1.Enter += new System.EventHandler(this.txtobs_Enter);
             this.txtCref1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCref1_KeyPress);
             // 
             // txtCref4
@@ -597,6 +665,7 @@
             this.txtCref4.Name = "txtCref4";
             this.txtCref4.Size = new System.Drawing.Size(80, 20);
             this.txtCref4.TabIndex = 3;
+            this.txtCref4.Enter += new System.EventHandler(this.txtobs_Enter);
             this.txtCref4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCref1_KeyPress);
             // 
             // txtCref3
@@ -606,6 +675,7 @@
             this.txtCref3.Name = "txtCref3";
             this.txtCref3.Size = new System.Drawing.Size(80, 20);
             this.txtCref3.TabIndex = 2;
+            this.txtCref3.Enter += new System.EventHandler(this.txtobs_Enter);
             this.txtCref3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCref1_KeyPress);
             // 
             // lblNref4
@@ -631,70 +701,6 @@
             this.lblNref2.Name = "lblNref2";
             this.lblNref2.Size = new System.Drawing.Size(0, 13);
             this.lblNref2.TabIndex = 5;
-            // 
-            // IDITEM
-            // 
-            this.IDITEM.HeaderText = "ITEM";
-            this.IDITEM.Name = "IDITEM";
-            this.IDITEM.ReadOnly = true;
-            this.IDITEM.Visible = false;
-            this.IDITEM.Width = 40;
-            // 
-            // IDPRODUCTO
-            // 
-            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
-            this.IDPRODUCTO.Name = "IDPRODUCTO";
-            this.IDPRODUCTO.ReadOnly = true;
-            this.IDPRODUCTO.Visible = false;
-            // 
-            // CHCODIGO
-            // 
-            this.CHCODIGO.HeaderText = "CODIGO";
-            this.CHCODIGO.Name = "CHCODIGO";
-            this.CHCODIGO.ReadOnly = true;
-            this.CHCODIGO.Width = 60;
-            // 
-            // CHCANTIDAD
-            // 
-            this.CHCANTIDAD.HeaderText = "CANTIDAD";
-            this.CHCANTIDAD.Name = "CHCANTIDAD";
-            this.CHCANTIDAD.ReadOnly = true;
-            this.CHCANTIDAD.Width = 70;
-            // 
-            // CHMEDIDA
-            // 
-            this.CHMEDIDA.HeaderText = "MEDIDA";
-            this.CHMEDIDA.Name = "CHMEDIDA";
-            this.CHMEDIDA.ReadOnly = true;
-            this.CHMEDIDA.Width = 60;
-            // 
-            // CHDESCRIPCION
-            // 
-            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
-            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
-            this.CHDESCRIPCION.ReadOnly = true;
-            this.CHDESCRIPCION.Width = 320;
-            // 
-            // CHCOSTO
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = "00.00";
-            this.CHCOSTO.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CHCOSTO.HeaderText = "COSTO";
-            this.CHCOSTO.Name = "CHCOSTO";
-            this.CHCOSTO.ReadOnly = true;
-            this.CHCOSTO.Width = 50;
-            // 
-            // CHSUBTOTAL
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = "00.00";
-            this.CHSUBTOTAL.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CHSUBTOTAL.HeaderText = "SUB TOTAL";
-            this.CHSUBTOTAL.Name = "CHSUBTOTAL";
-            this.CHSUBTOTAL.ReadOnly = true;
             // 
             // frmProcSalidaProductosAnadir
             // 

@@ -108,12 +108,12 @@ namespace Presentacion
 
         private void txtCompra_Enter(object sender, EventArgs e)
         {
-            txtCompra.SelectAll();
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
         }
 
         private void txtVenta_Enter(object sender, EventArgs e)
         {
-            txtVenta.SelectAll();
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
         }
 
         private void txtCompra_Validated(object sender, EventArgs e)

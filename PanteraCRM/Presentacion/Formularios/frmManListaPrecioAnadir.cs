@@ -150,6 +150,9 @@ namespace Presentacion
             utilidades.ValidarNumero(ref textboxusado, e);
         }
 
-        
+        private void txtCantidad_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
+        }
     }
 }

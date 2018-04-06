@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmManVariosAnadir : Form
@@ -277,6 +278,11 @@ namespace Presentacion
             }
             dgvListaDetalle.Rows.Remove(dgvListaDetalle.CurrentRow);
             txtDetDesc.Focus();
+        }
+
+        private void txtCod_Enter_1(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
         }
     }
 }

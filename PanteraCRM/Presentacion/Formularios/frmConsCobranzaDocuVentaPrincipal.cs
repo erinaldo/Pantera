@@ -72,6 +72,7 @@ namespace Presentacion
             txtFecha.Text = pedCab.chfechapedido;
             txtMoneda.Text = "S/.";
             txtImporte.Text = pedCab.nutotalventamonnacional.ToString("N2");
+            dgvPlanilla.Rows.Clear();
             
         }
 
@@ -129,8 +130,7 @@ namespace Presentacion
 
         private void txtCodDocu_Enter(object sender, EventArgs e)
         {
-
-            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
+             BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
         }
 
         private void btnProcesar_Click(object sender, EventArgs e)

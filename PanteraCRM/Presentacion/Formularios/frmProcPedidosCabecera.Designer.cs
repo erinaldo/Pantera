@@ -45,8 +45,8 @@
             this.cboTraslado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtimpuso = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.cboigv = new System.Windows.Forms.ComboBox();
             this.txtTipoCambio = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtNombreAlmacen = new System.Windows.Forms.TextBox();
@@ -127,6 +127,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.txtFechaVenciTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cbkPermitir = new System.Windows.Forms.CheckBox();
             this.cbkValLicencia = new System.Windows.Forms.CheckBox();
             this.lblfehcavencitarje = new System.Windows.Forms.Label();
             this.lblFechavencilicen = new System.Windows.Forms.Label();
@@ -137,7 +138,6 @@
             this.txtcodigotarjeta = new System.Windows.Forms.TextBox();
             this.txtcodigolicencia = new System.Windows.Forms.TextBox();
             this.cbkValTarjeta = new System.Windows.Forms.CheckBox();
-            this.txtimpuso = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -232,7 +232,6 @@
             // 
             this.groupBox1.Controls.Add(this.txtimpuso);
             this.groupBox1.Controls.Add(this.label31);
-            this.groupBox1.Controls.Add(this.cboigv);
             this.groupBox1.Controls.Add(this.txtTipoCambio);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txtNombreAlmacen);
@@ -260,6 +259,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Pedido";
             // 
+            // txtimpuso
+            // 
+            this.txtimpuso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtimpuso.ForeColor = System.Drawing.Color.Blue;
+            this.txtimpuso.Location = new System.Drawing.Point(512, 62);
+            this.txtimpuso.Name = "txtimpuso";
+            this.txtimpuso.ReadOnly = true;
+            this.txtimpuso.Size = new System.Drawing.Size(98, 20);
+            this.txtimpuso.TabIndex = 28;
+            this.txtimpuso.TabStop = false;
+            this.txtimpuso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -268,15 +279,6 @@
             this.label31.Size = new System.Drawing.Size(45, 13);
             this.label31.TabIndex = 27;
             this.label31.Text = "I.G.V. %";
-            // 
-            // cboigv
-            // 
-            this.cboigv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboigv.FormattingEnabled = true;
-            this.cboigv.Location = new System.Drawing.Point(512, 61);
-            this.cboigv.Name = "cboigv";
-            this.cboigv.Size = new System.Drawing.Size(59, 21);
-            this.cboigv.TabIndex = 4;
             // 
             // txtTipoCambio
             // 
@@ -945,7 +947,7 @@
             this.CHSERIE.HeaderText = "SERIE";
             this.CHSERIE.Name = "CHSERIE";
             this.CHSERIE.ReadOnly = true;
-            this.CHSERIE.Width = 70;
+            this.CHSERIE.Width = 90;
             // 
             // NUPRECIOVENTA
             // 
@@ -1000,7 +1002,6 @@
             this.NUIMPORTE.HeaderText = "IMPORTE";
             this.NUIMPORTE.Name = "NUIMPORTE";
             this.NUIMPORTE.ReadOnly = true;
-            this.NUIMPORTE.Width = 80;
             // 
             // ESTADO
             // 
@@ -1151,6 +1152,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.cbkPermitir);
             this.groupBox5.Controls.Add(this.cbkValLicencia);
             this.groupBox5.Controls.Add(this.lblfehcavencitarje);
             this.groupBox5.Controls.Add(this.lblFechavencilicen);
@@ -1166,6 +1168,17 @@
             this.groupBox5.Size = new System.Drawing.Size(831, 65);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
+            // 
+            // cbkPermitir
+            // 
+            this.cbkPermitir.AutoSize = true;
+            this.cbkPermitir.Location = new System.Drawing.Point(208, 16);
+            this.cbkPermitir.Name = "cbkPermitir";
+            this.cbkPermitir.Size = new System.Drawing.Size(159, 17);
+            this.cbkPermitir.TabIndex = 27;
+            this.cbkPermitir.Text = "Permitir Compra Municiones ";
+            this.cbkPermitir.UseVisualStyleBackColor = true;
+            this.cbkPermitir.Click += new System.EventHandler(this.cbkPermitir_Click);
             // 
             // cbkValLicencia
             // 
@@ -1256,17 +1269,6 @@
             this.cbkValTarjeta.TabIndex = 3;
             this.cbkValTarjeta.Text = "Validacion Tarjeta SUCAMEC";
             this.cbkValTarjeta.UseVisualStyleBackColor = true;
-            // 
-            // txtimpuso
-            // 
-            this.txtimpuso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtimpuso.ForeColor = System.Drawing.Color.Blue;
-            this.txtimpuso.Location = new System.Drawing.Point(577, 62);
-            this.txtimpuso.Name = "txtimpuso";
-            this.txtimpuso.ReadOnly = true;
-            this.txtimpuso.Size = new System.Drawing.Size(100, 20);
-            this.txtimpuso.TabIndex = 28;
-            this.txtimpuso.TabStop = false;
             // 
             // frmProcPedidosCabecera
             // 
@@ -1376,8 +1378,22 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.MaskedTextBox txtFechaVenciTarjeta;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.ComboBox cboigv;
         private System.Windows.Forms.DateTimePicker txtfechaInicio;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label lblFechavencilicen;
+        private System.Windows.Forms.DateTimePicker txtvencitarjeta;
+        private System.Windows.Forms.DateTimePicker txtvencialicencia;
+        private System.Windows.Forms.Label lblTarjet;
+        private System.Windows.Forms.Label lblLicen;
+        private System.Windows.Forms.TextBox txtcodigotarjeta;
+        private System.Windows.Forms.TextBox txtcodigolicencia;
+        private System.Windows.Forms.CheckBox cbkValTarjeta;
+        private System.Windows.Forms.ComboBox cboLicencia;
+        private System.Windows.Forms.Label lblfehcavencitarje;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox txtUnidadesCompra;
+        private System.Windows.Forms.CheckBox cbkValLicencia;
+        private System.Windows.Forms.TextBox txtimpuso;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPEDIDODETALLE;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPEDIDOCABECERA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHITEM;
@@ -1394,20 +1410,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NUIMPORTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDSERIE;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label lblFechavencilicen;
-        private System.Windows.Forms.DateTimePicker txtvencitarjeta;
-        private System.Windows.Forms.DateTimePicker txtvencialicencia;
-        private System.Windows.Forms.Label lblTarjet;
-        private System.Windows.Forms.Label lblLicen;
-        private System.Windows.Forms.TextBox txtcodigotarjeta;
-        private System.Windows.Forms.TextBox txtcodigolicencia;
-        private System.Windows.Forms.CheckBox cbkValTarjeta;
-        private System.Windows.Forms.ComboBox cboLicencia;
-        private System.Windows.Forms.Label lblfehcavencitarje;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox txtUnidadesCompra;
-        private System.Windows.Forms.CheckBox cbkValLicencia;
-        private System.Windows.Forms.TextBox txtimpuso;
+        private System.Windows.Forms.CheckBox cbkPermitir;
     }
 }

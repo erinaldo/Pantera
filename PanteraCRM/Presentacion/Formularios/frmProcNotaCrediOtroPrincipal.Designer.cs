@@ -284,6 +284,7 @@
             this.txtNotaDescuento.TabIndex = 2;
             this.txtNotaDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtNotaDescuento.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtNotaDescuento_MaskInputRejected);
+            this.txtNotaDescuento.Enter += new System.EventHandler(this.txtNotaDescuento_Enter);
             this.txtNotaDescuento.Leave += new System.EventHandler(this.txtNotaDescuento_Leave);
             // 
             // label9

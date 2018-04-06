@@ -561,10 +561,12 @@ namespace Presentacion
                     int para = 600;
                     
                     if (((ca*ProductoG.cantporunid) + cantidadmaxima ) > para)
-                    {                       
-                        txtusado.Text = "0";
-                        MessageBox.Show("Cantidad maxima de municiones superada", "MENSAJE DE SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        
+                    {              
+                        if(FlatG == false)
+                        {
+                            txtusado.Text = "0";
+                            MessageBox.Show("Cantidad maxima de municiones superada", "MENSAJE DE SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
                     }
                 }
             }

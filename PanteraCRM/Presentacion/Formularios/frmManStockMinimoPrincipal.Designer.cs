@@ -226,11 +226,13 @@
             // 
             this.CHSTOCK.DataPropertyName = "nuprecio";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = "0";
             this.CHSTOCK.DefaultCellStyle = dataGridViewCellStyle3;
             this.CHSTOCK.HeaderText = "STOCK MINIMO";
             this.CHSTOCK.Name = "CHSTOCK";
             this.CHSTOCK.ReadOnly = true;
-            this.CHSTOCK.Width = 60;
+            this.CHSTOCK.Width = 120;
             // 
             // CHMEDIDA
             // 

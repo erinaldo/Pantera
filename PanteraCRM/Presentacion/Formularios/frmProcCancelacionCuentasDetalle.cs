@@ -654,7 +654,12 @@ namespace Presentacion
             utilidades.solonumeros(ref textboxusado, e);
         }
 
-        
+        private void txtCheque_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
+        }
+
+
 
 
 

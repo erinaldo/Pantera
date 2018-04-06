@@ -70,14 +70,14 @@
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(707, 84);
+            this.groupBox1.Size = new System.Drawing.Size(707, 70);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // lblTipdoc
             // 
             this.lblTipdoc.AutoSize = true;
-            this.lblTipdoc.Location = new System.Drawing.Point(215, 22);
+            this.lblTipdoc.Location = new System.Drawing.Point(215, 23);
             this.lblTipdoc.Name = "lblTipdoc";
             this.lblTipdoc.Size = new System.Drawing.Size(39, 13);
             this.lblTipdoc.TabIndex = 6;
@@ -86,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 57);
+            this.label2.Location = new System.Drawing.Point(6, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 5;
@@ -95,7 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Location = new System.Drawing.Point(6, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 4;
@@ -116,7 +116,7 @@
             // 
             this.txtRazon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtRazon.ForeColor = System.Drawing.Color.Blue;
-            this.txtRazon.Location = new System.Drawing.Point(67, 54);
+            this.txtRazon.Location = new System.Drawing.Point(67, 43);
             this.txtRazon.Name = "txtRazon";
             this.txtRazon.ReadOnly = true;
             this.txtRazon.Size = new System.Drawing.Size(634, 20);
@@ -138,7 +138,7 @@
             // 
             this.groupBox3.Controls.Add(this.btnExcel);
             this.groupBox3.Controls.Add(this.btnSalir);
-            this.groupBox3.Location = new System.Drawing.Point(277, 374);
+            this.groupBox3.Location = new System.Drawing.Point(277, 360);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(179, 43);
             this.groupBox3.TabIndex = 0;
@@ -181,7 +181,7 @@
             this.NUPAGADO,
             this.NUIMPORTE,
             this.CHESTADO});
-            this.dgvListaRegistros.Location = new System.Drawing.Point(12, 93);
+            this.dgvListaRegistros.Location = new System.Drawing.Point(12, 79);
             this.dgvListaRegistros.Name = "dgvListaRegistros";
             this.dgvListaRegistros.ReadOnly = true;
             this.dgvListaRegistros.RowHeadersVisible = false;
@@ -269,7 +269,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(732, 428);
+            this.ClientSize = new System.Drawing.Size(732, 409);
             this.Controls.Add(this.dgvListaRegistros);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);

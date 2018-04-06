@@ -206,7 +206,7 @@
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Size = new System.Drawing.Size(151, 20);
             this.txtNroDocumento.TabIndex = 4;
-            this.txtNroDocumento.Enter += new System.EventHandler(this.txtNroDocumento_Enter);
+            this.txtNroDocumento.Enter += new System.EventHandler(this.txtApeMat_Enter);
             this.txtNroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDocumento_KeyPress);
             // 
             // label25
@@ -225,6 +225,7 @@
             this.txtApeMat.Name = "txtApeMat";
             this.txtApeMat.Size = new System.Drawing.Size(151, 20);
             this.txtApeMat.TabIndex = 1;
+            this.txtApeMat.Enter += new System.EventHandler(this.txtApeMat_Enter);
             this.txtApeMat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApeMat_KeyPress);
             // 
             // txtNombres
@@ -234,6 +235,7 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(406, 20);
             this.txtNombres.TabIndex = 2;
+            this.txtNombres.Enter += new System.EventHandler(this.txtApeMat_Enter);
             this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // label24
@@ -261,6 +263,7 @@
             this.txtApePat.Name = "txtApePat";
             this.txtApePat.Size = new System.Drawing.Size(158, 20);
             this.txtApePat.TabIndex = 0;
+            this.txtApePat.Enter += new System.EventHandler(this.txtApePat_Enter);
             this.txtApePat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApePat_KeyPress);
             // 
             // tbEmpresa
@@ -308,6 +311,7 @@
             this.txtNombreComercial.Name = "txtNombreComercial";
             this.txtNombreComercial.Size = new System.Drawing.Size(406, 20);
             this.txtNombreComercial.TabIndex = 0;
+            this.txtNombreComercial.Enter += new System.EventHandler(this.tabControl_Enter);
             this.txtNombreComercial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreComercial_KeyPress);
             // 
             // label6
@@ -326,6 +330,7 @@
             this.txtRazon.Name = "txtRazon";
             this.txtRazon.Size = new System.Drawing.Size(406, 20);
             this.txtRazon.TabIndex = 1;
+            this.txtRazon.Enter += new System.EventHandler(this.tabControl_Enter);
             this.txtRazon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRazon_KeyPress);
             // 
             // lbRazon
@@ -371,6 +376,7 @@
             this.txtRuc.Name = "txtRuc";
             this.txtRuc.Size = new System.Drawing.Size(151, 20);
             this.txtRuc.TabIndex = 3;
+            this.txtRuc.Enter += new System.EventHandler(this.tabControl_Enter);
             this.txtRuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRuc_KeyPress);
             // 
             // groupBox4
@@ -462,6 +468,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(178, 20);
             this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.Enter += new System.EventHandler(this.txtApeMat_Enter);
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label12
@@ -480,6 +487,7 @@
             this.txtNombreVia.Name = "txtNombreVia";
             this.txtNombreVia.Size = new System.Drawing.Size(178, 20);
             this.txtNombreVia.TabIndex = 2;
+            this.txtNombreVia.Enter += new System.EventHandler(this.txtApeMat_Enter);
             this.txtNombreVia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreVia_KeyPress);
             // 
             // label11
@@ -572,6 +580,7 @@
             this.txtUbigeo.TabIndex = 9;
             this.txtUbigeo.TextChanged += new System.EventHandler(this.txtUbigeo_TextChanged);
             this.txtUbigeo.DoubleClick += new System.EventHandler(this.txtUbigeo_DoubleClick);
+            this.txtUbigeo.Enter += new System.EventHandler(this.txtApeMat_Enter);
             this.txtUbigeo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUbigeo_KeyPress);
             // 
             // txtInterior
@@ -581,6 +590,7 @@
             this.txtInterior.Name = "txtInterior";
             this.txtInterior.Size = new System.Drawing.Size(178, 20);
             this.txtInterior.TabIndex = 4;
+            this.txtInterior.Enter += new System.EventHandler(this.txtApeMat_Enter);
             this.txtInterior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterior_KeyPress);
             // 
             // txtNumeroVia
@@ -590,6 +600,7 @@
             this.txtNumeroVia.Name = "txtNumeroVia";
             this.txtNumeroVia.Size = new System.Drawing.Size(164, 20);
             this.txtNumeroVia.TabIndex = 3;
+            this.txtNumeroVia.Enter += new System.EventHandler(this.txtApeMat_Enter);
             this.txtNumeroVia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroVia_KeyPress);
             // 
             // label18
@@ -617,6 +628,7 @@
             this.txtNombreZona.Name = "txtNombreZona";
             this.txtNombreZona.Size = new System.Drawing.Size(178, 20);
             this.txtNombreZona.TabIndex = 6;
+            this.txtNombreZona.Enter += new System.EventHandler(this.txtApeMat_Enter);
             this.txtNombreZona.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreZona_KeyPress);
             // 
             // cboPais
@@ -680,6 +692,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(440, 20);
             this.txtDireccion.TabIndex = 0;
+            this.txtDireccion.Enter += new System.EventHandler(this.txtApeMat_Enter);
             this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // label23

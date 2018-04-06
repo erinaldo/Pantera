@@ -34,6 +34,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManListaPrecioPrincipal));
             this.dgvListaPrecios = new System.Windows.Forms.DataGridView();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtParametro = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,14 +51,6 @@
             this.IDSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSITUACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.REQSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnVer = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtParametro = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPrecios)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -95,84 +95,6 @@
             this.dgvListaPrecios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPrecios.Size = new System.Drawing.Size(647, 335);
             this.dgvListaPrecios.TabIndex = 1;
-            // 
-            // IDPRODUCTO
-            // 
-            this.IDPRODUCTO.DataPropertyName = "p_inidproducto";
-            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
-            this.IDPRODUCTO.Name = "IDPRODUCTO";
-            this.IDPRODUCTO.ReadOnly = true;
-            this.IDPRODUCTO.Visible = false;
-            // 
-            // CHCODIGO
-            // 
-            this.CHCODIGO.DataPropertyName = "chcodigoproducto";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CHCODIGO.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CHCODIGO.HeaderText = "CODIGO";
-            this.CHCODIGO.Name = "CHCODIGO";
-            this.CHCODIGO.ReadOnly = true;
-            this.CHCODIGO.Width = 60;
-            // 
-            // CHDESCRIPCION
-            // 
-            this.CHDESCRIPCION.DataPropertyName = "chnombrecompuesto";
-            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
-            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
-            this.CHDESCRIPCION.ReadOnly = true;
-            this.CHDESCRIPCION.Width = 400;
-            // 
-            // CHPRECIO
-            // 
-            this.CHPRECIO.DataPropertyName = "nuprecio";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = "0.00";
-            this.CHPRECIO.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CHPRECIO.HeaderText = "PRECIO";
-            this.CHPRECIO.Name = "CHPRECIO";
-            this.CHPRECIO.ReadOnly = true;
-            this.CHPRECIO.Width = 60;
-            // 
-            // CHMEDIDA
-            // 
-            this.CHMEDIDA.DataPropertyName = "chunidadmedidaproducto";
-            this.CHMEDIDA.HeaderText = "MEDIDA";
-            this.CHMEDIDA.Name = "CHMEDIDA";
-            this.CHMEDIDA.ReadOnly = true;
-            this.CHMEDIDA.Width = 60;
-            // 
-            // IDUNIDAD
-            // 
-            this.IDUNIDAD.DataPropertyName = "p_inidunidadmedidaproducto";
-            this.IDUNIDAD.HeaderText = "IDUNIDAD";
-            this.IDUNIDAD.Name = "IDUNIDAD";
-            this.IDUNIDAD.ReadOnly = true;
-            this.IDUNIDAD.Visible = false;
-            // 
-            // IDSITUACION
-            // 
-            this.IDSITUACION.DataPropertyName = "p_inidsituacion";
-            this.IDSITUACION.HeaderText = "IDISUTACION";
-            this.IDSITUACION.Name = "IDSITUACION";
-            this.IDSITUACION.ReadOnly = true;
-            this.IDSITUACION.Visible = false;
-            // 
-            // CHSITUACION
-            // 
-            this.CHSITUACION.DataPropertyName = "chsituacion";
-            this.CHSITUACION.HeaderText = "CHSITUACION";
-            this.CHSITUACION.Name = "CHSITUACION";
-            this.CHSITUACION.ReadOnly = true;
-            this.CHSITUACION.Visible = false;
-            // 
-            // REQSERIE
-            // 
-            this.REQSERIE.DataPropertyName = "req_serie";
-            this.REQSERIE.HeaderText = "REQSERIE";
-            this.REQSERIE.Name = "REQSERIE";
-            this.REQSERIE.ReadOnly = true;
-            this.REQSERIE.Visible = false;
             // 
             // btnSalir
             // 
@@ -262,6 +184,84 @@
             this.groupBox2.Size = new System.Drawing.Size(368, 50);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
+            // 
+            // IDPRODUCTO
+            // 
+            this.IDPRODUCTO.DataPropertyName = "p_inidproducto";
+            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
+            this.IDPRODUCTO.Name = "IDPRODUCTO";
+            this.IDPRODUCTO.ReadOnly = true;
+            this.IDPRODUCTO.Visible = false;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.DataPropertyName = "chcodigoproducto";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CHCODIGO.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Width = 60;
+            // 
+            // CHDESCRIPCION
+            // 
+            this.CHDESCRIPCION.DataPropertyName = "chnombrecompuesto";
+            this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
+            this.CHDESCRIPCION.Name = "CHDESCRIPCION";
+            this.CHDESCRIPCION.ReadOnly = true;
+            this.CHDESCRIPCION.Width = 400;
+            // 
+            // CHPRECIO
+            // 
+            this.CHPRECIO.DataPropertyName = "nuprecio";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "0.00";
+            this.CHPRECIO.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CHPRECIO.HeaderText = "PRECIO";
+            this.CHPRECIO.Name = "CHPRECIO";
+            this.CHPRECIO.ReadOnly = true;
+            this.CHPRECIO.Width = 90;
+            // 
+            // CHMEDIDA
+            // 
+            this.CHMEDIDA.DataPropertyName = "chunidadmedidaproducto";
+            this.CHMEDIDA.HeaderText = "MEDIDA";
+            this.CHMEDIDA.Name = "CHMEDIDA";
+            this.CHMEDIDA.ReadOnly = true;
+            this.CHMEDIDA.Width = 90;
+            // 
+            // IDUNIDAD
+            // 
+            this.IDUNIDAD.DataPropertyName = "p_inidunidadmedidaproducto";
+            this.IDUNIDAD.HeaderText = "IDUNIDAD";
+            this.IDUNIDAD.Name = "IDUNIDAD";
+            this.IDUNIDAD.ReadOnly = true;
+            this.IDUNIDAD.Visible = false;
+            // 
+            // IDSITUACION
+            // 
+            this.IDSITUACION.DataPropertyName = "p_inidsituacion";
+            this.IDSITUACION.HeaderText = "IDISUTACION";
+            this.IDSITUACION.Name = "IDSITUACION";
+            this.IDSITUACION.ReadOnly = true;
+            this.IDSITUACION.Visible = false;
+            // 
+            // CHSITUACION
+            // 
+            this.CHSITUACION.DataPropertyName = "chsituacion";
+            this.CHSITUACION.HeaderText = "CHSITUACION";
+            this.CHSITUACION.Name = "CHSITUACION";
+            this.CHSITUACION.ReadOnly = true;
+            this.CHSITUACION.Visible = false;
+            // 
+            // REQSERIE
+            // 
+            this.REQSERIE.DataPropertyName = "req_serie";
+            this.REQSERIE.HeaderText = "REQSERIE";
+            this.REQSERIE.Name = "REQSERIE";
+            this.REQSERIE.ReadOnly = true;
+            this.REQSERIE.Visible = false;
             // 
             // frmManListaPrecioPrincipal
             // 

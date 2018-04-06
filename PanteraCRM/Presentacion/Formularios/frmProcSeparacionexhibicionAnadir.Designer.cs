@@ -43,12 +43,12 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.grbDatosexhi = new System.Windows.Forms.GroupBox();
+            this.txtFecha = new System.Windows.Forms.DateTimePicker();
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grbDatosexhi.SuspendLayout();
@@ -221,6 +221,14 @@
             this.grbDatosexhi.TabStop = false;
             this.grbDatosexhi.Text = "Datos de Exhibicion";
             // 
+            // txtFecha
+            // 
+            this.txtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFecha.Location = new System.Drawing.Point(86, 107);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(92, 20);
+            this.txtFecha.TabIndex = 2;
+            // 
             // txtObservacion
             // 
             this.txtObservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -228,6 +236,7 @@
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.Size = new System.Drawing.Size(503, 20);
             this.txtObservacion.TabIndex = 1;
+            this.txtObservacion.Enter += new System.EventHandler(this.txtDocumento_Enter);
             // 
             // txtDocumento
             // 
@@ -236,6 +245,7 @@
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(168, 20);
             this.txtDocumento.TabIndex = 0;
+            this.txtDocumento.Enter += new System.EventHandler(this.txtDocumento_Enter);
             // 
             // label7
             // 
@@ -263,14 +273,6 @@
             this.label5.Size = new System.Drawing.Size(110, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Nro. Informe/Solicitud";
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFecha.Location = new System.Drawing.Point(86, 107);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(92, 20);
-            this.txtFecha.TabIndex = 2;
             // 
             // frmProcSeparacionexhibicionAnadir
             // 

@@ -732,5 +732,10 @@ namespace Presentacion
         {
 
         }
+
+        private void txtobs_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
+        }
     }
 }

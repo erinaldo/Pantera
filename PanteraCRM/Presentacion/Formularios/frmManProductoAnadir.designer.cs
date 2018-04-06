@@ -120,6 +120,7 @@
             this.txtUnidad.Size = new System.Drawing.Size(96, 20);
             this.txtUnidad.TabIndex = 8;
             this.txtUnidad.Visible = false;
+            this.txtUnidad.Enter += new System.EventHandler(this.txtCodigo_Enter);
             this.txtUnidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnidad_KeyPress);
             // 
             // label9
@@ -310,6 +311,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(185, 20);
             this.txtCodigo.TabIndex = 5;
+            this.txtCodigo.Enter += new System.EventHandler(this.txtCodigo_Enter);
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label2
@@ -332,6 +334,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(436, 20);
             this.txtNombre.TabIndex = 6;
+            this.txtNombre.Enter += new System.EventHandler(this.txtCodigo_Enter);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // Nombre

@@ -64,6 +64,7 @@ namespace Presentacion
                     }
                     frmProcPedidosDetalle f = new frmProcPedidosDetalle(vBoton);
                     f.ListadoValidarG = listado;
+                    f.FlatG = cbkPermitir.Checked;
                     f.cantidadmaxima = int.Parse( txtUnidadesCompra.Text);
                     f.PasadoDetalle += new frmProcPedidosDetalle.PasarDetalle(CargarTablaDetalle);
                     //f.MdiParent = this.MdiParent;
@@ -84,6 +85,7 @@ namespace Presentacion
         private void CargarTablaDetalle()
         {
             int val = 0;
+            int counval = 0;
             val++;
             if (sesion.pedidodetallecontenido != null)
             {
@@ -102,6 +104,7 @@ namespace Presentacion
                     decimal importe = obj.pedidodetalle.nuimportesubtotal;
                     decimal preunit = obj.pedidodetalle.nuprecioproducto;
                     int idserie = 0;
+                    
                     string codigoserie = "-";
                     if (obj.serie != null)
                     {
@@ -111,6 +114,10 @@ namespace Presentacion
                     }
                     if (obj.estado == true)
                     {
+                        if (obj.productoparaventa.p_inidcategoria == 3)
+                        {
+                            txtUnidadesCompra.Text = (counval + cantidad).ToString();
+                        }
                         dgvListaPedidoDetalle.Rows.Add("1", "2", obj.orden, idproducto, codigo, cantidad, stock, nombrecompuesto, codigoserie, preunit, precio, desc1, desc2, importe, "15", idserie);
                     }                   
                 }
@@ -127,7 +134,7 @@ namespace Presentacion
                 decimal preciprod = 0;
                 int cantidad = 0;
                 decimal preciototal = 0;
-                decimal valorigv = (100 + decimal.Parse(cboigv.Text)) / 100;
+                decimal valorigv = (100 + decimal.Parse(txtimpuso.Text)) / 100;
                 List<pedidodetalle>  listado = new List<pedidodetalle>();
                 for (int i = 0; i < dgvListaPedidoDetalle.RowCount; i++)
                 {
@@ -165,12 +172,10 @@ namespace Presentacion
             cboCondVenta.ValueMember = "p_inidcondicionpago";
             cboCondVenta.DisplayMember = "chnombrepago";
 
-           List<maestrodetalle> Listaamesntro = maestrodetalleNE.buscarPorCodigoMaestro(22);
-            cboigv.ValueMember = "idmaestrodetalle";
-            cboigv.DisplayMember = "nombreitem";
+           List<maestrodetalle> Listaamesntro = maestrodetalleNE.buscarPorCodigoMaestro(22);           
             foreach (maestrodetalle a in Listaamesntro)
             {
-                txtimpuso.Text = "";
+                txtimpuso.Text = a.nombreitem;
             }
             txtUnidadesCompra.Text = "0";
 
@@ -188,7 +193,7 @@ namespace Presentacion
                 CargaConductores(obj.p_inidtransportista);
             }
             List<tipocambio> listado2 = tipocambioNE.busquedaValorTipoCambio(txtFechaActual.Text);
-            if (listado2 != null)
+            if (listado2.Count > 0)
             {
                 foreach (tipocambio obj2 in listado2)
                 {
@@ -208,7 +213,6 @@ namespace Presentacion
                 txtValVenta.Text = "0.00";
                 txtTotVenta.Text = "0.00";
                 txtDesc.Text = "0.00";
-                txtTipoCambio.Text = "0.00";
                 lblLicen.Enabled = false;
                 lblTarjet.Enabled = false;
                 txtcodigolicencia.Enabled = false;
@@ -281,7 +285,7 @@ namespace Presentacion
             //txtfechaInicio.Text = pedCab.chfechainiciotransporte;
             txtPtoPartida.Text = pedCab.chpuntopartida;
             txtPtoLlegada.Text = pedCab.chpuntollegada;
-            cboigv.SelectedValue= pedCab.p_inidigv;           
+            txtimpuso.Text= pedCab.p_inidigv.ToString();           
 
             //txtSubtotal.Text = "" + decimal.Round(pedCab.nuventainafectamonnacional- pedCab.nutotaldescmonnacional, 2);
             //txtValVenta.Text = "" + decimal.Round(pedCab.nuventainafectamonnacional, 2);
@@ -551,16 +555,16 @@ namespace Presentacion
                 MessageBox.Show("Lista de venta vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return false;
             }
-            if (txtordcomp.Text.Length <= 0)
-            {
-                MessageBox.Show("Orden de compra vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                return false;
-            }
-            if (txtObs.Text.Length <= 0)
-            {
-                MessageBox.Show("Observacíon vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                return false;
-            }
+            //if (txtordcomp.Text.Length <= 0)
+            //{
+            //    MessageBox.Show("Orden de compra vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+            //    return false;
+            //}
+            //if (txtObs.Text.Length <= 0)
+            //{
+            //    MessageBox.Show("Observacíon vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+            //    return false;
+            //}
             if (txtPtoLlegada.Text.Length <= 0)
             {
                 MessageBox.Show("´Punto de llegada vacía", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
@@ -589,12 +593,12 @@ namespace Presentacion
                 MessageBox.Show("Validar Tarjeta en la SUCAMEC", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return false;
             }
-            if (txtcodigolicencia.Text.Length <= 0)
+            if (txtcodigolicencia.Enabled == true && txtcodigolicencia.Text.Length <= 0)
             {
                 MessageBox.Show("Nro licencia vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return false;
             }
-            if (txtcodigotarjeta.Text.Length <= 0)
+            if (txtcodigotarjeta.Enabled == true && txtcodigotarjeta.Text.Length <= 0)
             {
                 MessageBox.Show("Nro tarjeta vacío", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return false;
@@ -628,7 +632,7 @@ namespace Presentacion
             registrosPedidoCabecera.nuventaafectamonnacional = 0;
             registrosPedidoCabecera.chmotivotransaccion = "";
             registrosPedidoCabecera.p_inidmoneda = 0;
-            registrosPedidoCabecera.p_inidigv = (int)cboigv.SelectedValue;
+            registrosPedidoCabecera.p_inidigv = int.Parse(txtimpuso.Text);
             registrosPedidoCabecera.boafectoigv = true;
             registrosPedidoCabecera.nuimportecambioventa = 0;
             registrosPedidoCabecera.p_inidvendedor = sesion.SessionGlobal.p_inidusuario;
@@ -832,6 +836,7 @@ namespace Presentacion
                 btnAnadir.Enabled = true;
                 if (ClienteG.tipodocu == "RUC")
                 {
+                    //MessageBox.Show(""+ ClienteG.p_inidcodigoclie+""+ txtFechaActual.Text, "Mensaje de Sistema", MessageBoxButtons.OK);
                     CargarUnidadesCompradas(ClienteG.p_inidcodigoclie, txtFechaActual.Text);
                     lblLicencia.Text = "N° R.D.";
                     lblLicen.Enabled = true;
@@ -1002,6 +1007,17 @@ namespace Presentacion
                 f.Pasado += new frmBusClientePrincipal.PasarClienteCodigo(PonerCodigocliente);
                 f.ShowDialog();
             }
+        }
+
+        private void cbkPermitir_Click(object sender, EventArgs e)
+        {
+            frmProcPedidoPermitir f = new frmProcPedidoPermitir();
+            f.Pasado += new frmProcPedidoPermitir.PasarClienteCodigo(PneDatosCliente);
+            f.ShowDialog();
+        }
+        private void PneDatosCliente(string codigo,bool estado)
+        {
+            cbkPermitir.Checked = estado;
         }
     }
 }

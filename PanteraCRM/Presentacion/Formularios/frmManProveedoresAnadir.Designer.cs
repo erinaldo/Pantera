@@ -139,6 +139,7 @@
             this.TXTRUC.Name = "TXTRUC";
             this.TXTRUC.Size = new System.Drawing.Size(173, 20);
             this.TXTRUC.TabIndex = 2;
+            this.TXTRUC.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.TXTRUC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXTRUC_KeyPress);
             // 
             // lbRazon
@@ -166,6 +167,7 @@
             this.txtRazon.Name = "txtRazon";
             this.txtRazon.Size = new System.Drawing.Size(392, 20);
             this.txtRazon.TabIndex = 1;
+            this.txtRazon.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtRazon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRazon_KeyPress);
             // 
             // txtNombre
@@ -175,6 +177,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(392, 20);
             this.txtNombre.TabIndex = 0;
+            this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // groupBox5
@@ -228,6 +231,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(178, 20);
             this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label4
@@ -246,6 +250,7 @@
             this.txtNombreVia.Name = "txtNombreVia";
             this.txtNombreVia.Size = new System.Drawing.Size(178, 20);
             this.txtNombreVia.TabIndex = 2;
+            this.txtNombreVia.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtNombreVia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreVia_KeyPress);
             // 
             // label6
@@ -338,6 +343,7 @@
             this.txtUbigeo.TabIndex = 9;
             this.txtUbigeo.TextChanged += new System.EventHandler(this.txtUbigeo_TextChanged_1);
             this.txtUbigeo.DoubleClick += new System.EventHandler(this.txtUbigeo_DoubleClick_1);
+            this.txtUbigeo.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtUbigeo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUbigeo_KeyPress_1);
             // 
             // txtInterior
@@ -347,6 +353,7 @@
             this.txtInterior.Name = "txtInterior";
             this.txtInterior.Size = new System.Drawing.Size(178, 20);
             this.txtInterior.TabIndex = 4;
+            this.txtInterior.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtInterior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterior_KeyPress);
             // 
             // txtNumeroVia
@@ -356,6 +363,7 @@
             this.txtNumeroVia.Name = "txtNumeroVia";
             this.txtNumeroVia.Size = new System.Drawing.Size(164, 20);
             this.txtNumeroVia.TabIndex = 3;
+            this.txtNumeroVia.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtNumeroVia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroVia_KeyPress);
             // 
             // label21
@@ -383,6 +391,7 @@
             this.txtNombreZona.Name = "txtNombreZona";
             this.txtNombreZona.Size = new System.Drawing.Size(178, 20);
             this.txtNombreZona.TabIndex = 6;
+            this.txtNombreZona.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtNombreZona.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreZona_KeyPress);
             // 
             // cboPais
@@ -446,6 +455,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(440, 20);
             this.txtDireccion.TabIndex = 0;
+            this.txtDireccion.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // label26

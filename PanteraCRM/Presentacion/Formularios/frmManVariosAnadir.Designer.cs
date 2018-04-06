@@ -84,7 +84,7 @@
             this.txtObbs.Name = "txtObbs";
             this.txtObbs.Size = new System.Drawing.Size(264, 20);
             this.txtObbs.TabIndex = 2;
-            this.txtObbs.Enter += new System.EventHandler(this.txtObbs_Enter);
+            this.txtObbs.Enter += new System.EventHandler(this.txtCod_Enter_1);
             // 
             // label3
             // 
@@ -112,7 +112,7 @@
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(80, 20);
             this.txtCod.TabIndex = 0;
-            this.txtCod.Enter += new System.EventHandler(this.txtCod_Enter);
+            this.txtCod.Enter += new System.EventHandler(this.txtCod_Enter_1);
             // 
             // txtDescrip
             // 
@@ -121,7 +121,7 @@
             this.txtDescrip.Name = "txtDescrip";
             this.txtDescrip.Size = new System.Drawing.Size(264, 20);
             this.txtDescrip.TabIndex = 1;
-            this.txtDescrip.Enter += new System.EventHandler(this.txtDescrip_Enter);
+            this.txtDescrip.Enter += new System.EventHandler(this.txtCod_Enter_1);
             // 
             // label1
             // 
@@ -154,7 +154,7 @@
             this.txtAcro.Name = "txtAcro";
             this.txtAcro.Size = new System.Drawing.Size(162, 20);
             this.txtAcro.TabIndex = 1;
-            this.txtAcro.Enter += new System.EventHandler(this.txtAcro_Enter);
+            this.txtAcro.Enter += new System.EventHandler(this.txtCod_Enter_1);
             // 
             // label5
             // 
@@ -172,7 +172,7 @@
             this.txtDetDesc.Name = "txtDetDesc";
             this.txtDetDesc.Size = new System.Drawing.Size(162, 20);
             this.txtDetDesc.TabIndex = 0;
-            this.txtDetDesc.Enter += new System.EventHandler(this.txtDetDesc_Enter);
+            this.txtDetDesc.Enter += new System.EventHandler(this.txtCod_Enter_1);
             // 
             // label4
             // 

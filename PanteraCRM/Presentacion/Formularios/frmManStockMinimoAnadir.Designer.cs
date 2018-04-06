@@ -32,7 +32,6 @@
             this.txtDescripcionprod = new System.Windows.Forms.TextBox();
             this.txtstockminimo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtIdproducto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,11 +61,11 @@
             this.txtstockminimo.Size = new System.Drawing.Size(60, 20);
             this.txtstockminimo.TabIndex = 0;
             this.txtstockminimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtstockminimo.Enter += new System.EventHandler(this.txtstockminimo_Enter);
             this.txtstockminimo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtIdproducto);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label2);
@@ -77,15 +76,6 @@
             this.groupBox1.Size = new System.Drawing.Size(493, 91);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // txtIdproducto
-            // 
-            this.txtIdproducto.Location = new System.Drawing.Point(387, 65);
-            this.txtIdproducto.Name = "txtIdproducto";
-            this.txtIdproducto.Size = new System.Drawing.Size(100, 20);
-            this.txtIdproducto.TabIndex = 6;
-            this.txtIdproducto.TabStop = false;
-            this.txtIdproducto.Visible = false;
             // 
             // label3
             // 
@@ -191,6 +181,5 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.TextBox txtIdproducto;
     }
 }

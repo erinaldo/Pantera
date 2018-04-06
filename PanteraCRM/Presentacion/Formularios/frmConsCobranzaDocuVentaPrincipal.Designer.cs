@@ -55,13 +55,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvPlanilla = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtMone2 = new System.Windows.Forms.TextBox();
-            this.txtSaldo = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtMone = new System.Windows.Forms.TextBox();
-            this.txtCancela = new System.Windows.Forms.TextBox();
             this.CODIPLANILLA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODPLANILLA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +62,13 @@
             this.NUIMPORT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHTIPREF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHNUMREF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtMone2 = new System.Windows.Forms.TextBox();
+            this.txtSaldo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMone = new System.Windows.Forms.TextBox();
+            this.txtCancela = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -103,7 +103,7 @@
             // 
             this.txtRazon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtRazon.ForeColor = System.Drawing.Color.Blue;
-            this.txtRazon.Location = new System.Drawing.Point(256, 55);
+            this.txtRazon.Location = new System.Drawing.Point(256, 47);
             this.txtRazon.Name = "txtRazon";
             this.txtRazon.ReadOnly = true;
             this.txtRazon.Size = new System.Drawing.Size(393, 20);
@@ -122,7 +122,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(180, 58);
+            this.label4.Location = new System.Drawing.Point(180, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 12;
@@ -131,7 +131,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(505, 26);
+            this.label3.Location = new System.Drawing.Point(505, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 11;
@@ -165,11 +165,11 @@
             // 
             this.txtFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtFecha.ForeColor = System.Drawing.Color.Blue;
-            this.txtFecha.Location = new System.Drawing.Point(363, 24);
+            this.txtFecha.Location = new System.Drawing.Point(363, 23);
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.ReadOnly = true;
-            this.txtFecha.Size = new System.Drawing.Size(66, 20);
+            this.txtFecha.Size = new System.Drawing.Size(83, 20);
             this.txtFecha.TabIndex = 8;
             this.txtFecha.TabStop = false;
             this.txtFecha.ValidatingType = typeof(System.DateTime);
@@ -187,7 +187,7 @@
             // 
             this.txtCodDocu.Location = new System.Drawing.Point(127, 23);
             this.txtCodDocu.Name = "txtCodDocu";
-            this.txtCodDocu.Size = new System.Drawing.Size(100, 20);
+            this.txtCodDocu.Size = new System.Drawing.Size(110, 20);
             this.txtCodDocu.TabIndex = 1;
             this.txtCodDocu.Enter += new System.EventHandler(this.txtCodDocu_Enter);
             this.txtCodDocu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodDocu_KeyPress);
@@ -197,7 +197,7 @@
             // 
             this.txtNroDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtNroDoc.ForeColor = System.Drawing.Color.Blue;
-            this.txtNroDoc.Location = new System.Drawing.Point(63, 55);
+            this.txtNroDoc.Location = new System.Drawing.Point(63, 47);
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.ReadOnly = true;
             this.txtNroDoc.Size = new System.Drawing.Size(100, 20);
@@ -207,7 +207,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 26);
+            this.label1.Location = new System.Drawing.Point(5, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 3;
@@ -216,7 +216,7 @@
             // lblTipDoc
             // 
             this.lblTipDoc.AutoSize = true;
-            this.lblTipDoc.Location = new System.Drawing.Point(6, 58);
+            this.lblTipDoc.Location = new System.Drawing.Point(6, 51);
             this.lblTipDoc.Name = "lblTipDoc";
             this.lblTipDoc.Size = new System.Drawing.Size(36, 13);
             this.lblTipDoc.TabIndex = 4;
@@ -315,88 +315,6 @@
             this.dgvPlanilla.Size = new System.Drawing.Size(755, 256);
             this.dgvPlanilla.TabIndex = 0;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.txtMone2);
-            this.groupBox3.Controls.Add(this.txtSaldo);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.txtMone);
-            this.groupBox3.Controls.Add(this.txtCancela);
-            this.groupBox3.Location = new System.Drawing.Point(10, 369);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(767, 62);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            // 
-            // txtMone2
-            // 
-            this.txtMone2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtMone2.ForeColor = System.Drawing.Color.Blue;
-            this.txtMone2.Location = new System.Drawing.Point(472, 22);
-            this.txtMone2.Name = "txtMone2";
-            this.txtMone2.ReadOnly = true;
-            this.txtMone2.Size = new System.Drawing.Size(30, 20);
-            this.txtMone2.TabIndex = 16;
-            this.txtMone2.TabStop = false;
-            this.txtMone2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtSaldo
-            // 
-            this.txtSaldo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtSaldo.ForeColor = System.Drawing.Color.Blue;
-            this.txtSaldo.Location = new System.Drawing.Point(508, 22);
-            this.txtSaldo.Name = "txtSaldo";
-            this.txtSaldo.ReadOnly = true;
-            this.txtSaldo.Size = new System.Drawing.Size(101, 20);
-            this.txtSaldo.TabIndex = 15;
-            this.txtSaldo.TabStop = false;
-            this.txtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(127, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Total Cancelado";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(432, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Saldo";
-            // 
-            // txtMone
-            // 
-            this.txtMone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtMone.ForeColor = System.Drawing.Color.Blue;
-            this.txtMone.Location = new System.Drawing.Point(218, 22);
-            this.txtMone.Name = "txtMone";
-            this.txtMone.ReadOnly = true;
-            this.txtMone.Size = new System.Drawing.Size(30, 20);
-            this.txtMone.TabIndex = 7;
-            this.txtMone.TabStop = false;
-            this.txtMone.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtCancela
-            // 
-            this.txtCancela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.txtCancela.ForeColor = System.Drawing.Color.Blue;
-            this.txtCancela.Location = new System.Drawing.Point(254, 22);
-            this.txtCancela.Name = "txtCancela";
-            this.txtCancela.ReadOnly = true;
-            this.txtCancela.Size = new System.Drawing.Size(101, 20);
-            this.txtCancela.TabIndex = 6;
-            this.txtCancela.TabStop = false;
-            this.txtCancela.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // CODIPLANILLA
             // 
             this.CODIPLANILLA.HeaderText = "CODIPLANILLA";
@@ -453,6 +371,88 @@
             this.CHNUMREF.Name = "CHNUMREF";
             this.CHNUMREF.ReadOnly = true;
             this.CHNUMREF.Width = 160;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtMone2);
+            this.groupBox3.Controls.Add(this.txtSaldo);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.txtMone);
+            this.groupBox3.Controls.Add(this.txtCancela);
+            this.groupBox3.Location = new System.Drawing.Point(10, 369);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(767, 62);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            // 
+            // txtMone2
+            // 
+            this.txtMone2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtMone2.ForeColor = System.Drawing.Color.Blue;
+            this.txtMone2.Location = new System.Drawing.Point(472, 22);
+            this.txtMone2.Name = "txtMone2";
+            this.txtMone2.ReadOnly = true;
+            this.txtMone2.Size = new System.Drawing.Size(30, 20);
+            this.txtMone2.TabIndex = 16;
+            this.txtMone2.TabStop = false;
+            this.txtMone2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtSaldo
+            // 
+            this.txtSaldo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtSaldo.ForeColor = System.Drawing.Color.Blue;
+            this.txtSaldo.Location = new System.Drawing.Point(508, 22);
+            this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.ReadOnly = true;
+            this.txtSaldo.Size = new System.Drawing.Size(101, 20);
+            this.txtSaldo.TabIndex = 15;
+            this.txtSaldo.TabStop = false;
+            this.txtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(127, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Total Cancelado";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(432, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Saldo";
+            // 
+            // txtMone
+            // 
+            this.txtMone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtMone.ForeColor = System.Drawing.Color.Blue;
+            this.txtMone.Location = new System.Drawing.Point(218, 22);
+            this.txtMone.Name = "txtMone";
+            this.txtMone.ReadOnly = true;
+            this.txtMone.Size = new System.Drawing.Size(30, 20);
+            this.txtMone.TabIndex = 7;
+            this.txtMone.TabStop = false;
+            this.txtMone.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtCancela
+            // 
+            this.txtCancela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.txtCancela.ForeColor = System.Drawing.Color.Blue;
+            this.txtCancela.Location = new System.Drawing.Point(254, 22);
+            this.txtCancela.Name = "txtCancela";
+            this.txtCancela.ReadOnly = true;
+            this.txtCancela.Size = new System.Drawing.Size(101, 20);
+            this.txtCancela.TabIndex = 6;
+            this.txtCancela.TabStop = false;
+            this.txtCancela.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // frmConsCobranzaDocuVentaPrincipal
             // 

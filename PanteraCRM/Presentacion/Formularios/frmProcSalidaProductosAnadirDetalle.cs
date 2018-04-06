@@ -436,6 +436,11 @@ namespace Presentacion
             TextBox textboxusado = (TextBox)sender;
             utilidades.LogitudDeCampo(ref textboxusado, e, 15);
         }
+
+        private void txtPreComp_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
+        }
         /*FIN :: VALIDACION DE NUMEROS Y FORMATO*/
     }
 }

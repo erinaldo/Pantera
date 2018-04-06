@@ -40,6 +40,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.dgvListaIngreso = new System.Windows.Forms.DataGridView();
+            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHIDENT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BOEXHIBICION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHINFORME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHINFORMEFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHINFORMEOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.txtNombreconpuesto = new System.Windows.Forms.TextBox();
@@ -58,16 +68,6 @@
             this.txtprecio = new System.Windows.Forms.TextBox();
             this.txtMedida = new System.Windows.Forms.TextBox();
             this.btnConfirma = new System.Windows.Forms.Button();
-            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHIDENT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BOEXHIBICION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHINFORME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHINFORMEFECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHINFORMEOBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbAgregadoSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaIngreso)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -93,6 +93,7 @@
             this.txtcodprod.TabIndex = 0;
             this.txtcodprod.TextChanged += new System.EventHandler(this.txtcodprod_TextChanged);
             this.txtcodprod.DoubleClick += new System.EventHandler(this.txtcodprod_DoubleClick);
+            this.txtcodprod.Enter += new System.EventHandler(this.txtcodprod_Enter);
             // 
             // grbAgregadoSerie
             // 
@@ -118,6 +119,7 @@
             this.txtidentificador.Name = "txtidentificador";
             this.txtidentificador.Size = new System.Drawing.Size(169, 20);
             this.txtidentificador.TabIndex = 6;
+            this.txtidentificador.Enter += new System.EventHandler(this.txtcodprod_Enter);
             this.txtidentificador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtidentificador_KeyPress);
             // 
             // txtfecfabri
@@ -212,6 +214,79 @@
             this.dgvListaIngreso.Size = new System.Drawing.Size(548, 303);
             this.dgvListaIngreso.TabIndex = 5;
             // 
+            // IDPRODUCTO
+            // 
+            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
+            this.IDPRODUCTO.Name = "IDPRODUCTO";
+            this.IDPRODUCTO.ReadOnly = true;
+            this.IDPRODUCTO.Visible = false;
+            this.IDPRODUCTO.Width = 104;
+            // 
+            // CHCODIGO
+            // 
+            this.CHCODIGO.HeaderText = "CODIGO";
+            this.CHCODIGO.Name = "CHCODIGO";
+            this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Visible = false;
+            this.CHCODIGO.Width = 70;
+            // 
+            // CHPRODUCTO
+            // 
+            this.CHPRODUCTO.HeaderText = "PRODUCTO";
+            this.CHPRODUCTO.Name = "CHPRODUCTO";
+            this.CHPRODUCTO.ReadOnly = true;
+            this.CHPRODUCTO.Visible = false;
+            this.CHPRODUCTO.Width = 300;
+            // 
+            // CHSERIE
+            // 
+            this.CHSERIE.HeaderText = "SERIE";
+            this.CHSERIE.Name = "CHSERIE";
+            this.CHSERIE.ReadOnly = true;
+            this.CHSERIE.Width = 150;
+            // 
+            // CHIDENT
+            // 
+            this.CHIDENT.HeaderText = "IDENTIFICADOR";
+            this.CHIDENT.Name = "CHIDENT";
+            this.CHIDENT.ReadOnly = true;
+            this.CHIDENT.Width = 150;
+            // 
+            // CHOBS
+            // 
+            this.CHOBS.HeaderText = "OBSERVACION";
+            this.CHOBS.Name = "CHOBS";
+            this.CHOBS.ReadOnly = true;
+            this.CHOBS.Width = 250;
+            // 
+            // BOEXHIBICION
+            // 
+            this.BOEXHIBICION.HeaderText = "BOEXHIBICION";
+            this.BOEXHIBICION.Name = "BOEXHIBICION";
+            this.BOEXHIBICION.ReadOnly = true;
+            this.BOEXHIBICION.Visible = false;
+            // 
+            // CHINFORME
+            // 
+            this.CHINFORME.HeaderText = "CHINFORME";
+            this.CHINFORME.Name = "CHINFORME";
+            this.CHINFORME.ReadOnly = true;
+            this.CHINFORME.Visible = false;
+            // 
+            // CHINFORMEFECHA
+            // 
+            this.CHINFORMEFECHA.HeaderText = "CHINFORMEFECHA";
+            this.CHINFORMEFECHA.Name = "CHINFORMEFECHA";
+            this.CHINFORMEFECHA.ReadOnly = true;
+            this.CHINFORMEFECHA.Visible = false;
+            // 
+            // CHINFORMEOBS
+            // 
+            this.CHINFORMEOBS.HeaderText = "CHINFORMEOBS";
+            this.CHINFORMEOBS.Name = "CHINFORMEOBS";
+            this.CHINFORMEOBS.ReadOnly = true;
+            this.CHINFORMEOBS.Visible = false;
+            // 
             // txtObs
             // 
             this.txtObs.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -219,6 +294,7 @@
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(354, 20);
             this.txtObs.TabIndex = 7;
+            this.txtObs.Enter += new System.EventHandler(this.txtcodprod_Enter);
             this.txtObs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtObs_KeyPress);
             // 
             // txtSerie
@@ -228,6 +304,7 @@
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(89, 20);
             this.txtSerie.TabIndex = 5;
+            this.txtSerie.Enter += new System.EventHandler(this.txtcodprod_Enter);
             this.txtSerie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSerie_KeyPress);
             // 
             // txtNombreconpuesto
@@ -353,6 +430,7 @@
             this.txtCantidad.Size = new System.Drawing.Size(38, 20);
             this.txtCantidad.TabIndex = 1;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            this.txtCantidad.Enter += new System.EventHandler(this.txtcodprod_Enter);
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // label7
@@ -395,7 +473,7 @@
             this.txtprecio.TabIndex = 2;
             this.txtprecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtprecio.TextChanged += new System.EventHandler(this.txtprecio_TextChanged);
-            this.txtprecio.Enter += new System.EventHandler(this.txtprecio_Enter);
+            this.txtprecio.Enter += new System.EventHandler(this.txtcodprod_Enter);
             this.txtprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprecio_KeyPress);
             this.txtprecio.Validated += new System.EventHandler(this.txtprecio_Validated);
             // 
@@ -422,79 +500,6 @@
             this.btnConfirma.Size = new System.Drawing.Size(75, 23);
             this.btnConfirma.TabIndex = 15;
             this.btnConfirma.UseVisualStyleBackColor = true;
-            // 
-            // IDPRODUCTO
-            // 
-            this.IDPRODUCTO.HeaderText = "IDPRODUCTO";
-            this.IDPRODUCTO.Name = "IDPRODUCTO";
-            this.IDPRODUCTO.ReadOnly = true;
-            this.IDPRODUCTO.Visible = false;
-            this.IDPRODUCTO.Width = 104;
-            // 
-            // CHCODIGO
-            // 
-            this.CHCODIGO.HeaderText = "CODIGO";
-            this.CHCODIGO.Name = "CHCODIGO";
-            this.CHCODIGO.ReadOnly = true;
-            this.CHCODIGO.Visible = false;
-            this.CHCODIGO.Width = 70;
-            // 
-            // CHPRODUCTO
-            // 
-            this.CHPRODUCTO.HeaderText = "PRODUCTO";
-            this.CHPRODUCTO.Name = "CHPRODUCTO";
-            this.CHPRODUCTO.ReadOnly = true;
-            this.CHPRODUCTO.Visible = false;
-            this.CHPRODUCTO.Width = 300;
-            // 
-            // CHSERIE
-            // 
-            this.CHSERIE.HeaderText = "SERIE";
-            this.CHSERIE.Name = "CHSERIE";
-            this.CHSERIE.ReadOnly = true;
-            this.CHSERIE.Width = 150;
-            // 
-            // CHIDENT
-            // 
-            this.CHIDENT.HeaderText = "IDENTIFICADOR";
-            this.CHIDENT.Name = "CHIDENT";
-            this.CHIDENT.ReadOnly = true;
-            this.CHIDENT.Width = 150;
-            // 
-            // CHOBS
-            // 
-            this.CHOBS.HeaderText = "OBSERVACION";
-            this.CHOBS.Name = "CHOBS";
-            this.CHOBS.ReadOnly = true;
-            this.CHOBS.Width = 250;
-            // 
-            // BOEXHIBICION
-            // 
-            this.BOEXHIBICION.HeaderText = "BOEXHIBICION";
-            this.BOEXHIBICION.Name = "BOEXHIBICION";
-            this.BOEXHIBICION.ReadOnly = true;
-            this.BOEXHIBICION.Visible = false;
-            // 
-            // CHINFORME
-            // 
-            this.CHINFORME.HeaderText = "CHINFORME";
-            this.CHINFORME.Name = "CHINFORME";
-            this.CHINFORME.ReadOnly = true;
-            this.CHINFORME.Visible = false;
-            // 
-            // CHINFORMEFECHA
-            // 
-            this.CHINFORMEFECHA.HeaderText = "CHINFORMEFECHA";
-            this.CHINFORMEFECHA.Name = "CHINFORMEFECHA";
-            this.CHINFORMEFECHA.ReadOnly = true;
-            this.CHINFORMEFECHA.Visible = false;
-            // 
-            // CHINFORMEOBS
-            // 
-            this.CHINFORMEOBS.HeaderText = "CHINFORMEOBS";
-            this.CHINFORMEOBS.Name = "CHINFORMEOBS";
-            this.CHINFORMEOBS.ReadOnly = true;
-            this.CHINFORMEOBS.Visible = false;
             // 
             // frmProcSeriesAnadir
             // 

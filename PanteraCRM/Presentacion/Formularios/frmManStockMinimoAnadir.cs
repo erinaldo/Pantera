@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocios;
+using Presentacion.Programas;
 namespace Presentacion
 {
     public partial class frmManStockMinimoAnadir : Form
@@ -39,7 +40,7 @@ namespace Presentacion
             if (valor > 0)
             {
                 saldoalmacen registros = new saldoalmacen();
-                registros.p_inidproducto = int.Parse(txtIdproducto.Text);
+                registros.p_inidproducto = tmpsaldoalmacen.p_inidproducto;
                 registros.nustockminima = decimal.Parse(txtstockminimo.Text);
                 varIdArticulo = productoNE.stockminimoingresar(registros);
                 if (varIdArticulo <= 0)
@@ -84,7 +85,6 @@ namespace Presentacion
                 txtstockminimo.Focus();
                 txtDescripcionprod.Text = tmpsaldoalmacen.chnombrecompuesto;
                 txtCodigo.Text = tmpsaldoalmacen.chcodigo;
-                txtIdproducto.Text = tmpsaldoalmacen.p_inidproducto.ToString();
 
 
             }
@@ -93,7 +93,6 @@ namespace Presentacion
             {
                 txtDescripcionprod.Text = tmpsaldoalmacen.chnombrecompuesto;
                 txtCodigo.Text = tmpsaldoalmacen.chcodigo;
-                txtIdproducto.Text = tmpsaldoalmacen.p_inidproducto.ToString();
                 txtstockminimo.Text = tmpsaldoalmacen.nustockminima.ToString();
                 txtstockminimo.ReadOnly = true;
                 txtstockminimo.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
@@ -105,6 +104,10 @@ namespace Presentacion
             }
             
         }
-        
+
+        private void txtstockminimo_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate { utilidades.SetTextBoxSelectAll((TextBox)sender); });
+        }
     }
 }

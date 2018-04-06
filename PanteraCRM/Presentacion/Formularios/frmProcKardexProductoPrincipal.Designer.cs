@@ -221,11 +221,13 @@
             // 
             this.IDSITUACION.DataPropertyName = "p_inidsituacion";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = "0";
             this.IDSITUACION.DefaultCellStyle = dataGridViewCellStyle3;
             this.IDSITUACION.HeaderText = "STOCK";
             this.IDSITUACION.Name = "IDSITUACION";
             this.IDSITUACION.ReadOnly = true;
-            this.IDSITUACION.Width = 80;
+            this.IDSITUACION.Width = 90;
             // 
             // CHPRECIO
             // 
@@ -237,7 +239,7 @@
             this.CHPRECIO.HeaderText = "PRECIO";
             this.CHPRECIO.Name = "CHPRECIO";
             this.CHPRECIO.ReadOnly = true;
-            this.CHPRECIO.Width = 60;
+            this.CHPRECIO.Width = 90;
             // 
             // IDUNIDAD
             // 
