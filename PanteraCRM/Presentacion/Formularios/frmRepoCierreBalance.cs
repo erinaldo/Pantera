@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentacion
+namespace Presentacion.Formularios
 {
-    public partial class frmRepoCobranzaDiaria : Form
+    public partial class frmRepoCierreBalance : Form
     {
-        public frmRepoCobranzaDiaria()
+        public frmRepoCierreBalance()
         {
             InitializeComponent();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
     }
 }

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Entidades;
+using Negocios;
 namespace Presentacion
 {
     public partial class frmRepoCuentasCobrarPrincipal : Form
     {
+        internal Mcliente ClienteG;
         public frmRepoCuentasCobrarPrincipal()
         {
             InitializeComponent();
@@ -31,6 +33,9 @@ namespace Presentacion
 
         private void CargarBeans()
         {
+            cboMoneda.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(13);
+            cboMoneda.ValueMember = "idmaestrodetalle";
+            cboMoneda.DisplayMember = "nombreitem";
             cboVendedores.Visible = false;
             txtClieCod.Visible = false;
             lblCodigo.Visible = false;
@@ -85,6 +90,27 @@ namespace Presentacion
                 txtNroDocuIden.Visible = true;
                 txtNomClie.Visible = true;
             }
+
+        }
+
+        private void txtClieCod_TextChanged(object sender, EventArgs e)
+        {
+            TextBox TextoUsado = (TextBox)sender;
+
+        }
+
+        private void txtClieCod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtClieCod_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
 
         }
     }

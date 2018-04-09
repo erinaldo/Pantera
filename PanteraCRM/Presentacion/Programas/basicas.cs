@@ -96,6 +96,7 @@ namespace Presentacion
                 throw;
             }
        }
+       
         public static void exportaExcel(DataGridView tabla)
         {
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -141,7 +142,7 @@ namespace Presentacion
             liberaObjeto(excel);   
         }
 
-        private static void liberaObjeto(object obj)
+        public static void liberaObjeto(object obj)
         {
             try
             {
@@ -157,7 +158,7 @@ namespace Presentacion
             {
                 GC.Collect();
             }
-        }
+        } 
         private static string[] UNIDADES = { "", "un ", "dos ", "tres ", "cuatro ", "cinco ", "seis ", "siete ", "ocho ", "nueve " };
         private static string[] DECENAS = {"diez ", "once ", "doce ", "trece ", "catorce ", "quince ", "dieciseis ",
         "diecisiete ", "dieciocho ", "diecinueve", "veinte ", "treinta ", "cuarenta ",

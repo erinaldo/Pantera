@@ -40,19 +40,19 @@
             this.txtClieCod = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbtOrdCorrelativo = new System.Windows.Forms.RadioButton();
+            this.rbtOrdVendedor = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnGrabar = new System.Windows.Forms.Button();
+            this.rbtDesExcel = new System.Windows.Forms.RadioButton();
+            this.rbtDesImpresora = new System.Windows.Forms.RadioButton();
+            this.rbtDesPantalla = new System.Windows.Forms.RadioButton();
             this.cboMoneda = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.rbtOrdVendedor = new System.Windows.Forms.RadioButton();
-            this.rbtOrdCorrelativo = new System.Windows.Forms.RadioButton();
-            this.rbtDesPantalla = new System.Windows.Forms.RadioButton();
-            this.rbtDesImpresora = new System.Windows.Forms.RadioButton();
-            this.rbtDesExcel = new System.Windows.Forms.RadioButton();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnGenerar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -160,6 +160,9 @@
             this.txtClieCod.Name = "txtClieCod";
             this.txtClieCod.Size = new System.Drawing.Size(173, 20);
             this.txtClieCod.TabIndex = 1;
+            this.txtClieCod.TextChanged += new System.EventHandler(this.txtClieCod_TextChanged);
+            this.txtClieCod.Enter += new System.EventHandler(this.txtClieCod_Enter);
+            this.txtClieCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClieCod_KeyPress);
             // 
             // lblCodigo
             // 
@@ -181,6 +184,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Orden";
             // 
+            // rbtOrdCorrelativo
+            // 
+            this.rbtOrdCorrelativo.AutoSize = true;
+            this.rbtOrdCorrelativo.Location = new System.Drawing.Point(173, 19);
+            this.rbtOrdCorrelativo.Name = "rbtOrdCorrelativo";
+            this.rbtOrdCorrelativo.Size = new System.Drawing.Size(90, 17);
+            this.rbtOrdCorrelativo.TabIndex = 6;
+            this.rbtOrdCorrelativo.TabStop = true;
+            this.rbtOrdCorrelativo.Text = "N° Correlativo";
+            this.rbtOrdCorrelativo.UseVisualStyleBackColor = true;
+            // 
+            // rbtOrdVendedor
+            // 
+            this.rbtOrdVendedor.AutoSize = true;
+            this.rbtOrdVendedor.Location = new System.Drawing.Point(6, 19);
+            this.rbtOrdVendedor.Name = "rbtOrdVendedor";
+            this.rbtOrdVendedor.Size = new System.Drawing.Size(71, 17);
+            this.rbtOrdVendedor.TabIndex = 5;
+            this.rbtOrdVendedor.TabStop = true;
+            this.rbtOrdVendedor.Text = "Vendedor";
+            this.rbtOrdVendedor.UseVisualStyleBackColor = true;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.rbtDesExcel);
@@ -193,42 +218,38 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Destino";
             // 
-            // groupBox4
+            // rbtDesExcel
             // 
-            this.groupBox4.Controls.Add(this.btnSalir);
-            this.groupBox4.Controls.Add(this.btnGrabar);
-            this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(89, 299);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(180, 48);
-            this.groupBox4.TabIndex = 4;
-            this.groupBox4.TabStop = false;
+            this.rbtDesExcel.AutoSize = true;
+            this.rbtDesExcel.Location = new System.Drawing.Point(274, 19);
+            this.rbtDesExcel.Name = "rbtDesExcel";
+            this.rbtDesExcel.Size = new System.Drawing.Size(51, 17);
+            this.rbtDesExcel.TabIndex = 5;
+            this.rbtDesExcel.TabStop = true;
+            this.rbtDesExcel.Text = "Excel";
+            this.rbtDesExcel.UseVisualStyleBackColor = true;
             // 
-            // btnSalir
+            // rbtDesImpresora
             // 
-            this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
-            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(95, 14);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(80, 28);
-            this.btnSalir.TabIndex = 1;
-            this.btnSalir.Text = "&Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.rbtDesImpresora.AutoSize = true;
+            this.rbtDesImpresora.Location = new System.Drawing.Point(136, 19);
+            this.rbtDesImpresora.Name = "rbtDesImpresora";
+            this.rbtDesImpresora.Size = new System.Drawing.Size(71, 17);
+            this.rbtDesImpresora.TabIndex = 4;
+            this.rbtDesImpresora.TabStop = true;
+            this.rbtDesImpresora.Text = "Impresora";
+            this.rbtDesImpresora.UseVisualStyleBackColor = true;
             // 
-            // btnGrabar
+            // rbtDesPantalla
             // 
-            this.btnGrabar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(6, 14);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(80, 28);
-            this.btnGrabar.TabIndex = 0;
-            this.btnGrabar.Text = "&Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.rbtDesPantalla.AutoSize = true;
+            this.rbtDesPantalla.Location = new System.Drawing.Point(6, 19);
+            this.rbtDesPantalla.Name = "rbtDesPantalla";
+            this.rbtDesPantalla.Size = new System.Drawing.Size(63, 17);
+            this.rbtDesPantalla.TabIndex = 3;
+            this.rbtDesPantalla.TabStop = true;
+            this.rbtDesPantalla.Text = "Pantalla";
+            this.rbtDesPantalla.UseVisualStyleBackColor = true;
             // 
             // cboMoneda
             // 
@@ -267,74 +288,55 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Hasta el ";
             // 
-            // rbtOrdVendedor
+            // groupBox4
             // 
-            this.rbtOrdVendedor.AutoSize = true;
-            this.rbtOrdVendedor.Location = new System.Drawing.Point(6, 19);
-            this.rbtOrdVendedor.Name = "rbtOrdVendedor";
-            this.rbtOrdVendedor.Size = new System.Drawing.Size(71, 17);
-            this.rbtOrdVendedor.TabIndex = 5;
-            this.rbtOrdVendedor.TabStop = true;
-            this.rbtOrdVendedor.Text = "Vendedor";
-            this.rbtOrdVendedor.UseVisualStyleBackColor = true;
+            this.groupBox4.Controls.Add(this.btnSalir);
+            this.groupBox4.Controls.Add(this.btnGenerar);
+            this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.Color.Black;
+            this.groupBox4.Location = new System.Drawing.Point(89, 300);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(180, 48);
+            this.groupBox4.TabIndex = 12;
+            this.groupBox4.TabStop = false;
             // 
-            // rbtOrdCorrelativo
+            // btnSalir
             // 
-            this.rbtOrdCorrelativo.AutoSize = true;
-            this.rbtOrdCorrelativo.Location = new System.Drawing.Point(173, 19);
-            this.rbtOrdCorrelativo.Name = "rbtOrdCorrelativo";
-            this.rbtOrdCorrelativo.Size = new System.Drawing.Size(90, 17);
-            this.rbtOrdCorrelativo.TabIndex = 6;
-            this.rbtOrdCorrelativo.TabStop = true;
-            this.rbtOrdCorrelativo.Text = "N° Correlativo";
-            this.rbtOrdCorrelativo.UseVisualStyleBackColor = true;
+            this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(95, 14);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(80, 28);
+            this.btnSalir.TabIndex = 1;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
             // 
-            // rbtDesPantalla
+            // btnGenerar
             // 
-            this.rbtDesPantalla.AutoSize = true;
-            this.rbtDesPantalla.Location = new System.Drawing.Point(6, 19);
-            this.rbtDesPantalla.Name = "rbtDesPantalla";
-            this.rbtDesPantalla.Size = new System.Drawing.Size(63, 17);
-            this.rbtDesPantalla.TabIndex = 3;
-            this.rbtDesPantalla.TabStop = true;
-            this.rbtDesPantalla.Text = "Pantalla";
-            this.rbtDesPantalla.UseVisualStyleBackColor = true;
-            // 
-            // rbtDesImpresora
-            // 
-            this.rbtDesImpresora.AutoSize = true;
-            this.rbtDesImpresora.Location = new System.Drawing.Point(136, 19);
-            this.rbtDesImpresora.Name = "rbtDesImpresora";
-            this.rbtDesImpresora.Size = new System.Drawing.Size(71, 17);
-            this.rbtDesImpresora.TabIndex = 4;
-            this.rbtDesImpresora.TabStop = true;
-            this.rbtDesImpresora.Text = "Impresora";
-            this.rbtDesImpresora.UseVisualStyleBackColor = true;
-            // 
-            // rbtDesExcel
-            // 
-            this.rbtDesExcel.AutoSize = true;
-            this.rbtDesExcel.Location = new System.Drawing.Point(274, 19);
-            this.rbtDesExcel.Name = "rbtDesExcel";
-            this.rbtDesExcel.Size = new System.Drawing.Size(51, 17);
-            this.rbtDesExcel.TabIndex = 5;
-            this.rbtDesExcel.TabStop = true;
-            this.rbtDesExcel.Text = "Excel";
-            this.rbtDesExcel.UseVisualStyleBackColor = true;
+            this.btnGenerar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnGenerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerar.Location = new System.Drawing.Point(6, 14);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(80, 28);
+            this.btnGenerar.TabIndex = 0;
+            this.btnGenerar.Text = "&Generar";
+            this.btnGenerar.UseVisualStyleBackColor = false;
             // 
             // frmRepoCuentasCobrarPrincipal
             // 
-            this.AcceptButton = this.btnGrabar;
+            this.AcceptButton = this.btnGenerar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(358, 360);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboMoneda);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -343,6 +345,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRepoCuentasCobrarPrincipal";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CUENTAS POR COBRAR";
             this.Load += new System.EventHandler(this.frmRepoCuentasCobrarPrincipal_Load);
             this.groupBox1.ResumeLayout(false);
@@ -368,9 +372,6 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.ComboBox cboMoneda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpFecha;
@@ -383,5 +384,8 @@
         private System.Windows.Forms.RadioButton rbtDesExcel;
         private System.Windows.Forms.RadioButton rbtDesImpresora;
         private System.Windows.Forms.RadioButton rbtDesPantalla;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnGenerar;
     }
 }

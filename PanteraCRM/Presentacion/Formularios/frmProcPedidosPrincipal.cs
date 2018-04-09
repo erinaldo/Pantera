@@ -500,6 +500,11 @@ namespace Presentacion
             }
             sesion.pedidodetallecontenido = ListaPedidoContenido;
         }
-      
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            basicas.exportaExcel(dgvPedidos);
+        }
     }
 }

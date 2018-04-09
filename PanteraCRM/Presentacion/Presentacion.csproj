@@ -160,6 +160,12 @@
     <Compile Include="Formularios\frmBusquedaUbigeo.Designer.cs">
       <DependentUpon>frmBusquedaUbigeo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmCargUniversal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCargUniversal.Designer.cs">
+      <DependentUpon>frmCargUniversal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmConsCobranzaDocuVentaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -430,6 +436,30 @@
     <Compile Include="Formularios\frmProcValesIngresoPrincipal.Designer.cs">
       <DependentUpon>frmProcValesIngresoPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmRepoCierreBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepoCierreBalance.Designer.cs">
+      <DependentUpon>frmRepoCierreBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepoCierreCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepoCierreCompra.Designer.cs">
+      <DependentUpon>frmRepoCierreCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepoCierreExhibicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepoCierreExhibicion.Designer.cs">
+      <DependentUpon>frmRepoCierreExhibicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRepoCierreVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRepoCierreVenta.Designer.cs">
+      <DependentUpon>frmRepoCierreVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmSecuAutenticacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -558,10 +588,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Programas\basicas.cs" />
-    <Compile Include="Programas\converntirNenL.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Programas\sesion.cs" />
+    <Compile Include="Programas\TaskInfo.cs" />
     <Compile Include="Programas\utilidades.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reportes\crearTicket.cs" />
@@ -648,6 +676,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmBusquedaUbigeo.resx">
       <DependentUpon>frmBusquedaUbigeo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCargUniversal.resx">
+      <DependentUpon>frmCargUniversal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsCobranzaDocuVentaPrincipal.resx">
       <DependentUpon>frmConsCobranzaDocuVentaPrincipal.cs</DependentUpon>
@@ -790,8 +821,20 @@
     <EmbeddedResource Include="Formularios\frmProcValesIngresoPrincipal.resx">
       <DependentUpon>frmProcValesIngresoPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepoCierreBalance.resx">
+      <DependentUpon>frmRepoCierreBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepoCierreCompra.resx">
+      <DependentUpon>frmRepoCierreCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepoCierreExhibicion.resx">
+      <DependentUpon>frmRepoCierreExhibicion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmRepoCierreMensualPrincipal.resx">
       <DependentUpon>frmRepoCierreMensualPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRepoCierreVenta.resx">
+      <DependentUpon>frmRepoCierreVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmRepoCobranzaDiaria.resx">
       <DependentUpon>frmRepoCobranzaDiaria.cs</DependentUpon>

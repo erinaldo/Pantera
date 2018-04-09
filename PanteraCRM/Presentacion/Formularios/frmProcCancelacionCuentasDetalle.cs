@@ -489,7 +489,7 @@ namespace Presentacion
                 int tipopago = 0;
                 if (montoacumulado == 0)
                 {
-                    tipopago = 2;//canjeado completo
+                    tipopago = 2; //canjeado completo
                 }else
                 {
                     tipopago = 3; // canjeado parcial
@@ -514,8 +514,7 @@ namespace Presentacion
                         PlacobDetalleG.nuimporpendiente = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString());
                         PlacobDetalleG.p_inidmoneda = (int)cboMoneda.SelectedValue;
                         PlacobDetalleG.p_inidmonedapag = (int)cboMoneda.SelectedValue;
-                        montofinal = (decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) - montodescargado);
-                        PlacobDetalleG.nuimporpagmonenac = montofinal;
+                        PlacobDetalleG.nuimporpagmonenac = montodescargado;
                         PlacobDetalleG.nuimporpagmoneext = decimal.Parse(dgvDocumentosSeleccionados.Rows[i].Cells["CHMONTOS"].Value.ToString()) * decimal.Parse(txtTipoCambio.Text);
                         PlacobDetalleG.nuimporcamvta = decimal.Parse(txtTipoCambio.Text);
                         PlacobDetalleG.p_inidtipopag = tipopago;//pendiente = 0, cancelado = 1;
