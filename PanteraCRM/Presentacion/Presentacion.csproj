@@ -641,6 +641,12 @@
       <DependentUpon>CrystalReportProveedor.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\CrystalReportRegistroVentas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportRegistroVentas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\CrystalReportVales.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -928,6 +934,10 @@
     <EmbeddedResource Include="Reportes\CrystalReportProveedor.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportProveedor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CrystalReportRegistroVentas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportRegistroVentas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\CrystalReportVales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

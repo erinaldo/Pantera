@@ -27,5 +27,10 @@ namespace Presentacion
         {
             this.Dispose();
         }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

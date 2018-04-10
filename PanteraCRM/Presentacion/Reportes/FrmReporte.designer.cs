@@ -48,7 +48,6 @@
             this.CrpViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CrpViewer.Cursor = System.Windows.Forms.Cursors.Default;
             this.CrpViewer.DisplayStatusBar = false;
-            this.CrpViewer.DisplayToolbar = false;
             this.CrpViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CrpViewer.Location = new System.Drawing.Point(0, 0);
             this.CrpViewer.Name = "CrpViewer";
@@ -59,8 +58,10 @@
             this.CrpViewer.ShowGroupTreeButton = false;
             this.CrpViewer.ShowLogo = false;
             this.CrpViewer.ShowParameterPanelButton = false;
+            this.CrpViewer.ShowPrintButton = false;
             this.CrpViewer.ShowRefreshButton = false;
             this.CrpViewer.ShowTextSearchButton = false;
+            this.CrpViewer.ShowZoomButton = false;
             this.CrpViewer.Size = new System.Drawing.Size(753, 700);
             this.CrpViewer.TabIndex = 0;
             this.CrpViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
@@ -70,7 +71,7 @@
             this.btnGenerar.Location = new System.Drawing.Point(12, 114);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(135, 28);
-            this.btnGenerar.TabIndex = 5;
+            this.btnGenerar.TabIndex = 1;
             this.btnGenerar.Text = "Generar Comprobantes";
             this.btnGenerar.UseVisualStyleBackColor = true;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
@@ -153,7 +154,7 @@
             this.btnSalir.Location = new System.Drawing.Point(12, 156);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(135, 28);
-            this.btnSalir.TabIndex = 12;
+            this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);

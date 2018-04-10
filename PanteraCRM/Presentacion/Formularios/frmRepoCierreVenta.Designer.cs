@@ -44,13 +44,12 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
-            this.pbar = new System.Windows.Forms.ProgressBar();
-            this.grpCarga = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblrespuesta = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.grpCarga.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -102,6 +101,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.rbtExcel);
             this.groupBox2.Controls.Add(this.rbtImpresora);
             this.groupBox2.Controls.Add(this.rbtPatalla);
@@ -181,7 +181,7 @@
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(91, 245);
+            this.groupBox4.Location = new System.Drawing.Point(91, 219);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(180, 48);
             this.groupBox4.TabIndex = 6;
@@ -212,22 +212,22 @@
             this.btnGenerar.UseVisualStyleBackColor = false;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
-            // pbar
+            // label4
             // 
-            this.pbar.Location = new System.Drawing.Point(6, 19);
-            this.pbar.Name = "pbar";
-            this.pbar.Size = new System.Drawing.Size(325, 23);
-            this.pbar.TabIndex = 7;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(0, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "label4";
             // 
-            // grpCarga
+            // lblrespuesta
             // 
-            this.grpCarga.Controls.Add(this.pbar);
-            this.grpCarga.Location = new System.Drawing.Point(12, 191);
-            this.grpCarga.Name = "grpCarga";
-            this.grpCarga.Size = new System.Drawing.Size(337, 48);
-            this.grpCarga.TabIndex = 8;
-            this.grpCarga.TabStop = false;
-            this.grpCarga.Visible = false;
+            this.lblrespuesta.AutoSize = true;
+            this.lblrespuesta.Location = new System.Drawing.Point(9, 194);
+            this.lblrespuesta.Name = "lblrespuesta";
+            this.lblrespuesta.Size = new System.Drawing.Size(0, 13);
+            this.lblrespuesta.TabIndex = 7;
             // 
             // frmRepoCierreVenta
             // 
@@ -236,8 +236,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(363, 304);
-            this.Controls.Add(this.grpCarga);
+            this.ClientSize = new System.Drawing.Size(363, 276);
+            this.Controls.Add(this.lblrespuesta);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -257,8 +257,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.grpCarga.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -279,7 +279,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGenerar;
-        private System.Windows.Forms.ProgressBar pbar;
-        private System.Windows.Forms.GroupBox grpCarga;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblrespuesta;
     }
 }

@@ -11,6 +11,8 @@ using Entidades;
 using Negocios;
 using Excel = Microsoft.Office.Interop.Excel;
 using Presentacion.Programas;
+using Presentacion.Dataset;
+
 namespace Presentacion
 {
     public partial class frmRepoCierreVenta : Form
@@ -29,43 +31,93 @@ namespace Presentacion
             cboCategoria.DataSource = maestrodetalleNE.ListarCategorias();
             cboCategoria.ValueMember = "p_inidcategoria";
             cboCategoria.DisplayMember = "chcategoria";
+            rbtPatalla.Checked=true;
 
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            creaExcel();
+            if (rbtExcel.Checked)
+            {
+                creaExcel();
+            }
+            else
+            {
+                if (rbtPatalla.Checked)
+                {
+                    Crearimpresion();
+                }
+                else
+                {
+                    if (rbtImpresora.Checked)
+                    {
+                        MessageBox.Show("Generado impre", "Mensaje de Sistema", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error de seleccion", "Mensaje de Sistema", MessageBoxButtons.OK);
+                        txtfi.Focus();
+                        return;
+                    }
+                }
+            }
         }
+        private void Crearimpresion()
+        {
+            Reportes.FrmReportesM f = new Reportes.FrmReportesM();    
+            CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt1;
+            DataSet Dts = new DtsPedidos();
+            /*PRA CABECERA*/
+            int orden = 1;
 
-        //if (rbtExcel.Checked)
-        //{
-        //    MessageBox.Show("generado excel", "Mensaje de Sistema", MessageBoxButtons.OK);
-        //}
-        //else
-        //{
-        //    if (rbtPatalla.Checked)
-        //    {
-        //        MessageBox.Show("generado pantalla", "Mensaje de Sistema", MessageBoxButtons.OK);
-        //    }
-        //    else
-        //    {
-        //        if (rbtImpresora.Checked)
-        //        {
-        //            MessageBox.Show("Generado impre", "Mensaje de Sistema", MessageBoxButtons.OK);
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Generado", "Mensaje de Sistema", MessageBoxButtons.OK);
-        //            txtfi.Focus();
-        //            return;
-        //        }
-        //    }
-        //}
+            DateTime dt1 = DateTime.Parse(txtfi.Text);
+            string inicio = dt1.ToString("dd/MM/yyyy");
+
+            DateTime dt2 = DateTime.Parse(txtff.Text);
+            string fin = dt2.ToString("dd/MM/yyyy");
+            List<registroventaexcel> Lista = pedidoNE.RegistroVentasListadoExcel(inicio, fin, (int)cboCategoria.SelectedValue);
+            if (Lista.Count <= 0)
+            {
+                MessageBox.Show("No se encontraron datos", "Mensaje de Sistema", MessageBoxButtons.OK);
+                lblrespuesta.Text = "No hay datos.";
+                return;
+            }
+            lblrespuesta.Text = "Cargando datos...";
+            foreach (registroventaexcel registro in Lista)
+            {
+                Dts.Tables["registroventa"].LoadDataRow(new object[]
+            {
+                orden++,
+                registro.razon,
+                registro.tipoclie,
+                registro.chlicencia,
+                registro.nucantidad.ToString(),
+                registro.chtipoproducto,
+                registro.chmarca,
+                registro.chcalibre,
+                registro.chdmodelo,
+                registro.chcodigoserie,
+                fin,
+                "",
+                sesion.SessionGlobal.chpuntoventa,
+                "DIRECCION: AV. DEFENSORES DEL MORRO  N° 666  OF. 44, 45 y 46 - CHORRILLOS - LIMA - PERU",
+                "RUC: 20522355292",
+                "REGISTRO DE VENTAS",
+                "MES:"
+            }, true);
+
+        }
+            Dts.AcceptChanges();          
+            Rpt1 = new Reportes.CrystalReportRegistroVentas();
+            Rpt1.SetDataSource(Dts);
+            f.Rpt = Rpt1;
+            f.ShowDialog(this);
+        }
+        
    
         private void creaExcel()
         {
-            grpCarga.Visible = true;
-            grpCarga.Text = "Cargando archivos ...";
+            lblrespuesta.Text = "Cargando archivos ...";
             Excel.Application excel = new Excel.Application();
             Excel._Workbook libro = null;
             Excel._Worksheet hoja = null;
@@ -74,12 +126,12 @@ namespace Presentacion
             //creamos un libro nuevo y la hoja con la que vamos a trabajar
             libro = (Excel._Workbook)excel.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
             hoja = (Excel._Worksheet)libro.Worksheets.Add();
-            hoja.Name = "EJEMPLO";
+            hoja.Name = "REGISTRO DE VENTAS";
             ((Excel.Worksheet)excel.ActiveWorkbook.Sheets["Hoja1"]).Delete();   //Borramos la hoja que crea en el libro por defecto
 
 
             //Montamos las cabeceras 
-            grpCarga.Text = "Cargando Cabecera: "+txtfi.Text+":"+txtff.Text+ ":"+(int)cboCategoria.SelectedValue;
+            lblrespuesta.Text = "Cargando cabecera...";
             montaCabeceras(3, ref hoja);
             //Rellenamos las celdas
             int fila = 9;
@@ -90,7 +142,15 @@ namespace Presentacion
 
             DateTime dt2 = DateTime.Parse(txtff.Text);
             string fin = dt2.ToString("dd/MM/yyyy");
+
             List<registroventaexcel> Lista= pedidoNE.RegistroVentasListadoExcel(inicio,fin,(int)cboCategoria.SelectedValue);
+            if (Lista.Count <=0)
+            {
+                MessageBox.Show("No se encontraron datos", "Mensaje de Sistema", MessageBoxButtons.OK);
+                lblrespuesta.Text = "No hay datos.";
+                return;
+            }
+            lblrespuesta.Text = "Cargando datos...";
             foreach (registroventaexcel registro in Lista)
             {
                 
@@ -115,24 +175,11 @@ namespace Presentacion
                 rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
 
             }
-
-            //for (int i = 0; i < 20; i++)
-            //{               
-            //    //Asignamos los datos a las celdas de la fila
-            //    hoja.Cells[fila + i, 2] = fila * i;
-            //    hoja.Cells[fila + i, 3] = "Descripción " + (i + 1).ToString();
-            //    hoja.Cells[fila + i, 4] = "Observación " + (fila * i).ToString();
-            //    //Definimos la fila y la columna del rango 
-            //    string x = "B" + (fila + i).ToString();
-            //    string y = "D" + (fila + i).ToString();
-            //    rango = hoja.Range[x, y];
-            //    rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;                
-            //    grpCarga.Text = "Cargando:" + i + "%";
-
-            //}
+            lblrespuesta.Text = "Finalizando...";
             excel.Visible = true;
             excel.UserControl = false;
             //excel.Quit();
+            lblrespuesta.Text = "Archivo generado abierto.";
             basicas.liberaObjeto(excel);
         }
 
@@ -165,7 +212,7 @@ namespace Presentacion
 
 
                 rango = hoja.Range["B2", "N2"];
-                rango.Merge();       
+                rango.Merge();
                 rango = hoja.Range["B3", "N3"];
                 rango.Merge();
                 rango = hoja.Range["B4", "N4"];
@@ -197,11 +244,16 @@ namespace Presentacion
                 rango.Merge();
                 rango = hoja.Range["N8", "N9"];
                 rango.Merge();
-               
-               
+
+
 
                 //Ponemos borde a las celdas
+
+                rango = hoja.Range["B2", "N7"];
+                rango.Font.Bold = true;
+                rango.Font.Size = 12;
                 rango = hoja.Range["B8", "N9"];
+                rango.Font.Bold = true;
                 rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
                 rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
                 //Centramos los textos
