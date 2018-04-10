@@ -69,11 +69,18 @@ namespace Negocios
         {
             return pedidoDL.RegistroVentasListarParametro(parametro);
         }
+        public static List<registroventaexcel> RegistroVentasListadoExcel(string fechai, string fechaf, int categoria)
+        {
+            return pedidoDL.RegistroVentasListadoExcel( fechai,  fechaf,  categoria);
+        }
+
+
+
         //public static List<RegistroVenta> RegistroVentasListarCodigo(int parametro)
         //{
         //    return pedidoDL.RegistroVentasListarCodigo(parametro);
         //}
-        
+
         public static List<RegistroVenta> BuscarRegistroVentasCliente(int clientecodigo)
         {
             return pedidoDL.BuscarRegistroVentasCliente(clientecodigo);

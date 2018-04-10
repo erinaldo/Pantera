@@ -203,7 +203,6 @@
             // btnGenerar
             // 
             this.btnGenerar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnGenerar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnGenerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.Location = new System.Drawing.Point(6, 14);
             this.btnGenerar.Name = "btnGenerar";

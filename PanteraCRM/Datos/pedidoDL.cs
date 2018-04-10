@@ -477,6 +477,34 @@ namespace Datos
             }
 
         }
+        public static List<registroventaexcel> RegistroVentasListadoExcel(string fechai, string fechaf, int categoria)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_registro_venta_reporte_excel", CommandType.StoredProcedure, new parametro("fechai", fechai), new parametro("fechaf", fechaf), new parametro("tipo", categoria)))
+            {
+                List<registroventaexcel> Listado = new List<registroventaexcel>();
+                while (datareader.Read())
+                {
+                    registroventaexcel registro = new registroventaexcel();
+                  
+                    registro.razon = Convert.ToString(datareader["razon"]).Trim();
+                    registro.tipoclie = Convert.ToString(datareader["tipoclie"]).Trim();
+                    registro.chlicencia = Convert.ToString(datareader["chlicencia"]).Trim();
+                    registro.chfechapedido = Convert.ToString(datareader["chfechapedido"]).Trim();
+                    registro.nucantidad = Convert.ToDecimal(datareader["nucantidad"]);
+                    registro.nucantporuni = Convert.ToInt32(datareader["nucantporuni"]);
+                    registro.chcodigoserie = Convert.ToString(datareader["chcodigoserie"]).Trim();
+                    registro.chfamiliaproducto = Convert.ToString(datareader["chfamiliaproducto"]).Trim(); 
+                    registro.chtipoproducto = Convert.ToString(datareader["chtipoproducto"]).Trim();
+                    registro.chmarca = Convert.ToString(datareader["chmarca"]).Trim();
+                    registro.chcalibre = Convert.ToString(datareader["chcalibre"]).Trim();
+                    registro.chdmodelo = Convert.ToString(datareader["chdmodelo"]).Trim();
+                    Listado.Add(registro);
+                }
+                return Listado;
+            }
+
+        }
+        
         public static decimal BuscarMontoEncontra(int tipocomprobante, string correlativo, int cliente)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_planillacobrosd_busqueda_registros", CommandType.StoredProcedure, new parametro("tipocomprobante", tipocomprobante), new parametro("correlativo", correlativo),  new parametro("cliente", cliente)))
