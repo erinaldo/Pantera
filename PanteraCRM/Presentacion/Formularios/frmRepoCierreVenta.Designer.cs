@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.rbtExcel = new System.Windows.Forms.RadioButton();
             this.rbtImpresora = new System.Windows.Forms.RadioButton();
             this.rbtPatalla = new System.Windows.Forms.RadioButton();
@@ -44,7 +45,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblrespuesta = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -61,7 +61,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(337, 59);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fechas";
             // 
@@ -79,7 +79,7 @@
             this.txtfi.Location = new System.Drawing.Point(66, 23);
             this.txtfi.Name = "txtfi";
             this.txtfi.Size = new System.Drawing.Size(96, 20);
-            this.txtfi.TabIndex = 6;
+            this.txtfi.TabIndex = 1;
             // 
             // label2
             // 
@@ -96,7 +96,7 @@
             this.label1.Location = new System.Drawing.Point(14, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Desde";
             // 
             // groupBox2
@@ -111,6 +111,15 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Destino";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(0, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "label4";
             // 
             // rbtExcel
             // 
@@ -181,7 +190,7 @@
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(91, 219);
+            this.groupBox4.Location = new System.Drawing.Point(91, 191);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(180, 48);
             this.groupBox4.TabIndex = 6;
@@ -212,15 +221,6 @@
             this.btnGenerar.UseVisualStyleBackColor = false;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 64);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "label4";
-            // 
             // lblrespuesta
             // 
             this.lblrespuesta.AutoSize = true;
@@ -236,7 +236,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(363, 276);
+            this.ClientSize = new System.Drawing.Size(363, 249);
             this.Controls.Add(this.lblrespuesta);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);

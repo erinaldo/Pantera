@@ -256,14 +256,14 @@ namespace Presentacion
         private void CargarDatosCabecera()
         {
             pedidocabecera pedCab = pedidoNE.PedidoCabeceraBusquedaCodigo(CodigoPedidoCabecera);
-            List<pedidodetalle> peddet = pedidoNE.PedidoDetalleBusquedaParametro(CodigoPedidoCabecera);            
+            List<pedidodetalle> peddet = pedidoNE.PedidoDetalleBusquedaParametro(CodigoPedidoCabecera);
             List<pedidodetallecontenido> ListaPedidoContenido = new List<pedidodetallecontenido>();
             foreach (pedidodetalle obj in peddet)
             {
                 pedidodetallecontenido RegistroPed = new pedidodetallecontenido();
-                RegistroPed.orden = int.Parse( obj.chitem);
+                RegistroPed.orden = int.Parse(obj.chitem);
                 RegistroPed.pedidodetalle = obj;
-                serie registrosserie= serieNE.SerieBusquedaCodigo(obj.p_inidserie);
+                serie registrosserie = serieNE.SerieBusquedaCodigo(obj.p_inidserie);
                 if (registrosserie.p_inidserie == 0) { registrosserie = null; }
                 RegistroPed.serie = registrosserie;
                 producto prod = productoNE.ProductoBusquedaCodigo(obj.p_inidproducto);
@@ -274,18 +274,19 @@ namespace Presentacion
             sesion.pedidodetallecontenido = ListaPedidoContenido;
             Mcliente Registroscliente = clienteNE.ClienteBusquedaCodigo(pedCab.p_inidcliente);
             txtCodigoCliente.Text = Registroscliente.chcodigocliente;
-            txtNroPedido.Text = pedCab.chcodigopedido ;
+
+            txtNroPedido.Text = pedCab.chcodigopedido;
             txtFechaActual.Text = pedCab.chfechapedido;
             cboTipoDocu.SelectedValue = pedCab.p_inidtipodocumento;
             cboTraslado.SelectedValue = pedCab.p_inmotivotransaccion;
-            cboCondVenta.SelectedValue= pedCab.p_inidcompromisopago;
+            cboCondVenta.SelectedValue = pedCab.p_inidcompromisopago;
             txtordcomp.Text = pedCab.chordencompra;
             cboNombreConductor.SelectedValue = pedCab.p_inidconductor;
             cboVehiculo.Text = pedCab.chplacavehiculo;
             //txtfechaInicio.Text = pedCab.chfechainiciotransporte;
             txtPtoPartida.Text = pedCab.chpuntopartida;
             txtPtoLlegada.Text = pedCab.chpuntollegada;
-            txtimpuso.Text= pedCab.p_inidigv.ToString();           
+            txtimpuso.Text = pedCab.p_inidigv.ToString();
 
             //txtSubtotal.Text = "" + decimal.Round(pedCab.nuventainafectamonnacional- pedCab.nutotaldescmonnacional, 2);
             //txtValVenta.Text = "" + decimal.Round(pedCab.nuventainafectamonnacional, 2);
@@ -294,14 +295,22 @@ namespace Presentacion
             //txtTotVenta.Text = "" + decimal.Round(pedCab.nutotalventamonnacional , 2);
             txtObs.Text = pedCab.chobservacion;
             cboVehiculo.SelectedValue = pedCab.p_inidvehiculo;
-            cboTarjeta.SelectedValue = pedCab.p_inidlicencia;
+            cbkValLicencia.Checked = true;
+            cbkValTarjeta.Checked = true;
+            txtcodigolicencia.Text = pedCab.codigolicencia;
+            txtcodigotarjeta.Text = pedCab.codigotarjeta;
+            txtDesc.Text = "0";
+            cboTarjeta.SelectedValue = pedCab.p_inidtarjeta;
+            cboLicencia.SelectedValue = pedCab.p_inidlicencia;
+            //MessageBox.Show("Código de Cliente vacío"+pedCab.vencilicencia, "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+            //DateTime dt1 = DateTime.Parse(pedCab.vencilicencia);
+            //DateTime dt2 = DateTime.Parse(pedCab.vencitarjeta);
+            txtvencialicencia.Text = pedCab.vencilicencia;
+            txtvencitarjeta.Text = pedCab.vencitarjeta;
             CargarTablaDetalle();
 
         }
-        private void CargarDatosDetalle()
-        {
 
-        }
         private void Desactivartext(TextBox texbox)
         {
             texbox.ReadOnly = true;
@@ -617,7 +626,7 @@ namespace Presentacion
             registrosPedidoCabecera.tmhorapedido = DateTime.Now.ToLongTimeString();
             registrosPedidoCabecera.p_inidtipodocumento = (int)cboTipoDocu.SelectedValue;
             registrosPedidoCabecera.p_inidcliente = ClienteG.p_inidcodigoclie;
-            registrosPedidoCabecera.p_inmotivotransaccion = (int)cboCondVenta.SelectedValue;
+            registrosPedidoCabecera.p_inmotivotransaccion = (int)cboTraslado.SelectedValue;
             registrosPedidoCabecera.p_inidcompromisopago = (int)cboCondVenta.SelectedValue;
             registrosPedidoCabecera.nuporcenatajedesc = 0;
             registrosPedidoCabecera.chordencompra = txtordcomp.Text;

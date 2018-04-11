@@ -34,8 +34,8 @@ namespace Presentacion
             this.Dispose();
         }
 
-        
-        
+
+        internal int coon = 0;
         private void btnAnadir_Click(object sender, EventArgs e)
         {
             bool valserie = txtSerie.Text.Length > 0;
@@ -56,7 +56,9 @@ namespace Presentacion
                             string identificador = txtidentificador.Text;
                             string chobs = txtObs.Text;
                             string serie = txtSerie.Text;
+
                             dgvListaIngreso.Rows.Add(p_inidproducto, chproducto, chnombrecompuesto, serie,identificador, chobs,false,"","","");
+
                             txtSerie.Text = "";
                             txtObs.Text = "";
                             txtidentificador.Text = "";

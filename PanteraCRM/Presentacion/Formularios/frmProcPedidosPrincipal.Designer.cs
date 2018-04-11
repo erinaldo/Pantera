@@ -54,7 +54,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -273,16 +272,6 @@
             this.txtParametro.TabIndex = 0;
             this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(743, 531);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmProcPedidosPrincipal
             // 
             this.AcceptButton = this.btnAnadir;
@@ -291,7 +280,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(831, 564);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvPedidos);
@@ -333,6 +321,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHDOC;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHTOTAL;
         private System.Windows.Forms.DataGridViewTextBoxColumn CHESTADO;
-        private System.Windows.Forms.Button button1;
     }
 }

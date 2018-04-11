@@ -57,7 +57,7 @@
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(91, 219);
+            this.groupBox4.Location = new System.Drawing.Point(91, 79);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(180, 48);
             this.groupBox4.TabIndex = 15;
@@ -95,7 +95,7 @@
             this.groupBox2.Controls.Add(this.rbtExcel);
             this.groupBox2.Controls.Add(this.rbtImpresora);
             this.groupBox2.Controls.Add(this.rbtPatalla);
-            this.groupBox2.Location = new System.Drawing.Point(12, 130);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(339, 61);
             this.groupBox2.TabIndex = 13;
@@ -151,7 +151,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(359, 282);
+            this.ClientSize = new System.Drawing.Size(362, 146);
             this.Controls.Add(this.lblrespuesta);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
@@ -160,6 +160,7 @@
             this.MinimizeBox = false;
             this.Name = "frmRepoCierreExhibicion";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmRepoCierreExhibicion";
             this.Load += new System.EventHandler(this.frmRepoCierreExhibicion_Load);
             this.groupBox4.ResumeLayout(false);

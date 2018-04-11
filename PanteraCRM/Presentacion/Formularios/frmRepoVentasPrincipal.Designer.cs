@@ -30,22 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRepoVentasPrincipal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtfechaf = new System.Windows.Forms.DateTimePicker();
+            this.txtfechai = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboDocumento = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbtnExcel = new System.Windows.Forms.RadioButton();
+            this.rbtnImpresora = new System.Windows.Forms.RadioButton();
+            this.rbtnPantalla = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
+            this.lblrespuesta = new System.Windows.Forms.Label();
+            this.cbkTodo = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -54,8 +54,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.txtfechaf);
+            this.groupBox1.Controls.Add(this.txtfechai);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 4);
@@ -65,21 +65,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rango de Fechas";
             // 
-            // dateTimePicker2
+            // txtfechaf
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(194, 21);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(97, 20);
-            this.dateTimePicker2.TabIndex = 3;
+            this.txtfechaf.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtfechaf.Location = new System.Drawing.Point(194, 21);
+            this.txtfechaf.Name = "txtfechaf";
+            this.txtfechaf.Size = new System.Drawing.Size(96, 20);
+            this.txtfechaf.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // txtfechai
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(57, 21);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.txtfechai.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtfechai.Location = new System.Drawing.Point(57, 21);
+            this.txtfechai.Name = "txtfechai";
+            this.txtfechai.Size = new System.Drawing.Size(96, 20);
+            this.txtfechai.TabIndex = 2;
             // 
             // label2
             // 
@@ -101,97 +101,78 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.cbkTodo);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cboDocumento);
             this.groupBox2.Location = new System.Drawing.Point(12, 63);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(298, 92);
+            this.groupBox2.Size = new System.Drawing.Size(298, 74);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opciones";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Tipo Producto";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(110, 47);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(182, 21);
-            this.comboBox2.TabIndex = 7;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 25);
+            this.label3.Location = new System.Drawing.Point(6, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Tipo Producto";
+            this.label3.Text = "Tipo Doc.";
             // 
-            // comboBox1
+            // cboDocumento
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(109, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cboDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDocumento.FormattingEnabled = true;
+            this.cboDocumento.Location = new System.Drawing.Point(88, 44);
+            this.cboDocumento.Name = "cboDocumento";
+            this.cboDocumento.Size = new System.Drawing.Size(203, 21);
+            this.cboDocumento.TabIndex = 5;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.radioButton3);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Location = new System.Drawing.Point(12, 155);
+            this.groupBox3.Controls.Add(this.rbtnExcel);
+            this.groupBox3.Controls.Add(this.rbtnImpresora);
+            this.groupBox3.Controls.Add(this.rbtnPantalla);
+            this.groupBox3.Location = new System.Drawing.Point(12, 137);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(298, 55);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Destino";
             // 
-            // radioButton3
+            // rbtnExcel
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(230, 23);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(51, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Excel";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtnExcel.AutoSize = true;
+            this.rbtnExcel.Location = new System.Drawing.Point(230, 23);
+            this.rbtnExcel.Name = "rbtnExcel";
+            this.rbtnExcel.Size = new System.Drawing.Size(51, 17);
+            this.rbtnExcel.TabIndex = 2;
+            this.rbtnExcel.TabStop = true;
+            this.rbtnExcel.Text = "Excel";
+            this.rbtnExcel.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbtnImpresora
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(118, 23);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(71, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Impresora";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtnImpresora.AutoSize = true;
+            this.rbtnImpresora.Location = new System.Drawing.Point(118, 23);
+            this.rbtnImpresora.Name = "rbtnImpresora";
+            this.rbtnImpresora.Size = new System.Drawing.Size(71, 17);
+            this.rbtnImpresora.TabIndex = 1;
+            this.rbtnImpresora.TabStop = true;
+            this.rbtnImpresora.Text = "Impresora";
+            this.rbtnImpresora.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtnPantalla
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(14, 23);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(63, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Pantalla";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtnPantalla.AutoSize = true;
+            this.rbtnPantalla.Location = new System.Drawing.Point(14, 23);
+            this.rbtnPantalla.Name = "rbtnPantalla";
+            this.rbtnPantalla.Size = new System.Drawing.Size(63, 17);
+            this.rbtnPantalla.TabIndex = 0;
+            this.rbtnPantalla.TabStop = true;
+            this.rbtnPantalla.Text = "Pantalla";
+            this.rbtnPantalla.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -200,7 +181,7 @@
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(71, 216);
+            this.groupBox4.Location = new System.Drawing.Point(71, 212);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(180, 48);
             this.groupBox4.TabIndex = 5;
@@ -231,6 +212,25 @@
             this.btnGenerar.UseVisualStyleBackColor = false;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
+            // lblrespuesta
+            // 
+            this.lblrespuesta.AutoSize = true;
+            this.lblrespuesta.Location = new System.Drawing.Point(12, 195);
+            this.lblrespuesta.Name = "lblrespuesta";
+            this.lblrespuesta.Size = new System.Drawing.Size(0, 13);
+            this.lblrespuesta.TabIndex = 6;
+            // 
+            // cbkTodo
+            // 
+            this.cbkTodo.AutoSize = true;
+            this.cbkTodo.Location = new System.Drawing.Point(9, 19);
+            this.cbkTodo.Name = "cbkTodo";
+            this.cbkTodo.Size = new System.Drawing.Size(133, 17);
+            this.cbkTodo.TabIndex = 7;
+            this.cbkTodo.Text = "Todos los documentos";
+            this.cbkTodo.UseVisualStyleBackColor = true;
+            this.cbkTodo.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // frmRepoVentasPrincipal
             // 
             this.AcceptButton = this.btnGenerar;
@@ -238,7 +238,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(322, 274);
+            this.ClientSize = new System.Drawing.Size(322, 276);
+            this.Controls.Add(this.lblrespuesta);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -260,6 +261,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -271,16 +273,16 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGenerar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker txtfechaf;
+        private System.Windows.Forms.DateTimePicker txtfechai;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboDocumento;
+        private System.Windows.Forms.RadioButton rbtnExcel;
+        private System.Windows.Forms.RadioButton rbtnImpresora;
+        private System.Windows.Forms.RadioButton rbtnPantalla;
+        private System.Windows.Forms.Label lblrespuesta;
+        private System.Windows.Forms.CheckBox cbkTodo;
     }
 }

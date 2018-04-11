@@ -51,6 +51,7 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvListaProdSeries = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.REQSERIE = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHCODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +60,6 @@
             this.CHPRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDSERIE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdSeries)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -334,6 +334,16 @@
             this.dgvListaProdSeries.TabIndex = 34;
             this.dgvListaProdSeries.TabStop = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnGrabar);
+            this.groupBox2.Controls.Add(this.btnSalir);
+            this.groupBox2.Location = new System.Drawing.Point(248, 316);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(166, 41);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            // 
             // REQSERIE
             // 
             this.REQSERIE.DataPropertyName = "req_serie";
@@ -354,6 +364,7 @@
             this.CHCODIGO.HeaderText = "CODIGO";
             this.CHCODIGO.Name = "CHCODIGO";
             this.CHCODIGO.ReadOnly = true;
+            this.CHCODIGO.Visible = false;
             this.CHCODIGO.Width = 60;
             // 
             // CHDESCRIPCION
@@ -362,6 +373,7 @@
             this.CHDESCRIPCION.HeaderText = "DESCRIPCION";
             this.CHDESCRIPCION.Name = "CHDESCRIPCION";
             this.CHDESCRIPCION.ReadOnly = true;
+            this.CHDESCRIPCION.Visible = false;
             this.CHDESCRIPCION.Width = 350;
             // 
             // CHMEDIDA
@@ -370,6 +382,7 @@
             this.CHMEDIDA.HeaderText = "MEDIDA";
             this.CHMEDIDA.Name = "CHMEDIDA";
             this.CHMEDIDA.ReadOnly = true;
+            this.CHMEDIDA.Visible = false;
             this.CHMEDIDA.Width = 60;
             // 
             // CHPRECIO
@@ -386,7 +399,7 @@
             this.CHSERIE.HeaderText = "SERIE";
             this.CHSERIE.Name = "CHSERIE";
             this.CHSERIE.ReadOnly = true;
-            this.CHSERIE.Width = 90;
+            this.CHSERIE.Width = 550;
             // 
             // IDSERIE
             // 
@@ -394,16 +407,7 @@
             this.IDSERIE.HeaderText = "IDSERIE";
             this.IDSERIE.Name = "IDSERIE";
             this.IDSERIE.ReadOnly = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnGrabar);
-            this.groupBox2.Controls.Add(this.btnSalir);
-            this.groupBox2.Location = new System.Drawing.Point(248, 316);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(166, 41);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
+            this.IDSERIE.Visible = false;
             // 
             // frmProcPedidosDetalle
             // 

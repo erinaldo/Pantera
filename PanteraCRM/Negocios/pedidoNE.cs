@@ -73,6 +73,14 @@ namespace Negocios
         {
             return pedidoDL.RegistroVentasListadoExcel( fechai,  fechaf,  categoria);
         }
+        public static List<registroventa1> RegistroVentasListadoExcelTipo1(string fechai, string fechaf, int categoria)
+        {
+            return pedidoDL.RegistroVentasListadoExcelTipo1(fechai, fechaf, categoria);
+        }
+        public static List<registroventa1> RegistroVentasListadoExcelTipo2(string fechai, string fechaf)
+        {
+            return pedidoDL.RegistroVentasListadoExcelTipo2(fechai, fechaf);
+        }
 
 
 

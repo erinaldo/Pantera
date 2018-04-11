@@ -108,12 +108,7 @@ namespace Presentacion
                 MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
-            //Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmManProductoAnadir);
-            //if (frm != null)
-            //{
-            //    frm.BringToFront();
-            //    return;
-            //}
+          
             frmManProductoAnadir f = new frmManProductoAnadir(vBoton);
             f.pasado += new frmManProductoAnadir.pasar(ejecutar);
             f.tmpProducto = new producto();

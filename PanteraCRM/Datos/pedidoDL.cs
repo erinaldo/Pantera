@@ -504,7 +504,58 @@ namespace Datos
             }
 
         }
-        
+        public static List<registroventa1> RegistroVentasListadoExcelTipo1(string fechai, string fechaf, int categoria)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_registroventa_listar_fechas_tipo", CommandType.StoredProcedure, new parametro("fechai", fechai), new parametro("fechaf", fechaf), new parametro("tipo", categoria)))
+            {
+                List<registroventa1> Listado = new List<registroventa1>();
+                while (datareader.Read())
+                {
+                    registroventa1 registro = new registroventa1();
+                    registro.chfechadoc = Convert.ToString(datareader["chfechadoc"]).Trim();
+                    registro.chnombredocumento = Convert.ToString(datareader["chnombredocumento"]).Trim();
+                    registro.chcodigodocu = Convert.ToString(datareader["chcodigodocu"]).Trim();
+                    registro.nuimportetotvta = Convert.ToDecimal(datareader["nuimportetotvta"]);
+                    registro.nuimporvtaafecta = Convert.ToDecimal(datareader["nuimporvtaafecta"]);
+                    registro.nuimporttotigv = Convert.ToDecimal(datareader["nuimporttotigv"]);
+                    registro.chcodigocliente = Convert.ToString(datareader["chcodigocliente"]).Trim();
+                    registro.tipodocu = Convert.ToString(datareader["tipodocu"]).Trim();
+                    registro.nrodocumento = Convert.ToString(datareader["nrodocumento"]).Trim();
+                    registro.razon = Convert.ToString(datareader["razon"]).Trim();
+                    
+                    Listado.Add(registro);
+                }
+                return Listado;
+            }
+
+        }
+        public static List<registroventa1> RegistroVentasListadoExcelTipo2(string fechai, string fechaf)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_registroventa_listar_fechas_todo", CommandType.StoredProcedure, new parametro("fechai", fechai), new parametro("fechaf", fechaf)))
+            {
+                List<registroventa1> Listado = new List<registroventa1>();
+                while (datareader.Read())
+                {
+                    registroventa1 registro = new registroventa1();
+                    registro.chfechadoc = Convert.ToString(datareader["chfechadoc"]).Trim();
+                    registro.chnombredocumento = Convert.ToString(datareader["chnombredocumento"]).Trim();
+                    registro.chcodigodocu = Convert.ToString(datareader["chcodigodocu"]).Trim();
+                    registro.nuimportetotvta = Convert.ToDecimal(datareader["nuimportetotvta"]);
+                    registro.nuimporvtaafecta = Convert.ToDecimal(datareader["nuimporvtaafecta"]);
+                    registro.nuimporttotigv = Convert.ToDecimal(datareader["nuimporttotigv"]);
+                    registro.chcodigocliente = Convert.ToString(datareader["chcodigocliente"]).Trim();
+                    registro.tipodocu = Convert.ToString(datareader["tipodocu"]).Trim();
+                    registro.nrodocumento = Convert.ToString(datareader["nrodocumento"]).Trim();
+                    registro.razon = Convert.ToString(datareader["razon"]).Trim();
+
+                    Listado.Add(registro);
+                }
+                return Listado;
+            }
+
+        }
+
+
         public static decimal BuscarMontoEncontra(int tipocomprobante, string correlativo, int cliente)
         {
             using (IDataReader datareader = conexion.executeOperation("fn_planillacobrosd_busqueda_registros", CommandType.StoredProcedure, new parametro("tipocomprobante", tipocomprobante), new parametro("correlativo", correlativo),  new parametro("cliente", cliente)))

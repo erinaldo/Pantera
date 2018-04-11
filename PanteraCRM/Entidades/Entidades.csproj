@@ -100,6 +100,7 @@
     <Compile Include="recibo.cs" />
     <Compile Include="Registroguia.cs" />
     <Compile Include="RegistroVenta.cs" />
+    <Compile Include="registroventa1.cs" />
     <Compile Include="registroventaexcel.cs" />
     <Compile Include="saldoalmacen.cs" />
     <Compile Include="serie.cs" />

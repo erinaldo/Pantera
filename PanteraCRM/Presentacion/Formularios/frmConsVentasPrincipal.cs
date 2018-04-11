@@ -25,10 +25,36 @@ namespace Presentacion
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            frmConsVentasDetalle f = new frmConsVentasDetalle();
+            try
+            {
+                string vBoton = "V";
+                if (basicas.validarAcceso(vBoton))
+                {
+                    ConectaFormSecundario(vBoton);
+                }
+                else
+                {
+                    MessageBox.Show("Error de Acceso", "Mensaje de Sistema", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK);
+            }
+        }
+        private void ConectaFormSecundario(string vBoton)
+        {
+            if (dgvListaRegistros.RowCount == 0)
+            {
+                MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                return;
+            }
+            frmProcPedidosCabecera f = new frmProcPedidosCabecera(vBoton);
+            f.PasadoCabecera += new frmProcPedidosCabecera.PasarCabecera(ejecutar);
+            f.CodigoPedidoCabecera = (int)dgvListaRegistros.CurrentRow.Cells["CODREGVTA"].Value;
             f.ShowDialog();
         }
-
         private void frmConsVentasPrincipal_Load(object sender, EventArgs e)
         {
             this.Top = (Screen.PrimaryScreen.Bounds.Height - DesktopBounds.Height) / 2;
@@ -59,7 +85,7 @@ namespace Presentacion
                     if (Registros.p_inidtipodocu != 5)
                     {
                         DevolverDatosCliente(Registros.p_inidcliente);
-                        dgvListaRegistros.Rows.Add(Registros.p_inidregistroventa, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, codigocliente, nombrecliente, Registros.chfechadoc, Registros.nuimportetotvta, DevolverEstado(Registros.chestadopago));
+                        dgvListaRegistros.Rows.Add(Registros.p_iniddocumento, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, codigocliente, nombrecliente, Registros.chfechadoc, Registros.nuimportetotvta, DevolverEstado(Registros.chestadopago));
                     }
                     
                 }

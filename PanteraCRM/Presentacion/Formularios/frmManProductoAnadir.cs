@@ -69,7 +69,7 @@ namespace Presentacion
             cboSituacion.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(7);
             cboSituacion.ValueMember = "idmaestrodetalle";
             cboSituacion.DisplayMember = "nombreitem";
-
+            txtUnidad.Text = "1";
             if (this.vBoton == "A")
             {
                 //label8.Text = "Añadir Producto";
@@ -85,7 +85,7 @@ namespace Presentacion
                 //int index4 = cboTipo.FindString("--NUEVO TIPO--");
                 //cboTipo.SelectedIndex = index4;
                 //cboTipo.Text = "--ELEGIR--";
-                txtUnidad.Text = "0";
+                
 
             }
             else
