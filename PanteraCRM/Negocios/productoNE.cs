@@ -70,6 +70,14 @@ namespace Negocios
         {
             return productoDL.ListaStockminimoLista();
         }
+        public static List<productostockminimo> ListaStockminimoListado()
+        {
+            return productoDL.ListaStockminimoListado();
+        }
+        public static List<productostockminimo> ListaStockminimoListadoParametro(int parametro)
+        {
+            return productoDL.ListaStockminimoListadoParametro(parametro);
+        }
         public static List<productobuscado> ListaPreciosListaParametro(string parametro)
         {
             return productoDL.ListaPreciosListaParametro(parametro);

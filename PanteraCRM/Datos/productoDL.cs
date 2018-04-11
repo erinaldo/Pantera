@@ -262,6 +262,41 @@ namespace Datos
                 return listado;
             }
         }
+        public static List<productostockminimo> ListaStockminimoListado()
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_producto_listar_stock_minimo", CommandType.StoredProcedure))
+            {
+                List<productostockminimo> listado = new List<productostockminimo>();
+                while (datareader.Read())
+                {
+                    productostockminimo registro = new productostockminimo();
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
+                    registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]).Trim();
+                    registro.producto = Convert.ToString(datareader["producto"]).Trim();
+                    registro.nustockactual = Convert.ToInt32(datareader["nustockactual"]);                    
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+        public static List<productostockminimo> ListaStockminimoListadoParametro(int parametro)
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_producto_listar_stock_minimo_parametro", CommandType.StoredProcedure, new parametro("in_parametro",parametro)))
+            {
+                List<productostockminimo> listado = new List<productostockminimo>();
+                while (datareader.Read())
+                {
+                    productostockminimo registro = new productostockminimo();
+                    registro.p_inidproducto = Convert.ToInt32(datareader["p_inidproducto"]);
+                    registro.chcodigoproducto = Convert.ToString(datareader["chcodigoproducto"]).Trim();
+                    registro.producto = Convert.ToString(datareader["producto"]).Trim();
+                    registro.nustockactual = Convert.ToInt32(datareader["nustockactual"]);
+                    listado.Add(registro);
+                }
+                return listado;
+            }
+        }
+
         public static List<productobuscado> ListaPreciosLista()
         {
             using (IDataReader datareader = conexion.executeOperation("fn_lista_precio_listar", CommandType.StoredProcedure))

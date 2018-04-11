@@ -91,6 +91,7 @@
     <Compile Include="productobuscadocodigo.cs" />
     <Compile Include="productoparaventa.cs" />
     <Compile Include="productoserie.cs" />
+    <Compile Include="productostockminimo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="proveedor.cs" />
     <Compile Include="proveedores.cs" />

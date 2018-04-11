@@ -406,6 +406,42 @@ namespace Datos
             }
 
         }
+        public static List<RegistroVenta> BuscarRegistroVentasListar()
+        {
+            using (IDataReader datareader = conexion.executeOperation("fn_registroventa_listar", CommandType.StoredProcedure))
+            {
+                List<RegistroVenta> Listado = new List<RegistroVenta>();
+                while (datareader.Read())
+                {
+                    RegistroVenta registro = new RegistroVenta();
+                    registro.p_inidregistroventa = Convert.ToInt32(datareader["p_inidregistroventa"]);
+                    registro.p_inidpuntoventa = Convert.ToInt32(datareader["p_inidpuntoventa"]);
+                    registro.p_inidtipodocu = Convert.ToInt32(datareader["p_inidtipodocu"]);
+                    registro.p_iniddocumento = Convert.ToInt32(datareader["p_iniddocumento"]);
+                    registro.chcodigodocu = Convert.ToString(datareader["chcodigodocu"]).Trim();
+                    registro.chfechadoc = Convert.ToString(datareader["chfechadoc"]).Trim();
+                    registro.p_inidcliente = Convert.ToInt32(datareader["p_inidcliente"]);
+                    registro.nucambioventa = Convert.ToDecimal(datareader["nucambioventa"]);
+                    registro.nuimporvtaafecta = Convert.ToDecimal(datareader["nuimporvtaafecta"]);
+                    registro.nuimportotdesc = Convert.ToDecimal(datareader["nuimportotdesc"]);
+                    registro.nuimporttotigv = Convert.ToDecimal(datareader["nuimporttotigv"]);
+                    registro.nuimportetotvta = Convert.ToDecimal(datareader["nuimportetotvta"]);
+                    registro.tipomovimiento = Convert.ToString(datareader["tipomovimiento"]).Trim();
+                    registro.chfechaventa = Convert.ToString(datareader["chfechaventa"]).Trim();
+                    registro.p_inidsituacionregistro = Convert.ToInt32(datareader["p_inidsituacionregistro"]);
+                    registro.p_inidusuarioinsert = Convert.ToInt32(datareader["p_inidusuarioinsert"]);
+                    registro.p_inidusuariodelete = Convert.ToInt32(datareader["p_inidusuariodelete"]);
+                    registro.estado = Convert.ToBoolean(datareader["estado"]);
+                    registro.chfechapago = Convert.ToString(datareader["chfechapago"]).Trim();
+                    registro.chestadopago = Convert.ToInt32(datareader["chestadopago"]);
+                    registro.chhorapago = Convert.ToString(datareader["chhorapago"]).Trim();
+                    Listado.Add(registro);
+                }
+                return Listado;
+            }
+
+        }
+        
         public static List<RegistroVenta> RegistroVentasListar()
         {
             using (IDataReader datareader = conexion.executeOperation("fn_registroventa_listar", CommandType.StoredProcedure))

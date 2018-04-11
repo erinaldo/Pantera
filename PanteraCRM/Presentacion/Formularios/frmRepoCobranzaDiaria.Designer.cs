@@ -40,14 +40,8 @@
             this.rbtnExcel = new System.Windows.Forms.RadioButton();
             this.rbtnImpresora = new System.Windows.Forms.RadioButton();
             this.rbtnPantalla = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CHUSUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BOVALIDAR = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -169,47 +163,6 @@
             this.rbtnPantalla.Text = "Pantalla";
             this.rbtnPantalla.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(218, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(323, 214);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Usuarios";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CHUSUARIO,
-            this.BOVALIDAR});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(311, 189);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // CHUSUARIO
-            // 
-            this.CHUSUARIO.HeaderText = "NOMBRE";
-            this.CHUSUARIO.Name = "CHUSUARIO";
-            this.CHUSUARIO.ReadOnly = true;
-            this.CHUSUARIO.Width = 250;
-            // 
-            // BOVALIDAR
-            // 
-            this.BOVALIDAR.HeaderText = "";
-            this.BOVALIDAR.Name = "BOVALIDAR";
-            this.BOVALIDAR.ReadOnly = true;
-            this.BOVALIDAR.Width = 50;
-            // 
             // frmRepoCobranzaDiaria
             // 
             this.AcceptButton = this.btnGenerar;
@@ -217,8 +170,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(553, 228);
-            this.Controls.Add(this.groupBox3);
+            this.ClientSize = new System.Drawing.Size(230, 228);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -228,13 +180,11 @@
             this.Name = "frmRepoCobranzaDiaria";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmRepoCobranzaDiaria";
+            this.Text = "COBRANZA DIARIA";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,8 +193,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker txtfechaf;
         private System.Windows.Forms.DateTimePicker txtfechai;
         private System.Windows.Forms.Label label2;
@@ -254,7 +202,5 @@
         private System.Windows.Forms.RadioButton rbtnExcel;
         private System.Windows.Forms.RadioButton rbtnImpresora;
         private System.Windows.Forms.RadioButton rbtnPantalla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHUSUARIO;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn BOVALIDAR;
     }
 }

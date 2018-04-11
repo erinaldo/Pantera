@@ -31,10 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRepoCuentasCobrarPrincipal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbtCliente = new System.Windows.Forms.RadioButton();
-            this.rbtVendedor = new System.Windows.Forms.RadioButton();
             this.rbtGeneral = new System.Windows.Forms.RadioButton();
             this.lblNroIden = new System.Windows.Forms.Label();
-            this.cboVendedores = new System.Windows.Forms.ComboBox();
             this.txtNomClie = new System.Windows.Forms.TextBox();
             this.txtNroDocuIden = new System.Windows.Forms.TextBox();
             this.txtClieCod = new System.Windows.Forms.TextBox();
@@ -62,10 +60,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rbtCliente);
-            this.groupBox1.Controls.Add(this.rbtVendedor);
             this.groupBox1.Controls.Add(this.rbtGeneral);
             this.groupBox1.Controls.Add(this.lblNroIden);
-            this.groupBox1.Controls.Add(this.cboVendedores);
             this.groupBox1.Controls.Add(this.txtNomClie);
             this.groupBox1.Controls.Add(this.txtNroDocuIden);
             this.groupBox1.Controls.Add(this.txtClieCod);
@@ -73,7 +69,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(334, 147);
+            this.groupBox1.Size = new System.Drawing.Size(334, 133);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
@@ -81,7 +77,7 @@
             // rbtCliente
             // 
             this.rbtCliente.AutoSize = true;
-            this.rbtCliente.Location = new System.Drawing.Point(6, 62);
+            this.rbtCliente.Location = new System.Drawing.Point(6, 43);
             this.rbtCliente.Name = "rbtCliente";
             this.rbtCliente.Size = new System.Drawing.Size(74, 17);
             this.rbtCliente.TabIndex = 11;
@@ -89,18 +85,6 @@
             this.rbtCliente.Text = "Un Cliente";
             this.rbtCliente.UseVisualStyleBackColor = true;
             this.rbtCliente.CheckedChanged += new System.EventHandler(this.rbtCliente_CheckedChanged);
-            // 
-            // rbtVendedor
-            // 
-            this.rbtVendedor.AutoSize = true;
-            this.rbtVendedor.Location = new System.Drawing.Point(6, 40);
-            this.rbtVendedor.Name = "rbtVendedor";
-            this.rbtVendedor.Size = new System.Drawing.Size(88, 17);
-            this.rbtVendedor.TabIndex = 10;
-            this.rbtVendedor.TabStop = true;
-            this.rbtVendedor.Text = "Un Vendedor";
-            this.rbtVendedor.UseVisualStyleBackColor = true;
-            this.rbtVendedor.CheckedChanged += new System.EventHandler(this.rbtVendedor_CheckedChanged);
             // 
             // rbtGeneral
             // 
@@ -117,26 +101,17 @@
             // lblNroIden
             // 
             this.lblNroIden.AutoSize = true;
-            this.lblNroIden.Location = new System.Drawing.Point(3, 92);
+            this.lblNroIden.Location = new System.Drawing.Point(66, 70);
             this.lblNroIden.Name = "lblNroIden";
             this.lblNroIden.Size = new System.Drawing.Size(83, 13);
             this.lblNroIden.TabIndex = 8;
             this.lblNroIden.Text = "Nro. Doc. Ident.";
             // 
-            // cboVendedores
-            // 
-            this.cboVendedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboVendedores.FormattingEnabled = true;
-            this.cboVendedores.Location = new System.Drawing.Point(112, 36);
-            this.cboVendedores.Name = "cboVendedores";
-            this.cboVendedores.Size = new System.Drawing.Size(216, 21);
-            this.cboVendedores.TabIndex = 0;
-            // 
             // txtNomClie
             // 
             this.txtNomClie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtNomClie.ForeColor = System.Drawing.Color.Blue;
-            this.txtNomClie.Location = new System.Drawing.Point(6, 115);
+            this.txtNomClie.Location = new System.Drawing.Point(6, 93);
             this.txtNomClie.Name = "txtNomClie";
             this.txtNomClie.ReadOnly = true;
             this.txtNomClie.Size = new System.Drawing.Size(319, 20);
@@ -147,16 +122,16 @@
             // 
             this.txtNroDocuIden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.txtNroDocuIden.ForeColor = System.Drawing.Color.Blue;
-            this.txtNroDocuIden.Location = new System.Drawing.Point(112, 89);
+            this.txtNroDocuIden.Location = new System.Drawing.Point(155, 67);
             this.txtNroDocuIden.Name = "txtNroDocuIden";
             this.txtNroDocuIden.ReadOnly = true;
-            this.txtNroDocuIden.Size = new System.Drawing.Size(100, 20);
+            this.txtNroDocuIden.Size = new System.Drawing.Size(170, 20);
             this.txtNroDocuIden.TabIndex = 5;
             this.txtNroDocuIden.TabStop = false;
             // 
             // txtClieCod
             // 
-            this.txtClieCod.Location = new System.Drawing.Point(155, 63);
+            this.txtClieCod.Location = new System.Drawing.Point(155, 41);
             this.txtClieCod.Name = "txtClieCod";
             this.txtClieCod.Size = new System.Drawing.Size(173, 20);
             this.txtClieCod.TabIndex = 1;
@@ -167,7 +142,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(109, 66);
+            this.lblCodigo.Location = new System.Drawing.Point(109, 45);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(40, 13);
             this.lblCodigo.TabIndex = 3;
@@ -255,7 +230,7 @@
             // 
             this.cboMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMoneda.FormattingEnabled = true;
-            this.cboMoneda.Location = new System.Drawing.Point(67, 164);
+            this.cboMoneda.Location = new System.Drawing.Point(67, 159);
             this.cboMoneda.Name = "cboMoneda";
             this.cboMoneda.Size = new System.Drawing.Size(63, 21);
             this.cboMoneda.TabIndex = 9;
@@ -263,7 +238,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 168);
+            this.label3.Location = new System.Drawing.Point(15, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 9;
@@ -273,7 +248,7 @@
             // 
             this.dtpFecha.CustomFormat = "";
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(237, 165);
+            this.dtpFecha.Location = new System.Drawing.Point(237, 159);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(100, 20);
             this.dtpFecha.TabIndex = 10;
@@ -282,7 +257,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(182, 168);
+            this.label4.Location = new System.Drawing.Point(182, 163);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 11;
@@ -366,7 +341,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblNroIden;
-        private System.Windows.Forms.ComboBox cboVendedores;
         private System.Windows.Forms.TextBox txtNomClie;
         private System.Windows.Forms.TextBox txtNroDocuIden;
         private System.Windows.Forms.TextBox txtClieCod;
@@ -378,7 +352,6 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton rbtCliente;
-        private System.Windows.Forms.RadioButton rbtVendedor;
         private System.Windows.Forms.RadioButton rbtGeneral;
         private System.Windows.Forms.RadioButton rbtOrdCorrelativo;
         private System.Windows.Forms.RadioButton rbtOrdVendedor;

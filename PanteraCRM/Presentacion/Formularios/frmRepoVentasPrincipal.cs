@@ -47,7 +47,7 @@ namespace Presentacion
             {
                 if (rbtnPantalla.Checked)
                 {
-                    //Crearimpresion();
+                    Crearimpresion();
                 }
                 else
                 {
@@ -63,6 +63,68 @@ namespace Presentacion
                     }
                 }
             }
+        }
+        private void Crearimpresion()
+        {
+            Reportes.FrmReportesM f = new Reportes.FrmReportesM();
+            CrystalDecisions.CrystalReports.Engine.ReportDocument Rpt1;
+            DataSet Dts = new DtsPedidos();
+            /*PRA CABECERA*/
+
+            DateTime dt1 = DateTime.Parse(txtfechai.Text);
+            string inicio = dt1.ToString("dd/MM/yyyy");
+
+            DateTime dt2 = DateTime.Parse(txtfechaf.Text);
+            string fin = dt2.ToString("dd/MM/yyyy");
+            List<registroventa1> Lista = new List<registroventa1>();
+            if (cbkTodo.Checked)
+            {
+                Lista = pedidoNE.RegistroVentasListadoExcelTipo2(inicio, fin);
+                if (Lista.Count <= 0)
+                {
+                    MessageBox.Show("No se encontraron datos", "Mensaje de Sistema", MessageBoxButtons.OK);
+                    //lblrespuesta.Text = "No hay datos.";
+                    return;
+                }
+            }
+            else
+            {
+                Lista = pedidoNE.RegistroVentasListadoExcelTipo1(inicio, fin, (int)cboDocumento.SelectedValue);
+                if (Lista.Count <= 0)
+                {
+                    MessageBox.Show("No se encontraron datos", "Mensaje de Sistema", MessageBoxButtons.OK);
+                    //lblrespuesta.Text = "No hay datos.";
+                    return;
+                }
+            }
+            lblrespuesta.Text = "Cargando datos...";
+            foreach (registroventa1 registro in Lista)
+            {
+                Dts.Tables["registroventa1"].LoadDataRow(new object[]
+            {
+                registro.chfechadoc ,
+                registro.chnombredocumento,
+                registro.chcodigodocu ,
+                registro.nuimportetotvta,
+                registro.nuimporvtaafecta ,
+                registro.nuimporttotigv,
+                registro.chcodigocliente ,
+                registro.tipodocu,
+                registro.nrodocumento ,
+                registro.razon ,
+                sesion.SessionGlobal.chpuntoventa,
+                "DIRECCION: AV. DEFENSORES DEL MORRO  N° 666  OF. 44, 45 y 46 - CHORRILLOS - LIMA - PERU",
+                "RUC: 20522355292",
+                "REGISTRO DE VENTAS",
+                "MES:"
+            }, true);
+
+            }
+            Dts.AcceptChanges();
+            Rpt1 = new Reportes.CrystalReportRegistroVenta1();
+            Rpt1.SetDataSource(Dts);
+            f.Rpt = Rpt1;
+            f.ShowDialog(this);
         }
         private void creaExcel()
         {

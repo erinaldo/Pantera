@@ -40,7 +40,6 @@ namespace Presentacion
             cboMoneda.DataSource = maestrodetalleNE.buscarPorCodigoMaestro(13);
             cboMoneda.ValueMember = "idmaestrodetalle";
             cboMoneda.DisplayMember = "nombreitem";
-            cboVendedores.Visible = false;
             txtClieCod.Visible = false;
             lblCodigo.Visible = false;
             lblNroIden.Visible = false;
@@ -61,7 +60,6 @@ namespace Presentacion
         {
             if (rbtGeneral.Checked == true)
             {
-                cboVendedores.Visible = false;
                 txtClieCod.Visible = false;
                 lblCodigo.Visible = false;
                 lblNroIden.Visible = false;
@@ -70,24 +68,12 @@ namespace Presentacion
             }
         }
 
-        private void rbtVendedor_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbtVendedor.Checked == true)
-            {
-                cboVendedores.Visible = true;
-                txtClieCod.Visible = false;
-                lblCodigo.Visible = false;
-                lblNroIden.Visible = false;
-                txtNroDocuIden.Visible = false;
-                txtNomClie.Visible = false;
-            }
-        }
+    
 
         private void rbtCliente_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtCliente.Checked == true)
             {
-                cboVendedores.Visible = false;
                 txtClieCod.Visible = true;
                 lblCodigo.Visible = true;
                 lblNroIden.Visible = true;
@@ -115,7 +101,24 @@ namespace Presentacion
 
         private void CargarDatosTabla()
         {
-           
+            Excel.Application excel = new Excel.Application();
+            Excel._Workbook libro = null;
+            Excel._Worksheet hoja = null;
+            Excel.Range rango = null;
+
+            //creamos un libro nuevo y la hoja con la que vamos a trabajar
+            libro = (Excel._Workbook)excel.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+            hoja = (Excel._Worksheet)libro.Worksheets.Add();
+            hoja.Name = "REGISTRO DE VENTAS";
+            ((Excel.Worksheet)excel.ActiveWorkbook.Sheets["Hoja1"]).Delete();   //Borramos la hoja que crea en el libro por defecto
+
+
+            //Montamos las cabeceras 
+            //lblrespuesta.Text = "Cargando cabecera...";
+            montaCabeceras(3, ref hoja);
+            //Rellenamos las celdas
+            int fila = 9;
+            int orden = 1;
             List<RegistroVenta> RegistroVenta = new List<RegistroVenta>();
             RegistroVenta = pedidoNE.BuscarRegistroVentasListar();
             foreach (RegistroVenta Registros in RegistroVenta)
@@ -125,6 +128,26 @@ namespace Presentacion
                     decimal montoencontra = pedidoNE.BuscarDocNCCodigo(Registros.chcodigodocu);
                     if ((Registros.nuimportetotvta - montoencontra) > 0)
                     {
+                        fila++;
+                        hoja.Cells[fila, 2] = orden++;
+                        hoja.Cells[fila, 3] = Registros.p_inidregistroventa ;
+                        hoja.Cells[fila, 3] = Registros.p_inidpuntoventa ;
+                        hoja.Cells[fila, 3] = Registros.p_inidtipodocu ;
+                        hoja.Cells[fila, 3] = Registros.p_iniddocumento ;
+                        hoja.Cells[fila, 3] = Registros.chcodigodocu; ;
+                        hoja.Cells[fila, 3] = Registros.chfechadoc ;
+                        hoja.Cells[fila, 3] = Registros.p_inidcliente;
+                        hoja.Cells[fila, 3] = Registros.nucambioventa ;
+                        hoja.Cells[fila, 3] = Registros.nuimporvtaafecta ;
+                        hoja.Cells[fila, 3] = Registros.nuimportotdesc ;
+                        hoja.Cells[fila, 3] = Registros.nuimporttotigv ;
+                        hoja.Cells[fila, 3] = Registros.nuimportetotvta = 0;
+                        hoja.Cells[fila, 3] = Registros.tipomovimiento = string.Empty;
+                        //Definimos la fila y la columna del rango 
+                        string x = "B" + (fila).ToString();
+                        string y = "N" + (fila).ToString();
+                        rango = hoja.Range[x, y];
+                        rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
                         //dgvDocumentosPendientes.Rows.Add(Registros.p_inidregistroventa, Registros.p_inidtipodocu, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, "", Registros.chfechadoc, "S/.", (-1) * (Registros.nuimportetotvta - montoencontra));
                     }
 
@@ -140,10 +163,17 @@ namespace Presentacion
                 }
 
             }
+
+            //lblrespuesta.Text = "Finalizando...";
+            excel.Visible = true;
+            excel.UserControl = false;
+            //excel.Quit();
+            //lblrespuesta.Text = "Archivo generado abierto.";
+            basicas.liberaObjeto(excel);
         }
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            if (rbtnPantalla.Checked)
+            if (rbtnExcel.Checked)
             {
                 creaExcel();
             }
@@ -189,43 +219,63 @@ namespace Presentacion
             //Rellenamos las celdas
             int fila = 9;
             int orden = 1;
-
-            DateTime dt1 = DateTime.Parse("");
-            string inicio = dt1.ToString("dd/MM/yyyy");
-
-            DateTime dt2 = DateTime.Parse("");
-            string fin = dt2.ToString("dd/MM/yyyy");
-
-            List<registroventaexcel> Lista = pedidoNE.RegistroVentasListadoExcel(inicio, fin, 1);
-            if (Lista.Count <= 0)
+            List<RegistroVenta> RegistroVenta = new List<RegistroVenta>();
+            RegistroVenta = pedidoNE.BuscarRegistroVentasListar();
+            foreach (RegistroVenta Registros in RegistroVenta)
             {
-                MessageBox.Show("No se encontraron datos", "Mensaje de Sistema", MessageBoxButtons.OK);
-                //lblrespuesta.Text = "No hay datos.";
-                return;
-            }
-            //lblrespuesta.Text = "Cargando datos...";
-            foreach (registroventaexcel registro in Lista)
-            {
-
                 fila++;
-                hoja.Cells[fila, 2] = orden++;
-                hoja.Cells[fila, 3] = registro.razon;
-                hoja.Cells[fila, 4] = registro.tipoclie;
-                hoja.Cells[fila, 5] = registro.chlicencia;
-                hoja.Cells[fila, 6] = registro.nucantidad.ToString();
-                hoja.Cells[fila, 7] = registro.chtipoproducto;
-                hoja.Cells[fila, 8] = registro.chmarca;
-                hoja.Cells[fila, 9] = registro.chcalibre;
-                hoja.Cells[fila, 10] = registro.chdmodelo;
-                hoja.Cells[fila, 11] = registro.chcodigoserie;
-                hoja.Cells[fila, 12] = fin;
-                hoja.Cells[fila, 13] = "";
+                //if (Registros.p_inidtipodocu == 4)
+                //{
+                //    decimal montoencontra = pedidoNE.BuscarDocNCCodigo(Registros.chcodigodocu);
+                //    if ((Registros.nuimportetotvta - montoencontra) > 0)
+                //    {
+                //        hoja.Cells[fila, 2] = orden++;
+                //        hoja.Cells[fila, 3] = Registros.p_inidregistroventa;
+                //        hoja.Cells[fila, 4] = Registros.p_inidpuntoventa;
+                //        hoja.Cells[fila, 5] = Registros.p_inidtipodocu;
+                //        hoja.Cells[fila, 6] = Registros.p_iniddocumento;
+                //        hoja.Cells[fila, 7] = Registros.chcodigodocu; ;
+                //        hoja.Cells[fila, 8] = Registros.chfechadoc;
+                //        hoja.Cells[fila, 9] = Registros.p_inidcliente;
+                //        hoja.Cells[fila, 10] = Registros.nucambioventa;
+                //        hoja.Cells[fila, 11] = Registros.nuimporvtaafecta;
+                //        hoja.Cells[fila, 12] = Registros.nuimportotdesc;
+                //        hoja.Cells[fila, 13] = Registros.nuimporttotigv;
+                //        hoja.Cells[fila, 14] = Registros.nuimportetotvta ;
+                //        hoja.Cells[fila, 15] = Registros.tipomovimiento ;
+                //        ////Definimos la fila y la columna del rango 
+                //        //string x = "B" + (fila).ToString();
+                //        //string y = "N" + (fila).ToString();
+                //        //rango = hoja.Range[x, y];
+                //        //rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                //        //dgvDocumentosPendientes.Rows.Add(Registros.p_inidregistroventa, Registros.p_inidtipodocu, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, "", Registros.chfechadoc, "S/.", (-1) * (Registros.nuimportetotvta - montoencontra));
+                //    }
 
-                //Definimos la fila y la columna del rango 
-                string x = "B" + (fila).ToString();
-                string y = "N" + (fila).ToString();
-                rango = hoja.Range[x, y];
-                rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                //}
+                //else
+                //{
+                    //decimal montoencontra = pedidoNE.BuscarMontoEncontra(Registros.p_inidtipodocu, Registros.chcodigodocu, Registros.p_inidcliente);
+                    //if ((Registros.nuimportetotvta - montoencontra) > 0)
+                    //{
+
+                        hoja.Cells[fila, 2] = orden++;
+                        hoja.Cells[fila, 3] = Registros.p_inidregistroventa;
+                        hoja.Cells[fila, 4] = Registros.p_inidpuntoventa;
+                        hoja.Cells[fila, 5] = Registros.p_inidtipodocu;
+                        hoja.Cells[fila, 6] = Registros.p_iniddocumento;
+                        hoja.Cells[fila, 7] = Registros.chcodigodocu; ;
+                        hoja.Cells[fila, 8] = Registros.chfechadoc;
+                        hoja.Cells[fila, 9] = Registros.p_inidcliente;
+                        hoja.Cells[fila, 10] = Registros.nucambioventa;
+                        hoja.Cells[fila, 11] = Registros.nuimporvtaafecta;
+                        hoja.Cells[fila, 12] = Registros.nuimportotdesc;
+                        hoja.Cells[fila, 13] = Registros.nuimporttotigv;
+                        hoja.Cells[fila, 14] = Registros.nuimportetotvta;
+                        hoja.Cells[fila, 15] = Registros.tipomovimiento;
+                        // dgvDocumentosPendientes.Rows.Add(Registros.p_inidregistroventa, Registros.p_inidtipodocu, DevolverNombrecomprobante(Registros.p_inidtipodocu), Registros.chcodigodocu, "", Registros.chfechadoc, "S/.", Registros.nuimportetotvta - montoencontra);
+                    //}
+
+                //}
 
             }
             //lblrespuesta.Text = "Finalizando...";
