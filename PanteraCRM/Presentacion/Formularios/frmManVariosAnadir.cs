@@ -17,7 +17,7 @@ namespace Presentacion
         //internal producto tmpProducto;
         internal int Maestrocodigo;
         internal List<maestrodetalle> DetalleListas;
-        public delegate void pasar(int varreg);
+        public delegate void pasar(int varreg); 
         public event pasar pasado;
         public frmManVariosAnadir(string vBoton)
         {
@@ -119,12 +119,14 @@ namespace Presentacion
             txtDescrip.Text = CabecerRegistros.chdesmoestro;
             txtCod.Text = CabecerRegistros.chcodigomaestrocab;
             txtObbs.Text = CabecerRegistros.chobserbacion;
-            DetalleListas = maestrodetalleNE.buscarPorCodigoMaestro(codigo);
-            foreach (maestrodetalle Registros in DetalleListas)
+            List<maestrodetalle> DetalleListas1 = maestrodetalleNE.buscarPorCodigoMaestro(codigo);
+            int a = 0;
+            foreach (maestrodetalle Registros in DetalleListas1)
             {
-                dgvListaDetalle.Rows.Add(Registros.idmaestro, Registros.idmaestrodetalle, Registros.codigoitem, Registros.nombreitem, Registros.libre, Registros.estado);
+                Registros.orden = a++;
             }
-            //dgvListaDetalle.DataSource = DetalleListas;                       
+            DetalleListas = DetalleListas1;
+            CargarTabla();
         }
         private void GrabarDatos()
         {
@@ -144,18 +146,14 @@ namespace Presentacion
             }
             else
             {
-                List<maestrodetalle> ListasMaestroDetalle = new List<maestrodetalle>();
-                for (int i = 0; i < dgvListaDetalle.RowCount; i++)
+                foreach (maestrodetalle d in DetalleListas)
                 {
-                    maestrodetalle RegistrosIngresoDetalle = new maestrodetalle();                    
-                    //RegistrosIngresoDetalle.idmaestrodetalle = 0;
-                    RegistrosIngresoDetalle.idmaestro = Maestrocodigo;
-                    RegistrosIngresoDetalle.codigoitem = dgvListaDetalle.Rows[i].Cells["CHOBS"].Value.ToString();
-                    RegistrosIngresoDetalle.nombreitem = dgvListaDetalle.Rows[i].Cells["CHITEM"].Value.ToString();
-                    RegistrosIngresoDetalle.libre = dgvListaDetalle.Rows[i].Cells["CHOBS"].Value.ToString();
-                    RegistrosIngresoDetalle.estado = true;
-                    maestrodetalleNE.MaestroDetalleIngresar(RegistrosIngresoDetalle);
-                }
+                    if (d.estado == true)
+                    {
+                        d.idmaestro = Maestrocodigo;
+                        maestrodetalleNE.MaestroDetalleIngresar(d);
+                    }
+                }         
                 pasado(Maestrocodigo);
             }      
         }
@@ -171,24 +169,28 @@ namespace Presentacion
             Maestrocodigo = maestrodetalleNE.MaestroCabeceraModificar(RegistrosIngresoCabecera);
             if (Maestrocodigo <= 0)
             {
-                MessageBox.Show("Error En el Ingreso", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
+                MessageBox.Show("Error modificacion de cabecera", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
                 return;
             }
             else
             {
-                maestrodetalleNE.MaestroDetalleFalsear(Maestrocodigo);
-                List<maestrodetalle> ListasMaestroDetalle = new List<maestrodetalle>();
-                for (int i = 0; i < dgvListaDetalle.RowCount; i++)
+                foreach (maestrodetalle d in DetalleListas)
                 {
-                    maestrodetalle RegistrosIngresoDetalle = new maestrodetalle();
-                    RegistrosIngresoDetalle.idmaestrodetalle = 0;
-                    RegistrosIngresoDetalle.idmaestro = Maestrocodigo;
-                    RegistrosIngresoDetalle.codigoitem = dgvListaDetalle.Rows[i].Cells["CHOBS"].Value.ToString();
-                    RegistrosIngresoDetalle.nombreitem = dgvListaDetalle.Rows[i].Cells["CHITEM"].Value.ToString();
-                    RegistrosIngresoDetalle.libre = dgvListaDetalle.Rows[i].Cells["CHOBS"].Value.ToString();
-                    RegistrosIngresoDetalle.estado = true;
-                    maestrodetalleNE.MaestroDetalleIngresar(RegistrosIngresoDetalle);
-                }
+                    if (d.estado == true)
+                    {
+                        if (d.idmaestrodetalle == 0)
+                        {
+                            d.idmaestro = Maestrocodigo;
+                            maestrodetalleNE.MaestroDetalleIngresar(d);
+                        }
+                    }else
+                    {
+                        if (d.idmaestrodetalle != 0)
+                        {
+                            maestrodetalleNE.MaestroDetalleFalsear(d.idmaestrodetalle);
+                        }
+                    }
+                }               
                 pasado(Maestrocodigo);
             }
         }
@@ -257,26 +259,40 @@ namespace Presentacion
         private void btnAnadir_Click(object sender, EventArgs e)
         {                      
             maestrodetalle RegistrosMDetalles = new maestrodetalle();
+            RegistrosMDetalles.orden = DetalleListas.Count+1;
             RegistrosMDetalles.libre = txtAcro.Text;
             RegistrosMDetalles.nombreitem = txtDetDesc.Text;
-            //DetalleListas.Add(RegistrosMDetalles);
-            //List<maestrodetalle> DetalleLimpiar = new List<maestrodetalle>();
-            //dgvListaDetalle.DataSource = DetalleLimpiar;
-            //dgvListaDetalle.DataSource = DetalleListas;
-            dgvListaDetalle.Rows.Add(RegistrosMDetalles.idmaestro, RegistrosMDetalles.idmaestrodetalle, RegistrosMDetalles.codigoitem, RegistrosMDetalles.nombreitem, RegistrosMDetalles.libre, RegistrosMDetalles.estado);
+            RegistrosMDetalles.estado = true;
+            DetalleListas.Add(RegistrosMDetalles);
+            CargarTabla();            
             txtDetDesc.Text = "";
             txtAcro.Text = "";
             txtDetDesc.Focus();
         }
-
+        private void CargarTabla()
+        {
+            dgvListaDetalle.Rows.Clear();
+            foreach (maestrodetalle RegistrosMDetalles in DetalleListas)
+            {
+                if (RegistrosMDetalles.estado == true)
+                {
+                    dgvListaDetalle.Rows.Add(RegistrosMDetalles.orden,RegistrosMDetalles.idmaestro, RegistrosMDetalles.idmaestrodetalle, RegistrosMDetalles.codigoitem, RegistrosMDetalles.nombreitem, RegistrosMDetalles.libre, RegistrosMDetalles.estado);
+                }                
+            }            
+        }
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-            if (dgvListaDetalle.RowCount == 0)
+            if (DetalleListas.Count > 0)
             {
-                MessageBox.Show("Debe seleccionar un registro", "MENSAJE DE SISTEMA", MessageBoxButtons.OK);
-                return;
+                foreach ( maestrodetalle d in DetalleListas)
+                {
+                    if (d.orden == (int)dgvListaDetalle.CurrentRow.Cells["ORDEN"].Value)
+                    {
+                        d.estado = false;
+                    }
+                }
             }
-            dgvListaDetalle.Rows.Remove(dgvListaDetalle.CurrentRow);
+            CargarTabla();
             txtDetDesc.Focus();
         }
 

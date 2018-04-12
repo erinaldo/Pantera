@@ -44,6 +44,7 @@ namespace Datos
                     registro.p_inidsituacion = Convert.ToInt32(datareader["p_inidsituacion"]);
                     registro.req_serie = Convert.ToBoolean(datareader["o_req_serie"]);
                     registro.chsituacion = Convert.ToString(datareader["chsituacion"]).Trim();
+                    registro.nucantporuni = Convert.ToInt32(datareader["nucantporuni"]);
                     listado.Add(registro);
                 }
                 return listado;
@@ -120,6 +121,7 @@ namespace Datos
                     registro.p_inidsituacion = Convert.ToInt32(datareader["p_inidsituacion"]);
                     registro.req_serie = Convert.ToBoolean (datareader["o_req_serie"]);
                     registro.chsituacion = Convert.ToString(datareader["chsituacion"]).Trim();
+                    registro.nucantporuni = Convert.ToInt32(datareader["nucantporuni"]);
                     listado.Add(registro);
                 }
                 return listado;

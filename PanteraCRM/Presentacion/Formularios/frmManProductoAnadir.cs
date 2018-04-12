@@ -103,6 +103,7 @@ namespace Presentacion
                 cboMedida.SelectedValue = tmpProducto.p_inidunidadmedidaproducto;
                 cboSituacion.SelectedValue = tmpProducto.p_inidsituacion;
                 ckbSerie.Checked = tmpProducto.req_serie;
+                txtUnidad.Text = tmpProducto.nucantporuni.ToString();
                 txtFecha.Text = tmpProducto.chfechacreacion;
                 txtFecha.ReadOnly = true;
             }
@@ -120,6 +121,7 @@ namespace Presentacion
                 cboMedida.SelectedValue = tmpProducto.p_inidunidadmedidaproducto;
                 cboSituacion.SelectedValue = tmpProducto.p_inidsituacion;               
                 txtFecha.Text = tmpProducto.chfechacreacion;
+                txtUnidad.Text = tmpProducto.nucantporuni.ToString();
                 ckbSerie.Checked = tmpProducto.req_serie;
                 txtCodigo.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
                 txtCodigo.ForeColor = Color.Blue;
@@ -127,7 +129,6 @@ namespace Presentacion
                 txtNombre.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
                 txtNombre.ForeColor = Color.Blue;
                 txtNombre.ReadOnly = true;
-
                 btnGrabar.Enabled = false;
             }
         }

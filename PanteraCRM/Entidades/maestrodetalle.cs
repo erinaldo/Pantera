@@ -8,6 +8,7 @@ namespace Entidades
 {
     public class maestrodetalle
     {
+        public int orden { get; set; }
         public int idmaestrodetalle { get; set; }
         public int idmaestro { get; set; }
         public string codigoitem { get; set; }
@@ -16,12 +17,13 @@ namespace Entidades
         public bool estado { get; set; }
         public maestrodetalle()
         {
+            this.orden = 0;
             this.idmaestrodetalle = 0;
             this.idmaestro =0;
             this.codigoitem = string.Empty;
             this.nombreitem = string.Empty;
             this.libre = string.Empty;
-            this.estado = false;
+            this.estado = true;
         }
     }
 }

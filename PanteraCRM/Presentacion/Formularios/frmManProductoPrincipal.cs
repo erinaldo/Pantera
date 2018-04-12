@@ -125,6 +125,7 @@ namespace Presentacion
             f.tmpProducto.chcodigoproducto = (string)(dvgProducto.CurrentRow.Cells["CODPRODUCTO"].Value);
             f.tmpProducto.chfechacreacion = (string)(dvgProducto.CurrentRow.Cells["CHFECHA"].Value);
             f.tmpProducto.req_serie = (bool)(dvgProducto.CurrentRow.Cells["IDCHECK"].Value);
+            f.tmpProducto.nucantporuni = (int)(dvgProducto.CurrentRow.Cells["NUCANTUNI"].Value);
             //f.MdiParent = this.MdiParent;
             f.ShowDialog();
         }
